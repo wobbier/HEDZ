@@ -74136,10 +74136,10 @@ undefined4 FUN_0046da60(HINSTANCE param_1)
   FUN_0045e9c0();
   FUN_0045ea10();
   FUN_004731a0();
-  DAT_005d664c = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,1,(LPCSTR)0x0);
-  if ((((DAT_005d664c != (HANDLE)0x0) &&
-       (DAT_005d66a0 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,1,(LPCSTR)0x0),
-       DAT_005d66a0 != (HANDLE)0x0)) && (iVar3 = FUN_004858a0(), iVar3 != 0)) &&
+  HANDLE_005d664c = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,1,(LPCSTR)0x0);
+  if ((((HANDLE_005d664c != (HANDLE)0x0) &&
+       (HANDLE_005d66a0 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,1,(LPCSTR)0x0),
+       HANDLE_005d66a0 != (HANDLE)0x0)) && (iVar3 = CreateEventHandle(), iVar3 != 0)) &&
      (iVar3 = FUN_0048da50(), iVar3 != 0)) {
     FUN_0048daa0();
     FUN_004858f0();
@@ -74221,7 +74221,7 @@ void FUN_0046dd30(void)
   DAT_005d63e4 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,1,(LPCSTR)0x0);
   do {
     WaitForSingleObject(DAT_005d63e4,0x28);
-    SetEvent(DAT_005d66a0);
+    SetEvent(HANDLE_005d66a0);
   } while (DAT_00598dc4 != 0);
   return;
 }
@@ -74236,7 +74236,7 @@ void FUN_0046dd90(void)
   hThread = GetCurrentThread();
   SetThreadPriority(hThread,2);
   do {
-    WaitForSingleObject(DAT_005d66a0,0xffffffff);
+    WaitForSingleObject(HANDLE_005d66a0,0xffffffff);
     if (DAT_005a115c == 0) {
       FUN_0048c0d0(0);
     }
@@ -74292,7 +74292,7 @@ undefined4 FUN_0046de70(void)
 void FUN_0046de90(void)
 
 {
-  SetEvent(DAT_005d66a0);
+  SetEvent(HANDLE_005d66a0);
   return;
 }
 
@@ -75446,9 +75446,9 @@ LRESULT FUN_0046fa40(HWND param_1,uint param_2,uint param_3,LPARAM param_4)
     if (DAT_00598d44 == '\0') {
       if (uVar12 == 0x8000) goto LAB_0046ff1a;
       if (DAT_005e58ec != 0) {
-        WaitForSingleObject(DAT_005d664c,0xffffffff);
+        WaitForSingleObject(HANDLE_005d664c,0xffffffff);
         DAT_00598d44 = '\x01';
-        SetEvent(DAT_005d664c);
+        SetEvent(HANDLE_005d664c);
         goto LAB_0046ff1a;
       }
     }
@@ -75732,9 +75732,9 @@ LAB_00470598:
     _DAT_004d826c = 0x1d4c;
     break;
   case 0x9cad:
-    WaitForSingleObject(DAT_005d664c,0xffffffff);
+    WaitForSingleObject(HANDLE_005d664c,0xffffffff);
     DAT_00598d80 = (uint)(DAT_00598d80 == 0);
-    SetEvent(DAT_005d664c);
+    SetEvent(HANDLE_005d664c);
     break;
   case 0x9caf:
     DAT_004d042c = (uint)(DAT_004d042c == 0);
@@ -87637,7 +87637,7 @@ undefined4 FUN_004811e0(void)
     }
     break;
   case 2:
-    WaitForSingleObject(DAT_005d664c,30000);
+    WaitForSingleObject(HANDLE_005d664c,30000);
     puVar10 = (undefined4 *)(DAT_005e45e4 + 0x90);
     puVar11 = (undefined4 *)(DAT_005e45e4 + 0x1f8);
     for (iVar5 = 0x10; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -87708,7 +87708,7 @@ undefined4 FUN_004811e0(void)
         uVar8 = uVar8 + 1;
       } while (uVar8 < *(uint *)(iVar5 + 0x23d));
     }
-    SetEvent(DAT_005d664c);
+    SetEvent(HANDLE_005d664c);
     FUN_004a2660();
     iVar5 = (**(code **)(**(int **)(DAT_005e5010 + 8) + 0x40))();
     if (iVar5 != 0) {
@@ -87927,7 +87927,7 @@ LAB_00481dd6:
     }
     break;
   case 4:
-    WaitForSingleObject(DAT_005d664c,0xffffffff);
+    WaitForSingleObject(HANDLE_005d664c,0xffffffff);
     FUN_004ad7a0();
     FUN_00414850();
     iVar5 = FUN_00414bb0();
@@ -87998,10 +87998,10 @@ LAB_00481dd6:
       FUN_0043dcb0(DAT_004d8338,DAT_004d833c,DAT_005bcb48,DAT_005bcb4c,
                    (&DAT_005bcb30)[(int)DAT_00598e44 >> 1]);
     }
-    SetEvent(DAT_005d664c);
+    SetEvent(HANDLE_005d664c);
     break;
   case 5:
-    WaitForSingleObject(DAT_005d664c,0xffffffff);
+    WaitForSingleObject(HANDLE_005d664c,0xffffffff);
     for (iVar5 = *(int *)(DAT_005df318 + 4); iVar5 != 0; iVar5 = *(int *)(iVar5 + 0x1a)) {
       puVar1 = (ushort *)(*(int *)(iVar5 + 4) + 0x8e);
       *puVar1 = *puVar1 & 0xf7ff;
@@ -88032,7 +88032,7 @@ LAB_00481dd6:
     if (iVar5 != 0) {
       return 0;
     }
-    SetEvent(DAT_005d664c);
+    SetEvent(HANDLE_005d664c);
     iVar5 = FUN_00414d80();
     if (iVar5 == 0) {
       FUN_00470960();
@@ -88162,7 +88162,7 @@ LAB_004817fb:
     FUN_0048daa0();
     return 1;
   case 0x14:
-    WaitForSingleObject(DAT_005d664c,0xffffffff);
+    WaitForSingleObject(HANDLE_005d664c,0xffffffff);
     iVar5 = *(int *)(DAT_005df318 + 4);
     while (iVar5 != 0) {
       puVar1 = (ushort *)(*(int *)(iVar5 + 4) + 0x8e);
@@ -88199,7 +88199,7 @@ LAB_004817fb:
     if (iVar5 != 0) {
       return 0;
     }
-    SetEvent(DAT_005d664c);
+    SetEvent(HANDLE_005d664c);
     iVar5 = FUN_00414bb0();
     if (iVar5 == 0) {
       FUN_00470960();
@@ -90637,11 +90637,11 @@ LAB_00485826:
 
 
 
-bool FUN_004858a0(void)
+bool CreateEventHandle(void)
 
 {
-  DAT_00598ea0 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,1,(LPCSTR)0x0);
-  return DAT_00598ea0 != (HANDLE)0x0;
+  HANDLE_00598ea0 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,1,(LPCSTR)0x0);
+  return HANDLE_00598ea0 != (HANDLE)0x0;
 }
 
 
@@ -90651,9 +90651,9 @@ undefined4 FUN_004858c0(void)
 {
   undefined4 uVar1;
   
-  WaitForSingleObject(DAT_00598ea0,0xffffffff);
+  WaitForSingleObject(HANDLE_00598ea0,0xffffffff);
   uVar1 = DAT_00598f04;
-  SetEvent(DAT_00598ea0);
+  SetEvent(HANDLE_00598ea0);
   return uVar1;
 }
 
@@ -90662,9 +90662,9 @@ undefined4 FUN_004858c0(void)
 void FUN_004858f0(undefined4 param_1)
 
 {
-  WaitForSingleObject(DAT_00598ea0,0xffffffff);
+  WaitForSingleObject(HANDLE_00598ea0,0xffffffff);
   DAT_00598f04 = param_1;
-  SetEvent(DAT_00598ea0);
+  SetEvent(HANDLE_00598ea0);
   return;
 }
 
@@ -95008,7 +95008,7 @@ void FUN_0048c0d0(void)
   float fVar19;
   
   FUN_004ad310();
-  WaitForSingleObject(DAT_005d664c,0xffffffff);
+  WaitForSingleObject(HANDLE_005d664c,0xffffffff);
   DAT_005b935c = 1;
   if ((char)DAT_00598944 == '\0') {
     if (DAT_00598d44 == '\0') {
@@ -95712,7 +95712,7 @@ LAB_0048d392:
           local_28 = 1.401298e-44;
           uStackY_2c = 0x48d4cf;
           FUN_00466530();
-          SetEvent(DAT_005d664c);
+          SetEvent(HANDLE_005d664c);
           return;
         }
       }
@@ -95724,7 +95724,7 @@ LAB_0048d392:
       }
     }
   }
-  SetEvent(DAT_005d664c);
+  SetEvent(HANDLE_005d664c);
   return;
 }
 
@@ -122428,16 +122428,16 @@ void entry(void)
   local_8 = 0;
   FUN_004b6870();
   FUN_004b9980();
-  DAT_005f8ea8 = (byte *)GetCommandLineA();
+  PTR_005f8ea8 = (byte *)GetCommandLineA();
   DAT_005a1290 = FUN_004b9320();
-  if ((DAT_005a1290 == 0) || (DAT_005f8ea8 == (byte *)0x0)) {
+  if ((DAT_005a1290 == 0) || (PTR_005f8ea8 == (byte *)0x0)) {
     FUN_004b0840(0xffffffff);
   }
   FUN_004b9070();
   FUN_004b8f80();
   FUN_004b0810();
-  pbVar5 = DAT_005f8ea8;
-  if (*DAT_005f8ea8 == 0x22) {
+  pbVar5 = PTR_005f8ea8;
+  if (*PTR_005f8ea8 == '\"') {
     while( true ) {
       pbVar6 = pbVar5;
       pbVar5 = pbVar6 + 1;
@@ -128742,22 +128742,22 @@ void FUN_004b9070(void)
 
 {
   int iVar1;
-  char *pcVar2;
+  byte *pbVar2;
   int iStack_8;
   int iStack_4;
   
   GetModuleFileNameA((HMODULE)0x0,&DAT_005a1390,0x104);
   _DAT_005a127c = &DAT_005a1390;
-  pcVar2 = DAT_005f8ea8;
-  if (*DAT_005f8ea8 == '\0') {
-    pcVar2 = &DAT_005a1390;
+  pbVar2 = PTR_005f8ea8;
+  if (*PTR_005f8ea8 == '\0') {
+    pbVar2 = &DAT_005a1390;
   }
-  FUN_004b9110(pcVar2,0,0,&iStack_8,&iStack_4);
+  FUN_004b9110(pbVar2,0,0,&iStack_8,&iStack_4);
   iVar1 = FUN_004ad640(iStack_4 + iStack_8 * 4);
   if (iVar1 == 0) {
     __amsg_exit(8);
   }
-  FUN_004b9110(pcVar2,iVar1,iVar1 + iStack_8 * 4,&iStack_8,&iStack_4);
+  FUN_004b9110(pbVar2,iVar1,iVar1 + iStack_8 * 4,&iStack_8,&iStack_4);
   _DAT_005a1264 = iVar1;
   _DAT_005a1260 = iStack_8 + -1;
   return;

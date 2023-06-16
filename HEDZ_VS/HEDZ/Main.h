@@ -449,6 +449,9 @@ struct HWND__ {
     int unused;
 };
 
+
+// WARNING! conflicting data type names: /rpcndr.h/byte - /byte
+
 typedef uint size_t;
 
 typedef struct DLGTEMPLATE DLGTEMPLATE, *PDLGTEMPLATE;
@@ -2533,7 +2536,7 @@ undefined FUN_00484300(int *param_1,float *param_2);
 undefined4 FUN_00484610(float param_1,float *param_2);
 void FUN_004849a0(void);
 int FUN_004855e0(int param_1,int param_2,int param_3,float *param_4);
-bool FUN_004858a0(void);
+bool CreateEventHandle(void);
 undefined4 FUN_004858c0(void);
 void FUN_004858f0(undefined4 param_1);
 void FUN_00485920(void);
