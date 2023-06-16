@@ -1,0 +1,131 @@
+=========================================
+TRUCS ET ASTUCES POUR LE H.E.D.Z DEBUTANT
+=========================================
+
+
+
+Ce document contient des conseils d'utilisation, des trucs et des astuces pour vous aider à... GAGNER ! Vous y trouverez aussi des réponses aux «  questions les plus fréquemment posées ».
+Toutes ces informations sont disponibles sur le site Internet H .E.D.Z - www.hedz.com Les renseignements donnés sur ce site sont actualisés régulièrement.
+
+Nous vous recommandons de lire le manuel en même temps que ces conseils avant de démarrer H.E.D.Z, afin d'avoir le plus d'informations utiles avant de commencer à jouer. Le fichier Lisez-Moi, accessible à partir du menu « démarrer », vous donnera les dernières informations mises à jour à propos du fonctionnement du jeu.
+
+DEMARRER H.E.D.Z
+
+Choix de la difficulté
+Par défaut, H.E.D.Z démarre en mode « facile » ; nous vous recommandons de garder ce mode lors de vos premières parties.
+
+Premier niveau - centre ville
+C'est le niveau dans lequel vous allez commencer. Une fois le jeu chargé et le niveau « centre ville » sélectionné, cliquer sur « Jouer ». Vous vous retrouverez dans le sélecteur de tête. 
+
+Vous débutez la partie avec cinq têtes, sélectionnées automatiquement pour vous. Pour commencer à jouer à partir du sélecteur de tête, il suffit de cliquer sur le bouton « Jouer ». BONNE CHANCE...
+
+L'arrivée dans un niveau
+Quand vous entrez dans un niveau, prenez le temps d'examiner la situation, de vérifier votre équipement : tant que vous êtes sur le Telepod d'entrée, vous êtes en sécurité et rien ne peut vous arriver !
+
+Connaissance du terrain Allez-y doucement tant que vous n'êtes pas familiarisé avec la configuration du champ d'astéroïdes. Lorsque vous arrivez dans un nouvel endroit, cherchez les recoins où vos ennemis peuvent être cachés, et aussi les lieux où vous-même pouvez vous dissimuler.
+
+Attention aux attaques-surprise
+Certains ennemis peuvent être téléportés dans un niveau et vous surprendre. Heureusement, vous entendrez leurs cris de guerre et un rayon rouge apparaîtra juste avant que l'ennemi arrive. Prêtez l'oreille et gardez l'œil ouvert !
+
+Premières rencontres
+Les premières têtes que vous allez croiser au centre ville sont les Medic. Elles ne vous feront pas de mal - c'est de la chair à canon ! Vous pouvez en attraper autant que vous voulez tant que l'action n'a pas démarré vraiment.
+
+Les Medic seront particulièrement utiles au H.E.D.Z débutant. Si vous sélectionnez un Medic, elle soignera toutes les têtes que vous avez sélectionnées, c'est sa spécialité.
+
+Une deuxième sorte de Medic que vous pourrez rencontrer est connue sous le nom de « duplicateur ». Un duplicateur agit quand vous acquerrez une tête que vous aviez déjà dans votre sac à dos. Les duplicateurs sont une source de revenus importante.
+
+L'argent est une denrée fondamentale dans H.E.D.Z.  Il vous en faudra pour diverses raisons, et plus vous en aurez, mieux ce sera. On gagne de l'argent grâce aux duplicateurs, ou on en récolte dans différents niveaux.  Vous en aurez besoin pour :
+
+- Recharger l'énergie de vos têtes dans votre sélecteur de tête
+- Faire passer de nouvelles têtes de votre sac à dos à votre écran « affichage têtes » 
+- Pour augmenter votre score
+
+Score
+Votre score est calculé en fonction de l'argent dont vous disposez et des têtes que vous avez gagnées. Plus vous avez d'argent, plus vous avez de têtes, plus votre score est élevé ! Prenez le temps d'explorer les astéroïdes, elles contiennent un grand nombre de recoins où sont dissimulés ces trésors.
+
+Collectionner les nouvelles têtes
+Vous gagnez de nouvelles têtes en les prenant aux ennemis que vous croisez. Si vous les attaquez assez vaillamment, ils seront décapités et deviendront  des Têtes Mortes. Pour attraper une tête morte, sautez-lui dessus, elle passera directement dans votre sac à dos. En revanche, il vous faudra  de l'argent pour les transférer du sac à dos à l'écran « affichage têtes ». 
+
+Pour connaître le nombre de têtes que vous avez récupéré dans un niveau particulier, utilisez votre « Résumé Niveau ». Qui sait, vous en avez peut-être raté... 
+
+Ennemi à plusieurs têtes
+Méfiez-vous, une tête peut en cacher une autre : c'est valable pour vous, mais aussi pour vos ennemis. 
+
+Interdit aux aliens décapités !
+De même, vous pouvez arracher la(es) tête(s) de vos ennemis, mais eux peuvent vous rendre la pareille : vous pouvez perdre toutes vos têtes (sauf celles en sécurité dans votre sac à dos). Et il est interdit de se promener sans sa tête dans la Nappa Flux. Les aliens décapités sont immédiatement expulsés du jeu !
+
+Vol de tête
+Vous n'êtes pas le seul à surveiller toutes les têtes qui passent. Vos adversaires sont aussi obsessionnels que vous - et ils sont prêts à tout pour les attraper. Si des Têtes Mortes traînent aux alentours, ils les poursuivront comme si leur vie en dépendait afin de les voler. Jetez-vous dessus pour être le premier à les empocher !
+
+Ne paniquez pas si un de vos ennemis se saisit d'une tête morte avant vous : vous pouvez la récupérer en attaquant celui-ci - une seule fois et à l'aide de n'importe quelle arme disponible. Il la lâchera et vous donnera ainsi une chance de mettre la main dessus. 
+
+Utiliser vos adversaires pour qu'ils volent à votre place
+Très souvent, vous allez être attaqué par plus d'un adversaire à la fois. Une bon plan de bataille pour tenir vos ennemis en échec est de les abattre l'un après l'autre, ce qui laisse aux autres le temps de ramasser des Têtes Mortes. Il suffit tuer le dernier ennemi - qui devrait alors avoir ramassé toutes les têtes disponibles - pour récupérerez d'un seul coup toutes les têtes.
+
+Attention !  Méfiez-vous des aliens décapités
+Les aliens décapités sont tout aussi intéressés par les Têtes Mortes. Il faut donc les surveiller. Les aliens décapités sont téléportés quelques secondes après avoir été vaincus, mais dans l'intervalle, ils feront tout leur possible pour mettre la main sur n'importe quelle tête. S'ils disparaissent avec une tête, vous ne pourrez pas la récupérer.  Avant, vous pouvez l'attaquer comme d'habitude.
+
+Les aliens décapités se déplacent très rapidement. N'ayant pas de tête, ils sont plus légers. Rapidité et arme adaptée sont de rigueur pour combattre un alien décapité... et affamé. Voici quelques suggestions pour les tenir à distance :
+
+Avant qu'un alien décapité n'ait réussi à voler une tête, vous pouvez l'immobiliser et l'empêcher de bouger en attendant qu'il soit téléporté. Les armes les plus efficaces pour cela sont les pétoires, les missiles, les flèches, ou n'importe quelle arme qu'on puisse dégainer rapidement.
+
+Si un alien décapité a réussi à se saisir d'une tête morte, l'attaquer l'obligera à la lâcher. Cela dit, attention à ne pas tirer trop tôt car il risquerait d'essayer de la ramasser à nouveau. 
+
+L'une des tactiques possibles est d'attendre que le rayon téléporteur apparaisse avant de l'attaquer. Si ça marche, l'alien laissera tomber la tête et disparaîtra, sans avoir eu une chance de la récupérer. Mais cette tactique comporte des risques :  si vous le ratez, l'alien disparaît... avec la tête.
+
+Une autre stratégie est de tirer sur l'alien sans discontinuer : il sera obligé de lâcher la tête mais ne pourra pas la ramasser. Pour être sûr du résultat, vérifiez votre stock de munitions avant de commencer à tirer. Ce serait dommage qu'il disparaisse au moment où elles viennent à manquer.  
+			
+Energie de tête
+La seule énergie que vous puissiez perdre est celle de la tête que vous êtes en train d'utiliser. Si vous êtes attaqué et que votre énergie est faible, l'icône représentant votre tête commencera à clignoter. Si un ennemi de plus vous atteint, vous la perdez. CHANGEZ DE TETE IMMEDIATEMENT puis utilisiez votre fonction « recharge d'énergie » (la commande par défaut pour cette opération est la touche retour) pour lui redonner toute son énergie.    
+
+Si vous êtes attaqué alors que votre sac à dos est ouvert, vous allez PERDRE les têtes qui s'y trouvent. Attention au moment et au lieu où vous l'ouvrez.
+
+Airlockz 
+Aucun autre Hed n'est admis dans le Airlockz. C'est donc un bon endroit pour ouvrir votre sac à dos afin de changer de tête ou de réparer les dégâts de votre « afficheur de tête ». Faites attention lorsque vous sortez d'un Airlockz. Qui sait ce qui vous attend de l'autre côté...
+
+NOTE:  n'oubliez pas d'enregistrer régulièrement ! 
+ 
+
+
+POUR NE PAS SE PRENDRE LA TETE : LES QUESTIONS LES PLUS SOUVENT POSEES
+
+Q : Quel est le rôle du joueur dans cet univers de dingues ?
+R : Vous êtes alien/chasseur de têtes et vous participez à une compétition intergalactique. 
+
+Q : Quel est le but du jeu ?
+R : Devenir « Meilleur chasseur de têtes de la galaxie » après vous être baladé dans la Nappa Flux toute entière et avoir récolté autant de têtes que possible. 
+
+Q : Pourquoi dois-je collectionner les têtes ?  
+R : Pour de multiples raisons :
+- Têtes = Vies (si vous perdez toutes vos têtes, vous perdez la partie).
+- Vous devez ramasser un nombre donné de clefs Hedz pour avancer dans chaque niveau, ouvrir la porte de sortie et entrer dans le niveau suivant. 
+- « Meilleur chasseur de têtes de la galaxie » : si vous voulez avoir la moindre chance d'obtenir ce titre mirifique, il vous faudra un maximum de têtes.
+- Têtes = Argent. L'argent est utilisé dans le comptage des points. Votre score dépend du nombre de têtes collectionnées et de la somme d'argent qu'il vous reste à la fin du jeu. 
+- Découvrir des coins secrets : il y a au moins un coin secret par niveau, contenant au moins une tête. Pour y accéder, vous devez avoir en votre possession une tête particulière.
+
+Q : Puis-je changer de tête quand je veux ?
+R : Oui, vous pouvez échanger instantanément l'une de vos cinq têtes sélectionnées.  Vous pouvez aussi faire passer des têtes de votre sac à dos à votre sélection, à condition que vous ayez suffisamment d'argent pour réaliser cette opération.
+
+Q : Qu'est-ce qu'un sac à dos ?
+R : Il sert à stocker les nouvelles têtes que vous avez accumulées dans un niveau particulier. Vous pouvez les faire passer dans votre sélection en utilisant l'argent gagné dans le niveau.
+
+Q : Qu'est-ce qu'un sélecteur de tête ?
+R : C'est là où vous stockez l'ensemble de vos têtes. Vous pouvez l'utiliser pour les exposer, pour consulter les statistiques, etc. Une tête entreposée dans le sélecteur de tête est en sécurité et ne peut être perdue - sauf si vous choisissez de la porter ou de la mettre dans votre sac à dos.
+
+Q  Et l'argent ?
+R : Dans H.E.D.Z, la monnaie est le Zedz.  Les Zedz servent à améliorer votre score, soigner vos têtes blessées et opérer des changements de têtes entre votre sac à dos et votre sélection. 
+
+Q : Parfois, je ne peux plus bouger et j'ai une cage autour de moi. Pourquoi ?
+R : L'une des méthodes d'attaque dans H.E.D.Z est appelée « cellule ». Si vous visez un ennemi et utilisez cette arme, celui-ci sera prisonnier et incapable de bouger ou de tirer. Vous pouvez en profiter pour vous transformer en tête agressive et les faire exploser. Mais bien sûr, ça peut vous arriver à vous aussi...  
+
+Q : Certaines têtes sont-elles plus efficaces que d'autres ?
+R : Oui. A mesure que vous progressez dans le jeu, les têtes sont de plus en plus puissantes, avec des pouvoirs de plus en plus étendus. Cela dit, il y a un grand nombre de têtes disponibles et toutes ne sont pas agressives. Il faut arriver à gérer les différents types de têtes et à utiliser au mieux leurs pouvoirs respectifs. 
+
+Q : Quelle est la différence entre H.E.D.Z, HEDZ et têtes ?
+R :  H.E.D.Z signifie Head Extreme Destruction Zone, c'est le nom officiel de la compétition.
+
+HEDZ désigne le peuple millénaire à l'origine de le compétition.
+
+Un membre de la confrérie Hedz est un alien.
+
+Les têtes sont les trophées que collectionnent les joueurs et qui appartenaient autrefois à des humains et à qui on les a volées. C'est également ce qui est posé sur vos épaules.

@@ -1,0 +1,339 @@
+=============================
+       	   H.E.D.Z.
+
+Head Extreme Destruction Zone
+=============================
+
+Stand: 9. September 1998
+
+Um die Lesbarkeit dieser Datei mit Notepad zu verbessern:
+
+Wählen Sie im „Bearbeiten"-Menü die Option „Zeilenumbruch".
+
+
+Willkommen zur H.E.D.Z. LiesMich-Datei.
+Diese Datei enthält Informationen, die im Handbuch nicht mehr untergebracht werden konnten.
+Bitte nehmen Sie sich die Zeit und lesen Sie den Inhalt dieser Datei durch, bevor Sie mit der Installation fortfahren.
+
+Sie finden hier Texte zu folgenden Themen:
+
+ 1. DIRECT X 5.2 und 6.0
+ 2. BILDAUFLÖSUNG
+ 3. H.E.D.Z. OHNE 3D-BESCHLEUNIGER-KARTE
+ 4. PROBLEME MIT 2D-/3D-BESCHLEUNIGER-KARTEN
+ 5. BEKANNTE PROBLEME MIT BESTIMMTEN 3D-BESCHLEUNIGERN & GRAFIKKARTEN
+ 6. WIE SIE DAS TEMPO VON H.E.D.Z. ERHÖHEN KÖNNEN
+ 7. PROBLEME MIT DER STEUERUNG
+ 8. VERBESSERUNGEN FÜRS HANDBUCH
+ 9. MONITOR/ENERGIESPAR-VORRICHTUNGEN
+10. BILDSCHIRMSCHONER
+11. MULTITASKING
+12. VIRTUELLE ARBEITSOBERFLÄCHE
+13. 16 BIT FARBE
+14.  TREIBER
+15.  AMD-PROZESSOREN
+
+
+
+
+1. DIRECT X 5.2 und 6.0
+
+H.E.D.Z. wurde unter DirectX 5.2 und DirectX 6.0 getestet.
+H.E.D.Z. benötigt als Minimum DirectX 5.2.
+H.E.D.Z. setzt voraus, daß sämtliche Hardware und Treiber von DirectX 5.2 oder einer höheren Version authentisiert sind. Wenn das bei einem Gerät nicht der Fall ist, wenden Sie sich bitte an seinen Hersteller und bitten Sie ihn um aktuelle DirectX 5.2 oder DirectX 6.0-Treiber.
+Die H.E.D.Z.-Installation prüft, ob Sie eine nötige Version von DirectX installiert haben und fordert Sie auf, dies nachzuholen, wenn es nicht der Fall ist. In diesem Fall wird DirectX 5.2 auf Ihrem System installiert. Wenn Sie bereits DirectX 6.0 auf Ihrem System haben, wird es nicht durch Version 5.2 überschrieben.
+
+Wenn in Ihrem System eine 3D-Beschleunigerkarte installiert ist, und Sie DirectX 6.0 installiert haben, wird H.E.D.Z. allgemein schneller laufen.
+
+Sie finden DirectX 6.0 auf der H.E.D.Z.-CD-ROM. Besonders als Besitzer einer 3D-Beschleunigerkarte werden Sie es zu schätzen wissen.
+
+HINWEIS: DirectX 6.0 ist eine komplexe Anwendung von Microsoft. Während der Installation werden Ihnen detaillierte und sehr spezifische Fragen über Ihren Rechner gestellt. DirectX 6.0 nimmt basierend auf Ihren Antworten Einstellungen vor. Wenn Sie falsche Antworten geben, beeinträchtigen Sie dadurch die Leistungsfähigkeit Ihres Systems. Nur fortgeschrittene Anwender sollten die Installation von DirectX 6.0 vornehmen.
+
+ACHTUNG: Es gibt ein bekanntes Problem mit H.E.D.Z. und DirectX 6.0 im Software-3D-Modus (also ohne 3D-Grafikkarte). Wenn die Flat-Shading-Option aktiv ist, kann es zu Grafikproblemen kommen.
+
+Wenn dieses Problem bei Ihnen auftritt, wenden Sie sich an Microsoft, um die aktuelle Version von DirectX zu erhalten. An einer Korrektur dieses Problems wird bereits während der Erstellung dieses Dokuments gearbeitet.
+
+Es ist möglich, DirectX 6.0 mit Hilfe des DXSETUP.EXE-Programms zu deinstallieren.  Wenn Sie das tun, können Sie DirectX 5.2 von der H.E.D.Z.-CD-ROM aus installieren - dies wird im Rahmen der Gesamtinstallation angeboten.
+
+ACHTUNG: Dies kann Auswirkungen auf  andere Spiele auf Ihrem Rechner haben.
+
+2. BILDAUFLÖSUNG
+
+Nicht alle Grafikkarten unterstützen die Grafikauflösungen, die H.E.D.Z. zur Verfügung stellt. Wenn Sie eine Auflösung einstellen und merken, daß das Spiel in einer anderen dargestellt wird, kann dies daran liegen, daß Ihre Grafikkarte eine Auflösung nicht unterstützt.
+Wenn dies der Fall ist, wird H.E.D.Z. automatisch eine Auflösung wählen, die von Ihrer Grafikkarte unterstützt wird.
+
+Z.B.: Einige Grafikkarten unterstützen die Auflösung von 512 x 384 Bildpunkten nicht. Wenn Ihre Karte diese Auflösung nicht unterstützt, schaltet H.E.D.Z. automatisch auf 640x480 Bildpunkte um.
+
+Einige 3D-Beschleunigerkarten unterstützen die Bildauflösung von 320 x 240 Punkten nicht. Wenn Ihre Karte diese Auflösung nicht unterstützt, schaltet H.E.D.Z. automatisch in auf 640 x 480 Bildpunkte um.
+
+
+3. H.E.D.Z. OHNE 3D-BESCHLEUNIGER-KARTE
+
+Nicht alle 2D-Grafikkarten unterstützen die Bildauflösung von 320 x 240 Punkten. 320 x 240 Bildpunkte ist die niedrigste Auflösung, die von H.E.D.Z unterstützt wird.
+Wenn Ihre 2D-Grafikkarte diese Auflösung nicht unterstützt, schaltet H.E.D.Z. automatisch auf 640 x 480 Bildpunkte um und stellt das Spiel mit einem schwarzen Rahmen dar.
+In diesem Modus können Sie die „+" und „-"-Tasten benutzen, um das Bild zu vergrößern und verkleinern. Wenn Sie das Bild verkleinern, sollte das Spiel schneller werden.
+
+
+4. PROBLEME MIT 2D-/3D-BESCHLEUNIGER-KARTEN
+
+H.E.D.Z verfügt über eine eigene Render-Engine. Sie können das Spiel komplett auf Software-Rendering umschalten und benötigen somit keine 3D-Beschleuniger-Karte.
+
+Um die 2D/3D-Hardware-Beschleunigung abzuschalten, folgen Sie diesen Anweisungen:
+
+DirectX 5.2
+
+>Von der Arbeitsoberfläche aus ...
+Doppelklicken Sie auf Ihren „Arbeitsplatz".
+Doppelklicken Sie auf Ihr „C:"-Laufwerk.
+Doppelklicken Sie auf den „Programme"-Ordner.
+Doppelklicken Sie auf den „DirectX"-Ordner. 
+Doppelklicken Sie auf den „Setup"-Ordner.
+Doppelklicken Sie auf das „DXTOOL.EXE"-Icon. 
+Das DirectX-Treiber-Optionsmenü sollte erscheinen.
+Unten in diesem Menü sollten Sie zwei Boxen sehen.
+Dort steht: 	Use Direct 3d hardware acceleration (Direct 3D-Hardware-Beschleunigung benutzen)
+Use Direct Draw hardware acceleration (Direct Draw-Hardware-Beschleunigung benutzen)
+
+Links von diesen Texten befindet sich jeweils eine Box.
+Klicken Sie diese Boxen an, um die Markierung aufzuheben.
+Klicken Sie auf den Apply-Button (Übernehmen), um die Änderungen wirksam zu machen.
+Schließen Sie die Fenster wieder.
+Starten Sie Ihren Rechner neu.
+
+DirectX 6.0
+
+>Von der Arbeitsoberfläche aus ...
+Doppelklicken Sie auf Ihren „Arbeitsplatz".
+Doppelklicken Sie auf Ihr „C:"-Laufwerk.
+Doppelklicken Sie auf den „Programme"-Ordner.
+Doppelklicken Sie auf den „DirectX"-Ordner. 
+Doppelklicken Sie auf den „Setup"-Ordner.
+Doppelklicken Sie auf das „DXDIAG.EXE"-Icon.
+Klicken Sie den „Display1"-Reiter (Anzeige1) oben im Menü an.
+Die „Display 1"-Informationen sollten nun angezeigt werden.
+In der Mitte des Fensters sollten Sie unter den DirectX-Features die folgenden Boxen finden: 
+Direct Draw
+Direct 3D
+
+Sie sollten zuerst die „Direct 3D"-Option deaktivieren.
+Es wird eine Meldung erscheinen, die Sie darauf hinweist, daß Sie die Hardware-Beschleunigung komplett abschalten.
+Klicken Sie auf den OK-Button.
+Deaktivieren Sie nun die „Direct Draw"-Option.
+Es wird eine Meldung erscheinen, die Sie darauf hinweist, daß Sie die Hardware-Beschleunigung für Direct Draw sowie die 3D-Beschleunigung abschalten.
+Klicken Sie auf den OK-Button.
+Klicken Sie die „Exit"-Option (Beenden).
+Schließen Sie alle Fenster.
+Starten Sie Ihren Rechner neu.
+
+Sollten Sie noch immer Grafikprobleme in H.E.D.Z. haben, probieren Sie die folgenden Schritte.
+
+A. Stellen Sie sicher, daß die Stromversorgung Ihres Rechners einwandfrei funktioniert.
+B. Stellen Sie sicher, daß sämtliche Kabel und Stecker fest eingesteckt sind und nicht wackeln oder lose sind.
+C. Überprüfen Sie, ob die Grafik in anderen Anwendungen/Spielen funktioniert.
+D. Überprüfen Sie, ob DirectX sämtliche Hardware-Treiber authentisiert hat.
+E. Wenden Sie sich an den Hersteller Ihrer Grafikkarte und fragen Sie an, woher Sie aktuelle DirectX-Treiber für Ihre Grafikkarte bekommen.
+F. Wenden Sie sich an Hasbros Technischen Kundendienst.
+
+
+5. BEKANNTE PROBLEME MIT BESTIMMTEN 3D-BESCHLEUNIGERN & GRAFIKKARTEN
+
+Bei den folgenden Grafikkarten kann es zu Problemen mit H.E.D.Z. kommen:
+
+Millenium 1
+ 
+Diese Karte unterstützt keine Texturen. Das Spiel läuft ausschließlich im Software-Modus.
+
+
+Power VR 
+
+Die aktuellen Treiber dieser Karte können Probleme mit H.E.D.Z. verursachen. Windows gibt die Speichermenge dieser Grafikkarte falsch an. Wenn Sie eine Power VR-Grafikkarte benutzen und Probleme mit H.E.D.Z. haben, versuchen Sie Folgendes:
+	
+A. Verringern Sie die Auflösung Ihrer Arbeitsoberfläche, bevor Sie das Spiel starten.
+
+B. Wenden Sie sich an den Hardware-Hersteller und bitten Sie ihn um aktuelle DirectX-Treiber für seine Karte.
+
+C. Wenden Sie sich an Microsoft.
+
+
+S3/Apocalypse 3D/3Dx oder Captivator
+
+Wenn Ihr Rechner das AWARD BIOS und den S3 968 oder 868 Chipsatz benutzt, kann er durch die Benutzung einer Apocalypse 3D /3Dx oder Captivator PCI abstürzen. Dieses Problem kann behoben werden, indem die Speicherzuweisung der Zusatzkarte auf einen Bereich außerhalb der 64 MB eingestellt wird, die die Karte benutzt.
+
+Wenn Sie dies tun möchten, wenden Sie sich für genaue Anweisungen an der Hersteller Ihrer Hardware.
+
+
+Matrox-Karten mit Apocalypse 3Dx
+
+Wenn Sie eine Matrox Millennium- oder Mystique-Karte benutzen, kann dies im Zusammenspiel mit einer Apocalypse 3Dx zu Problemen führen. Um diese Karten zu unterstützen, werden die Apocalypse 3Dx-Features auf „Standard" für 3D-Beschleunigung zurückgeschaltet. Um die von der „Optimiert"-Einstellung profitieren zu können, müssen Sie die Matrox-Grafiktreiber mindestens auf Version v3.63 updaten.
+
+
+6. WIE SIE DAS TEMPO VON H.E.D.Z. ERHÖHEN KÖNNEN
+
+Sobald H.E.D.Z. startet, sollte ein Fenster mit einer Reihe von Optionen erscheinen. Einer diese Buttons ist der „Optionen"-Button. Klicken Sie ihn an, und Sie können Einstellungen für die Grafik von H.E.D.Z. vornehmen.
+
+Bildauflösung
+Hier können Sie die Auflösung einstellen, in der Sie H.E.D.Z. spielen. Je niedriger die Auflösung ist, desto schneller wird H.E.D.Z. laufen. Je höher die Auflösung ist, desto besser wird die Bildqualität. Einige Grafikkarten unterstützen nicht alle Auflösungen, die H.E.D.Z. anbietet. Wenn Sie eine Auflösung wählen, die von H.E.D.Z. nicht unterstützt wird, schaltet das Spiel automatisch auf eine unterstütze Auflösung um.
+
+Detailgrad / Horizont
+Hier können Sie einstellen, wie weit der „Horizont" auf Ihrem Rechner entfernt ist, d.h. ab welcher Entfernung von der Spielfigur Objekte angezeigt werden. Je geringer dieser Abstand ist, desto schneller läuft das Spiel. Je größer dieser Abstand ist, desto besser ist Ihr Überblick im Spiel - und desto realistischer die Darstellung von Objekten.
+
+Detailgrad - Objekte
+Hier können Sie festlegen, wie detailliert die einzelnen Charaktere dargestellt werden. Der Unterschied ist nicht sehr groß - möglicherweise wird er Ihnen im Spiel überhaupt nicht auffallen. Wenn Sie „Wenige Details" einstellen, werden einige der Feinheiten bei den Charakteren nicht mehr dargestellt. Hierdurch läuft das Spiel insgesamt etwas schneller. Wenn Sie lieber viele Details haben, ist die Grafik besser, das Spiel aber mitunter langsamer.
+
+Detailgrad - Licht
+Hier können Sie einstellen, welche Technik für die Beleuchtung benutzt wird. „Flat-Shading" führt zu strahlenderen Grafiken mit wenigen Schatten und Lichteffekten sowie einer höheren Bildwiederholrate.
+Gouraud-Shading macht die Beleuchtung weicher. Auf Rechnern ohne 3D-Beschleunigerkarte wird das Spiel hierdurch langsamer. Auf Rechnern mit 3D-Beschleunigerkarte sollte das Tempo gleichbleiben, die Grafik aber realistischer aussehen.
+		
+
+7. PROBLEME MIT DER STEUERUNG
+
+Es kann vorkommen, daß das Spiel nach der Benutzung des H.E.D.Z.-Steuerungs-Setups im Optionsmenü langsam auf den Joystick/das Gamepad reagiert.
+Wenn dies der Fall ist, sollten Sie Ihr Spiel speichern, H.E.D.Z. beenden und den Joystick/das Gamepad erneut testen.
+
+Folgen Sie dazu diesen Anweisungen:
+
+Klicken Sie auf den Start-Button. 
+Wählen Sie die „Einstellungen" und klicken Sie mit der linken Maustaste.
+Wählen Sie nun die Systemsteuerung und rufen Sie sie auf.
+
+Wenn Sie in der Systemsteuerung angelangt sind, doppelklicken Sie auf die „Spielsteuerungen".
+Nun sollte der Name Ihres Joysticks/Gamepads in dem Fenster erscheinen - ebenso wie sein Status. Wenn hier ein anderer Joystick angegeben wird als Sie angeschlossen haben, sollten Sie das Gerät aus der Liste entfernen und das richtige hinzufügen. Möglicherweise müssen Sie die zugehörige Software neu installieren.
+
+Wenn der Status nicht als „OK" angegeben wird, prüfen Sie, ob das Gerät richtig angeschlossen ist. Wenn das der Fall ist und das Problem weiterhin besteht, sollten Sie das Gerät nochmal entfernen und erneut anschließen. Wenn das Problem hierdurch nicht gelöst wird, deinstallieren und installieren Sie die Treibersoftware für das Gerät erneut. Wenn das Gerät korrekt angeschlossen ist und sein Status als „OK" angegeben wird, klicken Sie auf den „Eigenschaften"-Button.
+
+Klicken Sie hier auf den „Testen"-Reiter.
+
+>In diesem Menü können Sie Ihr/en Joystick/Gamepad testen.
+Wenn Ihr Gerät nicht richtig anspricht, klicken Sie auf  den „Einstellungen"-Reiter.
+Klicken Sie nun auf den „Kalibrieren"-Button und folgen Sie den Anweisungen auf dem Bildschirm.
+Klicken Sie zum Abschluß auf „OK" oder „Übernehmen", damit Ihre Änderungen wirksam werden.
+
+
+8. VERBESSERUNGEN FÜRS HANDBUCH
+
+H.E.D.Z. Handbuch, Seite 12, letzer Absatz, 3. Satz
+
+Hier steht, daß die Spieler bereits abgeschlossene Level erneut besuchen können. Dies ist nicht der Fall.
+
+
+H.E.D.Z. Handbuch, Seite 15, Abschnitt: „Die Steuerung im Spiel":
+
+2-Tasten-Maus, Voreinstellung
+Linke Maustaste: Feuer
+Rechte Maustaste: Hed wechseln
+
+3-Tasten-Maus, Voreinstellung
+Linke Maustaste: Feuer
+Mittlere Maustaste: unbelegt
+Rechte Maustaste: Hed wechseln
+
+Maustasten können in H.E.D.Z. nicht mit Bewegungskommandos belegt werden. Wenn Sie eine Maustaste mit einem solchen Kommando belegen, wird sie im Spiel nicht richtig funktionieren.
+
+Seitliche Bewegungen mit Maus und Joystick sind für die Drehung der Spielfiguren zuständig. Diese Funktionen können nicht umbelegt werden.
+
+
+
+9. MONITOR/ENERGIESPAR-VORRICHTUNGEN
+
+Wenn Sie H.E.D.Z. zusammen mit einer Energiespar-Vorrichtung betreiben, kann es zu Kompatibilitätsproblemen kommen. Wenn der Computer längere Zeit inaktiv war, schaltet eine Energiespar-Vorrichtung den Monitor ab, damit sich das Bild nicht einbrennt. Dadurch wird möglicherweise Ihr Zugriff auf H.E.D.Z. unterbunden. Um Probleme solcher Art zu vermeiden, schalten Sie die Energiepsar-Vorrichtung ab.
+
+Um die Energiespar-Vorrichtung abzuschalten, folgen Sie diesen Anweisungen.
+Klicken Sie auf den Start-Button, wählen Sie dann „Einstellungen" und die Systemsteuerung.
+Wenn Sie dort angelangt sind, rufen Sie die „Anzeige"-Option per Doppelklick auf und wählen Sie dort den „Bildschirmschoner"-Reiter.
+Wenn Ihr Monitor die Power/Energy Saver-Anforderungen erfüllt, finden Sie unten einige Optionen, die Sie deaktivieren sollten. Klicken Sie auf den „Übernehmen"-Button, um die gemachten Änderungen zu speichern.
+
+
+10. BILDSCHIRMSCHONER
+
+Wenn Sie H.E.D.Z. auf einem System laufen lassen, auf dem im Hintergrund ein Bildschirmschoner aktiv ist, kann dies zu Problemen führen. Nach längerer Inaktivität des Rechners wird der Bildschirmschoner aktiviert, um ein Einbrennen des Bildes zu verhindern. Dadurch kann es zu Problemen mit H.E.D.Z. kommen. Um das zu vermeiden, sollten Sie Ihren Bildschirmschoner abschalten.
+
+Um den Bildschirmschoner zu deaktivieren, folgen Sie diesen Anweisungen:
+
+Klicken Sie auf den Start-Button, wählen Sie dann „Einstellungen" und die Systemsteuerung.
+Wenn Sie dort angelangt sind, rufen Sie die „Anzeige"-Option per Doppelklick auf und wählen Sie dort den „Bildschirmschoner"-Reiter.
+
+Im linken Teil dieses Menüs finden Sie ein Aufklappmenü, in dem Sie die verschiedenen Arten von Bildschirmschonern auswählen können. Wählen Sie hier die Option „Kein". Klicken Sie nun auf „OK", um Ihre Änderung zu übernehmen.
+ 
+
+11.    MULTITASKING
+
+Wir raten Ihnen davon ab, H.E.D.Z. laufen zu lassen, während noch andere Anwendungen im Hintergrund aktiv sind. H.E.D.Z. ist sehr speicher- und rechenintensiv. Hierdurch kann es im Multitasking-Betrieb zu Fehlern kommen. 
+
+
+
+12. VIRTUELLE ARBEITSOBERFLÄCHE
+
+Sie sollten H.E.D.Z. nicht auf einem Rechner laufen lassen, der eine virtuelle Arbeitsoberfläche benutzt. Wenn es dadurch im Spiel zu Problemen kommt, sollten Sie die virtuelle Arbeitsoberfläche abschalten.
+
+Gehen Sie hierzu wie folgt vor:
+
+Klicken Sie auf den Start-Button, wählen Sie dann „Einstellungen" und die Systemsteuerung.
+Wenn Sie dort angelangt sind, rufen Sie die „Anzeige"-Option per Doppelklick auf und wählen Sie dort den für Ihre Grafikkarte zuständigen „Einstellungen"-Reiter.
+
+Wenn Ihre Grafikkarte eine virtuelle Arbeitsoberfläche unterstützt, stellen Sie die Größe der virtuellen Arbeitsoberfläche identisch mit der sichtbaren Größe ein oder schalten Sie das Feature einfach ab.
+Klicken Sie nun den „OK"- oder „Übernehmen"-Button.
+
+
+13. 16 BIT FARBE
+
+H.E.D.Z. läuft nur im High Colour-Modus (16 Bit Farbtiefe). Daher müssen Sie Ihren Rechner entsprechend einrichten, bevor Sie H.E.D.Z. starten.
+
+Um die gegenwärtige Einstellung für die Farbtiefe der Arbeitsoberfläche zu erfahren, folgen Sie diesen Anweisungen:
+
+Klicken Sie auf den Start-Button, wählen Sie dann „Einstellungen" und die Systemsteuerung.
+Wenn Sie dort angelangt sind, rufen Sie die „Anzeige"-Option per Doppelklick auf und wählen Sie dort den „Einstellungen"-Reiter.
+Unter „Farbpalette" finden Sie die Einstellung für die Farbtiefe Ihrer Arbeitsoberfläche. 
+Wählen Sie hier 16 Bit Farbtiefe (High Colour) und klicken Sie auf „OK".
+HINWEIS: Es kann sein, daß Sie den Rechner nun neustarten müssen.
+
+
+
+14.  TREIBER
+Die H.E.D.Z.-CD-ROM enthält einen Ordner namens „SUPPORT". In diesem Ordner finden Sie die aktuellen 3Dfx-Glide-Treiber sowie aktuelle Treiber für andere Grafikkarten. Um den richtigen Treiber zu installieren, müssen Sie wissen, von welchem Hersteller Ihre Grafikkarte stammt.
+
+ACHTUNG: Wenn Sie den falschen Grafiktreiber installieren, kann das die Leistung Ihres System beeinträchtigen. Wir raten nur fortgeschrittenen Anwendern, ein Treiber-Update vorzunehmen.
+
+Um die aktuellen 3Dfx-Glide-Treiber von der H.E.D.Z.-CD-ROM zu installieren, folgen Sie bitte folgenden Anweisungen.
+
+Rechtsklicken Sie auf Ihren „Arbeitsplatz".
+Wählen Sie „Eigenschaften"-Option oder drücken Sie die „I"-Taste.
+Klicken Sie auf den Geräte-Manager-Reiter.
+Doppelklicken Sie auf „Audio-, Video- und Game-Controller".
+Nun sollten einige Einträge in dieser Kategorie auftauchen.
+Wenn Sie bereits eine Version von DirectX auf Ihrem Rechner installiert haben, doppelklicken Sie auf „3Dfx Interactive, Inc."
+Wenn DirectX noch nicht installiert war, müssen Sie auf den Namen des Herstellers Ihrer Karte doppelklicken. Wenn Sie z.B. eine Diamond Monster 3D benutzen, sollten Sie auf „Diamond Monster 3D" klicken.
+Nun sollte ein Fenster mit den Eigenschaften Ihrer Grafikkarte erscheinen.
+Klicken Sie nun auf den „Treiber"-Reiter.
+Klicken Sie nun auf den „Anderer Treiber"-Button.
+Stellen Sie sicher, daß im nächsten Fenster die „Ja (Empfohlen)"-Option angewählt ist und klicken Sie den „Weiter"-Button.
+Der Rechner sollte nun nach einer Diskette in Laufwerk A: suchen. Nach einigen Sekunden wird er sich zurückmelden und Sie bitten, den Ort anzugeben, an dem sich der neue Treiber zur Installation befindet.
+Wechseln Sie nun ins Stammverzeichnis der H.E.D.Z.-CD-ROM.
+Doppelklicken Sie nun auf den „Support"-Ordner.
+Doppelklicken Sie nun auf den „Glide"-Ordner.
+Suchen Sie den Namen Ihrer 3D-Karte und öffnen Sie den entsprechenden Ordner. Merken Sie sich diesen Ordner - Sie werden ihn später nochmal benötigen.
+Klicken Sie auf „OK".
+Klicken Sie im Auswahlmenü erneut „OK".
+Der Name des von Ihnen gewählten Treibers sollte nun angezeigt werden.
+Klicken Sie auf „Beenden".
+Nun erscheint eine Nachricht, in der Sie aufgefordert werden, eine Disk einzulegen. Das ist normal.
+Klicken Sie auf „OK".
+Nun sollte der Treiber kopiert werden.
+Wenn das beendet ist, klicken Sie auf den „Durchsuchen"-Button.
+Begeben Sie sich nun erneut zu Ihrem CD-ROM-Laufwerk und in das Verzeichnis, in dem sich der Treiber für Ihre Karte befindet. Öffnen Sie den Ordner.
+Wenn Sie den richtigen Ordner geöffnet haben, sollte der Name des Treibers links erscheinen. Hinweis: Sie sollten den Namen der Datei im „Kopiere Dateien"-Fenster sowie im Bereich direkt unter ihm sehen können.
+Klicken Sie nun auf „OK".
+Klicken Sie erneut auf „OK".
+Nun sollten Sie sehen, wie der neue Treiber kopiert wird.
+Wenn der Vorgang abgeschlossen ist, werden Sie gebeten, den Rechner neuzustarten. Tun Sie dies.
+
+
+15.  AMD-PROZESSOREN
+H.E.D.Z. wurde auf mehreren Rechnern von AMD getestet. Während der Tests wurde festgestellt, daß einige der Rechner mit älteren Grafiktreibern ausgeliefert worden waren. Wenn Sie einen AMD-Rechner benutzen und Probleme mit H.E.D.Z. haben, wenden Sie sich bitte an den Hersteller des Rechners oder der Grafikkarte und bitten Sie ihn um aktuelle, DirectX 5.2- oder 6.0-authentisierte Treiber für das Gerät.
+
+
+**********  E N D E   D E R   D A T E I  **********
+
+
+
+
+

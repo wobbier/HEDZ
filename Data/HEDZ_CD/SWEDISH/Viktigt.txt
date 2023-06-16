@@ -1,0 +1,413 @@
+=============================
+       	   H.E.D.Z.
+
+Head Extreme Destruction Zone
+=============================
+
+Datum: 9 september 1998
+
+Gör på följande sätt för att förbättra läsbarheten om du använder Anteckningar:
+
+Gå till menyn "Redigera" och välj "Radbyte"
+
+
+Välkommen till H.E.D.Z. Readme-fil.
+Denna fil innehåller tillägg till den information som finns i spelets manual.
+Du bör ge dig tid att läsa igenom denna fil innan du påbörjar installationen.
+
+Denna fil innehåller information om följande:
+
+ 1. DIRECTX 5.2 och 6.0
+ 2. SKÄRMUPPLÖSNING
+ 3. SPELA H.E.D.Z. UTAN ETT 3D-ACCELERATORKORT
+ 4. PROBLEM MED 2D/3D-GRAFIKKORT
+ 5. KÄNDA PROBLEM MED SPECIFIKA 3D-ACCELERATORKORT OCH GRAFIKKORT
+ 6. ÖKA HASTIGHETEN I H.E.D.Z.
+ 7. PROBLEM MED SPELKONTROLLER
+ 8. ÄNDRINGAR I MANUALEN - USA
+ 8. ÄNDRINGAR I MANUALEN - EUROPA
+ 9. ENERGISPARFUNKTIONER
+10. SKÄRMSLÄCKARE
+11. SAMKÖRNING AV PROGRAM
+12. VIRTUELLT SKRIVBORD
+13. 16 BITAR FÄRG
+14. DRIVRUTINER
+15. AMD-MASKINER
+
+
+
+1. DIRECTX 5.2 och 6.0
+
+H.E.D.Z. har testats tillsammans med DirectX 5.2 och Direct X 6.0.
+Du måste ha DirectX 5.2 eller senare installerat på din dator för att kunna köra H.E.D.Z.
+H.E.D.Z. kräver att datorns alla enheter och drivrutiner stöds av DirectX 5.2 eller senare. Om en enhet inte stöds av DirectX bör du kontakta tillverkaren av enheten och skaffa de drivrutiner till aktuell enhet som stöds av DirectX 5.2 eller DirectX 6.0.
+Installationsprogrammet för H.E.D.Z. känner av om datorn har en kompatibel version av DirectX installerad. Om datorn inte har en sådan version visas ett meddelande om detta. Du tillfrågas om du vill installera DirectX 5.2 på din maskin. 
+Installationsprogrammet för H.E.D.Z. överskriver inte DirectX 6.0 om det redan finns installerat på din dator.
+
+Om du har ett 3D-acceleratorkort i din maskin och har DirectX 6.0 installerat körs H.E.D.Z. snabbare än normalt.
+
+DirectX 6.0-programmet ingår i CD-skivan H.E.D.Z. Programmet har inkluderats för att ge avancerade användare med 3D-acellerationskort möjlighet att dra nytta av en generell hastighetsökning samtidigt som H.E.D.Z. körs i en DirectX 6.0-miljö. 
+
+OBS: DirectX 6.0 är ett komplicerat Microsoft-program. Under installationen av DirectX 6.0 måste du ge svar på mycket specifika och detaljerade frågor om ditt system. DirectX 6.0-programmet kan göra ändringar i din dator mot bakgrund av de svar du ger på dessa frågor. Om dina svar inte är korrekta kan ditt systems prestanda påverkas negativt. Vi rekommenderar bestämt att enbart avancerade datoranvändare genomför installationen av DirectX 6.0. 
+
+VARNING: Ett problem rörande H.E.D.Z. och DirectX 6.0 är redan känt. Om spelet körs i enbart programläget, dvs. utan ett 3D-acceleratorkort och alternativet flat-shading är valt kan du erfara vissa problem med grafiken. 
+
+Om du drabbas av ett sådant problem bör du kontakta Microsoft för att skaffa den senaste versionen av DirectX. En lösning på detta problem arbetades fram när H.E.D.Z. gick i tryck.
+
+Det är möjligt att avinstallera DirectX 6.0 med hjälp av hjälpprogrammet Dxsetup.exe. När detta är gjort och du installerar H.E.D.Z. från CD-skivan installeras även DirectX 5.2 på datorn.
+
+VARNING:  Detta kan påverka andra spel som är installerade på din maskin. 
+
+2. SKÄRMUPPLÖSNING
+
+Inte alla grafikkort stöder de olika skärmupplösningarna som finns i H.E.D.Z. Om du väljer en specifik upplösning på valskärmen men upptäckar att spelet körs med mindre upplösning beror detta förmodligen på att ditt grafikkort inte stöder den upplösning du tidigare har valt. H.E.D.Z.-programmet väljer automatiskt en skärmupplösning som stöds av ditt grafikkort. 
+
+Vissa grafikkort stöder inte skärmupplösningen 512 x 384. Om ditt grafikkort inte stöder denna upplösning väljer H.E.D.Z. automatiskt upplösningen 640 x 480.
+
+Vissa 3D-acceleratorkort stöder till exempel inte spelupplösningen 320 x 240. Om ditt 3D-acceleratorkort inte stöder denna upplösning väljer H.E.D.Z. automatiskt upplösningen 640 x 480.
+
+
+3.   SPELA H.E.D.Z. UTAN ETT 3D-ACCELERATORKORT
+
+Inte alla 2D-grafikkort stöder upplösningen 320 x 240. H.E.D.Z. kan inte köras med lägre upplösning än 320 x 240. 
+Om ditt 2D-grafikkort inte stöder upplösningen 320 x 240 väljer H.E.D.Z. automatiskt upplösningen 640 x 480 och omger spelskärmen med en svart kant. 
+När du befinner dig i detta spelläge trycker du på + och - på tangentbordet för att öka eller minska spelets hastighet. 
+
+
+
+4. PROBLEM MED 2D/3D-GRAFIKKORT
+
+H.E.D.Z.-programmet har ett inbyggt renderingsprogram. Du kan deaktivera 2D- och 3D-accelerationen och låta H.E.D.Z. renderingsprogram kontrollera spelet. 
+
+Deaktivera din 2D/3D-acceleration genom att följa anvisningarna nedan noga. 
+
+DirectX 5.2
+
+Från Windows skrivbord
+Dubbelklicka med vänster musknapp på ikonen 'Den här datorn'. 
+Dubbelklicka med vänster musknapp på ikonen 'Disk c'. 
+Dubbelklicka med vänster musknapp på 'Programfiler'.
+Dubbelklicka med vänster musknapp på mappen 'DirectX'. 
+Dubbelklicka med vänster musknapp på mappen 'Set Up'. 
+Dubbelklicka med vänster musknapp på ikonen 'DXTOOL.exe'. 
+Ett DirectX-fönster visas.
+Två alternativ visas längst ner i DirectX-fönstret. 
+Alternativen är: 	Use Direct 3d hardware acceleration (Använd Direkt 3D-acceleration)
+Use Direct Draw hardware acceleration (Använd Direkt Draw-acceleration)
+
+En ruta finns intill varje alternativ. 
+Dubbelklicka med vänster musknapp i rutan för att ta bort markeringen. 
+Kom ihåg att klicka på knappen Verkställ för att aktivera eventuella förändringar.
+Stäng alla fönster. 
+Starta om din maskin. 
+
+DirectX 6.0
+
+Från Windows skrivbord
+Dubbelklicka med vänster musknapp på 'Den här datorn'. 
+Dubbelklicka med vänster musknapp på ikonen 'Disk c'. 
+Dubbelklicka med vänster musknapp på mappen 'Programfiler'.
+Dubbelklicka med vänster musknapp på mappen 'DirectX'. 
+Dubbelklicka med vänster musknapp på mappen 'Set Up'.
+Dubbelklicka med vänster musknapp på ikonen 'Dxdiag.exe'.
+Vänsterklicka på fliken 'Display 1' längst upp på skärmen. 
+'Display 1'-informationen visas på skärmen. 
+Två alternativ visas i fönstrets mitt under DirectX-funktionerna. 
+Alternativen är:	Direct Draw
+Direct 3D
+
+Vänsterklicka i rutan för deaktivering av 'Direct 3D' först. 
+Ett meddelande visas som talar om för dig att denna åtgärd deaktiverar all 3D-acceleration. 
+Vänsterklicka på 'OK'. 
+Vänsterklicka därefter i rutan för deaktivering av 'Direct Draw'. 
+Ett meddelande visas som talar om för dig att denna åtgärd deaktiverar all Direct Draw-acceleration och 3D-acceleration. 
+Vänsterklicka på 'OK'.
+Vänsterklicka på knappen 'Avsluta'.
+Stäng alla fönster.
+Starta om din maskin. 
+
+Gör på följande sätt om du ändå drabbas av grafikproblem när du kör H.E.D.Z.
+
+A. Kontrollera att datorn är ansluten till en fungerande strömkälla. 
+B. Kontrollera att alla sladdar och kontakter är på plats och inkopplade.
+C. Kontrollera att grafiken fungerar i andra program/spel. 
+D. Kontrollera att DirectX har godkänt samtliga drivrutiner. 
+E. Kontakta tillverkaren av grafikkortet och be om DirectX-godkända drivrutiner för ditt grafikkort. 
+F. Kontakta Hasbros kundtjänst.
+
+
+5. KÄNDA PROBLEM MED SPECIFIKA 3D-ACCELERATORKORT OCH GRAFIKKORT
+
+Följande kort uppvisar problem när de körs med H.E.D.Z.:
+
+Millenium 1
+ 
+Detta kort stöder inte textur-rendering. Spelet körs enbart i programläget. 
+
+
+Power VR 
+
+Nuvarande drivrutiner för Power VR kan uppvisa problem tillsammans med H.E.D.Z. Windows operativsystem uppger nämligen felaktig minnesmängd på kortet. Om du drabbas av problem när du kör H.E.D.Z. och använder grafikkortet Power VR ska du göra följande: 
+	
+A. Minska upplösningen på Windows skrivbord innan du kör spelet.
+
+B. Kontakta tillverkaren och be om de senaste DirectX-godkända drivrutinerna.
+
+C. Kontakta Microsoft. 
+
+
+S3/Apocalypse 3D/3Dx eller Captivator
+
+Om din dator är utrustad med AWARD BIOS och chipset S3 968 eller 868 riskerar du att drabbas av en datorkrasch om denna utrustning används tillsammans med Apocalypse 3D/3Dx eller Captivator PCI. Du kan lösa detta problem genom att manuellt ändra minnestilldelningen för det extra kortet till ett som ligger utanför de 64 MB som används av grafikkortet. 
+
+Kontakta tillverkaren av maskinvaran för information om hur du vidtar denna åtgärd. 
+
+
+Matrox-kort med Apocalypse 3Dx
+
+Vissa kända problem uppstår när grafikkorten Matrox Millennium eller Mystique används tillsammans med Apocalypse 3Dx. För att dessa kort ska stödjas måste egenskaper för Apocalypse 3Dx ställas in på Standard för 3D-acceleration. För att kunna använda optimeringsinställningen måste du uppdatera dina Matrox-drivrutiner för bildskärmen till v3.63 eller senare.
+
+Hercules Stingray grafikkort
+	
+Vissa kända problem uppstår när Hercules Stingray används med andra upplösningar än det förhandsvalda alternativet 640 x 480. Om du ställs inför ett sådant problem ska du först prova tillverkarens senaste drivrutiner. Om detta inte hjälper måste du välja upplösningen 640 x 480.
+
+6. ÖKA HASTIGHETEN I H.E.D.Z.
+
+Så snart H.E.D.Z. har startat visas ett fönster i Windows med ett antal knappar. En av de viktigaste knapparna är 'Valknappen'. Om du klickar på knappen 'Options' kan du ställa in hur H.E.D.Z. avbildas på skärmen. 
+
+Skärmupplösning
+Denna funktion ger spelaren möjlighet att välja i vilken upplösning H.E.D.Z. ska spelas. Lägre skärmupplösning ger snabbare bildhastighet, men en något sämre bildkvalitet. Högre skärmupplösning ger bättre bildkvalitet, men en något långsammare bildhastighet. Vissa grafikkort stöder inte alla skärmupplösningar i H.E.D.Z. Om du väljer en skärmupplösning som inte stöds av H.E.D.Z väljer spelet automatiskt en annan upplösning. 
+
+Detaljnivå - Clipping plane
+Denna funktion ger spelaren möjlighet att välja på vilket avstånd objekt ritas. Near clipping plane ritar och visar enbart objekt som befinner sig nära spelaren. Detta ökar bildhastigheten samtidigt som objekt längre bort inte visas. Far clipping plane ritar och visar alla objekt på skärmen. Detta ger en mer realistisk bild, men sänker bildhastigheten.
+		
+Detaljnivå - Modeller
+Detta alternativ ger spelaren möjlighet att välja detaljfaktor för varje figur. Ändringen är hårfin, vilket innebär att du kanske inte ens märker skillnaden mellan låg och hög inställning. En låg inställning innebär att vissa finare detaljer avlägsnas från grafiken. Detta ökar bildhastigheten samtidigt som grafiken försämras något. En hög inställning innebär att samtliga grafiska detaljer bibehålls. Detta ger grafiskt detaljerade figurer, men en lägre bildhastighet. 
+
+Detaljnivå - Ljussättning
+Ljussättningen ger spelaren möjlighet att välja teknik för återgivning av ljus. Flat Shaded innebär en ljusare och klarare grafik. Spelskuggor och ljuseffekter hålls på ett minimum. Detta ger en ökad spelhastighet, men mindre realistisk grafik. Gouraud Shading jämnar ut de skarpa linjerna som Flat Shading ger upphov till. Om spelet körs med Gouraud Shading sker detta långsammare på datorer som inte har ett 3D-accelerationskort. Ingen visuell skillnad bör uppstå på maskiner med 3D-accelerationskort.
+		
+
+
+7. PROBLEM MED SPELKONTROLLER
+
+När spelaren har använt kontrollinställningen på valskärmen för att specialinställa spelkommandon i H.E.D.Z. kan en fördröjning uppstå i responstiden för styrspaken/handkontrollen när spelaren ger nya kommandon. Om detta inträffar bör spelaren spara sitt spel, lämna H.E.D.Z. och testa styrspaken/handkontrollen. 
+
+OBS: I H.E.D.Z. kan spelaren inte ge kommandon med icke-standardtangenter. Exempel på sådana tangenter: insert, page up, page down, print screen, delete, F1, F2, etc.
+
+Testa styrspaken/handkontrollen på följande sätt. 
+
+Vänsterklicka på Start-knappen. 
+Placera musmarkören på knappen Inställningar och vänsterklicka. 
+Kontrollpanelen visas. 
+Placera musmarkören på mappen Kontrollpanel och vänsterklicka. 
+När du befinner dig på kontrollpanelen placerar du musmarkören på knappen Spelkontroller och vänsterklickar två gånger. 
+Kontrollens namn visas i fönstret. Kontrollstatus anges också. Om angiven kontroll skiljer sig från den som du för tillfället har ansluten bör du plocka bort den angivna kontrollen och lägga till den korrekta kontrollen. För att göra detta behöver du eventuellt ominstallera ditt styrspak/handkontroll-program på nytt. 
+Om status inte uppges vara OK ska du kontrollera att styrspaken/handkontrollen har anslutis på ett korrekt sätt. Om problemet inte avhjälps bör du avlägsna styrspaken/handkontrollen och lägga till den på nytt. Om detta inte påverkar din status för styrspak/handkontroll måste du eventuellt ominstallera kontrollprogrammet. 
+När korrekt styrspak/handkontroll anges och status uppges vara OK vänsterklickar du på knappen Egenskaper. 
+Vänsterklicka på fliken Test.
+På den skärm som visas kan spelaren testa styrspak/handkontroll. 
+Om styrspaken/handkontrollen inte svarar på kommando som avsett bör du vänsterklicka på fliken Inställningar. 
+För markören till kalibreringsknappen och vänsterklicka. 
+Följ anvisningarna noga. 
+Kom ihåg att klicka på knappen OK eller Verkställ för att aktivera de eventuella ändringar du har gjort. 
+
+
+8. ÄNDRINGAR I MANUALEN - USA 
+
+H.E.D.Z.-manual, sida 12, sista paragrafen, 3:e meningen
+
+I manualen sägs det att spelaren kan gå tillbaka till nivåer som redan har genomförts. Detta stämmer inte. 
+
+
+H.E.D.Z.-manual, sida 15, avsnitt "Kontroller i spelet":
+
+Förhandsinställda kontroller för mus med 2 knappar
+Vänster musknapp: Eld
+Höger musknapp: Byt huvud
+
+Förhandsinställda kontroller för mus med 3 knappar
+Vänster musknapp: Eld
+Mittknapp: Ingen funktion
+Höger musknapp: Byt huvud
+
+Musknapparna kan inte konfigureras för att emulera spelrörelser i H.E.D.Z. Om du konfigurerar en musknapp för att emulera rörelser fungerar inte musen som avsett under spelets gång. 
+
+Sidorörelser eller laterala rörelser med mus och styrspak är förhandsinställda på figurval i H.E.D.Z. Dessa funktioner kan inte omkonfigureras. 
+
+
+H.E.D.Z.-manual, sida 9, punkt tre i avsnittet "Ryggsäcken":
+
+I manualen sägs att en varning ljuder för att tala om att du inte kan byta huvud om du inte har tillräckligt med kontanter för att ladda om ett huvud. Detta innebär att bytet inte sker om spelaren inte har några kontanter och det huvud som hämtas från ryggsäcken inte har någon hälsa kvar. Om du har en liten summa kontanter kan du dock köpa ett dött huvud från ryggsäcken. Du behöver dessutom inga kontanter för att skaffa ett huvud från ryggsäcken som fortfarande innehar en viss hälsonivå.
+
+
+H.E.D.Z.-manual, sidan 8, avsnitt "Ryggsäcken", punkt 4:
+
+Det finns inget minimikrav för hur stor summa kontanter (över 0) som krävs för att hämta ett huvud från ryggsäcken. Om spelaren har en viss summa kontanter kan det huvud som hämtas från ryggsäcken enbart laddas upp till den nivå som motsvarars av aktuell kontantsumma. 
+
+
+8- ÄNDRINGAR I MANUALEN - EUROPA
+
+H.E.D.Z.-manual, sida 12, sista paragrafen, 3:e meningen
+
+I manualen sägs det att spelaren kan gå tillbaka till nivåer som redan har genomförts. Detta stämmer inte. 
+
+
+H.E.D.Z.-manual, sida 15, avsnitt "Kontroller i spelet":
+
+Förhandsinställda kontroller för mus med 2 knappar
+Vänster musknapp: Eld
+Höger musknapp: Byt huvud
+
+Förhandsinställda kontroller för mus med 3 knappar
+Vänster musknapp: Eld
+Mittknapp: Ingen funktion
+Höger musknapp: Byt huvud
+
+Musknapparna kan inte konfigureras för att emulera spelrörelser i H.E.D.Z. Om du konfigurerar en musknapp för att emulera rörelser fungerar inte musen som avsett under spelets gång. 
+
+Sidorörelser eller laterala rörelser med mus och styrspak är förhandsinställda på figurval i H.E.D.Z. Dessa funktioner kan inte omkonfigureras. 
+
+H.E.D.Z.-manual, sida 9, punkt tre i avsnittet "Ryggsäcken":
+
+I manualen sägs att en varning ljuder för att tala om att du inte kan byta huvud om du inte har tillräckligt med kontanter för att ladda om ett huvud. Detta innebär att bytet inte sker om spelaren inte har några kontanter och det huvud som hämtas från ryggsäcken inte har någon hälsa kvar. Om du har en liten summa kontanter kan du dock köpa ett dött huvud från ryggsäcken. Du behöver dessutom inga kontanter för att skaffa ett huvud från ryggsäcken som fortfarande innehar en viss hälsonivå.
+
+
+H.E.D.Z.-manual, sidan 8, avsnitt "Ryggsäcken", punkt 4:
+
+Det finns inget minimikrav för hur stor summa kontanter (över 0) som krävs för att hämta ett huvud från ryggsäcken. Om spelaren har en viss summa kontanter kan det huvud som hämtas från ryggsäcken enbart laddas upp till den nivå som motsvarars av aktuell kontantsumma. 
+
+
+The manual refers to LF's turning red if they pick up a deadhead.  This mode is only available with 3D Hardware Acceleration
+
+
+9.   ENERGISPARFUNKTIONER
+
+Ett kompatibilitetsproblem kan uppstå om H.E.D.Z. körs på bildskärmar med aktiva energisparfunktioner. Sådana funktioner träder i kraft efter en viss tids inaktivitet för att skydda bildskärmen. Detta kan resultera i att H.E.D.Z. inte längre svarar på givna kommandon. Användaren bör undvika att detta problem uppstår genom att deaktivera eventuella energisparfunktioner. 
+
+Deaktivera en energisparfunktion genom att följa anvisningarna nedan.
+Vänsterklicka på Start-knappen. 
+Placera musmarkören på knappen Inställningar och vänsterklicka. 
+Kontrollpanelen visas. 
+Placera musmarkören på mappen Kontrollpanel och vänsterklicka. 
+När du befinner dig på kontrollpanelen placerar du musmarkören på knappen Bildskärm och vänsterklickar två gånger.
+Vänsterklicka på fliken Skärmsläckare.
+Om din bildskärm skyddas av en energisparfunktion anges ett antal alternativ för kontroll av denna funktion längst ner i fönstret. Användaren kan deaktivera funktionen på denna plats. Kom ihåg att klicka på knappen Verkställ för att aktivera dina ändringar.
+
+
+
+10.   SKÄRMSLÄCKARE
+
+Ett kompatibilitetsproblem kan uppstå om H.E.D.Z. körs på bildskärmar med aktiva skärmsläckare. Sådana funktioner träder i kraft efter en viss tids inaktivitet för att skydda bildskärmen. Detta kan resultera i att H.E.D.Z. inte längre svarar på givna kommandon. Användaren bör undvika att detta problem uppstår genom att deaktivera eventuella skärmsläckare.
+
+Deaktivera skärmsläckaren genom att följa anvisningarna nedan.
+Vänsterklicka på Start-knappen. 
+Placera musmarkören på knappen Inställningar och vänsterklicka. 
+Kontrollpanelen visas. 
+Placera musmarkören på mappen Kontrollpanel och vänsterklicka. 
+När du befinner dig på kontrollpanelen placerar du musmarkören på knappen Bildskärm och vänsterklickar två gånger.
+Vänsterklicka på fliken Skärmsläckare.
+Vänsterklicka på nerpilen till höger om skärmsläckarens fönster.
+En valruta med olika skärmsläckar visas.
+Bläddra till alternativet Ingen och välj det.
+Kom ihåg att klicka på knappen Verkställ för att aktivera dina ändringar.
+
+11.   SAMKÖRNING AV PROGRAM
+
+Vi rekommenderar att användaren inte spelar H.E.D.Z. samtidigt som andra program körs i bakgrunden. H.E.D.Z. är ett minnesintensivt program. Oväntatde fel kan uppstå om det körs tillsammans med andra program. 
+
+
+
+12. VIRTUELLT SKRIVBORD
+
+Ett kompatibilitetsproblem kan uppstå om H.E.D.Z. körs på bildskärmar med ett aktivt virtuellt skrivbord. Om du får problem med ditt spel bör du deaktivera denna funktion. 
+
+Deaktivera det virtuella skrivbordet genom att följa anvisningarna nedan.
+Vänsterklicka på Start-knappen. 
+Placera musmarkören på knappen Inställningar och vänsterklicka. 
+Kontrollpanelen visas. 
+Placera musmarkören på mappen Kontrollpanel och vänsterklicka. 
+När du befinner dig på kontrollpanelen placerar du musmarkören på knappen Bildskärm och vänsterklickar två gånger.
+Vänsterklicka på fliken Inställningar.
+Om din bildskärm och ditt grafikkort stöder virtuellt skrivbord kan du se ett antal bilder till höger om fönstret. Varje bild representerar ett Virtuell skrivbord-program. 
+Placera musmarkören över grafiken. Ett textmeddelande visas inom kort som informerar dig om vad varje grafik representerar. Du bör välja grafik med texten 'Inget Virtuellt skrivbord'. Detta är i regel det första alternativet. 
+Kom ihåg att klicka på knappen Verkställ för att aktivera dina ändringar.
+
+
+13. 16 BITAR FÄRG
+
+H.E.D.Z. kan enbart köras i 16-bitar eller High Color. Datorn måste med andra ord köra med High Color eller 16-bitars färgläge för att du ska kunna köra H.E.D.Z.
+
+Kontrollera aktuell färgupplösning på datorns skrivbord genom att följa anvisningarna nedan.
+Vänsterklicka på Start-knappen. 
+Placera musmarkören på knappen Inställningar och vänsterklicka. 
+Kontrollpanelen visas. 
+Placera musmarkören på mappen Kontrollpanel och vänsterklicka. 
+När du befinner dig på kontrollpanelen placerar du musmarkören på knappen Bildskärm och vänsterklickar två gånger.
+Vänsterklicka på fliken Inställningar.
+Aktuell färgupplösning på datorns skrivbord anges under Färgpalett. 
+Vänsterklicka på nerpilen till höger om färgpalettens fönster. 
+En valruta med med möjliga färgupplösningar på datorns skrivbord visas. 
+Bläddra till alternativet 16-bitar eller High Color och välj det. 
+Kom ihåg att klicka på knappen Verkställ för att aktivera dina ändringar.
+OBS: Datorn måste eventuellt startas om för att dina ändringar ska få någon effekt. 
+
+14. DRIVRUTINER
+
+CD-skivan H.E.D.Z. CD innehåller en SUPPORT-mapp. I denna mapp hittar du de senaste drivrutinerna för 3DFX Glide samt aktuella drivrutiner för andra grafikkort. För att kunna installera drivrutinerna från H.E.D.Z. behöver du veta tillverkaren samt namnet på ditt 3Dfx- eller grafikkort. 
+
+VARNING: Om du installerar fel drivrutin för 3Dfx eller grafik riskerar du att negativt påverka ditt systems prestanda. Vi rekommenderar bestämt att enbart avancerade datoranvändare genomför uppdatering av drivrutiner. 
+
+Följ instruktionerna nedan noga för att installera drivrutiner för 3DFX Glide från CD-skivan H.E.D.Z. 
+
+Från Windows skrivbord
+Högerklicka på ikonen 'Den här datorn'. 
+Vänsterklicka på 'Egenskaper' eller tryck på tangenten 'r'.
+Vänsterklicka på fliken 'Enhetshanteraren'.
+Dubbelklicka med vänster musknapp på 'Ljud, video och spelkontroller'.
+'Ljud, video och spelkontroller' expanderar och visar fler egenskaper.
+Om DirectX har installerats på ditt system nyligen dubbelklickar du med vänster musknapp på '3Dfx Interactive Inc'.
+Om Direct X inte har installerats på ditt system dubbelklickar du med vänster musknapp på namnet på kortets tillverkare. Exempel: Om du har ett Diamond Monster 3D-kort dubbelklickar du med vänster musknapp på 'Diamond Monster 3D'. 
+Egenskapsfönstret visas för ditt valda 3Dfx-kort. 
+Vänsterklicka på fliken 'Drivrutin'.
+Vänsterklicka på knappen 'Ändra drivrutin'. 
+Fönstret 'Ändra drivrutin' visas. Kontrollera att rutan 'Ja' (rekommenderas) är vald och dubbelklicka med vänster musknapp på knappen 'Nästa'. 
+Datorn undersöker diskettenheten (enhet A). 'Ändra drivrutin' visas på nytt efter några sekunder med knappen 'Andra platser' i fönstret. 
+Vänsterklicka på knappen 'Andra platser'. 
+Vänsterklicka på knappen 'Bläddra'. 
+Fönstret 'Bläddra för mapp' visas. 
+Gå till din CD-ikon i fönstret 'Bläddra för mapp' och dubbelklicka med vänster musknapp på 'H.E.D.Z.'.
+H.E.D.Z. expanderar och visar ett antal mappar. Det kan ta några sekunder för CD-läsaren att starta upp.
+Dubbelklicka med vänster musknapp på mappen 'Support'. 
+Dubbelklicka med vänster musknapp på mappen 'Glide'.
+Gå till namnet på ditt 3Dfx-kort på listan med mappar. 
+Vänsterklicka på mappen för ditt 3Dfx-kort. Obs: Lägg mappens namn på minnet. Du kommer att behöva den senare.
+Vänsterklicka på knappen 'OK'. 
+Fönstret 'Välj annan plats' visas på nytt.
+Vänsterklicka på knappen 'OK'. 
+Fönstret 'Ändra drivrutin' visas. Namnet på den drivrutin du har valt visas i fönstret.
+Vänsterklicka på knappen 'Klar'.
+Ett Windows-meddelande om insättning av diskett visas. Detta är normalt. 
+Vänsterklicka på knappen 'OK'.
+Fönstret 'Kopierar filer' visas. Drivrutinens filnamn visas längst upp till vänster. 
+Vänsterklicka på knappen 'Bläddra'. 
+Gå till CD-ikonen i mappen 'Bläddra'.
+Gå till namnet på ditt 3Dfx-kort på listan.
+Vänsterklicka på mappen för ditt  3Dfx-kort.
+Om du har valt rätt mapp bör drivrutinens filnamn visas på skärmens vänstra sida. Obs: Du bör se namnet på filen längst upp till vänster i fönstret 'Kopierar filer' och i fönstret därunder. 
+Vänsterklicka på knappen 'OK'.
+Vänsterklicka på knappen 'OK'.
+Du bör se en grafisk bild av kopieringen av de nya drivrutinerna till din maskin. 
+Fönstret 'Systeminställning' visas. 
+Vänsterklicka på knappen 'Ja'. 
+Om din maskin inte startar om automatiskt gör du detta manuellt för att aktivera genomförda ändringar. 
+
+
+15. AMD-MASKINER
+
+H.E.D.Z. har testats på flera maskiner som levererats direkt från AMD. Under de olika testerna av H.E.D.Z. upptäcktes att vissa av AMD-maskinerna hade levererats med äldre drivrutiner för grafikkort. Om du har en AMD-utrustad maskin och får problem bör du kontakta enhetens tillverkare och be om de senaste DirectX 5.2 or DirectX 6.0-kompatibla drivrutinerna för enheten.
+
+**********  README-FIL SLUT  **********
+
+
+

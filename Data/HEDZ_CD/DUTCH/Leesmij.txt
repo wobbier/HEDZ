@@ -1,0 +1,391 @@
+=============================
+       	   H.E.D.Z.
+
+Head Extreme Destruction Zone
+=============================
+
+Date: 9th September 1998
+
+To improve readability of this file if using Notepad:
+
+Go to the "edit" menu & Select "word wrap"
+
+
+Welkom bij het H.E.D.Z. ReadMe bestand.
+Dit bestand bevat aanvullende informatie die de handleiding completeert. 
+Het is verstandig dit bestand te lezen voordat je verder gaat met de installatie. 
+
+Dit bestand bevat informatie over de volgende onderwerpen:
+
+ 1. DIRECTX 5.2 en 6.0
+ 2. SCHERMRESOLUTIE
+ 3. H.E.D.Z. SPELEN ZONDER 3D-VERSNELLERKAART
+ 4. PROBLEMEN MET 2D/3D-GRAPHICS KAARTEN
+ 5. BEKENDE PROBLEMEN MET BEPAALDE 3D-VERSNELLERKAARTEN
+ 6. DE SNELHEID VAN H.E.D.Z. VERHOGEN
+ 7. PROBLEMEN MET DE SPELBESTURING
+ 8. WIJZIGINGEN IN DE HANDLEIDING
+ 9. ELEKTRICITEITS- EN ENERGIEBESPAARDERS VOOR BEELDSCHERMEN
+10. SCHERMBEVEILIGING
+11. MULTITASKING
+12. VIRTUEEL BUREAUBLAD
+13. 16 BITS-KLEURENWEERGAVE
+14. STUURPROGRAMMA'S 
+15. AMD-COMPUTERS
+
+
+
+
+1. DIRECTX 5.2 en 6.0
+
+H.E.D.Z. is getest met zowel DirectX 5.2 als DirectX 6.0.
+H.E.D.Z. vereist dat DirectX 5.2 of hoger geïnstalleerd is op de computer. 
+H.E.D.Z. vereist dat alle computer hardware-apparaten en -stuurprogramma's gegarandeerd zijn met DirectX 5.2 of hoger. Als vermeld wordt dat een apparaat niet gegarandeerd is met DirectX, moet je contact opnemen met de fabrikant van het betreffende apparaat en de meest recente met DirectX 5.2 of DirectX 6.0 compatibele stuurprogramma's voor dat apparaat opvragen.
+Het installatieprogramma van H.E.D.Z. merkt of er een compatibele versie van DirectX op de computer geïnstalleerd is. Als dat niet het geval is, wordt er een bericht afgebeeld en op jouw aanwijzingen installeert het H.E.D.Z. installatieprogramma DirectX 5.2 op je computer. 
+Als het H.E.D.Z. installatieprogramma DirectX 6.0 op je computer ontdekt, wordt dit niet overschreven.
+
+Als er zich een 3D-versnellerkaart in je computer bevindt en als je DirectX 6.0 geïnstalleerd hebt, moet H.E.D.Z. in principe met hoge snelheid uitgevoerd kunnen worden. 
+
+De toepassing DirectX 6.0 bevindt zich op de H.E.D.Z. CD. Zo kunnen geavanceerde gebruikers met 3D-versnellerkaarten H.E.D.Z. uitvoeren in een DirectX 6.0 omgeving en zo profiteren van een verhoogde snelheid.
+
+OPMERKING: DirectX 6.0 is een gecompliceerde Microsoft-toepassing. Er worden tijdens de installatie van DirectX 6.0 enkele bijzonder specifieke en gedetailleerde vragen over je systeem gesteld. De toepassing DirectX 6.0 kan op basis van je antwoorden wijzigingen aanbrengen in je computer. Ervan uitgaande dat onjuiste antwoorden een ongewenst effect kunnen hebben op de werking van je systeem, raden wij alleen geavanceerde computergebruikers aan de installatie van DirectX 6.0 uit te voeren. 
+
+WAARSCHUWING: Er is een bekend probleem met H.E.D.Z. en DirectX 6.0. Als het spel uitgevoerd wordt in de software-modus, d.w.z. zonder 3D-versnellerkaart en met de optie voor vlakke schaduwen ingeschakeld, kunnen er grafische problemen optreden.
+
+Als deze problemen optreden, moet je contact opnemen met Microsoft voor de meest recente versie van de DirectX-software. Er werd aan een oplossing voor dit probleem gewerkt toen H.E.D.Z. naar de drukker ging.
+
+Je kunt het hulpprogramma Dxsetup.exe gebruiken om de installatie van DirectX 6.0 ongedaan te maken. Als je dat gedaan hebt en H.E.D.Z. nogmaals van de CD installeert, wordt DirectX 5.2 op je computer geïnstalleerd.
+
+WAARSCHUWING:  Deze wijziging kan andere op je computer geïnstalleerde spelletjes beïnvloeden.
+
+2. SCHERMRESOLUTIE
+
+Niet alle graphics kaarten ondersteunen het grote aantal in H.E.D.Z. beschikbare spelresoluties. Als je een bepaalde resolutie selecteert in het venster Opties, maar denkt dat het spel in een lagere resolutie uitgevoerd wordt, kan dat te maken hebben met het feit dat jouw graphics kaart die bepaalde resolutie niet ondersteunt.
+Als dat gebeurt, selecteert het programma H.E.D.Z. automatisch een schermresolutie die wel ondersteund wordt door je graphics kaart.
+
+Sommige graphics kaarten ondersteunen de 512 x 384 spelresolutie niet. Als jouw graphics kaart deze resolutie niet ondersteunt, stelt H.E.D.Z. automatisch de standaard 640 x 480 spelresolutie in.
+
+Voorbeeld: Sommige 3D-versnellerkaarten ondersteunen de 320x240 spelresolutie niet. Als jouw 3D-versnellerkaart deze resolutie niet ondersteunt, stelt H.E.D.Z. automatisch de 640 x 480 spelresolutie als standaard in.
+
+
+3. H.E.D.Z. zonder 3D-versnellerkaart spelen
+
+Niet alle 2D-graphics kaarten ondersteunen de 320 x 240 spelresolutie.  320x240 is de laagste spelresolutie waarmee H.E.D.Z. uitgevoerd kan worden. 
+Als je 2D-graphics kaart de 320x240 spelresolutie niet ondersteunt, gebruikt H.E.D.Z. automatisch de 640x480 spelresolutie als standaard en wordt het spel met een zwarte rand afgebeeld.
+Als je je in deze modus bevindt, kun je de toetsen + en - gebruiken om de omvang van het venster te vergroten of te verkleinen. Het verkleinen van het venster verhoogt de snelheid van het spel.
+
+
+
+4. PROBLEMEN MET 2D/3D-GRAPHICS KAARTEN 
+
+Het H.E.D.Z. programma beschikt over zijn eigen ingebouwde softwarematige toepassingen. Je kunt de 2D- en de 3D-acceleratie uitschakelen. De H.E.D.Z. rendering software beheert dan het spel. 
+
+Volg de nu volgende instructies bijzonder nauwkeurig op om de 2D/3D-hardware-acceleratie uit te schakelen. 
+
+DirectX 5.2
+
+In het bureaublad van Windows:
+Dubbelklik met de linkermuisknop op het pictogram 'Deze computer'.
+Dubbelklik met de linkermuisknop op het pictogram 'Station C'.
+Dubbelklik met de linkermuisknop op de map 'Programmabestanden'.
+Dubbelklik met de linkermuisknop op de map 'DirectX'.
+Dubbelklik met de linkermuisknop op de map 'Setup'.
+Dubbelklik met de linkermuisknop op het pictogram 'DXTOOL.exe'.
+Het bewerkingsvenster van het DirectX-stuurprogramma wordt dan afgebeeld.
+Onderaan dit bewerkingsvenster van het DirectX stuurprogramma worden twee keuzevakjes afgebeeld.
+Namelijk: 	Gebruik Direct 3D-hardware-acceleratie.
+Gebruik Direct Draw hardware-acceleratie.
+
+Vóór de vakjes wordt een klein aankruisvakje afgebeeld.
+Klik met de linkermuisknop op dit vakje, zodat het leeg lijkt.
+Vergeet niet om op de knop Toepassen te klikken om de wijzigingen door te voeren.
+Sluit alle vensters. 
+Start je computer opnieuw op. 
+
+DirectX 6.0
+
+In het bureaublad van Windows:
+Dubbelklik met de linkermuisknop op het pictogram 'Deze computer'. 
+Dubbelklik met de linkermuisknop op het pictogram 'Station C'. 
+Dubbelklik met de linkermuisknop op de map 'Programmabestanden'.
+Dubbelklik met de linkermuisknop op de map 'DirectX'. 
+Dubbelklik met de linkermuisknop op de map 'Setup'.
+Dubbelklik met de linkermuisknop op het pictogram 'Dxdiag.exe'.
+Klik met de linkermuisknop op het tabblad 'Display1' bovenaan het venster. 
+De 'Display 1' informatie moet nu op het scherm afgebeeld worden. 
+In het midden van het venster, onder de kenmerken van DirectX, worden twee keuzevakjes afgebeeld. 
+Namelijk: Direct Draw
+Direct 3D
+
+Klik eerst met de linkermuisknop op het keuzevakje 'Direct 3D' om het uit te schakelen. 
+Er verschijnt een bericht met de mededeling dat deze keuze alle 3D-hardware-acceleratie uit zal schakelen. 
+Klik met de linkermuisknop op de knop 'OK'.
+Klik dan met de linkermuisknop op het keuzevakje om 'Direct Draw' uit te schakelen.
+Er verschijnt een bericht met de mededeling dat deze keuze alle hardware-acceleratie voor Direct Draw en de 3D-acceleratie uit zal schakelen.
+Klik met de linkermuisknop op de knop 'OK'.
+Klik met de linkermuisknop op de knop 'Afsluiten'.
+Sluit alle vakjes en vensters.
+Start je computer opnieuw op. 
+
+Probeer de volgende tips als er dan nog steeds grafische problemen optreden bij het uitvoeren van H.E.D.Z.: 
+
+A. Controleer of de computer aangesloten is op een functionerende stroombron. 
+B. Controleer of alle draden en stekkers stevig bevestigd zijn en niet los hangen.
+C. Controleer de afbeeldingen in andere toepassingen en spellen.
+D. Controleer of alle hardware-stuurprogramma's compatibel zijn met DirectX. 
+E. Neem contact op met de fabrikant van je graphics kaart en vraag om de meest recente met DirectX compatibele stuurprogramma's voor je graphics kaart. 
+F. Neem contact op met de Technische Ondersteuning van Hasbro.
+
+
+5. BEKENDE PROBLEMEN MET BEPAALDE 3D-VERSNELLERKAARTEN & GRAPHICS KAARTEN 
+
+Het is bekend dat er met de volgende kaarten problemen optreden bij het uitvoeren van H.E.D.Z.:
+
+Millenium 1
+ 
+Deze kaart ondersteunt geen texturen. Het spel functioneert alleen maar in de software modus.
+
+Power VR 
+
+De huidige Power VR stuurprogramma's kunnen problemen veroorzaken met H.E.D.Z. Het besturingssysteem Windows rapporteert een onjuiste hoeveelheid beeldgeheugen op de kaart. Als je een Power VR graphics kaart hebt en er problemen optreden bij het uitvoeren van H.E.D.Z., kun je de volgende tips proberen:
+	
+A. Verlaag de omvang van de resolutie van het Windows-bureaublad voordat je het spel start.
+
+B. Neem contact op met de fabrikant van je hardware en vraag om de meest recente met DirectX compatibele stuurprogramma's.
+
+C. Neem contact op met Microsoft. 
+
+
+S3/Apocalypse 3D/3Dx of Captivator
+
+Als je een computer hebt met de AWARD BIOS kaart en de chipset S3 968 of 868, kan het zijn dat je computer vastloopt als deze samen met een Apocalypse 3D /3Dx of Captivator PCI gebruikt wordt. Dit probleem kan opgelost worden door handmatig de geheugenallocatie voor de insteekkaart te wijzigen naar een bereik buiten de 64 MB die door de graphics kaart gebruikt wordt. 
+
+Neem contact op met de fabrikant van je hardware voor aanwijzingen betreffende het correct uitvoeren van deze procedure.
+
+
+Matrox kaarten met Apocalypse 3Dx
+
+Het is bekend dat er problemen optreden met de graphics kaarten Matrox Millennium of Mystique als deze samen met de Apocalypse 3Dx gebruikt worden. Om deze kaarten te ondersteunen, worden de Weergave-eigenschappen van de Apocalypse 3Dx ingesteld op Standaard voor 3D-acceleratie. Je moet je Matrox schermstuurprogramma's updaten naar versie 3.63 of hoger om de instelling Geoptimaliseerd te kunnen gebruiken.
+
+Hercules Stingray graphics kaart
+
+Het is bekend dat er problemen optreden met de Hercules Stingray kaart als je andere resoluties gebruikt dan de standaardinstelling 640 x 480. Probeer eerst het meest recente stuurprogramma van je hardware-fabrikant als deze problemen zich voordoen. Selecteer de modus 640 x 480 als het probleem dan nog niet opgelost is.
+
+
+6. DE SNELHEID VAN H.E.D.Z. VERHOGEN
+
+Als je H.E.D.Z. gestart hebt, wordt er een Windows-venster met een aantal knoppen afgebeeld. De knop 'Opties' is één van de belangrijkste knoppen. Als je op deze knop klikt, kun je de manier waarop H.E.D.Z. weergegeven wordt aanpassen. 
+
+Schermresolutie
+De optie Schermresolutie stelt de speler in staat de resolutie te selecteren waarmee H.E.D.Z. gespeeld wordt. Lagere schermresoluties betekenen een snellere beeldsnelheid ten koste van de kwaliteit van de afbeeldingen. Hogere schermresoluties garanderen betere kwaliteit van de afbeeldingen ten koste van de beeldsnelheid. Niet alle graphics kaarten ondersteunen alle mogelijke H.E.D.Z. schermresoluties. Als je een schermresolutie selecteert die niet ondersteund wordt door je grafische apparatuur, stelt H.E.D.Z een ondersteunde resolutie als standaard in.
+
+Detailniveau - Afsnijvlak
+De optie Afsnijvlak stelt de speler in staat te selecteren op welke afstand van de speler objecten getekend worden. Als je de afsnijvlakinstelling Dichtbij kiest, worden alleen maar zich dicht bij de speler bevindende objecten getekend en afgebeeld. Zo wordt een hogere beeldsnelheid verkregen ten koste van de afbeelding van objecten op grotere afstand. Als je de afsnijvlakinstelling Veraf kiest, worden alle objecten in de omgeving getekend en afgebeeld. Zo wordt een realistische weergave verkregen ten koste van de beeldsnelheid.
+		
+Detailniveau - Modellen 
+De optie Modellen stelt de speler in staat de mate van detail te selecteren waarin ieder personage afgebeeld wordt. Het kan zijn dat je het verschil tussen de instellingen 'Laag' en 'Hoog' niet eens ziet, aangezien de verschillen subtiel zijn. Een lage instelling bij Detailniveau Modellen verwijdert enkele details uit de afbeelding van het personage. Zo wordt een hogere beeldsnelheid verkregen ten koste van grafische details. Een hoge instelling bij Detailniveau Modellen betekent dat alle grafische details weergegeven worden. Zo worden de personages grafisch bijzonder gedetailleerd weergegeven ten koste van de beeldsnelheid.
+
+Detailniveau - Belichting
+De optie Belichting stelt de speler in staat de voor de lichtbronnen gebruikte techniek te selecteren. De instelling Vlakke schaduwen zorgt voor een felle, levendige weergave van de afbeeldingen met minimale spelschaduwen en lichteffecten. Zo wordt een snellere beeldsnelheid verkregen ten koste van realistische afbeeldingen. De instelling Gouraud schaduwen verfijnt de harde lijnen van Vlakke schaduwen. Het spel is vrij langzaam als je het in Gouraud schaduwen uitvoert op computers zonder een 3D-versnellerkaart. Op computers met een 3D-versnellerkaart kun je geen verschil waarnemen.
+
+
+
+7. PROBLEMEN MET DE SPELBESTURING
+
+Als de speler de invoeropdrachten aangepast heeft met gebruik van het H.E.D.Z. hulpprogramma voor besturingsinstellingen in het venster Opties, kan het voorkomen dat de joystick of de gamepad slechts langzaam op de opdrachten van de speler reageren. Als dit het geval is, moet je het spel opslaan, H.E.D.Z. afsluiten en de joystick of de gamepad opnieuw testen.
+
+OPMERKING: Spelers kunnen in H.E.D.Z. alleen maar de standaardtoetsen voor invoeropdrachten selecteren. Voorbeelden van zulke toetsen zijn: invoegen, pagina omhoog, pagina omlaag, venster afdrukken, verwijderen, F1, F2 enz.
+
+Zo test je de joystick of de gamepad opnieuw: 
+
+Klik met de linkermuisknop op de knop Start.
+Plaats de muiscursor vervolgens op de knop Instellingen en klik met de linkermuisknop.
+De map Bedieningspaneel wordt dan afgebeeld.
+Plaats de cursor op de map Bedieningspaneel en klik met de linkermuisknop op deze map. 
+Plaats de cursor in het Bedieningspaneel op de knop Besturing voor spelletjes en klik twee keer met de linkermuisknop. 
+De naam en de status van de controller worden afgebeeld in het venster. Als de naam van de controller niet overeenkomt met de aangesloten controller, moet je het genoemde apparaat verwijderen en de juiste apparaatnaam opgeven. Het kan zijn dat je de software voor de joystick of de gamepad dan weer opnieuw moet installeren.
+Controleer of de joystick of de gamepad goed aangesloten zijn als de status niet weergegeven wordt als OK. Als je dit gecontroleerd hebt en het probleem nog steeds niet verholpen is, moet je de joystick of de gamepad eerst verwijderen en vervolgens weer toevoegen. Als ook dat de status van de joystick of de gamepad niet wijzigt, moet je de besturingssoftware waarschijnlijk opnieuw installeren.
+Klik met de linkermuisknop op de knop Eigenschappen als de controller voor de joystick of de gamepad correct weergegeven wordt en de status OK is.
+Klik vervolgens met de linkermuisknop op het tabblad Testen.
+Vanuit dit venster kan de speler de joystick of de gamepad opnieuw testen.
+Klik met de linkermuisknop op het tabblad Instellingen als de joystick of de gamepad niet correct reageren.
+Plaats de cursor op de knop Kalibreren en klik met de linkermuisknop.
+Volg de aanwijzingen dan nauwkeurig op.
+Vergeet niet om op de knop OK of Toepassen te klikken om de eventueel aangebrachte wijzigingen door te voeren.
+
+
+8. WIJZIGINGEN IN DE HANDLEIDING
+
+H.E.D.Z. handleiding, pagina 12, laatste alinea, derde zin
+
+In de handleiding staat dat de speler terug kan gaan naar niveaus die hij of zij reeds voltooid heeft. Dat is niet het geval.
+
+
+H.E.D.Z. handleiding, pagina 15, gedeelte: "In-game besturingsinstellingen":
+
+Standaardbesturing muis met twee knoppen
+Linkermuisknop: Schieten
+Rechtermuisknop: Springen
+
+Standaardbesturing muis met drie knoppen
+Linkermuisknop: Schieten 
+Centrale muisknop: Geen standaardactie
+Rechtermuisknop: Springen
+
+Muisknoppen kunnen niet zodanig geconfigureerd worden dat ze spelbewegingen in H.E.D.Z. emuleren. Als je een muisknop opnieuw instelt om de besturingsbewegingen te emuleren, werkt dat niet goed in het spel.
+
+De muis in combinatie met de joystick of laterale bewegingen zorgen standaard voor het roteren van het personage in H.E.D.Z. Deze functies kunnen niet opnieuw geconfigureerd worden.
+
+
+H.E.D.Z. handleiding, pagina 9, derde punt bij "De bepakking gebruiken".
+
+In de handleiding staat: " Als je niet genoeg geld hebt om een hoofd opnieuw op te laden, hoor je een waarschuwing en gaat de ruil niet door."  Dit betekent dat de ruil niet plaats zal vinden als de speler geen geld heeft en als het hoofd uit de bepakking niet meer gezond is. Als je ook nog maar de geringste hoeveelheid geld hebt, kun je een hoofd uit je bepakking 'kopen'. Bovendien heb je geen geld nodig om een min of meer gezond hoofd uit je bepakking te halen of te ruilen.
+
+
+H.E.D.Z. handleiding, pagina 8, gedeelte: Bepakking, vierde punt:
+
+Er is geen minimum bedrag vereist (zolang het maar meer dan nul is) om een hoofd uit je bepakking te kunnen halen. Als de speler geld heeft, wordt het hoofd dat uit de bepakking geselecteerd wordt, slechts geladen met het bedrag dat overeenkomt met het resterende geldbedrag van de speler. 
+
+De handleiding verwijst naar LFs die rood worden als ze een dood hoofd oppakken. Deze modus is alleen beschikbaar met 3D-hardware-acceleratie.
+
+
+9. ELEKTRICITEITS- EN ENERGIEBESPAARDERS VOOR BEELDSCHERMEN
+
+Er kan een compatibiliteitsprobleem optreden als je H.E.D.Z. uitvoert op een beeldscherm met een geactiveerde elektriciteits- of energiebespaarder. Als de computer langere tijd inactief is, wordt een elektriciteits- of energiebespaarder geactiveerd om stroom te besparen en inbranding van het beeldscherm te voorkomen. Dit kan ertoe leiden dat het actieve H.E.D.Z. spel niet meer reageert. Schakel de elektriciteits- of energiebespaarder uit om dit te voorkomen.
+
+Volg deze instructies om een elektriciteits- of energiebespaarder te inactiveren: 
+Klik met de linkermuisknop op de knop Start.
+Plaats de muiscursor vervolgens op de knop Instellingen en klik met de linkermuisknop.
+De map Bedieningspaneel wordt dan afgebeeld.
+Plaats de cursor op de map Bedieningspaneel en klik met de linkermuisknop op deze map. 
+Plaats de cursor in het Bedieningspaneel op de knop Weergeven en klik twee keer met de linkermuisknop. 
+Klik met de linkermuisknop op het tabblad Schermbeveiliging.
+Als je monitor voldoet aan de eisen voor een elektriciteits- of energiebespaarder, worden onderaan het venster meerdere opties voor de besturing van elektriciteits- of energiebespaarders afgebeeld. Daar kan de gebruiker de opties voor dit hulpprogramma uitschakelen. Vergeet niet op de knop Toepassen te klikken om de aangebrachte wijzigingen door te voeren.
+
+
+
+10. SCHERMBEVEILIGING
+
+Er kan een compatibiliteitsprobleem optreden als je H.E.D.Z. uitvoert op een beeldscherm met een geactiveerde Schermbeveiliging. Als de computer langere tijd inactief is, wordt de Schermbeveiliging geactiveerd om inbranding van het beeldscherm te voorkomen. Dit kan ertoe leiden dat het actieve H.E.D.Z. spel niet meer reageert. Schakel de Schermbeveiliging uit om dit te voorkomen.
+
+Volg deze instructies om de Schermbeveiliging te inactiveren:
+Klik met de linkermuisknop op de knop Start.
+Plaats de muiscursor vervolgens op de knop Instellingen en klik met de linkermuisknop.
+De map Bedieningspaneel wordt dan afgebeeld.
+Plaats de cursor op de map Bedieningspaneel en klik met de linkermuisknop op deze map.
+Plaats de cursor in het Bedieningspaneel op de knop Weergeven en klik twee keer met de linkermuisknop.
+Klik met de linkermuisknop op de knop Schermbeveiliging.
+Klik met de linkermuisknop op de pijl rechts van het venster Schermbeveiliging.
+Er wordt dan een keuzevakje met de opties voor Schermbeveiliging afgebeeld.
+Blader naar Geen en selecteer deze optie.
+Vergeet niet op de knop Toepassen te klikken om de wijzigingen door te voeren.
+
+
+11.    MULTITASKING
+
+Het wordt niet aanbevolen H.E.D.Z. te spelen terwijl andere computertoepassingen actief zijn op de achtergrond. H.E.D.Z. neemt erg veel geheugen in beslag en het uitvoeren van andere toepassingen zou onverwachte problemen kunnen veroorzaken.
+
+
+
+12. VIRTUEEL BUREAUBLAD 
+
+Er kunnen compatibiliteitsproblemen optreden als je H.E.D.Z. uitvoert op beeldschermen met een geactiveerd Virtueel bureaublad. Het wordt aangeraden de functie Virtueel bureaublad uit te schakelen als er problemen optreden bij de uitvoering van het spel.
+
+Volg deze aanwijzingen om Virtueel bureaublad uit te schakelen:
+Klik met de linkermuisknop op de knop Start.
+Plaats de muiscursor vervolgens op de knop Instellingen en klik met de linkermuisknop.
+De map Bedieningspaneel wordt dan afgebeeld.
+Plaats de cursor op de map Bedieningspaneel en klik met de linkermuisknop op deze map.
+Plaats de cursor in het Bedieningspaneel op de knop Weergeven en klik twee keer met de linkermuisknop.
+Klik met de linkermuisknop op de knop Instellingen.
+Als je scherm en je videokaart Virtueel bureaublad ondersteunen, worden rechts in het venster een aantal afbeeldingen weergegeven. Iedere afbeelding vertegenwoordigt een bepaalde Virtueel bureaublad-toepassing.
+Als je de muiscursor op een afbeelding plaatst, wordt er na een paar seconden een tekstbericht afgebeeld met informatie over de toepassing die de afbeelding vertegenwoordigt.
+Selecteer de afbeelding met 'Geen Virtueel bureaublad'. Vaak is dat het eerste of het bovenste afbeeldingsvakje.
+Vergeet niet op de knop Toepassen te klikken om de wijzigingen door te voeren. 
+
+
+13. 16 BITS-KLEURENWEERGAVE 
+
+H.E.D.Z. kan alleen maar in 16-bits of Hoge kleur-weergave uitgevoerd worden. Dat betekent dat de computer in de Hoge kleur of 16-bits kleurenmodus moet werken om H.E.D.Z. te kunnen spelen.
+
+Volg deze aanwijzingen om je actieve bureaubladresolutie te controleren.
+Klik met de linkermuisknop op de knop Start.
+Plaats de muiscursor vervolgens op de knop Instellingen en klik met de linkermuisknop.
+De map Bedieningspaneel wordt dan afgebeeld.
+Plaats de cursor op de map Bedieningspaneel en klik met de linkermuisknop op deze map.
+Plaats de cursor in het Bedieningspaneel op de knop Weergeven en klik twee keer met de linkermuisknop.
+Klik met de linkermuisknop op de knop Instellingen.
+De kleurenresolutie van je bureaublad wordt weergegeven bij Kleurenpalet.
+Klik met de linkermuisknop op de pijl rechts van het venster Kleurenpalet.
+Er wordt een keuzevakje met de verschillende kleurenresoluties voor het bureaublad weergegeven.
+Blader naar 16-bits of Hoge kleur en selecteer deze optie.
+Vergeet niet op de knop Toepassen te klikken om de wijzigingen door te voeren.
+OPMERKING: Je moet de computer waarschijnlijk opnieuw starten voordat de wijzigingen het gewenste effect hebben. 
+
+14. STUURPROGRAMMA'S
+
+Op de H.E.D.Z. CD bevindt zich een map SUPPORT. In deze map bevinden zich zowel de meest recente 3DFX Glide stuurprogramma's als de huidige stuurprogramma's voor sommige andere graphics kaarten. Je moet de fabrikant en de naam van je 3Dfx of je graphics kaart kennen om de stuurprogramma's van de H.E.D.Z. CD te kunnen installeren. 
+
+WAARSCHUWING: Het installeren van een foutief stuurprogramma voor je 3Dfx of je grafische kaart kan een ongewenst effect hebben op de werking van je systeem. Wij raden alleen geavanceerde computergebruikers aan de stuurprogramma's up te daten.
+
+Volg deze aanwijzingen nauwkeurig op om de meest recente 3DFX Glide van de H.E.D.Z. CD te installeren. 
+
+In het bureaublad van Windows:
+Klik met de rechtermuisknop op het pictogram 'Deze computer'.
+Klik met de linkermuisknop op de knop 'Eigenschappen' of typ de letter 'e'.
+Klik met de linkermuisknop op het tabblad 'Apparaatbeheer'.
+Dubbelklik met de linkermuisknop op de woorden 'Besturing voor geluid, video en spelletjes'.
+De sectie 'Besturing voor geluid, video en spelletjes' wordt dan uitgebreid om meer opties te kunnen bevatten.
+Klik met de linkermuisknop op de woorden '3Dfx Interactive Inc.' als DirectX op je systeem geïnstalleerd is.
+Als Direct X niet op je systeem geïnstalleerd is, moet je met de linkermuisknop op de fabrikant van je kaarten dubbelklikken. Als je dus bijvoorbeeld een Diamond Monster 3D kaart hebt, moet je met de linkermuisknop dubbelklikken op de woorden 'Diamond Monster 3D'. 
+Het venster Eigenschappen voor je geselecteerde 3Dfx kaart wordt dan afgebeeld. 
+Klik met de linkermuisknop op het tabblad 'Stuurprogramma's'.
+Klik met de linkermuisknop op de knop 'Stuurprogramma's bijwerken'.
+Het venster 'Wizard Stuurprogramma's voor apparaten bijwerken' wordt afgebeeld. Selecteer het keuzevakje 'Ja (Aanbevolen)' en klik met de linkermuisknop op de knop 'Volgende'.
+De computer controleert nu de diskette (station A). Na een paar seconden wordt het venster 'Wizard Stuurprogramma's voor apparaten bijwerken' opnieuw afgebeeld, dit keer met de knop 'Andere lokaties'. 
+Klik met de linkermuisknop op de knop 'Andere lokaties'. 
+Klik met de linkermuisknop op de knop 'Bladeren'. 
+Het venster 'Zoeken naar map' wordt afgebeeld. 
+Zoek in het venster 'Zoeken naar map' het pictogram voor je CD-ROM-station en dubbelklik met de linkermuisknop op het woord 'H.E.D.Z.'.
+De H.E.D.Z. sectie wordt dan uitgebreid om meerdere mappen weer te kunnen geven. Het kan een paar seconden duren, voordat het CD-ROM-station op volle snelheid werkt. 
+Dubbelklik met de linkermuisknop op de map 'Support'. 
+Dubbelklik met de linkermuisknop op de map 'Glide'.
+Zoek de naam van je 3Dfx kaart in de lijst met mappen. 
+Klik met de linkermuisknop op de map met je 3Dfx kaart. Opmerking: onthoud de naam van deze map, die heb je later namelijk nodig.
+Klik met de linkermuisknop op de knop 'OK'.
+Het venster 'Selecteer andere lokatie' wordt nu weergegeven.
+Klik met de linkermuisknop op de knop 'OK'. 
+Het venster 'Wizard Stuurprogramma's voor apparaten bijwerken' wordt afgebeeld. De naam van het geselecteerde stuurprogramma moet in het venster afgebeeld worden. 
+Klik met de linkermuisknop op de knop 'Voltooien'.
+Er wordt een Windows-bericht afgebeeld om een diskette te plaatsen. Dat is normaal.
+Klik met de linkermuisknop op de knop 'OK'.
+Het venster 'Bezig bestanden te kopiëren' wordt nu afgebeeld. De naam van het stuurprogramma moet weergegeven worden in de bovenhoek van het venster. 
+Klik met de linkermuisknop op de knop 'Bladeren'. 
+Zoek het pictogram van je CD-ROM-station in de map 'Bladeren'.
+Zoek de naam van je 3Dfx kaart in de lijst met mappen.
+Klik met de linkermuisknop op de map met de 3Dfx kaart.
+Als je de juiste map geselecteerd hebt, wordt de naam van het stuurprogrammabestand nu links van het scherm weergegeven. Opmerking: De naam van het bestand moet weergegeven worden in de linker bovenhoek van het venster 'Bezig met bestanden kopiëren' en in het venster eronder. 
+Klik met de linkermuisknop op de knop 'OK'.
+Klik met de linkermuisknop op de knop 'OK'.
+Er wordt nu een grafische weergave afgebeeld van de nieuwe stuurprogramma's die naar je computer gekopieerd worden. 
+Het venster 'Systeeminstellingen' wordt afgebeeld.
+Klik met de linkermuisknop op de knop 'Ja'. 
+Als je computer niet automatisch opnieuw gestart wordt, moet je dat zelf doen om de wijzigingen in werking te stellen. 
+
+
+15. AMD-COMPUTERS
+
+H.E.D.Z. is getest op computers die rechtstreeks door AMD geleverd zijn. Tijdens het testen van H.E.D.Z. werd ontdekt dat sommige AMD computers geleverd zijn met oudere versies van de stuurprogramma's voor graphics kaarten. Als je over een computer met AMD beschikt en problemen ervaart, moet je contact opnemen met de fabrikant van het apparaat en vragen naar de meest recente versies van de met DirectX 5.2 of DirectX 6.0 gegarandeerde stuurprogramma's voor dat apparaat.
+
+
+**********  E I N D E  R E A D M E  B E S T A N D**********
+1
+
+
+1
+
+
+
+
+
+

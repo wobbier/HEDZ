@@ -1,0 +1,261 @@
+=============================
+       	   H.E.D.Z.
+
+Head Extreme Destruction Zone
+=============================
+
+Fecha: 15 de septiembre de 1998
+
+Para mejorar la lectura de este archivo con el Bloc de notas:
+
+Abre el menú "Edición" y selecciona "Ajuste de línea"
+
+
+Bienvenido al archivo Léeme para H.E.D.Z.
+Este archivo contiene información complementaria a la que aparece en el manual.
+Dedica unos instantes a leer todas las secciones antes de seguir con la instalación.
+
+Este archivo contiene información sobre los siguientes temas:
+
+ 1. DIRECTX 5.2 y 6.0
+ 2. RESOLUCIÓN DE PANTALLA
+ 3. CÓMO JUGAR A H.E.D.Z. SIN TARJETA ACELERADORA DE GRÁFICOS EN 3D
+ 4. PROBLEMAS CON TARJETAS DE VÍDEO PARA GRÁFICOS EN 2D/3D
+ 5. PROBLEMAS COMUNES CON TARJETAS ACELERADORAS DE GRÁFICOS EN 3D Y TARJETAS DE GRÁFICOS ESPECÍFICAS
+ 6. CÓMO MEJORAR LA VELOCIDAD DE H.E.D.Z.
+ 7. PROBLEMAS CON LOS CONTROLES DEL JUEGO
+ 8. CAMBIOS EN EL MANUAL
+ 9. AHORRO DE ENERGÍA DEL MONITOR
+10. PROTECTORES DE PANTALLA
+11. MULTITAREA
+12. ESCRITORIO VIRTUAL
+13. COLOR DE 16 BITS
+14. CONTROLADORES 
+15. PROCESADORES AMD
+
+
+
+
+1. DIRECTX 5.2 y 6.0H.E.D.Z. se ha probado con DirectX 5.2 y DirectX 6.0.
+H.E.D.Z. necesita tener instalado en el ordenador DirectX 5.2 o una versión superior. 
+H.E.D.Z. necesita que todos los controladores y dispositivos de hardware estén certificados por DirectX 5.2 o posterior. Si un dispositivo aparece como no certificado por DirectX, ponte en contacto con el fabricante del dispositivo y solicita los controladores DirectX 5.2 o DirectX 6.0 más recientes certificados para ese dispositivo.El instalador de H.E.D.Z. detectará si el ordenador tiene instalada una versión compatible de DirectX. En caso contrario, aparecerá un mensaje y, al dar tu confirmación, el instalador de H.E.D.Z. instalará DirectX 5.2 en el sistema.
+El instalador de H.E.D.Z. no sobreescribirá DirectX 6.0 si lo detecta en el ordenador.
+
+Si tienes una tarjeta aceleradora de gráficos en 3D y tienes instalado DirectX 6.0, podrás disfrutar de un aumento general de velocidad al ejecutar H.E.D.Z.
+
+Se ha incluido la aplicación DirectX 6.0 en el CD de H.E.D.Z. con el fin de que los usuarios familiarizados con las tarjetas aceleradoras de gráficos en 3D puedan beneficiarse de un aumento general de velocidad mientras ejecutan H.E.D.Z. bajo el entorno DirectX 6.0. 
+
+NOTA: DirectX 6.0 es una aplicación de Microsoft compleja. Durante la instalación de DirectX 6.0, se te pedirá que respondas a preguntas muy específicas y con muchos detalles acerca de tu sistema. La aplicación DirectX 6.0 puede producir cambios en tu ordenador dependiendo de las respuestas que facilites. Si respondes incorrectamente, se puede producir un funcionamiento anómalo del sistema. Se recomienda que la instalación de DirectX 6.0 la realicen únicamente usuarios avanzados.ADVERTENCIA: Existen varios problemas relacionados con H.E.D.Z. y DirectX 6.0. Si se ejecuta H.E.D.Z. en modo sólo software, es decir, sin una tarjeta aceleradora de gráficos en 3D y con la opción de sombra plana activada, pueden producirse problemas con los gráficos. Si observas este problema, ponte en contacto con Microsoft para conseguir la última versión del software DirectX. Cuando H.E.D.Z. estaba en proceso de impresión, ya se estaba trabajando en una solución para este problema.
+
+Es posible desinstalar DirectX 6.0 con la utilidad Dxsetup.exe. Una vez desinstalado, al volver a instalar H.E.D.Z. desde el CD, se instalará DirectX 5.2 en el ordenador.
+
+ADVERTENCIA: Esto puede afectar a otros juegos instalados en tu ordenador.
+
+2. RESOLUCIÓN DE PANTALLA
+
+No todas las tarjetas gráficas son compatibles con todas las resoluciones disponibles en H.E.D.Z. Si seleccionas una resolución específica en la pantalla Opciones, pero notas que el juego se ejecuta con una resolución inferior, puede ser que tu tarjeta de vídeo para gráficos no admita esa resolución en concreto.Si esto ocurre, el programa H.E.D.Z. seleccionará automáticamente una resolución de pantalla admitida por tu tarjeta de vídeo para gráficos.Por ejemplo: Algunas tarjetas de vídeo para gráficos no admiten la resolución de juego 512 x 384. Si tu tarjeta de gráficos no es compatible con esta resolución, H.E.D.Z. cambiará automáticamente a la resolución establecida por defecto de 640 x 480. Algunas tarjetas aceleradoras de gráficos en 3D no admiten la resolución de juego 320 x 240. Si tu tarjeta aceleradora de gráficos no es compatible con esta resolución, H.E.D.Z. cambiará automáticamente a la resolución establecida por defecto de 640 x 480.3. CÓMO JUGAR A H.E.D.Z. SIN TARJETA ACELERADORA DE GRÁFICOS EN 3D
+
+No todas las tarjetas de vídeo para gráficos en 2D admiten una resolución de 320 x 240. Esta es la resolución de juego más baja con la que se puede ejecutar H.E.D.Z.
+Si tu tarjeta de vídeo para gráficos en 2D no es compatible con la resolución de juego 320x240, H.E.D.Z. cambiará automáticamente a la resolución establecida por defecto de 640 x 480 y mostrará el juego con un borde negro.Cuando estés en este modo, puedes usar las teclas ¿ y ? del teclado para aumentar o disminuir el tamaño de la pantalla. Al reducir el tamaño de la pantalla, aumentará la velocidad del juego.
+
+
+
+4. PROBLEMAS CON TARJETAS DE VÍDEO PARA GRÁFICOS EN 2D/3D
+
+El programa H.E.D.Z. incorpora sus propias herramientas de software para la representación de gráficos. Puedes desactivar la aceleración de gráficos en 2D y 3D del hardware, y el software de representación de gráficos de H.E.D.Z. controlará el juego. Para desactivar la aceleración de gráficos en 2D/3D por hardware sigue con mucho cuidado las siguientes instrucciones. DirectX 5.2
+
+Desde el Escritorio de Windows
+Haz doble clic con el botón izquierdo del ratón en el icono "Mi PC".
+Haz doble clic con el botón izquierdo del ratón en el icono de la unidad C.
+Haz doble clic con el botón izquierdo del ratón en la carpeta "Archivos de programa".
+Haz doble clic con el botón izquierdo del ratón en la carpeta "DirectX".Haz doble clic con el botón izquierdo del ratón en la carpeta "Set Up" (Instalación).Haz doble clic con el botón izquierdo del ratón en el icono "DXTOOL.EXE".Aparecerá la ventana de herramientas del controlador DirectX.
+En la parte inferior de esta ventana aparecerán dos opciones:
+Usar aceleración del hardware Direct3D
+Usar aceleración DEL hardware Direct Draw
+
+Delante de cada una debe haber una pequeña casilla de verificación.
+Haz clic con el botón izquierdo del ratón de forma que queden vacías.
+Después, haz clic en el botón "Apply" (Aplicar) para efectuar los cambios que se hayan producido.
+Cierra todas las ventanas.Reinicia tu equipo.
+DirectX 6.0
+
+>Desde el Escritorio de Windows 
+Haz doble clic con el botón izquierdo del ratón en el icono "Mi PC".
+Haz doble clic con el botón izquierdo del ratón en el icono de la unidad C.
+Haz doble clic con el botón izquierdo del ratón en la carpeta "Archivos de programa".
+Haz doble clic con el botón izquierdo del ratón en la carpeta "DirectX".
+Haz doble clic con el botón izquierdo del ratón en la carpeta "Set Up" (Instalación).
+Haz doble clic con el botón izquierdo del ratón en el icono "Dxdiag.EXE".
+Haz clic con el ratón sobre "Display1" en la parte superior de la pantalla.
+Aparecerá la información sobre "Display 1" en la pantalla. En el centro de la ventana, debajo de las funciones de DirectX, aparecerán dos opciones:Direct Draw
+Direct 3D
+
+Primero, haz clic con el botón izquierdo del ratón en la casilla de verificación para desactivar "Direct3D".
+Aparecerá una ventana con un mensaje indicando que se va a desactivar toda la aceleración de gráficos en 3D del hardware.
+Haz clic con el botón izquierdo del ratón en el botón "OK" (Aceptar).
+Después, haz clic con el botón izquierdo del ratón en la casilla de verificación para desactivar "Direct Draw". Aparecerá una ventana con un mensaje indicando que se va a desactivar toda la aceleración para Direct Draw y la aceleración par gráficos en 3D del hardware. 
+Haz clic con el botón izquierdo del ratón en el botón "OK" (Aceptar).
+Haz clic con el botón izquierdo del ratón en el botón "Exit" (Salir).
+Cierra todas las ventanas.
+Reinicia el sistema.Si todavía observas problemas gráficos al ejecutar H.E.D.Z., trata de seguir los siguientes pasos:
+
+A. Comprueba que el ordenador está conectado a una toma de corriente adecuada.
+B. Comprueba que todos los cables y conexiones están bien situados y que no hay ninguno suelto.
+C. Comprueba que los gráficos funcionan en otras aplicaciones/juegos.
+D. Comprueba que DirectX ha certificado todos los controladores de hardware.
+E. Ponte en contacto con el fabricante de la tarjeta de vídeo para gráficos y solicita los controladores certificados DirectX más recientes para tu tarjeta de vídeo para gráficos.F. Ponte en contacto con el departamento de atención al cliente de Hasbro.5. PROBLEMAS COMUNES CON TARJETAS ACELERADORAS DE GRÁFICOS EN 3D Y TARJETAS DE GRÁFICOS ESPECÍFICASLas siguientes tarjetas pueden plantear problemas al ejecutar H.E.D.Z.:Millenium 1Esta tarjeta no soporta las texturas. El juego se ejecutará en sólo modo software.
+
+Power VR 
+
+Los controladores actuales de Power VR pueden causar problemas con H.E.D.Z. El sistema operativo Windows informa de forma incorrecta acerca de la cantidad de memoria de vídeo de la tarjeta. Si observas problemas con H.E.D.Z. y tienes una tarjeta de vídeo para gráficos Power VR, intenta hacer lo siguiente:
+	
+A. Reduce el tamaño de resolución del escritorio de Windows antes de ejecutar el juego.B. Ponte en contacto con el fabricante del hardware y solicita los controladores DirectX certificados más recientes.
+
+C. Ponte en contacto con Microsoft. S3/Apocalypse 3D/3Dx o CaptivatorSi tu ordenador tiene la BIOS AWARD y el conjunto de chips S3 968 ó 868, puede bloquearse si se utiliza al mismo tiempo una Apocalypse 3D /3Dx o Captivator PCI. Este problema puede resolverse cambiando manualmente la asignación de memoria de la tarjeta añadida a un rango fuera de los 64 Mb que utiliza esta tarjeta de gráficos.Para obtener instrucciones sobre cómo realizar correctamente esta acción, ponte en contacto con el fabricante del hardware.Tarjetas Matrox con Apocalypse 3Dx
+
+Existen algunos problemas con las tarjetas gráficas Matrox Millennium o Mystique al usarse conjuntamente con Apocalypse 3Dx. Con el fin de admitir estas tarjetas, las propiedades de pantalla de 3Dx cambiarán automáticamente a la opción estándar para aceleración de gráficos en 3D. Para usar el ajuste optimizado, tendrás que actualizar los controladores de vídeo Matrox a la versión v3.63 o posterior.Tarjeta de gráficos Hercules StingrayExisten algunos problemas con la tarjeta de gráficos Hercules Stingray en resoluciones que no sean de 640 x 480, que es la establecida por defecto. Si observas algún problema, primero trata de utilizar los controladores más recientes del fabricante de hardware. Si esto no resuelve el problema, selecciona el modo de resolución 640 x 480.
+
+
+6. CÓMO MEJORAR LA VELOCIDAD DE H.E.D.Z.
+
+Cuando se inicia H.E.D.Z. aparecerá un cuadro de Windows con una serie de botones. Uno de los botones más importante es el botón "Opciones". Al pulsar este botón, accedes a H.E.D.Z. y puedes personalizar el juego.Resolución de pantallaLa resolución de pantalla te permite seleccionar la resolución con la que se ejecutará H.E.D.Z. Una resolución de pantalla inferior proporciona mayor velocidad pero reduce la calidad de imagen. Las resoluciones de pantalla superiores proporcionan mejor calidad de imagen pero reducen la velocidad. Algunas tarjetas de gráficos no admiten todas las resoluciones de pantalla posibles en H.E.D.Z. Si seleccionas una resolución de pantalla no admitida por tu tarjeta de vídeo para gráficos, H.E.D.Z. cambiará a una resolución adecuada.Nivel de detalle - VisibilidadLa visibilidad te permite seleccionar la distancia del jugador desde la que se dibujarán los objetos. Con visibilidad cercana, sólo se dibujarán y aparecerán los objetos cercanos al jugador. Esto proporciona mayor velocidad pero sacrifica los objetos lejanos. Con visibilidad lejana se dibujarán y aparecerán todos los objetos en escena. Esto proporciona una visión más realista pero afecta a la velocidad.Nivel de detalle - ModelosLos modelos te permiten seleccionar la cantidad de detalle gráfico que se muestra para cada personaje. El cambio es ligero, por lo que puede que no notes la diferencia entre detalle "bajo" y "alto". Los modelos en detalle bajo eliminan algunos detalles pequeños de la imagen del personaje. Esto proporciona mayor velocidad a la vez que se sacrifican algunos detalles gráficos. Los modelos en detalle alto mantienen todos los detalles gráficos del personaje. Esto proporciona imágenes de los personajes más detalladas, pero se pierde velocidad.Nivel de detalle - LuminosidadLa luminosidad te permite seleccionar la técnica utilizada para la fuente de luz. Con sombra plana se producen gráficos más vivos brillantes. Las sombras y efectos de iluminación son mínimos. Esto proporciona mayor velocidad sacrificando realismo en los gráficos. La sombra graduada suaviza las líneas duras producidas en la sombra plana. Ejecutar el juego en sombra graduada es más lento en ordenadores que no disponen de tarjeta de aceleración para gráficos en 3D. Para los equipos con tarjeta de aceleración para gráficos en 3D no debería notarse una gran diferencia.7. PROBLEMAS CON LOS CONTROLES DEL JUEGOA veces, después de usar la herramienta de configuración de mandos de H.E.D.Z. en la pantalla Opciones para personalizar los comandos del juego, el joystick/mando de juego puede hacerse lento a la hora de responder a las órdenes del jugador. Si esto ocurre, el jugador tiene que guardar la partida, salir de H.E.D.Z. y volver a probar el joystick/mando de juego.NOTA: H.E.D.Z. no permitirá al jugador seleccionar teclas no estándar para los comandos de entrada. Ejemplos de estas teclas son: Insert, AvPág, RePág, Impr Pant, Supr, F1, F2 etc. Para volver a probar el joystick/mando de juego, sigue las siguientes instrucciones:
+
+Haz clic con el botón izquierdo del ratón en el botón "Inicio".Mueve el cursor del ratón hasta el menú "Configuración" y haz clic con el botón izquierdo del ratón.
+Aparecerá la carpeta "Panel de control".
+Mueve el cursor del ratón sobre la carpeta "Panel de control" y haz clic con el botón izquierdo del ratón sobre ella.
+Cuando estés en el "Panel de control", mueve el cursor del ratón hasta el botón "Controladores para juegos" y haz doble clic sobre él.Aparecerá el nombre del controlador o mando en pantalla. También aparece el estado del controlador. Si el controlador es diferente del que está instalado en este momento, tendrás que quitar el dispositivo de la lista y agregar el adecuado. Es posible que tengas que volver a instalar el software del joystick/mando de juego.
+Si el estado que aparece no es el correcto, comprueba que el joystick/mando de juego está conectado correctamente. Si todo está bien y el problema persiste, vuelve a agregar el joystick/mando de juego. Si con esto no cambia el estado del joystick/mando de juego, puede que necesites volver a instalar el software del mando correspondiente.Cuando aparezca el joystick/mando de juego adecuado en la lista y el estado sea el correcto, haz clic con el botón izquierdo del ratón en el botón "Propiedades".Haz clic con el botón izquierdo del ratón sobre "Probar".
+Desde esta pantalla, el jugador puede volver a probar su joystick/mando de juego. Si el joystick/mando de juego no responde correctamente, tienes que hacer clic con el botón izquierdo del ratón sobre "Configuración".Mueve el cursor al botón "Calibrar" y haz clic con el botón izquierdo del ratón.Sigue cuidadosamente estas instrucciones.Acuérdate de hacer clic en el botón "Aceptar" o "Aplicar" para activar cualquier cambio que hayas realizado.
+8. CAMBIOS EN EL MANUAL
+
+Manual de H.E.D.Z., página 12, último párrafo, 3ª frase.
+
+El manual dice que el jugador puede volver atrás y visitar niveles que ya ha completado. Esto no es así. 
+
+
+Manual de H.E.D.Z., página 15, sección: "Los controles"
+
+Mandos por defecto para ratón de dos botones
+Botón izquierdo: Disparar
+Botón derecho: Cambiar monitor frontal
+
+Mandos por defecto para ratón de tres botones
+Botón izquierdo: Disparar
+Botón central: No hay opción por defecto
+Botón derecho: Cambiar monitor frontal 
+
+En H.E.D.Z. no se pueden configurar los botones del ratón para emular movimientos del juego. Si cambias la configuración de un botón del ratón para emular los mandos, el ratón no funcionará correctamente.Los movimientos de lado a lado o laterales con el ratón o el joystick hacen que el personaje gire, por defecto. No se puede cambiar la configuración de estas funciones.
+
+
+Manual de H.E.D.Z., página 9, tercer punto bajo el encabezamiento "Cómo usar el almacén".
+
+El manual dice "Si no tienes suficiente dinero para recargar una cabeza, oirás una señal de aviso y el intercambio no se producirá". Para aclarar esto, el intercambio no ocurrirá cuando el jugador no tiene dinero y la cabeza del almacén con la que se está negociando tiene muy poca energía. Si tienes una cantidad mínima de dinero puedes adquirir una cabeza muerta de tu almacén. Además, no necesitas dinero para obtener o negociar con una cabeza del almacén a la que todavía le quede algo de energía.
+
+
+Manual de H.E.D.Z., página 8, sección: El Almacén, cuarto punto:
+
+No hay cantidad mínima de dinero (más de 0) para conseguir una cabeza del almacén. Si el jugador tiene algo de dinero, la cabeza seleccionada del almacén se recargará dependiendo del dinero que le quede al jugador.
+
+El manual indica que los LF se hacen rojos si recogen una cabeza muerta. Este modo sólo está disponible con aceleración de gráficos en 3D.
+
+
+9. AHORRO DE ENERGÍA DEL MONITOR 
+
+Puede haber un problema de compatibilidad al ejecutar H.E.D.Z. en monitores que tienen activada la función de ahorro de energía. Esta función se activa después de un periodo prolongado de inactividad en el ordenador para ahorrar electricidad y evitar que se queme el monitor. Esto puede hacer que la partida actual de H.E.D.Z. no responda. Para evitar que esto suceda, el usuario puede desactivar la función Ahorro de energía.
+
+Para desactivar la función de ahorro de energía, sigue las siguientes instrucciones:
+Haz clic con el botón izquierdo del ratón en el botón "Inicio".
+Mueve el cursor del ratón hasta el botón "Configuración" y haz clic con el botón izquierdo del ratón en la carpeta "Panel de control".
+Aparecerá la carpeta "Panel de control".
+Mueve el cursor del ratón sobre la carpeta "Panel de control" y haz clic con el botón izquierdo del ratón sobre ella.Cuando estés en el "Panel de control", mueve el cursor del ratón hasta el botón "Pantalla" y haz doble clic sobre él.Haz clic con el botón izquierdo del ratón sobre "Protector de pantalla".Si tu monitor cumple con la norma de ahorro de energía, en la parte inferior de la ventana aparecerán varias opciones para los controles de ahorro de energía. Desde aquí el usuario puede desactivar las opciones de esta función. Recuerda hacer clic en el botón "Aplicar" para activar los cambios realizados.10.    PROTECTORES DE PANTALLAPuede haber un problema de compatibilidad al ejecutar H.E.D.Z. en monitores que tienen activado un protector de pantalla. El protector de pantalla se activa tras un periodo prolongado de inactividad en el ordenador para evitar que se queme el monitor. Esto puede hacer que la partida actual de H.E.D.Z. no responda. Para evitar que esto suceda, el usuario puede desactivar la función de protector de pantalla.
+
+Para desactivar esta función, sigue las siguientes instrucciones:
+Haz clic con el botón izquierdo del ratón en el botón "Inicio".
+Mueve el cursor del ratón hasta el botón "Configuración" y haz clic con el botón izquierdo del ratón en la carpeta "Panel de control".
+Aparecerá la carpeta "Panel de control".
+Mueve el cursor del ratón sobre la carpeta "Panel de control" y haz clic con el botón izquierdo del ratón sobre ella.
+Cuando estés en el "Panel de control", mueve el cursor del ratón hasta el botón "Pantalla" y haz doble clic sobre él.
+Haz clic con el botón izquierdo del ratón sobre "Protector de pantalla".
+Haz clic con el botón izquierdo del ratón sobre la flecha situada a la derecha de la ventana "Protector de pantalla".Aparecerá una lista desplegable con varias opciones.
+Desplázate por la lista y selecciona "Ninguno".
+Recuerda hacer clic en el botón "Aplicar" para activar los cambios realizados.
+
+
+11.    MULTITAREA
+
+Se recomienda no jugar a H.E.D.Z. con otros programas de ordenador abiertos en segundo plano. H.E.D.Z. utiliza bastante memoria y puede causar errores inesperados si hay otros programas ejecutándose al mismo tiempo.
+
+
+12.  ESCRITORIO VIRTUAL
+
+Puede haber un problema de compatibilidad al ejecutar H.E.D.Z. en monitores que tienen activado el escritorio virtual. Si se experimentan dificultades a la hora de jugar, se recomienda desactivar la función del escritorio virtual.
+
+Para desactivar esta función, sigue las siguientes instrucciones:
+Haz clic con el botón izquierdo del ratón en el botón "Inicio".
+Mueve el cursor del ratón hasta el botón "Configuración" y haz clic con el botón izquierdo del ratón en la carpeta "Panel de control".Aparecerá la carpeta "Panel de control".
+Mueve el cursor del ratón sobre la carpeta "Panel de control" y haz clic con el botón izquierdo del ratón sobre ella.Cuando estés en el Panel de control, mueve el cursor del ratón hasta el botón "Pantalla" y haz doble clic sobre él.Haz clic con el botón izquierdo del ratón sobre "Configuración".
+Si tu monitor y tarjeta de vídeo soportan el escritorio virtual, en la parte de la derecha de la ventana habrá una serie de imágenes. Cada una representa una aplicación del escritorio virtual diferente.
+Si colocas el cursor del ratón sobre la imagen, aparecerá un mensaje de texto informándote sobre lo que representa cada imagen.
+Debes seleccionar la imagen que dice "Sin Escritorio virtual". Normalmente es la primera imagen o la superior.Recuerda hacer clic en el botón "Aplicar" para activar los cambios realizados.
+
+
+13. COLOR DE 16 BITS
+
+H.E.D.Z. sólo puede ejecutarse en Color de Alta Densidad o de 16 bits. Es decir, el ordenador debe estar en modo de color de 16 bits para jugar a H.E.D.Z.
+
+Para comprobar la resolución de color actual del escritorio, sigue las siguientes instrucciones:
+Haz clic con el botón izquierdo del ratón en el botón "Inicio".
+Mueve el cursor del ratón hasta el botón "Configuración" y haz clic con el botón izquierdo del ratón en la carpeta "Panel de control".
+Aparecerá la carpeta "Panel de control".
+Mueve el cursor del ratón sobre la carpeta "Panel de control" y haz clic con el botón izquierdo del ratón sobre ella.Cuando estés en el Panel de control, mueve el cursor del ratón hasta el botón "Pantalla" y haz doble clic sobre él.Haz clic con el botón izquierdo del ratón sobre "Configuración".Bajo la paleta de colores debe aparecer la resolución de color de tu escritorio.
+Aparecerá una lista desplegable con varias resoluciones de color.Desplázate por la lista y selecciona "Color de alta densidad o de 16 bits".
+Recuerda hacer clic en el botón "Aplicar" para activar los cambios realizados.NOTA: Puede que tengas que reiniciar el ordenador para que se activen los cambios.
+
+
+14. CONTROLADORES
+
+El CD de H.E.D.Z. CD contiene una carpeta "SUPPORT" en la que se incluyen los controladores 3DFX Glide más recientes, así como otros controladores comunes para tarjetas de gráficos. Para instalar los controladores desde H.E.D.Z. tendrás que saber el nombre del fabricante y de la tarjeta de vídeo para gráficos o 3Dfx. 
+
+ADVERTENCIA: Una instalación incorrecta de 3Dfx o del controlador de vídeo para gráficos puede causar un funcionamiento anómalo del sistema. Se recomienda que la actualización de los controladores la realizan únicamente usuarios avanzados. Para instalar los controladores 3DFX Glide más recientes, sigue atentamente las siguientes instrucciones:En el escritorio de WindowsHaz clic con el botón derecho del ratón en el icono "Mi PC". 
+Haz clic con el botón izquierdo del ratón en la palabra "Propiedades" o pulsa la tecla "P".
+Haz clic con el botón izquierdo del ratón en la pestaña "Administrador de dispositivos".
+Haz doble clic con el botón izquierdo del ratón en las palabras "Controladores de sonido, de vídeo y de juegos"
+La sección "Controladores de sonido, de vídeo y de juegos" se desplegará para mostrar más elementos.Si DirectX ya estaba instalado en el sistema, haz doble clic con el botón izquierdo del ratón sobre las palabras "3Dfx Interactive Inc.".
+Si Direct X no se ha instalado en el sistema, haz doble clic con el botón izquierdo del ratón sobre el nombre del fabricante de las tarjetas." P. ej., si tuvieras una tarjeta Diamond Monster 3D, harías doble clic con el botón izquierdo del ratón sobre las palabras "Diamond Monster 3D". 
+Aparecerá la ventana de propiedades correspondiente a la tarjeta 3Dfx seleccionada. 
+Haz clic con el botón izquierdo del ratón en la pestaña "Controlador".
+Haz clic con el botón izquierdo del ratón en el botón "Actualizar controlador". Aparecerá la ventana "Asistente para actualizar el controlador de dispositivos". Comprueba que la casilla "Sí" (recomendado) está seleccionada y haz clic con el botón izquierdo del ratón en el botón "Siguiente". 
+El ordenador empezará a comprobar el disquete (Unidad A). Transcurridos unos instantes, volverá a aparecer la ventana "Asistente para actualizar el controlador de dispositivos" con el botón "Otras ubicaciones". Haz clic con el botón izquierdo del ratón en el botón "Otras ubicaciones". Haz clic con el botón izquierdo del ratón en el botón "Examinar". 
+Aparecerá la ventana "Buscar carpeta". 
+En la ventana "Buscar carpeta" localiza el icono de la unidad de CD-ROM y haz doble clic con el botón izquierdo del ratón sobre la palabra "H.E.D.Z.".La sección H.E.D.Z. se desplegará para mostrar varias carpetas. Esto puede tardar unos segundos hasta que el CD-ROM coja velocidad.
+Haz doble clic con el botón izquierdo del ratón en la carpeta "Support". Haz doble clic con el botón izquierdo del ratón en la carpeta "Glide".Busca el nombre de tu tarjeta 3Dfx en la lista de carpetas. Haz clic con el botón izquierdo del ratón en la carpeta de tu tarjeta 3Dfx. Nota: recuerda el nombre de esta carpeta porque lo necesitarás más tarde.
+Haz clic con el botón izquierdo del ratón en el botón "Aceptar". 
+Aparecerá la ventana "Selecciona otra ubicación".
+Haz clic con el botón izquierdo del ratón en el botón "Aceptar". 
+Aparecerá la ventana "Asistente para actualizar el controlador de dispositivos". El nombre del controlador que seleccionaste deberá aparecerá en esa ventana.
+Haz clic con el botón izquierdo del ratón en el botón "Terminar". Aparecerá un mensaje de Windows para introducir discos. Esto es normal. 
+Haz clic con el botón izquierdo del ratón en el botón "Aceptar". 
+Ahora aparecerá la ventana "Copiando archivos". El nombre de archivo del controlador deberá aparecer en la esquina superior izquierda de la ventana. 
+Haz clic con el botón izquierdo del ratón en el botón "Examinar. 
+En la carpeta "Examinar", busca el icono de la unidad de CD-ROM.
+Busca el nombre de tu tarjeta 3Dfx en la lista de carpetas.
+Haz clic con el botón izquierdo del ratón en la carpeta de tu tarjeta 3Dfx.
+Si has seleccionado la carpeta adecuada, el nombre de archivo del controlador debería aparecer en la parte izquierda de la pantalla. Nota: Deberías ver el nombre del archivo en la lista situada en la esquina superior izquierda de la ventana "Copiando archivos" y en el área de la ventana situada directamente debajo de ella. 
+Haz clic con el botón izquierdo del ratón en el botón "Aceptar". 
+Haz clic con el botón izquierdo del ratón en el botón "Aceptar". 
+Ahora deberías ver una representación gráfica de los controladores nuevos que se han copiado en tu sistema. 
+Aparecerá la ventana "Configuración de sistemas". Haz clic con el botón izquierdo del ratón en el botón "Sí". 
+Si tu sistema no se reinicia automáticamente, tendrás que volver a iniciarlo manualmente para activar los cambios. 
+
+
+15. PROCESADORES AMD
+
+H.E.D.Z. se ha probado en varios aparatos enviados directamente de AMD. Durante el proceso de análisis de H.E.D.Z. se descubrió que algunos de los procesadores AMD habían sido enviados con versiones antiguas de controladores de tarjetas de vídeo para gráficos. Si posees un aparato equipado con AMD y observas algún problema, ponte en contacto con el fabricante del procesador y solicita los controladores certificados más recientes de DirectX 5.2 ó DirectX 6.0 para ese preocesador. 
+
+
+
+**********  F I N   D E L   L É A M E  **********11_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+

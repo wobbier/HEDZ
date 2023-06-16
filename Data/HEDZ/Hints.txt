@@ -1,0 +1,189 @@
+=========================================
+ 	     H.E.D.Z
+
+   Head Extreme Destruction Zone
+
+HINTS AND TIPS FOR THE NEW H.E.D.Z PLAYER
+=========================================
+
+
+Welcome to the H.E.D.Z. Hints and Tips page.
+
+This document is designed to give you some useful starting information and some general hints and tips to help you WIN the game.  It also contains a Frequently Asked Questions section.  This information is also available on the H.E.D.Z website - www.hedz.com The information available on the website will be updated on a regular basis.  
+
+We also recommend you read the manual in conjunction with this initial hints guide before starting H.E.D.Z to gain as much information as possible to help you through the game.  The Readme file, which can be accessed from the start menu, will give you the latest up to date information, on running the game.
+
+
+STARTING H.E.D.Z
+================
+
+
+Difficulty Levels
+-----------------
+
+H.E.D.Z defaults to 'Easy' mode; we recommend you remain in Easy mode to start off with.  
+
+
+The First Level - Downtown
+--------------------------
+
+Downtown is the first level you will play.  Once you have loaded the game and selected the Downtown level press Play and you will find yourself in the HeadCase. 
+
+At the beginning of the game five starting heads have automatically been selected for you.  From the HeadCase all you have to do to start the game is press the Play button - GOOD LUCK!
+
+
+Entering a Level
+----------------
+
+When you first enter a level you are safe until you move off the starting Telepod, take some time to get your bearings and assess the situation.
+
+Know your environment proceed with caution until you become familiar with the lie of the asteroid levels.  When you enter a new area, look for places where opponent heads might be hiding as well as spots you can use for cover.
+
+
+Beware of surprise enemy attacks
+--------------------------------
+
+Some Hed opponents are beamed into the levels and can catch you by surprise.  You can hear there approach screams and a red beam appears just before the opponent is beamed in, so be alert!
+
+
+The first heads you meet in the game
+------------------------------------
+
+The first heads you come across in Downtown are Medic heads, these won't damage you, they are just cannon fodder.   You can pick them off at your leisure before the real action starts!
+
+Medic heads will be particularly useful to you as novice H.E.D.Z player.  When you select a Medic head and activate his special ability he will heal any damaged heads you have in your current line-up.  
+
+The second Medic head you come across is what's known as a 'Doubler'.  Doublerz are what you get if you pop a head, pick it up and it is already in your BackPack.  Doublerz are a very important source of income.  
+
+
+Cash
+----
+
+Cash is a very important commodity in H.E.D.Z.  You will need it for several reasons, the more you have the better chance you have of getting through the game and scoring well.  Cash can be collected from picking up Doublerz, or as pick-ups in the levels.  You need it to:
+
+- re-charge the energy of heads in your current list
+- Swap newly collected heads from your BackPack to your current list
+- To improve your overall score
+
+
+Score
+-----
+
+Your score is calculated by combining the total amount of cash you have collected combined with the heads that you collect.   The more heads and cash you collect the higher your score will be.  Take some time to explore the asteroids, they contain a large number of secret areas and hidden vantage points where you can find extra cash and bonus heads.
+
+
+Collecting New Heads
+--------------------
+
+You gain new heads in the game by stealing them off opponents you encounter.  If you attack them enough their head will pop off and become a DeadHead.  You can pick a DeadHead up by running over it, it will then be stored in your BackPack.  You need cash if you want to transfer it to your current list.
+
+Use your Level summary information to keep track of how many heads you have collected so far in a level.  You may have missed some!
+ 
+
+Multi-headed Opponents
+----------------------
+
+Beware just like you an opponent may have more than one head!
+
+
+No Naked Aliens Allowed!
+------------------------
+
+Once you have popped the head/s off an opponent alien it will become naked.  The same will happen to you if you lose all your current heads (not including those from your BackPack).  Being naked in the Nappa Flux is not allowed.  Naked aliens are beamed out of the game! 
+
+The official term for becoming a naked alien is called 'Bare aliened'.  If this happens to you
+you will have a few seconds to change into a head from your Backpack.  You can even do this as you are being beamed out, but if you leave it this late you may lose a lot of energy falling back down to the asteroid.
+
+
+Stealing heads
+--------------
+
+You aren't the only one who wants to get your hands on every head possible.  Enemy opponents are obsessed with heads; they will do everything they can to steal them.  If there are stray DeadHead icons lying around they'll chase after them and steal them as if their lives depended on it.  You have to be quick to pick up heads before your opponents get there first.
+
+Don't panic if an opponent does happen to pick up a DeadHead you can get it back, all you have to do is attack them with any of your current weapons once and they'll drop it, giving you another chance to grab it.
+
+
+Using the Opponents weakness for stealing heads to your own advantage
+---------------------------------------------------------------------
+
+A lot of times during the game you will probably be attacked by more than one opponent at a time.  A good method to keep enthusiastic head thieves at bay is too pick them off one at a time, let them steal all the loose DeadHeads and then kill the last opponent who by that time will probably have picked up all the loose heads.  Defeat him and then you and pick them up all at once.
+
+
+Warning!  Watch out for Naked Aliens
+------------------------------------
+
+Naked aliens are just as keen on stealing heads and you have to keep a close eye on them.  Naked aliens will be beamed out after a few seconds, but in this time they will try and steal any heads they can get their hands on.  If a naked alien beams out with a head, you cannot get it back again.  Up to the point he beams out you can attack him and get it back in the usual way.  
+
+Naked aliens can move very quickly, as they don't have any heads weighing them down.  Timing combined with the right weapon is what's needed when it comes to dealing with head hungry naked aliens here some suggestions to help keep them at bay:
+
+If a naked alien hasn't yet managed to steal a DeadHead you can pin him down and prevent him from moving until he is beamed out.  Weapons particulary good for this are guns, missiles, arrows or any other weapon that is quick and can be fired off rapidly.  
+
+If a naked alien has managed to pick up a DeadHead any weapon he is attacked with will make him drop it again.   However, beware if you shoot him too early he will try and pick it up again.  
+
+One strategy is to time your attack and wait until the red beam appears before you attack.  This method will result in the naked alien dropping the head and then being beamed out immediately, with no chance of stealing the head again.  This strategy can be risky if you miss; he'll beam out and take the head with him.
+
+Another strategy is to blast the alien with everything available in your arsenal to make him drop the head and at the same time preventing him from stealing it again.  If this is your preferred method make sure you don't run out of ammo just before he is beamed out!
+			
+
+Head Energy
+-----------
+
+You can only lose energy from the head you are currently controlling.  If you are being attacked and your head energy is low, your head icon will start to flash, one more enemy hit will cause you to lose that head.  CHANGE HEADS IMMEDIATELY then use your energy re-charge function (default for this function is the Return key) to give the head full health again.    
+
+If you leave your Backpack open and get attacked you will LOSE heads from it.  Be conscientious about where and when you open it.  
+
+
+Airlockz 
+--------
+
+No other Heds are allowed into Airlockz, so they are a good place to open your BackPack and swap in new heads or to re-charge damaged heads from your current list.  Be cautious when exiting an Airlock something sinister may be waiting for you the other side of the door. 
+
+NOTE:  remember to save your game regularly 
+ 
+
+
+GET YOUR HEAD ROUND A FEW FAQs
+==============================
+
+Q: What's the player's role in all this madness?
+A: You take the role of one of the Hedz aliens and you are participating in an inter-galactic head hunting competition.
+
+Q: What's the game objective?
+A: Your ultimate goal is to navigate your way through the entire Nappa Flux, collecting as many heads as you can, to become "The Best Head Hunter in the Galaxy".
+
+Q: Why do I need to collect heads?  
+A: Many reasons:
+- Heads=Lives (if you lose all your heads you're out of the game)
+- You need to collect a number of key Hedz per level to progress through the level, unlock the exit gate and to proceed to the next level.
+- Best head hunter in the galaxy: to have any chance of achieving this pinnacle, you must finish with the most amount of heads.  Heads=Cash.  Cash is used as the equivalent of a points system.  Your scores are tallied up by combining the amount of heads you have collected with the amount of cash you have left over at the end of the game.  
+- Discovering secrets: there is at least one secret area on most levels, containing at least one bonus head.  You must be in possession of a specific head before you can gain access to a secret area and claim the bonus head. 
+
+Q: Can I change heads at any time:
+A: Yes, within your five current heads you can change instantaneously.  You can also swap heads out of your backpack into your current list providing you have enough cash to make the transaction. 
+
+Q: What is a BackPack?
+A: The BackPack is where you store all the new heads you have collected in a level.  You can swap these into your current list by using cash you have collected within the levels.
+
+Q: What is a HeadCase?
+A: The HeadCase is the main storage facility for your heads.  This is where you can display them, look at their statistics, etc.  Any head in the HeadCase is yours and is safe unless you choose to take them into a level, where you could lose them to an opponent.
+
+Q: What do I do with cash?
+A: The Cash in H.E.D.Z is known as Zedz.  Zedz are used to increase your score, top up the health of any damaged heads and also make transactions from your BackPack to your current head list.
+
+Q: Sometimes I can't move and have a cage around me, why?
+A: One of the many abilities available in H.E.D.Z is the 'Cell Attack'.  If you target a player and activate this weapon it will trap your opponent and temporarily prevent them from moving or firing.  You can then quickly change to an attacking head and blast them off the asteroid.  Of course, this can also happen to you too!
+
+Q: Are some heads better than others?
+A: Yes, as you progress through the game the heads you meet will become more powerful and have different abilities.  However, there are many different types of head available in the game and not all are heads with offensive powers.  The skill is to go into a level with a balanced selection and use them in combination with each other.   
+
+Q: What's the difference between H.E.D.Z, HEDZ and Heads?
+A:  H.E.D.Z stands for Head Extreme Destruction Zone, and is the official name for the head hunting competition.
+
+The HEDZ are the ancient alien race who started the whole game off. 
+
+A Hed is a singular alien.  
+
+Heads are the Heads players collect in the game, formally belonging to the humans that they were stolen (or "harvested") from in the first place.  
+
+
+

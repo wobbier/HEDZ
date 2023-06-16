@@ -1,0 +1,385 @@
+=============================
+                      H.E.D.Z.
+
+Head Extreme Destruction Zone
+=============================
+Date : 15 septembre 1998
+
+Pour améliorer la lisibilité de ce fichier si vous utilisez le programme Bloc-notes : 
+
+Dans le menu "Edition", sélectionnez l'option "Retour à la ligne automatique".
+
+
+Bienvenue dans le fichier readme de H.E.D.Z. 
+Ce fichier contient des informations supplémentaires qui n'apparaissent pas dans le manuel. 
+Veuillez prendre le temps de lire toutes les sections avant de procéder à l'installation.
+
+Ce fichier contient des informations sur les sujets suivants : 
+
+ 1. DIRECTX 5.2 et 6.0
+ 2. RESOLUTION D'ECRAN
+ 3. JOUER A H.E.D.Z. SANS CARTE ACCELERATRICE 3D
+ 4. PROBLEMES AVEC LES CARTES GRAPHIQUES 2D ET 3D
+ 5. PROBLEMES RENCONTRES AVEC CERTAINES CARTES GRAPHIQUES ET CARTES ACCELERATRICES 3D
+ 6. AMELIORATION DE LA VITESSE D'EXECUTION DE H.E.D.Z.
+ 7. PROBLEMES AVEC LES COMMANDES DE JEU
+ 8. MODIFICATIONS APPORTEES AU MANUEL
+ 9. FONCTIONS POUR L'ECONOMIE D'ENERGIE DU MONITEUR
+10. ECRANS DE VEILLE
+11. MULTITACHES
+12. BUREAU VIRTUEL
+13. 65536 COULEURS (16 BITS)
+14. PILOTES 
+15. MACHINES AMD
+
+
+
+1. DIRECTX 5.2 et 6.0
+
+H.E.D.Z. a été testé avec DirectX 5.2 et Direct X 6.0. 
+H.E.D.Z. nécessite l'installation de DirectX 5.2 ou d'une version ultérieure sur votre ordinateur. 
+H.E.D.Z. exige que tous les périphériques et les pilotes de votre ordinateur soient compatibles avec DirectX 5.2 ou une version ultérieure. Si un de vos périphériques n'est pas compatible avec DirectX, veuillez contacter le fabricant de ce périphérique et demander les pilotes certifiés DirectX 5.2 ou DirectX 6.0 les plus récents pour ce périphérique. 
+Le programme d'installation de H.E.D.Z. détectera la présence éventuelle d'une version compatible de DirectX sur votre ordinateur. Dans le cas contraire, un message apparaîtra et vous invitera à utiliser le programme d'installation de H.E.D.Z. pour installer DirectX 5.2 sur votre machine. 
+Le programme d'installation de H.E.D.Z. n'écrasera pas DirectX 6.0 si ce pilote est détecté sur votre ordinateur. 
+
+Si vous disposez d'une carte accélératrice 3D sur votre machine et que DirectX 6.0 est installé sur votre ordinateur, vous devriez remarquer une augmentation de la vitesse générale d'exécution de H.E.D.Z.
+
+L'application DirectX 6.0 est incluse sur le CD H.E.D.Z. Elle permet aux utilisateurs qui connaissent bien les cartes accélératrices 3D de bénéficier d'une augmentation générale de la vitesse d'exécution de H.E.D.Z. dans un environnement DirectX 6.0. 
+
+REMARQUE : DirectX 6.0 est une application Microsoft complexe. Pendant l'installation de DirectX 6.0, le programme vous demandera des questions bien précises et très détaillées concernant votre système. L'application DirectX 6.0 risque de modifier certains paramètres de votre ordinateur en fonction des réponses que vous donnez à ces questions. Si vous fournissez au programme de mauvaises indications, vous risquez d'affaiblir la performance de votre système. Nous déconseillons fortement aux utilisateurs débutants d'essayer d'installer seuls l'application DirectX 6.0. 
+
+ATTENTION : il se peut que vous rencontriez des difficultés lors de l'exécution de H.E.D.Z. avec DirectX 6.0. En effet, si le jeu est exécuté en mode logiciel seulement, c'est-à-dire sans carte accélératrice 3D, et que l'option d'ombre plate est sélectionnée, vous risquez de rencontrer quelques problèmes graphiques. 
+
+Dans ce cas, veuillez contacter Microsoft pour obtenir la toute dernière version du logiciel DirectX. A l'heure où H.E.D.Z. était mis sous presse, les ingénieurs de Microsoft s'efforçaient de développer un programme de correction pour ce problème.
+
+Il est possible de désinstaller DirectX 6.0 à l'aide de l'utilitaire Dxsetup.exe. Une fois la désinstallation effectuée, réinstallez H.E.D.Z. à partir du CD pour installer DirectX 5.2 sur votre ordinateur.
+
+ATTENTION : cela risque d'avoir un effet sur les autres jeux installés sur votre machine.  
+
+2.  RESOLUTION D'ECRAN
+
+Les cartes graphiques vidéo ne supportent pas toutes les nombreuses résolutions de jeu disponibles dans H.E.D.Z. Si vous sélectionnez une résolution spécifique à l'écran Options, mais remarquez que le jeu s'exécute dans une résolution inférieure, cela peut être dû à l'incapacité de votre carte graphique vidéo à supporter cette résolution particulière.  
+Dans ce cas, le programme H.E.D.Z. sélectionnera automatiquement une résolution d'écran supportée par votre carte graphique vidéo. 
+
+Par exemple, certaines cartes graphiques vidéo ne supportent pas la résolution de jeu 512 x 384. Si c'est le cas de votre carte graphique, H.E.D.Z. sélectionnera automatiquement par défaut la résolution de jeu 640 x 480. Certaines cartes accélératrices 3D ne supportent pas la résolution de jeu 320 x 240. Si c'est le cas de votre carte accélératrice 3D, H.E.D.Z sélectionnera automatiquement par défaut la résolution de jeu 640 x 480.
+
+
+3.    JOUER A H.E.D.Z. SANS CARTE ACCELERATRICE 3D
+
+Les cartes graphiques vidéo 2D ne supportent pas toutes la résolution de jeu 320 x 240. Cette résolution est la résolution la plus basse dans laquelle H.E.D.Z. s'exécutera. 
+Si votre carte graphique vidéo 2D ne supporte pas la résolution de jeu 320 x 240, H.E.D.Z. sélectionnera automatiquement par défaut la résolution de jeu 640 x 480 et affichera le jeu avec une bordure noire. 
+Une fois que vous êtes dans ce mode, vous pouvez utiliser les touches + et ) de votre clavier pour augmenter ou diminuer la taille de l'écran. La diminution de la taille de l'écran devrait augmenter la vitesse d'exécution du jeu. 
+
+
+
+4. PROBLEMES AVEC LES CARTES GRAPHIQUES 2D ET 3D
+
+Le programme H.E.D.Z. possède ses propres applications de rendu logiciel intégrées. Vous pouvez désactiver l'accélération matérielle 2D et 3D afin que le logiciel de rendu de H.E.D.Z. contrôle le jeu. 
+
+Pour désactiver votre accélération matérielle 2D et/ou 3D, veuillez suivre à la lettre les instructions ci-dessous. 
+
+DirectX 5.2
+
+A partir du bureau de Windows :
+Double-cliquez avec le bouton gauche de la souris sur l'icône "Poste de travail".
+Double-cliquez avec le bouton gauche de la souris sur l'icône "Lecteur C". 
+Double-cliquez avec le bouton gauche de la souris sur le dossier "Program Files".
+Double-cliquez avec le bouton gauche de la souris sur le dossier "DirectX". 
+Double-cliquez avec le bouton gauche de la souris sur le dossier "Set Up" (Installation). 
+Double-cliquez avec le bouton gauche de la souris sur l'icône "DXTOOL.exe". 
+La fenêtre de gestionnaire DirectX devrait apparaître. 
+Au bas de cette fenêtre, vous devriez voir deux cases d'options :
+	Utiliser l'accélération matérielle Direct 3D
+Utiliser l'accélération matérielle Direct Draw
+
+Devant chaque option se trouve une petite case à cocher. 
+Cliquez avec le bouton gauche de la souris sur cette case afin de la désactiver. 
+N'oubliez pas de cliquer sur le bouton Appliquer afin que les modifications effectuées prennent effet.
+Fermez toutes les fenêtres. 
+Relancez votre machine. 
+
+DirectX 6.0
+
+A partir du bureau de Windows :
+Double-cliquez avec le bouton gauche de la souris sur l'icône "Poste de travail".
+Double-cliquez avec le bouton gauche de la souris sur l'icône "Lecteur C". 
+Double-cliquez avec le bouton gauche de la souris sur le dossier "Program Files".
+Double-cliquez avec le bouton gauche de la souris sur le dossier "DirectX". 
+Double-cliquez avec le bouton gauche de la souris sur le dossier "Set Up" (Installation).
+Double-cliquez avec le bouton gauche de la souris sur l'icône "Dxdiag.exe".
+Cliquez avec le bouton gauche de la souris sur l'onglet "Display1" (Affichage1) en haut de l'écran. 
+Les informations concernant l'affichage 1 devraient apparaître à l'écran. 
+Au milieu de la fenêtre, sous les caractéristiques DirectX, vous devriez voir deux cases d'options : 
+	Direct Draw
+Direct 3D
+
+Cliquez d'abord avec le bouton gauche de la souris sur la case d'option "Direct 3D" pour la désactiver. 
+Un message vous indiquant que cela aura pour effet de désactiver toute accélération matérielle 3D devrait apparaître. 
+Cliquez avec le bouton gauche de la souris sur le bouton "OK". 
+Cliquez ensuite avec le bouton gauche de la souris sur la case d'option "Direct Draw" pour la désactiver. 
+Un message vous indiquant que cela aura pour effet de désactiver toute accélération matérielle pour Direct Draw et l'accélération 3D devrait apparaître. 
+Cliquez avec le bouton gauche de la souris sur le bouton "OK".
+Cliquez ensuite sur le bouton "Quitter".
+Fermez toutes les fenêtres. 
+Relancez votre machine. 
+
+Si vous continuez à rencontrer des problèmes graphiques en exécutant H.E.D.Z., essayez la procédure suivante : 
+
+A. Assurez-vous que l'ordinateur est branché sur une source d'alimentation électrique opérationnelle. 
+B. Vérifiez que tous les fils et les prises sont bien en place et ne sont pas déconnectés.
+C. Vérifiez que les graphismes apparaissent correctement dans les autres jeux et/ou applications.  
+D. Assurez-vous que DirectX est compatible avec tous les pilotes de périphériques. 
+E. Contactez le fabricant de votre carte graphique vidéo et demandez les pilotes certifiés DirectX les plus récents pour votre carte graphique vidéo. 
+F. Contactez le service clientèle de Hasbro.
+
+
+5.  PROBLEMES RENCONTRES AVEC CERTAINES CARTES GRAPHIQUES ET CARTES ACCELERATRICES 3D
+
+Des problèmes ont été signalés dans l'exécution de H.E.D.Z. avec les cartes suivantes : 
+
+Millenium 1 
+Cette carte ne supporte pas les textures. Le jeu fonctionnera uniquement en mode logiciel. 
+
+
+Power VR 
+Les pilotes actuels de la carte Power VR risquent de poser des problèmes avec H.E.D.Z. Le système d'exploitation Windows ne reflète pas correctement la quantité de mémoire vidéo disponible sur la carte. Si vous rencontrez des problèmes avec H.E.D.Z. et que vous disposez d'une carte graphique vidéo Power VR, essayez la procédure suivante : 
+	
+A. Réduisez la taille de la résolution du bureau de Windows avant d'exécuter le jeu.
+
+B. Contactez le fabricant de votre matériel et demandez les pilotes certifiés DirectX les plus récents.
+
+C. Contactez Microsoft. 
+
+
+	S3/Apocalypse 3D/3Dx ou Captivator
+
+Si votre ordinateur est équipé du programme AWARD BIOS et du chipset S3 968 ou 868, votre ordinateur risque de se bloquer lorsqu'il est utilisé en conjonction avec une carte PCI Apocalypse 3D/3Dx ou Captivator. Vous pouvez résoudre ce problème en changeant manuellement l'allocation de mémoire pour la carte additionnelle sur une plage de valeurs inférieure aux 64 Mo utilisés par la carte graphique. 
+
+Pour obtenir des instructions sur la façon de réaliser correctement cette opération, veuillez contacter le fabricant de votre matériel. 
+
+
+Cartes Matrox avec Apocalypse 3Dx
+
+Des problèmes ont été identifiés avec les cartes graphiques vidéo Matrox Millennium ou Mystique lorsqu'elles sont utilisées en conjonction avec la carte Apocalypse 3Dx. Afin de supporter ces cartes, les propriétés de l'affichage de la carte Apocalypse 3Dx reviendront aux valeurs par défaut pour l'accélération 3D. Pour utiliser le réglage optimisé, vous devrez mettre à jour vos pilotes d'affichage Matrox (version v3.63 ou supérieure).
+
+	
+Carte graphique Hercules Stingray 
+	
+Des problèmes ont été identifiés avec la carte Hercules Stingray dans les résolutions autres que la résolution par défaut 640 x 480. Si vous rencontrez des difficultés, essayez d'abord d'installer les pilotes les plus récents du fabricant de votre matériel. Si les problèmes persistent, sélectionnez le mode de jeu 640 x 480.
+
+
+
+6.   AMELIORATION DE LA VITESSE D'EXECUTION DE H.E.D.Z.
+
+Une fois H.E.D.Z. lancé, une fenêtre Windows comportant un certain nombre de boutons devrait apparaître. L'un des boutons les plus importants est le bouton "Options". En cliquant sur le bouton "Options", vous pouvez accéder aux paramètres d'affichage de H.E.D.Z. et les modifier à votre gré. 
+
+	Résolution image
+Cette option permet au joueur de sélectionner la résolution dans laquelle H.E.D.Z. s'exécutera. Les résolutions basses permettent un débit de trames plus rapide, au détriment de la qualité de l'image. Les résolutions élevées offrent une meilleure qualité de l'image mais un débit de trames lent. Certaines cartes graphiques vidéo ne supportent pas toutes les résolutions d'images disponibles dans H.E.D.Z. Si vous sélectionnez une résolution qui n'est pas supportée par votre matériel graphique vidéo, H.E.D.Z. sélectionnera par défaut une autre résolution. 
+
+Précision des détails - Vue d'avion
+Cette option permet au joueur de sélectionner la distance séparant le joueur des objets qui seront dessinés. Une vue d'avion réglée sur Proche ne dessinera et n'affichera que les objets qui sont près du joueur. Cela permet un débit de trames plus rapide, en supprimant les objets distants. Une vue d'avion réglée sur Eloignée dessinera et affichera tous les objets de la scène. Cela permet une vue plus réaliste mais implique un débit de trames lent.
+		
+Précision des détails - Objets 
+Cette option permet au joueur de sélectionner la quantité de détails affichés pour chaque personnage. Les nuances sont subtiles et vous risquez de ne pas remarquer la différence entre des objets "peu détaillés" et "très détaillés". Dans le mode d'objets peu détaillés, certains des détails les plus fins sont supprimés des graphismes du personnage. Cela permet donc un débit de trames plus rapide. Dans le mode d'objets très détaillés, tous les détails les plus fins des graphismes du personnage sont conservés. Cela permet une précision graphique extrême du personnage, mais implique un débit de trames lent. 
+
+Précision des détails - Eclairage
+Cette option permet au joueur de sélectionner la technique utilisée comme source de lumière. L'option Ombre plate permet un affichage des graphismes plus clairs et plus vifs, avec des ombres et des effets de lumière du jeu minimaux. Ce réglage permet un débit de trames plus rapide, mais nuit au réalisme des graphismes. L'option Ombre Gouraud permet de lisser les lignes irrégulières générées par la technique d'ombre plate. La vitesse d'exécution du jeu en mode Ombre Gouraud est plus lente pour les ordinateurs ne disposant pas de carte accélératrice 3D. Il ne devrait pas y avoir de différence notable pour les machines équipées d'une carte accélératrice 3D.
+		
+
+
+7.  PROBLEMES AVEC LES COMMANDES DE JEU
+
+Parfois, après que le joueur ait utilisé l'utilitaire de configuration des commandes de H.E.D.Z. sur l'écran Options pour personnaliser les commandes d'entrée, il peut arriver que le joystick et/ou la manette soient lents à réagir aux commandes. Si cela se produit, il est recommandé de sauvegarder la partie, de quitter H.E.D.Z. et de procéder à un nouveau test du joystick et/ou de la manette. 
+
+REMARQUE : H.E.D.Z. ne permettra pas au joueur de sélectionner des touches non standard pour l'entrée des commandes. Par exemple : Inser, page préc., page suiv., Impr écran, Suppr, F1, F2, etc. 
+
+Pour tester le joystick et/ou la manette, veuillez suivre les instructions ci-dessous. 
+
+Cliquez sur le bouton Démarrer avec le bouton gauche de la souris. 
+Placez le curseur de la souris sur l'option Paramètres et cliquez avec le bouton gauche de la souris. 
+Le dossier Panneau de configuration devrait apparaître. 
+Placez le curseur de la souris sur le dossier Panneau de configuration et cliquez avec le bouton gauche de la souris pour le sélectionner. 
+Une fois dans le Panneau de configuration, placez le curseur de la souris sur l'option Contrôleurs de jeu et cliquez deux fois avec le bouton gauche de la souris. 
+Le nom du contrôleur devrait apparaître dans la fenêtre, accompagné de son état. Si le contrôleur répertorié est différent de celui qui est actuellement connecté, vous devez supprimer le contrôleur figurant dans la liste et ajouter le bon périphérique. Pour cela, vous risquez de devoir réinstaller le logiciel du joystick et/ou de la manette. 
+Si l'état du contrôleur n'est pas accompagné de la mention "OK", vérifiez que le joystick et/ou la manette sont correctement connectés. Si vous êtes sûr que le périphérique est bien branché et que le problème persiste, essayez de supprimer le joystick et/ou la manette et de les réinstaller. Si cela n'a aucun effet sur l'état du joystick et/ou de la manette, vous devrez sans doute réinstaller le logiciel du contrôleur. 
+Une fois que le joystick et/ou la manette sont correctement répertoriés et que leur état est "OK", cliquez avec le bouton gauche de la souris sur le bouton Propriétés. 
+Cliquez avec le bouton gauche de la souris sur l'onglet Test.
+A partir de cet écran, le joueur peut re-tester son joystick et/ou sa manette. 
+Si le joystick et/ou la manette ne réagissent pas correctement, cliquez avec le bouton gauche de la souris sur l'onglet Configuration. 
+Placez le curseur de la souris sur le bouton Etalonner et cliquez avec le bouton gauche de la souris. 
+Veuillez suivre les instructions très attentivement. 
+N'oubliez pas de cliquer sur le bouton OK ou Appliquer afin que les modifications effectuées prennent effet. 
+
+
+8.  MODIFICATIONS APPORTEES AU MANUEL
+
+Manuel H.E.D.Z., page 12, dernier paragraphe, 3ème phrase
+
+Le manuel indique que le joueur peut revenir en arrière vers des niveaux qu'il a déjà terminés. Ceci est incorrect. 
+
+Manuel H.E.D.Z., page 15, section "Apprenez à connaître vos propres commandes de jeu" :
+
+Commandes par défaut pour une souris à deux boutons
+Bouton gauche de la souris : Tirer
+Bouton droit de la souris : Changer Hed 
+
+Commandes par défaut pour une souris à trois boutons 
+Bouton gauche de la souris : Tirer 
+Bouton central de la souris : aucune action par défaut
+Bouton droit de la souris : Changer Hed
+
+Les boutons de la souris ne peuvent pas être configurés pour émuler les mouvements de jeu dans H.E.D.Z. Si vous redéfinissez un bouton de la souris pour émuler les commandes de mouvement, la fonction ne fonctionnera pas correctement dans le jeu. 
+
+Le déplacement latéral de la souris et du joystick est affecté par défaut à la rotation du personnage dans H.E.D.Z. Ces fonctions ne peuvent pas être reconfigurées. 
+
+
+Manuel H.E.D.Z., page 9, troisième puce de la section "Comment utiliser votre sac à dos"
+
+Vous trouverez dans le manuel l'explication suivante : "Si vous n'avez pas assez d'argent pour recharger un "head", vous entendrez un avertissement sonore et l'échange n'aura pas lieu".  En d'autres termes, l'échange ne se produira pas lorsque le joueur n'a pas d'argent et que le head qui est échangé du sac à dos ne dispose plus de points de santé. Si vous avez un tout petit peu d'argent, vous pouvez toujours acheter un head mort de votre sac à dos. De plus, vous n'avez pas besoin d'argent pour acquérir ou échanger un head du sac à dos, si ce head dispose encore de points de santé.
+
+
+Manuel H.E.D.Z., page 8, section "Sac à dos", 4ème puce :
+
+Il n'y a pas de somme d'argent minimale (supérieure à zéro) requise pour acquérir un head du sac à dos. Si le joueur a de l'argent, le prix du head sélectionné dans le sac à dos sera déterminé en fonction de l'argent qui lui reste. 
+
+
+Le manuel stipule que le joueur devient rouge s'il ramasse un head mort. Ce mode n'est disponible qu'avec l'accélération matérielle 3D.
+
+
+
+9.    FONCTIONS POUR L'ECONOMIE D'ENERGIE DU MONITEUR
+
+Il se pose parfois un problème de compatibilité lorsque vous exécutez H.E.D.Z. sur un moniteur dont les fonctions pour l'économie d'énergie du moniteur sont activées. Après une période d'inactivité prolongée de l'ordinateur, les fonctions pour l'économie d'énergie du moniteur s'activent afin d'économiser de l'énergie et d'empêcher le moniteur de chauffer. Cela peut provoquer un blocage de la partie H.E.D.Z. en cours. Afin d'éviter un tel cas de figure, il est recommandé de désactiver les fonctions pour l'économie d'énergie du moniteur. 
+
+Afin de désactiver les fonctions pour l'économie d'énergie du moniteur, veuillez suivre les instructions ci-dessous : 
+Cliquez sur le bouton Démarrer avec le bouton gauche de la souris. 
+Placez ensuite le curseur de la souris sur l'option Paramètres et cliquez avec le bouton gauche de la souris. 
+Le dossier Panneau de configuration devrait apparaître. 
+Placez le curseur de la souris sur le dossier Panneau de configuration et cliquez dessus avec le bouton gauche de la souris. 
+Une fois dans le Panneau de configuration, placez le curseur de la souris sur l'icône Affichage et cliquez deux fois avec le bouton gauche de la souris. 
+Cliquez sur l'onglet Ecran de veille avec le bouton gauche de la souris. 
+Si votre moniteur supporte les fonctions pour l'économie d'énergie du moniteur, vous trouverez au bas de la fenêtre plusieurs options d'économie d'énergie du moniteur. Dans cette fenêtre, vous pouvez désactiver les options relatives à cet outil. N'oubliez pas de cliquer sur le bouton Appliquer pour que les modifications prennent effet. 
+
+
+
+10.    ECRANS DE VEILLE
+
+Vous risquez de rencontrer un problème de compatibilité lorsque vous exécutez H.E.D.Z. sur un moniteur dont la fonction Ecran de veille est activée. Après une période d'inactivité prolongée de l'ordinateur, l'écran de veille s'active pour empêcher le moniteur de chauffer. Ceci peut provoquer un blocage de la partie H.E.D.Z. en cours. Afin d'éviter un tel cas de figure, il est recommandé de désactiver les écrans de veille. 
+
+Pour désactiver un écran de veille, veuillez suivre les instructions ci-dessous : 
+Cliquez sur le bouton Démarrer avec le bouton gauche de la souris. 
+Placez ensuite le curseur de la souris sur l'option Paramètres et cliquez avec le bouton gauche de la souris. 
+Le dossier Panneau de configuration devrait apparaître. 
+Placez le curseur de la souris sur le dossier Panneau de configuration et cliquez dessus avec le bouton gauche de la souris. 
+Une fois dans le Panneau de configuration, placez le curseur de la souris sur l'icône Affichage et cliquez deux fois avec le bouton gauche de la souris. 
+Cliquez sur l'onglet Ecran de veille avec le bouton gauche de la souris.
+Cliquez avec le bouton gauche de la souris sur la flèche pointant vers le bas, à droite de la zone de liste Ecran de veille. 
+Une liste des écrans de veille disponibles devrait apparaître. 
+Faites défiler la liste et choisissez (aucun). 
+N'oubliez pas de cliquer sur le bouton Appliquer pour que les modifications prennent effet. 
+
+
+11.    MULTITACHES
+
+Il n'est pas conseillé de jouer à H.E.D.Z. avec d'autres applications ouvertes en arrière-plan sur l'ordinateur. H.E.D.Z. est un programme exigeant beaucoup de mémoire et l'exécution simultanée d'autres applications risque de provoquer des erreurs inattendues. 
+
+
+
+12.  BUREAU VIRTUEL
+
+Vous risquez de rencontrer certains problèmes de compatibilité lorsque vous exécutez H.E.D.Z. sur un moniteur dont la fonction Bureau virtuel est activée. Dans ce cas, il est recommandé de désactiver la caractéristique Bureau virtuel. 
+
+Pour désactiver la fonction Bureau virtuel, veuillez suivre les instructions ci-dessous. 
+Cliquez sur le bouton Démarrer avec le bouton gauche de la souris. 
+Placez ensuite le curseur de la souris sur l'option Paramètres et cliquez avec le bouton gauche de la souris. 
+Le dossier Panneau de configuration devrait apparaître. 
+Placez le curseur de la souris sur le dossier Panneau de configuration et cliquez dessus avec le bouton gauche de la souris. 
+Une fois dans le Panneau de configuration, placez le curseur de la souris sur l'icône Affichage et cliquez deux fois avec le bouton gauche de la souris.
+Cliquez sur l'onglet Configuration avec le bouton gauche de la souris. 
+Si votre moniteur et carte vidéo supportent la fonction Bureau virtuel, vous verrez dans la partie droite de la fenêtre une série d'images. Chaque image représente une application différente du Bureau virtuel. 
+Si vous placez le curseur de la souris sur le graphisme, vous devriez voir, après quelques secondes, un message indiquant la fonction de chaque graphisme. 
+Sélectionnez le graphisme indiquant "Pas de bureau virtuel". Il s'agit généralement du premier graphisme ou de celui qui apparaît tout en haut. 
+N'oubliez pas de cliquer sur le bouton Appliquer pour que les modifications prennent effet. 
+
+
+13.   65536 COULEURS (16 BITS)
+
+
+H.E.D.Z. ne fonctionnera qu'en mode 65536 couleurs (ou 16 bits), ce qui signifie que votre ordinateur doit être défini en mode 65536 couleurs (16 bits) pour que vous puissiez jouer à H.E.D.Z.
+
+Pour vérifier la résolution couleur actuelle du bureau, veuillez suivre les instructions ci-dessous. 
+Cliquez sur le bouton Démarrer avec le bouton gauche de la souris. 
+Placez ensuite le curseur de la souris sur l'option Paramètres et cliquez avec le bouton gauche de la souris. 
+Le dossier Panneau de configuration devrait apparaître. 
+Placez le curseur de la souris sur le dossier Panneau de configuration et cliquez dessus avec le bouton gauche de la souris. 
+Une fois dans le Panneau de configuration, placez le curseur de la souris sur l'icône Affichage et cliquez deux fois avec le bouton gauche de la souris. 
+Cliquez sur l'onglet Configuration avec le bouton gauche de la souris. 
+Dans la zone de liste Palette de couleurs, vous devriez voir la résolution couleur de votre bureau. 
+Cliquez avec le bouton gauche de la souris sur la flèche pointant vers le bas, à droite de la zone de liste Palette de couleurs. 
+Une liste des résolutions couleurs du bureau devrait apparaître. 
+Faites défiler la liste et sélectionnez 65536 couleurs (16 bits).  
+N'oubliez pas de cliquer sur le bouton Appliquer pour que les modifications prennent effet. 
+REMARQUE : vous devrez peut-être redémarrer votre ordinateur pour que les modifications prennent effet. 
+
+
+
+14.  PILOTES
+
+Vous trouverez sur le CD H.E.D.Z. un dossier appelé SUPPORT. A l'intérieur, vous trouverez les pilotes 3DFX Glide les plus récents ainsi que certains pilotes actuels pour d'autres cartes graphiques vidéo. Afin d'installer les pilotes à partir du CD H.E.D.Z., vous devez connaître le nom et le fabricant de votre carte graphique vidéo 3Dfx. 
+
+ATTENTION : l'installation du mauvais pilote graphique vidéo 3Dfx risque de nuire aux performances de votre système. Nous déconseillons fortement aux utilisateurs débutants d'essayer seuls de mettre à jour les pilotes. 
+
+Pour installer les pilotes 3DFX Glide les plus récents à partir du CD H.E.D.Z., veuillez suivre à la lettre les instructions ci-dessous. 
+
+A partir du bureau de Windows :
+Cliquez avec le bouton droit de la souris sur l'icône "Poste de travail". 
+Cliquez avec le bouton gauche de la souris sur l'option "Propriétés" ou appuyez sur la touche R.
+Cliquez avec le bouton gauche de la souris sur l'onglet "Gestionnaire de périphériques".
+Double-cliquez avec le bouton gauche de la souris sur la fonction "Contrôleurs son, vidéo et jeux".
+La section "Contôleurs son, vidéo et jeux" devrait s'étendre pour afficher de nouvelles options.
+Si DirectX a déjà été installé sur votre système, double-cliquez avec le bouton gauche de la souris sur la fonction "3Dfx Interactive Inc".
+Si Direct X n'a jamais été installé sur votre système, vous devrez double-cliquer avec le bouton gauche de la souris sur le nom du fabricant de votre carte. Par exemple, si vous disposez d'une carte Diamond Monster 3D, vous devez double-cliquer sur l'option "Diamond Monster 3D". 
+La fenêtre des propriétés de la carte 3Dfx sélectionnée devrait apparaître. 
+Cliquez avec le bouton gauche de la souris sur l'onglet "Pilote".
+Cliquez avec le bouton gauche de la souris sur le bouton "Changer de pilote". 
+La fenêtre "Assistant de mise à jour de pilote de périphérique" devrait apparaître. Assurez-vous que la case d'option "Oui (Recommandé)" est cochée et cliquez avec le bouton gauche de la souris sur le bouton "Suivant". 
+L'ordinateur vérifiera tout d'abord le lecteur de disquettes (Lecteur A). Après quelques secondes, la fenêtre "Assistant de mise à jour de pilote de périphérique" devrait ré-apparaître, avec un bouton "Autres emplacements". 
+Cliquez avec le bouton gauche de la souris sur le bouton "Autres emplacements". 
+Cliquez avec le bouton gauche de la souris sur le bouton "Parcourir". 
+La fenêtre "Parcourir à la recherche d'un dossier" devrait apparaître. 
+Dans cette fenêtre, localisez votre icône de lecteur CD-ROM et double-cliquez avec le bouton gauche de la souris sur l'option "H.E.D.Z.".
+La section H.E.D.Z. devrait s'étendre pour afficher plusieurs dossiers. Ceci risque de prendre quelques secondes pour laisser le temps à l'ordinateur de lire le CD-ROM.
+Double-cliquez avec le bouton gauche de la souris sur le dossier "Support". 
+Double-cliquez avec le bouton gauche de la souris sur le dossier "Glide".
+Localisez le nom de votre carte 3Dfx dans la liste des dossiers. 
+Cliquez avec le bouton gauche de la souris sur le dossier de votre carte 3Dfx. Remarque : prenez note du nom de ce dossier, vous en aurez besoin ultérieurement.
+Cliquez sur "OK" avec le bouton gauche de la souris. 
+La fenêtre "Sélection d'un autre emplacement" devrait ré-apparaître.
+Cliquez sur "OK" avec le bouton gauche de la souris. 
+La fenêtre "Assistant de mise à jour de pilote de périphérique" devrait apparaître. Le nom du pilote que vous avez sélectionné devrait apparaître dans la fenêtre.
+Cliquez sur "Terminer" avec le bouton gauche de la souris.
+Un message Windows vous demandant d'insérer un disque devrait apparaître. Ceci est normal. 
+Cliquez sur "OK" avec le bouton gauche de la souris.
+La fenêtre "Copie de fichiers" devrait maintenant apparaître. Le nom du fichier du pilote devrait apparaître dans le coin supérieur gauche de la fenêtre. 
+Cliquez sur "Parcourir" avec le bouton gauche de la souris. 
+Dans la fenêtre de recherche de fichier, localisez l'icône de votre lecteur CD-ROM.
+Localisez le nom de votre carte 3Dfx dans la liste des dossiers.
+Cliquez sur le dossier correspondant à votre carte 3Dfx avec le bouton gauche de la souris.
+Si vous avez sélectionné le bon dossier, le nom du fichier du pilote devrait apparaître sur la partie gauche de l'écran. Remarque : vous devriez voir le nom du fichier apparaître dans le coin supérieur gauche de la fenêtre de copie de fichiers et dans la zone qui se trouve directement en-dessous. 
+Cliquez sur "OK" avec le bouton gauche de la souris.
+Cliquez de nouveau sur "OK" avec le bouton gauche de la souris.
+Vous devriez maintenant voir un graphisme des nouveaux pilotes copiés sur votre machine. 
+La fenêtre "Configuration système" devrait apparaître. 
+Cliquez sur "OK" avec le bouton gauche de la souris. 
+Si votre machine ne se relance pas automatiquement, vous devrez la redémarrer manuellement afin que les modifications prennent effet. 
+
+
+15.  MACHINES AMD
+
+H.E.D.Z. a été testé sur plusieurs machines envoyées directement de AMD. Au cours des tests de H.E.D.Z., on a découvert que certaines des machines AMD étaient livrées avec d'anciennes versions des pilotes de cartes graphiques vidéo. Si vous disposez d'une machine AMD et que vous rencontrez des problèmes, veuillez contacter le fabricant du périphérique et demander les pilotes DirectX 5.2 ou DirectX 6.0 certifiés les plus récents pour ce périphérique. 
+ 
+
+**********  E N D   O F   R E A D M E  **********
+
+
+
