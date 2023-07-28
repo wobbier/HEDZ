@@ -3217,7 +3217,7 @@ int * FUN_004bc8b0(int *param_1);
 int FUN_004bca20(short *param_1);
 int FUN_004bca40(undefined4 param_1,undefined4 param_2,int param_3);
 LPCWSTR FUN_004bca80(void);
-int FUN_004bcb00(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+int ShowMessageBoxFunc(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 undefined4 FUN_004bcb90(uint param_1,uint param_2,uint *param_3);
 void FUN_004bcbc0(undefined4 *param_1,undefined4 *param_2);
 void FUN_004bcc30(uint *param_1);

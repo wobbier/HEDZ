@@ -118360,7 +118360,7 @@ void FUN_004ad4b0(LPVOID param_1)
       return;
     }
     FUN_004b1a50(9);
-    HeapFree(DAT_005f8ea4,0,lpMem);
+    HeapFree(gHeapMemory,0,lpMem);
   }
   return;
 }
@@ -118516,7 +118516,7 @@ LPVOID FUN_004ad6b0(int param_1)
       return pvVar1;
     }
   }
-  pvVar1 = HeapAlloc(DAT_005f8ea4,0,dwBytes);
+  pvVar1 = HeapAlloc(gHeapMemory,0,dwBytes);
   return pvVar1;
 }
 
@@ -124004,13 +124004,13 @@ undefined4 FUN_004b3250(void)
 {
   int iVar1;
   
-  DAT_005f8ea4 = HeapCreate(0,0x1000,0);
-  if (DAT_005f8ea4 == (HANDLE)0x0) {
+  gHeapMemory = HeapCreate(0,0x1000,0);
+  if (gHeapMemory == (HANDLE)0x0) {
     return 0;
   }
   iVar1 = FUN_004b3290();
   if (iVar1 == 0) {
-    HeapDestroy(DAT_005f8ea4);
+    HeapDestroy(gHeapMemory);
     return 0;
   }
   return 1;
@@ -124033,7 +124033,7 @@ undefined ** FUN_004b3290(void)
     lpMem = &PTR_LOOP_004d4178;
   }
   else {
-    lpMem = (undefined **)HeapAlloc(DAT_005f8ea4,0,0x2020);
+    lpMem = (undefined **)HeapAlloc(gHeapMemory,0,0x2020);
     if (lpMem == (undefined **)0x0) {
       return (undefined **)0x0;
     }
@@ -124087,7 +124087,7 @@ undefined ** FUN_004b3290(void)
     VirtualFree(lpAddress,0,0x8000);
   }
   if (lpMem != &PTR_LOOP_004d4178) {
-    HeapFree(DAT_005f8ea4,0,lpMem);
+    HeapFree(gHeapMemory,0,lpMem);
   }
   return (undefined **)0x0;
 }
@@ -124104,7 +124104,7 @@ void FUN_004b3400(undefined **param_1)
   if (param_1 != &PTR_LOOP_004d4178) {
     *(undefined **)param_1[1] = *param_1;
     *(undefined **)(*param_1 + 4) = param_1[1];
-    HeapFree(DAT_005f8ea4,0,param_1);
+    HeapFree(gHeapMemory,0,param_1);
     return;
   }
   DAT_004d4188 = 0xffffffff;
@@ -127741,7 +127741,7 @@ LAB_004b7da4:
           goto LAB_004b7da4;
         }
       }
-      puVar3 = (undefined4 *)HeapAlloc(DAT_005f8ea4,8,dwBytes);
+      puVar3 = (undefined4 *)HeapAlloc(gHeapMemory,8,dwBytes);
     }
     if ((puVar3 != (undefined4 *)0x0) || (DAT_005a130c == 0)) {
       return puVar3;
@@ -128601,7 +128601,7 @@ void FUN_004b8d40(int param_1)
         puVar7 = (undefined4 *)((int)puVar7 + 1);
         puVar9 = (undefined4 *)((int)puVar9 + 1);
       }
-      FUN_004bcb00(auStack_1a4,"Microsoft Visual C++ Runtime Library");
+      ShowMessageBoxFunc(auStack_1a4,"Microsoft Visual C++ Runtime Library");
       return;
     }
   }
@@ -131916,30 +131916,32 @@ LPCWSTR FUN_004bca80(void)
 
 
 
-int FUN_004bcb00(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+// showing a message box???
+
+int ShowMessageBoxFunc(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   HMODULE hModule;
-  int iVar1;
+  int hWnd;
   
-  iVar1 = 0;
-  if (DAT_005a1754 != (FARPROC)0x0) {
+  hWnd = 0;
+  if (gMessageBoxAFunc != (FARPROC)0x0) {
 LAB_004bcb50:
-    if (DAT_005a1758 != (FARPROC)0x0) {
-      iVar1 = (*DAT_005a1758)();
+    if (gGetActiveWindowFunc != (FARPROC)0x0) {
+      hWnd = (*gGetActiveWindowFunc)();
     }
-    if ((iVar1 != 0) && (DAT_005a175c != (FARPROC)0x0)) {
-      iVar1 = (*DAT_005a175c)(iVar1);
+    if ((hWnd != 0) && (gGetLastActivePopupFunc != (FARPROC)0x0)) {
+      hWnd = (*gGetLastActivePopupFunc)(hWnd);
     }
-    iVar1 = (*DAT_005a1754)(iVar1,param_1,param_2,param_3);
-    return iVar1;
+    hWnd = (*gMessageBoxAFunc)(hWnd,param_1,param_2,param_3);
+    return hWnd;
   }
   hModule = LoadLibraryA("user32.dll");
   if (hModule != (HMODULE)0x0) {
-    DAT_005a1754 = GetProcAddress(hModule,"MessageBoxA");
-    if (DAT_005a1754 != (FARPROC)0x0) {
-      DAT_005a1758 = GetProcAddress(hModule,"GetActiveWindow");
-      DAT_005a175c = GetProcAddress(hModule,"GetLastActivePopup");
+    gMessageBoxAFunc = GetProcAddress(hModule,"MessageBoxA");
+    if (gMessageBoxAFunc != (FARPROC)0x0) {
+      gGetActiveWindowFunc = GetProcAddress(hModule,"GetActiveWindow");
+      gGetLastActivePopupFunc = GetProcAddress(hModule,"GetLastActivePopup");
       goto LAB_004bcb50;
     }
   }
@@ -133117,7 +133119,7 @@ undefined4 * FUN_004be040(undefined4 *param_1,uint param_2)
       pbVar2 = (byte *)FUN_004b3530(param_1,&local_4,&local_8);
       if (pbVar2 == (byte *)0x0) {
         FUN_004b1a50(9);
-        puVar1 = (undefined4 *)HeapReAlloc(DAT_005f8ea4,0,param_1,uVar4);
+        puVar1 = (undefined4 *)HeapReAlloc(gHeapMemory,0,param_1,uVar4);
       }
       else {
         if (uVar4 < DAT_004d619c) {
@@ -133147,7 +133149,7 @@ undefined4 * FUN_004be040(undefined4 *param_1,uint param_2)
             goto LAB_004be145;
           }
 LAB_004be149:
-          puVar1 = (undefined4 *)HeapAlloc(DAT_005f8ea4,0,uVar4);
+          puVar1 = (undefined4 *)HeapAlloc(gHeapMemory,0,uVar4);
           if (puVar1 != (undefined4 *)0x0) {
             uVar5 = (uint)*pbVar2 << 4;
             if (uVar4 <= (uint)*pbVar2 << 4) {
