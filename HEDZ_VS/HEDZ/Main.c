@@ -13396,7 +13396,7 @@ undefined4 FUN_00415380(void)
     FUN_00415690();
     FUN_00475a90();
     _memset(&DAT_005e4dc0,0,0x100);
-    FID_conflict___mbscpy(&DAT_005e4dc0,&DAT_005d61e0);
+    FID_conflict___mbscpy(&DAT_005e4dc0,&gRootFileDirectory);
     FID_conflict__strcat(&DAT_005e4dc0,s_Music__004c6b1c);
     FID_conflict__strcat(&DAT_005e4dc0,s_F_MUS_004c6b24);
     DAT_005e4a48 = _AIL_open_stream_12(DAT_005e49c4,&DAT_005e4dc0,0);
@@ -26384,7 +26384,7 @@ undefined4 FUN_00429350(void)
   FUN_004ad310();
   DAT_004d7bac = 0;
   if (DAT_005df310 == '\0') {
-    pcVar8 = &DAT_005d61e0;
+    pcVar8 = &gRootFileDirectory;
   }
   else {
     pcVar8 = &DAT_005d54e0;
@@ -29585,7 +29585,7 @@ undefined4 FUN_0042dcd0(void)
   FUN_004ad310();
   if ((DAT_004d7de0 == 0) || (DAT_004d7ddc == (void *)0x0)) {
     if (DAT_005df310 == '\0') {
-      _Source = &DAT_005d61e0;
+      _Source = &gRootFileDirectory;
     }
     else {
       _Source = &DAT_005d54e0;
@@ -41387,7 +41387,7 @@ undefined4 FUN_0043fbc0(void)
   FUN_004ad310();
   local_20 = (void *)FUN_0043ff50();
   if (DAT_005df310 == '\0') {
-    _Source = &DAT_005d61e0;
+    _Source = &gRootFileDirectory;
   }
   else {
     _Source = &DAT_005d54e0;
@@ -43222,7 +43222,7 @@ void FUN_004424b0(void)
   if (DAT_004d8150 == 0) {
     if (DAT_005df310 == '\0') {
       uStackY_1c = 0x4424e9;
-      FID_conflict___mbscpy(local_10c,&DAT_005d61e0);
+      FID_conflict___mbscpy(local_10c,&gRootFileDirectory);
       uStackY_1c = 0x4424fd;
       FID_conflict__strcat(local_10c,s_hedz_hdz_004cb8b8);
       uStackY_1c = 0x442511;
@@ -59200,7 +59200,7 @@ LAB_004590c6:
   pvStackY_2c = (void *)0x4590ee;
   DAT_005986c4 = _memset(pvVar1,iVar4,sVar5);
   if (DAT_005df310 == '\0') {
-    _Source = &DAT_005d61e0;
+    _Source = &gRootFileDirectory;
   }
   else {
     _Source = &DAT_005d54e0;
@@ -59349,7 +59349,7 @@ undefined4 FUN_004593d0(void)
   pvStackY_20 = (void *)0x459411;
   DAT_005986c4 = _memset(pvVar2,iVar6,sVar7);
   if (DAT_005df310 == '\0') {
-    _Source = &DAT_005d61e0;
+    _Source = &gRootFileDirectory;
   }
   else {
     _Source = &DAT_005d54e0;
@@ -64315,7 +64315,7 @@ void FUN_0045fe60(void)
   _memset(&DAT_005e4a80,0,0x100);
   uStackY_14 = 0x45fe99;
   FUN_004ae5f0();
-  FID_conflict___mbscpy(&DAT_005e4a80,&DAT_005d61e0);
+  FID_conflict___mbscpy(&DAT_005e4a80,&gRootFileDirectory);
   FID_conflict__strcat(&DAT_005e4a80,s_Music__004ce480);
   FID_conflict__strcat(&DAT_005e4a80,local_204);
   FID_conflict__strcat(&DAT_005e4a80,&DAT_004ce488);
@@ -70244,12 +70244,12 @@ switchD_004684dc_caseD_ffffff2f:
       FUN_00462dc0();
       return 1;
     case 0xffffff30:
-      cVar1 = FUN_0046e030();
+      cVar1 = LoadMusicFileFunc();
       while (cVar1 != '\0') {
         MessageBeep(0x30);
-        iVar2 = MessageBoxA(DAT_005d6500,DAT_005def24,(LPCSTR)0x0,0x50011);
+        iVar2 = MessageBoxA(gMainWindowHandle,DAT_005def24,(LPCSTR)0x0,0x50011);
         if (iVar2 == 0x466) goto switchD_004684dc_caseD_ffffff2f;
-        cVar1 = FUN_0046e030();
+        cVar1 = LoadMusicFileFunc();
       }
       GetDlgItemTextA(param_1,0x3e9,&DAT_005d6768,7);
       FID_conflict___mbscpy(&DAT_005d7854,&DAT_005d6768);
@@ -74151,7 +74151,7 @@ undefined4 FUN_0046da60(HINSTANCE param_1)
     FUN_0048daa0();
     FUN_004858f0();
     if (DAT_005df310 == '\0') {
-      _Source = &DAT_005d61e0;
+      _Source = &gRootFileDirectory;
     }
     else {
       _Source = &DAT_005d54e0;
@@ -74203,14 +74203,14 @@ undefined4 FUN_0046da60(HINSTANCE param_1)
       if (BVar5 == 0) {
         WaitMessage();
       }
-      else if ((DAT_005d6500 == (HWND)0x0) ||
-              (iVar3 = TranslateAcceleratorA(DAT_005d6500,hAccTable,(LPMSG)&stack0xffffffe0),
+      else if ((gMainWindowHandle == (HWND)0x0) ||
+              (iVar3 = TranslateAcceleratorA(gMainWindowHandle,hAccTable,(LPMSG)&stack0xffffffe0),
               iVar3 == 0)) {
         TranslateMessage((MSG *)&stack0xffffffe0);
         DispatchMessageA((MSG *)&stack0xffffffe0);
       }
     }
-    DestroyWindow(DAT_005d6500);
+    DestroyWindow(gMainWindowHandle);
     CloseHandle(DAT_00598dd4);
   }
   return 0;
@@ -74345,19 +74345,20 @@ bool CreateMainWindowFunc(HINSTANCE param_1)
     nHeight = 0x168;
     nWidth = 0x168;
     dwStyle = 0xce0000;
-    lpWindowName = &DAT_004d0618;
+    lpWindowName = &gEntryWindowTitleString;
     lpClassName = s_Vis_Interactive_004d0620;
   }
   else {
     nHeight = GetSystemMetrics(0x11);
     nWidth = GetSystemMetrics(0x10);
     dwStyle = 0x80000000;
-    lpWindowName = &DAT_004d0600;
+    lpWindowName = &gMainWindowTitleString;
     lpClassName = s_Vis_Interactive_004d0608;
   }
-  DAT_005d6500 = CreateWindowExA(0x40000,lpClassName,lpWindowName,dwStyle,-0x80000000,-0x80000000,
-                                 nWidth,nHeight,hWndParent,hMenu,param_1,lpParam);
-  return DAT_005d6500 != (HWND)0x0;
+  gMainWindowHandle =
+       CreateWindowExA(0x40000,lpClassName,lpWindowName,dwStyle,-0x80000000,-0x80000000,nWidth,
+                       nHeight,hWndParent,hMenu,param_1,lpParam);
+  return gMainWindowHandle != (HWND)0x0;
 }
 
 
@@ -74393,7 +74394,9 @@ undefined FUN_0046e020(void)
 
 
 
-char FUN_0046e030(void)
+// Load music files
+
+char LoadMusicFileFunc(void)
 
 {
   char cVar1;
@@ -74411,7 +74414,7 @@ char FUN_0046e030(void)
   
   FUN_004ad310();
   FID_conflict___mbscpy(local_10c,(char *)&PTR_DAT_004d0720);
-  local_10c[0] = DAT_005d61e0;
+  local_10c[0] = gRootFileDirectory;
   UVar2 = GetDriveTypeA(local_10c);
   if (UVar2 != 5) {
     return '\x03';
@@ -74434,30 +74437,30 @@ char FUN_0046e030(void)
       }
     }
   }
-  FID_conflict___mbscpy(local_10c,&DAT_005d61e0);
+  FID_conflict___mbscpy(local_10c,&gRootFileDirectory);
   FID_conflict__strcat(local_10c,&DAT_004d07c8);
   iVar3 = FUN_004adf60();
   if (iVar3 != 0) {
     FUN_004adcf0();
     return '\x01';
   }
-  FID_conflict___mbscpy(local_10c,&DAT_005d61e0);
-  FID_conflict__strcat(local_10c,s_Music__004d0818);
-  FID_conflict__strcat(local_10c,&DAT_004d0820);
-  FID_conflict__strcat(local_10c,&DAT_004d0824);
+  FID_conflict___mbscpy(local_10c,&gRootFileDirectory);
+  FID_conflict__strcat(local_10c,sMusicDataFolder);
+  FID_conflict__strcat(local_10c,&gMusicFileNumber1);
+  FID_conflict__strcat(local_10c,&gMusicFileExt1);
   cVar1 = FUN_0046dfc0();
   if (cVar1 == '\0') {
     return '\x02';
   }
-  FID_conflict___mbscpy(local_10c,&DAT_005d61e0);
+  FID_conflict___mbscpy(local_10c,&gRootFileDirectory);
   FID_conflict__strcat(local_10c,s_Music__004d082c);
-  FID_conflict__strcat(local_10c,&DAT_004d0834);
-  FID_conflict__strcat(local_10c,&DAT_004d0838);
+  FID_conflict__strcat(local_10c,&gMusicFileNumber2);
+  FID_conflict__strcat(local_10c,&gMusicFileExt2);
   cVar1 = FUN_0046dfc0();
   if (cVar1 == '\0') {
     return '\x02';
   }
-  FID_conflict___mbscpy(local_10c,&DAT_005d61e0);
+  FID_conflict___mbscpy(local_10c,&gRootFileDirectory);
   FID_conflict__strcat(local_10c,s_Music__004d0840);
   FID_conflict__strcat(local_10c,&DAT_004d0848);
   FID_conflict__strcat(local_10c,&DAT_004d084c);
@@ -74465,7 +74468,7 @@ char FUN_0046e030(void)
   if (cVar1 == '\0') {
     return '\x02';
   }
-  FID_conflict___mbscpy(local_10c,&DAT_005d61e0);
+  FID_conflict___mbscpy(local_10c,&gRootFileDirectory);
   FID_conflict__strcat(local_10c,s_Music__004d0854);
   FID_conflict__strcat(local_10c,&DAT_004d085c);
   FID_conflict__strcat(local_10c,&DAT_004d0860);
@@ -74473,19 +74476,19 @@ char FUN_0046e030(void)
   if (cVar1 == '\0') {
     return '\x02';
   }
-  FID_conflict___mbscpy(local_10c,&DAT_005d61e0);
+  FID_conflict___mbscpy(local_10c,&gRootFileDirectory);
   FID_conflict__strcat(local_10c,s_Music__004d0868);
   FID_conflict__strcat(local_10c,&DAT_004d0870);
   FID_conflict__strcat(local_10c,&DAT_004d0874);
   cVar1 = FUN_0046dfc0();
   if (cVar1 != '\0') {
-    FID_conflict___mbscpy(local_10c,&DAT_005d61e0);
+    FID_conflict___mbscpy(local_10c,&gRootFileDirectory);
     FID_conflict__strcat(local_10c,s_Music__004d087c);
     FID_conflict__strcat(local_10c,&DAT_004d0884);
     FID_conflict__strcat(local_10c,&DAT_004d0888);
     cVar1 = FUN_0046dfc0();
     if (cVar1 != '\0') {
-      FID_conflict___mbscpy(local_10c,&DAT_005d61e0);
+      FID_conflict___mbscpy(local_10c,&gRootFileDirectory);
       FID_conflict__strcat(local_10c,s_Music__004d0890);
       FID_conflict__strcat(local_10c,&DAT_004d0898);
       FID_conflict__strcat(local_10c,&DAT_004d089c);
@@ -74508,7 +74511,7 @@ undefined4 FUN_0046e450(void)
   undefined4 uVar2;
   
   DAT_00598d44 = 0;
-  FUN_00490e90();
+  LoadIntroMovieFunc();
   if ((((DAT_00598d50 != 0) && (DAT_00598d7c == 0)) && ((char)DAT_00598944 == '\0')) &&
      (DAT_00598d58 != 0)) {
     FUN_004913a0();
@@ -74523,8 +74526,8 @@ undefined4 FUN_0046e450(void)
   FUN_0043dee0(0);
   FUN_0048daa0(10);
   if (DAT_00598d50 == 0) {
-    ShowWindow(DAT_005d6500,1);
-    UpdateWindow(DAT_005d6500);
+    ShowWindow(gMainWindowHandle,1);
+    UpdateWindow(gMainWindowHandle);
   }
   FUN_0043e1c0();
   DAT_005e45e0 = FUN_0041c4e0();
@@ -74656,11 +74659,11 @@ undefined4 FUN_0046e850(void)
   undefined4 uStackY_14;
   
   FUN_004ad310();
-  SetCapture(DAT_005d6500);
+  SetCapture(gMainWindowHandle);
   ShowCursor(0);
   uStackY_14 = 0;
   pcStackY_18 = FUN_0046e970;
-  pHStackY_1c = DAT_005d6500;
+  pHStackY_1c = gMainWindowHandle;
   uStackY_20 = 0;
   uStackY_24 = 0x46e892;
   iVar1 = FUN_00414160();
@@ -74829,13 +74832,13 @@ undefined4 FUN_0046eb50(HWND param_1,int param_2,undefined2 param_3)
       case 0x41f:
         DAT_00598d2c = 0;
         DAT_00598da4 = 1;
-        cVar1 = FUN_0046e030();
+        cVar1 = LoadMusicFileFunc();
         if (cVar1 != '\0') {
           MessageBeep(0x30);
           FID_conflict___mbscpy(local_130,s_Error___004d0c00);
           FUN_004ae5f0();
           FID_conflict__strcat(local_130,&stack0xfffffff0);
-          MessageBoxA(DAT_005d6500,DAT_005def24,local_130,0x50010);
+          MessageBoxA(gMainWindowHandle,DAT_005def24,local_130,0x50010);
           FUN_00470800();
           FUN_004b0840();
           EndDialog(param_1,1);
@@ -74850,14 +74853,14 @@ undefined4 FUN_0046eb50(HWND param_1,int param_2,undefined2 param_3)
       case 0x421:
         DAT_00598d2c = 1;
         DAT_00598da4 = 1;
-        cVar1 = FUN_0046e030();
+        cVar1 = LoadMusicFileFunc();
         if (cVar1 != '\0') {
           DAT_004d03f8 = 1;
           MessageBeep(0x30);
           FID_conflict___mbscpy(local_130,s_Error___004d0c0c);
           FUN_004ae5f0();
           FID_conflict__strcat(local_130,&stack0xfffffff0);
-          MessageBoxA(DAT_005d6500,DAT_005def24,local_130,0x50010);
+          MessageBoxA(gMainWindowHandle,DAT_005def24,local_130,0x50010);
           FUN_00470800();
           FUN_004b0840();
           EndDialog(param_1,1);
@@ -75256,7 +75259,7 @@ undefined4 FUN_0046f820(void)
   uStackY_1c._2_2_ = 0x46;
   _memset(_Dst,_Val,(size_t)_Size);
   local_48 = local_154;
-  local_50 = DAT_005d6500;
+  local_50 = gMainWindowHandle;
   local_38 = local_254;
   local_30 = local_354;
   local_54 = 0x4c;
@@ -75291,7 +75294,7 @@ undefined4 FUN_0046f980(void)
   FID_conflict___mbscpy(local_204,DAT_005df280);
   FID_conflict__strcat(local_204,DAT_005df284);
   uStackY_18 = 0x46f9e2;
-  MessageBoxA(DAT_005d6500,local_204,s_ERROR_004d0c68,0);
+  MessageBoxA(gMainWindowHandle,local_204,s_ERROR_004d0c68,0);
   return 0;
 }
 
@@ -75333,7 +75336,7 @@ LRESULT FUN_0046fa40(HWND param_1,uint param_2,uint param_3,LPARAM param_4)
   }
   if ((DAT_00598ddc != '\0') && (DAT_00598de0 == '\0')) {
     DAT_00598de0 = '\x01';
-    iVar6 = MessageBoxA(DAT_005d6500,DAT_005def24,s_Error_004d0c70,0x50030);
+    iVar6 = MessageBoxA(gMainWindowHandle,DAT_005def24,s_Error_004d0c70,0x50030);
     if ((iVar6 == 1) && (DAT_00598de0 = '\0', DAT_00598d44 == '\0')) {
       DAT_00598ddc = '\0';
       DAT_00598de0 = '\0';
@@ -75467,7 +75470,7 @@ LRESULT FUN_0046fa40(HWND param_1,uint param_2,uint param_3,LPARAM param_4)
     }
     else {
       if (uVar12 != 0x8000) goto LAB_0046ff1a;
-      cVar4 = FUN_0046e030();
+      cVar4 = LoadMusicFileFunc();
       if (cVar4 == '\0') {
         DAT_00598d44 = '\0';
         DAT_00598ddc = '\0';
@@ -75788,7 +75791,7 @@ void FUN_004707c0(void)
 
 {
   DAT_005e5010 = 0;
-  _memset(&DAT_005d6500,0,0x30);
+  _memset(&gMainWindowHandle,0,0x30);
   _DAT_005d6510 = 0;
   _DAT_005d6514 = 0;
   SetErrorMode(0x8001);
@@ -75801,7 +75804,7 @@ void FUN_00470800(void)
 
 {
   DAT_00598d20 = 1;
-  PostMessageA(DAT_005d6500,2,0,0);
+  PostMessageA(gMainWindowHandle,2,0,0);
   return;
 }
 
@@ -75897,12 +75900,12 @@ void FUN_00470970(LPCSTR param_1)
   lstrcatA(local_104,&DAT_004d0f38);
   if ((DAT_005e5010 != 0) && (*(int *)(DAT_005e5010 + 0x2524) != 0)) {
     uStackY_28 = 0x4709d3;
-    SetWindowPos(DAT_005d6500,(HWND)0xfffffffe,0,0,0,0,3);
+    SetWindowPos(gMainWindowHandle,(HWND)0xfffffffe,0,0,0,0,3);
   }
   MessageBoxA((HWND)0x0,local_104,s_I_appear_to_have_encountered_an_e_004d0f3c,0);
   if ((DAT_005e5010 != 0) && (*(int *)(DAT_005e5010 + 0x2524) != 0)) {
     uStackY_28 = 0x470a10;
-    SetWindowPos(DAT_005d6500,(HWND)0xffffffff,0,0,0,0,3);
+    SetWindowPos(gMainWindowHandle,(HWND)0xffffffff,0,0,0,0,3);
   }
   return;
 }
@@ -76043,8 +76046,7 @@ LAB_00470e11:
   }
   else {
     hKey.unused = (int)&stack0xffffffec;
-    LVar1 = RegOpenKeyExA((HKEY)0x80000002,s_Software_Microsoft_Active_Setup__004d1044,0,1,
-                          (PHKEY)hKey.unused);
+    LVar1 = RegOpenKeyExA((HKEY)0x80000002,gsDirectShowRegKeyString,0,1,(PHKEY)hKey.unused);
     if (LVar1 != 0) goto LAB_00470e21;
     RegQueryValueExA((HKEY)hKey.unused,s_Version_004d10a0,(LPDWORD)0x0,(LPDWORD)&stack0xfffffff0,
                      (LPBYTE)0x0,(LPDWORD)&stack0xfffffff8);
@@ -76163,14 +76165,14 @@ LAB_00470e21:
     }
     iVar5 = FUN_004674d0();
     if (iVar5 == 0) {
-      FID_conflict___mbscpy(&DAT_005d61e0,pcVar7);
-      puVar6 = &DAT_005d61e0;
-      FID_conflict__strcat(&DAT_005d61e0,s__Hedz__004d11dc);
-      DAT_00598d88 = DAT_005d61e0;
+      FID_conflict___mbscpy(&gRootFileDirectory,pcVar7);
+      puVar6 = &gRootFileDirectory;
+      FID_conflict__strcat(&gRootFileDirectory,s__Hedz__004d11dc);
+      DAT_00598d88 = gRootFileDirectory;
     }
     else {
-      puVar6 = &DAT_005d61e0;
-      FID_conflict___mbscpy(&DAT_005d61e0,&DAT_005d54e0);
+      puVar6 = &gRootFileDirectory;
+      FID_conflict___mbscpy(&gRootFileDirectory,&DAT_005d54e0);
     }
     if (puVar6 == (undefined1 *)0x0) {
       FUN_004674d0();
@@ -76279,12 +76281,12 @@ undefined4 FUN_00471510(int param_1)
   DAT_004c66b8 = *(int *)(DAT_005e5010 + iVar1);
   *(undefined4 *)(DAT_005e5010 + 0x2524) = 1;
   FUN_004713d0();
-  SetWindowPos(DAT_005d6500,(HWND)0x0,0,0,DAT_004c5718,DAT_004c571c,0x40);
+  SetWindowPos(gMainWindowHandle,(HWND)0x0,0,0,DAT_004c5718,DAT_004c571c,0x40);
   iVar1 = DAT_005e5010 + DAT_004c66b8 * 0x10;
   DAT_004d785c = 1;
   DAT_004c5718 = *(undefined4 *)(iVar1 + 0x21f4);
   DAT_004c571c = *(undefined4 *)(iVar1 + 0x21f8);
-  iVar1 = FUN_00414160(0,DAT_005d6500,FUN_0046e970,0,FUN_0046ea90,0,&DAT_005e5010);
+  iVar1 = FUN_00414160(0,gMainWindowHandle,FUN_0046e970,0,FUN_0046ea90,0,&DAT_005e5010);
   if (iVar1 == 0) {
     FUN_00470960();
     return 0;
@@ -76316,7 +76318,7 @@ undefined4 FUN_00471660(void)
   DAT_004c66b8 = 0xfffffffe;
   *(undefined4 *)(DAT_005e5010 + 0x2524) = 1;
   FUN_004713d0();
-  SetWindowPos(DAT_005d6500,(HWND)0x0,0,0,DAT_004c5718,DAT_004c571c,0x40);
+  SetWindowPos(gMainWindowHandle,(HWND)0x0,0,0,DAT_004c5718,DAT_004c571c,0x40);
   DAT_004d785c = 0;
   if ((((DAT_004ca030 == 0x14) && (DAT_005e45d0 == 0)) && ((char)DAT_00598944 == '\0')) &&
      ((0 < *(int *)(DAT_005df2c8 + 0xe8) && (DAT_004d24f0 != '\0')))) {
@@ -76327,7 +76329,7 @@ undefined4 FUN_00471660(void)
     FUN_004911c0();
   }
   *(undefined4 *)(DAT_005e5010 + 0x21cc) = DAT_004c66b8;
-  iVar1 = FUN_00414160(0,DAT_005d6500,FUN_0046e970,0,FUN_0046ea90,0,&DAT_005e5010);
+  iVar1 = FUN_00414160(0,gMainWindowHandle,FUN_0046e970,0,FUN_0046ea90,0,&DAT_005e5010);
   if (iVar1 == 0) {
     FUN_00470960();
     return 0;
@@ -77515,7 +77517,7 @@ void FUN_00473620(void)
 
 {
   if (DAT_005df310 == '\0') {
-    FID_conflict___mbscpy(&DAT_005d5fe0,&DAT_005d61e0);
+    FID_conflict___mbscpy(&DAT_005d5fe0,&gRootFileDirectory);
     FID_conflict__strcat(&DAT_005d5fe0,s_mapfiles__004d14ec);
   }
   return;
@@ -94601,7 +94603,7 @@ undefined4 FUN_0048b860(char *param_1)
   
   FUN_004ad310();
   if (DAT_005df310 == '\0') {
-    _Source = &DAT_005d61e0;
+    _Source = &gRootFileDirectory;
   }
   else {
     _Source = &DAT_005d54e0;
@@ -95200,7 +95202,7 @@ LAB_0048c180:
     if (DAT_005e4a4c != 0) {
       _AIL_close_stream_4();
     }
-    FID_conflict___mbscpy(local_d4,&DAT_005d61e0);
+    FID_conflict___mbscpy(local_d4,&gRootFileDirectory);
     FID_conflict__strcat(local_d4,s_Music__004d2530);
     FID_conflict__strcat(local_d4,s_netw_mus_004d2538);
     DAT_005e4a4c = _AIL_open_stream_12();
@@ -95671,7 +95673,7 @@ LAB_0048c180:
     if (DAT_005e4a4c != 0) {
       _AIL_close_stream_4();
     }
-    FID_conflict___mbscpy(local_d4,&DAT_005d61e0);
+    FID_conflict___mbscpy(local_d4,&gRootFileDirectory);
     FID_conflict__strcat(local_d4,s_Music__004d2544);
     FID_conflict__strcat(local_d4,s_netw_mus_004d254c);
     DAT_005e4a4c = _AIL_open_stream_12();
@@ -98380,7 +98382,7 @@ void FUN_00490d60(void)
 
 
 
-void FUN_00490e90(void)
+void LoadIntroMovieFunc(void)
 
 {
   int iVar1;
@@ -98396,7 +98398,7 @@ void FUN_00490e90(void)
   }
   else {
     uStackY_10 = 0x490ed7;
-    FID_conflict___mbscpy(&DAT_005d56e0,&DAT_005d61e0);
+    FID_conflict___mbscpy(&DAT_005d56e0,&gRootFileDirectory);
     uStackY_10 = 0x490ee9;
     FID_conflict__strcat(&DAT_005d56e0,s_Movies__004d2970);
     uStackY_10 = 0x490efd;
@@ -98461,7 +98463,7 @@ HWND FUN_00490fa0(void)
   }
   *(undefined2 *)puVar5 = *(undefined2 *)puVar4;
   iModeNum = 0;
-  hdc = GetDC(DAT_005d6500);
+  hdc = GetDC(gMainWindowHandle);
   GetGraphicsMode(hdc);
   iVar3 = EnumDisplaySettingsA((LPCSTR)0x0,0,(DEVMODEA *)&DAT_005b92c0);
   while (iVar3 != 0) {
@@ -98496,7 +98498,7 @@ HWND FUN_00490fa0(void)
     ReleaseDC(hWnd,hdc);
     return hWnd;
   }
-  MessageBoxA(DAT_005d6500,s_Unable_to_change_screen_depth_to_004d2a44,s_ERROR_004d2a3c,0);
+  MessageBoxA(gMainWindowHandle,s_Unable_to_change_screen_depth_to_004d2a44,s_ERROR_004d2a3c,0);
   return (HWND)0x0;
 }
 
@@ -98754,7 +98756,7 @@ void FUN_00491670(void)
   
   FUN_004ad310();
   if (DAT_005df310 == '\0') {
-    _Source = &DAT_005d61e0;
+    _Source = &gRootFileDirectory;
   }
   else {
     _Source = &DAT_005d54e0;
