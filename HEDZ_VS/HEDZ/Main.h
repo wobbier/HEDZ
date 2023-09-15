@@ -1367,7 +1367,7 @@ typedef struct IUnknown * LPUNKNOWN;
 
 void ApplyStreamVolumes(void);
 void FUN_004010f0(void);
-void FUN_00401140(void);
+void PauseAudioStreams(void);
 void FUN_004011a0(void);
 void FUN_00401230(void);
 void FUN_00401660(float ****param_1);
@@ -2594,7 +2594,7 @@ undefined4 FUN_0048bbc0(int param_1,LPSTR param_2,size_t param_3);
 undefined4 FUN_0048bcd0(int param_1,LONG param_2);
 undefined4 FUN_0048bcf0(int param_1,int param_2);
 undefined4 FUN_0048be30(uint param_1);
-void FUN_0048c020(int param_1,int *param_2);
+void CallMysteryFunction(int param_1,int *param_2);
 void FUN_0048c060(int param_1);
 undefined4 FUN_0048c080(int param_1);
 void FUN_0048c0d0(void);

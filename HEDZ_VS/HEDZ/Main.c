@@ -52,14 +52,16 @@ void ApplyStreamVolumes(void)
 void FUN_004010f0(void)
 
 {
-  FUN_0048c020(_DAT_005df2f0,DAT_005b938c);
+  CallMysteryFunction(_DAT_005df2f0,DAT_005b938c);
   DAT_00598704 = DAT_005df2f0;
   return;
 }
 
 
 
-void FUN_00401140(void)
+// WARNING: Unknown calling convention -- yet parameter storage is locked
+
+void PauseAudioStreams(void)
 
 {
   uint uVar1;
@@ -34746,7 +34748,7 @@ undefined4 FUN_00435950(void)
   }
   puStack_14 = (undefined4 *)DAT_005b938c;
   iStack_1c = 0x4359bf;
-  FUN_0048c020();
+  CallMysteryFunction();
   iVar2 = DAT_004d809c;
   for (iVar1 = *(int *)(DAT_004d7cd4 + 8); iVar1 != 0; iVar1 = *(int *)(iVar1 + 0x46)) {
     if ((DAT_004d809c == 0x17) || (DAT_004d809c == 0x16)) {
@@ -36359,8 +36361,7 @@ void FUN_00437ef0(void)
   _Dst = (void *)FUN_004ad640(8);
   _Dest = (char *)_memset(_Dst,_Val,_Size);
   LVar1 = RegCreateKeyExA((HKEY)0x80000002,s_Software_Vis_Interactive_Hedz_004cafc8,0,(LPSTR)0x0,0,
-                          0xf003f,(LPSECURITY_ATTRIBUTES)0x0,(PHKEY)&DAT_00598b70,
-                          (LPDWORD)&DAT_004d8098);
+                          0xf003f,(LPSECURITY_ATTRIBUTES)0x0,&HKEY_00598b70,(LPDWORD)&DAT_004d8098);
   if (LVar1 == 0) {
     FUN_004ae5f0(_DAT_005df2f0,&stack0xfffffff8,10);
     FID_conflict___mbscpy(_Dest,&stack0xfffffff8);
@@ -51447,8 +51448,8 @@ undefined4 FUN_0044dc30(void)
     return 0;
   }
   LVar2 = RegCreateKeyExA((HKEY)0x80000002,s_Software_Vis_Interactive_Hedz_004cd44c,0,(LPSTR)0x0,0,
-                          0xf003f,(LPSECURITY_ATTRIBUTES)0x0,&DAT_00598b70,(LPDWORD)&DAT_004d8678);
-  if ((LVar2 == 0) && (DAT_00598b70 != (HKEY)0x0)) {
+                          0xf003f,(LPSECURITY_ATTRIBUTES)0x0,&HKEY_00598b70,(LPDWORD)&DAT_004d8678);
+  if ((LVar2 == 0) && (HKEY_00598b70 != (HKEY)0x0)) {
     iVar4 = FUN_004674d0(s_KeyDefinitions_004cd46c,pvVar1,&stack0xfffffff8);
     if (iVar4 == 0) {
       puVar3 = &DAT_005dce20;
@@ -51474,7 +51475,7 @@ undefined4 FUN_0044dc30(void)
           iVar4 = FUN_004adb80(pvVar1);
           _DAT_004cd11c = (float)iVar4 * 0.1;
           _DAT_004cd120 = _DAT_004cd11c;
-          RegCloseKey(DAT_00598b70);
+          RegCloseKey(HKEY_00598b70);
           return 1;
         }
       }
@@ -51510,8 +51511,8 @@ undefined4 FUN_0044ddb0(void)
     return 0;
   }
   LVar3 = RegCreateKeyExA((HKEY)0x80000002,s_Software_Vis_Interactive_Hedz_004cd4b4,0,(LPSTR)0x0,0,
-                          0xf003f,(LPSECURITY_ATTRIBUTES)0x0,&DAT_00598b70,(LPDWORD)&DAT_004d8678);
-  if ((LVar3 == 0) && (DAT_00598b70 != (HKEY)0x0)) {
+                          0xf003f,(LPSECURITY_ATTRIBUTES)0x0,&HKEY_00598b70,(LPDWORD)&DAT_004d8678);
+  if ((LVar3 == 0) && (HKEY_00598b70 != (HKEY)0x0)) {
     iVar7 = 0x1e;
     pvVar6 = pvVar2;
     do {
@@ -51536,7 +51537,7 @@ undefined4 FUN_0044ddb0(void)
     uVar5 = __ftol();
     FUN_004ae5f0(uVar5,pvVar2,10);
     FUN_00467470(s_JoystickRotateSensitivity_004cd500,pvVar2,0x5b);
-    RegCloseKey(DAT_00598b70);
+    RegCloseKey(HKEY_00598b70);
   }
   return 1;
 }
@@ -64328,7 +64329,7 @@ void FUN_0045fe60(void)
       if (iVar2 != 0) {
         FUN_0045fe30();
       }
-      FUN_0048c020();
+      CallMysteryFunction();
     }
   }
   return;
@@ -64444,17 +64445,17 @@ LAB_00460586:
   case 1:
     if ('\0' < DAT_00598704) {
       DAT_00598704 = DAT_00598704 + -1;
-      FUN_0048c020((int)DAT_00598704,DAT_005b938c);
+      CallMysteryFunction((int)DAT_00598704,DAT_005b938c);
       return;
     }
-    FUN_0048c020(0,DAT_005b938c);
+    CallMysteryFunction(0,DAT_005b938c);
     FUN_0048c060(&DAT_005b9380);
     DAT_005dcb7f = 0;
     return;
   case 2:
     if (DAT_00598704 < _DAT_005df2f0) {
       DAT_00598704 = DAT_00598704 + '\x01';
-      FUN_0048c020((int)DAT_00598704,DAT_005b938c);
+      CallMysteryFunction((int)DAT_00598704,DAT_005b938c);
     }
     DAT_005986f0 = bVar4;
     return;
@@ -64468,7 +64469,7 @@ LAB_00460586:
     }
     if (DAT_00598704 < _DAT_005df2f0) {
       DAT_00598704 = DAT_00598704 + '\x01';
-      FUN_0048c020((int)DAT_00598704,DAT_005b938c);
+      CallMysteryFunction((int)DAT_00598704,DAT_005b938c);
     }
     if (DAT_005dcb83 == cVar8) {
       return;
@@ -64526,7 +64527,7 @@ LAB_0046035a:
       DAT_005986f0 = bVar4;
       return;
     }
-    FUN_0048c020(_DAT_005df2f0,DAT_005b938c);
+    CallMysteryFunction(_DAT_005df2f0,DAT_005b938c);
     DAT_00598704 = DAT_005df2f0;
     pbVar1 = (byte *)(DAT_005dcb79 + (uint)bVar4);
     DAT_005b93a0 = *(undefined4 *)
@@ -64579,7 +64580,7 @@ LAB_004601f2:
   }
   DAT_005b93a0 = *(undefined4 *)((uint)bVar2 * 0x20 + 4 + DAT_005dcb61);
   _DAT_005b93a4 = *(undefined4 *)((DAT_0059871c & 0xff) * 0x20 + DAT_005dcb61);
-  FUN_0048c020(_DAT_005df2f0,DAT_005b938c);
+  CallMysteryFunction(_DAT_005df2f0,DAT_005b938c);
   DAT_00598704 = DAT_005df2f0;
   uVar6 = *(undefined4 *)((uint)*(byte *)(DAT_005dcb79 + (uint)bVar4) * 0x20 + DAT_005dcb61);
 LAB_0046045e:
@@ -69436,7 +69437,7 @@ void FUN_00467440(void)
 void FUN_00467470(LPCSTR param_1,BYTE *param_2,DWORD param_3)
 
 {
-  RegSetValueExA(DAT_00598b70,param_1,0,4,param_2,param_3);
+  RegSetValueExA(HKEY_00598b70,param_1,0,4,param_2,param_3);
   return;
 }
 
@@ -69445,7 +69446,7 @@ void FUN_00467470(LPCSTR param_1,BYTE *param_2,DWORD param_3)
 void FUN_004674a0(LPCSTR param_1,BYTE *param_2,DWORD param_3)
 
 {
-  RegSetValueExA(DAT_00598b70,param_1,0,1,param_2,param_3);
+  RegSetValueExA(HKEY_00598b70,param_1,0,1,param_2,param_3);
   return;
 }
 
@@ -69454,7 +69455,7 @@ void FUN_004674a0(LPCSTR param_1,BYTE *param_2,DWORD param_3)
 void FUN_004674d0(LPCSTR param_1,LPBYTE param_2,LPDWORD param_3)
 
 {
-  RegQueryValueExA(DAT_00598b70,param_1,(LPDWORD)0x0,(LPDWORD)&param_3,param_2,param_3);
+  RegQueryValueExA(HKEY_00598b70,param_1,(LPDWORD)0x0,(LPDWORD)&param_3,param_2,param_3);
   return;
 }
 
@@ -69842,7 +69843,7 @@ undefined4 FUN_00467db0(HWND param_1,undefined4 param_2,uint param_3,undefined4 
     case -0xd0:
       KillTimer(param_1,2);
       FID_conflict___mbscpy(&DAT_005d7854,&DAT_005d6768);
-      if (DAT_00598b70 != 0) {
+      if (HKEY_00598b70 != (HKEY)0x0) {
         FUN_00467470();
       }
       if (DAT_00598b4c == 0) {
@@ -70141,7 +70142,7 @@ LAB_00467fc4:
     _DAT_005d709c = GetDlgItem(param_1,0x3f1);
     SetWindowTextA(_DAT_005d709c,DAT_005df10c);
     DAT_005d6768 = 0;
-    if ((DAT_00598b70 != 0) && (iVar1 = FUN_004674d0(), iVar1 == 0)) {
+    if ((HKEY_00598b70 != (HKEY)0x0) && (iVar1 = FUN_004674d0(), iVar1 == 0)) {
       SetDlgItemTextA(param_1,0x402,&DAT_005d6768);
     }
     DAT_005989a0 = GetDlgItem(param_1,0x400);
@@ -70296,7 +70297,7 @@ switchD_004684dc_caseD_ffffff2f:
         }
       }
 LAB_00468704:
-      if (DAT_00598b70 != 0) {
+      if (HKEY_00598b70 != (HKEY)0x0) {
         FUN_00467470();
         FUN_00467470();
       }
@@ -70385,7 +70386,7 @@ switchD_004684b9_caseD_4f:
     SetWindowTextA(_DAT_005d709c,DAT_005df178);
     DAT_005d6768 = 0;
     DAT_00598ab8 = 0;
-    if (DAT_00598b70 != 0) {
+    if (HKEY_00598b70 != (HKEY)0x0) {
       iVar2 = FUN_004674d0();
       if (iVar2 == 0) {
         SetDlgItemTextA(param_1,0x3e9,&DAT_005d6768);
@@ -75939,7 +75940,7 @@ void FUN_00470a40(void)
   _Dst = (void *)FUN_004ad640(8);
   _Dest = (char *)_memset(_Dst,_Val,_Size);
   LVar1 = RegCreateKeyExA((HKEY)0x80000002,s_Software_Vis_Interactive_Hedz_004d0f68,0,(LPSTR)0x0,0,
-                          0xf003f,(LPSECURITY_ATTRIBUTES)0x0,&DAT_00598b70,(LPDWORD)&DAT_00598ca4);
+                          0xf003f,(LPSECURITY_ATTRIBUTES)0x0,&HKEY_00598b70,(LPDWORD)&DAT_00598ca4);
   if (LVar1 == 0) {
     FUN_004ae5f0(DAT_005df304,&stack0xfffffff8,10);
     FID_conflict___mbscpy(_Dest,&stack0xfffffff8);
@@ -75951,7 +75952,7 @@ void FUN_00470a40(void)
     FUN_004ae5f0(DAT_005df30c,&stack0xfffffff8,10);
     FID_conflict___mbscpy(_Dest,&stack0xfffffff8);
     FUN_004674a0(s_LoadLast_004d0fa0,_Dest,8);
-    RegCloseKey(DAT_00598b70);
+    RegCloseKey(HKEY_00598b70);
   }
   if (_Dest != (char *)0x0) {
     FUN_004ad4b0(_Dest);
@@ -75978,7 +75979,7 @@ void FUN_00470b60(void)
   _Dst = (void *)FUN_004ad640(8);
   _Dest = (char *)_memset(_Dst,_Val,_Size);
   LVar1 = RegCreateKeyExA((HKEY)0x80000002,s_Software_Vis_Interactive_Hedz_004d0fac,0,(LPSTR)0x0,0,
-                          0xf003f,(LPSECURITY_ATTRIBUTES)0x0,&DAT_00598b70,(LPDWORD)&DAT_00598ca4);
+                          0xf003f,(LPSECURITY_ATTRIBUTES)0x0,&HKEY_00598b70,(LPDWORD)&DAT_00598ca4);
   if (LVar1 == 0) {
     FUN_004ae5f0(DAT_005df2e0,&stack0xfffffff8,10);
     FID_conflict___mbscpy(_Dest,&stack0xfffffff8);
@@ -76001,7 +76002,7 @@ void FUN_00470b60(void)
     FUN_004ae5f0(DAT_005df300,&stack0xfffffff8,10);
     FID_conflict___mbscpy(_Dest,&stack0xfffffff8);
     FUN_004674a0(s_Difficulty_004d100c,_Dest,8);
-    RegCloseKey(DAT_00598b70);
+    RegCloseKey(HKEY_00598b70);
   }
   if (_Dest != (char *)0x0) {
     FUN_004ad4b0(_Dest);
@@ -76062,8 +76063,8 @@ LAB_00470e21:
   pcVar7 = (char *)_memset(_Dst,iVar5,_Size.unused);
   uStackY_38 = 0x470e67;
   LVar1 = RegCreateKeyExA((HKEY)0x80000002,s_Software_Vis_Interactive_Hedz_004d10b0,0,(LPSTR)0x0,0,
-                          0xf003f,(LPSECURITY_ATTRIBUTES)0x0,&DAT_00598b70,(LPDWORD)&DAT_00598ca4);
-  if ((LVar1 == 0) && (DAT_00598b70 != (HKEY)0x0)) {
+                          0xf003f,(LPSECURITY_ATTRIBUTES)0x0,&HKEY_00598b70,(LPDWORD)&DAT_00598ca4);
+  if ((LVar1 == 0) && (HKEY_00598b70 != (HKEY)0x0)) {
     iVar5 = FUN_004674d0();
     if (iVar5 != 0) {
       FUN_004ae5f0();
@@ -76110,7 +76111,7 @@ LAB_00470e21:
     }
     DAT_005df2f4 = FUN_004adb80();
     pDVar4 = (LPDWORD)&stack0xfffffff0;
-    LVar1 = RegQueryValueExA(DAT_00598b70,s_Language_004d1150,(LPDWORD)0x0,pDVar4,&stack0xffffffe4,
+    LVar1 = RegQueryValueExA(HKEY_00598b70,s_Language_004d1150,(LPDWORD)0x0,pDVar4,&stack0xffffffe4,
                              (LPDWORD)&stack0xfffffff8);
     if (LVar1 != 0) {
       FUN_00450740();
@@ -76155,7 +76156,7 @@ LAB_00470e21:
       DAT_005df30c = 0;
     }
     pDVar4 = (LPDWORD)&stack0xfffffff0;
-    LVar1 = RegQueryValueExA(DAT_00598b70,s_InstallType_004d11bc,(LPDWORD)0x0,pDVar4,
+    LVar1 = RegQueryValueExA(HKEY_00598b70,s_InstallType_004d11bc,(LPDWORD)0x0,pDVar4,
                              &stack0xffffffe4,(LPDWORD)&stack0xfffffff8);
     if (LVar1 == 0) {
       DAT_005df310 = (BYTE)pDVar4;
@@ -76178,7 +76179,7 @@ LAB_00470e21:
       FUN_004674d0();
     }
     iVar5 = 0x4712ed;
-    RegCloseKey(DAT_00598b70);
+    RegCloseKey(HKEY_00598b70);
   }
   else {
     iVar5 = 1;
@@ -94933,7 +94934,9 @@ undefined4 FUN_0048be30(uint param_1)
 
 
 
-void FUN_0048c020(int param_1,int *param_2)
+// Calls a function based on 2 params
+
+void CallMysteryFunction(int param_1,int *param_2)
 
 {
   int iVar1;
@@ -95039,9 +95042,9 @@ void FUN_0048c0d0(void)
       FUN_004858c0();
       DAT_005de4e0 = FUN_0048da70();
       FUN_0048daa0();
-      FUN_00401140();
+      PauseAudioStreams();
 LAB_0048c180:
-      FUN_0048c020();
+      CallMysteryFunction();
     }
   }
   if ((char)DAT_00598944 != '\0') {
@@ -95197,7 +95200,7 @@ LAB_0048c180:
     if (DAT_005e4a64 != 0) {
       FUN_00475bf0();
     }
-    FUN_0048c020();
+    CallMysteryFunction();
     FUN_0048c060();
     if (DAT_005e4a4c != 0) {
       _AIL_close_stream_4();
@@ -95458,8 +95461,8 @@ LAB_0048c180:
     FUN_0048d5a0();
     if (*(char *)(DAT_004d83a4 + 0x62) == '\x03') {
       DAT_005de4e4 = FUN_004858c0();
-      FUN_00401140();
-      FUN_0048c020();
+      PauseAudioStreams();
+      CallMysteryFunction();
       FUN_004858f0();
     }
     else {
@@ -95668,7 +95671,7 @@ LAB_0048c180:
     if (DAT_005e4a64 != 0) {
       FUN_00475bf0();
     }
-    FUN_0048c020();
+    CallMysteryFunction();
     FUN_0048c060();
     if (DAT_005e4a4c != 0) {
       _AIL_close_stream_4();
@@ -95694,7 +95697,7 @@ LAB_0048d392:
   }
   if ((DAT_00598fa4 != '\0') && (DAT_00598fa8 != '\0')) {
     FUN_004011a0();
-    FUN_0048c020();
+    CallMysteryFunction();
     DAT_00598fa4 = '\0';
     DAT_00598fa8 = '\0';
   }
@@ -98649,7 +98652,7 @@ void FUN_004913a0(void)
     UVar5 = 0;
     uStackY_38 = 0x491411;
     RegCreateKeyExA((HKEY)0x80000002,s_Software_Vis_Interactive_Hedz_004d2bfc,0,(LPSTR)0x0,0,0xf003f
-                    ,(LPSECURITY_ATTRIBUTES)0x0,(PHKEY)&DAT_00598b70,(LPDWORD)&DAT_00598ff8);
+                    ,(LPSECURITY_ATTRIBUTES)0x0,&HKEY_00598b70,(LPDWORD)&DAT_00598ff8);
     iVar1 = FUN_004674d0();
     bVar4 = iVar1 == 0;
     if (!bVar4) {
@@ -121145,6 +121148,8 @@ LAB_004afcef:
 
 
 
+// FUN_004afd20: Looks like some thread creation for initializing structures
+
 HANDLE FUN_004afd20(undefined4 param_1,SIZE_T param_2,undefined4 param_3)
 
 {
@@ -121178,6 +121183,8 @@ HANDLE FUN_004afd20(undefined4 param_1,SIZE_T param_2,undefined4 param_3)
 
 
 
+// Thread function: SEH
+
 undefined4 FUN_004afda0(LPVOID param_1)
 
 {
@@ -121187,6 +121194,7 @@ undefined4 FUN_004afda0(LPVOID param_1)
   undefined *puStack_c;
   undefined4 local_8;
   
+                    // Setting some structured exception handling for thread local storage
   local_8 = 0xffffffff;
   puStack_c = &DAT_004c1d10;
   puStack_10 = &LAB_004b10b8;
