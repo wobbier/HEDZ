@@ -3501,7 +3501,7 @@ void FUN_004064c0(void)
   
   _Size = 0xb6;
   _Val = 0;
-  pvVar1 = (void *)FUN_004ad640(0xb6);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0xb6);
   pvVar1 = _memset(pvVar1,_Val,_Size);
   *(undefined4 *)((int)pvVar1 + 0xaa) = 0xffffffff;
   *(undefined4 *)((int)pvVar1 + 0x7e) = 0xffffffff;
@@ -3552,7 +3552,7 @@ undefined4 FUN_00406510(char *param_1,int param_2)
     _Size = GetFileSize(hFile,(LPDWORD)0x0);
     iVar14 = 0;
     _Size_00 = _Size;
-    pvVar6 = (void *)FUN_004ad640();
+    pvVar6 = (void *)AllocateMemoryWithCallback();
     pvVar6 = _memset(pvVar6,iVar14,_Size_00);
     if (pvVar6 != (void *)0x0) {
       _memset(pvVar6,0,_Size);
@@ -3599,7 +3599,7 @@ undefined4 FUN_00406510(char *param_1,int param_2)
                 sVar15 = 0x14;
                 iVar18 = 0;
                 *puVar9 = uVar5;
-                pvVar10 = (void *)FUN_004ad640();
+                pvVar10 = (void *)AllocateMemoryWithCallback();
                 pcVar11 = (char *)_memset(pvVar10,iVar18,sVar15);
                 *(char **)((int)puVar9 + 0x17) = pcVar11;
                 FID_conflict___mbscpy(pcVar11,&DAT_004c5134);
@@ -3612,7 +3612,7 @@ undefined4 FUN_00406510(char *param_1,int param_2)
               if (*(int *)((int)puVar9 + 0x17) == 0) {
                 sVar15 = 0x14;
                 iVar18 = 0;
-                pvVar10 = (void *)FUN_004ad640();
+                pvVar10 = (void *)AllocateMemoryWithCallback();
                 pvVar10 = _memset(pvVar10,iVar18,sVar15);
                 *(void **)((int)puVar9 + 0x17) = pvVar10;
               }
@@ -3745,7 +3745,7 @@ undefined4 FUN_00406510(char *param_1,int param_2)
           *(undefined *)(*(int *)(*(int *)(iVar14 + 4) + 0x100) + 0x2a) = uVar4;
           sVar15 = (uint)*(byte *)(*(int *)(*(int *)(iVar14 + 4) + 0x100) + 0x2a) << 4;
           iVar18 = 0;
-          pvVar10 = (void *)FUN_004ad640();
+          pvVar10 = (void *)AllocateMemoryWithCallback();
           pvVar10 = _memset(pvVar10,iVar18,sVar15);
           *(void **)(*(int *)(*(int *)(iVar14 + 4) + 0x100) + 0xae) = pvVar10;
           uVar16 = 0;
@@ -3789,7 +3789,7 @@ undefined4 FUN_00406510(char *param_1,int param_2)
             do {
               sVar15 = 6;
               iVar18 = 0;
-              pvVar10 = (void *)FUN_004ad640();
+              pvVar10 = (void *)AllocateMemoryWithCallback();
               pvVar10 = _memset(pvVar10,iVar18,sVar15);
               *(undefined4 *)((int)pvVar10 + 2) =
                    *(undefined4 *)(*(int *)(*(int *)(iVar14 + 4) + 0x100) + 0xb2);
@@ -3999,7 +3999,7 @@ void FUN_004071e0(char *param_1)
           sVar3 = (uint)*(byte *)(*(int *)(*(int *)(iVar4 + 4) + 0x100) + 0x2a) << 4;
           iVar5 = 0;
           local_20 = (undefined4 *)0x40763a;
-          pvVar7 = (void *)FUN_004ad640();
+          pvVar7 = (void *)AllocateMemoryWithCallback();
           local_20 = (undefined4 *)0x407643;
           pvVar7 = _memset(pvVar7,iVar5,sVar3);
           *(void **)(*(int *)(*(int *)(iVar4 + 4) + 0x100) + 0xae) = pvVar7;
@@ -4016,7 +4016,7 @@ void FUN_004071e0(char *param_1)
               sVar3 = 6;
               iVar5 = 0;
               local_20 = (undefined4 *)0x4076bb;
-              pvVar7 = (void *)FUN_004ad640();
+              pvVar7 = (void *)AllocateMemoryWithCallback();
               local_20 = (undefined4 *)0x4076c4;
               puVar8 = (undefined *)_memset(pvVar7,iVar5,sVar3);
               local_20 = (undefined4 *)&stack0xfffffff8;
@@ -4106,7 +4106,7 @@ undefined4 FUN_00407870(undefined4 *param_1,uint param_2)
   _Size = 0x4c;
   DAT_004d77a4 = DAT_004d77a4 + '\x01';
   iVar5 = 0;
-  _Dst = (void *)FUN_004ad640(0x4c);
+  _Dst = (void *)AllocateMemoryWithCallback(0x4c);
   puVar1 = (undefined4 *)_memset(_Dst,iVar5,_Size);
   puVar3 = &DAT_004d1ae0;
   puVar4 = puVar1;
@@ -5871,7 +5871,7 @@ void * FUN_0040a500(int *param_1,int param_2,int param_3)
     piVar1 = (int *)(param_2 + 0x13);
     *piVar1 = iVar23;
     _Val = piVar1;
-    pvVar8 = (void *)FUN_004ad640();
+    pvVar8 = (void *)AllocateMemoryWithCallback();
     pvVar8 = _memset(pvVar8,(int)_Val,sVar10);
     *(void **)(*piVar1 + 8) = pvVar8;
     **(undefined **)(*piVar1 + 8) = 1;
@@ -5890,7 +5890,7 @@ void * FUN_0040a500(int *param_1,int param_2,int param_3)
     sVar10 = sVar10 + 1;
     iVar22 = 0;
     _strlen(local_15c);
-    pvVar8 = (void *)FUN_004ad640();
+    pvVar8 = (void *)AllocateMemoryWithCallback();
     pvVar8 = _memset(pvVar8,iVar22,sVar10);
     *(void **)(*piVar1 + 4) = pvVar8;
     FID_conflict___mbscpy(*(char **)(*piVar1 + 4),local_15c);
@@ -6105,7 +6105,7 @@ LAB_0040aa50:
   else {
     sVar10 = 0x1ac;
     iVar23 = 0;
-    pvVar8 = (void *)FUN_004ad640();
+    pvVar8 = (void *)AllocateMemoryWithCallback();
     pvVar8 = _memset(pvVar8,iVar23,sVar10);
     ppvVar19 = (void **)(param_2 + 0x13);
     *ppvVar19 = pvVar8;
@@ -6134,7 +6134,7 @@ undefined4 * FUN_0040ac00(int param_1)
   
   _Size = 0x1ac;
   iVar2 = 0;
-  _Dst = (void *)FUN_004ad640(0x1ac);
+  _Dst = (void *)AllocateMemoryWithCallback(0x1ac);
   puVar1 = (undefined4 *)_memset(_Dst,iVar2,_Size);
   if (puVar1 == (undefined4 *)0x0) {
     return (undefined4 *)0x0;
@@ -7177,7 +7177,7 @@ undefined4 FUN_0040c200(undefined4 param_1,int **param_2,int **param_3)
       sVar16 = 0x40;
       iVar6 = 0;
       local_20 = (int *)0x40c3c2;
-      piVar7 = (int *)FUN_004ad640();
+      piVar7 = (int *)AllocateMemoryWithCallback();
       local_20 = (int *)0x40c3cb;
       piVar8 = (int *)_memset(piVar7,iVar6,sVar16);
       *ppiVar14 = piVar8;
@@ -7351,14 +7351,14 @@ LAB_0040c751:
         sVar16 = (uint)*(byte *)param_3 << 6;
         iVar6 = 0;
         local_20 = (int *)0x40c7d0;
-        pvVar10 = (void *)FUN_004ad640();
+        pvVar10 = (void *)AllocateMemoryWithCallback();
         local_20 = (int *)0x40c7d9;
         pvVar10 = _memset(pvVar10,iVar6,sVar16);
         *(void **)((int)*ppiVar14 + iVar5 + -0x1c) = pvVar10;
         uVar11 = (uint)*(byte *)param_3;
         iVar6 = 0;
         local_20 = (int *)0x40c7f2;
-        pvVar10 = (void *)FUN_004ad640();
+        pvVar10 = (void *)AllocateMemoryWithCallback();
         local_20 = (int *)0x40c7fb;
         pvVar10 = _memset(pvVar10,iVar6,uVar11);
         *(void **)((int)*ppiVar14 + iVar5) = pvVar10;
@@ -7380,14 +7380,14 @@ LAB_0040c751:
         sVar16 = (uint)*(byte *)param_3 << 5;
         iVar6 = 0;
         local_20 = (int *)0x40c843;
-        pvVar10 = (void *)FUN_004ad640();
+        pvVar10 = (void *)AllocateMemoryWithCallback();
         local_20 = (int *)0x40c84c;
         pvVar10 = _memset(pvVar10,iVar6,sVar16);
         *(void **)(*local_20 + 0x10c + iVar5) = pvVar10;
         uVar11 = (uint)*(byte *)param_3;
         iVar6 = 0;
         local_20 = (int *)0x40c868;
-        pvVar10 = (void *)FUN_004ad640();
+        pvVar10 = (void *)AllocateMemoryWithCallback();
         local_20 = (int *)0x40c871;
         pvVar10 = _memset(pvVar10,iVar6,uVar11);
         *(void **)(*local_20 + 0x135 + iVar5) = pvVar10;
@@ -7408,14 +7408,14 @@ LAB_0040c751:
         sVar16 = (uint)*(byte *)param_3 << 5;
         iVar6 = 0;
         local_20 = (int *)0x40c8c3;
-        pvVar10 = (void *)FUN_004ad640();
+        pvVar10 = (void *)AllocateMemoryWithCallback();
         local_20 = (int *)0x40c8cc;
         pvVar10 = _memset(pvVar10,iVar6,sVar16);
         *(void **)(*piVar12 + -0x24 + iVar5) = pvVar10;
         uVar11 = (uint)*(byte *)param_3;
         iVar6 = 0;
         local_20 = (int *)0x40c8e5;
-        pvVar10 = (void *)FUN_004ad640();
+        pvVar10 = (void *)AllocateMemoryWithCallback();
         local_20 = (int *)0x40c8ee;
         pvVar10 = _memset(pvVar10,iVar6,uVar11);
         *(void **)(*piVar12 + iVar5) = pvVar10;
@@ -7675,21 +7675,21 @@ void FUN_0040ce30(int param_1)
   sVar3 = *(int *)(param_1 + 0xc) << 5;
   iVar13 = 0;
   uStackY_20 = 0x40ce8d;
-  pvVar4 = (void *)FUN_004ad640();
+  pvVar4 = (void *)AllocateMemoryWithCallback();
   uStackY_20 = 0x40ce96;
   pvVar4 = _memset(pvVar4,iVar13,sVar3);
   *(void **)(param_1 + 0x10) = pvVar4;
   sVar3 = *(int *)(param_1 + 0x18) << 4;
   iVar13 = 0;
   uStackY_20 = 0x40ceaa;
-  pvVar4 = (void *)FUN_004ad640();
+  pvVar4 = (void *)AllocateMemoryWithCallback();
   uStackY_20 = 0x40ceb3;
   pvVar4 = _memset(pvVar4,iVar13,sVar3);
   *(void **)(param_1 + 0x1c) = pvVar4;
   sVar3 = *(int *)(param_1 + 0x24) << 4;
   iVar13 = 0;
   uStackY_20 = 0x40cec7;
-  pvVar4 = (void *)FUN_004ad640();
+  pvVar4 = (void *)AllocateMemoryWithCallback();
   uStackY_20 = 0x40ced0;
   pvVar4 = _memset(pvVar4,iVar13,sVar3);
   psVar1 = *(short **)(param_1 + 0x57);
@@ -7788,7 +7788,7 @@ void FUN_0040ce30(int param_1)
   sVar3 = *(int *)(iVar2 + 0x30) << 2;
   iVar13 = 0;
   uStackY_20 = 0x40d168;
-  pvVar4 = (void *)FUN_004ad640();
+  pvVar4 = (void *)AllocateMemoryWithCallback();
   uStackY_20 = 0x40d171;
   pvVar4 = _memset(pvVar4,iVar13,sVar3);
   *(void **)(iVar2 + 0x2c) = pvVar4;
@@ -7859,7 +7859,7 @@ undefined2 * FUN_0040d1f0(int param_1,byte param_2,undefined4 param_3,int param_
   sVar1 = unaff_EBX << 5;
   iVar8 = 0;
   local_20 = 0x40d272;
-  pvVar2 = (void *)FUN_004ad640();
+  pvVar2 = (void *)AllocateMemoryWithCallback();
   local_20 = 0x40d27b;
   pvVar2 = _memset(pvVar2,iVar8,sVar1);
   local_20 = 0x20;
@@ -7873,7 +7873,7 @@ undefined2 * FUN_0040d1f0(int param_1,byte param_2,undefined4 param_3,int param_
   sVar1 = param_4 << 3;
   iVar8 = 0;
   local_20 = 0x40d2ba;
-  pvVar3 = (void *)FUN_004ad640();
+  pvVar3 = (void *)AllocateMemoryWithCallback();
   local_20 = 0x40d2c3;
   local_24 = (int *)_memset(pvVar3,iVar8,sVar1);
   local_20 = 8;
@@ -7893,7 +7893,7 @@ undefined2 * FUN_0040d1f0(int param_1,byte param_2,undefined4 param_3,int param_
   sVar1 = param_4 << 2;
   iVar9 = 0;
   local_20 = 0x40d325;
-  pvVar3 = (void *)FUN_004ad640();
+  pvVar3 = (void *)AllocateMemoryWithCallback();
   local_20 = 0x40d32e;
   local_24 = (int *)_memset(pvVar3,iVar9,sVar1);
   local_20 = 4;
@@ -7902,7 +7902,7 @@ undefined2 * FUN_0040d1f0(int param_1,byte param_2,undefined4 param_3,int param_
   sVar1 = unaff_ESI * 0x50;
   iVar9 = 0;
   local_20 = 0x40d359;
-  pvVar3 = (void *)FUN_004ad640();
+  pvVar3 = (void *)AllocateMemoryWithCallback();
   local_20 = 0x40d362;
   pvVar3 = _memset(pvVar3,iVar9,sVar1);
   local_20 = 0x50;
@@ -7935,7 +7935,7 @@ undefined2 * FUN_0040d1f0(int param_1,byte param_2,undefined4 param_3,int param_
   sVar1 = 0x5c;
   iVar9 = 0;
   local_20 = 0x40d3eb;
-  _Dst = (void *)FUN_004ad640();
+  _Dst = (void *)AllocateMemoryWithCallback();
   local_20 = 0x40d3f4;
   puVar4 = (undefined2 *)_memset(_Dst,iVar9,sVar1);
   *puVar4 = (short)unaff_EBX;
@@ -7946,7 +7946,7 @@ undefined2 * FUN_0040d1f0(int param_1,byte param_2,undefined4 param_3,int param_
   *(undefined4 *)(puVar4 + 4) = local_20;
   *(undefined2 *)((int)puVar4 + 0x31) = 1;
   local_20 = 0x40d422;
-  pvVar2 = (void *)FUN_004ad640();
+  pvVar2 = (void *)AllocateMemoryWithCallback();
   local_20 = 0x40d42b;
   puVar5 = (undefined4 *)_memset(pvVar2,iVar9,sVar1);
   *(undefined4 **)((int)puVar4 + 0x33) = puVar5;
@@ -7965,14 +7965,14 @@ undefined2 * FUN_0040d1f0(int param_1,byte param_2,undefined4 param_3,int param_
   sVar1 = (int)(short)puVar4[1] << 2;
   iVar9 = 0;
   local_20 = 0x40d494;
-  pvVar2 = (void *)FUN_004ad640();
+  pvVar2 = (void *)AllocateMemoryWithCallback();
   local_20 = 0x40d49d;
   pvVar2 = _memset(pvVar2,iVar9,sVar1);
   *(void **)(puVar4 + 6) = pvVar2;
   sVar1 = (int)(short)puVar4[1] << 2;
   iVar9 = 0;
   local_20 = 0x40d4b3;
-  pvVar2 = (void *)FUN_004ad640();
+  pvVar2 = (void *)AllocateMemoryWithCallback();
   local_20 = 0x40d4bc;
   pvVar2 = _memset(pvVar2,iVar9,sVar1);
   *(void **)(puVar4 + 8) = pvVar2;
@@ -8054,7 +8054,7 @@ undefined2 * FUN_0040d510(char *param_1)
     nNumberOfBytesToRead = GetFileSize(hFile,(LPDWORD)0x0);
     iVar5 = 0;
     _Size = nNumberOfBytesToRead;
-    pvVar7 = (void *)FUN_004ad640();
+    pvVar7 = (void *)AllocateMemoryWithCallback();
     lpBuffer = (char *)_memset(pvVar7,iVar5,_Size);
     BVar8 = ReadFile(hFile,lpBuffer,nNumberOfBytesToRead,&local_134,(LPOVERLAPPED)0x0);
     if (BVar8 != 0) {
@@ -8093,7 +8093,7 @@ undefined2 * FUN_0040d510(char *param_1)
       FUN_004ae3e0();
       sVar9 = uVar20 << 5;
       iVar5 = 0;
-      pvVar7 = (void *)FUN_004ad640();
+      pvVar7 = (void *)AllocateMemoryWithCallback();
       pfVar10 = (float *)_memset(pvVar7,iVar5,sVar9);
       uVar20 = 0;
       if (sVar9 != 0) {
@@ -8118,7 +8118,7 @@ undefined2 * FUN_0040d510(char *param_1)
       FUN_004ae3e0();
       sVar9 = (int)puVar11 * 8;
       iVar5 = 0;
-      pvVar7 = (void *)FUN_004ad640();
+      pvVar7 = (void *)AllocateMemoryWithCallback();
       puVar12 = (undefined2 *)_memset(pvVar7,iVar5,sVar9);
       puVar21 = (undefined *)0x0;
       puVar18 = puVar12;
@@ -8157,7 +8157,7 @@ undefined2 * FUN_0040d510(char *param_1)
         if (puVar21 == puVar11) {
           sVar9 = (int)puVar11 << 2;
           iVar5 = 0;
-          pvVar7 = (void *)FUN_004ad640();
+          pvVar7 = (void *)AllocateMemoryWithCallback();
           puVar13 = (undefined4 *)_memset(pvVar7,iVar5,sVar9);
           puVar21 = (undefined *)0x0;
           puVar17 = puVar13;
@@ -8174,7 +8174,7 @@ undefined2 * FUN_0040d510(char *param_1)
           }
           sVar9 = iVar5 * 0x50;
           iVar5 = 0;
-          pvVar7 = (void *)FUN_004ad640();
+          pvVar7 = (void *)AllocateMemoryWithCallback();
           local_30 = _memset(pvVar7,iVar5,sVar9);
           uVar20 = 0;
           if (iVar5 != 0) {
@@ -8260,7 +8260,7 @@ undefined2 * FUN_0040d510(char *param_1)
             FUN_004909f0();
             sVar9 = 0x5c;
             iVar5 = 0;
-            pvVar7 = (void *)FUN_004ad640();
+            pvVar7 = (void *)AllocateMemoryWithCallback();
             puVar12 = (undefined2 *)_memset(pvVar7,iVar5,sVar9);
             *puVar12 = (short)sVar9;
             sVar9 = 0x10;
@@ -8269,7 +8269,7 @@ undefined2 * FUN_0040d510(char *param_1)
             *(undefined4 *)(puVar12 + 2) = uVar14;
             *(undefined2 **)(puVar12 + 4) = puVar18;
             *(undefined2 *)((int)puVar12 + 0x31) = 1;
-            pvVar7 = (void *)FUN_004ad640();
+            pvVar7 = (void *)AllocateMemoryWithCallback();
             puVar13 = (undefined4 *)_memset(pvVar7,iVar5,sVar9);
             pvVar7 = local_30;
             *(undefined4 **)((int)puVar12 + 0x33) = puVar13;
@@ -8281,12 +8281,12 @@ undefined2 * FUN_0040d510(char *param_1)
                  *(undefined4 *)((int)local_30 + 0x10);
             sVar9 = (int)(short)puVar12[1] << 2;
             iVar5 = 0;
-            pvVar15 = (void *)FUN_004ad640();
+            pvVar15 = (void *)AllocateMemoryWithCallback();
             pvVar15 = _memset(pvVar15,iVar5,sVar9);
             *(void **)(puVar12 + 6) = pvVar15;
             sVar9 = (int)(short)puVar12[1] << 2;
             iVar5 = 0;
-            pvVar15 = (void *)FUN_004ad640();
+            pvVar15 = (void *)AllocateMemoryWithCallback();
             pvVar15 = _memset(pvVar15,iVar5,sVar9);
             *(void **)(puVar12 + 8) = pvVar15;
             iVar5 = 0;
@@ -8345,7 +8345,7 @@ ushort * FUN_0040e070(uint *param_1,undefined4 param_2,undefined4 *param_3)
   sVar9 = 0x5c;
   iVar7 = 0;
   local_2c = 0;
-  pvVar2 = (void *)FUN_004ad640();
+  pvVar2 = (void *)AllocateMemoryWithCallback();
   puVar3 = (ushort *)_memset(pvVar2,iVar7,sVar9);
   if (puVar3 == (ushort *)0x0) {
     return (ushort *)0x0;
@@ -8359,7 +8359,7 @@ ushort * FUN_0040e070(uint *param_1,undefined4 param_2,undefined4 *param_3)
     sVar9 = (uint)unaff_DI * 4;
     iVar7 = 0;
     local_20 = (undefined4 *)0x40e0e7;
-    pvVar2 = (void *)FUN_004ad640();
+    pvVar2 = (void *)AllocateMemoryWithCallback();
     local_20 = (undefined4 *)0x40e0f0;
     param_1 = (uint *)_memset(pvVar2,iVar7,sVar9);
     do {
@@ -8400,7 +8400,7 @@ ushort * FUN_0040e070(uint *param_1,undefined4 param_2,undefined4 *param_3)
   iVar7 = 0;
   iVar6 = 0;
   local_20 = (undefined4 *)0x40e1c5;
-  pvVar2 = (void *)FUN_004ad640();
+  pvVar2 = (void *)AllocateMemoryWithCallback();
   local_20 = (undefined4 *)0x40e1ce;
   pvVar2 = _memset(pvVar2,iVar6,sVar9);
   *(void **)((int)puVar3 + 0x33) = pvVar2;
@@ -8452,7 +8452,7 @@ ushort * FUN_0040e070(uint *param_1,undefined4 param_2,undefined4 *param_3)
   iVar7 = 0;
   iVar6 = 0;
   local_20 = (undefined4 *)0x40e318;
-  pvVar2 = (void *)FUN_004ad640();
+  pvVar2 = (void *)AllocateMemoryWithCallback();
   local_20 = (undefined4 *)0x40e321;
   pvVar2 = _memset(pvVar2,iVar6,sVar9);
   *(void **)(puVar3 + 2) = pvVar2;
@@ -8527,21 +8527,21 @@ ushort * FUN_0040e070(uint *param_1,undefined4 param_2,undefined4 *param_3)
   sVar9 = (int)(short)(ushort)unaff_DI << 2;
   iVar7 = 0;
   local_20 = (undefined4 *)0x40e4d6;
-  pvVar2 = (void *)FUN_004ad640();
+  pvVar2 = (void *)AllocateMemoryWithCallback();
   local_20 = (undefined4 *)0x40e4df;
   pvVar2 = _memset(pvVar2,iVar7,sVar9);
   *(void **)(puVar3 + 6) = pvVar2;
   sVar9 = (int)(short)puVar3[1] << 2;
   iVar7 = 0;
   local_20 = (undefined4 *)0x40e4f5;
-  pvVar2 = (void *)FUN_004ad640();
+  pvVar2 = (void *)AllocateMemoryWithCallback();
   local_20 = (undefined4 *)0x40e4fe;
   pvVar2 = _memset(pvVar2,iVar7,sVar9);
   *(void **)(puVar3 + 8) = pvVar2;
   sVar9 = (int)(short)puVar3[1] << 3;
   iVar7 = 0;
   local_20 = (undefined4 *)0x40e514;
-  pvVar2 = (void *)FUN_004ad640();
+  pvVar2 = (void *)AllocateMemoryWithCallback();
   local_20 = (undefined4 *)0x40e51d;
   pvVar2 = _memset(pvVar2,iVar7,sVar9);
   iVar6 = 0;
@@ -8856,30 +8856,30 @@ void FUN_0040e9f0(uint *param_1,int param_2,int param_3)
   sVar4 = *(size_t *)((int)param_1 + 0x3c);
   sVar16 = uVar15 << 5;
   iVar19 = 0;
-  pvVar3 = (void *)FUN_004ad640(sVar16);
+  pvVar3 = (void *)AllocateMemoryWithCallback(sVar16);
   _memset(pvVar3,iVar19,sVar4);
   iVar19 = 0;
-  pvVar3 = (void *)FUN_004ad640(sVar16);
+  pvVar3 = (void *)AllocateMemoryWithCallback(sVar16);
   _memset(pvVar3,iVar19,sVar16);
   sVar4 = uVar15 << 6;
   iVar19 = 0;
-  pvVar3 = (void *)FUN_004ad640(sVar4);
+  pvVar3 = (void *)AllocateMemoryWithCallback(sVar4);
   _memset(pvVar3,iVar19,sVar4);
   sVar4 = uVar15 * 4;
   iVar19 = 0;
   sVar16 = sVar4;
-  pvVar3 = (void *)FUN_004ad640(sVar4);
+  pvVar3 = (void *)AllocateMemoryWithCallback(sVar4);
   puVar5 = (uint *)_memset(pvVar3,iVar19,sVar16);
   iVar19 = 0;
   sVar16 = sVar4;
-  pvVar3 = (void *)FUN_004ad640(sVar4);
+  pvVar3 = (void *)AllocateMemoryWithCallback(sVar4);
   puVar6 = (uint *)_memset(pvVar3,iVar19,sVar16);
   iVar19 = 0;
   sVar16 = sVar4;
-  pvVar3 = (void *)FUN_004ad640(sVar4);
+  pvVar3 = (void *)AllocateMemoryWithCallback(sVar4);
   puVar7 = (uint *)_memset(pvVar3,iVar19,sVar16);
   iVar19 = 0;
-  pvVar3 = (void *)FUN_004ad640(sVar4);
+  pvVar3 = (void *)AllocateMemoryWithCallback(sVar4);
   ppiVar8 = (int **)_memset(pvVar3,iVar19,sVar4);
   for (; iVar10 != 0; iVar10 = *(int *)(iVar10 + 0x74)) {
     iVar9 = 0;
@@ -9093,23 +9093,23 @@ void FUN_0040ee00(int param_1,int param_2)
   uVar14 = (uint)*(byte *)(param_2 + 0x40 + param_1);
   sVar3 = uVar14 << 5;
   iVar17 = 0;
-  pvVar4 = (void *)FUN_004ad640(sVar3);
+  pvVar4 = (void *)AllocateMemoryWithCallback(sVar3);
   _memset(pvVar4,iVar17,sVar3);
   sVar3 = uVar14 << 6;
   iVar17 = 0;
-  pvVar4 = (void *)FUN_004ad640(sVar3);
+  pvVar4 = (void *)AllocateMemoryWithCallback(sVar3);
   _memset(pvVar4,iVar17,sVar3);
   sVar3 = uVar14 * 4;
   iVar17 = 0;
   sVar18 = sVar3;
-  pvVar4 = (void *)FUN_004ad640(sVar3);
+  pvVar4 = (void *)AllocateMemoryWithCallback(sVar3);
   _memset(pvVar4,iVar17,sVar18);
   iVar17 = 0;
   sVar18 = sVar3;
-  pvVar4 = (void *)FUN_004ad640(sVar3);
+  pvVar4 = (void *)AllocateMemoryWithCallback(sVar3);
   puVar5 = (uint *)_memset(pvVar4,iVar17,sVar18);
   iVar17 = 0;
-  pvVar4 = (void *)FUN_004ad640(sVar3);
+  pvVar4 = (void *)AllocateMemoryWithCallback(sVar3);
   ppiVar6 = (int **)_memset(pvVar4,iVar17,sVar3);
   for (; iVar8 != 0; iVar8 = *(int *)(iVar8 + 0x58)) {
     iVar13 = 0;
@@ -9257,12 +9257,12 @@ short * FUN_0040f110(int param_1)
   
   sVar8 = 0x5c;
   iVar7 = 0;
-  pvVar1 = (void *)FUN_004ad640(0x5c);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x5c);
   psVar2 = (short *)_memset(pvVar1,iVar7,sVar8);
   FUN_004ad7a0(psVar2,param_1,0x5c);
   sVar8 = (int)*psVar2 << 5;
   iVar7 = 0;
-  pvVar1 = (void *)FUN_004ad640(sVar8);
+  pvVar1 = (void *)AllocateMemoryWithCallback(sVar8);
   pvVar1 = _memset(pvVar1,iVar7,sVar8);
   iVar7 = 0;
   *(void **)(psVar2 + 2) = pvVar1;
@@ -9282,17 +9282,17 @@ short * FUN_0040f110(int param_1)
   }
   sVar8 = (int)psVar2[1] << 3;
   iVar7 = 0;
-  pvVar1 = (void *)FUN_004ad640(sVar8);
+  pvVar1 = (void *)AllocateMemoryWithCallback(sVar8);
   pvVar1 = _memset(pvVar1,iVar7,sVar8);
   *(void **)(psVar2 + 4) = pvVar1;
   sVar8 = (int)psVar2[1] << 2;
   iVar7 = 0;
-  pvVar1 = (void *)FUN_004ad640(sVar8);
+  pvVar1 = (void *)AllocateMemoryWithCallback(sVar8);
   pvVar1 = _memset(pvVar1,iVar7,sVar8);
   *(void **)(psVar2 + 6) = pvVar1;
   sVar8 = (int)psVar2[1] << 2;
   iVar7 = 0;
-  pvVar1 = (void *)FUN_004ad640(sVar8);
+  pvVar1 = (void *)AllocateMemoryWithCallback(sVar8);
   pvVar1 = _memset(pvVar1,iVar7,sVar8);
   iVar7 = 0;
   *(void **)(psVar2 + 8) = pvVar1;
@@ -9311,7 +9311,7 @@ short * FUN_0040f110(int param_1)
   }
   sVar8 = 0x10;
   iVar7 = 0;
-  pvVar1 = (void *)FUN_004ad640(0x10);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x10);
   puVar4 = (undefined4 *)_memset(pvVar1,iVar7,sVar8);
   *(undefined4 **)((int)psVar2 + 0x33) = puVar4;
   *puVar4 = **(undefined4 **)(param_1 + 0x33);
@@ -9337,12 +9337,12 @@ void FUN_0040f280(int param_1)
   
   sVar8 = 0x5c;
   iVar7 = 0;
-  pvVar1 = (void *)FUN_004ad640(0x5c);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x5c);
   psVar2 = (short *)_memset(pvVar1,iVar7,sVar8);
   FUN_004ad7a0(psVar2,param_1,0x5c);
   sVar8 = (int)*psVar2 << 5;
   iVar7 = 0;
-  pvVar1 = (void *)FUN_004ad640(sVar8);
+  pvVar1 = (void *)AllocateMemoryWithCallback(sVar8);
   pvVar1 = _memset(pvVar1,iVar7,sVar8);
   iVar7 = 0;
   *(void **)(psVar2 + 2) = pvVar1;
@@ -9362,17 +9362,17 @@ void FUN_0040f280(int param_1)
   }
   sVar8 = (int)psVar2[1] << 3;
   iVar7 = 0;
-  pvVar1 = (void *)FUN_004ad640(sVar8);
+  pvVar1 = (void *)AllocateMemoryWithCallback(sVar8);
   pvVar1 = _memset(pvVar1,iVar7,sVar8);
   *(void **)(psVar2 + 4) = pvVar1;
   sVar8 = (int)psVar2[1] << 2;
   iVar7 = 0;
-  pvVar1 = (void *)FUN_004ad640(sVar8);
+  pvVar1 = (void *)AllocateMemoryWithCallback(sVar8);
   pvVar1 = _memset(pvVar1,iVar7,sVar8);
   *(void **)(psVar2 + 6) = pvVar1;
   sVar8 = (int)psVar2[1] << 2;
   iVar7 = 0;
-  pvVar1 = (void *)FUN_004ad640(sVar8);
+  pvVar1 = (void *)AllocateMemoryWithCallback(sVar8);
   pvVar1 = _memset(pvVar1,iVar7,sVar8);
   iVar7 = 0;
   *(void **)(psVar2 + 8) = pvVar1;
@@ -9391,7 +9391,7 @@ void FUN_0040f280(int param_1)
   }
   sVar8 = 0x10;
   iVar7 = 0;
-  pvVar1 = (void *)FUN_004ad640(0x10);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x10);
   puVar4 = (undefined4 *)_memset(pvVar1,iVar7,sVar8);
   *(undefined4 **)((int)psVar2 + 0x33) = puVar4;
   *puVar4 = **(undefined4 **)(param_1 + 0x33);
@@ -10579,7 +10579,7 @@ undefined4 FUN_00410e40(int param_1,uint param_2)
     _Size = 8;
     iVar2 = 0;
     uStackY_4c = 0x411016;
-    _Dst = (void *)FUN_004ad640();
+    _Dst = (void *)AllocateMemoryWithCallback();
     uStackY_4c = 0x41101f;
     puVar3 = (undefined4 *)_memset(_Dst,iVar2,_Size);
     *puVar3 = DAT_005e72fc;
@@ -10720,7 +10720,7 @@ void FUN_00411390(int param_1)
     sVar5 = (*psVar2 + 1000) * 0x20;
     iVar13 = 0;
     param_1 = 0;
-    pvVar6 = (void *)FUN_004ad640(sVar5);
+    pvVar6 = (void *)AllocateMemoryWithCallback(sVar5);
     pvVar6 = _memset(pvVar6,iVar13,sVar5);
     FUN_004ad7a0(pvVar6,*(undefined4 *)(psVar2 + 2),(int)*psVar2 << 5);
     if (*(int *)(psVar2 + 2) != 0) {
@@ -10825,7 +10825,7 @@ void FUN_00411390(int param_1)
     }
     sVar5 = (iVar11 + *psVar2) * 0x20;
     iVar13 = 0;
-    pvVar6 = (void *)FUN_004ad640(sVar5);
+    pvVar6 = (void *)AllocateMemoryWithCallback(sVar5);
     pvVar6 = _memset(pvVar6,iVar13,sVar5);
     FUN_004ad7a0(pvVar6,*(undefined4 *)(psVar2 + 2),(iVar11 + *psVar2) * 0x20);
     if (*(int *)(psVar2 + 2) != 0) {
@@ -13569,7 +13569,7 @@ undefined4 FUN_004156d0(void)
   }
   _Size = iVar2 * 0x27;
   iVar4 = 0;
-  _Dst = (void *)FUN_004ad640(_Size);
+  _Dst = (void *)AllocateMemoryWithCallback(_Size);
   DAT_005e4ef0 = _memset(_Dst,iVar4,_Size);
   uVar3 = 0;
   iVar4 = DAT_005dcb3c;
@@ -13628,11 +13628,11 @@ undefined4 FUN_00415910(void)
   uVar12 = DAT_005df318[1];
   sVar10 = 0x972;
   iVar9 = 0;
-  pvVar3 = (void *)FUN_004ad640(0x972);
+  pvVar3 = (void *)AllocateMemoryWithCallback(0x972);
   DAT_005e4a64 = _memset(pvVar3,iVar9,sVar10);
   sVar10 = 0xf8;
   iVar9 = 0;
-  pvVar3 = (void *)FUN_004ad640(0xf8);
+  pvVar3 = (void *)AllocateMemoryWithCallback(0xf8);
   piVar4 = (int *)_memset(pvVar3,iVar9,sVar10);
   uVar11 = 0;
   if (*DAT_005df318 != 0) {
@@ -13735,11 +13735,11 @@ undefined4 FUN_00415b30(void)
   FUN_004ad310();
   sVar8 = 0x972;
   iVar7 = 0;
-  pvVar3 = (void *)FUN_004ad640(0x972);
+  pvVar3 = (void *)AllocateMemoryWithCallback(0x972);
   DAT_005e4a64 = _memset(pvVar3,iVar7,sVar8);
   sVar8 = 0xf8;
   iVar7 = 0;
-  pvVar3 = (void *)FUN_004ad640(0xf8);
+  pvVar3 = (void *)AllocateMemoryWithCallback(0xf8);
   piVar4 = (int *)_memset(pvVar3,iVar7,sVar8);
   uVar9 = 0;
   if (DAT_005d6760 * 5 != 0) {
@@ -14164,7 +14164,7 @@ undefined4 FUN_00416320(void)
   iVar9 = 0;
   iVar13 = 0;
   local_20 = 0x416345;
-  pvVar3 = (void *)FUN_004ad640();
+  pvVar3 = (void *)AllocateMemoryWithCallback();
   local_20 = 0x41634e;
   DAT_004d79b0 = (int *)_memset(pvVar3,iVar9,sVar11);
   if (DAT_004d79b0 == (int *)0x0) {
@@ -14173,7 +14173,7 @@ undefined4 FUN_00416320(void)
   sVar11 = 0x20;
   iVar9 = 0;
   local_20 = 0x41636d;
-  pvVar3 = (void *)FUN_004ad640();
+  pvVar3 = (void *)AllocateMemoryWithCallback();
   local_20 = 0x416376;
   DAT_004d79b4 = _memset(pvVar3,iVar9,sVar11);
   if (DAT_004d79b4 == (void *)0x0) {
@@ -15541,7 +15541,7 @@ void FUN_00418380(void)
   
   _Size = 0x2c1;
   iVar3 = 0;
-  _Dst = (void *)FUN_004ad640(0x2c1);
+  _Dst = (void *)AllocateMemoryWithCallback(0x2c1);
   DAT_005e45e4 = (undefined4 *)_memset(_Dst,iVar3,_Size);
   puVar1 = &DAT_004d1ae0;
   puVar2 = DAT_005e45e4 + 0x13;
@@ -17790,7 +17790,7 @@ undefined * FUN_0041c3f0(undefined4 param_1)
     FUN_004adda0();
     iVar1 = 0;
     puStackY_20 = (undefined *)0x41c439;
-    _Dst = (void *)FUN_004ad640();
+    _Dst = (void *)AllocateMemoryWithCallback();
     puStackY_20 = (undefined *)0x41c442;
     puVar2 = (undefined *)_memset(_Dst,iVar1,local_4e);
     puStackY_20 = (undefined *)0x41c453;
@@ -17826,7 +17826,7 @@ undefined4 * FUN_0041c4a0(undefined4 param_1)
   
   _Size = 0x10;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(0x10);
+  _Dst = (void *)AllocateMemoryWithCallback(0x10);
   puVar1 = (undefined4 *)_memset(_Dst,_Val,_Size);
   *puVar1 = param_1;
   uVar2 = FUN_0040ac00(param_1);
@@ -17846,7 +17846,7 @@ void FUN_0041c4e0(void)
   
   _Size = 0xc;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(0xc);
+  _Dst = (void *)AllocateMemoryWithCallback(0xc);
   _memset(_Dst,_Val,_Size);
   return;
 }
@@ -22641,7 +22641,7 @@ void FUN_004247d0(ushort *param_1,int param_2,size_t param_3)
   int _Val;
   
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(param_3);
+  _Dst = (void *)AllocateMemoryWithCallback(param_3);
   puVar1 = (ushort *)_memset(_Dst,_Val,param_3);
   do {
     uVar2 = (uint)*(byte *)param_1;
@@ -22677,7 +22677,7 @@ void FUN_00424830(ushort *param_1,int param_2,size_t param_3)
   int _Val;
   
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(param_3);
+  _Dst = (void *)AllocateMemoryWithCallback(param_3);
   puVar1 = (ushort *)_memset(_Dst,_Val,param_3);
   do {
     for (uVar2 = (uint)*param_1; uVar2 != 0; uVar2 = uVar2 - 1) {
@@ -22723,7 +22723,7 @@ void * FUN_004248d0(ushort *param_1,uint param_2)
   
   _Val = 0;
   _Size = param_2;
-  pvVar1 = (void *)FUN_004ad640(param_2);
+  pvVar1 = (void *)AllocateMemoryWithCallback(param_2);
   pvVar1 = _memset(pvVar1,_Val,_Size);
   param_2 = param_2 / 3;
   if (param_2 != 0) {
@@ -22830,7 +22830,7 @@ undefined * FUN_00424a20(ushort *param_1,int *param_2)
   WaitForSingleObject(DAT_005d66b0,0xffffffff);
   sVar7 = 0x14;
   iVar6 = 0;
-  pvVar1 = (void *)FUN_004ad640(0x14);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x14);
   piVar2 = (int *)_memset(pvVar1,iVar6,sVar7);
   *piVar2 = (uint)*param_1 * 6;
   piVar2[1] = *(int *)(param_1 + 1);
@@ -22841,7 +22841,7 @@ undefined * FUN_00424a20(ushort *param_1,int *param_2)
   *param_2 = piVar2[1];
   sVar7 = piVar2[1];
   iVar6 = 0;
-  pvVar1 = (void *)FUN_004ad640(sVar7);
+  pvVar1 = (void *)AllocateMemoryWithCallback(sVar7);
   puVar4 = (undefined *)_memset(pvVar1,iVar6,sVar7);
   param_1 = (ushort *)0x0;
   DAT_004d7a94 = 0;
@@ -22896,11 +22896,11 @@ void ** FUN_00424b80(void)
   
   sVar4 = 4;
   iVar3 = 0;
-  pvVar1 = (void *)FUN_004ad640(4);
+  pvVar1 = (void *)AllocateMemoryWithCallback(4);
   ppvVar2 = (void **)_memset(pvVar1,iVar3,sVar4);
   sVar4 = 9;
   iVar3 = 0;
-  pvVar1 = (void *)FUN_004ad640(9);
+  pvVar1 = (void *)AllocateMemoryWithCallback(9);
   pvVar1 = _memset(pvVar1,iVar3,sVar4);
   *ppvVar2 = pvVar1;
   return ppvVar2;
@@ -22927,7 +22927,7 @@ void FUN_00424bc0(undefined4 *param_1,uint *param_2)
         if (*(int *)(puVar4 + 5) == 0) {
           sVar6 = 9;
           iVar5 = 0;
-          pvVar1 = (void *)FUN_004ad640(9);
+          pvVar1 = (void *)AllocateMemoryWithCallback(9);
           pvVar1 = _memset(pvVar1,iVar5,sVar6);
           *(void **)(puVar4 + 5) = pvVar1;
         }
@@ -22937,7 +22937,7 @@ void FUN_00424bc0(undefined4 *param_1,uint *param_2)
         if (*(int *)(puVar4 + 1) == 0) {
           sVar6 = 9;
           iVar5 = 0;
-          pvVar1 = (void *)FUN_004ad640(9);
+          pvVar1 = (void *)AllocateMemoryWithCallback(9);
           pvVar1 = _memset(pvVar1,iVar5,sVar6);
           *(void **)(puVar4 + 1) = pvVar1;
         }
@@ -23800,7 +23800,7 @@ void FUN_00425fa0(void)
   
   _Size = 0x20;
   _Val = 0;
-  pvVar1 = (void *)FUN_004ad640(0x20);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x20);
   pvVar1 = _memset(pvVar1,_Val,_Size);
   if ((char)DAT_00598944 != '\0') {
     *(void **)(DAT_005e4480 + (_DAT_004d7ac4 & 0xff) * 4) = pvVar1;
@@ -23884,7 +23884,7 @@ void FUN_004260d0(void)
   DAT_005dfe6c = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,1,(LPCSTR)0x0);
   sVar8 = 6;
   iVar7 = 0;
-  pvVar3 = (void *)FUN_004ad640(6);
+  pvVar3 = (void *)AllocateMemoryWithCallback(6);
   DAT_005dfe64 = _memset(pvVar3,iVar7,sVar8);
   uVar4 = 0;
   if (*(int *)(DAT_00598d90 + 0x239) != 0) {
@@ -23898,11 +23898,11 @@ void FUN_004260d0(void)
   }
   sVar8 = (DAT_004d7ad8 & 0xffff) * 0x38;
   iVar7 = 0;
-  pvVar3 = (void *)FUN_004ad640(sVar8);
+  pvVar3 = (void *)AllocateMemoryWithCallback(sVar8);
   DAT_004d7ad4 = _memset(pvVar3,iVar7,sVar8);
   uVar4 = DAT_004d7ad8 & 0xffff;
   iVar7 = 0;
-  pvVar3 = (void *)FUN_004ad640(uVar4);
+  pvVar3 = (void *)AllocateMemoryWithCallback(uVar4);
   DAT_004d7ad0 = _memset(pvVar3,iVar7,uVar4);
   uVar4 = 0;
   if ((short)DAT_004d7ad8 != 0) {
@@ -23915,7 +23915,7 @@ void FUN_004260d0(void)
   }
   sVar8 = (DAT_004d7ad8 & 0xffff) << 3;
   iVar7 = 0;
-  pvVar3 = (void *)FUN_004ad640(sVar8);
+  pvVar3 = (void *)AllocateMemoryWithCallback(sVar8);
   DAT_005dfe68 = _memset(pvVar3,iVar7,sVar8);
   cVar6 = '\0';
   uVar4 = 0;
@@ -24898,7 +24898,7 @@ void FUN_004273c0(uint *param_1,int param_2,int param_3,int param_4)
   }
   _Size = 0x1c;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(0x1c);
+  _Dst = (void *)AllocateMemoryWithCallback(0x1c);
   piVar2 = (int *)_memset(_Dst,_Val,_Size);
   *piVar2 = param_2;
   piVar2[1] = piVar2[1] + 1;
@@ -24940,7 +24940,7 @@ void FUN_00427490(void)
   FUN_004ad310();
   sVar11 = 0x10;
   iVar10 = 0;
-  pvVar2 = (void *)FUN_004ad640(0x10);
+  pvVar2 = (void *)AllocateMemoryWithCallback(0x10);
   DAT_005dfe44 = (uint *)_memset(pvVar2,iVar10,sVar11);
   uVar14 = 0;
   iVar10 = DAT_00598d90;
@@ -24968,7 +24968,7 @@ void FUN_00427490(void)
     do {
       sVar11 = *(int *)(uVar14 + 8) * 8 + *(int *)(uVar14 + 4) * 0xc;
       iVar10 = 0;
-      pvVar2 = (void *)FUN_004ad640(sVar11);
+      pvVar2 = (void *)AllocateMemoryWithCallback(sVar11);
       pvVar2 = _memset(pvVar2,iVar10,sVar11);
       *(void **)(uVar14 + 0x10) = pvVar2;
       *(void **)(uVar14 + 0x14) = pvVar2;
@@ -25057,15 +25057,15 @@ void FUN_00427700(int *param_1,undefined4 param_2,int param_3)
   sVar9 = param_3 * 2;
   _DAT_005dfe40 = param_3;
   iVar8 = 0;
-  pvVar4 = (void *)FUN_004ad640();
+  pvVar4 = (void *)AllocateMemoryWithCallback();
   _DAT_005dfe50 = _memset(pvVar4,iVar8,sVar9);
   _Size = param_3 << 5;
   iVar8 = 0;
   sVar9 = _Size;
-  pvVar4 = (void *)FUN_004ad640();
+  pvVar4 = (void *)AllocateMemoryWithCallback();
   DAT_005dfe54 = _memset(pvVar4,iVar8,sVar9);
   iVar8 = 0;
-  pvVar4 = (void *)FUN_004ad640();
+  pvVar4 = (void *)AllocateMemoryWithCallback();
   _DAT_005dfe5c = _memset(pvVar4,iVar8,_Size);
   uVar5 = 0;
   uVar7 = 0;
@@ -25162,7 +25162,7 @@ void FUN_00427900(uint *param_1,int param_2)
   }
   _Size = 0x1c;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(0x1c);
+  _Dst = (void *)AllocateMemoryWithCallback(0x1c);
   piVar3 = (int *)_memset(_Dst,_Val,_Size);
   *piVar3 = param_2;
   piVar3[1] = piVar3[1] + 1;
@@ -25287,7 +25287,7 @@ undefined4 FUN_00427b50(void)
   if (DAT_005dfe3c == (void *)0x0) {
     _Size = 0x3c;
     iVar6 = 0;
-    _Dst = (void *)FUN_004ad640();
+    _Dst = (void *)AllocateMemoryWithCallback();
     DAT_005dfe3c = _memset(_Dst,iVar6,_Size);
     if (DAT_005dfe3c == (void *)0x0) {
       return 0;
@@ -26417,7 +26417,7 @@ undefined4 FUN_00429350(void)
     sVar9 = (int)local_20 + 1;
     iVar3 = 0;
     local_20 = (void *)0x4293f9;
-    pvVar4 = (void *)FUN_004ad640();
+    pvVar4 = (void *)AllocateMemoryWithCallback();
     local_20 = (void *)0x429402;
     pvVar4 = _memset(pvVar4,iVar3,sVar9);
     _DAT_004d7bb4 = local_20;
@@ -26429,14 +26429,14 @@ undefined4 FUN_00429350(void)
     iVar3 = 0;
     local_20 = (void *)0x42943e;
     DAT_004d7b98 = DAT_004d7b94;
-    pvVar4 = (void *)FUN_004ad640();
+    pvVar4 = (void *)AllocateMemoryWithCallback();
     local_20 = (void *)0x429447;
     DAT_004d7ba8 = _memset(pvVar4,iVar3,sVar9);
     if (DAT_004d7ba8 != (void *)0x0) {
       sVar9 = 8;
       iVar3 = 0;
       local_20 = (void *)0x429462;
-      pvVar4 = (void *)FUN_004ad640();
+      pvVar4 = (void *)AllocateMemoryWithCallback();
       local_20 = (void *)0x42946b;
       pvVar4 = _memset(pvVar4,iVar3,sVar9);
       *(void **)((int)DAT_004d7ba8 + 4) = pvVar4;
@@ -26476,7 +26476,7 @@ undefined4 FUN_00429350(void)
           sVar9 = 8;
           iVar7 = 0;
           local_20 = (void *)0x42950d;
-          pvVar4 = (void *)FUN_004ad640();
+          pvVar4 = (void *)AllocateMemoryWithCallback();
           local_20 = (void *)0x429516;
           ppcVar6 = (char **)_memset(pvVar4,iVar7,sVar9);
           ppcVar2[1] = (char *)ppcVar6;
@@ -26507,7 +26507,7 @@ uint FUN_00429560(void)
   DAT_004d7b94 = DAT_004d7b94 + 1;
   _Size = uVar2 + 1;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(_Size);
+  _Dst = (void *)AllocateMemoryWithCallback(_Size);
   _Str = (char *)_memset(_Dst,_Val,_Size);
   if (_Str == (char *)0x0) {
     return 0;
@@ -27230,7 +27230,7 @@ undefined4 FUN_0042a4a0(void)
   if (DAT_004d7cd4 == (HANDLE *)0x0) {
     sVar4 = 0xc;
     iVar3 = 0;
-    pvVar1 = (void *)FUN_004ad640(0xc);
+    pvVar1 = (void *)AllocateMemoryWithCallback(0xc);
     DAT_004d7cd4 = (HANDLE *)_memset(pvVar1,iVar3,sVar4);
     if (DAT_004d7cd4 == (HANDLE *)0x0) {
       return 0;
@@ -27239,7 +27239,7 @@ undefined4 FUN_0042a4a0(void)
     sVar4 = 0xc;
     iVar3 = 0;
     *DAT_004d7cd4 = pvVar2;
-    pvVar1 = (void *)FUN_004ad640(0xc);
+    pvVar1 = (void *)AllocateMemoryWithCallback(0xc);
     DAT_004d7cd8 = (HANDLE *)_memset(pvVar1,iVar3,sVar4);
     pvVar2 = CreateMutexA((LPSECURITY_ATTRIBUTES)0x0,0,(LPCSTR)0x0);
     *DAT_004d7cd8 = pvVar2;
@@ -27619,7 +27619,7 @@ int ** FUN_0042abb0(int *param_1,undefined2 param_2,undefined2 param_3,undefined
   _Size = 0x4a;
   _Val = 0;
   uStackY_1c = 0x42abd9;
-  _Dst = (void *)FUN_004ad640();
+  _Dst = (void *)AllocateMemoryWithCallback();
   uStackY_1c = 0x42abe2;
   ppiVar1 = (int **)_memset(_Dst,_Val,_Size);
   if (ppiVar1 == (int **)0x0) {
@@ -28966,7 +28966,7 @@ undefined4 FUN_0042cc60(void)
   } while (_Val != 0);
   sVar3 = (iVar6 + 1) * 0x222;
   pcStackY_20 = (char *)0x42cd15;
-  pvVar4 = (void *)FUN_004ad640();
+  pvVar4 = (void *)AllocateMemoryWithCallback();
   pcStackY_20 = (char *)0x42cd1e;
   pvVar4 = _memset(pvVar4,_Val,sVar3);
   *(void **)(DAT_005df2c8 + 0x10) = pvVar4;
@@ -29110,7 +29110,7 @@ void * FUN_0042cfc0(size_t *param_1)
   } while (_Val != 0);
   local_20 = (char *)0x42d087;
   _Size = sVar5;
-  pvVar3 = (void *)FUN_004ad640();
+  pvVar3 = (void *)AllocateMemoryWithCallback();
   local_20 = (char *)0x42d090;
   pvVar3 = _memset(pvVar3,_Val,_Size);
   *param_1 = sVar5;
@@ -29215,7 +29215,7 @@ undefined4 FUN_0042d1f0(int param_1,uint param_2)
   }
   _Size = 0x3ffc;
   iVar10 = 0;
-  pvVar5 = (void *)FUN_004ad640(0x3ffc);
+  pvVar5 = (void *)AllocateMemoryWithCallback(0x3ffc);
   pvVar5 = _memset(pvVar5,iVar10,_Size);
   *(void **)(DAT_005df2c8 + 0x10) = pvVar5;
   iVar10 = *(int *)(DAT_005df2c8 + 0x10);
@@ -29356,7 +29356,7 @@ undefined4 FUN_0042d540(void)
   sVar4 = 0x14;
   iVar3 = 0;
   uStackY_18 = 0x42d559;
-  pvVar1 = (void *)FUN_004ad640();
+  pvVar1 = (void *)AllocateMemoryWithCallback();
   uStackY_18 = 0x42d562;
   pvVar1 = _memset(pvVar1,iVar3,sVar4);
   *(void **)(DAT_005df2c8 + 0x14) = pvVar1;
@@ -29382,7 +29382,7 @@ undefined4 FUN_0042d540(void)
   sVar4 = 0x44;
   iVar3 = 0;
   uStackY_18 = 0x42d62e;
-  pvVar1 = (void *)FUN_004ad640();
+  pvVar1 = (void *)AllocateMemoryWithCallback();
   uStackY_18 = 0x42d637;
   DAT_004d7dc0 = _memset(pvVar1,iVar3,sVar4);
   if (DAT_004d7dc0 == (void *)0x0) {
@@ -29621,7 +29621,7 @@ undefined4 FUN_0042dcd0(void)
       _Size = 0x1a9a;
       _Val = 0;
       pvStackY_14 = (void *)0x42dd6d;
-      _Dst = (void *)FUN_004ad640();
+      _Dst = (void *)AllocateMemoryWithCallback();
       pvStackY_14 = (void *)0x42dd76;
       DAT_004d7ddc = _memset(_Dst,_Val,_Size);
       if (DAT_004d7ddc != (void *)0x0) {
@@ -29682,7 +29682,7 @@ LAB_0042de77:
   FUN_004ae6a0(DAT_004d7de0,iVar10 + 0x1a9a,0);
   iVar10 = 0;
   _Size = sVar9;
-  pvVar5 = (void *)FUN_004ad640(sVar9);
+  pvVar5 = (void *)AllocateMemoryWithCallback(sVar9);
   pbVar6 = (byte *)_memset(pvVar5,iVar10,_Size);
   FUN_004adda0(pbVar6,1,sVar9,DAT_004d7de0);
   bVar2 = *pbVar6;
@@ -29690,7 +29690,7 @@ LAB_0042de77:
   if (bVar2 == 0) {
     sVar9 = *(size_t *)(pbVar6 + 1);
     iVar10 = 0;
-    pvVar5 = (void *)FUN_004ad640(sVar9);
+    pvVar5 = (void *)AllocateMemoryWithCallback(sVar9);
     pvVar5 = _memset(pvVar5,iVar10,sVar9);
     FUN_004ad7a0(pvVar5,pbVar1,*(undefined4 *)(pbVar6 + 1));
   }
@@ -30582,7 +30582,7 @@ undefined4 FUN_0042f280(int param_1,int param_2)
   iVar2 = iVar1 / 2;
   *(int *)(*(int *)(DAT_005df2c8 + 4) + 0x20) = iVar4;
   _Size = param_2 * 0x80;
-  _Dst = (void *)FUN_004ad640();
+  _Dst = (void *)AllocateMemoryWithCallback();
   DAT_004d8028 = (undefined4 *)_memset(_Dst,iVar4,_Size);
   iVar4 = DAT_005e5010;
   if (DAT_004d8028 == (undefined4 *)0x0) {
@@ -31122,7 +31122,7 @@ LAB_0042fe10:
                   (*(int *)(DAT_005df2c8 + 8) + 0x14 +
                   *(short *)(*(int *)(DAT_004d80f0 + 8) + 2 + iVar10) * 0x140);
             uStackY_20 = 0x4301f6;
-            pvVar7 = (void *)FUN_004ad640();
+            pvVar7 = (void *)AllocateMemoryWithCallback();
             uStackY_20 = 0x4301ff;
             pvVar7 = _memset(pvVar7,iVar8,sVar4);
             uStackY_20 = 0x430221;
@@ -32354,7 +32354,7 @@ void * FUN_00431d80(short param_1)
   
   _Size = 0x159;
   _Val = 0;
-  pvVar1 = (void *)FUN_004ad640(0x159);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x159);
   pvVar1 = _memset(pvVar1,_Val,_Size);
   DAT_004d8054 = 1;
   FUN_004a9bb0(9999,pvVar1,(int)param_1,0);
@@ -32401,7 +32401,7 @@ void FUN_00431de0(undefined2 param_1)
   _DAT_005df9b2 = 0x3e800000;
   if (DAT_004d8064 == (void *)0x0) {
     uVar8 = 0x1000000000000;
-    pvVar3 = (void *)FUN_004ad640();
+    pvVar3 = (void *)AllocateMemoryWithCallback();
     DAT_004d8064 = _memset(pvVar3,(int)uVar8,(size_t)((ulonglong)uVar8 >> 0x20));
     iVar9 = 0;
     iVar10 = 0x70;
@@ -32445,7 +32445,7 @@ void FUN_00431de0(undefined2 param_1)
   }
   if (DAT_005df58a == (int *)0x0) {
     uVar8 = 0x6c00000000;
-    pvVar3 = (void *)FUN_004ad640();
+    pvVar3 = (void *)AllocateMemoryWithCallback();
     _Dst = (undefined4 *)_memset(pvVar3,(int)uVar8,(size_t)((ulonglong)uVar8 >> 0x20));
     if (_Dst == (undefined4 *)0x0) {
       return;
@@ -34045,7 +34045,7 @@ void FUN_00434560(void)
         *(undefined2 *)(*(int *)(DAT_004d80f0 + 8) + 2 + *(short *)(DAT_004d80f0 + 0xc) * 8) =
              (undefined2)DAT_005dfe24;
         uStackY_2c = 0x434766;
-        pvVar1 = (void *)FUN_004ad640();
+        pvVar1 = (void *)AllocateMemoryWithCallback();
         uStackY_2c = 0x43476f;
         pvVar1 = _memset(pvVar1,iVar2,sVar4);
         uStackY_2c = 0x43478d;
@@ -34090,7 +34090,7 @@ void FUN_00434560(void)
       FUN_004357f0();
       sVar4 = 0x27;
       iVar2 = 0;
-      pvVar1 = (void *)FUN_004ad640();
+      pvVar1 = (void *)AllocateMemoryWithCallback();
       pvVar1 = _memset(pvVar1,iVar2,sVar4);
       FUN_00415fa0();
       _AIL_init_sample_4();
@@ -34155,7 +34155,7 @@ void FUN_00434560(void)
         *(undefined2 *)(*(int *)(DAT_004d80f0 + 8) + 2 + *(short *)(DAT_004d80f0 + 0xc) * 8) =
              (undefined2)DAT_005dfe24;
         uStackY_2c = 0x434c31;
-        pvVar1 = (void *)FUN_004ad640();
+        pvVar1 = (void *)AllocateMemoryWithCallback();
         uStackY_2c = 0x434c3a;
         pvVar1 = _memset(pvVar1,iVar2,sVar4);
         uStackY_2c = 0x434c58;
@@ -34221,7 +34221,7 @@ void FUN_00434560(void)
         FUN_004357f0();
         sVar4 = 0x27;
         iVar2 = 0;
-        pvVar1 = (void *)FUN_004ad640();
+        pvVar1 = (void *)AllocateMemoryWithCallback();
         pvVar1 = _memset(pvVar1,iVar2,sVar4);
         FUN_00415fa0();
         _AIL_init_sample_4();
@@ -34700,7 +34700,7 @@ bool FUN_00435910(void)
   
   _Size = 0x18;
   iVar1 = 0;
-  _Dst = (void *)FUN_004ad640(0x18);
+  _Dst = (void *)AllocateMemoryWithCallback(0x18);
   _DAT_004d80a0 = _memset(_Dst,iVar1,_Size);
   if (_DAT_004d80a0 == (void *)0x0) {
     return false;
@@ -36377,7 +36377,7 @@ void FUN_00437ef0(void)
   FUN_004ad310();
   _Size = 8;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(8);
+  _Dst = (void *)AllocateMemoryWithCallback(8);
   _Dest = (char *)_memset(_Dst,_Val,_Size);
   LVar1 = RegCreateKeyExA((HKEY)0x80000002,s_Software_Vis_Interactive_Hedz_004cafc8,0,(LPSTR)0x0,0,
                           0xf003f,(LPSECURITY_ATTRIBUTES)0x0,&HKEY_00598b70,(LPDWORD)&DAT_004d8098);
@@ -39420,14 +39420,14 @@ bool FUN_0043d070(void)
   FUN_004424b0();
   sVar7 = 0xe;
   iVar6 = 0;
-  pvVar2 = (void *)FUN_004ad640(0xe);
+  pvVar2 = (void *)AllocateMemoryWithCallback(0xe);
   DAT_004d80f0 = _memset(pvVar2,iVar6,sVar7);
   if (DAT_004d80f0 == (void *)0x0) {
     return false;
   }
   sVar7 = 0x28;
   iVar6 = 0;
-  pvVar2 = (void *)FUN_004ad640(0x28);
+  pvVar2 = (void *)AllocateMemoryWithCallback(0x28);
   pvVar2 = _memset(pvVar2,iVar6,sVar7);
   *(void **)((int)DAT_004d80f0 + 8) = pvVar2;
   iVar6 = 0;
@@ -39438,7 +39438,7 @@ bool FUN_0043d070(void)
   } while (iVar6 < 0x28);
   sVar7 = 0xf1;
   iVar6 = 0;
-  pvVar2 = (void *)FUN_004ad640(0xf1);
+  pvVar2 = (void *)AllocateMemoryWithCallback(0xf1);
   DAT_005df2c8 = _memset(pvVar2,iVar6,sVar7);
   if (DAT_005df2c8 == (void *)0x0) {
     return false;
@@ -39463,12 +39463,12 @@ bool FUN_0043d070(void)
   sVar7 = iVar4 * 0x140;
   iVar6 = 0;
   DAT_004d80e8 = iVar4;
-  pvVar2 = (void *)FUN_004ad640(sVar7);
+  pvVar2 = (void *)AllocateMemoryWithCallback(sVar7);
   pvVar2 = _memset(pvVar2,iVar6,sVar7);
   *(void **)((int)DAT_005df2c8 + 8) = pvVar2;
   sVar7 = iVar4 * 2;
   iVar6 = 0;
-  pvVar2 = (void *)FUN_004ad640(sVar7);
+  pvVar2 = (void *)AllocateMemoryWithCallback(sVar7);
   pvVar2 = _memset(pvVar2,iVar6,sVar7);
   *(void **)((int)DAT_005df2c8 + 0xc) = pvVar2;
   if (*(int *)((int)DAT_005df2c8 + 8) == 0) {
@@ -39476,7 +39476,7 @@ bool FUN_0043d070(void)
   }
   sVar7 = 0x2c;
   iVar6 = 0;
-  pvVar2 = (void *)FUN_004ad640(0x2c);
+  pvVar2 = (void *)AllocateMemoryWithCallback(0x2c);
   pvVar2 = _memset(pvVar2,iVar6,sVar7);
   *(void **)((int)DAT_005df2c8 + 4) = pvVar2;
   if (*(int *)((int)DAT_005df2c8 + 4) == 0) {
@@ -39488,7 +39488,7 @@ bool FUN_0043d070(void)
   }
   sVar7 = 0x328;
   iVar6 = 0;
-  pvVar2 = (void *)FUN_004ad640(0x328);
+  pvVar2 = (void *)AllocateMemoryWithCallback(0x328);
   DAT_005df2cc = _memset(pvVar2,iVar6,sVar7);
   if (DAT_005df2cc == (void *)0x0) {
     return false;
@@ -39500,14 +39500,14 @@ bool FUN_0043d070(void)
   } while (iVar6 < 800);
   sVar7 = 0xa1;
   iVar6 = 0;
-  pvVar2 = (void *)FUN_004ad640(0xa1);
+  pvVar2 = (void *)AllocateMemoryWithCallback(0xa1);
   DAT_004d80cc = _memset(pvVar2,iVar6,sVar7);
   if (DAT_004d80cc == (void *)0x0) {
     return false;
   }
   sVar7 = (*(int *)((int)DAT_005df2c8 + 0xcc) + 1) * 0x158;
   iVar6 = 0;
-  pvVar2 = (void *)FUN_004ad640(sVar7);
+  pvVar2 = (void *)AllocateMemoryWithCallback(sVar7);
   DAT_004d8068 = _memset(pvVar2,iVar6,sVar7);
   return DAT_004d8068 != (void *)0x0;
 }
@@ -39555,7 +39555,7 @@ undefined4 FUN_0043d2c0(void)
   }
   if (DAT_00598d7c == 0) {
     uVar4 = 0xd800000000;
-    _Dst = (void *)FUN_004ad640();
+    _Dst = (void *)AllocateMemoryWithCallback();
     DAT_005df290 = _memset(_Dst,(int)uVar4,(size_t)((ulonglong)uVar4 >> 0x20));
     if (DAT_005df290 == (void *)0x0) {
       return 0;
@@ -40090,7 +40090,7 @@ void FUN_0043e100(void)
   if (DAT_004d8104 == (undefined4 *)0x0) {
     _Size = 0x30;
     _Val = 0;
-    _Dst = (void *)FUN_004ad640(0x30);
+    _Dst = (void *)AllocateMemoryWithCallback(0x30);
     DAT_004d8104 = (undefined4 *)_memset(_Dst,_Val,_Size);
     if (DAT_004d8104 != (undefined4 *)0x0) {
       uVar1 = FUN_00440fa0(0x26,0);
@@ -41034,7 +41034,7 @@ void FUN_0043f430(void)
   if (DAT_005dece4 == (int *)0x0) {
     sVar8 = 8;
     _Val_00 = DAT_005dece4;
-    pvVar3 = (void *)FUN_004ad640(8);
+    pvVar3 = (void *)AllocateMemoryWithCallback(8);
     DAT_005dece4 = (int *)_memset(pvVar3,(int)_Val_00,sVar8);
     if (DAT_005dece4 == (int *)0x0) {
       return;
@@ -41047,7 +41047,7 @@ void FUN_0043f430(void)
     if (DAT_005dece4[1] == 0) {
       sVar8 = 0xc;
       iVar7 = 0;
-      pvVar3 = (void *)FUN_004ad640(0xc);
+      pvVar3 = (void *)AllocateMemoryWithCallback(0xc);
       pvVar3 = _memset(pvVar3,iVar7,sVar8);
       DAT_005dece4[1] = (int)pvVar3;
     }
@@ -41061,7 +41061,7 @@ void FUN_0043f430(void)
         if (((iVar2 == 0) || (iVar2 == 1)) || (iVar2 == 3)) {
           if (_Val == (undefined4 *)0x0) {
             sVar8 = 0xc;
-            pvVar3 = (void *)FUN_004ad640(0xc);
+            pvVar3 = (void *)AllocateMemoryWithCallback(0xc);
             _Val = (undefined4 *)_memset(pvVar3,(int)_Val,sVar8);
           }
           _Val[1] = iVar5;
@@ -41327,7 +41327,7 @@ undefined4 FUN_0043f9d0(void)
   uVar11 = (undefined2)((uint)local_40 >> 0x10);
   iVar2 = 0;
   local_20 = (void *)0x43fa99;
-  pvVar3 = (void *)FUN_004ad640();
+  pvVar3 = (void *)AllocateMemoryWithCallback();
   local_20 = (void *)0x43faa2;
   pvVar3 = _memset(pvVar3,iVar2,CONCAT22(uVar11,CONCAT11(uVar10,uVar9)));
   local_24 = 0x43fab7;
@@ -41353,7 +41353,7 @@ undefined4 FUN_0043f9d0(void)
         uVar11 = 0;
         iVar2 = 0;
         local_20 = (void *)0x43fb39;
-        pvVar6 = (void *)FUN_004ad640();
+        pvVar6 = (void *)AllocateMemoryWithCallback();
         local_20 = (void *)0x43fb42;
         pvVar6 = _memset(pvVar6,iVar2,CONCAT22(uVar11,CONCAT11(uVar10,uVar9)));
         *ppvVar7 = pvVar6;
@@ -41422,7 +41422,7 @@ undefined4 FUN_0043fbc0(void)
   }
   iVar2 = 0;
   local_20 = (void *)0x43fc89;
-  pvVar3 = (void *)FUN_004ad640();
+  pvVar3 = (void *)AllocateMemoryWithCallback();
   local_20 = (void *)0x43fc92;
   pvVar3 = _memset(pvVar3,iVar2,local_40);
   local_24 = (byte *)0x43fca7;
@@ -41447,7 +41447,7 @@ undefined4 FUN_0043fbc0(void)
         _Size = uVar5 + 1;
         iVar2 = 0;
         local_20 = (void *)0x43fd1f;
-        pvVar6 = (void *)FUN_004ad640();
+        pvVar6 = (void *)AllocateMemoryWithCallback();
         local_20 = (void *)0x43fd28;
         pvVar6 = _memset(pvVar6,iVar2,_Size);
         *ppvVar7 = pvVar6;
@@ -42707,7 +42707,7 @@ undefined2 * FUN_00441b30(undefined2 param_1)
   _Size = 0xe;
   iVar3 = 0;
   puStackY_1c = (undefined *)0x441b4a;
-  pvVar1 = (void *)FUN_004ad640();
+  pvVar1 = (void *)AllocateMemoryWithCallback();
   puStackY_1c = (undefined *)0x441b53;
   puVar2 = (undefined2 *)_memset(pvVar1,iVar3,_Size);
   *puVar2 = param_1;
@@ -42718,7 +42718,7 @@ undefined2 * FUN_00441b30(undefined2 param_1)
     FUN_004adda0();
     iVar3 = 0;
     puStackY_1c = (undefined *)0x441b8e;
-    pvVar1 = (void *)FUN_004ad640();
+    pvVar1 = (void *)AllocateMemoryWithCallback();
     puStackY_1c = (undefined *)0x441b97;
     pvVar1 = _memset(pvVar1,iVar3,local_52);
     *(void **)(puVar2 + 1) = pvVar1;
@@ -42743,7 +42743,7 @@ void FUN_00441bd0(void)
   
   _Size = 0xc;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(0xc);
+  _Dst = (void *)AllocateMemoryWithCallback(0xc);
   _memset(_Dst,_Val,_Size);
   return;
 }
@@ -43035,7 +43035,7 @@ void * FUN_004420e0(undefined4 param_1,int param_2)
   _Size = 0x87;
   iVar3 = 0;
   puStackY_20 = (undefined *)0x442102;
-  pvVar1 = (void *)FUN_004ad640();
+  pvVar1 = (void *)AllocateMemoryWithCallback();
   puStackY_20 = (undefined *)0x44210b;
   pvVar1 = _memset(pvVar1,iVar3,_Size);
   iVar3 = FUN_00442690();
@@ -43121,7 +43121,7 @@ void FUN_00442220(int param_1,undefined2 param_2)
   uStackY_20 = 0x442264;
   _strlen(local_104);
   uStackY_20 = 0x44226e;
-  _Dst = (void *)FUN_004ad640();
+  _Dst = (void *)AllocateMemoryWithCallback();
   uStackY_20 = 0x442277;
   _Dest = (char *)_memset(_Dst,_Val,sVar2);
   *(char **)(param_1 + 3) = _Dest;
@@ -43204,7 +43204,7 @@ void FUN_004423f0(void **param_1,undefined8 param_2,undefined4 param_4)
   uVar2 = param_2._1_4_;
   sVar6 = 0x10;
   iVar5 = 0;
-  pvVar3 = (void *)FUN_004ad640(0x10);
+  pvVar3 = (void *)AllocateMemoryWithCallback(0x10);
   puVar4 = (undefined4 *)_memset(pvVar3,iVar5,sVar6);
   if (puVar4 != (undefined4 *)0x0) {
     *puVar4 = param_4;
@@ -43213,7 +43213,7 @@ void FUN_004423f0(void **param_1,undefined8 param_2,undefined4 param_4)
     FUN_004ae6a0(param_4,5,0);
     sVar6 = (uVar2 & 0xffff) * 4;
     iVar5 = 0;
-    pvVar3 = (void *)FUN_004ad640(sVar6);
+    pvVar3 = (void *)AllocateMemoryWithCallback(sVar6);
     pvVar3 = _memset(pvVar3,iVar5,sVar6);
     puVar4[2] = pvVar3;
     FUN_004adda0(pvVar3,4,uVar2 & 0xffff,param_4);
@@ -43907,7 +43907,7 @@ void FUN_004433c0(void)
   if (DAT_004d8388 != 0) {
     _Size = 0x4b0;
     _Val = 0;
-    _Dst = (void *)FUN_004ad640(0x4b0);
+    _Dst = (void *)AllocateMemoryWithCallback(0x4b0);
     DAT_004d8164 = _memset(_Dst,_Val,_Size);
   }
   return;
@@ -44010,7 +44010,7 @@ void FUN_00443560(void)
     iVar2 = 0;
     uStackY_18 = 0x443621;
     DAT_004d8160 = uVar3;
-    _Dst = (void *)FUN_004ad640();
+    _Dst = (void *)AllocateMemoryWithCallback();
     uStackY_18 = 0x44362a;
     DAT_004d8164 = _memset(_Dst,iVar2,sVar1);
     if (uVar3 != 0) {
@@ -48356,7 +48356,7 @@ undefined4 FUN_004497c0(void)
   if (DAT_004d83a4 == (void *)0x0) {
     _Size = 99;
     iVar1 = 0;
-    _Dst = (void *)FUN_004ad640(99);
+    _Dst = (void *)AllocateMemoryWithCallback(99);
     DAT_004d83a4 = _memset(_Dst,iVar1,_Size);
     if (DAT_004d83a4 == (void *)0x0) {
       return 0;
@@ -48430,7 +48430,7 @@ undefined4 FUN_00449900(undefined4 param_1,undefined4 param_2,int *param_3)
   }
   FUN_00449c80();
   WaitForSingleObject(DAT_005d66b4,0xffffffff);
-  uVar2 = FUN_004ad640();
+  uVar2 = AllocateMemoryWithCallback();
   DAT_004d83a4[2] = uVar2;
   _Dst = (void *)DAT_004d83a4[2];
   local_20 = (int *)0x449962;
@@ -48599,7 +48599,7 @@ void FUN_00449c80(void)
   DAT_004d80f4 = 0xffffffff;
   DAT_004d80fc = 0x7fffffff;
   DAT_005df2dc = 0xff7f7f7f;
-  _Dst = (void *)FUN_004ad640(0x640);
+  _Dst = (void *)AllocateMemoryWithCallback(0x640);
   DAT_005ddb14 = _memset(_Dst,_Val,_Size);
   FUN_00449d30(0x10,200,DAT_005ddb14);
   uVar1 = FUN_004af670(0);
@@ -48618,7 +48618,7 @@ bool FUN_00449cf0(void)
   
   _Size = 0x88;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(0x88);
+  _Dst = (void *)AllocateMemoryWithCallback(0x88);
   DAT_005dcedc = _memset(_Dst,_Val,_Size);
   return DAT_005dcedc != (void *)0x0;
 }
@@ -49534,7 +49534,7 @@ undefined4 FUN_0044b3b0(void)
   do {
     sVar6 = 0x40;
     _Val = 0;
-    pvVar1 = (void *)FUN_004ad640();
+    pvVar1 = (void *)AllocateMemoryWithCallback();
     DAT_005dcff4 = _memset(pvVar1,_Val,sVar6);
     iVar4 = iVar4 + -1;
   } while (iVar4 != 0);
@@ -49582,7 +49582,7 @@ undefined4 FUN_0044b3b0(void)
       return 0;
     }
     sVar6 = 8;
-    pvVar1 = (void *)FUN_004ad640();
+    pvVar1 = (void *)AllocateMemoryWithCallback();
     puVar3 = (undefined4 *)_memset(pvVar1,iVar4,sVar6);
     *puVar3 = DAT_005e7300;
     puVar3[1] = DAT_005e7300;
@@ -49685,7 +49685,7 @@ undefined4 FUN_0044b6b0(int param_1)
   FUN_004ad310();
   _Size = 8;
   iVar4 = 0;
-  _Dst = (void *)FUN_004ad640();
+  _Dst = (void *)AllocateMemoryWithCallback();
   puVar3 = (undefined4 *)_memset(_Dst,iVar4,_Size);
   *puVar3 = DAT_005e7300;
   puVar3[1] = DAT_005e7300;
@@ -49790,7 +49790,7 @@ undefined4 FUN_0044b8d0(undefined4 param_1,char *param_2,char *param_3)
   FID_conflict__strcat(local_128,param_2);
   _Size = 0x6c;
   iVar2 = 0;
-  _Dst = (void *)FUN_004ad640();
+  _Dst = (void *)AllocateMemoryWithCallback();
   _Dst_00 = (undefined4 *)_memset(_Dst,iVar2,_Size);
   if (_Dst_00 == (undefined4 *)0x0) {
     return 0;
@@ -49839,7 +49839,7 @@ int * FUN_0044ba00(undefined4 param_1,int *param_2)
   GetObjectA(param_2,0x18,&local_24);
   _Size = 0x6c;
   iVar2 = 0;
-  _Dst = (void *)FUN_004ad640();
+  _Dst = (void *)AllocateMemoryWithCallback();
   _Dst_00 = (undefined4 *)_memset(_Dst,iVar2,_Size);
   if (_Dst_00 == (undefined4 *)0x0) {
     return (int *)0x0;
@@ -49943,7 +49943,7 @@ undefined4 FUN_0044bc00(void)
   }
   _Size = 0x30;
   iVar4 = 0;
-  pvVar1 = (void *)FUN_004ad640();
+  pvVar1 = (void *)AllocateMemoryWithCallback();
   pvVar1 = _memset(pvVar1,iVar4,_Size);
   *(void **)(DAT_004d83a4 + 0x10) = pvVar1;
   if (*(int *)(DAT_004d83a4 + 0x10) == 0) {
@@ -50179,7 +50179,7 @@ FUN_0044c110(int *param_1,int param_2,int param_3,int param_4,undefined4 param_5
   _memset(&stack0xffffffe8,0,0x10);
   _Size = 0x6c;
   iVar7 = 0;
-  pvVar1 = (void *)FUN_004ad640();
+  pvVar1 = (void *)AllocateMemoryWithCallback();
   pvVar1 = _memset(pvVar1,iVar7,_Size);
   if (pvVar1 == (void *)0x0) {
     return 0;
@@ -51474,7 +51474,7 @@ undefined4 FUN_0044dc30(void)
   FUN_004ad310();
   _Size = 0x5b;
   iVar4 = 0;
-  pvVar1 = (void *)FUN_004ad640(0x5b);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x5b);
   pvVar1 = _memset(pvVar1,iVar4,_Size);
   if (pvVar1 == (void *)0x0) {
     return 0;
@@ -51537,7 +51537,7 @@ undefined4 FUN_0044ddb0(void)
   FUN_004ad310();
   _Size = 0x5b;
   iVar7 = 0;
-  pvVar2 = (void *)FUN_004ad640(0x5b);
+  pvVar2 = (void *)AllocateMemoryWithCallback(0x5b);
   pvVar2 = _memset(pvVar2,iVar7,_Size);
   if (pvVar2 == (void *)0x0) {
     return 0;
@@ -53247,7 +53247,7 @@ undefined4 FUN_004507a0(uint param_1)
   }
   sVar3 = DAT_004d86a8 * 0xe0;
   iVar9 = 0;
-  pvVar4 = (void *)FUN_004ad640(sVar3);
+  pvVar4 = (void *)AllocateMemoryWithCallback(sVar3);
   DAT_004d86ac = _memset(pvVar4,iVar9,sVar3);
   param_1 = 1;
   iVar9 = *(int *)(DAT_005df318[1] + 10);
@@ -53279,7 +53279,7 @@ undefined4 FUN_004507a0(uint param_1)
   }
   sVar3 = DAT_004d86a8 * 0x16;
   iVar9 = 0;
-  pvVar4 = (void *)FUN_004ad640(sVar3);
+  pvVar4 = (void *)AllocateMemoryWithCallback(sVar3);
   DAT_005a1108 = _memset(pvVar4,iVar9,sVar3);
   iVar9 = 0;
   if (0 < DAT_004d86a8) {
@@ -54075,7 +54075,7 @@ undefined4 FUN_004518f0(void)
     else {
       iVar3 = 0;
       sVar4 = DAT_005dcbe0;
-      pvVar1 = (void *)FUN_004ad640(DAT_005dcbe0);
+      pvVar1 = (void *)AllocateMemoryWithCallback(DAT_005dcbe0);
       DAT_005dcbdc = _memset(pvVar1,iVar3,sVar4);
       FUN_004adda0(DAT_005dcbdc,DAT_005dcbe0,1,DAT_005dcbe8);
     }
@@ -54099,7 +54099,7 @@ undefined4 FUN_004518f0(void)
   }
   iVar3 = 0;
   sVar4 = DAT_005dcbe0;
-  pvVar1 = (void *)FUN_004ad640(DAT_005dcbe0);
+  pvVar1 = (void *)AllocateMemoryWithCallback(DAT_005dcbe0);
   DAT_005dcbdc = _memset(pvVar1,iVar3,sVar4);
   return 1;
 }
@@ -55262,7 +55262,7 @@ void FUN_00453260(float param_1,float param_2,float param_3,float param_4,float 
   
   _Size = 0x24;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(0x24);
+  _Dst = (void *)AllocateMemoryWithCallback(0x24);
   pfVar1 = (float *)_memset(_Dst,_Val,_Size);
   pfVar1[3] = param_1;
   pfVar1[5] = param_3;
@@ -55297,7 +55297,7 @@ void FUN_004532f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,float
   
   _Size = 0x24;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(0x24);
+  _Dst = (void *)AllocateMemoryWithCallback(0x24);
   puVar1 = (undefined4 *)_memset(_Dst,_Val,_Size);
   puVar1[7] = param_5;
   puVar1[3] = param_1;
@@ -55455,7 +55455,7 @@ undefined4 FUN_00453440(undefined2 *param_1,int param_2)
     sVar7 = local_34 * 2;
     iVar13 = 0;
     local_20 = (uint *)0x45356a;
-    pvVar5 = (void *)FUN_004ad640();
+    pvVar5 = (void *)AllocateMemoryWithCallback();
     local_20 = (uint *)0x453573;
     pvVar5 = _memset(pvVar5,iVar13,sVar7);
     *(void **)(DAT_005df2c8 + 0xc) = pvVar5;
@@ -55531,7 +55531,7 @@ LAB_004535e7:
                 sVar7 = 0x14;
                 iVar15 = 0;
                 local_20 = (uint *)0x453779;
-                pvVar5 = (void *)FUN_004ad640();
+                pvVar5 = (void *)AllocateMemoryWithCallback();
                 local_20 = (uint *)0x453782;
                 local_20 = (uint *)_memset(pvVar5,iVar15,sVar7);
                 *(uint **)(iVar14 + 0x17) = local_20;
@@ -55683,7 +55683,7 @@ LAB_004535e7:
             sVar7 = (uint)bVar4 << 4;
             iVar6 = 0;
             local_20 = (uint *)0x453c98;
-            pvVar5 = (void *)FUN_004ad640();
+            pvVar5 = (void *)AllocateMemoryWithCallback();
             local_20 = (uint *)0x453ca1;
             pvVar5 = _memset(pvVar5,iVar6,sVar7);
             *(void **)(*(int *)(*(int *)(iVar13 + 4) + 0x100) + 0xae) = pvVar5;
@@ -55702,7 +55702,7 @@ LAB_004535e7:
             sVar7 = (uint)bVar4 * 6;
             iVar6 = 0;
             local_20 = (uint *)0x453d39;
-            pvVar5 = (void *)FUN_004ad640();
+            pvVar5 = (void *)AllocateMemoryWithCallback();
             local_20 = (uint *)0x453d42;
             pvVar5 = _memset(pvVar5,iVar6,sVar7);
             *(void **)(*(int *)(*(int *)(iVar13 + 4) + 0x100) + 0xb2) = pvVar5;
@@ -55959,14 +55959,14 @@ LAB_004535e7:
         sVar7 = (uint)*pbVar2 * 0xc;
         iVar14 = 0;
         local_20 = (uint *)0x45458c;
-        pvVar5 = (void *)FUN_004ad640();
+        pvVar5 = (void *)AllocateMemoryWithCallback();
         local_20 = (uint *)0x454595;
         pvVar5 = _memset(pvVar5,iVar14,sVar7);
         *(void **)(iVar6 + 7) = pvVar5;
         sVar7 = (uint)*pbVar2 << 1;
         iVar14 = 0;
         local_20 = (uint *)0x4545aa;
-        pvVar5 = (void *)FUN_004ad640();
+        pvVar5 = (void *)AllocateMemoryWithCallback();
         local_20 = (uint *)0x4545b3;
         pvVar5 = _memset(pvVar5,iVar14,sVar7);
         local_20 = *(uint **)(iVar6 + 7);
@@ -55983,21 +55983,21 @@ LAB_004535e7:
         uVar8 = (uint)*pbVar2;
         iVar14 = 0;
         local_20 = (uint *)0x454611;
-        pvVar5 = (void *)FUN_004ad640();
+        pvVar5 = (void *)AllocateMemoryWithCallback();
         local_20 = (uint *)0x45461a;
         pvVar5 = _memset(pvVar5,iVar14,uVar8);
         *(void **)(iVar6 + 0x1c) = pvVar5;
         sVar7 = (uint)*pbVar2 << 1;
         iVar14 = 0;
         local_20 = (uint *)0x45462f;
-        pvVar5 = (void *)FUN_004ad640();
+        pvVar5 = (void *)AllocateMemoryWithCallback();
         local_20 = (uint *)0x454638;
         pvVar5 = _memset(pvVar5,iVar14,sVar7);
         *(void **)(iVar6 + 0x20) = pvVar5;
         uVar8 = (uint)*pbVar2;
         iVar14 = 0;
         local_20 = (uint *)0x45464b;
-        pvVar5 = (void *)FUN_004ad640();
+        pvVar5 = (void *)AllocateMemoryWithCallback();
         local_20 = (uint *)0x454654;
         pvVar5 = _memset(pvVar5,iVar14,uVar8);
         local_20 = *(uint **)(iVar6 + 0x1c);
@@ -56013,14 +56013,14 @@ LAB_004535e7:
         sVar7 = (uint)*pbVar2 << 2;
         iVar14 = 0;
         local_20 = (uint *)0x4546b5;
-        pvVar5 = (void *)FUN_004ad640();
+        pvVar5 = (void *)AllocateMemoryWithCallback();
         local_20 = (uint *)0x4546be;
         pvVar5 = _memset(pvVar5,iVar14,sVar7);
         *(void **)(iVar6 + 0x14) = pvVar5;
         sVar7 = (uint)*pbVar2 << 2;
         iVar14 = 0;
         local_20 = (uint *)0x4546d4;
-        pvVar5 = (void *)FUN_004ad640();
+        pvVar5 = (void *)AllocateMemoryWithCallback();
         local_20 = (uint *)0x4546dd;
         pvVar5 = _memset(pvVar5,iVar14,sVar7);
         *(void **)(iVar6 + 0x18) = pvVar5;
@@ -56030,14 +56030,14 @@ LAB_004535e7:
             sVar7 = (uint)*(byte *)(iVar14 + *(int *)(iVar6 + 0x1c)) << 1;
             iVar15 = 0;
             local_20 = (uint *)0x454707;
-            pvVar5 = (void *)FUN_004ad640();
+            pvVar5 = (void *)AllocateMemoryWithCallback();
             local_20 = (uint *)0x454710;
             pvVar5 = _memset(pvVar5,iVar15,sVar7);
             *(void **)(*(int *)(iVar6 + 0x14) + iVar14 * 4) = pvVar5;
             uVar8 = (uint)*(byte *)(iVar14 + *(int *)(iVar6 + 0x1c));
             iVar15 = 0;
             local_20 = (uint *)0x454732;
-            pvVar5 = (void *)FUN_004ad640();
+            pvVar5 = (void *)AllocateMemoryWithCallback();
             local_20 = (uint *)0x45473b;
             pvVar5 = _memset(pvVar5,iVar15,uVar8);
             *(void **)(*(int *)(iVar6 + 0x18) + iVar14 * 4) = pvVar5;
@@ -56056,7 +56056,7 @@ LAB_004535e7:
         uVar8 = (uint)*(ushort *)(iVar6 + 0x24);
         iVar14 = 0;
         local_20 = (uint *)0x4547c5;
-        pvVar5 = (void *)FUN_004ad640();
+        pvVar5 = (void *)AllocateMemoryWithCallback();
         local_20 = (uint *)0x4547ce;
         local_20 = (uint *)_memset(pvVar5,iVar14,uVar8);
         *(uint **)(iVar6 + 0x26) = local_20;
@@ -56310,15 +56310,15 @@ void FUN_00454e70(undefined4 param_1)
   FUN_004ad7a0(&DAT_005dcba0,param_1,0x14);
   sVar2 = (uint)DAT_005dcba6 << 2;
   iVar4 = 0;
-  pvVar3 = (void *)FUN_004ad640(sVar2);
+  pvVar3 = (void *)AllocateMemoryWithCallback(sVar2);
   DAT_004d779c = _memset(pvVar3,iVar4,sVar2);
   sVar2 = (uint)DAT_005dcba6 << 2;
   iVar4 = 0;
-  pvVar3 = (void *)FUN_004ad640(sVar2);
+  pvVar3 = (void *)AllocateMemoryWithCallback(sVar2);
   DAT_005dcbb4 = _memset(pvVar3,iVar4,sVar2);
   sVar2 = (uint)DAT_005dcba6 << 2;
   iVar4 = 0;
-  pvVar3 = (void *)FUN_004ad640(sVar2);
+  pvVar3 = (void *)AllocateMemoryWithCallback(sVar2);
   DAT_005dcbb8 = _memset(pvVar3,iVar4,sVar2);
   return;
 }
@@ -56366,7 +56366,7 @@ void FUN_00454f30(int param_1)
     if (bVar1 != 0) {
       _Size = (uint)bVar1 << 4;
       iVar10 = 0;
-      pvVar4 = (void *)FUN_004ad640(_Size);
+      pvVar4 = (void *)AllocateMemoryWithCallback(_Size);
       pvVar4 = _memset(pvVar4,iVar10,_Size);
       *(void **)(*(int *)(*(int *)(iVar7 + 4) + 0x100) + 0xae) = pvVar4;
     }
@@ -56404,7 +56404,7 @@ void FUN_00454f30(int param_1)
             if (bVar1 != 0) {
               _Size = (uint)bVar1 << 4;
               iVar10 = 0;
-              pvVar4 = (void *)FUN_004ad640(_Size);
+              pvVar4 = (void *)AllocateMemoryWithCallback(_Size);
               pvVar4 = _memset(pvVar4,iVar10,_Size);
               *(void **)(*(int *)(*(int *)(iVar7 + 4) + 0x100) + 0xae) = pvVar4;
             }
@@ -56497,7 +56497,7 @@ void FUN_00455230(int param_1)
     if (bVar1 != 0) {
       _Size = (uint)bVar1 * 6;
       _Val = 0;
-      pvVar3 = (void *)FUN_004ad640(_Size);
+      pvVar3 = (void *)AllocateMemoryWithCallback(_Size);
       pvVar3 = _memset(pvVar3,_Val,_Size);
       *(void **)(*(int *)(*(int *)(iVar10 + 4) + 0x100) + 0xb2) = pvVar3;
     }
@@ -56540,7 +56540,7 @@ void FUN_00455230(int param_1)
             if (bVar1 != 0) {
               _Size = (uint)bVar1 * 6;
               _Val = 0;
-              pvVar3 = (void *)FUN_004ad640(_Size);
+              pvVar3 = (void *)AllocateMemoryWithCallback(_Size);
               pvVar3 = _memset(pvVar3,_Val,_Size);
               *(void **)(*(int *)(*(int *)(iVar10 + 4) + 0x100) + 0xb2) = pvVar3;
             }
@@ -56801,7 +56801,7 @@ void FUN_004557d0(int param_1,int param_2)
                                 0x3f800000);
           sVar13 = 0x14;
           iVar11 = 0;
-          pvVar4 = (void *)FUN_004ad640(0x14);
+          pvVar4 = (void *)AllocateMemoryWithCallback(0x14);
           pvVar4 = _memset(pvVar4,iVar11,sVar13);
           *(void **)(iVar10 + 0x17) = pvVar4;
 LAB_00455afe:
@@ -56821,7 +56821,7 @@ LAB_00455afe:
                 iVar10 = FUN_004429a0(iVar15,*(short *)(iVar1 + 6),0x3f800000);
                 sVar13 = 0x14;
                 iVar11 = 0;
-                pvVar4 = (void *)FUN_004ad640(0x14);
+                pvVar4 = (void *)AllocateMemoryWithCallback(0x14);
                 pvVar4 = _memset(pvVar4,iVar11,sVar13);
                 *(void **)(iVar10 + 0x17) = pvVar4;
                 goto LAB_00455afe;
@@ -56859,7 +56859,7 @@ void FUN_00455b50(int param_1,int param_2)
                       (uint)*(ushort *)(param_2 + 0x10)) / DAT_004d14f8;
   _Size = DAT_005d4964 * DAT_005d4964;
   iVar2 = 0;
-  pvVar1 = (void *)FUN_004ad640(_Size);
+  pvVar1 = (void *)AllocateMemoryWithCallback(_Size);
   pvVar1 = _memset(pvVar1,iVar2,_Size);
   iVar2 = 0;
   if (0 < DAT_005d4960 * DAT_005d4964) {
@@ -56890,7 +56890,7 @@ void FUN_00455c10(int param_1,int param_2)
   }
   _Size = (uint)*(ushort *)(param_2 + 0x245) << 4;
   iVar1 = 0;
-  _Dst = (void *)FUN_004ad640(_Size);
+  _Dst = (void *)AllocateMemoryWithCallback(_Size);
   DAT_004d86b4 = _memset(_Dst,iVar1,_Size);
   iVar1 = 0;
   if (*(short *)(param_2 + 0x245) != 0) {
@@ -56923,7 +56923,7 @@ void FUN_00455ca0(int param_1)
   DAT_004d86b8 = 0;
   _Size = (uint)*(ushort *)(param_1 + 6) * 0x27;
   iVar4 = 0;
-  pvVar1 = (void *)FUN_004ad640();
+  pvVar1 = (void *)AllocateMemoryWithCallback();
   DAT_005dcb40 = _memset(pvVar1,iVar4,_Size);
   DAT_004d86b8 = *(undefined2 *)(param_1 + 6);
   uVar5 = 0;
@@ -56968,23 +56968,23 @@ void FUN_00455e00(int param_1)
   sVar3 = (uint)DAT_005dcb6a * 0x19;
   iVar5 = 0;
   iVar1 = param_1 + 0xe + sVar3;
-  pvVar2 = (void *)FUN_004ad640(sVar3);
+  pvVar2 = (void *)AllocateMemoryWithCallback(sVar3);
   DAT_005dcb6b = _memset(pvVar2,iVar5,sVar3);
   sVar3 = (uint)DAT_005dcb6a << 2;
   iVar5 = 0;
-  pvVar2 = (void *)FUN_004ad640(sVar3);
+  pvVar2 = (void *)AllocateMemoryWithCallback(sVar3);
   DAT_005dcb6f = _memset(pvVar2,iVar5,sVar3);
   FUN_004ad7a0(DAT_005dcb6b,param_1 + 0xe,(uint)DAT_005dcb6a * 0x19);
   uVar4 = DAT_005dcb74 & 0xff;
   iVar5 = 0;
-  pvVar2 = (void *)FUN_004ad640(uVar4);
+  pvVar2 = (void *)AllocateMemoryWithCallback(uVar4);
   pvVar2 = _memset(pvVar2,iVar5,uVar4);
   uVar4 = DAT_005dcb74;
   DAT_005dcb74._1_3_ = SUB43(pvVar2,0);
   uRam005dcb78 = (undefined)((uint)pvVar2 >> 0x18);
   uVar4 = uVar4 & 0xff;
   iVar5 = 0;
-  pvVar2 = (void *)FUN_004ad640(uVar4);
+  pvVar2 = (void *)AllocateMemoryWithCallback(uVar4);
   DAT_005dcb79 = _memset(pvVar2,iVar5,uVar4);
   FUN_004ad7a0(CONCAT13(uRam005dcb78,DAT_005dcb74._1_3_),iVar1,DAT_005dcb74 & 0xff);
   FUN_004ad7a0(DAT_005dcb79,iVar1 + (DAT_005dcb74 & 0xff),DAT_005dcb74 & 0xff);
@@ -57389,7 +57389,7 @@ void FUN_00456740(int param_1,int param_2)
   iVar3 = param_1 + 7 + (uint)*(ushort *)(param_2 + 0x245);
   sVar7 = (uint)*(ushort *)(param_2 + 0x245) * 4 + 4;
   iVar5 = 0;
-  pvVar1 = (void *)FUN_004ad640(sVar7);
+  pvVar1 = (void *)AllocateMemoryWithCallback(sVar7);
   DAT_005d87e0 = _memset(pvVar1,iVar5,sVar7);
   uVar2 = 0;
   do {
@@ -57397,14 +57397,14 @@ void FUN_00456740(int param_1,int param_2)
       sVar7 = 8;
       iVar6 = 0;
       iVar5 = (uint)uVar2 * 4;
-      pvVar1 = (void *)FUN_004ad640(8);
+      pvVar1 = (void *)AllocateMemoryWithCallback(8);
       pvVar1 = _memset(pvVar1,iVar6,sVar7);
       *(void **)((int)DAT_005d87e0 + iVar5) = pvVar1;
       FUN_004ad7a0(*(undefined4 *)((int)DAT_005d87e0 + iVar5),iVar3,8);
       iVar3 = iVar3 + 8;
       sVar7 = (uint)*(byte *)(*(int *)((int)DAT_005d87e0 + iVar5) + 3) * 0x2f;
       iVar6 = 0;
-      pvVar1 = (void *)FUN_004ad640(sVar7);
+      pvVar1 = (void *)AllocateMemoryWithCallback(sVar7);
       pvVar1 = _memset(pvVar1,iVar6,sVar7);
       uVar4 = 0;
       *(void **)(*(int *)((int)DAT_005d87e0 + iVar5) + 4) = pvVar1;
@@ -57457,11 +57457,11 @@ undefined4 FUN_00456880(undefined4 param_1,short param_2,int param_3)
   iVar12 = 0;
   _DAT_004d86bc = 1;
   _DAT_005dca04 = 0;
-  pvVar9 = (void *)FUN_004ad640(0xae);
+  pvVar9 = (void *)AllocateMemoryWithCallback(0xae);
   DAT_005dcb24 = _memset(pvVar9,iVar12,sVar13);
   sVar13 = 0x501;
   iVar12 = 0;
-  pvVar9 = (void *)FUN_004ad640(0x501);
+  pvVar9 = (void *)AllocateMemoryWithCallback(0x501);
   DAT_005dcb3c = _memset(pvVar9,iVar12,sVar13);
   FUN_00456ea0(uVar8);
   DAT_005dcb38 = 0xe;
@@ -57688,7 +57688,7 @@ void FUN_00456ea0(LPCSTR param_1)
     CloseHandle(hFile);
     _Val = 0;
     _Size = DAT_005dcb34;
-    _Dst = (void *)FUN_004ad640(DAT_005dcb34);
+    _Dst = (void *)AllocateMemoryWithCallback(DAT_005dcb34);
     DAT_005dcb30 = _memset(_Dst,_Val,_Size);
     uVar1 = FUN_004adf60(param_1,&DAT_004cd960);
     FUN_004adda0(DAT_005dcb30,1,DAT_005dcb34,uVar1);
@@ -57723,7 +57723,7 @@ void FUN_00456f80(int param_1)
   *(uint *)(DAT_005dcb24 + 0xa6) = (uint)*(ushort *)(param_1 + 6);
   _Size = *(int *)(DAT_005dcb24 + 0xa6) * 0x14;
   iVar4 = 0;
-  pvVar1 = (void *)FUN_004ad640(_Size);
+  pvVar1 = (void *)AllocateMemoryWithCallback(_Size);
   pvVar1 = _memset(pvVar1,iVar4,_Size);
   uVar3 = 0;
   *(void **)(DAT_005dcb24 + 0xaa) = pvVar1;
@@ -57769,7 +57769,7 @@ void FUN_00457050(int param_1)
   }
   _Size = *(size_t *)(param_1 + 0xb);
   _Val = 0;
-  pvVar2 = (void *)FUN_004ad640(_Size);
+  pvVar2 = (void *)AllocateMemoryWithCallback(_Size);
   pvVar2 = _memset(pvVar2,_Val,_Size);
   *(void **)(DAT_005dcb24 + 10) = pvVar2;
   uVar4 = 0;
@@ -57823,7 +57823,7 @@ void FUN_00457150(int param_1)
   
   _Size = (uint)*(ushort *)(param_1 + 6) << 2;
   _Val = 0;
-  pvVar1 = (void *)FUN_004ad640(_Size);
+  pvVar1 = (void *)AllocateMemoryWithCallback(_Size);
   pvVar1 = _memset(pvVar1,_Val,_Size);
   *(void **)(DAT_005dcb24 + 0x1c) = pvVar1;
   uVar3 = 0;
@@ -57858,7 +57858,7 @@ void FUN_004571c0(int param_1)
   iVar8 = 0;
   sVar1 = (uint)*(ushort *)(DAT_005dcb24 + 1) * 0x3e;
   iVar7 = 0;
-  pvVar2 = (void *)FUN_004ad640(sVar1);
+  pvVar2 = (void *)AllocateMemoryWithCallback(sVar1);
   pvVar2 = _memset(pvVar2,iVar7,sVar1);
   *DAT_005dcb24 = pvVar2;
   if (*(int *)(param_1 + 6) != 0) {
@@ -57867,7 +57867,7 @@ void FUN_004571c0(int param_1)
       sVar1 = (uint)*(ushort *)((int)DAT_005dcb24 + 0xe) *
               (uint)*(ushort *)((int)DAT_005dcb24 + 0xe) * 0xf;
       iVar6 = 0;
-      pvVar2 = (void *)FUN_004ad640(sVar1);
+      pvVar2 = (void *)AllocateMemoryWithCallback(sVar1);
       pvVar2 = _memset(pvVar2,iVar6,sVar1);
       uVar5 = 0;
       *(void **)((int)*DAT_005dcb24 + (uint)*(ushort *)(iVar7 + 0xe) * 0x3e + 0x16) = pvVar2;
@@ -57949,13 +57949,13 @@ void FUN_004573a0(int param_1)
       sVar4 = iVar3 * iVar3 * 0x20;
       iVar3 = 0;
       iVar9 = (uint)uVar2 * 0x3e;
-      pvVar5 = (void *)FUN_004ad640(sVar4);
+      pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
       pvVar5 = _memset(pvVar5,iVar3,sVar4);
       *(void **)(*DAT_005dcb24 + iVar9) = pvVar5;
       sVar4 = (uint)*(ushort *)((int)DAT_005dcb24 + 0xe) *
               (uint)*(ushort *)((int)DAT_005dcb24 + 0xe) * 0x18;
       iVar3 = 0;
-      pvVar5 = (void *)FUN_004ad640(sVar4);
+      pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
       pvVar5 = _memset(pvVar5,iVar3,sVar4);
       uVar8 = 0;
       *(void **)(*DAT_005dcb24 + 10 + iVar9) = pvVar5;
@@ -58009,12 +58009,12 @@ void FUN_00457570(int param_1)
   *(undefined2 *)(DAT_005dcb24 + 0x12) = *(undefined2 *)(param_1 + 6);
   sVar2 = (uint)*(ushort *)(DAT_005dcb24 + 0x12) << 1;
   iVar6 = 0;
-  pvVar3 = (void *)FUN_004ad640(sVar2);
+  pvVar3 = (void *)AllocateMemoryWithCallback(sVar2);
   pvVar3 = _memset(pvVar3,iVar6,sVar2);
   *(void **)(DAT_005dcb24 + 0x14) = pvVar3;
   sVar2 = (uint)*(ushort *)(DAT_005dcb24 + 0x12) << 2;
   iVar6 = 0;
-  pvVar3 = (void *)FUN_004ad640(sVar2);
+  pvVar3 = (void *)AllocateMemoryWithCallback(sVar2);
   pvVar3 = _memset(pvVar3,iVar6,sVar2);
   *(void **)(DAT_005dcb24 + 0x20) = pvVar3;
   uVar4 = 0;
@@ -58776,7 +58776,7 @@ undefined4 FUN_00458470(uint param_1)
   iVar8 = 0;
   iVar2 = DAT_005dca00 + (param_1 & 0xffff) * 0x2e;
   _Size = 0;
-  _Dst = (void *)FUN_004ad640();
+  _Dst = (void *)AllocateMemoryWithCallback();
   puVar4 = (undefined4 *)_memset(_Dst,iVar8,_Size);
   piVar7 = (int *)(iVar2 + 0x29);
   if ((*piVar7 == 9) && (*(int *)(DAT_005e5010 + 0x2190) == 0)) {
@@ -58957,7 +58957,7 @@ FUN_00458980(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_
   _Size = 8;
   iVar2 = 0;
   puStackY_20 = (undefined4 *)0x45899c;
-  _Dst = (void *)FUN_004ad640();
+  _Dst = (void *)AllocateMemoryWithCallback();
   puStackY_20 = (undefined4 *)0x4589a5;
   puVar1 = (undefined4 *)_memset(_Dst,iVar2,_Size);
   puStackY_20 = (undefined4 *)0x4589b6;
@@ -59102,7 +59102,7 @@ void FUN_00458d80(void)
       iVar2 = *(int *)(*(int *)(*(int *)(DAT_00598d90 + 0x230) + uVar6 * 4) + 0x56);
       _Size = *(int *)(iVar2 + 0x14) << 2;
       iVar5 = 0;
-      pvVar3 = (void *)FUN_004ad640(_Size);
+      pvVar3 = (void *)AllocateMemoryWithCallback(_Size);
       pvVar3 = _memset(pvVar3,iVar5,_Size);
       *(void **)(iVar2 + 0x28) = pvVar3;
       uVar4 = 0;
@@ -59229,7 +59229,7 @@ LAB_004590c6:
   sVar5 = 0x1157;
   iVar4 = 0;
   pvStackY_2c = (void *)0x4590e5;
-  pvVar1 = (void *)FUN_004ad640();
+  pvVar1 = (void *)AllocateMemoryWithCallback();
   pvStackY_2c = (void *)0x4590ee;
   DAT_005986c4 = _memset(pvVar1,iVar4,sVar5);
   if (DAT_005df310 == '\0') {
@@ -59277,7 +59277,7 @@ LAB_004590c6:
   iVar4 = 0;
   pvStackY_2c = (void *)0x4591e8;
   DAT_005d66ec = iVar3;
-  pvVar1 = (void *)FUN_004ad640();
+  pvVar1 = (void *)AllocateMemoryWithCallback();
   pvStackY_2c = (void *)0x4591f1;
   pvVar1 = _memset(pvVar1,iVar4,sVar5);
   pvStackY_2c = (void *)0x459216;
@@ -59378,7 +59378,7 @@ undefined4 FUN_004593d0(void)
   sVar7 = 0x1157;
   iVar6 = 0;
   pvStackY_20 = (void *)0x459408;
-  pvVar2 = (void *)FUN_004ad640();
+  pvVar2 = (void *)AllocateMemoryWithCallback();
   pvStackY_20 = (void *)0x459411;
   DAT_005986c4 = _memset(pvVar2,iVar6,sVar7);
   if (DAT_005df310 == '\0') {
@@ -59487,7 +59487,7 @@ undefined4 FUN_004593d0(void)
   sVar7 = ((uint)DAT_005dcb0c + (uint)uVar5) * 0x2e;
   iVar6 = 0;
   pvStackY_20 = (void *)0x45963f;
-  pvVar2 = (void *)FUN_004ad640();
+  pvVar2 = (void *)AllocateMemoryWithCallback();
   pvStackY_20 = (void *)0x459648;
   pvVar2 = _memset(pvVar2,iVar6,sVar7);
   iVar6 = (uint)DAT_005dcb0c * 0x2e;
@@ -59751,7 +59751,7 @@ void FUN_00459a20(ushort *param_1,ushort param_2,uint param_3,char param_4,int p
   FUN_004ae6a0(DAT_005986c0,iVar10 + 0x1157,0);
   iVar10 = 0;
   _Size = sVar13;
-  pvVar5 = (void *)FUN_004ad640(sVar13);
+  pvVar5 = (void *)AllocateMemoryWithCallback(sVar13);
   pbVar6 = (byte *)_memset(pvVar5,iVar10,_Size);
   FUN_004adda0(pbVar6,1,sVar13,DAT_005986c0);
   uVar9 = 0;
@@ -59767,7 +59767,7 @@ void FUN_00459a20(ushort *param_1,ushort param_2,uint param_3,char param_4,int p
       iVar10 = 0;
       puVar1 = (ushort *)(DAT_005dca00 + (uint)*param_1 * 0x2e);
       *param_1 = *param_1 + 1;
-      pvVar5 = (void *)FUN_004ad640(0xb);
+      pvVar5 = (void *)AllocateMemoryWithCallback(0xb);
       pvVar5 = _memset(pvVar5,iVar10,sVar13);
       *(void **)((int)puVar1 + 0x13) = pvVar5;
       uVar8 = (undefined)((int)param_3 >> 3);
@@ -59777,7 +59777,7 @@ void FUN_00459a20(ushort *param_1,ushort param_2,uint param_3,char param_4,int p
       if (*pbVar12 == 0) {
         uVar7 = (uint)*(ushort *)(pbVar12 + 1);
         iVar10 = 0;
-        pvVar5 = (void *)FUN_004ad640(uVar7);
+        pvVar5 = (void *)AllocateMemoryWithCallback(uVar7);
         pvVar5 = _memset(pvVar5,iVar10,uVar7);
         *(void **)(*(int *)((int)puVar1 + 0x13) + 7) = pvVar5;
         FUN_004ad7a0(*(undefined4 *)(*(int *)((int)puVar1 + 0x13) + 7),pbVar11,
@@ -59788,7 +59788,7 @@ void FUN_00459a20(ushort *param_1,ushort param_2,uint param_3,char param_4,int p
       else {
         uVar7 = (uint)*(ushort *)(pbVar12 + 3);
         iVar10 = 0;
-        pvVar5 = (void *)FUN_004ad640(uVar7);
+        pvVar5 = (void *)AllocateMemoryWithCallback(uVar7);
         pvVar5 = _memset(pvVar5,iVar10,uVar7);
         *(void **)(*(int *)((int)puVar1 + 0x13) + 7) = pvVar5;
         FUN_004ad7a0(*(undefined4 *)(*(int *)((int)puVar1 + 0x13) + 7),pbVar11,
@@ -59825,7 +59825,7 @@ void FUN_00459cc0(undefined2 param_1,byte param_2)
   _Val = 0;
   DAT_005dcb0c = DAT_005dcb0c + 1;
   puVar1 = (undefined2 *)(DAT_005dca00 + uVar2 * 0x2e);
-  pvVar3 = (void *)FUN_004ad640(0xb);
+  pvVar3 = (void *)AllocateMemoryWithCallback(0xb);
   pvVar3 = _memset(pvVar3,_Val,_Size);
   *(void **)((int)puVar1 + 0x13) = pvVar3;
   *(byte *)((int)pvVar3 + 1) = param_2 >> 3;
@@ -59926,7 +59926,7 @@ FUN_00459d30(byte param_1,int **param_2,int *param_3,undefined4 *param_4,undefin
           uVar14 = 0;
           uVar15 = 0;
           sStackY_20 = 0x459e65;
-          pvVar18 = (void *)FUN_004ad640();
+          pvVar18 = (void *)AllocateMemoryWithCallback();
           sStackY_20 = 0x459e6e;
           pvVar18 = _memset(pvVar18,CONCAT22(uVar15,uVar14),sVar5);
           if ((*param_7 == 9) && (DAT_005e72d0 == 0)) {
@@ -59943,7 +59943,7 @@ FUN_00459d30(byte param_1,int **param_2,int *param_3,undefined4 *param_4,undefin
         uVar15 = 0;
         sStackY_20 = 0x459eb3;
         sVar5 = sVar10;
-        pvVar12 = (void *)FUN_004ad640();
+        pvVar12 = (void *)AllocateMemoryWithCallback();
         sStackY_20 = 0x459ebc;
         pvVar12 = _memset(pvVar12,CONCAT22(uVar15,uVar14),sVar5);
         if (pvVar12 == (void *)0x0) {
@@ -60193,7 +60193,7 @@ LAB_0045a293:
     sVar8 = local_3c * local_38;
     sVar11 = (int)puVar10 << 2;
     iVar9 = 0;
-    pvVar12 = (void *)FUN_004ad640();
+    pvVar12 = (void *)AllocateMemoryWithCallback();
     _memset(pvVar12,iVar9,sVar11);
     if ((*param_7 == 9) && (DAT_005e72d0 == 0)) {
       *param_7 = 2;
@@ -60207,7 +60207,7 @@ LAB_0045a293:
   }
   iVar9 = 0;
   sVar11 = sVar8;
-  pvVar12 = (void *)FUN_004ad640();
+  pvVar12 = (void *)AllocateMemoryWithCallback();
   pvVar12 = _memset(pvVar12,iVar9,sVar11);
   if (pvVar12 == (void *)0x0) {
     FUN_004adcf0();
@@ -60337,12 +60337,12 @@ LAB_0045a5bf:
   sVar11 = local_20 << 2;
   iVar9 = 0;
   uStackY_34 = (short *)0x45a638;
-  pvVar13 = (void *)FUN_004ad640();
+  pvVar13 = (void *)AllocateMemoryWithCallback();
   uStackY_34 = (short *)0x45a641;
   pvVar13 = _memset(pvVar13,iVar9,sVar11);
   iVar9 = 0;
   uStackY_34 = (short *)0x45a650;
-  pvVar14 = (void *)FUN_004ad640();
+  pvVar14 = (void *)AllocateMemoryWithCallback();
   uStackY_34 = (short *)0x45a659;
   pvVar14 = _memset(pvVar14,iVar9,sVar8);
   if (pvVar14 == (void *)0x0) {
@@ -60653,7 +60653,7 @@ void * FUN_0045ac80(uint param_1,uint param_2,uint param_3,undefined4 param_4)
     uVar3 = param_3 & 0xffff;
     _Val = 0;
     uVar4 = uVar3;
-    pvVar2 = (void *)FUN_004ad640(uVar3);
+    pvVar2 = (void *)AllocateMemoryWithCallback(uVar3);
     pvVar2 = _memset(pvVar2,_Val,uVar4);
     FUN_004ad7a0(pvVar2,param_4,uVar3);
   }
@@ -60786,7 +60786,7 @@ ushort FUN_0045ae70(undefined4 param_1,undefined4 param_2,short param_3,undefine
   local_20 = -0x3b;
   local_1f = 0x45ae;
   local_1d = 0;
-  pvVar5 = (void *)FUN_004ad640();
+  pvVar5 = (void *)AllocateMemoryWithCallback();
   local_20 = -0x32;
   local_1f = 0x45ae;
   local_1d = 0;
@@ -60848,7 +60848,7 @@ ushort FUN_0045ae70(undefined4 param_1,undefined4 param_2,short param_3,undefine
     local_20 = -0x3c;
     local_1f = 0x45af;
     local_1d = 0;
-    pvVar5 = (void *)FUN_004ad640();
+    pvVar5 = (void *)AllocateMemoryWithCallback();
     uVar7 = SUB41(pvVar5,0);
     local_20 = -0x33;
     local_1f = 0x45af;
@@ -60866,7 +60866,7 @@ ushort FUN_0045ae70(undefined4 param_1,undefined4 param_2,short param_3,undefine
       local_20 = 'W';
       local_1f = 0x45b0;
       local_1d = 0;
-      pvVar5 = (void *)FUN_004ad640();
+      pvVar5 = (void *)AllocateMemoryWithCallback();
       local_20 = '`';
       local_1f = 0x45b0;
       local_1d = 0;
@@ -60889,7 +60889,7 @@ ushort FUN_0045ae70(undefined4 param_1,undefined4 param_2,short param_3,undefine
       local_20 = '\b';
       local_1f = 0x45b0;
       local_1d = 0;
-      pvVar5 = (void *)FUN_004ad640();
+      pvVar5 = (void *)AllocateMemoryWithCallback();
       local_20 = '\x11';
       local_1f = 0x45b0;
       local_1d = 0;
@@ -61210,7 +61210,7 @@ undefined4 FUN_0045b630(uint param_1,ushort *param_2)
   uVar2 = *param_2;
   sVar6 = (uint)uVar2 << 5;
   iVar14 = 0;
-  pvVar7 = (void *)FUN_004ad640(sVar6);
+  pvVar7 = (void *)AllocateMemoryWithCallback(sVar6);
   pvVar7 = _memset(pvVar7,iVar14,sVar6);
   *(void **)(*(int *)(param_1 + 0x56) + 4) = pvVar7;
   uVar8 = 0;
@@ -61276,13 +61276,13 @@ undefined4 FUN_0045b630(uint param_1,ushort *param_2)
   sVar6 = param_1 * 2;
   iVar14 = 0;
   _Size = sVar6;
-  pvVar7 = (void *)FUN_004ad640(sVar6);
+  pvVar7 = (void *)AllocateMemoryWithCallback(sVar6);
   pvVar7 = _memset(pvVar7,iVar14,_Size);
   *(void **)(*(int *)(iVar4 + 0x56) + 0x10) = pvVar7;
   FUN_004ad7a0(*(undefined4 *)(*(int *)(iVar4 + 0x56) + 0x10),*(undefined4 *)(puVar5 + 0x15),sVar6);
   sVar6 = param_1 * 4;
   iVar14 = 0;
-  pvVar7 = (void *)FUN_004ad640(sVar6);
+  pvVar7 = (void *)AllocateMemoryWithCallback(sVar6);
   pvVar7 = _memset(pvVar7,iVar14,sVar6);
   *(void **)(*(int *)(iVar4 + 0x56) + 0x20) = pvVar7;
   uVar8 = param_1;
@@ -61300,7 +61300,7 @@ undefined4 FUN_0045b630(uint param_1,ushort *param_2)
   }
   sVar6 = (uint)puVar5[1] * 0xc;
   iVar14 = 0;
-  pvVar7 = (void *)FUN_004ad640(sVar6);
+  pvVar7 = (void *)AllocateMemoryWithCallback(sVar6);
   pvVar7 = _memset(pvVar7,iVar14,sVar6);
   *(void **)(*(int *)(iVar4 + 0x56) + 0xc) = pvVar7;
   uVar15 = 0;
@@ -61347,7 +61347,7 @@ undefined4 FUN_0045b630(uint param_1,ushort *param_2)
   *(undefined4 *)(iVar4 + 0x9d) = *(undefined4 *)(puVar5 + 0x19);
   sVar6 = *(int *)(*(int *)(iVar4 + 0x56) + 0x14) * 0x50;
   iVar14 = 0;
-  pvVar7 = (void *)FUN_004ad640(sVar6);
+  pvVar7 = (void *)AllocateMemoryWithCallback(sVar6);
   pvVar7 = _memset(pvVar7,iVar14,sVar6);
   uVar8 = 0;
   *(void **)(*(int *)(iVar4 + 0x56) + 0x1c) = pvVar7;
@@ -61639,7 +61639,7 @@ void FUN_0045c0d0(void)
   }
   _Size = iVar9 * 10;
   iVar15 = 0;
-  pvVar5 = (void *)FUN_004ad640(_Size);
+  pvVar5 = (void *)AllocateMemoryWithCallback(_Size);
   pvVar5 = _memset(pvVar5,iVar15,_Size);
   *(void **)(DAT_005dcb3c + 0x234) = pvVar5;
   uVar17 = 0;
@@ -62268,14 +62268,14 @@ void FUN_0045cf80(int param_1)
   FUN_004ad310();
   sVar2 = (uint)*(ushort *)(DAT_005dcb3c + 0x4f1) << 2;
   iVar9 = 0;
-  pvVar3 = (void *)FUN_004ad640(sVar2);
+  pvVar3 = (void *)AllocateMemoryWithCallback(sVar2);
   DAT_005986e4 = _memset(pvVar3,iVar9,sVar2);
   uVar1 = 0;
   if (*(short *)(param_1 + 6) != 0) {
     do {
       sVar2 = 0x15;
       iVar9 = 0;
-      pvVar3 = (void *)FUN_004ad640(0x15);
+      pvVar3 = (void *)AllocateMemoryWithCallback(0x15);
       pvVar3 = _memset(pvVar3,iVar9,sVar2);
       sVar2 = 0x10;
       iVar9 = 0;
@@ -62284,16 +62284,16 @@ void FUN_0045cf80(int param_1)
       *(undefined *)((int)pvVar3 + 4) = 0;
       *(undefined *)((int)pvVar3 + 5) = 0;
       *(undefined *)((int)pvVar3 + 7) = 4;
-      pvVar4 = (void *)FUN_004ad640(0x10);
+      pvVar4 = (void *)AllocateMemoryWithCallback(0x10);
       pvVar4 = _memset(pvVar4,iVar9,sVar2);
       *(void **)((int)pvVar3 + 9) = pvVar4;
       sVar2 = 0xa9;
       iVar9 = 0;
-      pvVar4 = (void *)FUN_004ad640(0xa9);
+      pvVar4 = (void *)AllocateMemoryWithCallback(0xa9);
       pvVar4 = _memset(pvVar4,iVar9,sVar2);
       sVar2 = 0x44;
       iVar9 = 0;
-      pvVar5 = (void *)FUN_004ad640(0x44);
+      pvVar5 = (void *)AllocateMemoryWithCallback(0x44);
       pvVar5 = _memset(pvVar5,iVar9,sVar2);
       *(void **)((int)pvVar4 + 0x56) = pvVar5;
       FUN_0045b630(pvVar4,*(undefined4 *)
@@ -62305,7 +62305,7 @@ void FUN_0045cf80(int param_1)
           sVar2 = **(int **)((int)pvVar4 + 0x56) << 2;
           iVar10 = 0;
           iVar9 = (uVar8 & 0xffff) * 4;
-          pvVar5 = (void *)FUN_004ad640(sVar2);
+          pvVar5 = (void *)AllocateMemoryWithCallback(sVar2);
           pvVar5 = _memset(pvVar5,iVar10,sVar2);
           *(void **)(iVar9 + *(int *)((int)pvVar3 + 9)) = pvVar5;
           puVar7 = *(uint **)((int)pvVar4 + 0x56);
@@ -62408,7 +62408,7 @@ void FUN_0045d280(int param_1)
   puVar1 = (ushort *)(param_1 + 6);
   _Size = (uint)*puVar1 * 0x404 + 4;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(_Size);
+  _Dst = (void *)AllocateMemoryWithCallback(_Size);
   DAT_005dcb00 = _memset(_Dst,_Val,_Size);
   FUN_004ad7a0(DAT_005dcb00,puVar1,(uint)*puVar1 * 0x404 + 4);
   return;
@@ -62465,7 +62465,7 @@ void FUN_0045d3a0(int param_1)
   uVar4 = 0;
   sVar1 = (uint)*(ushort *)(param_1 + 6) * 6;
   iVar5 = 0;
-  pvVar2 = (void *)FUN_004ad640(sVar1);
+  pvVar2 = (void *)AllocateMemoryWithCallback(sVar1);
   pvVar2 = _memset(pvVar2,iVar5,sVar1);
   *(void **)(DAT_005dcb3c + 0x247) = pvVar2;
   *(undefined2 *)(DAT_005dcb3c + 0x245) = *(undefined2 *)(param_1 + 6);
@@ -62473,7 +62473,7 @@ void FUN_0045d3a0(int param_1)
   *(undefined2 *)(DAT_005dcb3c + 0x24b) = 0;
   sVar1 = (uint)*(ushort *)(param_1 + 8) * 6;
   iVar5 = 0;
-  pvVar2 = (void *)FUN_004ad640(sVar1);
+  pvVar2 = (void *)AllocateMemoryWithCallback(sVar1);
   pvVar2 = _memset(pvVar2,iVar5,sVar1);
   *(void **)(DAT_005dcb3c + 0x24f) = pvVar2;
   if (*(short *)(param_1 + 6) != 0) {
@@ -62520,7 +62520,7 @@ void FUN_0045d4c0(undefined2 *param_1)
   uVar7 = *(ushort *)((int)param_1 + 6);
   sVar4 = (uint)uVar7 * 0xc;
   iVar10 = 0;
-  pvVar5 = (void *)FUN_004ad640(sVar4);
+  pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
   pvVar5 = _memset(pvVar5,iVar10,sVar4);
   uVar8 = 0;
   *(void **)(DAT_005dcb3c + 0x255) = pvVar5;
@@ -62539,7 +62539,7 @@ void FUN_0045d4c0(undefined2 *param_1)
       *(ushort *)(*(int *)(DAT_005dcb3c + 0x255) + 6 + iVar9) = *puVar2;
       sVar4 = (uint)*puVar2 << 1;
       iVar10 = 0;
-      pvVar5 = (void *)FUN_004ad640(sVar4);
+      pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
       pvVar5 = _memset(pvVar5,iVar10,sVar4);
       uVar7 = 0;
       *(void **)(*(int *)(DAT_005dcb3c + 0x255) + 8 + iVar9) = pvVar5;
@@ -62580,7 +62580,7 @@ void FUN_0045d610(int param_1)
     do {
       sVar7 = 0x10;
       iVar5 = 0;
-      pvVar2 = (void *)FUN_004ad640(0x10);
+      pvVar2 = (void *)AllocateMemoryWithCallback(0x10);
       puVar3 = (undefined4 *)_memset(pvVar2,iVar5,sVar7);
       iVar5 = param_1 + (uint)uVar1 * 10;
       *puVar3 = *(undefined4 *)(param_1 + (uVar1 + 1) * 10);
@@ -62588,12 +62588,12 @@ void FUN_0045d610(int param_1)
       puVar3[1] = iVar6;
       sVar7 = iVar6 << 2;
       iVar6 = 0;
-      pvVar2 = (void *)FUN_004ad640(sVar7);
+      pvVar2 = (void *)AllocateMemoryWithCallback(sVar7);
       pvVar2 = _memset(pvVar2,iVar6,sVar7);
       puVar3[2] = pvVar2;
       sVar7 = puVar3[1] << 2;
       iVar6 = 0;
-      pvVar2 = (void *)FUN_004ad640(sVar7);
+      pvVar2 = (void *)AllocateMemoryWithCallback(sVar7);
       pvVar2 = _memset(pvVar2,iVar6,sVar7);
       puVar3[3] = pvVar2;
       iVar6 = 0;
@@ -62627,7 +62627,7 @@ void FUN_0045d730(undefined4 param_1)
   
   _Size = 0x16;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(0x16);
+  _Dst = (void *)AllocateMemoryWithCallback(0x16);
   DAT_005dca7c = _memset(_Dst,_Val,_Size);
   FUN_004ad7a0(DAT_005dca7c,param_1,0x16);
   return;
@@ -62656,7 +62656,7 @@ void FUN_0045d760(int param_1)
   *(undefined2 *)(DAT_005dcb3c + 0x4f1) = *(undefined2 *)(param_1 + 6);
   sVar4 = (uint)*(ushort *)(param_1 + 6) << 2;
   iVar10 = 0;
-  pvVar5 = (void *)FUN_004ad640(sVar4);
+  pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
   pvVar5 = _memset(pvVar5,iVar10,sVar4);
   uVar8 = 0;
   *(void **)(DAT_005dcb3c + 0x4f3) = pvVar5;
@@ -62664,7 +62664,7 @@ void FUN_0045d760(int param_1)
     do {
       sVar4 = 0x4a;
       iVar10 = 0;
-      pvVar5 = (void *)FUN_004ad640(0x4a);
+      pvVar5 = (void *)AllocateMemoryWithCallback(0x4a);
       pvVar5 = _memset(pvVar5,iVar10,sVar4);
       uVar7 = (uint)uVar8;
       uVar8 = uVar8 + 1;
@@ -62679,13 +62679,13 @@ void FUN_0045d760(int param_1)
       FUN_004ad7a0(puVar2,iVar10,0x22);
       sVar4 = 0x1c;
       iVar11 = 0;
-      pvVar5 = (void *)FUN_004ad640(0x1c);
+      pvVar5 = (void *)AllocateMemoryWithCallback(0x1c);
       pvVar5 = _memset(pvVar5,iVar11,sVar4);
       *(void **)(puVar2 + 0x11) = pvVar5;
       FUN_004ad7a0(pvVar5,iVar10 + 0x22,2);
       sVar4 = (uint)**(ushort **)(puVar2 + 0x11) << 2;
       iVar11 = 0;
-      pvVar5 = (void *)FUN_004ad640(sVar4);
+      pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
       pvVar5 = _memset(pvVar5,iVar11,sVar4);
       *(void **)(*(int *)(puVar2 + 0x11) + 2) = pvVar5;
       FUN_004ad7a0(*(undefined4 *)(*(ushort **)(puVar2 + 0x11) + 1),iVar10 + 0x24,
@@ -62695,7 +62695,7 @@ void FUN_0045d760(int param_1)
       if (uVar3 < 0x100) {
         sVar4 = (uint)uVar3 * 3;
         iVar11 = 0;
-        pvVar5 = (void *)FUN_004ad640(sVar4);
+        pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
         pvVar5 = _memset(pvVar5,iVar11,sVar4);
         *(void **)(*(int *)(puVar2 + 0x11) + 6) = pvVar5;
         FUN_004ad7a0(*(undefined4 *)(*(int *)(puVar2 + 0x11) + 6),iVar10,(uint)*puVar2 * 3);
@@ -62704,7 +62704,7 @@ void FUN_0045d760(int param_1)
       else {
         sVar4 = (uint)uVar3 * 6;
         iVar11 = 0;
-        pvVar5 = (void *)FUN_004ad640(sVar4);
+        pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
         pvVar5 = _memset(pvVar5,iVar11,sVar4);
         *(void **)(*(int *)(puVar2 + 0x11) + 10) = pvVar5;
         FUN_004ad7a0(*(undefined4 *)(*(int *)(puVar2 + 0x11) + 10),iVar10,(uint)*puVar2 * 6);
@@ -62714,7 +62714,7 @@ void FUN_0045d760(int param_1)
       iVar10 = iVar11 + iVar10 + 2;
       sVar4 = (uint)*(ushort *)(*(int *)(puVar2 + 0x11) + 0xe) << 2;
       iVar11 = 0;
-      pvVar5 = (void *)FUN_004ad640(sVar4);
+      pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
       pvVar5 = _memset(pvVar5,iVar11,sVar4);
       *(void **)(*(int *)(puVar2 + 0x11) + 0x10) = pvVar5;
       FUN_004ad7a0(*(undefined4 *)(*(int *)(puVar2 + 0x11) + 0x10),iVar10,
@@ -62724,7 +62724,7 @@ void FUN_0045d760(int param_1)
       if (uVar3 < 0x100) {
         sVar4 = (uint)uVar3 << 1;
         iVar11 = 0;
-        pvVar5 = (void *)FUN_004ad640(sVar4);
+        pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
         pvVar5 = _memset(pvVar5,iVar11,sVar4);
         *(void **)(*(int *)(puVar2 + 0x11) + 0x14) = pvVar5;
         FUN_004ad7a0(*(undefined4 *)(*(int *)(puVar2 + 0x11) + 0x14),iVar10,(uint)*puVar2 << 1);
@@ -62733,7 +62733,7 @@ void FUN_0045d760(int param_1)
       else {
         sVar4 = (uint)uVar3 << 2;
         iVar11 = 0;
-        pvVar5 = (void *)FUN_004ad640(sVar4);
+        pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
         pvVar5 = _memset(pvVar5,iVar11,sVar4);
         *(void **)(*(int *)(puVar2 + 0x11) + 0x18) = pvVar5;
         FUN_004ad7a0(*(undefined4 *)(*(int *)(puVar2 + 0x11) + 0x18),iVar10,(uint)*puVar2 << 2);
@@ -62741,7 +62741,7 @@ void FUN_0045d760(int param_1)
       }
       sVar4 = (uint)puVar2[10] << 1;
       iVar12 = 0;
-      pvVar5 = (void *)FUN_004ad640(sVar4);
+      pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
       pvVar5 = _memset(pvVar5,iVar12,sVar4);
       *(void **)(puVar2 + 0x15) = pvVar5;
       FUN_004ad7a0(pvVar5,iVar10 + iVar11,(uint)puVar2[10] << 1);
@@ -62756,7 +62756,7 @@ void FUN_0045d760(int param_1)
       }
       sVar4 = (uint)puVar2[10] << 1;
       iVar11 = 0;
-      pvVar5 = (void *)FUN_004ad640(sVar4);
+      pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
       pvVar5 = _memset(pvVar5,iVar11,sVar4);
       *(void **)(puVar2 + 0x17) = pvVar5;
       FUN_004ad7a0(pvVar5,iVar10,(uint)puVar2[10] << 1);
@@ -62769,21 +62769,21 @@ void FUN_0045d760(int param_1)
         if (((short)uVar7 != 0) && (1 << (bVar13 & 0x1f) != 0)) {
           sVar4 = 0xc;
           iVar10 = 0;
-          pvVar5 = (void *)FUN_004ad640(0xc);
+          pvVar5 = (void *)AllocateMemoryWithCallback(0xc);
           puVar6 = (ushort *)_memset(pvVar5,iVar10,sVar4);
           *ppuVar9 = puVar6;
           FUN_004ad7a0(puVar6 + 1,iVar11,2);
           FUN_004ad7a0(*ppuVar9,iVar11 + 2,2);
           sVar4 = (uint)(*ppuVar9)[1] << 2;
           iVar10 = 0;
-          pvVar5 = (void *)FUN_004ad640(sVar4);
+          pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
           pvVar5 = _memset(pvVar5,iVar10,sVar4);
           *(void **)(*ppuVar9 + 2) = pvVar5;
           FUN_004ad7a0(*(undefined4 *)(*ppuVar9 + 2),iVar11 + 4,(uint)(*ppuVar9)[1] << 2);
           sVar4 = (uint)**ppuVar9 << 3;
           iVar10 = 0;
           iVar11 = iVar11 + 4 + (uint)(*ppuVar9)[1] * 4;
-          pvVar5 = (void *)FUN_004ad640(sVar4);
+          pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
           pvVar5 = _memset(pvVar5,iVar10,sVar4);
           *(void **)(*ppuVar9 + 4) = pvVar5;
           uVar7 = (uint)**ppuVar9 << 3;
@@ -62797,7 +62797,7 @@ void FUN_0045d760(int param_1)
       if (*puVar2 < 0x100) {
         sVar4 = (uint)puVar2[1] * 3;
         iVar10 = 0;
-        pvVar5 = (void *)FUN_004ad640(sVar4);
+        pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
         pvVar5 = _memset(pvVar5,iVar10,sVar4);
         *(void **)(puVar2 + 0x23) = pvVar5;
         FUN_004ad7a0(pvVar5,iVar11,(uint)puVar2[1] * 3);
@@ -62806,7 +62806,7 @@ void FUN_0045d760(int param_1)
       else {
         sVar4 = (uint)puVar2[1] * 6;
         iVar10 = 0;
-        pvVar5 = (void *)FUN_004ad640(sVar4);
+        pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
         pvVar5 = _memset(pvVar5,iVar10,sVar4);
         *(void **)(puVar2 + 0x23) = pvVar5;
         FUN_004ad7a0(pvVar5,iVar11,(uint)puVar2[1] * 6);
@@ -62839,7 +62839,7 @@ void FUN_0045dc90(int param_1)
   FUN_004ad310();
   sVar1 = (uint)*(ushort *)(param_1 + 6) << 2;
   iVar10 = 0;
-  pvVar2 = (void *)FUN_004ad640(sVar1);
+  pvVar2 = (void *)AllocateMemoryWithCallback(sVar1);
   pvVar2 = _memset(pvVar2,iVar10,sVar1);
   sVar7 = 0;
   *(void **)(DAT_005dcb3c + 0x230) = pvVar2;
@@ -62850,12 +62850,12 @@ void FUN_0045dc90(int param_1)
       sVar1 = 0xa9;
       iVar11 = 0;
       iVar9 = iVar10 * 4;
-      pvVar2 = (void *)FUN_004ad640(0xa9);
+      pvVar2 = (void *)AllocateMemoryWithCallback(0xa9);
       pvVar2 = _memset(pvVar2,iVar11,sVar1);
       sVar1 = 0x44;
       iVar11 = 0;
       *(void **)(*(int *)(DAT_005dcb3c + 0x230) + iVar9) = pvVar2;
-      pvVar2 = (void *)FUN_004ad640(0x44);
+      pvVar2 = (void *)AllocateMemoryWithCallback(0x44);
       pvVar2 = _memset(pvVar2,iVar11,sVar1);
       *(void **)(*(int *)(*(int *)(DAT_005dcb3c + 0x230) + iVar9) + 0x56) = pvVar2;
       iVar10 = param_1 + iVar10 * 0x42;
@@ -62941,7 +62941,7 @@ void FUN_0045df00(int param_1)
     do {
       _Size = 0x1b;
       iVar9 = 0;
-      pvVar3 = (void *)FUN_004ad640(0x1b);
+      pvVar3 = (void *)AllocateMemoryWithCallback(0x1b);
       pvVar3 = _memset(pvVar3,iVar9,_Size);
       *(void **)(*(int *)(*(int *)(DAT_005dcb3c + 0x230) + (uint)*puVar5 * 4) + 0x9d) = pvVar3;
       FUN_004ad7a0(*(undefined4 *)
@@ -63065,7 +63065,7 @@ void FUN_0045e1b0(int param_1)
   iVar18 = 0;
   sVar17 = 0;
   iVar15 = 0;
-  pvVar7 = (void *)FUN_004ad640((uint)*(ushort *)(param_1 + 6) << 2,0,0,0,0);
+  pvVar7 = (void *)AllocateMemoryWithCallback((uint)*(ushort *)(param_1 + 6) << 2,0,0,0,0);
   pvVar7 = _memset(pvVar7,iVar15,sVar17);
   *(void **)(DAT_005dcb3c + 0x241) = pvVar7;
   *(uint *)(DAT_005dcb3c + 0x23d) = (uint)*(ushort *)(param_1 + 6);
@@ -63079,18 +63079,18 @@ void FUN_0045e1b0(int param_1)
       sVar17 = 0x87;
       iVar16 = 0;
       iVar6 = *(int *)(*(int *)(DAT_005dcb3c + 0x230) + (uint)*(ushort *)(iVar13 + -2) * 4);
-      pvVar7 = (void *)FUN_004ad640(0x87);
+      pvVar7 = (void *)AllocateMemoryWithCallback(0x87);
       pvVar7 = _memset(pvVar7,iVar16,sVar17);
       *(void **)(iVar6 + 0x5b) = pvVar7;
       FUN_004ad7a0(pvVar7,iVar13,0x3f);
       sVar17 = (uint)*(byte *)(*(int *)(iVar6 + 0x5b) + 0x10) * 0x32;
       iVar13 = 0;
-      pvVar7 = (void *)FUN_004ad640(sVar17);
+      pvVar7 = (void *)AllocateMemoryWithCallback(sVar17);
       pvVar7 = _memset(pvVar7,iVar13,sVar17);
       *(void **)(*(int *)(iVar6 + 0x5b) + 0x7f) = pvVar7;
       sVar17 = (uint)*(byte *)(*(int *)(iVar6 + 0x5b) + 0x11) * 0x2e;
       iVar13 = 0;
-      pvVar7 = (void *)FUN_004ad640(sVar17);
+      pvVar7 = (void *)AllocateMemoryWithCallback(sVar17);
       local_20 = 0x45e2f1;
       pvVar8 = _memset(pvVar7,iVar13,sVar17);
       uVar10 = 0;
@@ -63162,7 +63162,7 @@ void FUN_0045e1b0(int param_1)
           sVar17 = *(size_t *)(iVar13 + 0x1c + iVar16);
           if (sVar17 != 0) {
             iVar19 = 0;
-            pvVar7 = (void *)FUN_004ad640(sVar17);
+            pvVar7 = (void *)AllocateMemoryWithCallback(sVar17);
             pvVar7 = _memset(pvVar7,iVar19,sVar17);
             *(void **)(*(int *)(*(int *)(iVar6 + 0x5b) + 0x7f) + 0x2a + iVar13) = pvVar7;
             iVar19 = *(int *)(*(int *)(iVar6 + 0x5b) + 0x7f);
@@ -63175,7 +63175,7 @@ void FUN_0045e1b0(int param_1)
           sVar17 = *(size_t *)(iVar13 + 0x20 + iVar16);
           if (sVar17 != 0) {
             iVar16 = 0;
-            pvVar7 = (void *)FUN_004ad640(sVar17);
+            pvVar7 = (void *)AllocateMemoryWithCallback(sVar17);
             pvVar7 = _memset(pvVar7,iVar16,sVar17);
             *(void **)(*(int *)(*(int *)(iVar6 + 0x5b) + 0x7f) + 0x2e + iVar13) = pvVar7;
             iVar19 = *(int *)(*(int *)(iVar6 + 0x5b) + 0x7f) + iVar13;
@@ -63238,7 +63238,7 @@ void FUN_0045e5d0(int param_1)
     do {
       _Size = 0xb;
       _Val = 0;
-      pvVar1 = (void *)FUN_004ad640(0xb);
+      pvVar1 = (void *)AllocateMemoryWithCallback(0xb);
       pvVar1 = _memset(pvVar1,_Val,_Size);
       *(void **)(*(int *)(*(int *)(*(int *)(DAT_005dcb3c + 0x230) + (uint)*puVar2 * 4) + 0x9d) +
                 0x17) = pvVar1;
@@ -63282,7 +63282,7 @@ void FUN_0045e6a0(int param_1)
   
   _Size = (uint)*(ushort *)(param_1 + 6) * 0xe;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(_Size);
+  _Dst = (void *)AllocateMemoryWithCallback(_Size);
   DAT_005dca10 = _memset(_Dst,_Val,_Size);
   FUN_004ad7a0(DAT_005dca10,param_1 + 8,(uint)*(ushort *)(param_1 + 6) * 0xe);
   DAT_005dca0c = *(undefined2 *)(param_1 + 6);
@@ -63333,14 +63333,14 @@ void FUN_0045e720(uint param_1)
   if (DAT_005dcb0c == 0) {
     sVar5 = (uint)uVar7 * 0x2e;
     iVar9 = 0;
-    pvVar6 = (void *)FUN_004ad640(sVar5);
+    pvVar6 = (void *)AllocateMemoryWithCallback(sVar5);
     pvVar6 = _memset(pvVar6,iVar9,sVar5);
   }
   else {
     DAT_005986e0 = DAT_005dcb0c;
     sVar5 = ((uint)DAT_005dcb0c + (uint)*(ushort *)(param_1 + 6)) * 0x2e;
     iVar9 = 0;
-    pvVar6 = (void *)FUN_004ad640(sVar5);
+    pvVar6 = (void *)AllocateMemoryWithCallback(sVar5);
     pvVar6 = _memset(pvVar6,iVar9,sVar5);
     FUN_004ad7a0(pvVar6,DAT_005dca00,(uint)DAT_005dcb0c * 0x2e);
     if (DAT_005dca00 != (void *)0x0) {
@@ -63356,7 +63356,7 @@ void FUN_0045e720(uint param_1)
     do {
       sVar5 = 0xb;
       iVar9 = 0;
-      pvVar6 = (void *)FUN_004ad640(0xb);
+      pvVar6 = (void *)AllocateMemoryWithCallback(0xb);
       pvVar6 = _memset(pvVar6,iVar9,sVar5);
       param_1 = param_1 + 1;
       *(void **)((int)DAT_005dca00 + uVar8 * 0x2e + 0x13) = pvVar6;
@@ -63372,7 +63372,7 @@ void FUN_0045e720(uint param_1)
       FUN_004ad7a0(iVar3,iVar2 + 0x10,6);
       uVar8 = (uint)*(ushort *)(iVar2 + 0x14);
       _Val = 0;
-      pvVar6 = (void *)FUN_004ad640(uVar8);
+      pvVar6 = (void *)AllocateMemoryWithCallback(uVar8);
       pvVar6 = _memset(pvVar6,_Val,uVar8);
       *(void **)(iVar3 + 7) = pvVar6;
       FUN_004ad7a0(pvVar6,iVar9,*(undefined2 *)(iVar2 + 0x14));
@@ -63395,7 +63395,7 @@ void FUN_0045e950(int param_1)
   
   _Size = *(int *)(param_1 + 6) + 8;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(_Size);
+  _Dst = (void *)AllocateMemoryWithCallback(_Size);
   DAT_005986e8 = _memset(_Dst,_Val,_Size);
   FUN_004ad7a0(DAT_005986e8,param_1 + 0xc,*(undefined4 *)(param_1 + 6));
   DAT_00599084 = DAT_005986e8;
@@ -64323,7 +64323,7 @@ void FUN_0045fe30(void)
   
   _Size = 0x1b;
   _Val = 0;
-  pvVar1 = (void *)FUN_004ad640(0x1b);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x1b);
   pvVar1 = _memset(pvVar1,_Val,_Size);
   *(void **)((int)pvVar1 + 0x17) = DAT_005986f4;
   DAT_005986f4 = pvVar1;
@@ -64700,7 +64700,7 @@ undefined4 FUN_00460830(char *param_1)
   _Size = (_DAT_005dcb60 & 0xff) << 5;
   iVar2 = 0;
   uStackY_20 = 0x4608b5;
-  pvVar3 = (void *)FUN_004ad640();
+  pvVar3 = (void *)AllocateMemoryWithCallback();
   uStackY_20 = 0x4608be;
   pvVar3 = _memset(pvVar3,iVar2,_Size);
   DAT_005dcb61._0_3_ = SUB43(pvVar3,0);
@@ -64774,7 +64774,7 @@ undefined4 FUN_00460a30(uint param_1)
   FUN_004adda0(&DAT_005dcb60,1,1,iVar1);
   _Size = (_DAT_005dcb60 & 0xff) << 5;
   iVar5 = 0;
-  pvVar2 = (void *)FUN_004ad640(_Size);
+  pvVar2 = (void *)AllocateMemoryWithCallback(_Size);
   pvVar2 = _memset(pvVar2,iVar5,_Size);
   DAT_005dcb61._0_3_ = SUB43(pvVar2,0);
   DAT_005dcb61._3_1_ = (undefined)((uint)pvVar2 >> 0x18);
@@ -64986,7 +64986,7 @@ undefined4 FUN_00460e40(int param_1,int param_2,int param_3)
   sVar3 = (unaff_EBX & 0xff) * 0x2f;
   iVar4 = 0;
   uStackY_20 = 0x46101a;
-  pvVar5 = (void *)FUN_004ad640();
+  pvVar5 = (void *)AllocateMemoryWithCallback();
   uStackY_20 = 0x461023;
   pvVar5 = _memset(pvVar5,iVar4,sVar3);
   *(void **)(param_1 + 4) = pvVar5;
@@ -65100,7 +65100,7 @@ undefined4 FUN_00461220(uint param_1)
     sVar1 = 8;
     iVar2 = 0;
     uStackY_1c = 0x4612fb;
-    pvVar3 = (void *)FUN_004ad640();
+    pvVar3 = (void *)AllocateMemoryWithCallback();
     uStackY_1c = 0x461304;
     pvVar3 = _memset(pvVar3,iVar2,sVar1);
     *(void **)(DAT_005d87e0 + param_1 * 4) = pvVar3;
@@ -65122,7 +65122,7 @@ undefined4 FUN_00461220(uint param_1)
     sVar1 = 8;
     iVar2 = 0;
     uStackY_1c = 0x4613cd;
-    pvVar3 = (void *)FUN_004ad640();
+    pvVar3 = (void *)AllocateMemoryWithCallback();
     uStackY_1c = 0x4613d6;
     pvVar3 = _memset(pvVar3,iVar2,sVar1);
     *(void **)(DAT_005d87e0 + param_1 * 4) = pvVar3;
@@ -66301,7 +66301,7 @@ int FUN_00462c50(void)
     iVar1 = (**(code **)(*DAT_00598908 + 0x58))(DAT_00598908,0,&stack0xfffffff8);
     if (iVar1 == -0x7788ffe2) {
       iVar1 = 0;
-      _Dst = (void *)FUN_004ad640(unaff_ESI);
+      _Dst = (void *)AllocateMemoryWithCallback(unaff_ESI);
       DAT_005d8738 = _memset(_Dst,iVar1,unaff_ESI);
       if (DAT_005d8738 != (void *)0x0) {
         iVar1 = (**(code **)(*DAT_00598908 + 0x58))(DAT_00598908,DAT_005d8738,&stack0xfffffff8);
@@ -66758,7 +66758,7 @@ int FUN_00463450(void)
         DAT_005d86d4 = (void *)0x0;
       }
       _Val = 0;
-      _Dst = (void *)FUN_004ad640(unaff_ESI);
+      _Dst = (void *)AllocateMemoryWithCallback(unaff_ESI);
       DAT_005d86d4 = _memset(_Dst,_Val,unaff_ESI);
       if (DAT_005d86d4 != (void *)0x0) {
         iVar1 = (**(code **)(*DAT_00598928 + 0x20))(DAT_00598928,0,DAT_005d86d4,&stack0xfffffff8);
@@ -66782,14 +66782,14 @@ undefined4 FUN_00463550(void)
   sVar3 = 0xa0;
   iVar2 = 0;
   DAT_005d66b8 = &DAT_004c13f0;
-  pvVar1 = (void *)FUN_004ad640(0xa0);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0xa0);
   DAT_005e4480 = _memset(pvVar1,iVar2,sVar3);
   _DAT_005d7a88 = __allshl();
   QueryPerformanceCounter((LARGE_INTEGER *)&DAT_00598930);
   _memset(&DAT_005d7aa0,0,0x1aa);
   sVar3 = 0x800;
   iVar2 = 0;
-  pvVar1 = (void *)FUN_004ad640(0x800);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x800);
   DAT_005d8464 = _memset(pvVar1,iVar2,sVar3);
   CoInitialize((LPVOID)0x0);
   FUN_00465d40();
@@ -67043,11 +67043,11 @@ void FUN_00463aa0(void)
   }
   sVar7 = 0x1000;
   iVar6 = 0;
-  pvVar3 = (void *)FUN_004ad640();
+  pvVar3 = (void *)AllocateMemoryWithCallback();
   _DAT_005d86d0 = _memset(pvVar3,iVar6,sVar7);
   sVar7 = 0x1000;
   iVar6 = 0;
-  pvVar3 = (void *)FUN_004ad640();
+  pvVar3 = (void *)AllocateMemoryWithCallback();
   _DAT_005d8468 = _memset(pvVar3,iVar6,sVar7);
   FUN_004afff0();
   FUN_004af670();
@@ -68114,15 +68114,15 @@ void FUN_004655e0(void)
         sVar5 = iVar1 * 0x14;
         iVar3 = piVar4[2];
         iVar9 = 0;
-        pvVar6 = (void *)FUN_004ad640();
+        pvVar6 = (void *)AllocateMemoryWithCallback();
         _memset(pvVar6,iVar9,sVar5);
         sVar5 = iVar2 << 4;
         iVar9 = 0;
-        pvVar6 = (void *)FUN_004ad640();
+        pvVar6 = (void *)AllocateMemoryWithCallback();
         pvVar6 = _memset(pvVar6,iVar9,sVar5);
         sVar5 = iVar3 * 299;
         iVar9 = 0;
-        pvVar7 = (void *)FUN_004ad640();
+        pvVar7 = (void *)AllocateMemoryWithCallback();
         pvVar7 = _memset(pvVar7,iVar9,sVar5);
         FUN_004ad7a0();
         FUN_004ad7a0();
@@ -68168,20 +68168,20 @@ int FUN_00465790(uint *param_1,byte param_2,float *param_3)
   sVar8 = 0x44;
   iVar7 = 0;
   iVar5 = (uint)param_2 * 0xa9;
-  pvVar2 = (void *)FUN_004ad640(0x44);
+  pvVar2 = (void *)AllocateMemoryWithCallback(0x44);
   puVar3 = (uint *)_memset(pvVar2,iVar7,sVar8);
   *(uint **)(iVar5 + 0x5d7136) = puVar3;
   uVar4 = *param_1;
   *puVar3 = uVar4;
   sVar8 = uVar4 << 5;
   iVar7 = 0;
-  pvVar2 = (void *)FUN_004ad640(sVar8);
+  pvVar2 = (void *)AllocateMemoryWithCallback(sVar8);
   pvVar2 = _memset(pvVar2,iVar7,sVar8);
   puVar3[1] = (uint)pvVar2;
   puVar3[2] = param_1[1];
   sVar8 = param_1[1] * 0xc;
   iVar7 = 0;
-  pvVar2 = (void *)FUN_004ad640(sVar8);
+  pvVar2 = (void *)AllocateMemoryWithCallback(sVar8);
   pvVar2 = _memset(pvVar2,iVar7,sVar8);
   puVar3[3] = (uint)pvVar2;
   puVar3[5] = param_1[2];
@@ -68443,19 +68443,19 @@ void FUN_00465d40(void)
   
   sVar4 = 0x40a00;
   iVar3 = 0;
-  pvVar1 = (void *)FUN_004ad640(0x40a00);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x40a00);
   DAT_005d70bc = _memset(pvVar1,iVar3,sVar4);
   sVar4 = 0x205000;
   iVar3 = 0;
-  pvVar1 = (void *)FUN_004ad640(0x205000);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x205000);
   DAT_005d70c0 = _memset(pvVar1,iVar3,sVar4);
   sVar4 = 0x10;
   iVar3 = 0;
-  pvVar1 = (void *)FUN_004ad640(0x10);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x10);
   DAT_005d7c4c = (HANDLE *)_memset(pvVar1,iVar3,sVar4);
   sVar4 = 0x10;
   iVar3 = 0;
-  pvVar1 = (void *)FUN_004ad640(0x10);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x10);
   DAT_005d8460 = (HANDLE *)_memset(pvVar1,iVar3,sVar4);
   DAT_005d8580 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,1,(LPCSTR)0x0);
   pvVar2 = CreateSemaphoreA((LPSECURITY_ATTRIBUTES)0x0,0,0xff,(LPCSTR)0x0);
@@ -69744,7 +69744,7 @@ undefined4 FUN_00467b60(int param_1,undefined4 param_2,byte param_3,HWND param_4
   }
   _Size = 0x14;
   iVar3 = 0;
-  _Dst = (void *)FUN_004ad640(0x14);
+  _Dst = (void *)AllocateMemoryWithCallback(0x14);
   puVar2 = (undefined4 *)_memset(_Dst,iVar3,_Size);
   if (puVar2 == (undefined4 *)0x0) {
     return 0;
@@ -71169,7 +71169,7 @@ undefined4 FUN_00469a30(HWND param_1,int param_2,ushort param_3)
     }
     _Size = DAT_00598b68 * 0xb;
     iVar14 = 0;
-    _Dst = (void *)FUN_004ad640();
+    _Dst = (void *)AllocateMemoryWithCallback();
     DAT_005d6c90 = _memset(_Dst,iVar14,_Size);
     for (iVar14 = DAT_004d8150; iVar14 != 0; iVar14 = *(int *)(iVar14 + 0xc)) {
       iVar12 = 1;
@@ -71495,7 +71495,7 @@ undefined2 * FUN_0046a720(uint param_1)
       FUN_004adda0(&param_1,2,1,iVar1);
       _Size = (param_1 & 0xffff) * 2 + 2;
       _Val = 0;
-      _Dst = (void *)FUN_004ad640(_Size);
+      _Dst = (void *)AllocateMemoryWithCallback(_Size);
       puVar2 = (undefined2 *)_memset(_Dst,_Val,_Size);
       uVar3 = 0;
       if ((ushort)param_1 != 0) {
@@ -72087,13 +72087,13 @@ undefined4 FUN_0046ac80(char *param_1,int param_2,int param_3,int param_4)
     sVar7 = *(int *)(DAT_00598d90 + 0x23d) * 0xa9;
     iVar6 = 0;
     puStackY_20 = (undefined4 *)0x46b6a5;
-    pvVar10 = (void *)FUN_004ad640();
+    pvVar10 = (void *)AllocateMemoryWithCallback();
     puStackY_20 = (undefined4 *)0x46b6ae;
     DAT_005d6640 = _memset(pvVar10,iVar6,sVar7);
     sVar7 = *(int *)(DAT_00598d90 + 0x23d) * 0x87;
     iVar6 = 0;
     puStackY_20 = (undefined4 *)0x46b6d3;
-    pvVar10 = (void *)FUN_004ad640();
+    pvVar10 = (void *)AllocateMemoryWithCallback();
     puStackY_20 = (undefined4 *)0x46b6dc;
     DAT_005d6534 = _memset(pvVar10,iVar6,sVar7);
     uVar9 = 0;
@@ -74196,11 +74196,11 @@ undefined4 FUN_0046da60(HINSTANCE param_1)
     DAT_00598d50 = 1;
     iVar3 = CreateMainWindowFunc();
     if (iVar3 == 0) {
-      FUN_004b0840();
+      TerminateWithCode();
     }
     iVar3 = FUN_004478e0();
     if (iVar3 == 0) {
-      FUN_004b0840();
+      TerminateWithCode();
     }
     FUN_0044dee0();
     bVar1 = false;
@@ -74223,12 +74223,12 @@ undefined4 FUN_0046da60(HINSTANCE param_1)
     } while (!bVar1);
     FUN_00470b60();
     if (DAT_00598d20 == 1) {
-      FUN_004b0840();
+      TerminateWithCode();
     }
     FUN_00470a20();
     iVar3 = FUN_0046e450();
     if (iVar3 == 0) {
-      FUN_004b0840();
+      TerminateWithCode();
     }
     hAccTable = LoadAcceleratorsA(param_1,s_AppAccel_004d0588);
     while (DAT_00598d20 == 0) {
@@ -74607,17 +74607,17 @@ undefined4 FUN_0046e450(void)
     }
     DAT_00598db8 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)0x0);
     if (DAT_00598db8 == (HANDLE)0x0) {
-      FUN_004b0840(0);
+      TerminateWithCode(0);
     }
     FUN_004afd20(FUN_0046ddf0,0,0);
     DAT_00598dc4 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)0x0);
     if (DAT_00598dc4 == (HANDLE)0x0) {
-      FUN_004b0840(0);
+      TerminateWithCode(0);
     }
     FUN_004afd20(FUN_0046dd30,0,0);
     DAT_00598dd0 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)0x0);
     if (DAT_00598dd0 == (HANDLE)0x0) {
-      FUN_004b0840(0);
+      TerminateWithCode(0);
     }
     FUN_004afd20(FUN_0046dd90,0,0);
     FUN_0047f450();
@@ -74651,17 +74651,17 @@ undefined4 FUN_0046e450(void)
     FUN_00449cf0();
     DAT_00598db8 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)0x0);
     if (DAT_00598db8 == (HANDLE)0x0) {
-      FUN_004b0840(0);
+      TerminateWithCode(0);
     }
     FUN_004afd20(FUN_0046ddf0,0,0);
     DAT_00598dc4 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)0x0);
     if (DAT_00598dc4 == (HANDLE)0x0) {
-      FUN_004b0840(0);
+      TerminateWithCode(0);
     }
     FUN_004afd20(FUN_0046dd30,0,0);
     DAT_00598dd0 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)0x0);
     if (DAT_00598dd0 == (HANDLE)0x0) {
-      FUN_004b0840(0);
+      TerminateWithCode(0);
     }
     FUN_004afd20(FUN_0046dd90,0,0);
     FUN_0043e140();
@@ -74873,7 +74873,7 @@ undefined4 FUN_0046eb50(HWND param_1,int param_2,undefined2 param_3)
           FID_conflict__strcat(local_130,&stack0xfffffff0);
           MessageBoxA(gMainWindowHandle,DAT_005def24,local_130,0x50010);
           FUN_00470800();
-          FUN_004b0840();
+          TerminateWithCode();
           EndDialog(param_1,1);
           return 0;
         }
@@ -74895,7 +74895,7 @@ undefined4 FUN_0046eb50(HWND param_1,int param_2,undefined2 param_3)
           FID_conflict__strcat(local_130,&stack0xfffffff0);
           MessageBoxA(gMainWindowHandle,DAT_005def24,local_130,0x50010);
           FUN_00470800();
-          FUN_004b0840();
+          TerminateWithCode();
           EndDialog(param_1,1);
           return 0;
         }
@@ -75485,7 +75485,7 @@ LRESULT FUN_0046fa40(HWND param_1,uint param_2,uint param_3,LPARAM param_4)
       cVar4 = FUN_0046f980();
       if (cVar4 == '\0') {
         FUN_00470800();
-        FUN_004b0840(0);
+        TerminateWithCode(0);
       }
     }
     goto LAB_0046ff1a;
@@ -75969,7 +75969,7 @@ void FUN_00470a40(void)
   FUN_004ad310();
   _Size = 8;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(8);
+  _Dst = (void *)AllocateMemoryWithCallback(8);
   _Dest = (char *)_memset(_Dst,_Val,_Size);
   LVar1 = RegCreateKeyExA((HKEY)0x80000002,s_Software_Vis_Interactive_Hedz_004d0f68,0,(LPSTR)0x0,0,
                           0xf003f,(LPSECURITY_ATTRIBUTES)0x0,&HKEY_00598b70,(LPDWORD)&DAT_00598ca4);
@@ -76008,7 +76008,7 @@ void FUN_00470b60(void)
   FUN_004ad310();
   _Size = 8;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(8);
+  _Dst = (void *)AllocateMemoryWithCallback(8);
   _Dest = (char *)_memset(_Dst,_Val,_Size);
   LVar1 = RegCreateKeyExA((HKEY)0x80000002,s_Software_Vis_Interactive_Hedz_004d0fac,0,(LPSTR)0x0,0,
                           0xf003f,(LPSECURITY_ATTRIBUTES)0x0,&HKEY_00598b70,(LPDWORD)&DAT_00598ca4);
@@ -76091,7 +76091,7 @@ LAB_00470e11:
   RegCloseKey((HKEY)pcVar7);
 LAB_00470e21:
   iVar5 = 0;
-  _Dst = (void *)FUN_004ad640();
+  _Dst = (void *)AllocateMemoryWithCallback();
   pcVar7 = (char *)_memset(_Dst,iVar5,_Size.unused);
   uStackY_38 = 0x470e67;
   LVar1 = RegCreateKeyExA((HKEY)0x80000002,s_Software_Vis_Interactive_Hedz_004d10b0,0,(LPSTR)0x0,0,
@@ -77663,7 +77663,7 @@ undefined4 FUN_00473760(void)
     FUN_004adda0();
     sVar3 = DAT_005d4960 * DAT_005d4964;
     DVar9 = 0;
-    pvVar5 = (void *)FUN_004ad640();
+    pvVar5 = (void *)AllocateMemoryWithCallback();
     DAT_00598dec = _memset(pvVar5,DVar9,sVar3);
     iVar10 = 0;
     if (0 < DAT_005d4964) {
@@ -77676,7 +77676,7 @@ undefined4 FUN_00473760(void)
   else {
     sVar3 = DAT_005d4960 * DAT_005d4964;
     DVar9 = 0;
-    pvVar5 = (void *)FUN_004ad640();
+    pvVar5 = (void *)AllocateMemoryWithCallback();
     DAT_00598dec = _memset(pvVar5,DVar9,sVar3);
     if (DAT_00598dec == (void *)0x0) {
       return 0;
@@ -78273,7 +78273,7 @@ void FUN_004747f0(void)
   
   _Size = 0x10;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(0x10);
+  _Dst = (void *)AllocateMemoryWithCallback(0x10);
   _memset(_Dst,_Val,_Size);
   return;
 }
@@ -78299,14 +78299,14 @@ void ** FUN_00474810(uint param_1)
   }
   sVar9 = 0x24;
   iVar8 = 0;
-  pvVar1 = (void *)FUN_004ad640(0x24);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x24);
   ppvVar2 = (void **)_memset(pvVar1,iVar8,sVar9);
   if (ppvVar2 == (void **)0x0) {
     return (void **)0x0;
   }
   sVar9 = 0x1ad;
   iVar8 = 0;
-  pvVar1 = (void *)FUN_004ad640(0x1ad);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x1ad);
   psVar3 = (short *)_memset(pvVar1,iVar8,sVar9);
   ppvVar2[1] = psVar3;
   if (psVar3 == (short *)0x0) {
@@ -78315,7 +78315,7 @@ void ** FUN_00474810(uint param_1)
   if (DAT_00598d38 != 0) {
     sVar9 = 0xa4;
     iVar8 = 0;
-    pvVar1 = (void *)FUN_004ad640(0xa4);
+    pvVar1 = (void *)AllocateMemoryWithCallback(0xa4);
     pvVar1 = _memset(pvVar1,iVar8,sVar9);
     *ppvVar2 = pvVar1;
     if (pvVar1 == (void *)0x0) {
@@ -78323,12 +78323,12 @@ void ** FUN_00474810(uint param_1)
     }
     sVar9 = 0x120;
     iVar8 = 0;
-    pvVar4 = (void *)FUN_004ad640(0x120);
+    pvVar4 = (void *)AllocateMemoryWithCallback(0x120);
     pvVar4 = _memset(pvVar4,iVar8,sVar9);
     *(void **)((int)pvVar1 + 0xa0) = pvVar4;
     sVar9 = 0x120;
     iVar8 = 0;
-    pvVar1 = (void *)FUN_004ad640(0x120);
+    pvVar1 = (void *)AllocateMemoryWithCallback(0x120);
     pvVar1 = _memset(pvVar1,iVar8,sVar9);
     *(void **)(psVar3 + 0x50) = pvVar1;
   }
@@ -78485,7 +78485,7 @@ int FUN_00474bd0(undefined2 param_1,undefined4 *param_2,undefined param_3)
   _Size = 0x14;
   iVar7 = 0;
   *puVar1 = param_1;
-  _Dst = (void *)FUN_004ad640(0x14);
+  _Dst = (void *)AllocateMemoryWithCallback(0x14);
   _Dest = (char *)_memset(_Dst,iVar7,_Size);
   *(char **)((int)puVar1 + 0x17) = _Dest;
   FID_conflict___mbscpy(_Dest,&DAT_004d156c);
@@ -80092,7 +80092,7 @@ void FUN_00476780(void)
   
   _Size = 6;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(6);
+  _Dst = (void *)AllocateMemoryWithCallback(6);
   DAT_005d0494 = _memset(_Dst,_Val,_Size);
   return;
 }
@@ -80144,7 +80144,7 @@ void FUN_00476850(int param_1)
   
   _Size = 0xf;
   _Val = 0;
-  pvVar2 = (void *)FUN_004ad640(0xf);
+  pvVar2 = (void *)AllocateMemoryWithCallback(0xf);
   pvVar2 = _memset(pvVar2,_Val,_Size);
   *(undefined2 *)((int)pvVar2 + 1) = *(undefined2 *)(param_1 + 4);
   sVar1 = (*(ushort *)(param_1 + 4) % 5 + 1) * 200;
@@ -81420,7 +81420,7 @@ void FUN_004780b0(int param_1)
   if (bVar5 != 0) {
     _Size = (uint)bVar5 << 2;
     iVar7 = 0;
-    pvVar4 = (void *)FUN_004ad640();
+    pvVar4 = (void *)AllocateMemoryWithCallback();
     pvVar4 = _memset(pvVar4,iVar7,_Size);
     *(void **)(iVar1 + 0xf0) = pvVar4;
     FUN_004ad7a0();
@@ -81502,7 +81502,7 @@ void FUN_00478200(int param_1)
     _Size = (uVar10 & 0xff) << 2;
     iVar7 = 0;
     local_24[1] = (short *)0x478352;
-    pvVar5 = (void *)FUN_004ad640();
+    pvVar5 = (void *)AllocateMemoryWithCallback();
     local_24[1] = (short *)0x47835b;
     pvVar5 = _memset(pvVar5,iVar7,_Size);
     *(void **)(iVar8 + 0xf9) = pvVar5;
@@ -81536,11 +81536,11 @@ void FUN_004783e0(uint param_1)
   if (param_1 != 0) {
     sVar2 = param_1 * 0xcc0;
     iVar5 = 0;
-    pvVar3 = (void *)FUN_004ad640(sVar2);
+    pvVar3 = (void *)AllocateMemoryWithCallback(sVar2);
     DAT_005cff44 = _memset(pvVar3,iVar5,sVar2);
     sVar2 = param_1 * 5;
     iVar5 = 0;
-    pvVar3 = (void *)FUN_004ad640(sVar2);
+    pvVar3 = (void *)AllocateMemoryWithCallback(sVar2);
     DAT_005cff48 = _memset(pvVar3,iVar5,sVar2);
     uVar4 = 0;
     if (param_1 != 0) {
@@ -86464,7 +86464,7 @@ undefined4 FUN_0047f4d0(void)
   
   _Size = 0x6a;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(0x6a);
+  _Dst = (void *)AllocateMemoryWithCallback(0x6a);
   DAT_00598e5c = _memset(_Dst,_Val,_Size);
   if (DAT_00598e5c == (void *)0x0) {
     return 0;
@@ -88877,7 +88877,7 @@ LAB_00482ad4:
     (**(code **)(*_Size + 0x18))();
     sVar25 = 0x38;
     iVar22 = 0;
-    pvVar11 = (void *)FUN_004ad640();
+    pvVar11 = (void *)AllocateMemoryWithCallback();
     ppiVar12 = (int **)_memset(pvVar11,iVar22,sVar25);
     *ppiVar12 = piVar21;
     ppiVar12[0xc] = (int *)DAT_005b9470;
@@ -88890,12 +88890,12 @@ LAB_00482ad4:
       }
       sVar25 = (uint)*(byte *)(DAT_00598d90 + 0x238) << 2;
       iVar22 = 0;
-      pvVar11 = (void *)FUN_004ad640();
+      pvVar11 = (void *)AllocateMemoryWithCallback();
       pvVar11 = _memset(pvVar11,iVar22,sVar25);
       *(void **)(DAT_00598d90 + 0x228) = pvVar11;
       sVar25 = (uint)*(byte *)(DAT_00598d90 + 0x238) << 2;
       iVar22 = 0;
-      pvVar11 = (void *)FUN_004ad640();
+      pvVar11 = (void *)AllocateMemoryWithCallback();
       pvVar11 = _memset(pvVar11,iVar22,sVar25);
       uVar14 = 0;
       *(void **)(DAT_00598d90 + 0x22c) = pvVar11;
@@ -91438,7 +91438,7 @@ undefined4 FUN_004868b0(int param_1)
   _memset(&DAT_005b9440,0,0x24);
   _Size = (param_1 + 1) * 0x37;
   iVar1 = 0;
-  _Dst = (void *)FUN_004ad640(_Size);
+  _Dst = (void *)AllocateMemoryWithCallback(_Size);
   DAT_005b9440 = _memset(_Dst,iVar1,_Size);
   if (0 < param_1) {
     iVar1 = 0x37;
@@ -92352,7 +92352,7 @@ void FUN_004880b0(char *param_1,uint param_2)
           sVar4 = param_2 << 4;
           iVar18 = 0;
           local_20 = (uint *)0x48843d;
-          pvVar7 = (void *)FUN_004ad640();
+          pvVar7 = (void *)AllocateMemoryWithCallback();
           local_20 = (uint *)0x488446;
           pvVar7 = _memset(pvVar7,iVar18,sVar4);
           local_24 = 0x488458;
@@ -92480,7 +92480,7 @@ void FUN_004880b0(char *param_1,uint param_2)
           sVar4 = param_2 << 4;
           iVar6 = 0;
           local_20 = (uint *)0x488718;
-          pvVar7 = (void *)FUN_004ad640();
+          pvVar7 = (void *)AllocateMemoryWithCallback();
           local_20 = (uint *)0x488721;
           pvVar7 = _memset(pvVar7,iVar6,sVar4);
           *(void **)(*(int *)(*(int *)(iVar18 + 4) + 0x100) + 0xae) = pvVar7;
@@ -92497,7 +92497,7 @@ void FUN_004880b0(char *param_1,uint param_2)
               sVar4 = 6;
               iVar6 = 0;
               local_20 = (uint *)0x48878b;
-              pvVar7 = (void *)FUN_004ad640();
+              pvVar7 = (void *)AllocateMemoryWithCallback();
               local_20 = (uint *)0x488794;
               puVar8 = (undefined *)_memset(pvVar7,iVar6,sVar4);
               local_20 = (uint *)local_2c;
@@ -92641,7 +92641,7 @@ void FUN_00488940(char *param_1,int param_2)
     _Size = GetFileSize(hFile,(LPDWORD)0x0);
     iVar23 = 0;
     DVar19 = _Size;
-    pvVar6 = (void *)FUN_004ad640();
+    pvVar6 = (void *)AllocateMemoryWithCallback();
     pvVar6 = _memset(pvVar6,iVar23,DVar19);
     if (pvVar6 != (void *)0x0) {
       _memset(pvVar6,0,_Size);
@@ -92876,7 +92876,7 @@ void FUN_00488940(char *param_1,int param_2)
               *(undefined *)(*(int *)(*(int *)(iVar25 + 4) + 0x100) + 0x2a) = uVar3;
               sVar5 = (uint)*(byte *)(*(int *)(*(int *)(iVar25 + 4) + 0x100) + 0x2a) << 4;
               iVar8 = 0;
-              pvVar6 = (void *)FUN_004ad640();
+              pvVar6 = (void *)AllocateMemoryWithCallback();
               pvVar6 = _memset(pvVar6,iVar8,sVar5);
               param_1 = (char *)0x0;
               *(void **)(*(int *)(*(int *)(iVar25 + 4) + 0x100) + 0xae) = pvVar6;
@@ -92921,7 +92921,7 @@ void FUN_00488940(char *param_1,int param_2)
                 do {
                   sVar5 = 6;
                   iVar8 = 0;
-                  pvVar6 = (void *)FUN_004ad640();
+                  pvVar6 = (void *)AllocateMemoryWithCallback();
                   puVar11 = (undefined *)_memset(pvVar6,iVar8,sVar5);
                   FUN_004909f0();
                   uVar3 = FUN_004adb80();
@@ -93346,11 +93346,11 @@ void FUN_00489ee0(void)
   
   sVar3 = 0xc;
   iVar2 = 0;
-  pvVar1 = (void *)FUN_004ad640(0xc);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0xc);
   DAT_005b9424 = _memset(pvVar1,iVar2,sVar3);
   sVar3 = 0x6b;
   iVar2 = 0;
-  pvVar1 = (void *)FUN_004ad640(0x6b);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x6b);
   pvVar1 = _memset(pvVar1,iVar2,sVar3);
   *(void **)((int)DAT_005b9424 + 8) = pvVar1;
   FUN_00489f30(0);
@@ -94235,14 +94235,14 @@ void * FUN_0048b1f0(undefined4 param_1,int param_2,undefined4 param_3)
   
   sVar5 = 0x27;
   iVar4 = 0;
-  pvVar1 = (void *)FUN_004ad640(0x27);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x27);
   pvVar1 = _memset(pvVar1,iVar4,sVar5);
   if (pvVar1 == (void *)0x0) {
     return (void *)0x0;
   }
   sVar5 = 0x1c;
   iVar4 = 0;
-  pvVar2 = (void *)FUN_004ad640(0x1c);
+  pvVar2 = (void *)AllocateMemoryWithCallback(0x1c);
   pvVar2 = _memset(pvVar2,iVar4,sVar5);
   *(void **)((int)pvVar1 + 0x1c) = pvVar2;
   if (pvVar2 == (void *)0x0) {
@@ -94254,7 +94254,7 @@ void * FUN_0048b1f0(undefined4 param_1,int param_2,undefined4 param_3)
     if (*pbVar3 != 0) {
       _Size = (uint)*pbVar3;
       _Val = 0;
-      pvVar2 = (void *)FUN_004ad640(_Size);
+      pvVar2 = (void *)AllocateMemoryWithCallback(_Size);
       pvVar2 = _memset(pvVar2,_Val,_Size);
       *(void **)(*(int *)((int)pvVar1 + 0x1c) + iVar4) = pvVar2;
     }
@@ -94279,7 +94279,7 @@ void FUN_0048b2a0(undefined4 param_1,undefined4 param_2)
   if (iVar1 != 0) {
     _Size = 0x27;
     iVar1 = 0;
-    pvVar2 = (void *)FUN_004ad640(0x27);
+    pvVar2 = (void *)AllocateMemoryWithCallback(0x27);
     pvVar2 = _memset(pvVar2,iVar1,_Size);
     *(undefined4 *)((int)pvVar2 + 0x10) = param_1;
     *(void **)((int)pvVar2 + 0x14) = DAT_00598f50;
@@ -94586,14 +94586,14 @@ void FUN_0048b6d0(void)
       FUN_00441d30();
       sVar6 = 0x27;
       iVar5 = 0;
-      pvVar2 = (void *)FUN_004ad640();
+      pvVar2 = (void *)AllocateMemoryWithCallback();
       puVar3 = (undefined4 *)_memset(pvVar2,iVar5,sVar6);
       puVar3[4] = unaff_ESI & 0xffff;
       puVar3[5] = DAT_00598f50;
       sVar6 = CONCAT22(unaff_DI,uStack_e);
       iVar5 = 0;
       DAT_00598f50 = puVar3;
-      pvVar2 = (void *)FUN_004ad640();
+      pvVar2 = (void *)AllocateMemoryWithCallback();
       pvVar2 = _memset(pvVar2,iVar5,sVar6);
       FUN_00441d30();
       iVar5 = _AIL_WAV_info_8();
@@ -94653,7 +94653,7 @@ undefined4 FUN_0048b860(char *param_1)
   _Size = 0x1703;
   _Val = 0;
   pvStackY_14 = (void *)0x48b8e6;
-  _Dst = (void *)FUN_004ad640();
+  _Dst = (void *)AllocateMemoryWithCallback();
   pvStackY_14 = (void *)0x48b8ef;
   DAT_00598f54 = _memset(_Dst,_Val,_Size);
   if (DAT_00598f54 != (void *)0x0) {
@@ -94687,7 +94687,7 @@ undefined4 FUN_0048b930(uint param_1,undefined4 param_2)
     FUN_004ae6a0(DAT_00598f58,iVar4 + 0x1703,0);
     iVar4 = 0;
     _Size = sVar1;
-    pvVar2 = (void *)FUN_004ad640(sVar1);
+    pvVar2 = (void *)AllocateMemoryWithCallback(sVar1);
     pvVar2 = _memset(pvVar2,iVar4,_Size);
     FUN_004adda0(pvVar2,1,sVar1,DAT_00598f58);
     uVar3 = FUN_00424a20((int)pvVar2 + 0xd,&param_2);
@@ -94798,7 +94798,7 @@ undefined4 FUN_0048bbc0(int param_1,LPSTR param_2,size_t param_3)
   _Val = 0;
   piStackY_20 = (int *)0x48bc0f;
   _Size = param_3;
-  pvVar2 = (void *)FUN_004ad640();
+  pvVar2 = (void *)AllocateMemoryWithCallback();
   piStackY_20 = (int *)0x48bc18;
   pvVar2 = _memset(pvVar2,_Val,_Size);
   *(void **)(param_1 + 8) = pvVar2;
@@ -96094,12 +96094,12 @@ void FUN_0048dd70(int param_1)
     *(short *)(DAT_00598ff0 + 1) = *(short *)(DAT_00598ff0 + 2) * *(short *)((int)DAT_00598ff0 + 6);
     sVar4 = (uint)*(ushort *)(DAT_00598ff0 + 1) * 0x3e;
     iVar6 = param_1;
-    pvVar5 = (void *)FUN_004ad640(sVar4);
+    pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
     pvVar5 = _memset(pvVar5,iVar6,sVar4);
     *DAT_00598ff0 = pvVar5;
     sVar4 = (uint)*(ushort *)(DAT_00598ff0 + 2) * (uint)*(ushort *)((int)DAT_00598ff0 + 6) * 4;
     iVar6 = param_1;
-    pvVar5 = (void *)FUN_004ad640(sVar4);
+    pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
     pvVar5 = _memset(pvVar5,iVar6,sVar4);
     *(void **)((int)DAT_00598ff0 + 10) = pvVar5;
     if (*(short *)(DAT_00598ff0 + 1) != 0) {
@@ -96119,7 +96119,7 @@ void FUN_0048dd70(int param_1)
   else {
     sVar4 = (uint)*(ushort *)(DAT_00598ff0 + 1) * 0x3e;
     iVar6 = 0;
-    pvVar5 = (void *)FUN_004ad640(sVar4);
+    pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
     pvVar5 = _memset(pvVar5,iVar6,sVar4);
     uVar13 = 0;
     *DAT_00598ff0 = pvVar5;
@@ -96144,20 +96144,20 @@ void FUN_0048dd70(int param_1)
     sVar4 = iVar6 * iVar6 * 0x20;
     do {
       iVar6 = 0;
-      pvVar5 = (void *)FUN_004ad640(sVar4);
+      pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
       pvVar5 = _memset(pvVar5,iVar6,sVar4);
       *(void **)((int)*DAT_00598ff0 + iVar10) = pvVar5;
       sVar4 = (uint)*(ushort *)((int)DAT_00598ff0 + 0xe) *
               (uint)*(ushort *)((int)DAT_00598ff0 + 0xe) * 0x18;
       iVar6 = 0;
-      pvVar5 = (void *)FUN_004ad640(sVar4);
+      pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
       pvVar5 = _memset(pvVar5,iVar6,sVar4);
       *(void **)((int)*DAT_00598ff0 + iVar10 + 10) = pvVar5;
       if (param_1 == 0) {
         sVar4 = (uint)*(ushort *)((int)DAT_00598ff0 + 0xe) *
                 (uint)*(ushort *)((int)DAT_00598ff0 + 0xe) * 0xf;
         iVar6 = 0;
-        pvVar5 = (void *)FUN_004ad640(sVar4);
+        pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
         pvVar5 = _memset(pvVar5,iVar6,sVar4);
         *(void **)((int)*DAT_00598ff0 + iVar10 + 0x16) = pvVar5;
       }
@@ -96297,16 +96297,16 @@ undefined4 FUN_0048e210(undefined4 param_1,undefined4 param_2,int *param_3)
     FUN_0048ef50();
     sVar26 = 4;
     iVar23 = 0;
-    pvVar7 = (void *)FUN_004ad640();
+    pvVar7 = (void *)AllocateMemoryWithCallback();
     piVar8 = (int *)_memset(pvVar7,iVar23,sVar26);
     sVar26 = 4;
     iVar23 = 0;
-    pvVar7 = (void *)FUN_004ad640();
+    pvVar7 = (void *)AllocateMemoryWithCallback();
     pvVar7 = _memset(pvVar7,iVar23,sVar26);
     sVar26 = (uint)*(ushort *)((int)DAT_00598ff0 + 0x12) * 2 + 2;
     iVar23 = 0;
     local_3c = pvVar7;
-    pvVar9 = (void *)FUN_004ad640();
+    pvVar9 = (void *)AllocateMemoryWithCallback();
     puVar10 = (undefined4 *)_memset(pvVar9,iVar23,sVar26);
     local_28 = 0;
     piVar20 = DAT_00598ff0;
@@ -96890,7 +96890,7 @@ LAB_0048eab4:
               } while (uVar19 == 0);
               sVar26 = 0x38;
               iVar23 = 0;
-              pvVar9 = (void *)FUN_004ad640();
+              pvVar9 = (void *)AllocateMemoryWithCallback();
               puVar13 = (undefined4 *)_memset(pvVar9,iVar23,sVar26);
               *puVar13 = 0;
               puVar13[0xc] = DAT_00598ff4;
@@ -96986,7 +96986,7 @@ undefined4 * FUN_0048f000(int param_1,int param_2,int param_3,int param_4)
   bVar4 = DAT_005e58d0 == 0;
   sVar7 = 0x32;
   iVar6 = 0;
-  pvVar2 = (void *)FUN_004ad640(0x32);
+  pvVar2 = (void *)AllocateMemoryWithCallback(0x32);
   puVar3 = (undefined4 *)_memset(pvVar2,iVar6,sVar7);
   *(undefined4 *)((int)puVar3 + 0x1e) = 0;
   puVar3[1] = 0;
@@ -96994,12 +96994,12 @@ undefined4 * FUN_0048f000(int param_1,int param_2,int param_3,int param_4)
   *(int *)((int)puVar3 + 0x26) = param_2;
   sVar7 = param_3 * 0x16;
   iVar6 = 0;
-  pvVar2 = (void *)FUN_004ad640(sVar7);
+  pvVar2 = (void *)AllocateMemoryWithCallback(sVar7);
   pvVar2 = _memset(pvVar2,iVar6,sVar7);
   *(void **)((int)puVar3 + 0x22) = pvVar2;
   sVar7 = param_2 * 0x16;
   iVar6 = 0;
-  pvVar2 = (void *)FUN_004ad640(sVar7);
+  pvVar2 = (void *)AllocateMemoryWithCallback(sVar7);
   pvVar2 = _memset(pvVar2,iVar6,sVar7);
   *(void **)((int)puVar3 + 0x2a) = pvVar2;
   if (0 < param_3) {
@@ -97061,11 +97061,11 @@ undefined4 FUN_0048f1a0(undefined4 *param_1,int param_2,int param_3,int param_4)
   }
   sVar2 = param_3 * 0x16;
   iVar9 = 0;
-  pvVar3 = (void *)FUN_004ad640(sVar2);
+  pvVar3 = (void *)AllocateMemoryWithCallback(sVar2);
   pvVar3 = _memset(pvVar3,iVar9,sVar2);
   sVar2 = param_2 * 0x16;
   iVar9 = 0;
-  pvVar4 = (void *)FUN_004ad640(sVar2);
+  pvVar4 = (void *)AllocateMemoryWithCallback(sVar2);
   pvVar4 = _memset(pvVar4,iVar9,sVar2);
   FUN_004ad7a0(pvVar3,*(undefined4 *)((int)param_1 + 0x22),*(int *)((int)param_1 + 0x1e) * 0x16);
   FUN_004ad7a0(pvVar4,*(undefined4 *)((int)param_1 + 0x2a),*(int *)((int)param_1 + 0x26) * 0x16);
@@ -98803,7 +98803,7 @@ void FUN_00491670(void)
     sVar14 = 0x802;
     iVar12 = 0;
     puStackY_20 = (undefined4 *)0x4916ef;
-    pvVar6 = (void *)FUN_004ad640();
+    pvVar6 = (void *)AllocateMemoryWithCallback();
     puStackY_20 = (undefined4 *)0x4916f8;
     DAT_005b9254 = _memset(pvVar6,iVar12,sVar14);
     puStackY_20 = &DAT_00599064;
@@ -98835,7 +98835,7 @@ void FUN_00491670(void)
               sVar14 = (sVar14 & 0xff) * (uint)*(byte *)puVar1 * 2 + 1;
               iVar13 = 0;
               puStackY_20 = (undefined4 *)0x4917af;
-              pvVar6 = (void *)FUN_004ad640();
+              pvVar6 = (void *)AllocateMemoryWithCallback();
               puStackY_20 = (undefined4 *)0x4917b8;
               pvVar6 = _memset(pvVar6,iVar13,sVar14);
               *(void **)((int)puVar1 + (unaff_EDI & 0xff) * 4 + 1) = pvVar6;
@@ -98961,7 +98961,7 @@ FUN_004919a0(uint param_1,uint param_2,int param_3,uint param_4,uint param_5,int
   *param_6 = iVar12;
   _Size = *param_7 * iVar12 * 2;
   iVar12 = 0;
-  _Dst = (void *)FUN_004ad640(_Size);
+  _Dst = (void *)AllocateMemoryWithCallback(_Size);
   puVar5 = (undefined2 *)_memset(_Dst,iVar12,_Size);
   uVar4 = 0;
   puVar6 = puVar5;
@@ -99044,7 +99044,7 @@ short * FUN_00491bb0(uint param_1,byte *param_2,uint param_3,uint param_4)
   iVar8 = DAT_005b9254 + (param_1 & 0xff) * 0x401;
   sVar12 = 0xe;
   iVar11 = 0;
-  pvVar3 = (void *)FUN_004ad640(0xe);
+  pvVar3 = (void *)AllocateMemoryWithCallback(0xe);
   psVar4 = (short *)_memset(pvVar3,iVar11,sVar12);
   pbVar6 = param_2;
   if (*param_2 != 0) {
@@ -99072,7 +99072,7 @@ short * FUN_00491bb0(uint param_1,byte *param_2,uint param_3,uint param_4)
         if (bVar2 == 0) {
           sVar12 = 0x10;
           iVar11 = 0;
-          pvVar3 = (void *)FUN_004ad640(0x10);
+          pvVar3 = (void *)AllocateMemoryWithCallback(0x10);
           puVar5 = (uint *)_memset(pvVar3,iVar11,sVar12);
           *puVar5 = uVar10;
           puVar5[1] = uVar9;
@@ -99107,7 +99107,7 @@ short * FUN_00491bb0(uint param_1,byte *param_2,uint param_3,uint param_4)
           }
           sVar12 = 0x10;
           iVar11 = 0;
-          pvVar3 = (void *)FUN_004ad640(0x10);
+          pvVar3 = (void *)AllocateMemoryWithCallback(0x10);
           puVar5 = (uint *)_memset(pvVar3,iVar11,sVar12);
           *puVar5 = uVar10;
           puVar5[1] = uVar9;
@@ -99337,7 +99337,7 @@ LAB_00492163:
   _Size = iVar3 + 1;
   _Val = 0;
   iVar3 = lstrlenA(param_2);
-  pvVar4 = (void *)FUN_004ad640(iVar3 + 1);
+  pvVar4 = (void *)AllocateMemoryWithCallback(iVar3 + 1);
   pvVar4 = _memset(pvVar4,_Val,_Size);
   *(void **)(param_7 + 9) = pvVar4;
   iVar3 = lstrlenA(param_2);
@@ -99361,7 +99361,7 @@ void FUN_00492230(void)
   
   _Size = 0xe;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(0xe);
+  _Dst = (void *)AllocateMemoryWithCallback(0xe);
   DAT_00599020 = (HANDLE *)_memset(_Dst,_Val,_Size);
   pvVar1 = CreateMutexA((LPSECURITY_ATTRIBUTES)0x0,0,(LPCSTR)0x0);
   *DAT_00599020 = pvVar1;
@@ -99393,7 +99393,7 @@ void FUN_004922a0(int param_1,undefined4 param_2)
   
   _Size = 0x45;
   _Val = 0;
-  pvVar1 = (void *)FUN_004ad640(0x45);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x45);
   pvVar1 = _memset(pvVar1,_Val,_Size);
   FUN_004ad7a0(pvVar1,param_2,0x3d);
   if (*(short *)(param_1 + 4) == 0) {
@@ -99983,7 +99983,7 @@ void FUN_00492d70(void)
       FreeMemory();
       _Size = 6;
       _Val = (int **)0x0;
-      _Dst = (void *)FUN_004ad640();
+      _Dst = (void *)AllocateMemoryWithCallback();
       piVar3 = (int *)_memset(_Dst,(int)_Val,_Size);
       *_Val = piVar3;
       *(char *)(piVar3 + 1) = (char)unaff_EDI;
@@ -100106,7 +100106,7 @@ void FUN_00492f30(uint param_1)
     sVar1 = 6;
     iVar4 = 0;
     uStackY_44 = 0x493196;
-    pvVar5 = (void *)FUN_004ad640();
+    pvVar5 = (void *)AllocateMemoryWithCallback();
     uStackY_44 = 0x49319f;
     pvVar5 = _memset(pvVar5,iVar4,sVar1);
     *(void **)(&DAT_005b9288 + uVar7 * 4) = pvVar5;
@@ -100261,7 +100261,7 @@ void FUN_00493450(void)
   
   _Size = 6;
   _Val = 0;
-  _Dst = (void *)FUN_004ad640(6);
+  _Dst = (void *)AllocateMemoryWithCallback(6);
   DAT_00599070 = _memset(_Dst,_Val,_Size);
   return;
 }
@@ -100305,7 +100305,7 @@ void FUN_004934c0(undefined2 param_1,undefined4 param_2)
   
   _Size = 0x15;
   _Val = 0;
-  pvVar1 = (void *)FUN_004ad640(0x15);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x15);
   pvVar1 = _memset(pvVar1,_Val,_Size);
   FUN_004ad7a0(pvVar1,param_2,0x15);
   *(undefined2 *)((int)pvVar1 + 1) = param_1;
@@ -101879,7 +101879,7 @@ undefined4 FUN_00495860(uint param_1)
           sVar6 = unaff_ESI * 0xc;
           iVar5 = 0;
           local_20 = (int *)0x49596b;
-          pvVar7 = (void *)FUN_004ad640();
+          pvVar7 = (void *)AllocateMemoryWithCallback();
           local_20 = (int *)0x495974;
           puVar8 = (uint *)_memset(pvVar7,iVar5,sVar6);
           piVar13 = *(int **)(DAT_005e5010 + 8);
@@ -101956,7 +101956,7 @@ undefined4 FUN_00495860(uint param_1)
           sVar6 = unaff_ESI * 0xc;
           iVar5 = 0;
           local_20 = (int *)0x495ae2;
-          pvVar7 = (void *)FUN_004ad640();
+          pvVar7 = (void *)AllocateMemoryWithCallback();
           local_20 = (int *)0x495aeb;
           puVar8 = (uint *)_memset(pvVar7,iVar5,sVar6);
           piVar13 = *(int **)(DAT_005e5010 + 8);
@@ -102118,7 +102118,7 @@ undefined4 FUN_00495d60(undefined4 param_1,int param_2)
       if (unaff_ESI != 0) {
         sVar7 = unaff_ESI * 0xc;
         iVar6 = 0;
-        pvVar8 = (void *)FUN_004ad640();
+        pvVar8 = (void *)AllocateMemoryWithCallback();
         pvVar8 = _memset(pvVar8,iVar6,sVar7);
         puVar16 = &stack0xfffffff4;
         local_20 = 6.737868e-39;
@@ -102179,7 +102179,7 @@ undefined4 FUN_00495d60(undefined4 param_1,int param_2)
       if (unaff_ESI != 0) {
         sVar7 = unaff_ESI * 0xc;
         iVar6 = 0;
-        pvVar8 = (void *)FUN_004ad640();
+        pvVar8 = (void *)AllocateMemoryWithCallback();
         piVar9 = (int *)_memset(pvVar8,iVar6,sVar7);
         puVar16 = &stack0xfffffff4;
         local_20 = 6.738393e-39;
@@ -102354,7 +102354,7 @@ undefined4 FUN_00496310(void)
   sVar6 = iVar5 + 2000;
   iVar5 = 0;
   _Size = sVar6;
-  _Dst = (void *)FUN_004ad640(sVar6);
+  _Dst = (void *)AllocateMemoryWithCallback(sVar6);
   DAT_00599084 = _memset(_Dst,iVar5,_Size);
   uVar4 = 0;
   piVar1 = DAT_00598ff0;
@@ -105007,7 +105007,7 @@ undefined4 FUN_0049a200(void)
   }
   _Size = 0x50;
   iVar1 = 0;
-  _Dst = (void *)FUN_004ad640(0x50);
+  _Dst = (void *)AllocateMemoryWithCallback(0x50);
   puVar2 = (undefined4 *)_memset(_Dst,iVar1,_Size);
   *puVar2 = 0x50;
   puVar2[1] = 0;
@@ -106480,7 +106480,7 @@ undefined4 FUN_0049be70(int param_1)
   _Size = 0x200;
   iVar5 = 0;
   uVar6 = 0;
-  pvVar3 = (void *)FUN_004ad640(0x200);
+  pvVar3 = (void *)AllocateMemoryWithCallback(0x200);
   pvVar3 = _memset(pvVar3,iVar5,_Size);
   (&DAT_005b218c)[param_1 * 0xc] = pvVar3;
   switch(param_1) {
@@ -106555,7 +106555,7 @@ undefined4 FUN_0049c010(int param_1)
   
   _Size = 200;
   _Val = 0;
-  pvVar1 = (void *)FUN_004ad640(200);
+  pvVar1 = (void *)AllocateMemoryWithCallback(200);
   pvVar1 = _memset(pvVar1,_Val,_Size);
   (&DAT_005b2168)[param_1 * 0xc] = pvVar1;
   *(undefined4 *)((int)pvVar1 + 0x98) = 0x3e491687;
@@ -106605,7 +106605,7 @@ undefined4 FUN_0049c110(int param_1)
   
   _Size = 0x440;
   iVar9 = 0;
-  pvVar3 = (void *)FUN_004ad640(0x440);
+  pvVar3 = (void *)AllocateMemoryWithCallback(0x440);
   pvVar4 = _memset(pvVar3,iVar9,_Size);
   (&DAT_005b2168)[param_1 * 0xc] = pvVar4;
   pvVar3 = (void *)((int)pvVar4 + 0x40);
@@ -106651,7 +106651,7 @@ undefined4 FUN_0049c1d0(int param_1)
   
   _Size = 0x400;
   _Val = 0;
-  pvVar1 = (void *)FUN_004ad640(0x400);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0x400);
   pvVar1 = _memset(pvVar1,_Val,_Size);
   (&DAT_005b2168)[param_1 * 0xc] = pvVar1;
   _memset(pvVar1,0,0x400);
@@ -112606,12 +112606,12 @@ FUN_004a5340(int param_1,float param_2,float param_3,float **param_4,undefined4 
   FUN_004ad310();
   sVar4 = param_1 << 8;
   iVar10 = 0;
-  pvVar5 = (void *)FUN_004ad640(sVar4);
+  pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
   pfVar6 = (float *)_memset(pvVar5,iVar10,sVar4);
   *param_4 = pfVar6;
   sVar4 = param_1 << 5;
   iVar10 = 0;
-  pvVar5 = (void *)FUN_004ad640(sVar4);
+  pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
   puVar7 = (undefined2 *)_memset(pvVar5,iVar10,sVar4);
   *param_5 = puVar7;
   pfVar6 = *param_4;
@@ -112724,12 +112724,12 @@ FUN_004a5540(float param_1,int param_2,undefined4 *param_3,float param_4,float p
     iVar11 = (int)param_3 * (param_2 + 1);
     iVar12 = iVar11 + 2;
     lVar17 = (ulonglong)(uint)(iVar12 * 0x20) << 0x20;
-    pvVar7 = (void *)FUN_004ad640(iVar12 * 0x20);
+    pvVar7 = (void *)AllocateMemoryWithCallback(iVar12 * 0x20);
     pvVar7 = _memset(pvVar7,(int)lVar17,(size_t)((ulonglong)lVar17 >> 0x20));
     *param_7 = pvVar7;
     uVar1 = iVar11 * 0x10;
     lVar17 = (ulonglong)uVar1 << 0x20;
-    pvVar7 = (void *)FUN_004ad640(uVar1);
+    pvVar7 = (void *)AllocateMemoryWithCallback(uVar1);
     pvVar7 = _memset(pvVar7,(int)lVar17,(size_t)((ulonglong)lVar17 >> 0x20));
     *param_8 = pvVar7;
     puVar13 = (undefined4 *)*param_7;
@@ -115603,7 +115603,7 @@ undefined4 FUN_004a9bb0(uint param_1,undefined4 *param_2,undefined4 param_3,uint
           if (DAT_004d8054 == 0) {
             lVar19 = (ulonglong)((uint)uStackY_42 * 6) << 0x20;
             local_20 = 0x4a9e66;
-            pvVar4 = (void *)FUN_004ad640();
+            pvVar4 = (void *)AllocateMemoryWithCallback();
             local_20 = 0x4a9e6f;
             puVar3 = (uint *)_memset(pvVar4,(int)lVar19,(size_t)((ulonglong)lVar19 >> 0x20));
             puVar13 = local_28;
@@ -115612,14 +115612,14 @@ undefined4 FUN_004a9bb0(uint param_1,undefined4 *param_2,undefined4 param_3,uint
           else {
             lVar19 = (ulonglong)((uint)uStackY_42 * 0xc) << 0x20;
             local_20 = 0x4a9e3d;
-            puVar3 = (uint *)FUN_004ad640();
+            puVar3 = (uint *)AllocateMemoryWithCallback();
             local_20 = 0x4a9e46;
             local_5c = (uint *)_memset(puVar3,(int)lVar19,(size_t)((ulonglong)lVar19 >> 0x20));
             puVar13 = local_5c;
           }
           lVar19 = (ulonglong)local_48 << 0x20;
           local_20 = 0x4a9e86;
-          pvVar4 = (void *)FUN_004ad640();
+          pvVar4 = (void *)AllocateMemoryWithCallback();
           local_20 = 0x4a9e8f;
           local_3c = (byte *)_memset(pvVar4,(int)lVar19,(size_t)((ulonglong)lVar19 >> 0x20));
           local_20 = 1;
@@ -115638,7 +115638,7 @@ undefined4 FUN_004a9bb0(uint param_1,undefined4 *param_2,undefined4 param_3,uint
           FUN_00441d30();
           lVar19 = (ulonglong)(local_48 - uStackY_42) << 0x20;
           local_20 = 0x4a9ef6;
-          pvVar4 = (void *)FUN_004ad640();
+          pvVar4 = (void *)AllocateMemoryWithCallback();
           local_20 = 0x4a9eff;
           pbVar5 = (byte *)_memset(pvVar4,(int)lVar19,(size_t)((ulonglong)lVar19 >> 0x20));
           uVar15 = 0;
@@ -115670,7 +115670,7 @@ undefined4 FUN_004a9bb0(uint param_1,undefined4 *param_2,undefined4 param_3,uint
         }
         lVar19 = (ulonglong)((uint)uStackY_42 * 0x18) << 0x20;
         local_20 = 0x4a9f97;
-        pvVar4 = (void *)FUN_004ad640();
+        pvVar4 = (void *)AllocateMemoryWithCallback();
         local_20 = 0x4a9fa0;
         local_6c = (int *)_memset(pvVar4,(int)lVar19,(size_t)((ulonglong)lVar19 >> 0x20));
         if (local_6c == (int *)0x0) {
@@ -115734,14 +115734,14 @@ undefined4 FUN_004a9bb0(uint param_1,undefined4 *param_2,undefined4 param_3,uint
               puVar1[5] = (uint)*(ushort *)(puVar13 + 1);
               lVar19 = (ulonglong)*(ushort *)(puVar13 + 1) << 0x20;
               local_20 = 0x4aa18b;
-              pvVar4 = (void *)FUN_004ad640();
+              pvVar4 = (void *)AllocateMemoryWithCallback();
               local_20 = 0x4aa194;
               pbVar5 = (byte *)_memset(pvVar4,(int)lVar19,(size_t)((ulonglong)lVar19 >> 0x20));
               puVar1[3] = (uint)pbVar5;
               *pbVar5 = (byte)(*puVar13 >> 0x18) & 0x1f;
               lVar19 = (ulonglong)(uint)((int)*(short *)(puVar13 + 1) << 1) << 0x20;
               local_20 = 0x4aa1b3;
-              puVar3 = (uint *)FUN_004ad640();
+              puVar3 = (uint *)AllocateMemoryWithCallback();
               local_20 = 0x4aa1bc;
               puVar7 = (undefined2 *)_memset(puVar3,(int)lVar19,(size_t)((ulonglong)lVar19 >> 0x20))
               ;
@@ -115789,14 +115789,14 @@ LAB_004aa26f:
               puVar1[5] = local_28[2];
               lVar19 = (ulonglong)local_28[2] << 0x20;
               local_20 = 0x4aa0f1;
-              pvVar4 = (void *)FUN_004ad640();
+              pvVar4 = (void *)AllocateMemoryWithCallback();
               local_20 = 0x4aa0fa;
               pbVar5 = (byte *)_memset(pvVar4,(int)lVar19,(size_t)((ulonglong)lVar19 >> 0x20));
               puVar1[3] = (uint)pbVar5;
               *pbVar5 = *(byte *)(puVar3 + 1) & 0x1f;
               lVar19 = (ulonglong)(puVar3[2] << 1) << 0x20;
               local_20 = 0x4aa116;
-              puVar13 = (uint *)FUN_004ad640();
+              puVar13 = (uint *)AllocateMemoryWithCallback();
               local_20 = 0x4aa11f;
               puVar7 = (undefined2 *)
                        _memset(puVar13,(int)lVar19,(size_t)((ulonglong)lVar19 >> 0x20));
@@ -116097,7 +116097,7 @@ void * FUN_004aa8d0(undefined4 param_1,undefined4 param_2,undefined4 param_3,int
   
   _Size = 0x159;
   iVar7 = 0;
-  pvVar4 = (void *)FUN_004ad640(0x159);
+  pvVar4 = (void *)AllocateMemoryWithCallback(0x159);
   pvVar4 = _memset(pvVar4,iVar7,_Size);
   FUN_004a9bb0(param_1,pvVar4,param_3,param_4);
   *(undefined4 *)((int)pvVar4 + 0x74) = 0;
@@ -116210,7 +116210,7 @@ void FUN_004aab50(int param_1,int param_2)
     iVar6 = 0;
     _Size = 0x159;
     iVar9 = 0;
-    pvVar3 = (void *)FUN_004ad640(0x159);
+    pvVar3 = (void *)AllocateMemoryWithCallback(0x159);
     pvVar3 = _memset(pvVar3,iVar9,_Size);
     *ppvVar7 = pvVar3;
     FUN_004ad7a0(pvVar3,*piVar5,0x159);
@@ -117155,7 +117155,7 @@ undefined4 FUN_004abf70(int param_1,undefined4 param_2)
   if (*(int *)(param_1 + 0x155) == 0) {
     _Size = 0x127;
     _Val = 0;
-    pvVar1 = (void *)FUN_004ad640(0x127);
+    pvVar1 = (void *)AllocateMemoryWithCallback(0x127);
     pvVar1 = _memset(pvVar1,_Val,_Size);
     *(void **)(param_1 + 0x155) = pvVar1;
   }
@@ -117483,7 +117483,7 @@ undefined4 FUN_004ac5b0(uint param_1,undefined4 *param_2,void **param_3,void **p
       uVar6 = 0;
       uVar7 = 0;
       uStackY_20 = 0x4ac675;
-      pvVar3 = (void *)FUN_004ad640();
+      pvVar3 = (void *)AllocateMemoryWithCallback();
       uStackY_20 = 0x4ac67e;
       pvVar3 = _memset(pvVar3,CONCAT22(uVar7,uVar6),CONCAT22(uVar9,uVar8));
       uStackY_20 = 0x12;
@@ -117498,7 +117498,7 @@ undefined4 FUN_004ac5b0(uint param_1,undefined4 *param_2,void **param_3,void **p
       uVar6 = 0;
       uVar7 = 0;
       uStackY_20 = 0x4ac6a3;
-      pvVar3 = (void *)FUN_004ad640();
+      pvVar3 = (void *)AllocateMemoryWithCallback();
       uStackY_20 = 0x4ac6ac;
       pvVar3 = _memset(pvVar3,CONCAT22(uVar7,uVar6),CONCAT22(uVar9,uVar8));
       *param_4 = pvVar3;
@@ -117568,7 +117568,7 @@ undefined4 FUN_004ac6e0(uint param_1,void **param_2)
       _Val = 0;
       uStackY_20 = 0xc786;
       local_1e = 0x4a;
-      _Dst = (void *)FUN_004ad640();
+      _Dst = (void *)AllocateMemoryWithCallback();
       uStackY_20 = 0xc78f;
       local_1e = 0x4a;
       puStackY_24 = (ushort *)_memset(_Dst,_Val,_Size);
@@ -117638,7 +117638,7 @@ undefined4 FUN_004ac7c0(undefined4 param_1,void **param_2)
           uStackY_20._2_2_ = 0x4a;
           uVar5 = uStack_e;
           uVar7 = uStack_c;
-          pvVar3 = (void *)FUN_004ad640();
+          pvVar3 = (void *)AllocateMemoryWithCallback();
           uStackY_20._0_2_ = 0xc87b;
           uStackY_20._2_2_ = 0x4a;
           pvVar3 = _memset(pvVar3,CONCAT22(uVar8,uVar6),CONCAT22(uVar7,uVar5));
@@ -117698,7 +117698,7 @@ undefined4 FUN_004ac8b0(undefined4 param_1,size_t *param_2,void **param_3,void *
   iVar1 = 0;
   *param_2 = sVar2;
   puStackY_1c = (undefined *)0x4ac925;
-  pvVar3 = (void *)FUN_004ad640();
+  pvVar3 = (void *)AllocateMemoryWithCallback();
   puStackY_1c = (undefined *)0x4ac92e;
   puStackY_1c = (undefined *)_memset(pvVar3,iVar1,_Size);
   *param_3 = puStackY_1c;
@@ -117707,7 +117707,7 @@ undefined4 FUN_004ac8b0(undefined4 param_1,size_t *param_2,void **param_3,void *
   sVar2 = *param_2;
   iVar1 = 0;
   puStackY_1c = (undefined *)0x4ac94f;
-  pvVar3 = (void *)FUN_004ad640();
+  pvVar3 = (void *)AllocateMemoryWithCallback();
   puStackY_1c = (undefined *)0x4ac958;
   puStackY_1c = (undefined *)_memset(pvVar3,iVar1,sVar2);
   *param_4 = puStackY_1c;
@@ -118135,11 +118135,11 @@ void FUN_004ad150(short *param_1,undefined4 param_2,size_t param_3)
   
   sVar4 = 0xc;
   iVar3 = 0;
-  pvVar1 = (void *)FUN_004ad640(0xc);
+  pvVar1 = (void *)AllocateMemoryWithCallback(0xc);
   ppvVar2 = (void **)_memset(pvVar1,iVar3,sVar4);
   iVar3 = 0;
   sVar4 = param_3;
-  pvVar1 = (void *)FUN_004ad640(param_3);
+  pvVar1 = (void *)AllocateMemoryWithCallback(param_3);
   pvVar1 = _memset(pvVar1,iVar3,sVar4);
   *ppvVar2 = pvVar1;
   FUN_004ad7a0(pvVar1,param_2,param_3);
@@ -118531,8 +118531,16 @@ void * __cdecl _memset(void *_Dst,int _Val,size_t _Size)
 // Should return the address as a void*?
 // 
 // maybe a getter of some kind?
+// 
+// /*
+//  * Function: AllocateMemoryWithCallback
+//  * Description:
+//  *   Attempts to allocate memory of size `param_1`. If the allocation fails, it invokes a
+// callback stored in 
+//  *   `DAT_005a130c` to handle the failure or manage resources.
+//  */
 
-void FUN_004ad640(undefined4 param_1)
+void AllocateMemoryWithCallback(undefined4 param_1)
 
 {
   AllocateOrInvokeCallback(param_1,DAT_005a130c);
@@ -120991,7 +120999,8 @@ undefined4 * ToUpperCase(undefined4 *param_1)
     }
     else {
       iVar3 = MapLocaleString(DAT_005a1338,0x200,param_1,0xffffffff,0,0,0,1);
-      if (((iVar3 != 0) && (pcVar6 = (char *)FUN_004ad640(iVar3), pcVar6 != (char *)0x0)) &&
+      if (((iVar3 != 0) &&
+          (pcVar6 = (char *)AllocateMemoryWithCallback(iVar3), pcVar6 != (char *)0x0)) &&
          (iVar3 = MapLocaleString(DAT_005a1338,0x200,param_1,0xffffffff,pcVar6,iVar3,0,1),
          iVar3 != 0)) {
         uVar4 = 0xffffffff;
@@ -121254,7 +121263,7 @@ HANDLE FUN_004afd20(undefined4 param_1,SIZE_T param_2,undefined4 param_3)
   DWORD DVar1;
   
   DVar1 = 0;
-  lpThreadId = (LPVOID)FUN_004b7d30(1,0x74);
+  lpThreadId = (LPVOID)AllocateAndInitializeMemory(1,0x74);
   if (lpThreadId != (LPVOID)0x0) {
     FUN_004b5dd0(lpThreadId);
     *(undefined4 *)((int)lpThreadId + 0x48) = param_1;
@@ -121327,7 +121336,7 @@ void FUN_004afe50(void)
   if (*(HANDLE *)(iVar1 + 4) != (HANDLE)0xffffffff) {
     CloseHandle(*(HANDLE *)(iVar1 + 4));
   }
-  FUN_004b5e70(iVar1);
+  FreeTlsMemory(iVar1);
                     // WARNING: Subroutine does not return
   ExitThread(0);
 }
@@ -121538,7 +121547,7 @@ LAB_004b016c:
       bVar1 = *pbVar8;
       pbVar8 = pbVar8 + 1;
     } while (bVar1 != 0);
-    DAT_005a1244 = (undefined4 *)FUN_004ad640(~uVar6);
+    DAT_005a1244 = (undefined4 *)AllocateMemoryWithCallback(~uVar6);
     if (DAT_005a1244 != (undefined4 *)0x0) {
       uVar6 = 0xffffffff;
       pbVar8 = pbVar3;
@@ -121927,23 +121936,46 @@ LAB_004b078d:
 
 
 
-void FUN_004b0810(void)
+// /*
+//  * Function: PerformCleanupOrInitialization
+//  * Description:
+//  *   This function first checks if a floating-point math cleanup function is defined. If it is,
+// the function is called.
+//  *   It then proceeds to invoke a series of functions within predefined ranges, potentially to
+// clean up or initialize
+//  *   various aspects of the runtime environment.
+//  */
+
+void PerformCleanupOrInitialization(void)
 
 {
   if (PTR___fpmath_004d3c68 != (undefined *)0x0) {
     (*(code *)PTR___fpmath_004d3c68)();
   }
-  FUN_004b0960(&DAT_004c5008,&DAT_004c5014);
-  FUN_004b0960(&DAT_004c5000,&DAT_004c5004);
+  CallFunctionRange(&DAT_004c5008,&DAT_004c5014);
+  CallFunctionRange(&DAT_004c5000,&DAT_004c5004);
   return;
 }
 
 
 
-void FUN_004b0840(undefined4 param_1)
+//  * Function: TerminateWithCode (originally FUN_004b0840)
+//  * Description:
+//  *   This function is a wrapper around `TerminateProgram`, allowing for the termination of the
+// program with a specific exit code. 
+//  *   It passes the provided exit code to `TerminateProgram` and performs a graceful exit by
+// invoking the cleanup routines (indicated by the 0 values for the other parameters).
+//  *
+//  * Parameters:
+//  *   param_1: The exit code for terminating the program.
+//  *
+//  * Returns:
+//  *   void (Note: The program will terminate as a result of this function).
+
+void TerminateWithCode(undefined4 param_1)
 
 {
-  FUN_004b0880(param_1,0,0);
+  TerminateProgram(param_1,0,0);
   return;
 }
 
@@ -121957,15 +121989,31 @@ void FUN_004b0840(undefined4 param_1)
 void __cdecl __exit(int _Code)
 
 {
-  FUN_004b0880(_Code,1,0);
+  TerminateProgram(_Code,1,0);
   return;
 }
 
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
+//  * Function: TerminateProgram (originally FUN_004b0880)
+//  * Description:
+//  *   This function is responsible for handling the program's exit or termination process.
+//  *   It checks global states to determine whether to call the `TerminateProcess` function
+// directly
+//  *   or to perform a more graceful shutdown, calling any registered cleanup functions first.
+//  *
+//  * Parameters:
+//  *   param_1: The exit code for the program.
+//  *   param_2: Indicates whether or not certain cleanup routines should be skipped (when `param_2
+// == 0`, extra cleanup happens).
+//  *   param_3: Determines whether the function should proceed to a full program termination (if
+// non-zero).
+//  *
+//  * Returns:
+//  *   void (Note: May cause the process to exit or terminate, depending on conditions).
 
-void FUN_004b0880(UINT param_1,int param_2,int param_3)
+void TerminateProgram(UINT param_1,int param_2,int param_3)
 
 {
   HANDLE hProcess;
@@ -121992,9 +122040,9 @@ void FUN_004b0880(UINT param_1,int param_2,int param_3)
         ppcVar2 = ppcVar2 + -1;
       } while (ppcVar1 <= ppcVar2);
     }
-    FUN_004b0960(&DAT_004c5018,&DAT_004c5020);
+    CallFunctionRange(&DAT_004c5018,&DAT_004c5020);
   }
-  FUN_004b0960(&DAT_004c5024,&DAT_004c5028);
+  CallFunctionRange(&DAT_004c5024,&DAT_004c5028);
   if (param_3 != 0) {
     FUN_004b0950();
     return;
@@ -122024,7 +122072,21 @@ void FUN_004b0950(void)
 
 
 
-void FUN_004b0960(code **param_1,code **param_2)
+//  * Function: CallFunctionRange (originally FUN_004b0960)
+//  * Description:
+//  *   This function takes two pointers (`param_1` and `param_2`) to arrays of function pointers.
+//  *   It iterates over the array from `param_1` to `param_2` (exclusive), and for each valid
+// (non-null)
+//  *   function pointer, it calls the function.
+//  *
+//  * Parameters:
+//  *   param_1: Pointer to the first function pointer in the array.
+//  *   param_2: Pointer to the end of the range (exclusive).
+//  *
+//  * Returns:
+//  *   void
+
+void CallFunctionRange(code **param_1,code **param_2)
 
 {
   if (param_1 < param_2) {
@@ -122140,7 +122202,7 @@ uint FUN_004b0b10(int param_1,uint param_2)
     param_1._0_3_ = (uint3)(ushort)param_1;
     uVar1 = 2;
   }
-  iVar2 = FUN_004b88c0(1,&param_1,uVar1,&local_4,0,0,1);
+  iVar2 = GetStringTypeWrapper(1,&param_1,uVar1,&local_4,0,0,1);
   if (iVar2 == 0) {
     return 0;
   }
@@ -122206,7 +122268,7 @@ undefined4 * FUN_004b0be0(int param_1,undefined4 *param_2,uint param_3)
     if ((int)uVar5 <= (int)param_3) {
       uVar5 = param_3;
     }
-    param_2 = (undefined4 *)FUN_004ad640(uVar5);
+    param_2 = (undefined4 *)AllocateMemoryWithCallback(uVar5);
     if (param_2 == (undefined4 *)0x0) {
       puVar3 = (undefined4 *)FUN_004b5aa0();
       *puVar3 = 0xc;
@@ -122536,25 +122598,25 @@ void entry(void)
   _DAT_005a1258 = DVar2 & 0xff;
   _DAT_005a1254 = _DAT_005a1258 * 0x100 + _DAT_005a125c;
   _DAT_005a1250 = DVar2 >> 0x10;
-  iVar3 = FUN_004b3250();
+  iVar3 = InitializeHeapAndMemoryPool();
   if (iVar3 == 0) {
     FUN_004b1370(0x1c);
   }
-  iVar3 = FUN_004b5d70();
+  iVar3 = InitializeThreadLocalStorage();
   if (iVar3 == 0) {
     FUN_004b1370(0x10);
   }
   local_8 = 0;
-  FUN_004b6870();
-  FUN_004b9980();
+  InitializeFileHandles();
+  SetDefaultCodePage();
   PTR_005f8ea8 = (byte *)GetCommandLineA();
-  DAT_005a1290 = FUN_004b9320();
+  DAT_005a1290 = GetEnvironmentVariables();
   if ((DAT_005a1290 == 0) || (PTR_005f8ea8 == (byte *)0x0)) {
-    FUN_004b0840(0xffffffff);
+    TerminateWithCode(0xffffffff);
   }
-  FUN_004b9070();
-  FUN_004b8f80();
-  FUN_004b0810();
+  InitializeCommandLine();
+  ParseAndStoreValidEntries();
+  PerformCleanupOrInitialization();
   pbVar5 = PTR_005f8ea8;
   if (*PTR_005f8ea8 == '\"') {
     while( true ) {
@@ -122562,7 +122624,7 @@ void entry(void)
       pbVar5 = pbVar6 + 1;
       bVar1 = *pbVar5;
       if ((bVar1 == 0x22) || (bVar1 == 0)) break;
-      iVar3 = FUN_004b8f20(bVar1);
+      iVar3 = CheckIfCharacterIsSpecial(bVar1);
       if (iVar3 != 0) {
         pbVar5 = pbVar6 + 2;
       }
@@ -122588,7 +122650,7 @@ void entry(void)
   uVar7 = 0;
   pHVar4 = GetModuleHandleA((LPCSTR)0x0);
   uVar7 = FUN_0046da60(pHVar4,uVar7,pbVar5,local_60._48_4_);
-  FUN_004b0840(uVar7);
+  TerminateWithCode(uVar7);
   ExceptionList = local_14;
   return;
 }
@@ -122606,7 +122668,7 @@ void __cdecl __amsg_exit(int param_1)
   if (DAT_005a1298 == 1) {
     FUN_004b8d00();
   }
-  FUN_004b8d40(param_1);
+  ReportRuntimeError(param_1);
   (*(code *)PTR___exit_004d3f70)(0xff);
   return;
 }
@@ -122619,7 +122681,7 @@ void FUN_004b1370(undefined4 param_1)
   if (DAT_005a1298 == 1) {
     FUN_004b8d00();
   }
-  FUN_004b8d40(param_1);
+  ReportRuntimeError(param_1);
                     // WARNING: Subroutine does not return
   ExitProcess(0xff);
 }
@@ -122888,7 +122950,23 @@ void FUN_004b1970(char *param_1,int param_2)
 
 
 
-void FUN_004b19a0(void)
+// /*
+//  * Function: InitializeGlobalCriticalSections (originally FUN_004b19a0)
+//  * Description:
+//  *   This function initializes multiple global critical sections that are used to synchronize
+// access to
+//  *   shared resources across different threads. Critical sections are initialized using the 
+//  *   `InitializeCriticalSection` function to ensure that only one thread can access a resource at
+// a time.
+//  *
+//  * Globals:
+//  *   PTR_DAT_004d3fd4 - Pointer to a critical section structure.
+//  *   PTR_DAT_004d3fc4 - Pointer to a critical section structure.
+//  *   PTR_DAT_004d3fb4 - Pointer to a critical section structure.
+//  *   PTR_DAT_004d3f94 - Pointer to a critical section structure.
+//  */
+
+void InitializeGlobalCriticalSections(void)
 
 {
   InitializeCriticalSection((LPCRITICAL_SECTION)PTR_DAT_004d3fd4);
@@ -122917,7 +122995,7 @@ void EnterOrInitCriticalSection(int param_1)
   LPCRITICAL_SECTION lpCriticalSection;
   
   if (*(int *)(&DAT_004d3f90 + param_1 * 4) == 0) {
-    lpCriticalSection = (LPCRITICAL_SECTION)FUN_004ad640(0x18);
+    lpCriticalSection = (LPCRITICAL_SECTION)AllocateMemoryWithCallback(0x18);
     if (lpCriticalSection == (LPCRITICAL_SECTION)0x0) {
       __amsg_exit(0x11);
     }
@@ -123027,7 +123105,7 @@ undefined4 FUN_004b1b50(undefined4 *param_1)
     return 0;
   }
   if ((&DAT_005a1300)[iVar2] == 0) {
-    iVar3 = FUN_004ad640(0x1000);
+    iVar3 = AllocateMemoryWithCallback(0x1000);
     (&DAT_005a1300)[iVar2] = iVar3;
     if (iVar3 == 0) {
       param_1[2] = param_1 + 5;
@@ -124133,7 +124211,22 @@ void FUN_004b31f0(void)
 
 
 
-undefined4 FUN_004b3250(void)
+// /*
+//  * Function: InitializeHeapAndMemoryPool (originally FUN_004b3250)
+//  * Description:
+//  *   This function creates a heap using `HeapCreate` and then allocates an initial memory pool
+// using
+//  *   `AllocateMemoryPool`. If the heap creation or memory pool allocation fails, the function
+// returns `0`
+//  *   (failure). If both succeed, it returns `1` (success). If memory pool allocation fails after
+// heap creation,
+//  *   the heap is destroyed to clean up.
+//  *
+//  * Returns:
+//  *   `1` if the heap and memory pool were successfully created, `0` otherwise.
+//  */
+
+undefined4 InitializeHeapAndMemoryPool(void)
 
 {
   int iVar1;
@@ -124142,7 +124235,7 @@ undefined4 FUN_004b3250(void)
   if (gHeapMemory == (HANDLE)0x0) {
     return 0;
   }
-  iVar1 = FUN_004b3290();
+  iVar1 = AllocateMemoryPool();
   if (iVar1 == 0) {
     HeapDestroy(gHeapMemory);
     return 0;
@@ -124152,7 +124245,21 @@ undefined4 FUN_004b3250(void)
 
 
 
-undefined ** FUN_004b3290(void)
+// /*
+//  * Function: AllocateMemoryPool (originally FUN_004b3290)
+//  * Description:
+//  *   This function allocates a new memory pool or reuses an existing one. It attempts to allocate
+//  *   a large block of memory using `VirtualAlloc` and initializes the memory management
+// structure.
+//  *   The function sets up a linked list for memory blocks and initializes metadata for managing
+//  *   allocations within the pool. If allocation fails at any point, it cleans up and returns
+// `nullptr`.
+//  *
+//  * Returns:
+//  *   A pointer to the newly allocated memory pool, or `nullptr` if allocation fails.
+//  */
+
+undefined ** AllocateMemoryPool(void)
 
 {
   bool bVar1;
@@ -124466,7 +124573,7 @@ int * AllocateCustomMemoryBlock(uint param_1)
   while ((ppuVar7[4] == (undefined *)0xffffffff || (ppuVar7[3] == (undefined *)0x0))) {
     ppuVar7 = (undefined **)*ppuVar7;
     if (ppuVar7 == &PTR_LOOP_004d4178) {
-      puVar5 = (undefined *)FUN_004b3290();
+      puVar5 = (undefined *)AllocateMemoryPool();
       if (puVar5 == (undefined *)0x0) {
         return (int *)0x0;
       }
@@ -125245,7 +125352,7 @@ undefined4 * FUN_004b43c0(void)
       iVar1 = *(int *)(DAT_005f7d64 + iVar3 * 4);
       if (iVar1 == 0) {
         iVar3 = iVar3 * 4;
-        uVar2 = FUN_004ad640(0x38);
+        uVar2 = AllocateMemoryWithCallback(0x38);
         *(undefined4 *)(DAT_005f7d64 + iVar3) = uVar2;
         if (*(int *)(DAT_005f7d64 + iVar3) != 0) {
           InitializeCriticalSection((LPCRITICAL_SECTION)(*(int *)(DAT_005f7d64 + iVar3) + 0x20));
@@ -126221,17 +126328,32 @@ LAB_004b5d37:
 
 
 
-undefined4 FUN_004b5d70(void)
+// /*
+//  * Function: InitializeThreadLocalStorage (originally FUN_004b5d70)
+//  * Description:
+//  *   This function initializes thread-local storage (TLS) for the current thread. It allocates a
+// TLS index
+//  *   using `TlsAlloc`, allocates memory for thread-specific data, and stores the memory in TLS
+// using
+//  *   `TlsSetValue`. It also initializes the allocated memory with thread-related information,
+// such as
+//  *   the current thread ID.
+//  *
+//  * Returns:
+//  *   1 on success, 0 on failure.
+//  */
+
+undefined4 InitializeThreadLocalStorage(void)
 
 {
   DWORD *lpTlsValue;
   BOOL BVar1;
   DWORD DVar2;
   
-  FUN_004b19a0();
+  InitializeGlobalCriticalSections();
   DAT_004d6498 = TlsAlloc();
   if (DAT_004d6498 != 0xffffffff) {
-    lpTlsValue = (DWORD *)FUN_004b7d30(1,0x74);
+    lpTlsValue = (DWORD *)AllocateAndInitializeMemory(1,0x74);
     if (lpTlsValue != (DWORD *)0x0) {
       BVar1 = TlsSetValue(DAT_004d6498,lpTlsValue);
       if (BVar1 != 0) {
@@ -126269,7 +126391,7 @@ DWORD * FUN_004b5df0(void)
   dwErrCode = GetLastError();
   lpTlsValue = (DWORD *)TlsGetValue(DAT_004d6498);
   if (lpTlsValue == (DWORD *)0x0) {
-    lpTlsValue = (DWORD *)FUN_004b7d30(1,0x74);
+    lpTlsValue = (DWORD *)AllocateAndInitializeMemory(1,0x74);
     if (lpTlsValue != (DWORD *)0x0) {
       BVar1 = TlsSetValue(DAT_004d6498,lpTlsValue);
       if (BVar1 != 0) {
@@ -126289,7 +126411,24 @@ DWORD * FUN_004b5df0(void)
 
 
 
-void FUN_004b5e70(LPVOID param_1)
+// /*
+//  * Function: FreeTlsMemory (originally FUN_004b5e70)
+//  * Description:
+//  *   This function frees memory associated with a thread-local storage (TLS) object. It checks if
+// the
+//  *   TLS index (`DAT_004d6498`) is valid. If a `param_1` pointer is provided or can be retrieved
+// from
+//  *   TLS, it iterates through various memory blocks associated with `param_1` and frees them if
+// they are
+//  *   not null. It finally clears the TLS value.
+//  *
+//  * Parameters:
+//  *   param_1 - Pointer to the TLS structure. If null, the function retrieves the TLS structure
+// using
+//  *             `TlsGetValue` and frees its associated memory.
+//  */
+
+void FreeTlsMemory(LPVOID param_1)
 
 {
   if (DAT_004d6498 != 0xffffffff) {
@@ -126513,7 +126652,7 @@ LPSTR FUN_004b6250(LPSTR param_1,LPCSTR param_2,LPSTR param_3)
   pCVar1 = param_1;
   nBufferLength = param_3;
   if (param_1 == (LPSTR)0x0) {
-    pCVar1 = (LPSTR)FUN_004ad640(0x104);
+    pCVar1 = (LPSTR)AllocateMemoryWithCallback(0x104);
     if (pCVar1 == (LPSTR)0x0) {
       puVar2 = (undefined4 *)FUN_004b5aa0();
       *puVar2 = 0xc;
@@ -126653,7 +126792,7 @@ int FUN_004b64c0(void)
   do {
     puVar1 = (undefined4 *)*piVar3;
     if (puVar1 == (undefined4 *)0x0) {
-      puVar1 = (undefined4 *)FUN_004ad640(0x480);
+      puVar1 = (undefined4 *)AllocateMemoryWithCallback(0x480);
       if (puVar1 != (undefined4 *)0x0) {
         DAT_005f8ea0 = DAT_005f8ea0 + 0x20;
         (&DAT_005f8da0)[local_4] = puVar1;
@@ -126835,7 +126974,23 @@ void FUN_004b6840(uint param_1)
 
 
 
-void FUN_004b6870(void)
+// /*
+//  * Function: InitializeFileHandles (originally FUN_004b6870)
+//  * Description:
+//  *   This function initializes file handles, including stdin, stdout, and stderr, by allocating
+// memory for
+//  *   handle descriptors, setting up handle attributes, and populating the handle table. It
+// retrieves the
+//  *   standard file handles (e.g., stdin, stdout) if needed and configures them based on file
+// types.
+//  *
+//  * Globals:
+//  *   DAT_005f8da0 - Pointer to the handle descriptor table.
+//  *   DAT_005f8ea0 - Number of file handles.
+//  */
+// 
+
+void InitializeFileHandles(void)
 
 {
   HANDLE *ppvVar1;
@@ -126850,7 +127005,7 @@ void FUN_004b6870(void)
   UINT UStack_48;
   _STARTUPINFOA local_44;
   
-  puVar3 = (undefined4 *)FUN_004ad640(0x480);
+  puVar3 = (undefined4 *)AllocateMemoryWithCallback(0x480);
   if (puVar3 == (undefined4 *)0x0) {
     __amsg_exit(0x1b);
   }
@@ -126876,7 +127031,7 @@ void FUN_004b6870(void)
     if ((int)DAT_005f8ea0 < (int)UStack_48) {
       piVar7 = &DAT_005f8da4;
       do {
-        puVar3 = (undefined4 *)FUN_004ad640(0x480);
+        puVar3 = (undefined4 *)AllocateMemoryWithCallback(0x480);
         if (puVar3 == (undefined4 *)0x0) {
           UStack_48 = DAT_005f8ea0;
           break;
@@ -127090,7 +127245,7 @@ int MapLocaleString(LCID param_1,uint param_2,LPCSTR param_3,LPCWSTR param_4,LPW
   if (iVar2 == 0) {
     return 0;
   }
-  lpWideCharStr = (LPCWSTR)FUN_004ad640(iVar2 * 2);
+  lpWideCharStr = (LPCWSTR)AllocateMemoryWithCallback(iVar2 * 2);
   if (lpWideCharStr == (LPCWSTR)0x0) {
     return 0;
   }
@@ -127098,7 +127253,7 @@ int MapLocaleString(LCID param_1,uint param_2,LPCSTR param_3,LPCWSTR param_4,LPW
   if ((iVar1 != 0) &&
      (iVar1 = LCMapStringW(param_1,param_2,lpWideCharStr,iVar2,(LPWSTR)0x0,0), iVar1 != 0)) {
     if ((param_2 & 0x400) == 0) {
-      param_4 = (LPCWSTR)FUN_004ad640(iVar1 * 2);
+      param_4 = (LPCWSTR)AllocateMemoryWithCallback(iVar1 * 2);
       if ((param_4 == (LPCWSTR)0x0) ||
          (iVar2 = LCMapStringW(param_1,param_2,lpWideCharStr,iVar2,param_4,iVar1), iVar2 == 0))
       goto LAB_004b6dd8;
@@ -127940,7 +128095,27 @@ undefined4 FUN_004b7ce0(int *param_1,undefined4 param_2)
 
 
 
-undefined4 * FUN_004b7d30(int param_1,int param_2)
+// /*
+//  * Function: AllocateAndInitializeMemory (originally FUN_004b7d30)
+//  * Description:
+//  *   This function allocates a block of memory of size `param_1 * param_2`, either from a custom
+// memory pool
+//  *   or from the system heap. If the custom memory pool is insufficient, it tries the heap. The
+// function also
+//  *   ensures that the allocated memory is zero-initialized. If the allocation fails, and a memory
+// callback is
+//  *   allowed, it invokes the callback.
+//  *
+//  * Parameters:
+//  *   param_1 - The number of elements.
+//  *   param_2 - The size of each element.
+//  *
+//  * Returns:
+//  *   A pointer to the allocated memory, or `nullptr` if the allocation fails.
+//  */
+// 
+
+undefined4 * AllocateAndInitializeMemory(int param_1,int param_2)
 
 {
   int iVar1;
@@ -128042,7 +128217,7 @@ char * FUN_004b80d0(undefined4 *param_1)
   
   iVar2 = FUN_004b5df0();
   if (*(int *)(iVar2 + 0x38) == 0) {
-    iVar3 = FUN_004ad640(0x1a);
+    iVar3 = AllocateMemoryWithCallback(0x1a);
     *(int *)(iVar2 + 0x38) = iVar3;
     pcVar4 = &DAT_005a1350;
     if (iVar3 == 0) goto LAB_004b80fb;
@@ -128408,14 +128583,15 @@ BOOL FUN_004b8730(DWORD param_1,LPCWSTR param_2,int param_3,LPWORD param_4,UINT 
       if (cbMultiByte == 0) {
         return 0;
       }
-      lpMultiByteStr = (LPCSTR)FUN_004b7d30(1,cbMultiByte);
+      lpMultiByteStr = (LPCSTR)AllocateAndInitializeMemory(1,cbMultiByte);
       if (lpMultiByteStr == (LPCSTR)0x0) {
         return 0;
       }
       iVar2 = WideCharToMultiByte(param_5,0x220,param_2,param_3,lpMultiByteStr,cbMultiByte,
                                   (LPCSTR)0x0,(LPBOOL)0x0);
       if ((iVar2 != 0) &&
-         (lpCharType = (LPWORD)FUN_004ad640(cbMultiByte * 2 + 2), lpCharType != (LPWORD)0x0)) {
+         (lpCharType = (LPWORD)AllocateMemoryWithCallback(cbMultiByte * 2 + 2),
+         lpCharType != (LPWORD)0x0)) {
         if (param_6 == 0) {
           param_6 = DAT_005a1338;
         }
@@ -128440,8 +128616,37 @@ BOOL FUN_004b8730(DWORD param_1,LPCWSTR param_2,int param_3,LPWORD param_4,UINT 
 
 
 
-BOOL FUN_004b88c0(DWORD param_1,LPCSTR param_2,int param_3,LPWORD param_4,UINT param_5,LCID param_6,
-                 int param_7)
+// /*
+//  * Function: GetStringTypeWrapper (originally FUN_004b88c0)
+//  * Description:
+//  *   This function provides a wrapper around Windows API calls to retrieve string type
+// information,
+//  *   converting the string between ANSI and Unicode formats as necessary. It checks if the string
+//  *   type is available in Unicode or ANSI and uses the appropriate API (GetStringTypeW or
+// GetStringTypeA).
+//  *   If the conversion is required, it uses MultiByteToWideChar to handle the conversion.
+//  *
+//  * Globals:
+//  *   DAT_005a1370 - Used to track whether the string type is Unicode (1) or ANSI (2).
+//  *   DAT_005a1338 - The default LCID (Locale Identifier).
+//  *   DAT_005a1348 - The default code page for string conversion.
+//  *
+//  * Parameters:
+//  *   param_1 - String type flags (e.g., CT_CTYPE1, CT_CTYPE2).
+//  *   param_2 - Pointer to the string to analyze.
+//  *   param_3 - Length of the string to analyze.
+//  *   param_4 - Pointer to the buffer that receives the string type information.
+//  *   param_5 - Code page identifier for MultiByteToWideChar.
+//  *   param_6 - Locale identifier (LCID), used for GetStringTypeA if needed.
+//  *   param_7 - Flag indicating whether the string is null-terminated.
+//  *
+//  * Returns:
+//  *   TRUE if the string type information was successfully retrieved, otherwise FALSE.
+//  */
+
+BOOL GetStringTypeWrapper
+               (DWORD param_1,LPCSTR param_2,int param_3,LPWORD param_4,UINT param_5,LCID param_6,
+               int param_7)
 
 {
   BOOL BVar1;
@@ -128479,7 +128684,7 @@ BOOL FUN_004b88c0(DWORD param_1,LPCSTR param_2,int param_3,LPWORD param_4,UINT p
     iVar2 = MultiByteToWideChar(param_5,(-(uint)(param_7 != 0) & 8) + 1,param_2,param_3,(LPWSTR)0x0,
                                 0);
     if (iVar2 != 0) {
-      lpWideCharStr = (LPCWSTR)FUN_004b7d30(2,iVar2);
+      lpWideCharStr = (LPCWSTR)AllocateAndInitializeMemory(2,iVar2);
       if (lpWideCharStr != (LPCWSTR)0x0) {
         iVar2 = MultiByteToWideChar(param_5,1,param_2,param_3,lpWideCharStr,iVar2);
         if (iVar2 != 0) {
@@ -128648,18 +128853,35 @@ void FUN_004b8d00(void)
 
 {
   if ((DAT_005a1298 == 1) || ((DAT_005a1298 == 0 && (DAT_004d3f74 == 1)))) {
-    FUN_004b8d40(0xfc);
+    ReportRuntimeError(0xfc);
     if (DAT_005a1388 != (code *)0x0) {
       (*DAT_005a1388)();
     }
-    FUN_004b8d40(0xff);
+    ReportRuntimeError(0xff);
   }
   return;
 }
 
 
 
-void FUN_004b8d40(int param_1)
+// /*
+//  * Function: ReportRuntimeError (originally FUN_004b8d40)
+//  * Description:
+//  *   This function reports a runtime error based on the input `param_1`. It first checks if the
+// error is
+//  *   part of a predefined set of error codes. If the error is to be reported, it attempts to
+// write the
+//  *   error message to a file or to the console (if no file handle is available). If the error
+// code
+//  *   corresponds to a critical failure, it formats a detailed error message including the program
+// name
+//  *   and displays it in a message box.
+//  *
+//  * Parameters:
+//  *   param_1 - Error code that determines the specific error to report.
+//  */
+
+void ReportRuntimeError(int param_1)
 
 {
   char cVar1;
@@ -128853,16 +129075,56 @@ void FUN_004b8d40(int param_1)
 
 
 
-void FUN_004b8f20(undefined4 param_1)
+// /*
+//  * Function: CheckIfCharacterIsSpecial (originally FUN_004b8f20)
+//  * Description:
+//  *   This function calls the `CheckCharacterAttributes` function to check if a given character
+// has a "special" attribute,
+//  *   as defined by the bitmask `4`. It uses `param_1` as the character to check and does not
+// provide any additional attribute checks (passes `0` for `param_2`).
+//  *
+//  * Parameters:
+//  *   - param_1: The character to check.
+//  *
+//  * Returns:
+//  *   - The result from `CheckCharacterAttributes`, which checks if the character has the
+// attribute specified by the bitmask `4`.
+//  */
+
+void CheckIfCharacterIsSpecial(undefined4 param_1)
 
 {
-  FUN_004b8f40(param_1,0,4);
+  CheckCharacterAttributes(param_1,0,4);
   return;
 }
 
 
 
-undefined4 FUN_004b8f40(uint param_1,uint param_2,byte param_3)
+// /*
+//  * Function: CheckCharacterAttributes (originally FUN_004b8f40)
+//  * Description:
+//  *   This function checks if the character (given by `param_1`) matches specific attributes. It
+// does so by
+//  *   examining the global `DAT_005a14a1` array (which might represent character attributes, such
+// as upper/lower case
+//  *   or control characters) and compares it to a bitmask (`param_3`).
+//  *   
+//  *   If the character's attributes don't match, it then checks another set of attributes (likely
+// stored in `DAT_004d3d4a`)
+//  *   using the `param_2` bitmask. If either condition is met, it returns `1`; otherwise, it
+// returns `0`.
+//  *
+//  * Parameters:
+//  *   - param_1: The character code (probably an ASCII value).
+//  *   - param_2: A bitmask for additional attribute checks.
+//  *   - param_3: A bitmask to check against the `DAT_005a14a1` global array.
+//  *
+//  * Returns:
+//  *   - `1` if the character matches the attributes specified by `param_3` or `param_2`.
+//  *   - `0` otherwise.
+//  */
+
+undefined4 CheckCharacterAttributes(uint param_1,uint param_2,byte param_3)
 
 {
   if (((&DAT_005a14a1)[param_1 & 0xff] & param_3) == 0) {
@@ -128881,7 +129143,17 @@ undefined4 FUN_004b8f40(uint param_1,uint param_2,byte param_3)
 
 
 
-void FUN_004b8f80(void)
+// /*
+//  * Function: ParseAndStoreValidEntries
+//  * Description:
+//  *   This function processes the global environment variable or input string `DAT_005a1290`,
+// counting valid
+//  *   entries (those not containing `=`), allocating memory for them, and copying them into newly
+// allocated memory.
+//  *   The allocated addresses are stored in a global array.
+//  */
+
+void ParseAndStoreValidEntries(void)
 
 {
   char cVar1;
@@ -128917,7 +129189,7 @@ void FUN_004b8f80(void)
     pcVar7 = pcVar7 + ~uVar4;
     cVar2 = *pcVar10;
   }
-  piVar3 = (int *)FUN_004ad640(iVar8 * 4 + 4);
+  piVar3 = (int *)AllocateMemoryWithCallback(iVar8 * 4 + 4);
   DAT_005a126c = piVar3;
   if (piVar3 == (int *)0x0) {
     __amsg_exit(9);
@@ -128942,7 +129214,7 @@ void FUN_004b8f80(void)
     } while (cVar1 != '\0');
     uVar4 = ~uVar4;
     if (cVar2 != '=') {
-      iVar8 = FUN_004ad640(uVar4);
+      iVar8 = AllocateMemoryWithCallback(uVar4);
       *piVar3 = iVar8;
       if (iVar8 == 0) {
         __amsg_exit(9);
@@ -128980,8 +129252,16 @@ void FUN_004b8f80(void)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// /*
+//  * Function: InitializeCommandLine
+//  * Description:
+//  *   This function retrieves the module file name, prepares the command-line arguments by parsing
+// them,
+//  *   and stores the parsed arguments for later use. If memory allocation fails, it terminates the
+// program.
+//  */
 
-void FUN_004b9070(void)
+void InitializeCommandLine(void)
 
 {
   int iVar1;
@@ -128995,12 +129275,12 @@ void FUN_004b9070(void)
   if (*PTR_005f8ea8 == '\0') {
     pbVar2 = &DAT_005a1390;
   }
-  FUN_004b9110(pbVar2,0,0,&iStack_8,&iStack_4);
-  iVar1 = FUN_004ad640(iStack_4 + iStack_8 * 4);
+  ParseCommandLine(pbVar2,0,0,&iStack_8,&iStack_4);
+  iVar1 = AllocateMemoryWithCallback(iStack_4 + iStack_8 * 4);
   if (iVar1 == 0) {
     __amsg_exit(8);
   }
-  FUN_004b9110(pbVar2,iVar1,iVar1 + iStack_8 * 4,&iStack_8,&iStack_4);
+  ParseCommandLine(pbVar2,iVar1,iVar1 + iStack_8 * 4,&iStack_8,&iStack_4);
   _DAT_005a1264 = iVar1;
   _DAT_005a1260 = iStack_8 + -1;
   return;
@@ -129008,7 +129288,13 @@ void FUN_004b9070(void)
 
 
 
-void FUN_004b9110(byte *param_1,byte **param_2,byte *param_3,int *param_4,int *param_5)
+//  * Function: ParseCommandLine
+//  * Description:
+//  *   This function parses a command-line string, handling spaces, quotes, and escape characters
+//  *   to separate arguments properly. It updates the argument count and stores pointers to each
+//  *   argument in the provided array. Handles both quoted and unquoted arguments.
+
+void ParseCommandLine(byte *param_1,byte **param_2,byte *param_3,int *param_4,int *param_5)
 
 {
   byte *pbVar1;
@@ -129168,7 +129454,18 @@ LAB_004b92e5:
 
 
 
-undefined4 * FUN_004b9320(void)
+// /*
+//  * Function: GetEnvironmentVariables (originally FUN_004b9320)
+//  * Description:
+//  *   This function retrieves the environment variables for the current process. It first attempts
+// to use
+//  *   Unicode environment strings (via `GetEnvironmentStringsW`), and if that fails, it falls back
+// to
+//  *   ANSI environment strings (via `GetEnvironmentStrings`). The function returns a pointer to a
+//  *   block of memory containing the environment variables, or `NULL` on failure.
+//  */
+
+undefined4 * GetEnvironmentVariables(void)
 
 {
   char cVar1;
@@ -129217,7 +129514,8 @@ undefined4 * FUN_004b9320(void)
       cbMultiByte = WideCharToMultiByte(0,0,lpWideCharStr,iVar5,(LPSTR)0x0,0,(LPCSTR)0x0,(LPBOOL)0x0
                                        );
       if ((cbMultiByte != 0) &&
-         (puVar9 = (undefined4 *)FUN_004ad640(cbMultiByte), puVar9 != (undefined4 *)0x0)) {
+         (puVar9 = (undefined4 *)AllocateMemoryWithCallback(cbMultiByte),
+         puVar9 != (undefined4 *)0x0)) {
         iVar5 = WideCharToMultiByte(0,0,lpWideCharStr,iVar5,(LPSTR)puVar9,cbMultiByte,(LPCSTR)0x0,
                                     (LPBOOL)0x0);
         if (iVar5 == 0) {
@@ -129245,7 +129543,7 @@ undefined4 * FUN_004b9320(void)
       cVar1 = *(char *)((int)puVar10 + 2);
     }
     uVar7 = (int)puVar6 + (1 - (int)puVar9);
-    puVar6 = (undefined4 *)FUN_004ad640(uVar7);
+    puVar6 = (undefined4 *)AllocateMemoryWithCallback(uVar7);
     if (puVar6 != (undefined4 *)0x0) {
       puVar10 = puVar9;
       puVar11 = puVar6;
@@ -129271,8 +129569,22 @@ undefined4 * FUN_004b9320(void)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
+//  * Function: ChangeCodePage (originally FUN_004b9480)
+//  * Description:
+//  *   This function changes the global code page to a new one specified by `param_1`. It handles
+// the initialization
+//  *   of character mappings and related data based on the new code page. If the code page is
+// already set, it does nothing.
+//  *   If the code page is not recognized, it initializes global data and mappings.
+//  *
+//  * Parameters:
+//  *   param_1 - The new code page to switch to.
+//  *
+//  * Returns:
+//  *   - 0 on success.
+//  *   - 0xFFFFFFFF if an error occurs (code page not found and no fallback available).
 
-undefined4 FUN_004b9480(undefined4 param_1)
+undefined4 ChangeCodePage(undefined4 param_1)
 
 {
   BYTE *pBVar1;
@@ -129292,14 +129604,14 @@ undefined4 FUN_004b9480(undefined4 param_1)
   _cpinfo local_14;
   
   EnterOrInitCriticalSection(0x19);
-  CodePage = FUN_004b96b0(param_1);
+  CodePage = GetCodePage(param_1);
   if (CodePage == DAT_005a16a8) {
     LeaveCriticalSectionFunc(0x19);
     return 0;
   }
   if (CodePage == 0) {
-    FUN_004b9760();
-    FUN_004b97a0();
+    InitializeGlobalData();
+    InitializeCharacterMapping();
     LeaveCriticalSectionFunc(0x19);
     return 0;
   }
@@ -129334,7 +129646,7 @@ undefined4 FUN_004b9480(undefined4 param_1)
       } while (uVar6 < 4);
       _DAT_005f8d84 = 1;
       DAT_005a16a8 = CodePage;
-      DAT_005a16ac = FUN_004b9700(CodePage);
+      DAT_005a16ac = MapCodePageToLocale(CodePage);
       _DAT_005a16b0 = (&DAT_004d68ac)[iVar9 * 0xc];
       _DAT_005a16b4 = (&DAT_004d68b0)[iVar9 * 0xc];
       _DAT_005a16b8 = (&DAT_004d68b4)[iVar9 * 0xc];
@@ -129375,7 +129687,7 @@ undefined4 FUN_004b9480(undefined4 param_1)
         (&DAT_005a14a1)[uVar6] = (&DAT_005a14a1)[uVar6] | 8;
         uVar6 = uVar6 + 1;
       } while (uVar6 < 0xff);
-      DAT_005a16ac = FUN_004b9700(CodePage);
+      DAT_005a16ac = MapCodePageToLocale(CodePage);
       _DAT_005f8d84 = 1;
     }
     _DAT_005a16b0 = 0;
@@ -129387,17 +129699,39 @@ undefined4 FUN_004b9480(undefined4 param_1)
       LeaveCriticalSectionFunc(0x19);
       return 0xffffffff;
     }
-    FUN_004b9760();
+    InitializeGlobalData();
   }
 LAB_004b95d2:
-  FUN_004b97a0();
+  InitializeCharacterMapping();
   LeaveCriticalSectionFunc(0x19);
   return 0;
 }
 
 
 
-int FUN_004b96b0(int param_1)
+// /*
+//  * Function: GetCodePage (originally FUN_004b96b0)
+//  * Description:
+//  *   This function returns a code page based on the value of `param_1`. It handles specific
+// special cases:
+//  *   - If `param_1` is -2, it retrieves the OEM code page using `GetOEMCP`.
+//  *   - If `param_1` is -3, it retrieves the system's ANSI code page using `GetACP`.
+//  *   - If `param_1` is -4, it returns a global value `DAT_005a1348`, representing a custom code
+// page.
+//  *   In all other cases, it simply returns `param_1` itself.
+//  *
+//  * Globals:
+//  *   DAT_005a16bc - A flag set to 1 when a special code page (-2, -3, or -4) is processed.
+//  *   DAT_005a1348 - Stores a custom code page, used when `param_1` is -4.
+//  *
+//  * Parameters:
+//  *   param_1 - The code page identifier or a special value (-2, -3, -4).
+//  *
+//  * Returns:
+//  *   The resolved code page (int).
+//  */
+
+int GetCodePage(int param_1)
 
 {
   int iVar1;
@@ -129427,7 +129761,22 @@ int FUN_004b96b0(int param_1)
 
 
 
-undefined4 FUN_004b9700(undefined4 param_1)
+// /*
+//  * Function: MapCodePageToLocale (originally FUN_004b9700)
+//  * Description:
+//  *   This function takes a code page identifier (`param_1`) and returns a corresponding locale
+// identifier.
+//  *   It uses a switch statement to map specific code page values to predefined locale IDs.
+//  *
+//  * Parameters:
+//  *   param_1 - The code page identifier (e.g., 0x3A4, 0x3A8, etc.).
+//  *
+//  * Returns:
+//  *   The corresponding locale identifier (`undefined4`). If the code page is not recognized, it
+// returns 0.
+//  */
+
+undefined4 MapCodePageToLocale(undefined4 param_1)
 
 {
   switch(param_1) {
@@ -129447,8 +129796,20 @@ undefined4 FUN_004b9700(undefined4 param_1)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// /*
+//  * Function: InitializeGlobalData (originally FUN_004b9760)
+//  * Description:
+//  *   This function initializes various global data structures and variables to zero. It iterates
+// over
+//  *   a memory block, setting each element to zero, and clears several global variables.
+//  *
+//  * Globals:
+//  *   DAT_005a14a0 - A data block of size 0x40 elements that is set to zero.
+//  *   DAT_005a16a8, _DAT_005f8d84, DAT_005a16ac, _DAT_005a16b0, _DAT_005a16b4, _DAT_005a16b8 - 
+//  *   Global variables cleared by this function.
+//  */
 
-void FUN_004b9760(void)
+void InitializeGlobalData(void)
 
 {
   int iVar1;
@@ -129471,7 +129832,32 @@ void FUN_004b9760(void)
 
 
 
-void FUN_004b97a0(void)
+// /*
+//  * Function: InitializeCharacterMapping (originally FUN_004b97a0)
+//  * Description:
+//  *   This function initializes character mapping tables based on the current code page
+// information.
+//  *   It retrieves code page information using `GetCPInfo`, and then constructs tables for
+// character 
+//  *   conversions, including uppercase/lowercase and character type mappings, using functions such
+// as 
+//  *   `GetStringTypeWrapper` and `MapLocaleString`. If `GetCPInfo` fails, it defaults to basic
+// character 
+//  *   mappings for ASCII letters.
+//  *
+//  * Globals:
+//  *   DAT_005a16a8 - Current code page identifier.
+//  *   DAT_005a16ac - LCID (Locale Identifier) used for string mappings.
+//  *   DAT_005a14a1 - Stores character type information (e.g., uppercase or lowercase).
+//  *   DAT_005a15a8 - Stores the mapped character result (e.g., corresponding uppercase/lowercase
+// character).
+//  *
+//  * Parameters: None
+//  *
+//  * Returns: None
+//  */
+
+void InitializeCharacterMapping(void)
 
 {
   BOOL BVar1;
@@ -129515,7 +129901,7 @@ void FUN_004b97a0(void)
         pBVar5 = pBVar5 + 2;
       } while (local_514.LeadByte[0] != 0);
     }
-    FUN_004b88c0(1,auStack_500,0x100,auStack_200,DAT_005a16a8,DAT_005a16ac,0);
+    GetStringTypeWrapper(1,auStack_500,0x100,auStack_200,DAT_005a16a8,DAT_005a16ac,0);
     MapLocaleString(DAT_005a16ac,0x100,auStack_500,0x100,auStack_400,0x100,DAT_005a16a8,0);
     MapLocaleString(DAT_005a16ac,0x200,auStack_500,0x100,auStack_300,0x100,DAT_005a16a8,0);
     uVar2 = 0;
@@ -129561,10 +129947,20 @@ void FUN_004b97a0(void)
 
 
 
-void FUN_004b9980(void)
+//  * Function: SetDefaultCodePage (originally FUN_004b9980)
+//  * Description:
+//  *   This function sets the default code page for the system by calling the `ChangeCodePage`
+// function
+//  *   with a predefined value `0xfffffffd`. The code page value `0xfffffffd` likely corresponds to
+// a
+//  *   special default or system-specific code page that the system uses when no specific code page
+// is
+//  *   defined.
+
+void SetDefaultCodePage(void)
 
 {
-  FUN_004b9480(0xfffffffd);
+  ChangeCodePage(0xfffffffd);
   return;
 }
 
@@ -131090,7 +131486,7 @@ void FUN_004bb270(int *param_1)
   int iVar1;
   
   DAT_005a16c0 = DAT_005a16c0 + 1;
-  iVar1 = FUN_004ad640(0x1000);
+  iVar1 = AllocateMemoryWithCallback(0x1000);
   param_1[2] = iVar1;
   if (iVar1 != 0) {
     param_1[3] = param_1[3] | 8;
@@ -131476,7 +131872,7 @@ uint FUN_004bbaf0(char *param_1,int param_2)
   if (uVar5 != 0) {
     return uVar5;
   }
-  puVar6 = (undefined *)FUN_004ad640(0xd);
+  puVar6 = (undefined *)AllocateMemoryWithCallback(0xd);
   *(undefined **)(param_2 + 0xa8) = puVar6;
   if (local_4 == 0) {
     *puVar6 = 0x68;
@@ -132042,7 +132438,7 @@ int * FUN_004bc8b0(int *param_1)
     return (int *)0x0;
   }
   if (*(int *)(iVar2 + 0x40) == 0) {
-    iVar3 = FUN_004ad640(0x24);
+    iVar3 = AllocateMemoryWithCallback(0x24);
     *(int *)(iVar2 + 0x40) = iVar3;
     piVar4 = (int *)&DAT_005a1730;
     if (iVar3 == 0) goto LAB_004bc8ef;
@@ -132144,7 +132540,8 @@ LPCWSTR FUN_004bca80(void)
     return (LPCWSTR)0x0;
   }
   while (((iVar1 = WideCharToMultiByte(1,0,lpWideCharStr,-1,(LPSTR)0x0,0,(LPCSTR)0x0,(LPBOOL)0x0),
-          iVar1 != 0 && (lpMultiByteStr = (LPSTR)FUN_004ad640(iVar1), lpMultiByteStr != (LPSTR)0x0))
+          iVar1 != 0 &&
+          (lpMultiByteStr = (LPSTR)AllocateMemoryWithCallback(iVar1), lpMultiByteStr != (LPSTR)0x0))
          && (iVar1 = WideCharToMultiByte(1,0,*ppWVar2,-1,lpMultiByteStr,iVar1,(LPCSTR)0x0,
                                          (LPBOOL)0x0), iVar1 != 0))) {
     FUN_004bdad0(lpMultiByteStr,0);
@@ -132741,12 +133138,13 @@ undefined4 FUN_004bd510(int param_1,undefined4 param_2,undefined4 param_3,char *
   if (_Count == 0) {
     DVar3 = GetLastError();
     if (((DVar3 != 0x7a) || (iVar4 = FUN_004bdf00(param_2,param_3,0,0,0), iVar4 == 0)) ||
-       (_Source = (char *)FUN_004ad640(iVar4), _Source == (char *)0x0)) goto LAB_004bd5c0;
+       (_Source = (char *)AllocateMemoryWithCallback(iVar4), _Source == (char *)0x0))
+    goto LAB_004bd5c0;
     bVar2 = true;
     _Count = FUN_004bdf00(param_2,param_3,_Source,iVar4,0);
     if (_Count == 0) goto LAB_004bd5c0;
   }
-  _Dest = (char *)FUN_004ad640(_Count);
+  _Dest = (char *)AllocateMemoryWithCallback(_Count);
   *param_4 = _Dest;
   if (_Dest != (char *)0x0) {
     _strncpy(_Dest,_Source,_Count);
@@ -132960,14 +133358,14 @@ int FUN_004bd7d0(LCID param_1,DWORD param_2,byte *param_3,LPWSTR param_4,byte *p
     if (cchWideChar == 0) {
       return 0;
     }
-    lpWideCharStr = (PCNZWCH)FUN_004ad640(cchWideChar * 2);
+    lpWideCharStr = (PCNZWCH)AllocateMemoryWithCallback(cchWideChar * 2);
     if (lpWideCharStr == (PCNZWCH)0x0) {
       return 0;
     }
     iVar1 = MultiByteToWideChar(param_7,1,(LPCSTR)param_3,iVar1,lpWideCharStr,cchWideChar);
     if ((((iVar1 != 0) &&
          (iVar1 = MultiByteToWideChar(param_7,9,(LPCSTR)param_5,param_6,(LPWSTR)0x0,0), iVar1 != 0))
-        && (param_4 = (LPWSTR)FUN_004ad640(iVar1 * 2), param_4 != (LPWSTR)0x0)) &&
+        && (param_4 = (LPWSTR)AllocateMemoryWithCallback(iVar1 * 2), param_4 != (LPWSTR)0x0)) &&
        (iVar4 = MultiByteToWideChar(param_7,1,(LPCSTR)param_5,param_6,param_4,iVar1), iVar4 != 0)) {
       iStack_18 = CompareStringW(param_1,param_2,lpWideCharStr,cchWideChar,param_4,iVar1);
     }
@@ -133058,13 +133456,13 @@ undefined4 FUN_004bdad0(char *param_1,int param_2)
       if (bVar12) {
         return 0;
       }
-      DAT_005a126c = (int *)FUN_004ad640(4);
+      DAT_005a126c = (int *)AllocateMemoryWithCallback(4);
       if (DAT_005a126c == (int *)0x0) {
         return 0xffffffff;
       }
       *DAT_005a126c = 0;
       if (DAT_005a1274 == (undefined4 *)0x0) {
-        DAT_005a1274 = (undefined4 *)FUN_004ad640(4);
+        DAT_005a1274 = (undefined4 *)AllocateMemoryWithCallback(4);
         if (DAT_005a1274 == (undefined4 *)0x0) {
           return 0xffffffff;
         }
@@ -133123,7 +133521,7 @@ undefined4 FUN_004bdad0(char *param_1,int param_2)
       cVar1 = *pcVar4;
       pcVar4 = pcVar4 + 1;
     } while (cVar1 != '\0');
-    lpName = (undefined4 *)FUN_004ad640(~uVar8 + 1);
+    lpName = (undefined4 *)AllocateMemoryWithCallback(~uVar8 + 1);
     if (lpName != (undefined4 *)0x0) {
       uVar8 = 0xffffffff;
       do {
@@ -133201,7 +133599,7 @@ undefined4 * FUN_004bdd60(int *param_1)
       iVar5 = iVar5 + 1;
       iVar1 = *piVar2;
     }
-    puVar3 = (undefined4 *)FUN_004ad640(iVar5 * 4 + 4);
+    puVar3 = (undefined4 *)AllocateMemoryWithCallback(iVar5 * 4 + 4);
     if (puVar3 == (undefined4 *)0x0) {
       __amsg_exit(9);
     }
@@ -133253,7 +133651,7 @@ int FUN_004bddd0(LCID param_1,LCTYPE param_2,LPWSTR param_3,int param_4,UINT par
   }
   iVar1 = GetLocaleInfoA(param_1,param_2,(LPSTR)0x0,0);
   if (iVar1 != 0) {
-    lpLCData = (LPSTR)FUN_004ad640(iVar1);
+    lpLCData = (LPSTR)AllocateMemoryWithCallback(iVar1);
     if (lpLCData == (LPSTR)0x0) {
       return 0;
     }
@@ -133313,7 +133711,7 @@ int FUN_004bdf00(LCID param_1,LCTYPE param_2,LPSTR param_3,int param_4,UINT para
   }
   iVar1 = GetLocaleInfoW(param_1,param_2,(LPWSTR)0x0,0);
   if (iVar1 != 0) {
-    lpLCData = (LPWSTR)FUN_004ad640(iVar1 * 2);
+    lpLCData = (LPWSTR)AllocateMemoryWithCallback(iVar1 * 2);
     if (lpLCData == (LPWSTR)0x0) {
       return 0;
     }
@@ -133357,7 +133755,7 @@ undefined4 * FUN_004be040(undefined4 *param_1,uint param_2)
   undefined4 local_4;
   
   if (param_1 == (undefined4 *)0x0) {
-    puVar1 = (undefined4 *)FUN_004ad640(param_2);
+    puVar1 = (undefined4 *)AllocateMemoryWithCallback(param_2);
     return puVar1;
   }
   if (param_2 == 0) {
@@ -133511,7 +133909,7 @@ undefined4 * FUN_004be2c0(char *param_1)
       cVar1 = *pcVar6;
       pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
-    puVar2 = (undefined4 *)FUN_004ad640(~uVar3);
+    puVar2 = (undefined4 *)AllocateMemoryWithCallback(~uVar3);
     if (puVar2 != (undefined4 *)0x0) {
       uVar3 = 0xffffffff;
       do {
