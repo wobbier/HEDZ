@@ -14,7 +14,7 @@ void ApplyStreamVolumes(void)
   undefined4 *puVar5;
   uint uVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = DAT_005e4a48;
   if (DAT_005e4a48 != 0) {
     uVar3 = __ftol();
@@ -84,7 +84,15 @@ void PauseAudioStreams(void)
 
 
 
-void FUN_004011a0(void)
+// /*
+//  * Function: ResumeAudioStreamsAndSamples
+//  * Description:
+//  *   This function pauses the current audio stream and resumes any samples that were paused. 
+//  *   It iterates through an array of audio samples and resumes any that are in a paused state
+// (status 8).
+//  */
+
+void ResumeAudioStreamsAndSamples(void)
 
 {
   int iVar1;
@@ -134,7 +142,7 @@ void FUN_00401230(void)
   undefined4 *puVar11;
   float10 fVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar4 = false;
   _DAT_005f7d60 = 1.0 / (float)unaff_ESI;
   iVar2 = *(int *)(*(int *)(DAT_005df318 + 4) + 4);
@@ -145,7 +153,7 @@ void FUN_00401230(void)
       ((*(int *)(iVar9 + 0x7b) == 8 &&
        ((*(char *)(iVar2 + 4) == '\x05' || (*(char *)(iVar2 + 4) == '\x06')))))) ||
      ((*(uint *)(iVar2 + 0x8a) & 0x100000) != 0)) {
-    FUN_0045ef80(&DAT_005f76e0,iVar2 + 0x46,iVar2 + 6);
+    MultiplyMatrices(&DAT_005f76e0,iVar2 + 0x46,iVar2 + 6);
   }
   else {
     puVar10 = (undefined4 *)(iVar2 + 6);
@@ -337,7 +345,7 @@ void FUN_00401660(float ****param_1)
   float fVar14;
   float fVar15;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_3c = 0.0;
   local_28 = (float ****)0x0;
   if (param_1 == (float ****)0x0) {
@@ -367,7 +375,7 @@ void FUN_00401660(float ****param_1)
     local_1c = (float *****)local_88;
     local_18 = (double)CONCAT44((int)pppfVar1 + 6,(int)pppfVar1 + 0x46);
     local_20 = (float ****)0x401769;
-    FUN_0045ef80();
+    MultiplyMatrices();
   }
   else {
     puVar11 = (undefined4 *)((int)pppfVar1 + 6);
@@ -1000,7 +1008,7 @@ FUN_004025e0(undefined4 *******param_1,int *param_2,float param_3,int param_4,in
   float fVar14;
   
   fVar3 = param_3;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar6 = 0;
   local_20 = (int *)0x0;
   piVar4 = (int *)((int)param_1[1] + 0x109);
@@ -1252,7 +1260,7 @@ void FUN_00402a50(float param_1)
   float *pfVar16;
   float fVar17;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar4 = *(undefined4 **)((int)param_1 + 4);
   local_3c = 0.0;
   local_48 = 0;
@@ -1391,7 +1399,7 @@ LAB_00402cc5:
      ((*(int *)((int)local_34 + 0x7f) == 0x1e &&
       ((*(char *)(*(int *)(iVar11 + 0x86) + 10) == '\0' && (local_3c == 0.0)))))) {
     local_18._4_4_ = 0x403ab3;
-    FUN_004ad310();
+    AdjustStackForLargeAllocations();
     local_18 = (double)CONCAT44(param_1,0x403acf);
     FUN_00405600();
     return;
@@ -1409,7 +1417,7 @@ LAB_00402cc5:
           ((*(char *)(iVar11 + 4) != '\x05' && (*(char *)(iVar11 + 4) != '\x06')))))) &&
         ((*(uint *)(iVar11 + 0x8a) & 0x100000) == 0)) || (*piVar5 != 2)) {
       local_18._4_4_ = 0x402fa4;
-      FUN_004ad310();
+      AdjustStackForLargeAllocations();
       local_18 = (double)CONCAT44(param_1,0x402fc0);
       FUN_00405600();
       return;
@@ -1825,7 +1833,7 @@ undefined4 FUN_00403ae0(float param_1,float param_2,uint param_3,float param_4,f
   float fVar9;
   
   iVar6 = (int)param_4;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar9 = -99999.0;
   iVar3 = *(int *)(*(int *)((int)param_4 + 0x56) + 0x3c);
   iVar4 = *(int *)(*(int *)((int)param_4 + 0x56) + 0xc);
@@ -1952,7 +1960,7 @@ FUN_00403de0(int param_1,int param_2,int *param_3,float param_4,float param_5,in
   float10 fVar11;
   float fVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar9 = 0;
   if ((*(byte *)(param_3 + 0x16) & 2) == 0) {
     return 1;
@@ -2226,7 +2234,7 @@ void FUN_00404640(int param_1)
   uint uVar7;
   byte *pbVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar2 = *(undefined4 **)(*(int *)(param_1 + 4) + 0x100);
   if (*(char *)(*(int *)(param_1 + 4) + 0x189) == '\0') {
     *puVar2 = 2;
@@ -2343,7 +2351,7 @@ void FUN_004048b0(int param_1,undefined4 *param_2,int param_3,float param_4,unde
   float10 fVar20;
   
   puVar10 = param_2;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar13 = FUN_00404da0();
   bVar11 = *(byte *)(param_2 + 0x16);
   if ((bVar11 & 2) == 0) goto LAB_00404995;
@@ -2638,7 +2646,7 @@ undefined4 FUN_00404ec0(int param_1,float *param_2,int param_3)
   double dVar8;
   float fVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = *(int *)(param_1 + 4);
   if (*(char *)(iVar2 + 0x189) == '\0') {
     return 1;
@@ -2721,7 +2729,7 @@ float10 FUN_004050a0(undefined4 *param_1,undefined4 *param_2,float *param_3,floa
   undefined8 local_18;
   int iVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pfVar3 = param_3;
   local_78[1] = 0.0;
   local_68 = 0;
@@ -2948,12 +2956,12 @@ void FUN_00405600(int *param_1,float param_2,float param_3,float param_4)
   float fVar11;
   float fVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar1 = (undefined4 *)param_1[1];
   local_1c = local_80;
   local_18 = (double)CONCAT44((undefined *)((int)puVar1 + 6),(undefined *)((int)puVar1 + 0x46));
   local_20 = (undefined ***)0x405627;
-  FUN_0045ef80();
+  MultiplyMatrices();
   piVar2 = (int *)puVar1[0x40];
   local_34 = *(undefined4 ********)((int)puVar1 + 0x36);
   iVar6 = *(int *)(*(int *)((int)puVar1 + 0x86) + 0x13);
@@ -3151,7 +3159,7 @@ void FUN_00405b40(int param_1,int *param_2,float param_3,float param_4,float par
   bool bVar15;
   uint uVar16;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar6 = 0;
   bVar15 = false;
   if (((param_2[0x12] < 3) && (*(char *)((int)param_2 + 0x6b) == -1)) &&
@@ -3543,7 +3551,7 @@ undefined4 FUN_00406510(char *param_1,int param_2)
   int iVar17;
   int iVar18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FID_conflict___mbscpy(local_270,param_1);
   FID_conflict__strcat(local_270,&DAT_004c512c);
   uStackY_30 = 0x406566;
@@ -3860,7 +3868,7 @@ void FUN_004071e0(char *param_1)
   uint uVar12;
   undefined uVar13;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FID_conflict___mbscpy(acStackY_126 + 2,&DAT_005d5be0);
   FID_conflict__strcat(acStackY_126 + 2,param_1);
   sVar3 = _strlen(acStackY_126 + 2);
@@ -4164,7 +4172,7 @@ void FUN_00407900(float param_1)
   float fVar13;
   
   iVar4 = (int)param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar5 = *(ushort *)((int)param_1 + 0x8e);
   fVar11 = 0.02;
   if ((uVar5 & 8) == 0) {
@@ -4185,7 +4193,7 @@ void FUN_00407900(float param_1)
     local_1c = local_80;
     local_18 = (double)CONCAT44((int)param_1 + 6,(int)param_1 + 0x46);
     local_20 = 5.92255e-39;
-    FUN_0045ef80();
+    MultiplyMatrices();
     pfVar7 = (float *)((int)param_1 + 0xa4);
     fVar11 = 0.15;
     if (*(int *)(*(int *)(*(int *)((int)param_1 + 0x86) + 0x13) + 0x114) != 6) {
@@ -4436,7 +4444,7 @@ void FUN_004081f0(int param_1,int param_2)
   double dVar7;
   float fVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   dVar7 = (double)-((float)param_2 * *(float *)(param_1 + 0x199));
   uStack_1c = 0x40821e;
   uStack_18 = dVar7;
@@ -4508,7 +4516,7 @@ void FUN_004083b0(int param_1,float param_2,int param_3)
   float *pfStack_1c;
   double local_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (((((((0.8 <= *(float *)(param_1 + 0xeb)) ||
           (iVar1 = *(int *)(*(int *)(param_1 + 0x98) + 0x10), iVar1 == 4)) || (iVar1 == 5)) ||
         ((iVar1 = *(int *)(*(int *)(param_1 + 0x86) + 0x13), *(int *)(iVar1 + 0x114) == 6 &&
@@ -4526,7 +4534,7 @@ void FUN_004083b0(int param_1,float param_2,int param_3)
       pfStack_1c = local_50;
       local_18 = (double)CONCAT44(param_1 + 6,param_1 + 0x46);
       uStack_20 = 0x40849b;
-      FUN_0045ef80();
+      MultiplyMatrices();
     }
     else {
       pfVar2 = (float *)(param_1 + 6);
@@ -4625,7 +4633,7 @@ void FUN_00408730(int param_1)
   undefined4 *puVar9;
   undefined4 *puVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = *(int *)(param_1 + 4);
   uVar3 = *(uint *)(iVar2 + 0xc9);
   puVar1 = (uint *)(iVar2 + 0x8a);
@@ -4697,7 +4705,7 @@ void FUN_00408910(int param_1,uint param_2)
   uint uVar7;
   uint uVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar6 = *(int *)(param_1 + 4);
   puVar3 = (uint *)(iVar6 + 0x8a);
   iVar1 = *(int *)(*(int *)(iVar6 + 0x86) + 0x13);
@@ -5066,7 +5074,7 @@ void FUN_00409320(void)
   undefined4 uStackY_34;
   int iVar16;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005df318 != 0) {
     if (DAT_004d77ac != (FILE *)0x0) {
       FID_conflict__fwprintf(DAT_004d77ac,(wchar_t *)s__Frame__d_004c5150);
@@ -5149,8 +5157,8 @@ void FUN_00409320(void)
               local_60[2] = *(float *)(iVar11 + 0x5f) * local_38;
               local_48 = *(float *)(iVar11 + 99) * local_38;
               local_38 = *(float *)(iVar11 + 0x67) * local_38;
-              FUN_0045ef80();
-              FUN_0045ef80();
+              MultiplyMatrices();
+              MultiplyMatrices();
             }
           }
           FUN_00408730();
@@ -5300,11 +5308,11 @@ void FUN_004099c0(int param_1,int param_2)
   undefined *local_14;
   int iVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_18 = (undefined4 *)local_88;
   local_14 = (undefined *)(param_1 + 0x46);
   local_1c = (undefined *)0x4099e6;
-  FUN_0045ef80();
+  MultiplyMatrices();
   local_14 = local_88;
   local_18 = (undefined4 *)local_88;
   local_1c = (undefined *)0x409a07;
@@ -5446,7 +5454,7 @@ void FUN_00409d50(int param_1,int param_2)
   undefined4 *puVar7;
   undefined4 *puVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = *(int *)(param_1 + 4);
   uVar3 = *(uint *)(iVar2 + 0x8a);
   if (param_2 == 0) {
@@ -5522,7 +5530,7 @@ void FUN_00409f10(int param_1)
   undefined4 uStack_18;
   int iStack_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = *(int *)(param_1 + 4);
   bVar2 = *(byte *)(iVar3 + 0x8a);
   puVar8 = (undefined4 *)(iVar3 + 6);
@@ -5762,7 +5770,7 @@ void FUN_0040a310(int param_1)
   undefined *local_14;
   float fVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar3 = false;
   piVar5 = (int *)(param_1 + 0x57);
   *(undefined4 *)(param_1 + 0x67) = 0;
@@ -5858,7 +5866,7 @@ void * FUN_0040a500(int *param_1,int param_2,int param_3)
   int iVar22;
   int iVar23;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_004d77b4 = DAT_004d77b4 + 1;
   uVar20 = FUN_0041c320();
   iVar23 = (int)((ulonglong)uVar20 >> 0x20);
@@ -6185,7 +6193,7 @@ undefined4 FUN_0040acc0(undefined4 param_1,int *param_2,int *param_3)
   undefined4 uStackY_38;
   int *piVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_004d77b8 == (int *)0x0) {
     _memset(&local_80,0,0x6c);
     local_80 = 0x6c;
@@ -6332,7 +6340,7 @@ void FUN_0040afc0(float param_1,uint param_2)
   int *piVar12;
   
   iVar4 = (int)param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = *(int *)((int)param_1 + 4);
   fVar3 = *(float *)(iVar2 + 0xdf);
   piVar12 = *(int **)(iVar2 + 0x9c);
@@ -6625,7 +6633,7 @@ void FUN_0040b7a0(int param_1,uint param_2)
   float fVar6;
   undefined4 uVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(param_1 + 4);
   iVar2 = *(int *)(*(int *)(iVar1 + 0x86) + 0x13);
   if ((*(int *)(iVar1 + 0x9c) != 0) || (*(int *)(iVar1 + 0x199) != 0)) {
@@ -6752,7 +6760,7 @@ void FUN_0040bae0(int param_1,uint param_2)
   float10 fVar7;
   float fVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(param_1 + 4);
   iVar2 = *(int *)(*(int *)(iVar1 + 0x86) + 0x13);
   if (((((param_2 & 0x40) == 0) || (iVar3 = *(int *)(*(int *)(iVar1 + 0x98) + 0x10), iVar3 == 2)) ||
@@ -6944,7 +6952,7 @@ void FUN_0040bee0(undefined4 param_1,float param_2,float param_3,float param_4)
   undefined4 uVar7;
   float fVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar7 = (undefined4)((ulonglong)(double)param_2 >> 0x20);
   uVar1 = SUB84((double)param_2,0);
   local_98 = 0x3f800000;
@@ -7034,11 +7042,11 @@ void FUN_0040bee0(undefined4 param_1,float param_2,float param_3,float param_4)
   local_70 = (float)fVar3;
   local_58 = (float)fVar4;
   local_30 = (float)fVar4;
-  FUN_0045ef80();
+  MultiplyMatrices();
   local_10 = &local_58;
   local_18 = CONCAT44(&local_d8,param_1);
   local_1c = 0x40c16b;
-  FUN_0045ef80();
+  MultiplyMatrices();
   return;
 }
 
@@ -7106,7 +7114,7 @@ undefined4 FUN_0040c200(undefined4 param_1,int **param_2,int **param_3)
   undefined *puVar18;
   undefined2 uVar19;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_44 = -1;
   local_48 = -1;
   if (DAT_004d77ec == (LPVOID)0x0) {
@@ -7662,7 +7670,7 @@ void FUN_0040ce30(int param_1)
   int iVar14;
   
   iVar2 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   psVar1 = *(short **)(param_1 + 0x57);
   *(undefined4 *)(param_1 + 0x24) = 0;
   *(undefined4 *)(param_1 + 0xc) = 0;
@@ -7843,7 +7851,7 @@ undefined2 * FUN_0040d1f0(int param_1,byte param_2,undefined4 param_3,int param_
   int iVar8;
   int iVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar8 = param_5;
   iVar9 = param_4;
   local_24 = local_68;
@@ -8031,7 +8039,7 @@ undefined2 * FUN_0040d510(char *param_1)
   uint uVar20;
   undefined *puVar21;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar3 = false;
   FID_conflict___mbscpy(local_130,param_1);
   iVar5 = _strcmp(local_130,s_abdomen_004c5560);
@@ -8341,7 +8349,7 @@ ushort * FUN_0040e070(uint *param_1,undefined4 param_2,undefined4 *param_3)
   char cVar11;
   
   iVar1 = (int)param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar9 = 0x5c;
   iVar7 = 0;
   local_2c = 0;
@@ -8605,7 +8613,7 @@ void FUN_0040e630(int param_1)
   int *piVar2;
   int iVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = *(int *)(param_1 + 0x57);
   if (((**(char **)(param_1 + 8) == '\0') && (*(char *)(param_1 + 0x101) != '\0')) &&
      (*(int *)(param_1 + 0xf9) != 0)) {
@@ -8709,7 +8717,7 @@ float10 FUN_0040e760(int param_1)
   int iVar12;
   float fVar13;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pbVar7 = (byte *)(param_1 + 0x40);
   fVar13 = 0.0;
   iVar8 = 0x14;
@@ -8848,7 +8856,7 @@ void FUN_0040e9f0(uint *param_1,int param_2,int param_3)
   int local_34;
   int iVar19;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = *(int *)((int)param_1 + 99);
   iVar14 = *(int *)((int)param_1 + 0x57);
   iVar10 = *(int *)((int)param_1 + 0x5b);
@@ -9086,7 +9094,7 @@ void FUN_0040ee00(int param_1,int param_2)
   size_t sVar18;
   uint *puVar19;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar8 = *(int *)(param_1 + 0x57);
   iVar2 = *(int *)(param_1 + 99);
   iVar9 = *(int *)(param_1 + 0x3c);
@@ -9462,7 +9470,7 @@ void FUN_0040f4a0(undefined4 param_1,int param_2,int param_3)
   undefined4 *puVar11;
   undefined4 *puVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = *(int *)(param_2 + 4);
   puVar11 = (undefined4 *)0x0;
   if (param_3 != 0) {
@@ -9789,7 +9797,7 @@ void FUN_0040fcf0(char *param_1,uint param_2)
   int iVar12;
   uint uVar13;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = *(int *)(param_2 + 4);
   bVar11 = *(byte *)(iVar3 + 4);
   uVar9 = *(uint *)(iVar3 + 0x8a);
@@ -10149,7 +10157,7 @@ uint FUN_004105f0(uint param_1,uint param_2)
   
   iVar5 = param_2;
   uVar4 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = *(int *)(param_2 + 4);
   param_2 = 1;
   uVar6 = *(uint *)(iVar2 + 0x86);
@@ -10325,7 +10333,7 @@ void FUN_004109b0(int param_1)
   int iStack_18;
   undefined4 *puStack_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(param_1 + 4);
   iVar2 = *(int *)(*(int *)(iVar1 + 0x98) + 0x10);
   if (((((iVar2 == 4) || (iVar2 == 5)) ||
@@ -10338,7 +10346,7 @@ void FUN_004109b0(int param_1)
     iStack_18 = iVar1 + 0x46;
     pfStack_1c = local_50;
     uStack_20 = 0x410a91;
-    FUN_0045ef80();
+    MultiplyMatrices();
   }
   else {
     pfVar3 = (float *)(iVar1 + 6);
@@ -10445,7 +10453,7 @@ void FUN_00410c00(uint param_1)
   float fVar13;
   
   iVar9 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar7 = *(int *)(param_1 + 4);
   if ((DAT_00598d6c == 0) &&
      (pbVar1 = (byte *)(param_1 + 0x22),
@@ -10535,7 +10543,7 @@ undefined4 FUN_00410e40(int param_1,uint param_2)
   undefined4 uStackY_4c;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_005e5010 = &DAT_005e5140;
   iVar2 = FUN_00459d30();
   if (iVar2 == 0) {
@@ -10636,7 +10644,7 @@ void FUN_004110d0(int param_1)
   float *local_18;
   undefined **local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_00411390();
   for (iVar1 = *(int *)(param_1 + 0x57); iVar1 != 0; iVar1 = *(int *)(iVar1 + 0x58)) {
     param_1 = 0;
@@ -10714,7 +10722,7 @@ void FUN_00411390(int param_1)
   int iVar14;
   int iVar15;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   for (psVar2 = *(short **)(param_1 + 0x57); psVar2 != (short *)0x0;
       psVar2 = *(short **)(psVar2 + 0x2c)) {
     sVar5 = (*psVar2 + 1000) * 0x20;
@@ -10850,7 +10858,7 @@ undefined4 FUN_004116d0(int *param_1,undefined4 param_2,undefined4 param_3,int *
   undefined4 uStackY_18;
   int *piStackY_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_1 != (int *)0x0) {
     piStackY_14 = (int *)0x4116f4;
     iVar1 = DirectDrawCreate();
@@ -10891,7 +10899,7 @@ undefined4 FUN_00411790(byte param_1)
   uint local_f0;
   undefined4 uStackY_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar1 = (int *)0x0;
   if ((param_1 & 4) == 0) {
     piVar1 = (int *)&stack0xfffffff8;
@@ -10986,7 +10994,7 @@ undefined4 FUN_004119c0(void)
   int iVar5;
   int *piVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar5 = 0;
   DAT_004d784c = 0;
   DAT_005e7308 = 0;
@@ -11161,7 +11169,7 @@ FUN_00411e70(undefined4 param_1,int param_2,int param_3,undefined4 param_4,int p
   int iVar1;
   uint uVar2;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_004d7850 = 0;
   if (param_2 < 0x32) {
     param_2 = 0x32;
@@ -11338,7 +11346,7 @@ undefined4 FUN_00412400(undefined4 param_1,undefined4 param_2,int param_3)
   undefined4 local_58;
   undefined4 uStackY_28;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (*(int *)(&DAT_005e5298 + param_3 * 0x140) == 0) {
     return 1;
   }
@@ -11499,7 +11507,7 @@ undefined4 FUN_004127c0(void)
   undefined4 uStackY_18;
   char *pcStackY_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pcStackY_14 = (char *)0x4127da;
   _memset(local_70,0,0x6c);
   local_70[0] = 0x6c;
@@ -11531,7 +11539,7 @@ undefined4 FUN_00412840(void)
   int iStackY_24;
   int *piStackY_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005e58ec != (int *)0x0) {
     DAT_005e5128 = FUN_00411e40();
     if (DAT_005e5128 != 0) {
@@ -11702,7 +11710,7 @@ undefined4 FUN_00412cf0(int param_1)
   undefined4 uVar4;
   int *piVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar2 = false;
   bVar1 = false;
   if (((&DAT_005e5290)[param_1 * 0x50] != 0) && (_DAT_005e58f8 == 0)) {
@@ -11810,7 +11818,7 @@ undefined4 FUN_00412fa0(void)
   int *piStackY_30;
   int *local_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pcVar1 = _strstr(&DAT_005e57a4,&DAT_004c6268);
   if ((pcVar1 == (char *)0x0) &&
      (pcVar1 = _strstr(&DAT_005e57a4,&DAT_004c6270), pcVar1 == (char *)0x0)) {
@@ -11993,7 +12001,7 @@ undefined4 FUN_004133b0(void)
   undefined4 ***local_8;
   
   local_8 = (undefined4 ***)0x4133bd;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_8 = &local_8;
   DAT_005e5900 = 0;
   DAT_005e5128 = (**(code **)(*DAT_005e5148 + 0x38))(DAT_005e5148,FUN_00413420);
@@ -12286,7 +12294,7 @@ undefined4 FUN_00413960(int *param_1,int *param_2)
   undefined4 *puVar6;
   int iVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *param_1;
   iVar7 = *param_2;
   if ((iVar7 == -0x18) && (DAT_005e58e8 == 0)) {
@@ -12380,7 +12388,7 @@ void FUN_00413bf0(HWND param_1,int param_2,int param_3,int param_4)
   int unaff_EDI;
   uint bMenu;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _DAT_005e76a4 = 1;
   if (param_4 == 0) {
     SendMessageA(param_1,5,0,(param_3 + param_2) * 0x10000);
@@ -12416,7 +12424,7 @@ void FUN_00413d00(HWND param_1)
   LONG local_14;
   LPRECT lpRect;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_00598d50 == 0) {
     DAT_005e7684 = 0;
     DAT_005e7680 = 0;
@@ -12444,7 +12452,7 @@ void FUN_00413d80(LPCSTR param_1)
   CHAR local_104 [240];
   undefined4 uStackY_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_104[0] = '\0';
   uStackY_14 = 0x413da9;
   wvsprintfA(local_104,param_1,&stack0x00000008);
@@ -12580,7 +12588,7 @@ void FUN_00414000(void)
   undefined4 local_74 [21];
   undefined4 uStackY_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = 0;
   if (0 < DAT_004d7854) {
     ppiVar2 = (int **)&DAT_005e76c0;
@@ -12668,7 +12676,7 @@ FUN_00414160(undefined4 param_1,int *****param_2,undefined4 param_3,undefined4 p
   int *****local_14;
   int ***pppiVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_14 = (int *****)0x414175;
   FUN_00413680();
   local_14 = (int *****)(-(uint)(DAT_005e7694 != 0) & 4);
@@ -13003,7 +13011,7 @@ undefined4 FUN_00414850(void)
   int *piStackY_2c;
   int *local_28;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005e769c == 0) {
     FUN_00413d80();
     return 0;
@@ -13132,7 +13140,7 @@ undefined4 FUN_00414bb0(void)
   undefined4 uStackY_48;
   char *pcStackY_44;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005e769c == 0) {
     FUN_00413d80();
     return 0;
@@ -13185,7 +13193,7 @@ undefined4 FUN_00414d80(void)
   char *local_8;
   
   local_8 = (char *)0x414d8d;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005e769c == 0) {
     local_8 = s_Cannot_call_APP_MAN_ClearZBuffer_004c6904;
     local_c = (int **)0x414da0;
@@ -13426,7 +13434,7 @@ undefined4 FUN_00415440(void)
   int iStackY_1c;
   uint uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_004d7878 = 0;
   DAT_005e4a60 = 0;
   DAT_005e4a5f = 0;
@@ -13624,7 +13632,7 @@ undefined4 FUN_00415910(void)
   uint uVar11;
   uint uVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar12 = DAT_005df318[1];
   sVar10 = 0x972;
   iVar9 = 0;
@@ -13732,7 +13740,7 @@ undefined4 FUN_00415b30(void)
   uint uVar9;
   int *piVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar8 = 0x972;
   iVar7 = 0;
   pvVar3 = (void *)AllocateMemoryWithCallback(0x972);
@@ -13890,7 +13898,7 @@ undefined4 FUN_00415e50(undefined4 *param_1,int param_2,int param_3,uint param_4
   undefined4 *local_18;
   char *pcStack_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = param_3;
   iVar3 = param_2;
   uVar5 = extraout_var;
@@ -14158,7 +14166,7 @@ undefined4 FUN_00416320(void)
   int iVar13;
   int iVar14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar6 = 0;
   sVar11 = 0x20c;
   iVar9 = 0;
@@ -14362,7 +14370,7 @@ void FUN_00416710(void)
   int *piVar11;
   undefined4 ****local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar3 = false;
   if (DAT_004d79b0 == (int *)0x0) {
     return;
@@ -14590,7 +14598,7 @@ void FUN_00416e40(void)
   undefined4 uStackY_20;
   int iVar16;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar4 = false;
   if (DAT_004d79b0 == (int *)0x0) {
     return;
@@ -14836,7 +14844,7 @@ void FUN_004173e0(int *param_1,undefined4 ***param_2,int param_3,int param_4,int
   int *local_18;
   undefined4 ***local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_1 != (int *)0x0) {
     if ((param_4 < 1) || (param_5 < 1)) {
       local_14 = &local_90;
@@ -14924,7 +14932,7 @@ void FUN_00417590(int *param_1,undefined4 **param_2,int param_3,int param_4,int 
   int *local_18;
   undefined4 *local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_1 != (int *)0x0) {
     if ((param_4 == 0) || (param_5 == 0)) {
       local_14 = &local_90;
@@ -15024,7 +15032,7 @@ void FUN_00417780(int *param_1,undefined4 **param_2,int param_3,int param_4,int 
   int *local_18;
   undefined4 *local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_1 != (int *)0x0) {
     if ((param_4 == 0) || (param_5 == 0)) {
       local_14 = &local_90;
@@ -15287,7 +15295,7 @@ bool FUN_00417cd0(int param_1,int param_2)
   int local_18;
   undefined4 local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_2 != 0) {
     cVar1 = *(char *)(param_2 + 4);
     iVar2 = *(int *)(param_2 + 0x13);
@@ -15341,7 +15349,7 @@ undefined4 FUN_00417e80(int param_1,int param_2)
   byte bVar4;
   int iVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_2 != 0) {
     uVar2 = __ftol();
     uVar1 = *(uint *)(*(int *)(param_1 + 4) + 399);
@@ -15392,7 +15400,7 @@ undefined4 FUN_00418010(int param_1,int param_2,int param_3)
   int iVar7;
   undefined2 extraout_var;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = *(int *)(param_1 + 4);
   psVar3 = *(short **)(iVar2 + 0x109 + param_2 * 4);
   iVar7 = param_3 * 4 + 0x18;
@@ -15466,7 +15474,7 @@ void FUN_004181b0(void)
   float fVar6;
   float fVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar6 = 0.0;
   if (DAT_005df2f8 == 1) {
     fVar7 = 12.0;
@@ -15635,7 +15643,7 @@ void FUN_00418510(void)
   uint uVar10;
   uint uVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar10 = 0;
   puVar1 = (ushort *)(*(int *)(*(int *)(DAT_005df318 + 4) + 4) + 0x8e);
   *puVar1 = *puVar1 & 0xfbff;
@@ -15953,7 +15961,7 @@ void FUN_00418b10(float *param_1,int param_2,float *param_3,float param_4)
   undefined *puVar28;
   
   pfVar16 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar14 = param_2;
   bVar10 = false;
   iVar13 = *(int *)(DAT_005e45e8 + 4);
@@ -16319,7 +16327,7 @@ void FUN_00418b10(float *param_1,int param_2,float *param_3,float param_4)
     local_1c = (undefined4 *****)local_f8;
     local_18 = (double)CONCAT44(local_f8,local_164);
     local_20 = (undefined4 *****)0x41a55e;
-    FUN_0045ef80();
+    MultiplyMatrices();
     *(float *)(DAT_005e45e4 + 0x4c) = -local_f8[0];
     *(undefined4 *)(DAT_005e45e4 + 0x50) = local_e8;
     *(float *)(DAT_005e45e4 + 0x54) = -local_d8;
@@ -16852,7 +16860,7 @@ void FUN_0041a660(float *param_1,int param_2,float *param_3,float param_4)
   float fVar16;
   
   pfVar5 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pfVar7 = param_3;
   if (((param_2 == 0) && (DAT_00598d74 == 0)) && (DAT_004d7a34 == 0)) {
     local_54 = param_1[5] * unaff_EBX * param_3[1];
@@ -17312,7 +17320,7 @@ void FUN_0041a660(float *param_1,int param_2,float *param_3,float param_4)
   local_1c = (float **)local_ac;
   local_18 = (double)CONCAT44(local_ac,local_ec);
   local_20 = (float *)0x41b793;
-  FUN_0045ef80();
+  MultiplyMatrices();
   *(float *)(DAT_005e45e4 + 0x4c) = -local_ac[0];
   *(undefined4 *)(DAT_005e45e4 + 0x50) = local_9c;
   *(float *)(DAT_005e45e4 + 0x54) = -local_8c;
@@ -17339,7 +17347,7 @@ void FUN_0041b890(int param_1,float param_2)
 {
   float fVar1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = *(float *)((int)param_2 + 8);
   FUN_0045fc50();
   *(float *)(param_1 + 0x1e0) = param_2 + *(float *)(param_1 + 0x1e0);
@@ -17355,7 +17363,7 @@ void FUN_0041b900(int param_1,float param_2)
 {
   float fVar1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = *(float *)((int)param_2 + 8);
   FUN_0045fc50();
   *(float *)(param_1 + 0x1e0) = param_2 + *(float *)(param_1 + 0x1e0);
@@ -17381,7 +17389,7 @@ void FUN_0041b970(void)
   double local_c;
   
   local_c = (double)CONCAT44(0x41b97d,local_c._0_4_);
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_c = 2.128104766432668e-317;
   iVar1 = FUN_00446480();
   if (iVar1 != 0) {
@@ -17511,7 +17519,7 @@ void FUN_0041bd00(undefined4 param_1,undefined4 param_2,float *param_3)
   float10 fVar4;
   float fVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar4 = (float10)FUN_004ae0c4();
   fVar1 = (float)fVar4;
   fVar4 = (float10)FUN_004ae014();
@@ -17571,7 +17579,7 @@ void FUN_0041be50(int param_1)
   float *local_8;
   
   local_8 = (float *)0x41be5d;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_004d7a4c != 2) {
     local_8 = &local_14;
     local_14 = *(float *)(DAT_005e45e4 + 0x54);
@@ -17690,7 +17698,7 @@ undefined4 FUN_0041c1c0(void)
   float fVar9;
   uint uVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar4 = 0;
   uVar10 = 0;
   iVar3 = DAT_005dca10;
@@ -17782,7 +17790,7 @@ undefined * FUN_0041c3f0(undefined4 param_1)
   undefined4 uStackY_24;
   undefined *puStackY_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = FUN_004adf60();
   if (iVar1 != 0) {
     puStackY_20 = local_50;
@@ -17974,7 +17982,7 @@ float10 FUN_0041c650(float param_1,float param_2,undefined4 *param_3,undefined4 
   int iVar14;
   float *pfVar15;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pfVar15 = (float *)&DAT_004d7a74;
   if (param_5 == 0.0) {
     pfVar15 = (float *)&DAT_004d7a78;
@@ -18229,7 +18237,7 @@ float10 FUN_0041cd90(float param_1,float param_2,undefined4 *param_3,undefined4 
   float10 fVar3;
   
   uVar1 = param_6;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (((param_5 != 0) && (param_5 != *(int *)(DAT_005df318 + 4))) && (DAT_00598944 == 0)) {
     fVar2 = (float10)FUN_0041c650(param_1,param_2,param_3,param_4,param_5,param_6);
     return fVar2;
@@ -18277,7 +18285,7 @@ int FUN_0041ceb0(float *param_1,float *param_2,float param_3,float *param_4,int 
   double local_18;
   
   pfVar8 = param_2;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_18 = (double)((param_1[2] - param_2[2]) * (param_1[2] - param_2[2]) +
                      (param_1[1] - param_2[1]) * (param_1[1] - param_2[1]) +
                      (*param_1 - *param_2) * (*param_1 - *param_2));
@@ -18396,7 +18404,7 @@ FUN_0041d230(float *param_1,float *param_2,uint *param_3,undefined4 param_4,uint
   int iVar22;
   
   puVar8 = param_5;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_30 = (float *)0xc7c34f80;
   local_24 = 0.0;
   iVar22 = 0;
@@ -18716,7 +18724,7 @@ undefined4 FUN_0041d8f0(undefined4 ****param_1,undefined *****param_2)
   int iVar20;
   
   ppppuVar8 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pppuVar5 = param_1[1];
   local_28 = (undefined4 ****)0x0;
   local_38 = (undefined *****)0xc479c000;
@@ -19323,7 +19331,7 @@ FUN_0041e9a0(float *param_1,float *param_2,float *param_3,float *param_4,float *
   undefined8 local_18;
   float ***pppfVar15;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_44 = (undefined *)0x0;
   local_54 = *(int *)(*(int *)((int)param_1 + 0x56) + 0x3c);
   local_a8 = *(uint **)(*(int *)((int)param_1 + 0x56) + 0xc);
@@ -19959,7 +19967,7 @@ FUN_0041fa80(int param_1,float *param_2,float *param_3,float *param_4,float *par
   float fVar16;
   float fVar17;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar15 = 999.0;
   local_1c = (float **)(*param_8 - *param_7);
   fVar17 = 999.0;
@@ -20263,7 +20271,7 @@ undefined4 FUN_00420410(int param_1,int param_2,float *param_3,float param_4)
   int iStack_18;
   float fStack_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_2 == 0) {
     return 0;
   }
@@ -20447,7 +20455,7 @@ FUN_00420900(int param_1,float *param_2,float *param_3,float *param_4,int param_
   double dVar7;
   float fVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar6 = (float10)FUN_004ad3c0((double)param_4[1]);
   if (((float10)0.001000000047497451 <= fVar6) ||
      (fVar6 = (float10)FUN_004ad3c0((double)*param_4), (float10)0.001000000047497451 <= fVar6)) {
@@ -20586,7 +20594,7 @@ FUN_00420de0(float *param_1,float *param_2,float *param_3,undefined4 param_4,flo
   float fVar12;
   
   pfVar4 = param_3;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar3 = false;
   fVar11 = (-((*param_5 - *param_1) * *param_3) - (param_5[1] - param_1[1]) * param_3[1]) -
            (param_5[2] - param_1[2]) * param_3[2];
@@ -20765,7 +20773,7 @@ undefined4 FUN_00421460(int param_1)
   float local_50;
   float local_4c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(param_1 + 0x5b);
   pfVar3 = (float *)(param_1 + 6);
   pfVar4 = local_84;
@@ -20848,7 +20856,7 @@ FUN_00421640(float *param_1,float *param_2,float param_3,undefined4 param_4,floa
   float fVar7;
   float fVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_2c = *param_2;
   local_28 = (float *)param_2[1];
   local_24 = param_2[2];
@@ -20987,7 +20995,7 @@ float10 FUN_00421a70(float param_1,float param_2,float param_3,float param_4,flo
   double local_18;
   float fVar2;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_30 = param_4;
   local_2c = param_5;
   local_28 = (undefined4 ***)param_6;
@@ -21058,7 +21066,7 @@ bool FUN_00421c60(float *param_1,float *param_2,float param_3,undefined4 param_4
   float local_1c;
   double local_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_3 < 0.1) {
     param_3 = 1.0;
   }
@@ -21128,7 +21136,7 @@ int FUN_00421e00(float *param_1,undefined *param_2,undefined4 *param_3,int param
   uint *puVar14;
   
   puVar6 = param_2;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_20 = (undefined4 *)0x421e20;
   _memset(local_114,0,0x40);
   __ftol();
@@ -21265,7 +21273,7 @@ int FUN_00422190(float *param_1,float *param_2,float param_3,undefined4 param_4,
   float local_1c;
   undefined8 local_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_3 <= 0.1) {
     param_3 = 1.0;
   }
@@ -21333,7 +21341,7 @@ FUN_00422320(float *param_1,undefined4 param_2,undefined *param_3,undefined *par
   undefined *puVar12;
   uint *puVar13;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar11 = (undefined *)0x0;
   puVar12 = (undefined *)0x0;
   bVar5 = false;
@@ -21527,7 +21535,7 @@ FUN_004227b0(float param_1,float param_2,float param_3,float param_4,float param
   undefined8 local_14;
   
   pfVar2 = param_8;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_14 = (double)(unaff_EDI * unaff_EDI +
                      (param_5 - param_2) * (param_5 - param_2) +
                      (param_4 - param_1) * (param_4 - param_1));
@@ -21584,7 +21592,7 @@ float10 FUN_00422950(float param_1,float param_2,undefined4 *param_3)
   undefined4 local_14;
   float fVar2;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_14 = 0;
   fVar1 = (float10)FUN_0041c650(param_1,param_2,&local_14,0,0);
   fVar2 = (float)fVar1;
@@ -21656,7 +21664,7 @@ uint FUN_00422ac0(float *param_1,undefined4 param_2,float param_3)
   int iVar13;
   undefined *puVar14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar13 = 0;
   __ftol();
   local_1c = (undefined4 *)__ftol();
@@ -21796,7 +21804,7 @@ void FUN_00422db0(void)
   float *pfVar23;
   float *pfVar24;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_20 = (undefined4 *)0x422dd1;
   _memset(&DAT_005e44a0,0,300);
   iVar19 = *(int *)(DAT_005df318 + 4);
@@ -22113,7 +22121,7 @@ int FUN_00423750(int param_1,float *param_2)
   float10 fVar10;
   undefined *puVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if ((DAT_00598944 == 0) || (iVar7 = *(int *)(param_1 + 0xa7), iVar7 == 0)) {
     iVar7 = *(int *)(DAT_005df318 + 4);
     if (iVar7 != 0) {
@@ -22218,7 +22226,7 @@ int FUN_00423c40(int param_1,float *param_2,float *param_3,float param_4)
   undefined4 local_18;
   undefined8 local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_4 <= 0.1) {
     param_4 = 1.0;
   }
@@ -22302,7 +22310,7 @@ void FUN_00423e20(int param_1,float *param_2)
   undefined4 **local_18;
   undefined4 **local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = *param_2;
   puVar3 = (undefined4 *)(*(int *)(param_1 + 4) + 0x46);
   puVar4 = local_68;
@@ -22374,7 +22382,7 @@ void FUN_00423f70(int param_1,float *param_2)
   undefined4 **local_18;
   undefined *local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (0.8 <= param_2[1]) {
     fVar1 = *param_2;
     fVar2 = param_2[2];
@@ -22463,7 +22471,7 @@ undefined4 FUN_00424150(char *param_1)
   int iVar17;
   int iVar18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar17 = 0;
   _memset(local_228,0,0x100);
   piVar8 = (int *)&stack0x00000008;
@@ -22826,7 +22834,7 @@ undefined * FUN_00424a20(ushort *param_1,int *param_2)
   int iVar6;
   size_t sVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   WaitForSingleObject(DAT_005d66b0,0xffffffff);
   sVar7 = 0x14;
   iVar6 = 0;
@@ -23019,7 +23027,7 @@ undefined4 FUN_00424d60(int *param_1,int *param_2,int *param_3,int *param_4)
   uint local_68;
   uint local_64;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   WaitForSingleObject(DAT_005e4484,0xffffffff);
   (**(code **)(*param_1 + 0x58))();
   if (param_2 != (int *)0x0) {
@@ -23073,7 +23081,7 @@ FUN_00424e90(int *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4,u
   int *local_18;
   undefined4 *local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_14 = &local_90;
   local_18 = param_1;
   local_90 = 0x6c;
@@ -23183,7 +23191,7 @@ void FUN_004250f0(int param_1,undefined4 param_2,int param_3)
   int iVar9;
   float fVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar1 = *(byte *)(*(int *)(param_1 + 4) + 0x108);
   fVar3 = 3.14159 / (float)(bVar1 + 1);
   if (bVar1 != 0) {
@@ -23254,7 +23262,7 @@ void FUN_00425290(int param_1,undefined4 param_2,int param_3)
   int iVar7;
   int iVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = *(int *)(param_1 + 4);
   if (*(char *)(iVar2 + 0x108) != '\0') {
     iVar3 = 0;
@@ -23348,7 +23356,7 @@ undefined4 FUN_00425410(void)
   int iVar14;
   int iVar15;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_00598e18 != 0) {
     return 1;
   }
@@ -23627,7 +23635,7 @@ undefined4 FUN_00425a50(void)
   float fVar10;
   float fVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar4 = 0;
   piVar6 = &DAT_005a464e;
   iVar9 = *(int *)(*(int *)(DAT_005df318 + 4) + 4);
@@ -23705,7 +23713,7 @@ undefined4 FUN_00425ce0(undefined4 param_1,byte *param_2)
   float local_10;
   undefined **local_c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_004d7ac8 = DAT_004d7ac8 + 1;
   bVar1 = param_2[9];
   param_2[4] = 100;
@@ -23732,7 +23740,7 @@ void FUN_00425df0(int param_1,undefined4 param_2,int param_3)
   float10 fVar1;
   undefined4 local_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_10 = 0;
   *(undefined4 *)
    (*(int *)(param_1 + 4) + 0x109 + (uint)*(byte *)(*(int *)(param_1 + 4) + 0x108) * 4) =
@@ -23755,7 +23763,7 @@ void FUN_00425eb0(int param_1,undefined4 param_2,int param_3)
   float10 fVar1;
   int local_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_004d7acc = DAT_004d7acc + 1;
   local_10 = param_1;
   FUN_0048b5d0();
@@ -24027,7 +24035,7 @@ void FUN_00426350(int param_1,byte param_2)
   uint uVar13;
   int iVar14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   *(byte *)(*(int *)(param_1 + 0x9d) + 6) = param_2;
   piVar2 = *(int **)(param_1 + 0x56);
   iVar6 = *piVar2;
@@ -24301,7 +24309,7 @@ void FUN_00426880(void)
   uint uVar11;
   int iVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   WaitForSingleObject(DAT_005dfe6c,0xffffffff);
   if (*DAT_005dfe64 != 0) {
     iVar5 = *(int *)(DAT_005dfe64 + 1);
@@ -24875,7 +24883,7 @@ void FUN_004273c0(uint *param_1,int param_2,int param_3,int param_4)
   int _Val;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar3 = 0;
   piVar2 = (int *)param_1[2];
   bVar1 = false;
@@ -24937,7 +24945,7 @@ void FUN_00427490(void)
   int iVar13;
   uint uVar14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar11 = 0x10;
   iVar10 = 0;
   pvVar2 = (void *)AllocateMemoryWithCallback(0x10);
@@ -25053,7 +25061,7 @@ void FUN_00427700(int *param_1,undefined4 param_2,int param_3)
   uint uVar10;
   uint uVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar9 = param_3 * 2;
   _DAT_005dfe40 = param_3;
   iVar8 = 0;
@@ -25220,7 +25228,7 @@ undefined4 FUN_004279f0(void)
   undefined4 local_6c;
   undefined4 uStackY_24;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(&local_78,0,0x6c);
   local_78 = 0x6c;
   local_74 = 7;
@@ -25283,7 +25291,7 @@ undefined4 FUN_00427b50(void)
   int iVar6;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005dfe3c == (void *)0x0) {
     _Size = 0x3c;
     iVar6 = 0;
@@ -25427,7 +25435,7 @@ void FUN_00427df0(undefined4 param_1,int param_2,undefined4 param_3,undefined4 p
   int *local_38;
   undefined4 local_34;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_44 = 0;
   local_40 = (int *)0x0;
   local_38 = (int *)0x1e;
@@ -25551,7 +25559,7 @@ void FUN_00428130(undefined4 param_1,int param_2,int param_3,undefined4 param_4,
   int *local_38;
   undefined4 local_34;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_44 = 0;
   local_40 = (int *)0x0;
   local_38 = (int *)0xe;
@@ -25681,7 +25689,7 @@ void FUN_004284a0(char *param_1,int param_2,undefined4 param_3,uint param_4,int 
   int iVar13;
   int iVar14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar13 = 0;
   iVar12 = 0;
   iVar14 = 0;
@@ -26084,7 +26092,7 @@ void FUN_00428d60(int *param_1,int param_2,int param_3,undefined4 param_4,int pa
   int local_20;
   int iVar17;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   param_4 = 0;
   local_68 = (int *)0x0;
   piVar4 = local_64;
@@ -26284,7 +26292,7 @@ void FUN_00429170(undefined4 param_1,int param_2,int param_3,int param_4)
   int *piStack_18;
   int iVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piStack_18 = &local_20;
   iVar6 = 0;
   iStack_1c = param_1;
@@ -26402,7 +26410,7 @@ undefined4 FUN_00429350(void)
   char *pcVar8;
   size_t sVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_004d7bac = 0;
   if (DAT_005df310 == '\0') {
     pcVar8 = &gRootFileDirectory;
@@ -26565,7 +26573,7 @@ void FUN_00429630(void)
   undefined *puVar9;
   char **ppcVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar6 = 0;
   puVar7 = local_4c;
   local_4c[0] = 0;
@@ -27087,7 +27095,7 @@ LAB_0042a1fb:
     _DAT_004d7bc0 = 1;
     DAT_00598f8c = 0x19;
     *(undefined *)(DAT_004d83a4 + 0x62) = 2;
-    FUN_004011a0();
+    ResumeAudioStreamsAndSamples();
   }
 switchD_00429d41_caseD_5:
   if ((*(int *)(DAT_004d7cd4 + 4) == 0) && (DAT_004d7bbc == 9)) {
@@ -27612,7 +27620,7 @@ int ** FUN_0042abb0(int *param_1,undefined2 param_2,undefined2 param_3,undefined
   int _Val;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_1 == (int *)0x0) {
     return (int **)0x0;
   }
@@ -27768,7 +27776,7 @@ void FUN_0042aea0(int param_1)
   undefined4 uVar12;
   undefined4 uVar13;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar11 = 0;
   bVar7 = false;
   if (((((DAT_00598944 == 0) && (psVar6 = *(short **)(DAT_004d80f0 + 8), *psVar6 != -1)) &&
@@ -28176,7 +28184,7 @@ undefined4 FUN_0042b6a0(int param_1)
   int iVar8;
   bool bVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(DAT_005df2c8 + 0xcc);
   bVar9 = false;
   if (DAT_004d7da4 != 0) {
@@ -28548,7 +28556,7 @@ void FUN_0042c070(void)
   int iVar9;
   int iVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005df2d0 == 1) {
     FUN_0042be10();
     DAT_004d7db4 = 0;
@@ -28711,7 +28719,7 @@ void FUN_0042c700(void)
   int iVar2;
   undefined4 ***local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = 1;
   if (0 < *(int *)(DAT_005df2c8 + 0xcc)) {
     do {
@@ -28755,7 +28763,7 @@ void FUN_0042c830(void)
   undefined4 local_1c;
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if ((DAT_005dfe2c != DAT_004d7db4) || (DAT_004d7db8 != DAT_004ca030)) {
     if (DAT_005dfe2c == 3) {
       DAT_004d7db8 = DAT_004ca030;
@@ -28840,7 +28848,7 @@ void FUN_0042ca60(void)
   int unaff_EDI;
   int iVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar6 = DAT_005df2c8;
   bVar1 = false;
   iVar7 = *(int *)(DAT_005df2c8 + 0xe4);
@@ -28946,7 +28954,7 @@ undefined4 FUN_0042cc60(void)
   undefined4 uStackY_24;
   char *pcStackY_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _Val = 0;
   iVar6 = 0;
   FID_conflict___mbscpy(local_250,&DAT_005d5fe0);
@@ -29085,7 +29093,7 @@ void * FUN_0042cfc0(size_t *param_1)
   size_t _Size;
   int iVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _Val = 0;
   iVar6 = 0;
   sVar5 = 0;
@@ -29182,7 +29190,7 @@ undefined4 FUN_0042d1f0(int param_1,uint param_2)
   int iVar11;
   int iVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar4 = 0;
   bVar2 = false;
   iVar12 = 0;
@@ -29352,7 +29360,7 @@ undefined4 FUN_0042d540(void)
   int iVar3;
   size_t sVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar4 = 0x14;
   iVar3 = 0;
   uStackY_18 = 0x42d559;
@@ -29419,7 +29427,7 @@ void FUN_0042d6b0(undefined4 param_1,int param_2)
   int local_18;
   undefined4 local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = DAT_005e5010;
   local_30 = DAT_004d7dc4;
   local_18 = DAT_004d7dc4;
@@ -29472,7 +29480,7 @@ void FUN_0042d7b0(undefined4 param_1)
   undefined4 local_10;
   int local_c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_c = 0x280 - DAT_004d7dc4;
   local_14 = &local_14;
   local_10 = 0x1008000;
@@ -29603,7 +29611,7 @@ undefined4 FUN_0042dcd0(void)
   char *_Source;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if ((DAT_004d7de0 == 0) || (DAT_004d7ddc == (void *)0x0)) {
     if (DAT_005df310 == '\0') {
       _Source = &gRootFileDirectory;
@@ -29808,7 +29816,7 @@ undefined4 FUN_0042e060(void)
   undefined4 *puVar9;
   int iVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar8 = (undefined4 *)0x0;
   if (DAT_005dcedc == 0) {
     FUN_00449cf0();
@@ -30038,7 +30046,7 @@ undefined4 FUN_0042e6b0(void)
   int local_14;
   int iVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar4 = 0;
   if (0 < *(int *)(*(int *)(DAT_005df2c8 + 4) + 8)) {
     iVar3 = 0;
@@ -30166,7 +30174,7 @@ bool FUN_0042e950(void)
   undefined *local_8;
   
   local_8 = (undefined *)0x42e95d;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_8 = (undefined *)0x1;
   local_c = (undefined *)0x10;
   uVar1 = FUN_00440fa0();
@@ -30258,7 +30266,7 @@ void FUN_0042eb30(void)
   char local_110 [244];
   undefined4 uStackY_1c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar4 = false;
   iVar5 = DAT_005df2c8;
   do {
@@ -30319,7 +30327,7 @@ void FUN_0042ec60(int param_1,int param_2)
   undefined *puStack_14;
   undefined4 uStack_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStack_10 = 0x140;
   puStack_18 = local_144;
   puStack_14 = (undefined *)(*(int *)(DAT_005df2c8 + 8) + param_1 * 0x140);
@@ -30493,7 +30501,7 @@ undefined4 FUN_0042f000(uint param_1,int *param_2)
   undefined4 uStackY_34;
   int *piVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piStackY_40 = *(int **)(param_1 * 0x140 + 4 + *(int *)(DAT_005df2c8 + 8));
   iVar1 = FUN_00424e90();
   if (iVar1 != 0) {
@@ -30574,7 +30582,7 @@ undefined4 FUN_0042f280(int param_1,int param_2)
   size_t _Size;
   short sVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   param_2 = param_2 * param_1;
   iVar4 = param_2 * 4;
   iVar1 = iVar4 / 2;
@@ -30739,7 +30747,7 @@ undefined4 FUN_0042f280(int param_1,int param_2)
       ppuStackY_50 = (undefined **)local_a8;
       puStackY_54 = &DAT_005dfde0;
       local_58 = 0x42f683;
-      FUN_0045ef80();
+      MultiplyMatrices();
       *(undefined4 *)(DAT_005e45e4 + 0xc0) = 0;
       *(undefined4 *)(DAT_005e45e4 + 0xc4) = 0x42b40000;
       *(float *)(DAT_005e45e4 + 200) =
@@ -30972,7 +30980,7 @@ void FUN_0042fbd0(void)
   undefined local_38 [24];
   undefined4 uStackY_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar10 = -1;
   DAT_004d8050 = DAT_004d8050 + 3;
   if (DAT_004d8100 != 0) {
@@ -30987,7 +30995,7 @@ void FUN_0042fbd0(void)
     uStackY_20 = 0x42fc4c;
     FUN_0045fa30();
     uStackY_20 = 0x42fc62;
-    FUN_0045ef80();
+    MultiplyMatrices();
     *(undefined4 *)(DAT_005e45e4 + 0xc0) = 0;
     *(undefined4 *)(DAT_005e45e4 + 0xc4) = 0x42b40000;
     *(float *)(DAT_005e45e4 + 200) =
@@ -31019,7 +31027,7 @@ void FUN_0042fbd0(void)
     uStackY_20 = 0x42fddb;
     FUN_0045fa30();
     uStackY_20 = 0x42fdf1;
-    FUN_0045ef80();
+    MultiplyMatrices();
     DAT_004d8024 = DAT_004d8024 + -1;
     if (DAT_004d8024 != -5) goto LAB_0042fe10;
   }
@@ -31027,7 +31035,7 @@ void FUN_0042fbd0(void)
     uStackY_20 = 0x42fd74;
     FUN_0045fa30();
     uStackY_20 = 0x42fd8a;
-    FUN_0045ef80();
+    MultiplyMatrices();
     DAT_004d8024 = DAT_004d8024 + 1;
     if (DAT_004d8024 != 5) goto LAB_0042fe10;
   }
@@ -31054,7 +31062,7 @@ LAB_0042fe10:
       uStackY_20 = 0x42fef7;
       FUN_0045fa30();
       uStackY_20 = 0x42ff0d;
-      FUN_0045ef80();
+      MultiplyMatrices();
       if (uVar5 < 5) {
         switch(uVar5) {
         case 0:
@@ -31303,7 +31311,7 @@ int FUN_00430660(int param_1,int param_2)
   int iVar4;
   int iVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = 0;
   iVar4 = 0;
   if (*(int *)(*(int *)(DAT_005df2c8 + 4) + 8) < 1) {
@@ -31543,7 +31551,7 @@ void FUN_00430c60(void)
   undefined4 uStackY_18;
   int iVar2;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = 0;
   iVar2 = 0;
   if (DAT_004d8024 == 0) {
@@ -31688,7 +31696,7 @@ undefined4 FUN_00431030(void)
   int iVar10;
   int iVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar2 = false;
   iVar5 = 0;
   iVar9 = 0;
@@ -31775,7 +31783,7 @@ void FUN_004311e0(int param_1,int param_2)
   int iVar5;
   float fVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar2 = (float)param_1 * 90.0 * 0.1591549 * 0.5;
   *(float *)(*(int *)(DAT_005df2c8 + 4) + 0x1c) = fVar2;
   DAT_005dfdc4 = 6.283185 / (float)(int)*(short *)(*(int *)(DAT_005df2c8 + 4) + 4);
@@ -31869,7 +31877,7 @@ void FUN_004314d0(int param_1,int param_2)
   int iVar5;
   float fVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar2 = (float)param_1 * 90.0 * 0.1591549 * 0.5;
   if (0 < param_2) {
     iVar4 = 0;
@@ -31947,7 +31955,7 @@ uint FUN_00431770(void)
   int iVar4;
   uint uVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar4 = 0;
   if (0.0 <= _DAT_005dfde8) {
     FUN_004af934((double)DAT_005dfde0);
@@ -32030,7 +32038,7 @@ void FUN_004318e0(int param_1)
   undefined4 *local_8;
   
   local_8 = (undefined4 *)0x4318ed;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_004d8024 == 0) {
     if (param_1 == 0) {
       local_8 = (undefined4 *)0x0;
@@ -32051,7 +32059,7 @@ void FUN_004318e0(int param_1)
       local_8 = &DAT_005dfde0;
       local_10 = &DAT_005dfde0;
       puStack_14 = (undefined *)0x4319f7;
-      FUN_0045ef80();
+      MultiplyMatrices();
       local_8 = (undefined4 *)0x4319ff;
       thunk_FUN_00431770();
       DAT_004d8024 = DAT_004d8024 + -1;
@@ -32075,7 +32083,7 @@ void FUN_004318e0(int param_1)
       local_8 = &DAT_005dfde0;
       local_10 = &DAT_005dfde0;
       puStack_14 = (undefined *)0x431978;
-      FUN_0045ef80();
+      MultiplyMatrices();
       local_8 = (undefined4 *)0x431980;
       thunk_FUN_00431770();
       DAT_004d8024 = DAT_004d8024 + 1;
@@ -32098,7 +32106,7 @@ uint thunk_FUN_00431770(void)
   int iVar4;
   uint uVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar4 = 0;
   if (0.0 <= _DAT_005dfde8) {
     FUN_004af934((double)DAT_005dfde0);
@@ -32389,7 +32397,7 @@ void FUN_00431de0(undefined2 param_1)
   int iVar9;
   int iVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _DAT_005df9aa = 0;
   _DAT_005df9ae = 0;
   _DAT_005df9b6 = 0;
@@ -32553,7 +32561,7 @@ undefined4 FUN_00432260(int *param_1)
   undefined4 uStackY_20;
   undefined4 uStackY_1c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = DAT_005df5a2;
   uStackY_1c = 0x432282;
   _memset(local_68,0,100);
@@ -32615,7 +32623,7 @@ void FUN_00432320(int param_1,float param_2,int param_3)
   int iVar20;
   
   iVar20 = (int)param_2;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar6 = (float)(int)param_2;
   iVar1 = (int)param_2 + -0x20;
   fVar5 = 12.568 / unaff_EBX;
@@ -32890,7 +32898,7 @@ void FUN_004328a0(void)
   undefined2 *puVar11;
   undefined4 uVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_00432240();
   iVar3 = DAT_005df5a2;
   local_44 = DAT_005df5a2;
@@ -33154,7 +33162,7 @@ undefined4 FUN_004332c0(void)
   char *pcVar9;
   int iVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = 0;
   uStackY_1c = 0x4332e6;
   FID_conflict___mbscpy(local_118,(char *)0x0);
@@ -33281,7 +33289,7 @@ undefined4 FUN_004335d0(void)
   int iVar6;
   int iVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_005df320 = 0;
   local_18 = 0x4335f8;
   FID_conflict___mbscpy(local_118,&DAT_005d54e0);
@@ -33345,7 +33353,7 @@ void FUN_00433700(int param_1,uint param_2)
   int iVar6;
   uint uVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar7 = 0xffffffff;
   FUN_004332c0();
   uVar1 = 9;
@@ -33597,7 +33605,7 @@ void FUN_00433d40(void)
   int iStackY_1c;
   int iVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = 0;
   if (DAT_005df2d0 != 0) {
     FUN_00433ae0();
@@ -33672,7 +33680,7 @@ void FUN_00433f10(void)
   uint uStackY_1c;
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005df320 == DAT_004d806c) goto switchD_00433fb2_caseD_1;
   if (DAT_005df320 == 3) {
     return;
@@ -33756,7 +33764,7 @@ undefined4 FUN_004340a0(void)
   int iVar2;
   ushort *puVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_004cae04 != -1) {
     iVar2 = 0;
     iVar1 = *(int *)(*(int *)(DAT_005df2c8 + 4) + 8);
@@ -33794,7 +33802,7 @@ void FUN_00434110(void)
   int iStackY_1c;
   int iVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar6 = 0;
   local_10c = '\0';
   puVar7 = &local_10b;
@@ -33925,7 +33933,7 @@ void FUN_00434410(undefined4 param_1,int param_2,int param_3,int param_4)
   undefined4 local_14;
   undefined4 local_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   switch(param_1) {
   case 0:
     param_2 = param_4 + 0x23;
@@ -33996,7 +34004,7 @@ void FUN_00434560(void)
   undefined4 uStackY_2c;
   size_t sVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_150 = '\0';
   puVar3 = &local_14f;
   for (iVar2 = 0x3f; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -34026,7 +34034,7 @@ void FUN_00434560(void)
         }
         _DAT_004d808c = 1;
         FUN_0045fa30();
-        FUN_0045ef80();
+        MultiplyMatrices();
         iVar2 = *(int *)(*(int *)(DAT_005df2c8 + 8) + 0x11a + DAT_005dfe24 * 0x140);
         while (iVar2 != 0) {
           DAT_005dfe24 = DAT_005dfe24 + 1;
@@ -34034,7 +34042,7 @@ void FUN_00434560(void)
             DAT_005dfe24 = 0;
           }
           FUN_0045fa30();
-          FUN_0045ef80();
+          MultiplyMatrices();
           iVar2 = *(int *)(*(int *)(DAT_005df2c8 + 8) + 0x11a + DAT_005dfe24 * 0x140);
         }
         (**(code **)(**(int **)(DAT_005e5010 + 8) + 0x40))();
@@ -34136,7 +34144,7 @@ void FUN_00434560(void)
         }
         _DAT_004d808c = 1;
         FUN_0045fa30();
-        FUN_0045ef80();
+        MultiplyMatrices();
         iVar2 = *(int *)(*(int *)(DAT_005df2c8 + 8) + 0x11a + DAT_005dfe24 * 0x140);
         while (iVar2 != 0) {
           DAT_005dfe24 = DAT_005dfe24 + -1;
@@ -34144,7 +34152,7 @@ void FUN_00434560(void)
             DAT_005dfe24 = *(int *)(*(int *)(DAT_005df2c8 + 4) + 8) + -1;
           }
           FUN_0045fa30();
-          FUN_0045ef80();
+          MultiplyMatrices();
           iVar2 = *(int *)(*(int *)(DAT_005df2c8 + 8) + 0x11a + DAT_005dfe24 * 0x140);
         }
         (**(code **)(**(int **)(DAT_005e5010 + 8) + 0x40))();
@@ -34269,7 +34277,7 @@ void FUN_00434fd0(void)
   uint uStackY_1c;
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if ((DAT_005df31c == DAT_004d8078) && (_DAT_004d808c == 0)) goto switchD_0043507e_caseD_1;
   if (DAT_005df31c == 3) {
     _DAT_004d808c = 0;
@@ -34610,7 +34618,7 @@ undefined4 FUN_00435760(void)
   undefined4 *local_8;
   
   local_8 = (undefined4 *)0x43576d;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_004cae04 != -1) {
     if (DAT_004d8094 != (int *)0x0) {
       local_8 = &local_c;
@@ -34654,7 +34662,7 @@ void FUN_00435810(undefined4 param_1,float param_2,undefined4 param_3,undefined4
   undefined4 local_14;
   undefined4 local_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_2 < 1.0) {
     local_14 = 0;
     local_10 = 0x43585e;
@@ -34739,7 +34747,7 @@ undefined4 FUN_00435950(void)
   int iVar6;
   int iVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar4 = 0;
   iVar7 = 0;
   iVar5 = 0;
@@ -35383,7 +35391,7 @@ undefined4 FUN_00436600(void)
   int iVar2;
   int iVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = *(int *)(DAT_005e5010 + 0x253c) / 2;
   iVar3 = *(int *)(DAT_005e5010 + 0x2538) / 2 + -0x9b;
   if (DAT_005df2f8 != 2) {
@@ -35465,7 +35473,7 @@ undefined4 FUN_004368b0(void)
   int iVar5;
   int iVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005df2f8 != 2) {
     iVar5 = *(int *)(DAT_005e5010 + 0x253c) >> 1;
     iVar6 = *(int *)(DAT_005e5010 + 0x2538) >> 1;
@@ -35623,7 +35631,7 @@ void FUN_00436bf0(void)
   undefined *puStackY_20;
   int iStackY_1c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_00475b10();
   FUN_00492300();
   if (DAT_004d80b0 < 1) {
@@ -35897,7 +35905,7 @@ void FUN_00437320(void)
   int iVar2;
   int iVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = *(int *)(DAT_005e5010 + 0x253c) / 2;
   iVar3 = *(int *)(DAT_005e5010 + 0x2538) / 2 + -0x9b;
   FUN_0042b130();
@@ -36069,7 +36077,7 @@ void FUN_004375e0(void)
 void FUN_00437850(undefined4 param_1,undefined4 param_2,char *param_3)
 
 {
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_004ae5f0(param_1,&stack0xfffffff4);
   FID_conflict___mbscpy(param_3,&stack0xfffffff4);
   FID_conflict__strcat(param_3,&DAT_004caf3c);
@@ -36113,7 +36121,7 @@ undefined4 FUN_004378d0(void)
   int iVar10;
   int iVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar1 = (int *)FUN_0044ca40();
   if (piVar1 != (int *)0x0) {
     _memset(local_164,0,100);
@@ -36257,7 +36265,7 @@ void FUN_00437c30(void)
   uint uVar7;
   int iVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar8 = 0x88;
   do {
     FID_conflict___mbscpy(local_1a4,&DAT_005d50e0);
@@ -36374,7 +36382,7 @@ void FUN_00437ef0(void)
   int _Val;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _Size = 8;
   _Val = 0;
   _Dst = (void *)AllocateMemoryWithCallback(8);
@@ -36407,7 +36415,7 @@ void FUN_00437fb0(void)
   int iVar8;
   int *piVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar4 = false;
   FUN_0042a470();
   if (DAT_004d7cd4 == 0) goto switchD_00438715_caseD_5;
@@ -38287,7 +38295,7 @@ void FUN_0043b1f0(void)
   undefined4 uStackY_1c;
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_004d80d0 != DAT_004d80d4) {
     if (DAT_004d80d0 == 3) {
       return;
@@ -38338,7 +38346,7 @@ undefined4 FUN_0043b2f0(void)
   int iVar1;
   undefined4 uVar2;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_0042a770();
   iVar1 = FUN_0042abb0(DAT_005df290[2],0x32,0x15);
   if (iVar1 != 0) {
@@ -38538,7 +38546,7 @@ undefined4 FUN_0043b920(void)
   undefined4 uVar1;
   int iVar2;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_0042b210();
   iVar2 = FUN_0042abb0(DAT_005df290[2],0x32,0x15);
   if (iVar2 != 0) {
@@ -38714,7 +38722,7 @@ undefined4 FUN_0043beb0(void)
   undefined4 uVar1;
   int iVar2;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_0042b210();
   iVar2 = FUN_0042abb0(DAT_005df290[2],0x32,0x15);
   if (iVar2 != 0) {
@@ -39049,7 +39057,7 @@ undefined4 FUN_0043c710(void)
   int local_14;
   int iVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar7 = (ushort *)0x0;
   local_40c = '\0';
   puVar9 = &local_40b;
@@ -39150,7 +39158,7 @@ void FUN_0043cac0(void)
   int *piStack_18;
   undefined4 uStack_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = 0;
   iVar4 = 0;
   if (DAT_005df2d0 == 1) {
@@ -39229,7 +39237,7 @@ void FUN_0043cc30(void)
   uint uStackY_1c;
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005df314 != DAT_004d80d8) {
     FUN_00492720();
     uStackY_18 = 0x43cc69;
@@ -39310,7 +39318,7 @@ void FUN_0043cd90(void)
   undefined *puStackY_18;
   int iStackY_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_004d8100 != 0) {
     DAT_005df314 = 0;
     *(undefined4 *)(DAT_005df2c8 + 200) = 0xffffffff;
@@ -39523,7 +39531,7 @@ undefined4 FUN_0043d2c0(void)
   float10 fVar3;
   undefined8 uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_004cb05c = 0;
   FUN_0048daa0();
   DAT_004d80f4 = 0xffffffff;
@@ -39581,7 +39589,7 @@ undefined4 FUN_0043d590(void)
   undefined4 *puStackY_1c;
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FID_conflict___mbscpy(local_108,&DAT_005d54e0);
   FID_conflict__strcat(local_108,s_LastLoadedHeds_txt_004cb130);
   iVar1 = FUN_004adf60();
@@ -39721,7 +39729,7 @@ undefined4 FUN_0043d7f0(undefined4 param_1,undefined4 param_2)
   int iVar5;
   int iVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = FUN_004858c0();
   DAT_004d8118 = DAT_004d8114;
   DAT_004d8114 = DAT_004cb05c;
@@ -39844,7 +39852,7 @@ void FUN_0043db20(int param_1)
   undefined local_1d;
   uint uStackY_1c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if ((DAT_004cb05c != DAT_004d8110) || (param_1 != 0)) {
     uStackY_1c = 0x43db57;
     _memset(local_44,0,0x3d);
@@ -39926,7 +39934,7 @@ undefined4 FUN_0043dcb0(undefined4 *param_1,int param_2,int param_3,int param_4,
   int *local_18;
   undefined4 *local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_18 = (int *)0x0;
   if (param_5 != (int *)0x0) {
     if ((param_3 == 0) || (param_4 == 0)) {
@@ -40197,7 +40205,7 @@ void FUN_0043e270(void)
   bool bVar12;
   int iVar13;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar7 = *(int *)(DAT_005df318 + 4);
   iVar11 = 0;
   iVar13 = 0;
@@ -40560,7 +40568,7 @@ void FUN_0043eac0(void)
   char local_108 [244];
   undefined4 uStackY_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_004d8100 != 0) {
     DAT_005df28c = 0;
     uStackY_14 = 0x43eaf1;
@@ -40659,7 +40667,7 @@ undefined4 FUN_0043eda0(void)
   int iVar4;
   int iVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = FUN_0042abb0(DAT_005df290[2],0x32,0x15,0x36);
   iVar5 = 0;
   if (iVar3 != 0) {
@@ -40758,7 +40766,7 @@ void FUN_0043f030(void)
   int *piStack_18;
   undefined4 uStack_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = 0;
   iVar4 = 0;
   if (DAT_005df2d0 == 1) {
@@ -40841,7 +40849,7 @@ void FUN_0043f1b0(void)
   uint uStackY_1c;
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005df28c != DAT_004d8124) {
     FUN_00492720();
     uStackY_18 = 0x43f1e9;
@@ -41122,7 +41130,7 @@ void FUN_0043f550(void)
   undefined4 uStackY_20;
   int iVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar2 = false;
   if (((DAT_004cb05c != 2) ||
       ((((DAT_005dfdc8 != 2 && (DAT_005dfdc8 != 5)) && (DAT_005dfdc8 != 8)) &&
@@ -41306,7 +41314,7 @@ undefined4 FUN_0043f9d0(void)
   undefined2 uVar11;
   int iVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_2c = FUN_0043ff50();
   if (DAT_005df310 == '\0') {
     uVar9 = 0x61;
@@ -41404,7 +41412,7 @@ undefined4 FUN_0043fbc0(void)
   size_t _Size;
   int iVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_20 = (void *)FUN_0043ff50();
   if (DAT_005df310 == '\0') {
     _Source = &gRootFileDirectory;
@@ -42125,7 +42133,7 @@ int * FUN_00440fc0(uint param_1,int param_2)
   int *piStackY_24;
   uint uStackY_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar3 = (int *)0x0;
   uStackY_20 = param_1;
   piStackY_24 = (int *)0x440ffa;
@@ -42196,7 +42204,7 @@ void FUN_00441160(float *param_1,int param_2,float param_3)
   float fVar8;
   float10 fVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   for (iVar6 = *(int *)(DAT_005df318 + 4); iVar6 != 0; iVar6 = *(int *)(iVar6 + 0x16)) {
     iVar7 = *(int *)(iVar6 + 4);
     if (((((*(uint *)(iVar7 + 0x8a) & 2) == 0) ||
@@ -42256,7 +42264,7 @@ void FUN_004412c0(undefined4 ******param_1,undefined4 ******param_2,int param_3)
   undefined4 *****pppppuVar11;
   undefined4 *****pppppuVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pppppuVar12 = param_1[1];
   iVar10 = 1;
   uVar2 = *(uint *)((int)pppppuVar12 + 0x8a);
@@ -42703,7 +42711,7 @@ undefined2 * FUN_00441b30(undefined2 param_1)
   int iVar3;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _Size = 0xe;
   iVar3 = 0;
   puStackY_1c = (undefined *)0x441b4a;
@@ -42914,7 +42922,7 @@ undefined4 FUN_00441dd0(undefined2 *param_1)
   undefined4 local_14;
   undefined4 local_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_10 = (undefined *)CONCAT22(extraout_var,*param_1);
   local_14 = 0x441df2;
   iVar2 = FUN_00441a80();
@@ -43030,7 +43038,7 @@ void * FUN_004420e0(undefined4 param_1,int param_2)
   int iVar3;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar2 = 0;
   _Size = 0x87;
   iVar3 = 0;
@@ -43113,7 +43121,7 @@ void FUN_00442220(int param_1,undefined2 param_2)
   undefined4 uStackY_20;
   int _Val;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = FUN_004420e0();
   sVar2 = _strlen(local_104);
   sVar2 = sVar2 + 1;
@@ -43250,7 +43258,7 @@ void FUN_004424b0(void)
   undefined *puStackY_20;
   undefined4 uStackY_1c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar1 = 0;
   if (DAT_004d8150 == 0) {
     if (DAT_005df310 == '\0') {
@@ -43264,7 +43272,7 @@ void FUN_004424b0(void)
       uStackY_1c = 5;
       uStackY_24 = 0x442524;
       FUN_004adda0();
-      FUN_004ad310();
+      AdjustStackForLargeAllocations();
       uStackY_1c = 0x442549;
       FUN_004423f0();
     }
@@ -43278,7 +43286,7 @@ void FUN_004424b0(void)
         FUN_004adf60();
         uStackY_1c = 0x4425e1;
         FUN_004adda0();
-        FUN_004ad310();
+        AdjustStackForLargeAllocations();
         FUN_004423f0();
         uVar1 = FindNextFileA(hFindFile,&local_34c);
         uVar1 = uVar1 & 0xff;
@@ -43361,7 +43369,7 @@ undefined4 FUN_00442710(int param_1,byte param_2,char param_3)
   byte bVar6;
   uint uVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar4 = false;
   uVar7 = 0;
   bVar6 = param_2;
@@ -43516,7 +43524,7 @@ byte FUN_00442a60(int param_1,short *param_2)
   int iVar6;
   byte bVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar3 = false;
   bVar7 = 0;
   if ((char)DAT_00598944 != '\0') {
@@ -43610,7 +43618,7 @@ undefined4 FUN_00442d10(int param_1,byte param_2,char param_3)
   byte bVar7;
   
   bVar4 = param_2;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_2 < 5) {
     bVar7 = param_2;
     if (param_3 != '\0') {
@@ -43685,7 +43693,7 @@ void FUN_00442f00(int param_1)
   uint uVar5;
   byte bVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar3 = false;
   iVar2 = *(int *)(param_1 + 4);
   bVar6 = 0;
@@ -43799,7 +43807,7 @@ undefined4 FUN_00443120(void)
   undefined4 ***local_1c;
   double local_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(DAT_005df318 + 4);
   iVar7 = 0;
   piVar6 = &DAT_005de80b;
@@ -43870,7 +43878,7 @@ undefined4 FUN_004432f0(void)
   int iVar1;
   float *pfVar2;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_00443120();
   pfVar2 = (float *)&DAT_005de7af;
   do {
@@ -43928,7 +43936,7 @@ void FUN_004433f0(undefined4 param_1,undefined4 param_2)
   undefined4 uStackY_1c;
   char *pcVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar1 = DAT_004d8328;
   if (DAT_004d816c == 100) {
     if (DAT_004d8168 == 0) {
@@ -43992,7 +44000,7 @@ void FUN_00443560(void)
   undefined4 uVar4;
   char *pcVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FID_conflict___mbscpy(acStackY_137 + 3,&DAT_005de660);
   sVar1 = _strlen(&DAT_005de660);
   pcVar5 = &DAT_005de660;
@@ -44051,7 +44059,7 @@ void FUN_004436c0(void)
   int iVar3;
   int *piVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = 0;
   if (DAT_004d8160 == 0) {
     DAT_004d8384 = 0;
@@ -44111,7 +44119,7 @@ void FUN_004437c0(void)
   undefined4 uStackY_18;
   char *pcVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_004d8388 != 0) {
     if (DAT_004d8168 == 0) {
       uStackY_18 = 0x4437f6;
@@ -44170,7 +44178,7 @@ int FUN_00443910(void)
   undefined4 *puVar4;
   uint uVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_004d81c0 = FUN_004858c0();
   if (DAT_004d837c != 0) {
     if (DAT_004d8378 == 0) {
@@ -44276,7 +44284,7 @@ undefined4 FUN_00443ba0(void)
   int iVar3;
   undefined4 uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = 0;
   iVar1 = 0xff;
   uVar4 = 0;
@@ -44319,7 +44327,7 @@ undefined4 FUN_00443c70(void)
   int iVar3;
   undefined4 uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = 0;
   iVar1 = 0xff;
   uVar4 = 0;
@@ -44446,7 +44454,7 @@ void FUN_00443fc0(void)
   int local_8;
   
   local_8 = 0x443fcd;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_004d837c != 0) {
     local_8 = 1;
     iVar1 = (**(code **)(*DAT_004d8374 + 0x28))(DAT_004d8374,0x10,0,&local_8);
@@ -44486,7 +44494,7 @@ undefined4 FUN_00444070(void)
   undefined4 *puVar5;
   undefined4 *puVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar4 = 0;
   DAT_004d81c0 = FUN_004858c0();
   if (DAT_004d837c != 0) {
@@ -44545,7 +44553,7 @@ undefined4 FUN_004441a0(void)
   undefined4 uVar3;
   uint uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar3 = 0;
   if (DAT_005de230 == 0) {
     iVar1 = (**(code **)(*DAT_005ddc24 + 0x1c))(DAT_005ddc24);
@@ -44621,7 +44629,7 @@ undefined4 FUN_00444390(void)
   uint *puVar2;
   undefined4 uVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar3 = 0;
   if (DAT_005de230 == 0) {
     iVar1 = (**(code **)(*DAT_005ddc24 + 0x1c))(DAT_005ddc24);
@@ -44658,7 +44666,7 @@ void FUN_00444460(void)
   int local_8;
   
   local_8 = 0x44446d;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_8 = 0x14;
   iVar1 = (**(code **)(*DAT_005ddc24 + 0x28))(DAT_005ddc24,0x10,0,&local_8);
   if ((-1 < iVar1) && (local_8 != 0)) {
@@ -44745,7 +44753,7 @@ undefined4 FUN_00444660(void)
   int iVar4;
   int iVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar5 = 0;
   bVar2 = false;
   if (((DAT_004d79b0 != 0) && (DAT_004d8238 != 10)) && (*(int *)(DAT_004d79b0 + 8) != 0)) {
@@ -45308,7 +45316,7 @@ void FUN_00445250(uint param_1)
   undefined uVar7;
   uint uVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar4 = false;
   bVar5 = false;
   iVar6 = FUN_004858c0();
@@ -45730,7 +45738,7 @@ void FUN_00445e40(uint param_1)
   bool bVar4;
   int iVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar4 = false;
   bVar3 = false;
   if (((DAT_004d79b0 != 0) && (DAT_004d8238 != 10)) && (*(int *)(DAT_004d79b0 + 8) != 0)) {
@@ -46079,7 +46087,7 @@ void FUN_00446840(int param_1,int param_2)
   int iVar7;
   int *piVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(*(int *)(DAT_005df318 + 4) + 4);
   bVar2 = false;
   uVar4 = *(undefined4 *)(iVar1 + 0x193);
@@ -46386,7 +46394,7 @@ uint FUN_00446db0(void)
   uint uVar6;
   int iVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar3 = 0;
   local_18 = 0;
   uVar6 = 0;
@@ -46503,7 +46511,7 @@ undefined4 FUN_004470b0(int param_1)
   int iVar6;
   undefined4 uVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar6 = 0;
   iVar4 = 0xff;
   uVar7 = 0;
@@ -46566,7 +46574,7 @@ undefined4 FUN_004471c0(int param_1)
   int iVar9;
   undefined4 uVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar3 = false;
   uVar10 = 0;
   bVar2 = false;
@@ -46821,7 +46829,7 @@ undefined4 FUN_004476e0(void)
   undefined4 uVar4;
   int iVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar4 = 0;
   DAT_004d8330 = FUN_004858c0();
   if (DAT_005ddf20 == 0) {
@@ -46877,7 +46885,7 @@ void FUN_004477f0(void)
   int local_8;
   
   local_8 = 0x4477fd;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_8 = 0x14;
   iVar1 = (**(code **)(*DAT_005ddc20 + 0x28))(DAT_005ddc20,0x10,0,&local_8);
   if ((-1 < iVar1) && (local_8 != 0)) {
@@ -46891,7 +46899,7 @@ void FUN_004477f0(void)
 void FUN_00447840(void)
 
 {
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_00446d40();
   DAT_004d8368 = 0;
   DAT_004d824c = 0;
@@ -46922,7 +46930,7 @@ undefined4 FUN_004478e0(undefined4 param_1,undefined4 param_2)
   undefined4 *local_18;
   undefined4 local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_14 = 0x4478f5;
   FUN_004433c0();
   if (DAT_004d8384 != 0) {
@@ -47019,7 +47027,7 @@ void FUN_00447b80(void)
   int iVar5;
   undefined4 *puVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar4 = 0;
   DAT_004d838c = 0;
   DAT_004d8390 = 0;
@@ -47068,7 +47076,7 @@ undefined4 FUN_00447c70(int *param_1)
   undefined4 uStackY_64;
   undefined4 uStackY_60;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = (**(code **)(*DAT_005ddf40 + 0xc))();
   if (iVar1 != 0) {
     OutputDebugStringA(s_IDirectInput__CreateDevice_FAILE_004cbba8);
@@ -47152,7 +47160,7 @@ void FUN_00447ea0(int *param_1,undefined4 param_2)
   undefined4 *local_8;
   
   local_8 = (undefined4 *)0x447ead;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_8 = &local_18;
   local_c = param_2;
   local_10 = param_1;
@@ -47305,7 +47313,7 @@ uint FUN_00448210(char param_1,uint param_2,byte param_3)
   byte bVar4;
   uint uVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar4 = 0;
   uVar5 = 0;
   bVar1 = false;
@@ -47540,7 +47548,7 @@ switchD_004483a7_caseD_e:
 undefined4 FUN_004486b0(char param_1,undefined4 param_2,char param_3)
 
 {
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if ((param_1 != '\0') && (param_3 == '\x05')) {
     return 1;
   }
@@ -47555,7 +47563,7 @@ uint FUN_00448700(char param_1,byte param_2,char param_3)
   byte bVar1;
   uint local_8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar1 = 0;
   local_8 = 0;
   if (param_1 == '\x01') {
@@ -48093,7 +48101,7 @@ void FUN_004491d0(int param_1,int param_2,int param_3,int param_4,undefined2 par
   int iVar9;
   
   uVar3 = param_5;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar9 = 0;
   if ((param_1 <= param_3) && (param_2 <= param_4)) {
     iVar9 = 1;
@@ -48424,7 +48432,7 @@ undefined4 FUN_00449900(undefined4 param_1,undefined4 param_2,int *param_3)
   undefined4 uStackY_3c;
   int *local_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005df318 == 0) {
     return 0;
   }
@@ -48634,7 +48642,7 @@ void FUN_00449d30(int param_1,float param_2,int *param_3)
   
   piVar3 = param_3;
   param_3 = (int *)param_2;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = (float)(int)param_2;
   param_2 = 0.0;
   if (0 < (int)param_3) {
@@ -48662,7 +48670,7 @@ void FUN_00449dd0(int *param_1,int param_2)
   uint uVar2;
   int iVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = 0;
   if (0 < param_2) {
     do {
@@ -48693,7 +48701,7 @@ void FUN_00449e60(void)
   undefined4 *puVar8;
   undefined4 *puVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar4 = DAT_005e5010;
   puVar8 = &DAT_004cc468;
   puVar9 = &DAT_005dd9e0;
@@ -48888,7 +48896,7 @@ void FUN_0044a320(undefined4 param_1,int param_2,undefined4 param_3,float param_
   float fVar12;
   
   iVar1 = (int)param_4;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar2 = *(short *)(DAT_004d83a4 + 0x60);
   param_4 = 0.0;
   iVar11 = 0;
@@ -49029,7 +49037,7 @@ void FUN_0044a650(undefined4 param_1,int param_2,undefined4 param_3,float param_
   float fVar12;
   
   iVar9 = (int)param_4;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar10 = 0.0;
   local_1c = (float)(int)*(short *)(DAT_004d83a4 + 0x60);
   fVar6 = 0.0;
@@ -49252,7 +49260,7 @@ void FUN_0044abe0(int param_1)
   int iVar8;
   int iVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar1 = *(short *)(DAT_004d83a4 + 0x60);
   iVar7 = -1;
   iVar9 = 0;
@@ -49529,7 +49537,7 @@ undefined4 FUN_0044b3b0(void)
   int _Val;
   size_t sVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar4 = 10;
   do {
     sVar6 = 0x40;
@@ -49682,7 +49690,7 @@ undefined4 FUN_0044b6b0(int param_1)
   size_t _Size;
   undefined *puVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _Size = 8;
   iVar4 = 0;
   _Dst = (void *)AllocateMemoryWithCallback();
@@ -49785,7 +49793,7 @@ undefined4 FUN_0044b8d0(undefined4 param_1,char *param_2,char *param_3)
   int iVar2;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FID_conflict___mbscpy(local_128,param_3);
   FID_conflict__strcat(local_128,param_2);
   _Size = 0x6c;
@@ -49835,7 +49843,7 @@ int * FUN_0044ba00(undefined4 param_1,int *param_2)
   int iVar2;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   GetObjectA(param_2,0x18,&local_24);
   _Size = 0x6c;
   iVar2 = 0;
@@ -49877,7 +49885,7 @@ int FUN_0044bae0(int *param_1,HDC param_2,int param_3,int param_4,int param_5,un
   int iVar1;
   undefined *pv;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if ((param_2 != (HDC)0x0) && (param_1 != (int *)0x0)) {
     (**(code **)(*param_1 + 0x6c))();
     hdc = CreateCompatibleDC((HDC)0x0);
@@ -49928,7 +49936,7 @@ undefined4 FUN_0044bc00(void)
   int iVar4;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005df2f8 == 1) {
     uVar3 = 0x18;
   }
@@ -50024,7 +50032,7 @@ undefined4 FUN_0044be60(undefined4 param_1,int **param_2,undefined4 param_3)
   undefined4 uStackY_1c;
   undefined *puStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puStackY_18 = (undefined *)0x44be82;
   _memset(&local_7c,0,0x6c);
   local_7c = 0x6c;
@@ -50078,7 +50086,7 @@ bool FUN_0044bf70(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 
   undefined4 uStackY_18;
   undefined *local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_14 = (undefined *)0x44bf9c;
   _memset(&local_7c,0,0);
   local_14 = (undefined *)((-(uint)(DAT_005e58d0 != 0) & 0x3800) + 0x1800);
@@ -50121,7 +50129,7 @@ undefined4 FUN_0044c060(undefined2 *param_1)
   int iVar2;
   undefined2 extraout_var;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)((int)param_1 + 0xf);
   if (iVar1 == 0) {
     iVar1 = FUN_0044c9c0((-(DAT_005df2ec != 0) & 0x10U) + 0x10,0);
@@ -50173,7 +50181,7 @@ FUN_0044c110(int *param_1,int param_2,int param_3,int param_4,undefined4 param_5
   int iVar8;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piStackY_40 = (int *)0x0;
   _memset(&stack0xffffffd8,0,0x10);
   _memset(&stack0xffffffe8,0,0x10);
@@ -50288,7 +50296,7 @@ undefined4 FUN_0044c3a0(undefined4 param_1,int *param_2,int *param_3)
   int local_30;
   undefined4 *puVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(local_110,0,0x6c);
   local_110[0] = 0x6c;
   (**(code **)(*param_2 + 0x58))();
@@ -50378,7 +50386,7 @@ undefined4 FUN_0044c540(int *param_1,int param_2,int param_3)
   undefined4 uStackY_3c;
   int *piVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(&stack0xffffffec,0,0x10);
   _memset(local_90,0,0x6c);
   piVar7 = local_90;
@@ -50573,7 +50581,7 @@ void FUN_0044c970(void)
   undefined4 local_8;
   
   local_8 = 0x44c97d;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_8 = 0;
   local_c = 0x1000000;
   local_10 = 0;
@@ -50595,7 +50603,7 @@ uint FUN_0044c9c0(undefined4 param_1)
   undefined4 uStackY_14;
   undefined *puVar2;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStackY_14 = 0x44c9e1;
   _memset(&local_74,0,0);
   local_74 = 0x6c;
@@ -50620,7 +50628,7 @@ undefined4 FUN_0044ca40(undefined4 param_1,undefined4 param_2)
   undefined4 local_70;
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStackY_18 = 0x44ca62;
   _memset(&local_7c,0,0x6c);
   local_7c = 0x6c;
@@ -50660,7 +50668,7 @@ undefined4 FUN_0044cb10(undefined4 param_1,undefined4 param_2,int **param_3,int 
   int *local_24;
   undefined4 uStackY_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if ((*param_3 != (int *)0x0) && (iVar2 = FUN_00442690(), iVar2 != 0)) {
     uStackY_20 = (int **)local_88;
     local_24 = (int *)0x44cb5a;
@@ -50786,7 +50794,7 @@ void FUN_0044cd90(int param_1)
   uint uVar8;
   int iVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar9 = 0;
   iVar6 = _DAT_004d845c;
   if (DAT_004cb05c == 8) {
@@ -50944,7 +50952,7 @@ void FUN_0044d100(int param_1)
   int *piStackY_2c;
   undefined4 uStackY_28;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(local_70,0,0x6c);
   local_70[0] = 0x6c;
   iVar1 = param_1 * 4 + 0x1c;
@@ -50981,7 +50989,7 @@ void FUN_0044d1b0(undefined4 *param_1,undefined4 *param_2,int *param_3)
   undefined4 local_64;
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_3 != (int *)0x0) {
     uStackY_18 = 0x44d1d2;
     _memset(&local_70,0,0x6c);
@@ -51059,7 +51067,7 @@ void FUN_0044d300(void)
   int iVar6;
   undefined4 uVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_004cb05c != 8) {
     return;
   }
@@ -51205,7 +51213,7 @@ undefined4 FUN_0044d600(int *param_1,undefined4 param_2)
   float *pfVar2;
   int iVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (((DAT_004cb05c == 8) && (DAT_004d83a4 != (undefined4 *)0x0)) &&
      (*(char *)((int)DAT_004d83a4 + 0x62) != '\x03')) {
     FUN_00480e20();
@@ -51278,7 +51286,7 @@ void FUN_0044d740(int param_1)
   int *piVar4;
   int local_18 [2];
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_18[1] = 0;
   iVar3 = 0;
   local_18[0] = 0;
@@ -51366,7 +51374,7 @@ void FUN_0044d8e0(void)
   float fVar10;
   float fVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar1 = *(short *)(DAT_004d83a4 + 0x60);
   if ((DAT_005a4b88 == 0) ||
      (iVar8 = DAT_005a4b88, *(char *)(*(int *)(DAT_005a4b88 + 4) + 0x189) == '\0')) {
@@ -51471,7 +51479,7 @@ undefined4 FUN_0044dc30(void)
   int iVar4;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _Size = 0x5b;
   iVar4 = 0;
   pvVar1 = (void *)AllocateMemoryWithCallback(0x5b);
@@ -51534,7 +51542,7 @@ undefined4 FUN_0044ddb0(void)
   int iVar7;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _Size = 0x5b;
   iVar7 = 0;
   pvVar2 = (void *)AllocateMemoryWithCallback(0x5b);
@@ -51611,7 +51619,7 @@ undefined4 FUN_0044df10(HWND param_1,uint param_2,uint param_3,LONG param_4)
   LPSTR lpString;
   LPARAM LVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_84 = '\0';
   puVar6 = &local_83;
   for (iVar5 = 0x1f; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -51910,7 +51918,7 @@ undefined4 FUN_0044e530(HWND param_1,int param_2,short param_3)
   LPARAM lParam;
   LPCSTR pCVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   wParam = DAT_004d8694;
   iVar5 = DAT_004d8470;
   cVar1 = DAT_004d8234;
@@ -52034,7 +52042,7 @@ void FUN_0044e910(HWND param_1)
   CHAR local_38 [20];
   undefined4 uStackY_24;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStackY_24 = 0x44e935;
   SendMessageA(param_1,0x144,0,0);
   uStackY_24 = 0x44e941;
@@ -52069,7 +52077,7 @@ void FUN_0044e9e0(HWND param_1,uint param_2)
   WPARAM wParam;
   LPARAM lParam;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   lParam = 0;
   wParam = 0;
   Msg = 0x147;
@@ -52121,7 +52129,7 @@ void FUN_0044eb90(int param_1,int param_2,HWND param_3)
   undefined4 local_43;
   undefined4 uStackY_1c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_c4 = '\0';
   puVar3 = &local_c3;
   for (iVar2 = 0x1f; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -52431,7 +52439,7 @@ undefined4 FUN_0044f210(void)
   int iVar2;
   int unaff_ESI;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if ((DAT_005de230 != 0) &&
      (unaff_ESI = (**(code **)(*DAT_005ddc24 + 0x20))(DAT_005ddc24), -1 < unaff_ESI)) {
     DAT_005de230 = 0;
@@ -52494,7 +52502,7 @@ undefined4 FUN_0044f3b0(void)
   int iVar2;
   int unaff_ESI;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if ((DAT_005de230 != 0) &&
      (unaff_ESI = (**(code **)(*DAT_005ddc24 + 0x20))(DAT_005ddc24), -1 < unaff_ESI)) {
     DAT_005de230 = 0;
@@ -53184,7 +53192,7 @@ void FUN_00450740(void)
   DWORD nSize;
   va_list *Arguments;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_104 = '\0';
   Arguments = (va_list *)0x0;
   puVar2 = &local_103;
@@ -53218,7 +53226,7 @@ undefined4 FUN_004507a0(uint param_1)
   int iVar8;
   int iVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar8 = 0;
   iVar7 = 0;
   iVar9 = *(int *)(DAT_005df318[1] + 10);
@@ -53348,7 +53356,7 @@ undefined4 FUN_00450a60(int param_1,undefined4 param_2,int param_3)
   int iVar5;
   int iVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if ((*(byte *)(*(int *)(param_1 + 4) + 0x8a) & 1) != 0) {
     return 0;
   }
@@ -53404,7 +53412,7 @@ undefined4 FUN_00450bd0(void)
   float local_1c;
   double local_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar5 = *(int *)(DAT_005df318 + 4);
   iVar7 = DAT_004d86ac;
   if (iVar5 == 0) {
@@ -53490,7 +53498,7 @@ undefined4 FUN_00450dd0(void)
   undefined *local_18;
   undefined4 local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_00450bd0();
   iVar3 = 0;
   if (0 < DAT_004d86a8) {
@@ -53613,7 +53621,7 @@ undefined4 FUN_00450f80(void)
   int *piVar12;
   int iVar13;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar13 = 0;
   pfVar8 = (float *)&DAT_005dcc28;
   do {
@@ -53910,7 +53918,7 @@ void FUN_004514d0(void)
   undefined4 ****local_14;
   int iVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar4 = &DAT_005dcc20;
   iVar5 = 4;
   do {
@@ -54015,7 +54023,7 @@ void FUN_00451780(char *param_1,char *param_2)
   char acStackY_117 [231];
   undefined4 uStackY_30;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FID_conflict___mbscpy(acStackY_117 + 3,param_2);
   FID_conflict__strcat(acStackY_117 + 3,param_1);
   sVar1 = _strlen(acStackY_117 + 3);
@@ -54137,7 +54145,7 @@ uint FUN_00451a60(float *param_1,float *param_2,undefined4 *param_3)
   float fVar14;
   float fVar15;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_2 == (float *)0x0) {
     local_14 = (float **)param_1;
     local_18 = (float *)0x451aa9;
@@ -54215,7 +54223,7 @@ uint FUN_00451a60(float *param_1,float *param_2,undefined4 *param_3)
     local_14 = &param_2;
     local_1c = (undefined *)0x451beb;
     local_18 = pfVar3;
-    FUN_004ad310();
+    AdjustStackForLargeAllocations();
     pfVar8 = param_1;
     ppfVar9 = &local_18;
     for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -54286,7 +54294,7 @@ void FUN_00451de0(int param_1,int param_2,int param_3,int param_4,int *param_5)
   uint local_1c;
   int local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar1 = *(short *)((int)DAT_00598ff0 + 0xe);
   local_1c = 0;
   iVar3 = *param_5;
@@ -54370,7 +54378,7 @@ undefined4 FUN_00452000(undefined4 param_1)
   uint uVar8;
   int iVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar4 = (uint)*(ushort *)((int)DAT_00598ff0 + 0xe) * (uint)*(ushort *)((int)DAT_00598ff0 + 0xe) *
           2;
   uVar8 = 0;
@@ -54439,7 +54447,7 @@ void FUN_00452160(uint param_1,int param_2,int param_3,int param_4,int *param_5)
   int iVar9;
   int local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar4 = 0;
   iVar6 = *param_5;
   iVar3 = DAT_00598d90;
@@ -54541,7 +54549,7 @@ undefined4 * FUN_004523e0(undefined4 *param_1,float **param_2)
   float *local_10;
   float **local_c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_1c = *param_2[2] - **param_2;
   local_14 = param_2[2][2] - (*param_2)[2];
   local_c = &local_10;
@@ -54590,7 +54598,7 @@ void FUN_00452470(void)
   undefined4 *local_14;
   int *piVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_44 = 0;
   local_40 = 0;
   local_3c = 0;
@@ -54749,7 +54757,7 @@ undefined4 FUN_00452770(int param_1)
   uint unaff_EDI;
   int iVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar2 = 0;
   iVar3 = DAT_00598d90;
   if (*(int *)(DAT_00598d90 + 0x239) != 0) {
@@ -54788,7 +54796,7 @@ undefined4 FUN_00452810(float *param_1,float *param_2,undefined4 param_3,float *
   float local_14;
   double local_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_1c = *param_4 - *param_2;
   local_14 = param_4[2] - param_2[2];
   local_10 = (double)CONCAT44(&local_10,&local_1c);
@@ -54853,7 +54861,7 @@ undefined4 FUN_00452900(void)
   float *local_18 [2];
   float *pfVar16;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_20 = (undefined *)0x0;
   if (*(int *)(DAT_00598d90 + 0x239) != 0) {
     do {
@@ -54900,7 +54908,7 @@ undefined4 FUN_00452900(void)
                       local_18[1] = (float *)&stack0xfffffff4;
                       local_1c = (float *)0x452a54;
                       local_18[0] = pfVar9;
-                      FUN_004ad310();
+                      AdjustStackForLargeAllocations();
                       ppfVar12 = local_18;
                       for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
                         *ppfVar12 = (float *)*pfVar10;
@@ -55012,7 +55020,7 @@ void FUN_00452ca0(void)
   int local_20;
   uint uVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_20 = 0x452cbd;
   _memset(local_68,0,0x40);
   if (DAT_004cd800 == 0) {
@@ -55202,7 +55210,7 @@ uint FUN_00453070(int param_1,int param_2,int param_3,int param_4)
   undefined *local_18;
   undefined8 local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar1 = (ushort *)(param_2 + param_3 * 0xc);
   iVar2 = (uint)*puVar1 * 0x20 + param_1;
   local_18 = local_28;
@@ -55237,7 +55245,7 @@ uint FUN_004531c0(int param_1)
   int iVar4;
   float fVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar4 = param_1 % 3;
   fVar5 = (float)(param_1 % 9) * 0.1 - -0.1;
   if (((iVar4 != 0) && (iVar4 != 1)) && (iVar4 == 2)) {
@@ -55419,7 +55427,7 @@ undefined4 FUN_00453440(undefined2 *param_1,int param_2)
   int iVar15;
   undefined uVar16;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_00598d58 = 0;
   if (param_2 == 0) {
     FID_conflict___mbscpy(local_14c,&DAT_005d50e0);
@@ -56155,7 +56163,7 @@ undefined4 FUN_00454a20(int param_1)
   int local_18;
   int local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_1 == 0) {
     FUN_004adcf0();
     return 1;
@@ -56341,7 +56349,7 @@ void FUN_00454f30(int param_1)
   size_t _Size;
   char *pcVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar8 = 0;
   uVar9 = 0;
   iVar7 = *(int *)(*(int *)(DAT_005df318 + 4) + 10);
@@ -56437,7 +56445,7 @@ void FUN_004551b0(int param_1)
   byte bVar2;
   uint uVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar2 = 0;
   uVar3 = 0;
   if (DAT_005dcbb3 != 0) {
@@ -56472,7 +56480,7 @@ void FUN_00455230(int param_1)
   uint uVar12;
   uint uVar13;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar9 = 0;
   bVar6 = 0;
   iVar10 = *(int *)(*(int *)(DAT_005df318 + 4) + 10);
@@ -56596,7 +56604,7 @@ void FUN_004554e0(int param_1,int param_2)
   int iVar7;
   char *pcVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar7 = 0;
   pcVar3 = (char *)(DAT_004ca030 * 0x37 + DAT_005b9440);
   pcVar8 = (char *)0x0;
@@ -56709,7 +56717,7 @@ void FUN_004557d0(int param_1,int param_2)
   char *pcVar14;
   int iVar15;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar8 = 0;
   cVar7 = '\0';
   iVar15 = *(int *)(*(int *)(DAT_005df318 + 4) + 10);
@@ -56918,7 +56926,7 @@ void FUN_00455ca0(int param_1)
   size_t _Size;
   uint uVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = 0;
   DAT_004d86b8 = 0;
   _Size = (uint)*(ushort *)(param_1 + 6) * 0x27;
@@ -57009,7 +57017,7 @@ void FUN_00455fb0(void)
   int *piVar4;
   int iVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar3 = 0;
   if (*(short *)(DAT_00598d90 + 0x4f1) != 0) {
     do {
@@ -57385,7 +57393,7 @@ void FUN_00456740(int param_1,int param_2)
   int iVar6;
   size_t sVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = param_1 + 7 + (uint)*(ushort *)(param_2 + 0x245);
   sVar7 = (uint)*(ushort *)(param_2 + 0x245) * 4 + 4;
   iVar5 = 0;
@@ -57444,7 +57452,7 @@ undefined4 FUN_00456880(undefined4 param_1,short param_2,int param_3)
   int iVar12;
   size_t sVar13;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar8 = param_1;
   FUN_004adf60(param_1);
   FUN_004adda0((int)&param_1 + 2,1,2);
@@ -57854,7 +57862,7 @@ void FUN_004571c0(int param_1)
   int iVar7;
   int iVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar8 = 0;
   sVar1 = (uint)*(ushort *)(DAT_005dcb24 + 1) * 0x3e;
   iVar7 = 0;
@@ -57939,7 +57947,7 @@ void FUN_004573a0(int param_1)
   undefined4 *puVar10;
   undefined4 *puVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar10 = (undefined4 *)(param_1 + 10);
   if (*(int *)(param_1 + 6) != 0) {
     do {
@@ -58064,7 +58072,7 @@ void FUN_00457650(void)
   undefined2 uVar6;
   uint uVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _DAT_005dcb14 = DAT_005986d4;
   uVar7 = 0;
   iVar3 = DAT_00598d90;
@@ -58132,7 +58140,7 @@ void FUN_00457770(void)
   int **local_8;
   
   local_8 = (int **)0x45777d;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_8 = &local_c;
   local_c = &DAT_004c0ff0;
   local_10 = DAT_005e58e4;
@@ -58172,7 +58180,7 @@ FUN_00457850(float param_1,float param_2,float param_3,float *param_4,float *par
   float fVar2;
   float fVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_1 <= param_2) {
     fVar1 = param_2;
     if ((param_2 <= param_3) && (fVar1 = param_1, param_1 <= param_3)) goto LAB_004578b2;
@@ -58269,7 +58277,7 @@ FUN_00457ac0(float *param_1,float *param_2,float *param_3,float param_4,float pa
   float fVar2;
   float10 fVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (0.5 < param_5) {
     fVar1 = (param_5 - -1.0) * param_6 + param_5;
   }
@@ -58308,7 +58316,7 @@ undefined4 FUN_00457ba0(ushort *param_1,int param_2,int param_3,int param_4)
   ushort *puVar9;
   float *pfVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (0 < param_2) {
     pfVar10 = (float *)&DAT_004d86c4;
     iVar3 = param_2;
@@ -58417,7 +58425,7 @@ FUN_00457d50(uint param_1,int **param_2,uint *param_3,undefined4 *param_4,undefi
   uint uVar14;
   uint uVar15;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = DAT_005dca00;
   bVar5 = false;
   *param_5 = 0;
@@ -58710,7 +58718,7 @@ undefined4 FUN_00458360(void)
   undefined4 uStackY_1c;
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStackY_18 = DAT_005dcb18;
   uStackY_1c = 0x45839a;
   DAT_005986c8 = FUN_0048f000();
@@ -58772,7 +58780,7 @@ undefined4 FUN_00458470(uint param_1)
   size_t _Size;
   undefined *puVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar8 = 0;
   iVar2 = DAT_005dca00 + (param_1 & 0xffff) * 0x2e;
   _Size = 0;
@@ -58953,7 +58961,7 @@ FUN_00458980(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_
   int iVar2;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _Size = 8;
   iVar2 = 0;
   puStackY_20 = (undefined4 *)0x45899c;
@@ -59095,7 +59103,7 @@ void FUN_00458d80(void)
   int iVar5;
   uint uVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar6 = 0;
   if (*(int *)(DAT_00598d90 + 0x239) != 0) {
     do {
@@ -59153,7 +59161,7 @@ undefined4 FUN_00458ea0(void)
   size_t sVar5;
   char *_Source;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = 0;
   _memset(local_348,0,0x16c);
   local_348[0] = 0x16c;
@@ -59374,7 +59382,7 @@ undefined4 FUN_004593d0(void)
   uint uVar8;
   int iVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar7 = 0x1157;
   iVar6 = 0;
   pvStackY_20 = (void *)0x459408;
@@ -59699,7 +59707,7 @@ void FUN_00459a20(ushort *param_1,ushort param_2,uint param_3,char param_4,int p
   size_t sVar13;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar10 = 0;
   sVar13 = 0;
   iVar4 = (uint)param_2 * 0x33;
@@ -59877,7 +59885,7 @@ FUN_00459d30(byte param_1,int **param_2,int *param_3,undefined4 *param_4,undefin
   uint uVar17;
   void *pvVar18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pvVar12 = (void *)0x0;
   pvVar18 = (void *)0x0;
   uVar16 = 0xffffffff;
@@ -60098,7 +60106,7 @@ FUN_0045a100(char *param_1,int **param_2,int *param_3,undefined4 *param_4,undefi
   uint uVar22;
   uint uVar23;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar23 = 0xffffffff;
   *param_5 = 0;
   _memset(local_54,1,0);
@@ -60435,7 +60443,7 @@ undefined4 FUN_0045a900(int *param_1,int *param_2)
   int iVar6;
   uint uVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStackY_20 = 0x45a91d;
   _memset(&local_80,0,0x6c);
   local_80 = 0x6c;
@@ -60500,7 +60508,7 @@ FUN_0045a9e0(undefined2 *param_1,uint param_2,uint param_3,ushort param_4,ushort
   uint uVar7;
   uint uVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar5 = (uint)param_4;
   uVar7 = param_2 & 0xffff;
   uVar3 = (uint)param_5;
@@ -60546,7 +60554,7 @@ undefined4 FUN_0045aaa0(int *param_1,int param_2,uint param_3,uint param_4)
   int iStackY_2c;
   int iStackY_28;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(&local_70,0,0x6c);
   local_70 = 0x6c;
   local_6c = 0x80c;
@@ -60583,7 +60591,7 @@ undefined4 FUN_0045ab40(void)
   int iVar6;
   int iVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar2 = false;
   bVar3 = false;
   uVar4 = 0;
@@ -60704,7 +60712,7 @@ void FUN_0045ad90(undefined4 param_1,undefined *param_2)
   uint uVar10;
   undefined2 uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar5 = CONCAT22(extraout_var,(ushort)(byte)param_2[2]) *
           CONCAT22(extraout_var_00,(ushort)(byte)param_2[1]) * 2;
   uVar9 = FUN_0045ac80(CONCAT31((int3)((uint)iVar5 >> 8),*param_2),
@@ -60770,7 +60778,7 @@ ushort FUN_0045ae70(undefined4 param_1,undefined4 param_2,short param_3,undefine
   undefined2 uVar11;
   undefined2 uVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar4 = param_4;
   pcStackY_24 = local_6c;
   local_20 = 'J';
@@ -60922,7 +60930,7 @@ undefined2 FUN_0045b0d0(short param_1,char param_2)
 {
   ushort uVar1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar1 = (ushort)DAT_005986d8;
   if (DAT_005986dc <= (ushort)DAT_005986d8) {
     return 0;
@@ -60944,7 +60952,7 @@ undefined4 FUN_0045b160(short param_1,char param_2)
 {
   ushort uVar1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar1 = (ushort)DAT_005986d8;
   if (DAT_005986dc <= (ushort)DAT_005986d8) {
     return 0;
@@ -60966,7 +60974,7 @@ undefined4 FUN_0045b1f0(short param_1,char param_2)
 {
   ushort uVar1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar1 = (ushort)DAT_005986d8;
   if (DAT_005986dc <= (ushort)DAT_005986d8) {
     return 0;
@@ -60995,7 +61003,7 @@ void FUN_0045b280(int *param_1)
   uint uVar7;
   
   piVar3 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar6 = 0;
   uVar7 = 0;
   if (*(short *)(param_1 + 1) != 0) {
@@ -61087,7 +61095,7 @@ void FUN_0045b3d0(int *param_1)
   short sVar12;
   
   piVar2 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar7 = 0;
   local_1c = 0;
   sVar3 = *(short *)((int)param_1 + 0xe) + 1;
@@ -61199,7 +61207,7 @@ undefined4 FUN_0045b630(uint param_1,ushort *param_2)
   
   puVar5 = param_2;
   iVar4 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   **(uint **)(param_1 + 0x56) = (uint)*param_2;
   *(uint *)(*(int *)(param_1 + 0x56) + 8) = (uint)param_2[1];
   *(uint *)(*(int *)(param_1 + 0x56) + 0x14) = (uint)param_2[10];
@@ -61409,7 +61417,7 @@ void FUN_0045bb90(int param_1)
   double dVar16;
   
   iVar6 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar7 = *(int *)(param_1 + 0x56);
   uVar11 = (uint)*(ushort *)(DAT_005dcb24 + 6) * (uint)*(ushort *)(DAT_005dcb24 + 0x10) *
            (uint)*(ushort *)(DAT_005dcb24 + 0xe);
@@ -61621,7 +61629,7 @@ void FUN_0045c0d0(void)
   uint uVar16;
   uint uVar17;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar9 = 0;
   iVar15 = *(int *)(DAT_005dcb3c + 0x239);
   if (iVar15 != 0) {
@@ -61785,7 +61793,7 @@ void FUN_0045c4e0(void)
   float *local_1c;
   double local_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar3 = 0;
   if (*(int *)(DAT_005dcb3c + 0x239) != 0) {
     do {
@@ -61898,7 +61906,7 @@ undefined4 FUN_0045c730(int param_1)
   undefined2 uStack_e;
   
   iVar8 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar10 = *(uint **)(param_1 + 0x56);
   uVar12 = 0;
   if (*puVar10 != 0) {
@@ -62139,7 +62147,7 @@ undefined4 FUN_0045cbc0(int *param_1,float param_2,float param_3)
   int iVar3;
   int iVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar2 = (float)((uint)*(ushort *)((int)param_1 + 0xe) * (uint)*(ushort *)(param_1 + 4));
   if ((0.0 <= param_2) && (0.0 <= param_3)) {
     uVar1 = *(ushort *)((int)param_1 + 6);
@@ -62167,7 +62175,7 @@ undefined4 FUN_0045cc90(int *param_1,int param_2)
   int iVar4;
   int iVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = *(int *)(param_2 + 4);
   fVar3 = (float)((uint)*(ushort *)(param_1 + 4) * (uint)*(ushort *)((int)param_1 + 0xe));
   if ((0.0 <= *(float *)(iVar2 + 0x36)) && (0.0 <= *(float *)(iVar2 + 0x3e))) {
@@ -62230,7 +62238,7 @@ undefined4 FUN_0045ceb0(float param_1,float param_2)
   int iVar4;
   int iVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar3 = DAT_00598ff0;
   fVar2 = (float)((uint)*(ushort *)((int)DAT_00598ff0 + 0xe) * (uint)*(ushort *)(DAT_00598ff0 + 4));
   if ((0.0 <= param_1) && (0.0 <= param_2)) {
@@ -62265,7 +62273,7 @@ void FUN_0045cf80(int param_1)
   int iVar10;
   uint uVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar2 = (uint)*(ushort *)(DAT_005dcb3c + 0x4f1) << 2;
   iVar9 = 0;
   pvVar3 = (void *)AllocateMemoryWithCallback(sVar2);
@@ -62370,7 +62378,7 @@ int FUN_0045d1d0(char *param_1,undefined4 param_2)
   undefined4 uStackY_1c;
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = 0;
   uStackY_18 = 0x45d1f2;
   FID_conflict___mbscpy(local_104,&DAT_005d5fe0);
@@ -62516,7 +62524,7 @@ void FUN_0045d4c0(undefined2 *param_1)
   int iVar10;
   
   iVar3 = (int)param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar7 = *(ushort *)((int)param_1 + 6);
   sVar4 = (uint)uVar7 * 0xc;
   iVar10 = 0;
@@ -62573,7 +62581,7 @@ void FUN_0045d610(int param_1)
   size_t sVar7;
   int iVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar8 = 0;
   uVar1 = 0;
   if (*(short *)(param_1 + 6) != 0) {
@@ -62652,7 +62660,7 @@ void FUN_0045d760(int param_1)
   int iVar12;
   byte bVar13;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   *(undefined2 *)(DAT_005dcb3c + 0x4f1) = *(undefined2 *)(param_1 + 6);
   sVar4 = (uint)*(ushort *)(param_1 + 6) << 2;
   iVar10 = 0;
@@ -62836,7 +62844,7 @@ void FUN_0045dc90(int param_1)
   int iVar10;
   int iVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar1 = (uint)*(ushort *)(param_1 + 6) << 2;
   iVar10 = 0;
   pvVar2 = (void *)AllocateMemoryWithCallback(sVar1);
@@ -63059,7 +63067,7 @@ void FUN_0045e1b0(int param_1)
   int iVar18;
   int iVar19;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar11 = 0;
   iVar19 = 0;
   iVar18 = 0;
@@ -63320,7 +63328,7 @@ void FUN_0045e720(uint param_1)
   int _Val;
   
   iVar4 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _DAT_005dca04 = *(undefined4 *)(param_1 + 8);
   _DAT_005dca08 = *(undefined4 *)(param_1 + 0xc);
   uVar7 = *(ushort *)(param_1 + 6);
@@ -63429,7 +63437,7 @@ float10 FUN_0045e9e0(void)
 {
   uint uVar1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar1 = FUN_0045fe00();
   return (float10)(uVar1 & 0xffff) * (float10)3.051758e-05;
 }
@@ -63443,7 +63451,7 @@ void FUN_0045ea10(void)
   float10 fVar2;
   int iVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = 0;
   pfVar1 = (float *)&DAT_005d8800;
   do {
@@ -63487,7 +63495,7 @@ float * FUN_0045eab0(float *param_1)
   float fVar3;
   float10 fVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = param_1[2] * param_1[2];
   fVar2 = param_1[1] * param_1[1];
   fVar3 = *param_1 * *param_1;
@@ -63595,7 +63603,7 @@ void FUN_0045ecb0(float *param_1,float *param_2,float *param_3)
   float local_14;
   float local_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_44[0] = *param_3 * *param_2 +
                 param_2[3] * param_3[0xc] + param_2[2] * param_3[8] + param_2[1] * param_3[4];
   local_44[1] = param_3[0xd] * param_2[3] +
@@ -63635,7 +63643,15 @@ void FUN_0045ecb0(float *param_1,float *param_2,float *param_3)
 
 
 
-void FUN_0045ef80(float *param_1,float *param_2,float *param_3)
+// /*
+//  * Function: MultiplyMatrices
+//  * Description:
+//  *   This function multiplies two 4x4 matrices (`param_2` and `param_3`) and stores the result in
+// `param_1`.
+//  *   The matrices are represented as flat arrays of 16 floats, in row-major order.
+//  */
+
+void MultiplyMatrices(float *param_1,float *param_2,float *param_3)
 
 {
   int iVar1;
@@ -63652,7 +63668,7 @@ void FUN_0045ef80(float *param_1,float *param_2,float *param_3)
   float local_14;
   float local_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_44[3] = 0.0;
   local_44[0] = *param_2 * *param_3 + param_2[2] * param_3[8] + param_2[1] * param_3[4];
   local_44[1] = param_3[5] * param_2[1] + param_3[9] * param_2[2] + *param_2 * param_3[1];
@@ -63718,7 +63734,7 @@ void FUN_0045f1b0(undefined4 *param_1,float *param_2,float *param_3)
   undefined4 **local_8;
   
   local_8 = (undefined4 **)0x45f1bd;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_1c = *param_2;
   local_18 = param_2[1];
   local_14 = param_2[2];
@@ -63761,7 +63777,7 @@ void FUN_0045f2b0(float *param_1,float param_2,float *param_3,float *param_4,flo
   undefined4 unaff_EDI;
   undefined4 local_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = param_2 * param_2;
   fVar2 = param_2 * fVar1;
   _local_10 = (double)CONCAT44(unaff_EDI,SUB84((double)fVar2,0));
@@ -63795,7 +63811,7 @@ void FUN_0045f420(float *param_1,float *param_2,float *param_3)
   float fVar13;
   float fVar14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_3 == param_1) {
     fVar1 = param_2[6];
     fVar2 = param_2[10];
@@ -63845,7 +63861,7 @@ void FUN_0045f520(float *param_1,float *param_2,float *param_3)
   float fVar13;
   float fVar14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_3 == param_1) {
     fVar1 = param_2[6];
     fVar2 = param_2[10];
@@ -63892,7 +63908,7 @@ void FUN_0045f620(float *param_1,float *param_2)
   float fVar10;
   float fVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = param_2[6];
   fVar2 = param_2[10];
   fVar3 = param_2[2];
@@ -63931,7 +63947,7 @@ void FUN_0045f6b0(float *param_1,float *param_2,float *param_3)
   float fVar13;
   float fVar14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = param_2[5];
   fVar2 = param_2[9];
   fVar3 = param_2[6];
@@ -63970,7 +63986,7 @@ float * FUN_0045f760(float *param_1,float *param_2,float *param_3)
   float local_28;
   float local_24;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pfVar2 = local_5c;
   for (iVar1 = 0x10; iVar1 != 0; iVar1 = iVar1 + -1) {
     *pfVar2 = *param_2;
@@ -64096,7 +64112,7 @@ undefined4 FUN_0045fa30(undefined4 *param_1,undefined4 *param_2,float param_3)
   undefined4 uVar9;
   longlong lVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar9 = (undefined4)((ulonglong)(double)param_3 >> 0x20);
   local_18 = (double)CONCAT44(uVar9,unaff_EDI);
   local_1c = (undefined4 *)0x45fa53;
@@ -64152,7 +64168,7 @@ undefined4 FUN_0045fa30(undefined4 *param_1,undefined4 *param_2,float param_3)
   uStack_20 = 0x45fb41;
   local_5c[0] = local_38;
   local_34 = local_38;
-  FUN_0045ef80();
+  MultiplyMatrices();
   pfVar4 = (float *)&DAT_004d1ae0;
   pfVar6 = local_5c;
   for (iVar2 = 0x10; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -64166,7 +64182,7 @@ undefined4 FUN_0045fa30(undefined4 *param_1,undefined4 *param_2,float param_3)
   local_1c = param_1;
   uStack_20 = 0x45fb77;
   local_48 = local_5c[0];
-  FUN_0045ef80();
+  MultiplyMatrices();
   pfVar4 = (float *)&DAT_004d1ae0;
   pfVar6 = local_5c;
   for (iVar2 = 0x10; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -64182,7 +64198,7 @@ undefined4 FUN_0045fa30(undefined4 *param_1,undefined4 *param_2,float param_3)
   uStack_20 = 0x45fbad;
   local_5c[0] = local_38;
   local_34 = local_38;
-  FUN_0045ef80();
+  MultiplyMatrices();
   local_48 = (float)local_18._4_4_ / local_38;
   pfVar4 = (float *)&DAT_004d1ae0;
   pfVar6 = local_5c;
@@ -64197,7 +64213,7 @@ undefined4 FUN_0045fa30(undefined4 *param_1,undefined4 *param_2,float param_3)
   local_44 = -local_38;
   uStack_20 = 0x45fbe6;
   local_34 = local_48;
-  FUN_0045ef80();
+  MultiplyMatrices();
   return 1;
 }
 
@@ -64245,7 +64261,7 @@ void FUN_0045fc80(int param_1)
   int *local_8;
   
   local_8 = (int *)0x45fc8d;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_1c = *(undefined4 *)(param_1 + 0x20);
   local_18 = *(undefined4 *)(param_1 + 0x24);
   local_8 = &local_10;
@@ -64269,7 +64285,7 @@ void FUN_0045fcd0(float *param_1,float *param_2)
   float fVar6;
   float fVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar5 = param_2[8] * param_2[6] - param_2[4] * param_2[10];
   fVar1 = param_2[10] * param_2[5] - param_2[9] * param_2[6];
   fVar7 = param_2[4] * param_2[9] - param_2[8] * param_2[5];
@@ -64343,7 +64359,7 @@ void FUN_0045fe60(void)
   char local_104 [240];
   undefined4 uStackY_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStackY_14 = 0x45fe7e;
   _memset(&DAT_005e4a80,0,0x100);
   uStackY_14 = 0x45fe99;
@@ -64384,7 +64400,7 @@ void FUN_0045ff60(void)
   char cVar8;
   undefined uVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar7 = DAT_005986f4;
   if (DAT_005b9384 == 0) {
     return;
@@ -64631,7 +64647,7 @@ undefined FUN_00460710(int param_1)
   byte bVar3;
   uint uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_005dcb7e = DAT_005dcb7d;
   if ((char)DAT_00598944 != '\0') {
     DAT_005dcb7d = 2;
@@ -64685,7 +64701,7 @@ undefined4 FUN_00460830(char *param_1)
   char local_104 [228];
   undefined4 uStackY_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FID_conflict___mbscpy(local_104,&DAT_005d60e0);
   FID_conflict__strcat(local_104,param_1);
   iVar2 = FUN_004adf60();
@@ -64764,7 +64780,7 @@ undefined4 FUN_00460a30(uint param_1)
   int iVar5;
   uint uVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = FUN_004adf60(param_1,&DAT_004ce994);
   if (iVar1 == 0) {
     return 0;
@@ -64926,7 +64942,7 @@ undefined4 FUN_00460e40(int param_1,int param_2,int param_3)
   char *_Source;
   
   iVar2 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FID_conflict___mbscpy(local_74,&DAT_005d4ae0);
   FID_conflict___mbscpy(local_40,&DAT_005d6540);
   sVar3 = _strlen(local_40);
@@ -65083,7 +65099,7 @@ undefined4 FUN_00461220(uint param_1)
   char local_104 [232];
   undefined4 uStackY_1c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_1 == *(ushort *)(DAT_00598d90 + 0x245)) {
     FID_conflict___mbscpy(local_104,&DAT_005d4ae0);
     FID_conflict__strcat(local_104,&DAT_005d6540);
@@ -65143,7 +65159,7 @@ int FUN_00461410(undefined *param_1,float *param_2)
   undefined *local_14;
   undefined **ppuStack_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   ppuStack_10 = &local_14;
   local_14 = &DAT_004cea3c;
   iVar2 = FUN_004afbb0(param_1);
@@ -65182,7 +65198,7 @@ int FUN_004614a0(undefined *param_1,undefined4 *param_2)
   undefined *local_14;
   undefined **ppuStack_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   ppuStack_10 = &local_14;
   local_14 = &DAT_004cea40;
   iVar2 = FUN_004afbb0(param_1);
@@ -65218,7 +65234,7 @@ int FUN_00461530(undefined4 param_1,char *param_2)
   char cVar1;
   int iVar2;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = FUN_004afbb0(param_1);
   if (iVar2 == -1) {
     return 2;
@@ -65247,7 +65263,7 @@ void FUN_004615c0(float *param_1,float param_2,float param_3,float param_4,float
   float fVar5;
   float10 fVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar6 = (float10)FUN_004ae0c4((double)param_2);
   fVar1 = (float)fVar6;
   fVar6 = (float10)FUN_004ae014((double)param_2);
@@ -65280,7 +65296,7 @@ void FUN_00461700(float *param_1,float param_2,float param_3,float param_4,float
   float10 fVar3;
   float fVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = param_7 * param_3 - param_6 * param_4;
   fVar2 = param_5 * param_4 - param_7 * param_2;
   fVar4 = param_6 * param_2 - param_5 * param_3;
@@ -65331,7 +65347,7 @@ void FUN_00461850(undefined4 *param_1)
   undefined4 *local_14;
   undefined4 local_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_50[0] = 0x3f800000;
   local_50[1] = 0;
   local_50[2] = 0;
@@ -65349,7 +65365,7 @@ void FUN_00461850(undefined4 *param_1)
   local_18 = 0;
   local_14 = (undefined4 *)0x3f800000;
   local_10 = 0x4618eb;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_10 = param_5;
   local_14 = local_50;
   local_18 = 0x46190b;
@@ -65394,7 +65410,7 @@ void FUN_00461930(undefined4 param_1,undefined *param_2,undefined4 param_3,undef
   undefined *local_10;
   float fVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_14 = param_7;
   local_18 = param_4;
   puVar1 = &param_2;
@@ -65411,14 +65427,14 @@ void FUN_00461930(undefined4 param_1,undefined *param_2,undefined4 param_3,undef
   local_2c = param_7;
   local_28 = param_11;
   local_10 = (undefined *)0x461989;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_10 = (undefined *)0x4619a6;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_10 = local_34;
   local_14 = 0x4619c2;
   FUN_00461700();
   param_2 = (undefined *)0x4619d1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   param_3 = *extraout_EDX;
   param_4 = (undefined4 *)extraout_EDX[1];
   param_5 = *(double *)(extraout_EDX + 2);
@@ -65522,7 +65538,7 @@ void FUN_00461b20(void)
   undefined4 uVar7;
   
   puVar1 = param_5;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_1c = param_5[2];
   local_18 = param_5[6];
   local_60[0] = 0x3f800000;
@@ -65542,13 +65558,13 @@ void FUN_00461b20(void)
   local_28 = 0;
   local_24 = 0x3f800000;
   local_14 = (undefined4 *)0x461bd1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_14 = (undefined4 *)0x461bee;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_14 = &local_20;
   local_18 = 0x461c0a;
   FUN_00461700();
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar2 = (undefined4 *)FUN_00461850();
   puVar4 = local_f0;
   for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -65557,7 +65573,7 @@ void FUN_00461b20(void)
     puVar4 = puVar4 + 1;
   }
   FUN_0045ecb0();
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar2 = (undefined4 *)&stack0x00000018;
   for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar2 = *param_5;
@@ -65589,7 +65605,7 @@ void FUN_00461b20(void)
     puVar4 = puVar4 + 1;
   }
   in_stack_00000054 = 6.438885e-39;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   param_13 = (undefined4 *)uVar7;
   param_12 = (undefined4 *)uVar6;
   param_11 = (undefined4 *)uVar5;
@@ -65616,7 +65632,7 @@ void FUN_00461d40(float *param_1)
   float fVar4;
   
   pfVar1 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar2 = (float10)FUN_004ad534((double)(*param_1 * *param_1 +
                                         param_1[2] * param_1[2] + param_1[1] * param_1[1]));
   fVar3 = (float10)FUN_004ad534((double)(param_1[6] * param_1[6] +
@@ -65677,7 +65693,7 @@ undefined4 FUN_00461ea0(int param_1,int param_2,int param_3,undefined4 *param_4)
   undefined4 local_18;
   undefined *local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_44[0] = 0x3f800000;
   local_44[1] = 0;
   local_44[2] = 0;
@@ -65694,7 +65710,7 @@ undefined4 FUN_00461ea0(int param_1,int param_2,int param_3,undefined4 *param_4)
   if (param_1 == 0) goto LAB_0046229c;
   DAT_00598904 = 0;
   local_14 = (undefined *)0x461f3f;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_14 = local_54;
   puVar3 = param_4;
   puVar5 = (undefined4 *)&stack0xfffffff0;
@@ -65726,14 +65742,14 @@ undefined4 FUN_00461ea0(int param_1,int param_2,int param_3,undefined4 *param_4)
   DAT_005988e0 = DAT_005987e8;
   DAT_005988e4 = DAT_005987ec;
   DAT_005988e8 = DAT_005987f0;
-  FUN_004ad310();
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
+  AdjustStackForLargeAllocations();
   puVar3 = (undefined4 *)FUN_00461700();
   DAT_005987d8 = *puVar3;
   DAT_005987dc = puVar3[1];
   DAT_005987e0 = puVar3[2];
   DAT_005987e4 = (float)puVar3[3];
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar3 = (undefined4 *)FUN_00461850();
   _DAT_00598814 = DAT_005987dc;
   DAT_0059881c = DAT_005987e4 / (float)DAT_005987f8;
@@ -65745,7 +65761,7 @@ undefined4 FUN_00461ea0(int param_1,int param_2,int param_3,undefined4 *param_4)
   }
   _DAT_00598810 = DAT_005987d8;
   _DAT_00598818 = DAT_005987e0;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar3 = (undefined4 *)FUN_00461850();
   puVar5 = &DAT_00598820;
   for (iVar4 = 0x10; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -65761,7 +65777,7 @@ undefined4 FUN_00461ea0(int param_1,int param_2,int param_3,undefined4 *param_4)
     puVar5 = puVar5 + 1;
   }
   FUN_0045ecb0();
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar3 = &DAT_00598740;
   puVar5 = (undefined4 *)&stack0x00000068;
   for (iVar4 = 0x10; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -65816,7 +65832,7 @@ LAB_0046229c:
   DAT_005988f8 = DAT_00598888;
   DAT_005988fc = ((float)DAT_00598904 - -1.0) * _DAT_005987c0;
   in_stack_000000a4 = (undefined4 *)0x4622f7;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   param_22 = (undefined4 *)DAT_005988f0;
   param_23 = (undefined4 *)DAT_005988f4;
   in_stack_000000a4 = (undefined4 *)DAT_005988fc;
@@ -65892,7 +65908,7 @@ void FUN_00462410(int param_1,int param_2,undefined4 *param_3,undefined4 param_4
   undefined4 local_18;
   undefined4 local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_44[0] = 0x3f800000;
   local_44[1] = 0;
   local_44[2] = 0;
@@ -65919,7 +65935,7 @@ void FUN_00462410(int param_1,int param_2,undefined4 *param_3,undefined4 param_4
   param_3[0xd] = *(undefined4 *)(*(int *)(param_1 + 4) + 4 + iVar1);
   param_3[0xe] = *(undefined4 *)(*(int *)(param_1 + 4) + 8 + iVar1);
   local_18 = 0x4624df;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_14 = *extraout_ECX;
   local_18 = 0x4624fc;
   FUN_00461b20();
@@ -66156,7 +66172,7 @@ undefined4 FUN_00462a60(undefined4 param_1,undefined4 param_2,undefined4 param_3
 {
   undefined4 uVar1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar1 = 0x80004005;
   _memset(&stack0xffffffec,0,0x10);
   if (DAT_00598908 != (int *)0x0) {
@@ -66182,7 +66198,7 @@ undefined4 FUN_00462ad0(undefined4 param_1,undefined4 param_2)
   undefined4 local_24;
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar1 = 0x80004005;
   uStackY_18 = 0x462af0;
   _memset(&local_54,0,0x50);
@@ -66247,7 +66263,7 @@ undefined4 FUN_00462ba0(undefined4 param_1)
   undefined4 *puStackY_1c;
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar1 = 0x80004005;
   uStackY_18 = 0x462bc0;
   _memset(local_54,0,0x50);
@@ -66291,7 +66307,7 @@ int FUN_00462c50(void)
   size_t unaff_ESI;
   int iVar1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = -0x7fffbffb;
   if (DAT_005d8738 != (void *)0x0) {
     FreeMemory(DAT_005d8738);
@@ -66339,7 +66355,7 @@ undefined4 FUN_00462d00(undefined4 *param_1)
   undefined4 local_30;
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar1 = 0x80004005;
   uStackY_18 = 0x462d20;
   _memset(local_54,0,0x50);
@@ -66503,7 +66519,7 @@ uint FUN_00462f30(uint param_1,uint param_2)
   bool bVar3;
   int iVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(DAT_005df318 + 4);
   bVar3 = _DAT_0059891c != *(float *)(*(int *)(iVar1 + 4) + 0xf7);
   uVar2 = *(uint *)(*(int *)(iVar1 + 4) + 0x8a);
@@ -66626,7 +66642,7 @@ void FUN_00463170(uint param_1)
   uint uVar4;
   bool bVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar5 = param_1 == 1;
   param_1 = param_1 * 5;
   if (bVar5) {
@@ -66720,7 +66736,7 @@ undefined4 FUN_00463310(int param_1)
 {
   int iVar1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = DAT_00598920;
   if ((&DAT_005e222b)[DAT_00598920 * 0x38] != 0) {
     (&DAT_005e2181)[DAT_00598920 * 0xe0] = 0x32;
@@ -66748,7 +66764,7 @@ int FUN_00463450(void)
   int iVar1;
   int _Val;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = -0x7fffbffb;
   if (DAT_00598928 != (int *)0x0) {
     iVar1 = (**(code **)(*DAT_00598928 + 0x20))(DAT_00598928,0,0,&stack0xfffffff8);
@@ -66901,7 +66917,7 @@ void FUN_00463840(undefined4 param_1)
   HANDLE hThread;
   DWORD DVar1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   hThread = GetCurrentThread();
   SetThreadPriority(hThread,2);
   DVar1 = WaitForMultipleObjects(2,(HANDLE *)&stack0xfffffff4,0,DAT_005d86c4);
@@ -66925,7 +66941,7 @@ undefined4 FUN_004638b0(int **param_1)
   int iVar4;
   uint uVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   ppiVar3 = param_1;
   do {
     piVar2 = *ppiVar3;
@@ -66989,7 +67005,7 @@ void FUN_00463a60(LPCSTR param_1)
   CHAR local_104 [236];
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   wsprintfA(local_104,param_1);
   uStackY_18 = 0x463a9b;
   MessageBoxA((HWND)0x0,local_104,s_Error_004cebe4,0);
@@ -67015,7 +67031,7 @@ void FUN_00463aa0(void)
   int iVar6;
   size_t sVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_28._0_1_ = s_Network_Logon_004cebec[4];
   local_28._1_1_ = s_Network_Logon_004cebec[5];
   local_28._2_1_ = s_Network_Logon_004cebec[6];
@@ -67178,7 +67194,7 @@ undefined4 * FUN_00463d50(void)
   undefined4 *puVar17;
   int iVar18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar12 = 0;
   bVar13 = false;
   WaitForSingleObject(DAT_005d7a94,0xffffffff);
@@ -67941,7 +67957,7 @@ void FUN_004652b0(int param_1)
   undefined4 *local_18;
   undefined4 *puStack_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(param_1 + 4);
   puVar3 = &DAT_004d1ae0;
   puVar4 = local_50;
@@ -67968,7 +67984,7 @@ void FUN_004652b0(int param_1)
       puVar4 = puVar4 + 1;
     }
     local_20 = 0x465351;
-    FUN_0045ef80();
+    MultiplyMatrices();
     puStack_14 = local_9c;
     local_18 = local_dc;
   }
@@ -67978,7 +67994,7 @@ void FUN_004652b0(int param_1)
   }
   local_1c = local_50;
   local_20 = 0x46536b;
-  FUN_0045ef80();
+  MultiplyMatrices();
   puStack_14 = (undefined4 *)0x0;
   local_18 = (undefined4 *)0x0;
   local_1c = (undefined4 *)0x3dcccccd;
@@ -68101,7 +68117,7 @@ void FUN_004655e0(void)
   int iVar9;
   undefined *puVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   hResInfo = FindResourceA((HMODULE)0x0,&DAT_004cf4a8,(LPCSTR)0xa);
   if (hResInfo != (HRSRC)0x0) {
     hResData = LoadResource((HMODULE)0x0,hResInfo);
@@ -68164,7 +68180,7 @@ int FUN_00465790(uint *param_1,byte param_2,float *param_3)
   size_t sVar8;
   
   puVar1 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar8 = 0x44;
   iVar7 = 0;
   iVar5 = (uint)param_2 * 0xa9;
@@ -68292,7 +68308,7 @@ int * FUN_00465a50(int *param_1,uint param_2)
   int *piStack_20;
   undefined4 *puVar17;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar11 = 0;
   iVar7 = 0;
   uVar16 = (uint)param_1 & 0xff;
@@ -68488,7 +68504,7 @@ void FUN_00465e30(int param_1,HANDLE *param_2,HANDLE param_3,int param_4,int par
   int iVar5;
   int *piVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   WaitForSingleObject(param_3,0xffffffff);
   piVar6 = DAT_005d70c0;
   if (param_2 == DAT_005d7c4c) {
@@ -68645,7 +68661,7 @@ void FUN_00466130(char param_1)
   undefined2 *puVar10;
   uint uVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_00492780();
   uStackY_20 = 0x466154;
   _memset(&DAT_005d70b0,0,10);
@@ -69224,7 +69240,7 @@ undefined4 FUN_00466f40(void)
   SIZE_T local_80c;
   int local_808;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   WaitForSingleObject(DAT_005d8580,0xffffffff);
   FUN_004ad7a0();
   **(undefined4 **)(DAT_005d7c4c + 8) = 0;
@@ -69359,7 +69375,7 @@ undefined4 FUN_00467210(undefined4 param_1,void *param_2)
   char local_48;
   char local_47;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_004672d0();
   if (local_48 != '{') {
     return 0x80004005;
@@ -69427,7 +69443,7 @@ void FUN_00467370(HDC param_1)
   undefined4 uStackY_24;
   int iVar2;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStackY_24 = 0x467398;
   LoadStringA(DAT_005d63e0,0x149,local_38,0x32);
   _memset(&local_74,0,0x3c);
@@ -69500,7 +69516,7 @@ undefined4 FUN_00467500(void)
   int iVar2;
   HDC hDC;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   hDC = (HDC)0x0;
   CoInitialize((LPVOID)0x0);
   LVar1 = RegCreateKeyExA((HKEY)0x0,s_Software_Vis_Interactive_Hedz_004cfa48,0,(LPSTR)0x28,
@@ -69733,7 +69749,7 @@ undefined4 FUN_00467b60(int param_1,undefined4 param_2,byte param_3,HWND param_4
   int iVar3;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   hWnd = GetDlgItem(param_4,0x400);
   hWnd_00 = GetDlgItem(param_4,0x41f);
   if ((param_3 & 1) != 0) {
@@ -69777,7 +69793,7 @@ void FUN_00467c80(HWND param_1)
   int local_28;
   undefined4 uStackY_24;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(&local_2c,0,0x28);
   uStackY_24 = 0x467cb5;
   for (lParam = SendMessageA(param_1,0x110a,0,0); lParam != 0;
@@ -69808,7 +69824,7 @@ void FUN_00467d10(HWND param_1)
   int local_28;
   undefined4 uStackY_24;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(&local_2c,0,0x28);
   uStackY_24 = 0x467d45;
   LVar1 = SendMessageA(param_1,0x110a,0,0);
@@ -69847,7 +69863,7 @@ undefined4 FUN_00467db0(HWND param_1,undefined4 param_2,uint param_3,undefined4 
   WPARAM WVar6;
   LPARAM LVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   switch(param_2) {
   case 0x4e:
     iVar1 = param_4[2];
@@ -70267,7 +70283,7 @@ undefined4 FUN_00468490(HWND param_1,undefined4 param_2,uint param_3,int param_4
   undefined4 *puVar19;
   
   pHVar3 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   switch(param_2) {
   case 0x4e:
     switch(*(undefined4 *)(param_4 + 8)) {
@@ -70821,7 +70837,7 @@ LPARAM FUN_00469520(HWND param_1,void *param_2)
   LPARAM local_28;
   undefined4 uStackY_24;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(&local_2c,0,0x28);
   uStackY_24 = 0x469555;
   lParam = SendMessageA(param_1,0x110a,0,0);
@@ -70859,7 +70875,7 @@ LRESULT FUN_004695d0(HWND param_1,undefined4 param_2,undefined4 param_3,int para
   undefined4 local_54 [10];
   undefined4 local_2c [3];
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if ((param_4 == 1) && (iVar1 = FUN_00469520(), iVar1 != 0)) {
     return 0;
   }
@@ -70914,7 +70930,7 @@ void FUN_004696f0(HWND param_1)
   int local_28;
   undefined4 uStackY_24;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStackY_24 = 0x469715;
   for (lParam = SendMessageA(param_1,0x110a,0,0); lParam != 0;
       lParam = SendMessageA(param_1,0x110a,1,lParam)) {
@@ -70940,7 +70956,7 @@ void FUN_00469770(void)
   HGLOBAL pvVar2;
   WPARAM wParam;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_00598998 != (HWND)0x0) {
     LVar1 = SendMessageA(DAT_00598998,0x18b,0,0);
     wParam = 0;
@@ -70976,7 +70992,7 @@ void FUN_004697f0(HWND param_1,HWND param_2,ushort *param_3)
   uint uVar9;
   uint uVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar8 = 0;
   SendMessageA(param_1,0x184,0,0);
   uVar9 = 1;
@@ -71065,7 +71081,7 @@ undefined4 FUN_00469a30(HWND param_1,int param_2,ushort param_3)
   size_t _Size;
   
   pHVar5 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_2 == 0x110) {
     GetDlgItem(param_1,0x41f);
     SetWindowTextA(param_1,DAT_005df184);
@@ -71485,7 +71501,7 @@ undefined2 * FUN_0046a720(uint param_1)
   int _Val;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = FUN_004adf60(param_1,&DAT_004cfc1c);
   if (iVar1 != 0) {
     FUN_004adda0(&stack0xfffffff8,4,1,iVar1);
@@ -71521,7 +71537,7 @@ undefined4 FUN_0046a810(LRESULT param_1,HWND param_2)
   int iVar1;
   ushort uVar2;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = FUN_004adf60(param_1);
   if (iVar1 != 0) {
     FUN_004ae3e0(&stack0xfffffff8,4,1,iVar1);
@@ -71743,7 +71759,7 @@ undefined4 FUN_0046ac80(char *param_1,int param_2,int param_3,int param_4)
   char *pcVar13;
   int iVar14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_00598944 == 0) {
     *(undefined *)(DAT_004d80cc + 0xa0) = 0;
   }
@@ -72141,7 +72157,7 @@ void FUN_0046b780(void)
   undefined2 *puVar3;
   uint uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar2 = 0;
   uVar4 = unaff_EBX & 0xffffff00;
   puVar3 = &DAT_005a5000;
@@ -72188,7 +72204,7 @@ void FUN_0046b800(void)
   undefined2 *puVar3;
   uint uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar2 = 0;
   uVar4 = unaff_EBX & 0xffffff00;
   puVar3 = &DAT_005b1a08;
@@ -72215,7 +72231,7 @@ void FUN_0046b840(void)
   byte bVar5;
   int iVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar6 = 0;
   bVar5 = 0;
   puVar2 = &DAT_005ae184;
@@ -72255,7 +72271,7 @@ void FUN_0046b8e0(void)
   byte bVar5;
   int iVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar6 = 0;
   bVar5 = 0;
   puVar2 = &DAT_005aaac8;
@@ -72359,7 +72375,7 @@ void FUN_0046ba20(void)
   byte bVar5;
   int iVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar6 = 0;
   bVar5 = 0;
   puVar2 = &DAT_005a88d0;
@@ -72399,7 +72415,7 @@ void FUN_0046baa0(void)
   byte bVar5;
   int iVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar6 = 0;
   bVar5 = 0;
   puVar2 = &DAT_005a4c48;
@@ -72501,7 +72517,7 @@ void FUN_0046bc40(void)
   undefined2 *puVar3;
   uint uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar2 = 0;
   uVar4 = unaff_EBX & 0xffffff00;
   puVar3 = &DAT_005a28a4;
@@ -72527,7 +72543,7 @@ void FUN_0046bc90(void)
   undefined2 *puVar3;
   uint uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar2 = 0;
   uVar4 = unaff_EBX & 0xffffff00;
   puVar3 = &DAT_005b1c78;
@@ -72552,7 +72568,7 @@ void FUN_0046bcd0(void)
   undefined2 *puVar3;
   uint uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar2 = 0;
   uVar4 = unaff_EBX & 0xffffff00;
   puVar3 = &DAT_005dcc04;
@@ -72577,7 +72593,7 @@ void FUN_0046bd10(void)
   undefined2 *puVar3;
   uint uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar2 = 0;
   uVar4 = unaff_EBX & 0xffffff00;
   puVar3 = &DAT_005dcc0c;
@@ -72602,7 +72618,7 @@ void FUN_0046bd50(void)
   undefined2 *puVar3;
   uint uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar2 = 0;
   uVar4 = unaff_EBX & 0xffffff00;
   puVar3 = &DAT_005dcc14;
@@ -72627,7 +72643,7 @@ void FUN_0046bd90(void)
   undefined4 *puVar3;
   uint uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar2 = 0;
   uVar4 = unaff_EBX & 0xffffff00;
   puVar3 = &DAT_005aa0f2;
@@ -72652,7 +72668,7 @@ void FUN_0046bdd0(void)
   undefined2 *puVar3;
   uint uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar2 = 0;
   uVar4 = unaff_EBX & 0xffffff00;
   puVar3 = &DAT_005a28b4;
@@ -72826,7 +72842,7 @@ undefined4 FUN_0046bff0(int param_1,int param_2)
   undefined4 local_18;
   undefined *puStack_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar4 = &DAT_005aa780;
   if ((*(byte *)(*(int *)(param_1 + 4) + 0x8e) & 0x20) != 0) {
     return 1;
@@ -72943,7 +72959,7 @@ undefined4 FUN_0046c280(int param_1,int param_2)
   float *local_18;
   undefined *puStack_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar4 = &DAT_005aa460;
   if ((*(byte *)(*(int *)(param_1 + 4) + 0x8e) & 0x20) != 0) {
     return 1;
@@ -73128,7 +73144,7 @@ undefined4 FUN_0046c600(int param_1)
   undefined4 local_8;
   
   local_8 = 0x46c60d;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_8 = 0x46c612;
   bVar1 = FUN_004af640();
   if (bVar1 < 0xf0) {
@@ -73181,7 +73197,7 @@ undefined4 FUN_0046c6c0(undefined4 *param_1)
   undefined8 local_18;
   float fVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _DAT_005b1cdc = param_1[1];
   _DAT_005b1ce0 = param_1[2];
   _DAT_005b1cd8 = *param_1;
@@ -73547,7 +73563,7 @@ undefined4 FUN_0046cdc0(undefined4 param_1)
   undefined4 local_8;
   
   local_8 = 0x46cdcd;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_10 = 0;
   local_c = 0;
   local_8 = 0;
@@ -73571,7 +73587,7 @@ undefined4 FUN_0046ce10(undefined2 param_1,undefined4 param_2,int param_3,undefi
   undefined4 *puVar7;
   float10 fVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar5 = &DAT_005a4ca0;
   iVar4 = *(int *)(param_3 + 4);
   if ((*(uint *)(iVar4 + 0x8a) & 0x1800000) == 0) {
@@ -73674,7 +73690,7 @@ undefined4 FUN_0046d020(int param_1,undefined4 param_2)
   undefined4 *puVar6;
   float10 fVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar4 = &DAT_005a5020;
   fVar7 = (float10)FUN_004ad3c0((double)*(float *)(*(int *)(param_1 + 4) + 0xa8));
   if (fVar7 < (float10)0.5) {
@@ -73739,7 +73755,7 @@ undefined4 FUN_0046d130(int param_1)
   int iStack_18;
   uint local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = *(int *)(DAT_005df318 + 4);
   puVar8 = &DAT_004d1ae0;
   puVar9 = local_44;
@@ -73809,7 +73825,7 @@ undefined4 FUN_0046d2a0(int param_1,int param_2,undefined4 *param_3,float param_
   float local_1c;
   undefined8 local_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   *(undefined4 *)(param_1 + 3) = 4;
   *(undefined4 *)(param_1 + 0x97) = 1;
   *(undefined4 *)(param_1 + 0x9b) = 0;
@@ -73884,7 +73900,7 @@ undefined4 FUN_0046d420(int param_1,float param_2,float param_3,undefined4 *para
   undefined4 *puVar3;
   float10 fVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   *(undefined4 *)(param_1 + 0x9b) = 0;
   *(undefined4 *)(param_1 + 0xa3) = 0;
   *(undefined4 *)(param_1 + 3) = 4;
@@ -74161,7 +74177,7 @@ undefined4 FUN_0046da60(HINSTANCE param_1)
   BOOL BVar5;
   char *_Source;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(&DAT_005e5140,0,0x2560);
   DAT_00598dd4 = CreateSemaphoreA((LPSECURITY_ATTRIBUTES)0x0,0,1,s__BHEDZ_ONETIME_004d0446 + 2);
   if ((DAT_00598dd4 != (HANDLE)0x0) && (DVar2 = GetLastError(), DVar2 == 0xb7)) {
@@ -74361,7 +74377,7 @@ bool CreateMainWindowFunc(HINSTANCE param_1)
   HMENU hMenu;
   HBRUSH lpParam;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_004707c0();
   DAT_005d6504 = param_1;
   _memset(&stack0xffffffd4,0,0x28);
@@ -74445,7 +74461,7 @@ char LoadMusicFileFunc(void)
   undefined4 lpTotalNumberOfBytes;
   undefined4 lpTotalNumberOfFreeBytes;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FID_conflict___mbscpy(local_10c,(char *)&PTR_DAT_004d0720);
   local_10c[0] = gRootFileDirectory;
   UVar2 = GetDriveTypeA(local_10c);
@@ -74691,7 +74707,7 @@ undefined4 FUN_0046e850(void)
   code *pcStackY_18;
   undefined4 uStackY_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   SetCapture(gMainWindowHandle);
   ShowCursor(0);
   uStackY_14 = 0;
@@ -74741,7 +74757,7 @@ undefined4 FUN_0046e970(undefined4 param_1,undefined4 param_2,int **param_3)
   undefined4 local_30;
   int *local_2c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = (**(code **)(**(int **)(DAT_005e5010 + 0x10) + 0x18))();
   if (iVar1 != 0) {
     FUN_00470800();
@@ -74831,7 +74847,7 @@ undefined4 FUN_0046eb50(HWND param_1,int param_2,undefined2 param_3)
   int iVar3;
   LPRECT lpRect;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_2 != 0x100) {
     if (param_2 == 0x110) {
       pHVar2 = GetParent(param_1);
@@ -74956,7 +74972,7 @@ undefined4 FUN_0046ef50(HWND param_1,int param_2,short param_3)
   HWND local_28;
   HWND hWnd_02;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pHVar1 = GetDlgItem(param_1,0x469);
   GetDlgItem(pHVar1,0x470);
   local_40[2] = GetDlgItem(param_1,0x471);
@@ -75194,7 +75210,7 @@ undefined4 FUN_0046f660(HWND param_1,int param_2,short param_3)
   char acStackY_105 [225];
   undefined4 uStackY_24;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   hWnd = GetDlgItem(param_1,0x41f);
   if ((param_2 != 0x30) && (param_2 != 0x110)) {
     if (param_2 == 0x111) {
@@ -75273,7 +75289,7 @@ undefined4 FUN_0046f820(void)
   int _Val;
   LPOFNHOOKPROC _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   lstrcpyA(local_254,&DAT_00598de4);
   lstrcpyA(local_354,&DAT_00598de8);
   uStackY_1c._0_2_ = 0xf865;
@@ -75320,7 +75336,7 @@ undefined4 FUN_0046f980(void)
   char local_204 [492];
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_00599004 == 0x10) {
     return 1;
   }
@@ -75354,7 +75370,7 @@ LRESULT FUN_0046fa40(HWND param_1,uint param_2,uint param_3,LPARAM param_4)
   undefined4 *puVar13;
   undefined4 *puVar14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar12 = param_3;
   uVar10 = param_2;
   DAT_005d6530 = param_1;
@@ -75928,7 +75944,7 @@ void FUN_00470970(LPCSTR param_1)
   CHAR local_104 [220];
   undefined4 uStackY_28;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   wvsprintfA(local_104,param_1,&stack0x00000008);
   lstrcatA(local_104,&DAT_004d0f38);
   if ((DAT_005e5010 != 0) && (*(int *)(DAT_005e5010 + 0x2524) != 0)) {
@@ -75966,7 +75982,7 @@ void FUN_00470a40(void)
   int _Val;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _Size = 8;
   _Val = 0;
   _Dst = (void *)AllocateMemoryWithCallback(8);
@@ -76005,7 +76021,7 @@ void FUN_00470b60(void)
   int _Val;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _Size = 8;
   _Val = 0;
   _Dst = (void *)AllocateMemoryWithCallback(8);
@@ -76064,7 +76080,7 @@ void FUN_00470d40(void)
   HKEY__ hKey;
   HKEY__ _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _Size.unused = 4;
   LVar1 = RegOpenKeyExA((HKEY)0x80000002,(LPCSTR)0x40,0,0,(PHKEY)0x0);
   if (LVar1 == 0) {
@@ -76575,7 +76591,7 @@ void FUN_00471ae0(undefined4 param_1,int param_2)
   float fVar10;
   float fVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   *(float *)(param_2 + 0x2dd) = *(float *)(param_2 + 0x2e1) + *(float *)(param_2 + 0x2dd);
   if (*(int *)(param_2 + 0x23d) != 0) {
     do {
@@ -76865,7 +76881,7 @@ void FUN_00472320(int param_1,int param_2,int param_3)
   uint uVar5;
   
   iVar2 = param_2;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar5 = 0;
   do {
     if (*(int *)(iVar2 + 0x1a) == 1) {
@@ -76927,7 +76943,7 @@ void FUN_00472480(float *param_1,int param_2,int param_3,float param_4)
   float fVar3;
   float fVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = param_4 * param_4;
   fVar2 = fVar1 * param_4;
   fVar4 = fVar1 * 3.0 - (fVar2 + fVar2);
@@ -76972,7 +76988,7 @@ void FUN_004725c0(int param_1,int param_2,float *param_3)
   int iVar14;
   int iVar15;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar4 = *param_3 - *(float *)(param_2 + 0x36);
   fVar5 = param_3[1] - *(float *)(param_2 + 0x3a);
   fVar6 = param_3[2] - *(float *)(param_2 + 0x3e);
@@ -77055,7 +77071,7 @@ void FUN_00472830(int param_1)
   int iVar12;
   
   iVar5 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar12 = 0;
   if (*(short *)(param_1 + 0x24b) != 0) {
     iVar9 = 0;
@@ -77188,7 +77204,7 @@ void FUN_00472bb0(int param_1,int param_2,int param_3,int param_4)
   uint uVar9;
   uint uVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if ((((((*(byte *)(*(int *)(param_1 + 4) + 0x8a) & 4) == 0) &&
         (piVar8 = *(int **)(param_2 + 0x99), piVar8 != (int *)0x0)) && (param_4 == *piVar8)) &&
       ((*(int *)(param_2 + 0x9d) == 0 || (*(int *)(*(int *)(param_2 + 0x9d) + 0xf) != 0x104)))) &&
@@ -77287,7 +77303,7 @@ void FUN_00472ec0(int param_1,ushort param_2,uint param_3,int param_4)
   uint uVar13;
   ushort uVar14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar9 = DAT_005aa0e6;
   uVar10 = (uint)param_2;
   pbVar2 = (byte *)(*(int *)(param_1 + 2) + uVar10 * 6);
@@ -77411,9 +77427,9 @@ void FUN_004731a0(void)
   char acStackY_105 [237];
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStackY_18 = 0x4731c0;
-  FUN_004b0bb0();
+  GetAbsolutePathThreadSafe();
   sVar1 = _strlen(acStackY_105 + 1);
   uStackY_18 = 0x4731e4;
   iVar2 = _strcmp(acStackY_105 + sVar1,&DAT_004d13a4);
@@ -77429,7 +77445,7 @@ void FUN_004731a0(void)
       }
       else {
         uStackY_18 = 0x47321e;
-        uVar3 = FUN_004b0b10();
+        uVar3 = GetCharacterType();
       }
       if (uVar3 != 0) {
         acStackY_105[uVar5 + 1] = acStackY_105[uVar5 + 1] + ' ';
@@ -77613,7 +77629,7 @@ undefined4 FUN_00473760(void)
   char *_Source;
   int iVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_005d4964 = (int)((uint)*(ushort *)(DAT_00598ff0 + 6) * (uint)*(ushort *)(DAT_00598ff0 + 0x10)
                       * (uint)*(ushort *)(DAT_00598ff0 + 0xe)) / (int)(DAT_004d14f8 & 0xff);
   DAT_005d4960 = (int)((uint)*(ushort *)(DAT_00598ff0 + 8) * (uint)*(ushort *)(DAT_00598ff0 + 0x10)
@@ -77785,7 +77801,7 @@ int FUN_00473ca0(float param_1,int param_2,int param_3,float param_4)
   undefined8 local_18;
   int iVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar2 = DAT_004d14f8 & 0xff;
   local_28 = (undefined *)(float)((int)param_1 * uVar2);
   local_20 = (undefined *)(float)(param_2 * uVar2);
@@ -78026,7 +78042,7 @@ int FUN_004740f0(int param_1,undefined4 param_2,undefined4 *param_3)
   int *piVar15;
   float fVar16;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar5 = *(int *)(param_1 + 4);
   local_40 = (float *)0x80040201;
   iVar7 = *(int *)(*(int *)(iVar5 + 0x98) + 0x10);
@@ -78040,7 +78056,7 @@ int FUN_004740f0(int param_1,undefined4 param_2,undefined4 *param_3)
     local_1c = local_108;
     local_18 = (double)CONCAT44(iVar5 + 6,iVar5 + 0x46);
     puStack_20 = (undefined *)0x474196;
-    FUN_0045ef80();
+    MultiplyMatrices();
   }
   else {
     puVar11 = (undefined4 *)(iVar5 + 6);
@@ -78293,7 +78309,7 @@ void ** FUN_00474810(uint param_1)
   int iVar8;
   size_t sVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005df318 == 0) {
     return (void **)0x0;
   }
@@ -78430,7 +78446,7 @@ undefined4 FUN_00474a60(void)
   int iVar4;
   float10 fVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = FUN_00474810(2);
   *(undefined4 *)(*(int *)(*(int *)(iVar3 + 4) + 0x100) + 0x48) = 1;
   *(undefined4 *)(*(int *)(*(int *)(iVar3 + 4) + 0x100) + 0x44) = 0x41200000;
@@ -78581,7 +78597,7 @@ void FUN_00474db0(int param_1,byte param_2)
   undefined4 ***local_18;
   int local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar3 = 0.0;
   iVar1 = *(int *)(param_1 + 4);
   bVar5 = param_2;
@@ -78654,7 +78670,7 @@ undefined4 FUN_00474f20(undefined2 *param_1)
   int **ppiVar3;
   undefined4 uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005df2f8 == 1) {
     uVar4 = 0x18;
   }
@@ -78705,7 +78721,7 @@ void FUN_00474ff0(void)
   uint uVar4;
   uint uVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005df318 != (uint *)0x0) {
     uVar5 = 0;
     uVar4 = DAT_005df318[1];
@@ -78782,7 +78798,7 @@ void FUN_00475150(void)
   int iVar3;
   uint uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005df318 != (uint *)0x0) {
     uVar4 = 1;
     iVar2 = *(int *)(DAT_005df318[1] + 10);
@@ -79363,7 +79379,7 @@ void FUN_00475bf0(undefined4 *param_1,float param_2,int param_3,undefined param_
   undefined4 *local_14;
   float fVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005e4a5e != '\0') {
     puVar2 = (undefined4 *)(DAT_005e45e4 + 0x90);
     puVar3 = local_48;
@@ -79537,7 +79553,7 @@ void FUN_00475ec0(void)
   int iStack_18;
   undefined4 *local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar3 = (undefined4 *)(DAT_005e45e4 + 0x90);
   puVar4 = local_44;
   for (iVar2 = 0x10; iVar1 = DAT_005d0e50, iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -79714,7 +79730,7 @@ void FUN_00476110(undefined4 **param_1)
   undefined4 ***local_14;
   
   iVar2 = (int)param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (*(int *)((int)param_1 + 0x1c) == 0) {
     uVar1 = *(uint *)((int)param_1 + 0x14);
     *(undefined *)((int)param_1 + 0x30) = 100;
@@ -80018,7 +80034,7 @@ void FUN_00476630(int param_1)
   uint uVar7;
   
   iVar2 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar5 = 0x7f;
   cVar4 = '\x7f';
   uVar7 = 1000;
@@ -80277,7 +80293,7 @@ undefined4 FUN_00476a20(void)
   int *piStackY_20;
   undefined4 uStackY_1c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_005d0424 = DAT_005a88c0;
   uVar2 = FUN_0046be10();
   uStackY_1c = 0x476a4d;
@@ -80343,7 +80359,7 @@ undefined4 FUN_00476b80(uint param_1)
   double dVar12;
   
   iVar6 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pfVar1 = (float *)(param_1 + 0x47);
   if (DAT_00598e2c == 0) {
     puVar8 = &DAT_005cff60;
@@ -80432,7 +80448,7 @@ void FUN_00476e10(undefined4 *param_1,int param_2,int param_3,int param_4)
   int local_18;
   undefined *local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar4 = *(int *)(*(int *)(param_2 + 4) + 0x86);
   iVar1 = DAT_005cff44 +
           (uint)*(ushort *)((uint)*(byte *)(param_2 + 0x22) * 5 + -2 + DAT_005cff48) * 0xcc;
@@ -80599,7 +80615,7 @@ void FUN_004771e0(int param_1)
   undefined4 *local_18;
   undefined4 *puStack_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(param_1 + 4);
   puVar3 = &DAT_004d1ae0;
   puVar4 = local_50;
@@ -80626,7 +80642,7 @@ void FUN_004771e0(int param_1)
       puVar4 = puVar4 + 1;
     }
     local_20 = 0x477281;
-    FUN_0045ef80();
+    MultiplyMatrices();
     puStack_14 = local_9c;
     local_18 = local_dc;
   }
@@ -80636,7 +80652,7 @@ void FUN_004771e0(int param_1)
   }
   local_1c = local_50;
   local_20 = 0x47729b;
-  FUN_0045ef80();
+  MultiplyMatrices();
   puStack_14 = (undefined4 *)0x0;
   local_18 = (undefined4 *)0x0;
   local_1c = (undefined4 *)0x3dcccccd;
@@ -80689,7 +80705,7 @@ void FUN_004772f0(undefined4 *param_1)
   undefined4 *local_14;
   undefined4 *puVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = param_1[1];
   iVar5 = *(int *)(*(int *)(iVar1 + 0x86) + 0x13);
   puVar11 = *(undefined4 **)(iVar5 + 99);
@@ -80738,7 +80754,7 @@ void FUN_004772f0(undefined4 *param_1)
           local_18 = local_58;
           local_1c = local_e4;
           local_20 = (int *)0x47750c;
-          FUN_0045ef80();
+          MultiplyMatrices();
           local_18 = local_e4;
         }
         else {
@@ -80747,7 +80763,7 @@ void FUN_004772f0(undefined4 *param_1)
         local_14 = local_a4;
         local_1c = local_58;
         local_20 = (int *)0x477526;
-        FUN_0045ef80();
+        MultiplyMatrices();
         local_28 = &local_64;
         local_64 = *(undefined4 **)(iVar1 + 0xa4);
         local_14 = (undefined4 *)0x0;
@@ -80806,7 +80822,7 @@ switchD_00477375_caseD_b:
           local_18 = local_58;
           local_1c = local_e4;
           local_20 = (int *)0x47763a;
-          FUN_0045ef80();
+          MultiplyMatrices();
           local_14 = local_a4;
           local_18 = local_e4;
         }
@@ -80816,7 +80832,7 @@ switchD_00477375_caseD_b:
         }
         local_1c = local_58;
         local_20 = (int *)0x477654;
-        FUN_0045ef80();
+        MultiplyMatrices();
         if ((*(int *)(*(int *)(param_1[1] + 0x98) + 0x10) != 4) ||
            ((*(byte *)(param_1[1] + 0x8a) & 1) == 0)) {
           local_14 = (undefined4 *)0x6;
@@ -80859,19 +80875,19 @@ switchD_00477375_caseD_b:
           local_18 = local_58;
           local_1c = local_e4;
           local_20 = (int *)0x477758;
-          FUN_0045ef80();
+          MultiplyMatrices();
           local_14 = local_a4;
           local_18 = local_e4;
           local_1c = local_58;
           local_20 = (int *)0x477772;
-          FUN_0045ef80();
+          MultiplyMatrices();
         }
         else {
           local_14 = (undefined4 *)(iVar1 + 6);
           local_18 = local_58;
           local_1c = local_58;
           local_20 = (int *)0x47772f;
-          FUN_0045ef80();
+          MultiplyMatrices();
         }
         if ((*(char *)(iVar1 + 4) == '\x05') || (*(char *)(iVar1 + 4) == '\x06')) {
           local_20 = local_58;
@@ -80910,7 +80926,7 @@ switchD_00477375_caseD_b:
           local_18 = local_58;
           local_1c = local_e4;
           local_20 = (int *)0x47740f;
-          FUN_0045ef80();
+          MultiplyMatrices();
           local_14 = local_a4;
           local_18 = local_e4;
         }
@@ -80920,7 +80936,7 @@ switchD_00477375_caseD_b:
         }
         local_1c = local_58;
         local_20 = (int *)0x477429;
-        FUN_0045ef80();
+        MultiplyMatrices();
         puVar11 = (undefined4 *)puVar11[0xf];
       }
       if (puVar11 == (undefined4 *)0x0) {
@@ -80962,7 +80978,7 @@ void FUN_00477820(int param_1,int param_2)
   undefined4 *local_14;
   float fVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar6 = *(int *)(param_2 + 4);
   local_14 = (undefined4 *)0x1;
   iVar1 = DAT_005cff44 +
@@ -81025,7 +81041,7 @@ void FUN_00477820(int param_1,int param_2)
     local_14 = (undefined4 *)(iVar6 + 0x46);
     local_1c = local_12c;
     local_20 = 0x47799c;
-    FUN_0045ef80();
+    MultiplyMatrices();
     local_14 = local_ec;
     local_18 = local_12c;
   }
@@ -81034,7 +81050,7 @@ void FUN_00477820(int param_1,int param_2)
   }
   local_1c = local_60;
   local_20 = 0x4779b6;
-  FUN_0045ef80();
+  MultiplyMatrices();
   uStack_38 = *(undefined4 *)(iVar6 + 0x36);
   fStack_34 = *(float *)(iVar6 + 0x3a);
   local_14 = (undefined4 *)(local_2c - fStack_34);
@@ -81270,7 +81286,7 @@ FUN_00477e20(undefined4 param_1,undefined4 param_2,int *param_3,undefined4 param
   int local_40;
   undefined *local_3c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar2 = *param_5;
   sVar3 = param_5[1];
   _memset(&stack0xffffffe4,0,0x14);
@@ -81391,7 +81407,7 @@ void FUN_004780b0(int param_1)
   size_t _Size;
   int iVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(param_1 + 0x13);
   bVar5 = 0;
   for (iVar7 = *(int *)(iVar1 + 0x5b); iVar7 != 0; iVar7 = *(int *)(iVar7 + 0x74)) {
@@ -81457,7 +81473,7 @@ void FUN_00478200(int param_1)
   int iVar9;
   uint uVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar10 = 0;
   iVar7 = *(int *)(param_1 + 0x13);
   iVar8 = iVar7;
@@ -81619,7 +81635,7 @@ void FUN_00478480(int param_1,int param_2)
   
   uStack_8 = 0x848d;
   uStack_6 = 0x47;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStack_8 = (undefined2)unaff_EBX;
   uStack_6 = (undefined2)((uint)unaff_EBX >> 0x10);
   local_c = (ushort)unaff_ESI;
@@ -81720,7 +81736,7 @@ void FUN_00478480(int param_1,int param_2)
       local_1c = local_e8;
       local_20 = 0x871b;
       uStack_1e = 0x47;
-      FUN_0045ef80();
+      MultiplyMatrices();
       local_14 = local_a8;
       local_18 = local_e8;
     }
@@ -81731,7 +81747,7 @@ void FUN_00478480(int param_1,int param_2)
     local_20 = 0x8735;
     uStack_1e = 0x47;
     local_1c = &DAT_005cf287 + uVar7 * 0x33;
-    FUN_0045ef80();
+    MultiplyMatrices();
     local_14._0_2_ = 0;
     local_14._2_2_ = 0;
     local_18._0_2_ = 0;
@@ -81818,7 +81834,7 @@ void FUN_00478780(int param_1,int param_2)
   
   uStack_8 = 0x878d;
   uStack_6 = 0x47;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStack_8 = (undefined2)unaff_EBX;
   uStack_6 = (undefined2)((uint)unaff_EBX >> 0x10);
   local_c = (ushort)unaff_ESI;
@@ -81920,7 +81936,7 @@ void FUN_00478780(int param_1,int param_2)
       local_1c = local_e8;
       local_20 = 0x8a24;
       uStack_1e = 0x47;
-      FUN_0045ef80();
+      MultiplyMatrices();
       local_14 = local_a8;
       local_18 = local_e8;
     }
@@ -81931,7 +81947,7 @@ void FUN_00478780(int param_1,int param_2)
     local_20 = 0x8a3e;
     uStack_1e = 0x47;
     local_1c = &DAT_005cf287 + uVar7 * 0x33;
-    FUN_0045ef80();
+    MultiplyMatrices();
     local_14._0_2_ = 0;
     local_14._2_2_ = 0;
     local_18._0_2_ = 0;
@@ -81984,7 +82000,7 @@ void FUN_00478a90(int param_1)
   float fVar7;
   float fVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_38 = *(undefined4 ***)(param_1 + 0x37);
   local_34 = *(undefined4 *)(param_1 + 0x3b);
   local_30 = *(undefined4 *)(param_1 + 0x3f);
@@ -82111,7 +82127,7 @@ void FUN_00478d40(void)
   double local_18;
   float fVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar5 = &DAT_005cf327;
   do {
     iVar3 = piVar5[-4];
@@ -82223,7 +82239,7 @@ void FUN_00478fb0(int param_1)
   double dVar3;
   float fVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(*(int *)(param_1 + 0xa3) + 4);
   fVar4 = *(float *)(iVar1 + 0x3e) - *(float *)(param_1 + 0x3f);
   fVar2 = (float10)FUN_004ad3c0((double)(*(float *)(iVar1 + 0x36) - *(float *)(param_1 + 0x37)),
@@ -82487,7 +82503,7 @@ void FUN_004792a0(int param_1)
   undefined4 *local_14;
   undefined2 *puVar13;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_28 = *(int *)(param_1 + 200);
   puVar1 = *(undefined4 **)(local_28 + 0x155);
   pfVar7 = (float *)(param_1 + 0x47);
@@ -82516,12 +82532,12 @@ void FUN_004792a0(int param_1)
   local_14 = (undefined4 *)(DAT_005e45e4 + 0x278);
   uStack_20 = 0x47930e;
   local_b4 = puVar1;
-  FUN_0045ef80();
+  MultiplyMatrices();
   pfStack_18 = local_68;
   local_1c = local_24c;
   local_14 = &DAT_004d1b60;
   uStack_20 = 0x479326;
-  FUN_0045ef80();
+  MultiplyMatrices();
   local_21c = local_21c / local_214;
   local_204 = local_214;
   if (local_21c <= 0.0) {
@@ -82971,7 +82987,7 @@ void FUN_0047a250(int param_1,int param_2)
   int iVar10;
   undefined *puVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _Size = *(size_t *)(*(int *)(param_2 + 4) + 0x86);
   local_24 = (float)(*(int *)(_Size + 0x13) + 0x8d);
   _Dst = (void *)(DAT_005cff44 +
@@ -83105,10 +83121,10 @@ void FUN_0047a250(int param_1,int param_2)
          ((*(char *)(iVar2 + 4) == '\x05' || (*(char *)(iVar2 + 4) == '\x06')))))) ||
        ((*(uint *)(iVar2 + 0x8a) & 0x100000) != 0)) {
       local_20 = 6.580087e-39;
-      FUN_0045ef80();
+      MultiplyMatrices();
     }
     local_20 = 6.580128e-39;
-    FUN_0045ef80();
+    MultiplyMatrices();
     iVar2 = *(int *)(param_2 + 4);
     local_38 = *(undefined4 *)(iVar2 + 0x36);
     local_34 = *(float *)(iVar2 + 0x3a);
@@ -83224,7 +83240,7 @@ void FUN_0047a890(int param_1,int param_2)
   int iVar11;
   undefined *puVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _Size = *(size_t *)(*(int *)(param_2 + 4) + 0x86);
   local_24 = (undefined4 *)(*(int *)(_Size + 0x13) + 0x8d);
   _Dst = (void *)(DAT_005cff44 +
@@ -83358,10 +83374,10 @@ void FUN_0047a890(int param_1,int param_2)
          ((*(char *)(iVar2 + 4) == '\x05' || (*(char *)(iVar2 + 4) == '\x06')))))) ||
        ((*(uint *)(iVar2 + 0x8a) & 0x100000) != 0)) {
       local_20 = 6.582249e-39;
-      FUN_0045ef80();
+      MultiplyMatrices();
     }
     local_20 = 6.58229e-39;
-    FUN_0045ef80();
+    MultiplyMatrices();
     iVar2 = *(int *)(param_2 + 4);
     local_38 = *(undefined4 *)(iVar2 + 0x36);
     local_34 = *(float *)(iVar2 + 0x3a);
@@ -83454,7 +83470,7 @@ void FUN_0047ae90(int param_1,char *param_2)
   undefined8 local_18;
   float fVar16;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   *param_2 = DAT_00598e3c;
   param_2[1] = *(char *)((uint)*(byte *)(param_1 + 0x22) * 5 + -2 + DAT_005cff48);
   DAT_00598e3c = DAT_00598e3c + 1 & 0x7f;
@@ -83472,7 +83488,7 @@ void FUN_0047ae90(int param_1,char *param_2)
     piStack_1c = local_60;
     local_18 = (double)CONCAT44(iVar3 + 6,iVar3 + 0x46);
     local_20 = 0x47af61;
-    FUN_0045ef80();
+    MultiplyMatrices();
   }
   else {
     puVar12 = (undefined4 *)(iVar3 + 6);
@@ -83631,7 +83647,7 @@ void FUN_0047b3e0(int param_1,int param_2,float *param_3,float param_4)
   undefined4 **local_14;
   int iVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = *(int *)(*(int *)(*(int *)(param_1 + 4) + 0x86) + 0x13);
   iVar6 = *(int *)(iVar3 + 0x7f);
   *(undefined4 *)(param_2 + 0x93) = *(undefined4 *)(iVar3 + 0xb1);
@@ -83770,7 +83786,7 @@ void FUN_0047b620(undefined4 *******param_1,int param_2)
   float fVar16;
   float fVar17;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_68 = (undefined4 *****)0x0;
   local_38 = (undefined4 ******)0xc61c4000;
   if (((param_2 == 0) || (iVar9 = *(int *)(param_2 + 0x13), iVar9 == 0)) ||
@@ -84777,7 +84793,7 @@ void FUN_0047ced0(void)
   uint uVar5;
   uint uVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_00598d6c == 0) {
     for (iVar2 = *(int *)(DAT_005df318 + 4); iVar2 != 0; iVar2 = *(int *)(iVar2 + 0x16)) {
       uVar6 = (uint)*(ushort *)((uint)*(byte *)(iVar2 + 0x22) * 5 + -4 + DAT_005cff48);
@@ -84825,7 +84841,7 @@ undefined4 FUN_0047cfd0(int param_1)
   byte bVar5;
   byte bVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar4 = 1;
   iVar1 = *(int *)(param_1 + 4);
   if ((*(byte *)(iVar1 + 0x8a) & 4) != 0) {
@@ -85040,7 +85056,7 @@ void FUN_0047d510(int param_1,int param_2)
   float *local_10;
   float **local_c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_c = *(float ***)(param_2 + 4);
   local_1c = *(float *)(param_2 + 8);
   local_10 = (float *)0x47d53b;
@@ -85087,7 +85103,7 @@ undefined4 FUN_0047d5c0(undefined4 param_1,int param_2)
   undefined4 *puStack_14;
   undefined4 uStack_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar2 = &DAT_004d1ae0;
   puVar3 = local_44;
   for (iVar1 = 0x10; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -85115,7 +85131,7 @@ undefined4 FUN_0047d5c0(undefined4 param_1,int param_2)
   uStack_10 = param_1;
   uStack_18 = param_1;
   local_1c = 0x47d649;
-  FUN_0045ef80();
+  MultiplyMatrices();
   return 1;
 }
 
@@ -85136,7 +85152,7 @@ undefined4 FUN_0047d660(undefined4 param_1)
   undefined4 *puStack_14;
   undefined4 uStack_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puStack_14 = local_44;
   puVar2 = &DAT_004d1ae0;
   puVar3 = local_44;
@@ -85151,7 +85167,7 @@ undefined4 FUN_0047d660(undefined4 param_1)
   local_2c = 0x3f800000;
   local_20 = 0xbf800000;
   local_1c = 0x47d6a8;
-  FUN_0045ef80();
+  MultiplyMatrices();
   return param_1;
 }
 
@@ -85172,7 +85188,7 @@ undefined4 FUN_0047d6c0(undefined4 param_1)
   undefined4 *puStack_14;
   undefined4 uStack_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puStack_14 = local_44;
   puVar2 = &DAT_004d1ae0;
   puVar3 = local_44;
@@ -85187,7 +85203,7 @@ undefined4 FUN_0047d6c0(undefined4 param_1)
   local_2c = 0xbf800000;
   local_20 = 0x3f800000;
   local_1c = 0x47d708;
-  FUN_0045ef80();
+  MultiplyMatrices();
   return param_1;
 }
 
@@ -85206,7 +85222,7 @@ undefined4 FUN_0047d720(undefined4 param_1)
   undefined4 *puStack_14;
   undefined4 uStack_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puStack_14 = local_44;
   puVar2 = &DAT_004d1ae0;
   puVar3 = local_44;
@@ -85221,7 +85237,7 @@ undefined4 FUN_0047d720(undefined4 param_1)
   local_44[2] = 0;
   local_24 = 0;
   local_1c = 0x47d768;
-  FUN_0045ef80();
+  MultiplyMatrices();
   return param_1;
 }
 
@@ -85285,7 +85301,7 @@ void FUN_0047d860(float *param_1,float *param_2,float param_3)
   float fVar3;
   float10 fVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = *param_1 * *param_1 + param_1[2] * param_1[2] + param_1[1] * param_1[1];
   if (0.1 <= fVar1) {
     fVar4 = (float10)FUN_004ad534((double)fVar1);
@@ -85322,7 +85338,7 @@ void FUN_0047d970(float *param_1,float *param_2,float param_3)
   float fVar3;
   float10 fVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = *param_1 * *param_1 + param_1[2] * param_1[2] + param_1[1] * param_1[1];
   if (0.1 <= fVar1) {
     fVar4 = (float10)FUN_004ad534((double)fVar1);
@@ -85360,7 +85376,7 @@ void FUN_0047da80(float *param_1,float *param_2)
   float fVar3;
   float10 fVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = *param_1 * *param_1 + param_1[2] * param_1[2] + param_1[1] * param_1[1];
   if (0.1 <= fVar1) {
     fVar4 = (float10)FUN_004ad534((double)fVar1);
@@ -85419,7 +85435,7 @@ float FUN_0047db60(float param_1,int param_2,undefined4 *param_3,undefined4 para
   undefined *local_18;
   undefined4 **local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)((int)param_1 + 4);
   local_58 = *(int *)(*(int *)(iVar1 + 0x86) + 0x13);
   if (*(int *)(DAT_005df318 + 4) == 0) {
@@ -85440,7 +85456,7 @@ float FUN_0047db60(float param_1,int param_2,undefined4 *param_3,undefined4 para
     local_18 = (undefined *)(iVar1 + 0x46);
     local_1c = local_9c;
     local_20 = 6.599293e-39;
-    FUN_0045ef80();
+    MultiplyMatrices();
   }
   else {
     puVar6 = (undefined4 *)(iVar1 + 6);
@@ -85554,7 +85570,7 @@ float10 FUN_0047df80(float param_1,float *param_2,float *param_3)
   float fVar1;
   float10 fVar2;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = param_3[1] - param_2[1];
   fVar2 = (float10)FUN_004ad534((double)((param_3[2] - param_2[2]) * (param_3[2] - param_2[2]) +
                                         fVar1 * fVar1 +
@@ -85580,7 +85596,7 @@ void FUN_0047e000(float *param_1,float param_2,float *param_3,float *param_4)
   float10 fVar10;
   float fStack_8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = param_4[2];
   fVar2 = *param_4;
   fVar3 = *param_3;
@@ -85619,7 +85635,7 @@ float10 FUN_0047e0d0(float param_1,float *param_2,float *param_3)
 {
   float10 fVar1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = (float10)FUN_004ad534((double)((param_3[2] - param_2[2]) * (param_3[2] - param_2[2]) +
                                         (param_3[1] - param_2[1]) * (param_3[1] - param_2[1]) +
                                         (*param_3 - *param_2) * (*param_3 - *param_2)));
@@ -85645,7 +85661,7 @@ void FUN_0047e150(int param_1,int param_2)
   undefined8 local_10;
   float fVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = *(int *)(param_1 + 0xa7);
   if (((iVar2 == 0) || (iVar3 = *(int *)(iVar2 + 4), (*(uint *)(iVar3 + 0x8a) & 0x4200) != 0)) ||
      ((*(byte *)(iVar3 + 0x8e) & 0x40) != 0)) {
@@ -85740,7 +85756,7 @@ void FUN_0047e450(int param_1,int param_2)
   undefined8 local_10;
   float fVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = *(int *)(param_1 + 0xa7);
   if (iVar2 == 0) {
     return;
@@ -85812,7 +85828,7 @@ void FUN_0047e640(int param_1,int param_2)
   undefined8 local_10;
   float fVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(param_1 + 0xa7);
   if (iVar1 == 0) {
     return;
@@ -85894,7 +85910,7 @@ void FUN_0047e850(float *param_1,undefined4 ***param_2,int param_3,uint param_4)
   float fVar7;
   float fVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)((int)param_2 + 4);
   local_28 = *(float *)(iVar1 + 0x36);
   local_24 = *(float **)(iVar1 + 0x3a);
@@ -85910,7 +85926,7 @@ void FUN_0047e850(float *param_1,undefined4 ***param_2,int param_3,uint param_4)
       local_18 = (double)CONCAT44(iVar1 + 6,iVar1 + 0x46);
       local_1c = (undefined4 ****)local_80;
       local_20 = (float *)0x47e971;
-      FUN_0045ef80();
+      MultiplyMatrices();
     }
     else {
       puVar3 = (undefined4 *)(iVar1 + 6);
@@ -86009,7 +86025,7 @@ void FUN_0047eb70(int param_1,int param_2)
   undefined8 local_14;
   float fVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = *(int *)(*(int *)(param_1 + 0xa7) + 4);
   if ((*(uint *)(iVar3 + 0x8a) & 0x4200) != 0) {
     return;
@@ -86087,7 +86103,7 @@ void FUN_0047ecf0(float param_1)
   float fVar10;
   
   iVar4 = (int)param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   *(float *)(*(int *)(*(int *)((int)param_1 + 0xa3) + 4) + 0x104) = param_1;
   if (*(int *)((int)param_1 + 0xa3) == DAT_005e45e8) {
     DAT_004d7a40 = 1;
@@ -86151,7 +86167,7 @@ void FUN_0047ecf0(float param_1)
   dStack_18 = (double)CONCAT44(iVar5,local_50);
   pfStack_20 = (float *)0x47ee7f;
   puStack_1c = (undefined *)iVar5;
-  FUN_0045ef80();
+  MultiplyMatrices();
   pfStack_20 = local_50;
   dStack_18 = (double)((ulonglong)(uint)fVar10 << 0x20);
   uStack_24 = 0x47ee95;
@@ -86160,7 +86176,7 @@ void FUN_0047ecf0(float param_1)
   puStack_1c = local_90;
   dStack_18 = (double)CONCAT44(iVar5,local_50);
   pfStack_20 = (float *)0x47eea9;
-  FUN_0045ef80();
+  MultiplyMatrices();
   dStack_18 = (double)(*(float *)(iVar4 + 0x8f) * *(float *)(iVar4 + 0x8f) +
                       *(float *)(iVar4 + 0x8b) * *(float *)(iVar4 + 0x8b) +
                       *(float *)(iVar4 + 0x87) * *(float *)(iVar4 + 0x87));
@@ -86209,7 +86225,7 @@ void FUN_0047ef80(float param_1,float param_2)
   float fVar9;
   
   iVar3 = (int)param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar4 = *(int *)((int)param_2 + 0x13) + 0x8d;
   *(float *)(*(int *)(*(int *)((int)param_1 + 0xa3) + 4) + 0x104) = param_1;
   if (*(int *)((int)param_1 + 0xa3) == DAT_005e45e8) {
@@ -86316,7 +86332,7 @@ void FUN_0047ef80(float param_1,float param_2)
   pfStack_20 = (float *)0x47f26c;
   puStack_1c = (undefined *)iVar5;
   uStack_18._4_4_ = (float)iVar5;
-  FUN_0045ef80();
+  MultiplyMatrices();
   pfStack_20 = local_50;
   uStack_18._0_4_ = (float *)0x0;
   puStack_1c = (undefined *)param_2;
@@ -86327,7 +86343,7 @@ void FUN_0047ef80(float param_1,float param_2)
   puStack_1c = local_90;
   pfStack_20 = (float *)0x47f296;
   uStack_18._4_4_ = (float)iVar5;
-  FUN_0045ef80();
+  MultiplyMatrices();
   *(float *)(iVar3 + 0x87) = *(float *)(iVar4 + 0x18) * local_70;
   *(float *)(iVar3 + 0x8b) = *(float *)(iVar4 + 0x1c) * local_6c;
   fVar9 = *(float *)(iVar4 + 0x20);
@@ -86378,7 +86394,7 @@ void FUN_0047f360(int *param_1,int param_2,int param_3)
   int iVar3;
   undefined4 ***pppuVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_1c = *(undefined4 **)(param_3 + 0x20);
   local_18 = *(undefined4 *)(*(int *)(param_2 + 4) + 0xf7);
   local_10 = (undefined4 ***)&local_1c;
@@ -86495,7 +86511,7 @@ undefined4 FUN_0047f560(void)
   undefined4 uVar2;
   float fVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005df2f8 == 1) {
     if (DAT_00598944 == 0) {
       fVar3 = 49.0;
@@ -86589,7 +86605,7 @@ undefined4 FUN_0047f6a0(void)
   int iVar10;
   int iVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_24 = DAT_005e72fc;
   iVar10 = 0;
   if ((-(DAT_00598944 != 0) & 8U) == 0xfd) {
@@ -86695,7 +86711,7 @@ uint FUN_0047f870(undefined4 param_1,undefined4 param_2,undefined4 param_3)
   undefined *puStackY_28;
   int *piVar2;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(&local_88,0,0x6c);
   local_88 = 0x6c;
   local_84 = 7;
@@ -86783,7 +86799,7 @@ void FUN_0047fa00(void)
   short sVar16;
   uint uVar17;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_18 = (float *)0x0;
   uVar17 = 0;
   if (DAT_004d83a4 != 0) {
@@ -87128,7 +87144,7 @@ void FUN_00480010(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
   int iVar3;
   longlong lVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar1 = *(short *)(DAT_004d83a4 + 0x60);
   iVar2 = FUN_00480850(param_1,param_2,param_3,param_4,param_5,param_6,param_7);
   if (iVar2 != 0) {
@@ -87291,7 +87307,7 @@ FUN_00480850(float param_1,float param_2,float param_3,float param_4,undefined4 
   float10 fVar3;
   double dVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar2 = (float10)FUN_004ad3c0((double)(param_1 - param_3));
   dVar4 = (double)(param_2 - param_4);
   fVar3 = (float10)FUN_004ad3c0(dVar4);
@@ -87326,7 +87342,7 @@ FUN_00480990(float param_1,float param_2,float param_3,float param_4,float param
   float10 fVar5;
   double local_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_18 = (double)((param_2 - param_4) * (param_2 - param_4) +
                      (param_1 - param_3) * (param_1 - param_3));
   fVar4 = (float10)FUN_004ad534();
@@ -87497,7 +87513,7 @@ void FUN_00480e20(void)
   int iVar9;
   float fVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar2 = *(short *)(DAT_004d83a4 + 0x60);
   fVar5 = (float)(int)sVar2;
   fVar10 = 0.0;
@@ -87609,7 +87625,7 @@ void FUN_00481120(float param_1,float param_2,float param_3,int param_4,float *p
   float unaff_EDI;
   float10 fVar1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (0 < param_4) {
     do {
       fVar1 = (float10)FUN_004ae014((double)unaff_EDI);
@@ -87664,7 +87680,7 @@ undefined4 FUN_004811e0(void)
   undefined4 *puVar11;
   int *local_30;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_00598f2c = 0;
   _DAT_005e4488 = FUN_004858c0();
   switch(_DAT_005e4488) {
@@ -88312,7 +88328,7 @@ undefined4 FUN_00482470(undefined4 param_1,undefined4 param_2,int *param_3)
   undefined4 *puVar4;
   undefined4 *puVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_00418380();
   iVar2 = DAT_005e5010;
   puVar4 = &DAT_004d1ae0;
@@ -88514,7 +88530,7 @@ uint FUN_00482880(undefined4 param_1,undefined4 param_2,int *param_3)
   uint uVar26;
   int iVar27;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar20 = 0;
   local_40 = 0;
   if (DAT_00598d90 == 0) {
@@ -89003,7 +89019,7 @@ byte FUN_00483370(float param_1,float param_2,float param_3,int param_4)
   int *piVar6;
   float *pfVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar5 = 0;
   bVar3 = false;
   bVar4 = false;
@@ -89068,7 +89084,7 @@ void FUN_00483470(float *param_1,float param_2)
   double dVar14;
   float *pfVar16;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar12 = 1.401298e-45;
   dVar14 = 0.0;
   uVar15 = 0;
@@ -89274,7 +89290,7 @@ void FUN_004837f0(float *param_1,float *param_2,float *param_3)
   float fVar14;
   float fVar15;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar1 = param_2[5];
   fVar2 = param_2[9];
   fVar15 = 1.0 / (param_2[3] * *param_3 + param_2[0xb] * param_3[2] + param_2[7] * param_3[1] +
@@ -89311,7 +89327,7 @@ undefined4 FUN_004838e0(int param_1,undefined4 param_2,float param_3,float param
   float10 fVar6;
   float10 fVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(*(int *)(DAT_00598d90 + 0x230) + param_1 * 4);
   fVar2 = param_4 * *(float *)(iVar1 + 0x91) * 1.2;
   fVar3 = (*(float *)(iVar1 + 0x81) + *(float *)(iVar1 + 0x8d)) * 0.5;
@@ -89447,7 +89463,7 @@ uint FUN_00483cd0(undefined4 param_1,int *param_2,int **param_3,undefined4 param
   int *local_1c;
   undefined4 *puStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puStackY_18 = (undefined4 *)0x483ceb;
   _memset(&local_58,0,0x50);
   local_4c = param_4;
@@ -89552,7 +89568,7 @@ void FUN_00483db0(void)
   int iVar13;
   int *piVar14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar7 = *(int **)(DAT_005df318 + 4);
 joined_r0x00483dd7:
   do {
@@ -89573,7 +89589,7 @@ joined_r0x00483dd7:
         local_20 = 0x3f31;
         uStack_1e = 0x48;
         piVar14 = piVar7;
-        FUN_0045ef80();
+        MultiplyMatrices();
       }
       else {
         local_18 = (double)*(float *)(iVar1 + 0x9c);
@@ -89615,7 +89631,7 @@ joined_r0x00483dd7:
           local_20 = 0x3ef6;
           uStack_1e = 0x48;
           local_e8 = local_fc[0];
-          FUN_0045ef80();
+          MultiplyMatrices();
           piVar14 = piVar7;
         }
       }
@@ -89662,7 +89678,7 @@ joined_r0x00483dd7:
         uStack_1c = &local_bc;
         local_20 = 0x40d2;
         uStack_1e = 0x48;
-        FUN_0045ef80();
+        MultiplyMatrices();
         if ((iVar13 == *(int *)(*(int *)(*(int *)(iVar1 + 0x86) + 0x13) + 0x38)) &&
            (0.0001 < local_94 * local_94 + local_a8 * local_a8 + local_bc * local_bc)) {
           local_bc = *(float *)(DAT_005e45e4 + 0x238);
@@ -89718,7 +89734,7 @@ void FUN_00484230(void)
   int *piStack_18;
   undefined *puStack_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar1 = *(int **)(DAT_005df318 + 4);
   puStack_14 = local_44;
   piStack_18 = (int *)0x484261;
@@ -89788,7 +89804,7 @@ undefined FUN_00484300(int *param_1,float *param_2)
   int local_18;
   int local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_18 = *(int *)(DAT_005e5010 + 0x253c);
   iVar9 = *(int *)(DAT_005e5010 + 0x2538);
   iVar7 = *(int *)(*(int *)(*param_1 + 0x86) + 0x13);
@@ -89912,7 +89928,7 @@ undefined4 FUN_00484610(float param_1,float *param_2)
   float fVar9;
   float fVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_14 = *(float *)(DAT_005e45e4 + 0x238);
   local_30 = (float)(*(int *)(DAT_005e5010 + 0x2538) >> 1);
   local_2c = (float)(*(int *)(DAT_005e5010 + 0x253c) >> 1);
@@ -90061,7 +90077,7 @@ void FUN_004849a0(void)
   undefined8 local_18;
   uint uVar19;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_60 = (uint)*(ushort *)((int)DAT_00598ff0 + 0xe) * (uint)*(ushort *)((int)DAT_00598ff0 + 0xe)
   ;
   local_34 = 0;
@@ -90592,7 +90608,7 @@ int FUN_004855e0(int param_1,int param_2,int param_3,float *param_4)
   int iVar24;
   int iVar25;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar20 = (uint)*(ushort *)(DAT_00598ff0 + 4);
   iVar25 = 0;
   iVar24 = 0;
@@ -90823,7 +90839,7 @@ void FUN_00485a70(void)
   int iVar8;
   int iVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_28[0] = DAT_005986c8;
   if (DAT_005e72d0 == 0) {
     local_28[1] = DAT_005a1130;
@@ -90937,7 +90953,7 @@ void FUN_00485c30(float param_1,undefined4 param_2,float param_3)
   float10 fVar4;
   float10 fVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar4 = (float10)FUN_004ae0c4((double)(param_3 * 0.5));
   fVar5 = (float10)FUN_004ae014((double)(param_3 * 0.5));
   puVar2 = &DAT_004d1ae0;
@@ -90986,7 +91002,7 @@ void FUN_00485cf0(void)
   int iVar15;
   int *piVar16;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   (**(code **)(**(int **)(DAT_005e5010 + 0x14) + 0x68))
             (*(int **)(DAT_005e5010 + 0x14),1,&DAT_004d1ae0);
   if ((char)DAT_00598f3c != '\0') {
@@ -91071,7 +91087,7 @@ undefined4 FUN_00485ea0(int param_1,float *param_2)
   uint uVar9;
   float fVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar4 = true;
   if ((*(byte *)(param_1 + 0xa2) & 8) == 0) {
     iStack_1c = param_1;
@@ -91234,7 +91250,7 @@ undefined4 FUN_004863f0(undefined4 param_1,undefined4 param_2,undefined4 *param_
   undefined4 local_40;
   undefined4 local_3c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(&stack0xffffffe4,0,0x14);
   iVar1 = (**(code **)(*DAT_005e5148 + 0x18))();
   if (iVar1 != 0) {
@@ -91285,7 +91301,7 @@ undefined4 FUN_00486530(undefined4 param_1,undefined4 *param_2)
   undefined4 local_40;
   undefined4 local_3c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(&stack0xffffffe4,0,0x14);
   iVar1 = (**(code **)(*DAT_005e5148 + 0x18))();
   if (iVar1 != 0) {
@@ -91333,7 +91349,7 @@ undefined4 FUN_00486650(undefined4 param_1,undefined4 *param_2)
   undefined4 local_40;
   undefined4 local_3c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(&stack0xffffffe4,0,0x14);
   iVar1 = (**(code **)(*DAT_005e5148 + 0x18))();
   if (iVar1 != 0) {
@@ -91382,7 +91398,7 @@ undefined4 FUN_00486780(undefined4 param_1,undefined4 *param_2)
   undefined4 local_40;
   undefined4 local_3c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(&stack0xffffffe4,0,0x14);
   iVar1 = (**(code **)(*DAT_005e5148 + 0x18))();
   if (iVar1 != 0) {
@@ -91482,7 +91498,7 @@ undefined4 FUN_00486920(char *param_1,undefined4 param_2,int param_3,int param_4
   int *****pppppiVar11;
   int *****pppppiVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar10 = param_4;
   local_28 = (int *****)0x0;
   local_2c = (int *****)0x0;
@@ -92219,7 +92235,7 @@ void FUN_004880b0(char *param_1,uint param_2)
   int iVar19;
   uint uVar20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar9 = (undefined2 *)(DAT_005b9440 + param_2 * 0x37);
   FID_conflict___mbscpy(acStackY_1ca + 2,(char *)puVar9);
   FID_conflict__strcat(acStackY_1ca + 2,param_1);
@@ -92619,7 +92635,7 @@ void FUN_00488940(char *param_1,int param_2)
   undefined2 *puVar24;
   int iVar25;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if ((*(char *)(DAT_005b9440 + param_2 * 0x37) == '\0') && (DAT_004d80d0 != 3)) {
     FID_conflict___mbscpy(acStackY_2ea + 2,&DAT_005d5be0);
     FID_conflict__strcat(acStackY_2ea + 2,param_1);
@@ -92977,7 +92993,7 @@ void FUN_00489680(int param_1)
   int iVar11;
   uint uVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_004d7ab0 = *(undefined *)(param_1 + 6);
   uVar12 = 0;
   if (*(char *)(param_1 + 6) != '\0') {
@@ -93122,7 +93138,7 @@ void FUN_00489960(char *param_1)
 {
   int iVar1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   do {
     FID_conflict___mbscpy(param_1,&DAT_005d54e0);
     FUN_004ae5f0(DAT_00598f48,&stack0xfffffff4,10);
@@ -93143,7 +93159,7 @@ undefined4 FUN_00489a00(char *param_1)
 {
   int iVar1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FID_conflict___mbscpy(param_1,&DAT_005d54e0);
   FUN_004ae5f0(DAT_00598f48,&stack0xfffffff4);
   FID_conflict__strcat(param_1,&DAT_004d1f78);
@@ -93208,7 +93224,7 @@ undefined4 FUN_00489ae0(void)
   char *hKey;
   uint uVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_3c._0_1_ = s_Network_Logon_004d2000[4];
   local_3c._1_1_ = s_Network_Logon_004d2000[5];
   local_3c._2_1_ = s_Network_Logon_004d2000[6];
@@ -93443,7 +93459,7 @@ undefined4 FUN_0048a1f0(void)
   short asStackY_58 [14];
   undefined4 uStackY_3c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(local_1ac,0,0x120);
   _memset(&local_5c,0,0x40);
   uVar2 = 0;
@@ -93573,7 +93589,7 @@ undefined4 FUN_0048a480(float ******param_1)
   int iVar14;
   
   ppppppfVar4 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar14 = -1;
   iVar12 = 0;
   switch(param_1[1][0x26][4]) {
@@ -93829,7 +93845,7 @@ FUN_0048a940(float param_1,float param_2,float param_3,int param_4,float *param_
   float *local_1c;
   undefined8 local_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_18 = -5.133623904033384e+37;
   iVar7 = *(int *)(*(int *)(param_4 + 4) + 0xb0);
   iVar1 = *(int *)(*(int *)(iVar7 + 0x56) + 0x3c);
@@ -94041,7 +94057,7 @@ void FUN_0048af30(float *param_1,uint param_2)
   float fVar5;
   float10 fVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   param_2 = param_2 & 0xff;
   fVar2 = param_1[param_2 * 8] - *param_1;
   pfVar1 = param_1 + param_2 * 8;
@@ -94130,7 +94146,7 @@ undefined4 FUN_0048b070(undefined *param_1,int param_2)
   int iVar7;
   uint uVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_14 = param_1;
   iStack_18 = 0x48b090;
   iVar4 = FUN_00441a80();
@@ -94360,7 +94376,7 @@ void FUN_0048b3b0(int param_1)
   undefined *puVar8;
   undefined4 uVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar4 = false;
   iVar2 = *(int *)(param_1 + 4);
   iVar5 = *(int *)(*(int *)(iVar2 + 0x86) + 0x13);
@@ -94493,7 +94509,7 @@ void FUN_0048b5d0(int param_1)
   undefined4 *puVar8;
   int iVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar7 = (undefined4 *)0x0;
   iVar1 = *(int *)(*(int *)(*(int *)(param_1 + 4) + 0x86) + 0x13);
   for (iVar2 = *(int *)(iVar1 + 0x3c); iVar2 != 0; iVar2 = *(int *)(iVar2 + 0x14)) {
@@ -94576,7 +94592,7 @@ void FUN_0048b6d0(void)
   size_t sVar6;
   undefined2 uStack_e;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_00441a80();
   FUN_00441d30();
   bVar1 = 0;
@@ -94634,7 +94650,7 @@ undefined4 FUN_0048b860(char *param_1)
   char *_Source;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005df310 == '\0') {
     _Source = &gRootFileDirectory;
   }
@@ -94720,7 +94736,7 @@ void FUN_0048b9f0(void)
 undefined4 FUN_0048ba60(void)
 
 {
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_00598f74 = DAT_00598f74 + 1;
   DAT_00598f7c = DAT_00598f7c + 1;
   if (DAT_00598f74 == 100) {
@@ -94744,7 +94760,7 @@ uint FUN_0048baf0(int *param_1,undefined4 param_2,int param_3,uint param_4)
   undefined4 unaff_EBX;
   uint uVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar2 = param_2;
   piVar1 = param_1;
   uVar5 = param_4;
@@ -94786,7 +94802,7 @@ undefined4 FUN_0048bbc0(int param_1,LPSTR param_2,size_t param_3)
   int _Val;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piStackY_20 = (int *)0x48bbe4;
   _AIL_get_DirectSound_info_12();
   piStackY_20 = (int *)0x48bbf1;
@@ -94891,7 +94907,7 @@ undefined4 FUN_0048be30(uint param_1)
   int cch_00;
   uint uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar1 = param_1;
   if ((*(int *)(param_1 + 0x20) == 1) && (*(int *)(param_1 + 0x24) == 1)) {
     *(undefined4 *)(param_1 + 0x20) = 0;
@@ -95057,7 +95073,7 @@ void FUN_0048c0d0(void)
   ulonglong uVar18;
   float fVar19;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   WaitForSingleObject(HANDLE_005d664c,0xffffffff);
   DAT_005b935c = 1;
   if ((char)DAT_00598944 == '\0') {
@@ -95065,7 +95081,7 @@ void FUN_0048c0d0(void)
       if (DAT_00598fec != 0) {
         DAT_00598fec = 0;
         FUN_0048daa0();
-        FUN_004011a0();
+        ResumeAudioStreamsAndSamples();
         goto LAB_0048c180;
       }
     }
@@ -95728,7 +95744,7 @@ LAB_0048d392:
     FUN_0048daa0();
   }
   if ((DAT_00598fa4 != '\0') && (DAT_00598fa8 != '\0')) {
-    FUN_004011a0();
+    ResumeAudioStreamsAndSamples();
     CallMysteryFunction();
     DAT_00598fa4 = '\0';
     DAT_00598fa8 = '\0';
@@ -96089,7 +96105,7 @@ void FUN_0048dd70(int param_1)
   uint uVar15;
   uint uVar16;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_1 == 0) {
     *(short *)(DAT_00598ff0 + 1) = *(short *)(DAT_00598ff0 + 2) * *(short *)((int)DAT_00598ff0 + 6);
     sVar4 = (uint)*(ushort *)(DAT_00598ff0 + 1) * 0x3e;
@@ -96292,7 +96308,7 @@ undefined4 FUN_0048e210(undefined4 param_1,undefined4 param_2,int *param_3)
   uint uVar29;
   int iVar30;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_00598ff0 != (int *)0x0) {
     FUN_0048ef50();
     sVar26 = 4;
@@ -96982,7 +96998,7 @@ undefined4 * FUN_0048f000(int param_1,int param_2,int param_3,int param_4)
   size_t sVar7;
   
   uVar1 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar4 = DAT_005e58d0 == 0;
   sVar7 = 0x32;
   iVar6 = 0;
@@ -97054,7 +97070,7 @@ undefined4 FUN_0048f1a0(undefined4 *param_1,int param_2,int param_3,int param_4)
   int iVar9;
   
   puVar1 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar6 = DAT_005e58d0 == 0;
   if (param_2 < *(int *)((int)param_1 + 0x26)) {
     param_2 = *(int *)((int)param_1 + 0x26);
@@ -97212,7 +97228,7 @@ undefined4 FUN_0048f4c0(int param_1,ushort param_2)
   int **ppiVar4;
   int *local_1c [3];
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_2 == 0xffff) {
     return 1;
   }
@@ -97388,7 +97404,7 @@ void FUN_0048f750(int param_1)
   undefined8 local_18;
   
   iVar7 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar8 = *(int *)(param_1 + 0x56);
   uVar2 = **(undefined4 **)(iVar8 + 4);
   *(undefined4 *)(param_1 + 0x6d) = uVar2;
@@ -97543,7 +97559,7 @@ void FUN_0048fb90(int param_1)
   int iVar7;
   int iVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar3 = *(int **)(param_1 + 0x56);
   iVar8 = 0;
   uVar1 = *(undefined4 *)piVar3[1];
@@ -97626,7 +97642,7 @@ void FUN_0048fcd0(int param_1)
   double dVar16;
   
   iVar6 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar7 = *(int *)(param_1 + 0x56);
   uVar11 = (uint)*(ushort *)(DAT_00598ff0 + 6) * (uint)*(ushort *)(DAT_00598ff0 + 0xe) *
            (uint)*(ushort *)(DAT_00598ff0 + 0x10);
@@ -97837,7 +97853,7 @@ void FUN_00490280(int param_1)
   uint *puVar8;
   uint uVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar9 = 0;
   fVar4 = (*(float *)(param_1 + 0x61) + *(float *)(param_1 + 0x6d)) * 0.5;
   fVar5 = (*(float *)(param_1 + 0x71) + *(float *)(param_1 + 0x65)) * 0.5;
@@ -97875,7 +97891,7 @@ void FUN_00490280(int param_1)
 void FUN_00490380(int param_1)
 
 {
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   *(float *)(param_1 + 0x46) = (*(float *)(param_1 + 0x61) + *(float *)(param_1 + 0x6d)) * 0.5;
   *(float *)(param_1 + 0x4a) = (*(float *)(param_1 + 0x71) + *(float *)(param_1 + 0x65)) * 0.5;
   *(float *)(param_1 + 0x4e) = (*(float *)(param_1 + 0x75) + *(float *)(param_1 + 0x69)) * 0.5;
@@ -97896,7 +97912,7 @@ void FUN_004903e0(int param_1)
   undefined4 *local_14;
   int local_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar2 = &DAT_004d1ae0;
   puVar3 = local_44;
   for (iVar1 = 0x10; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -97951,7 +97967,7 @@ void FUN_00490490(float *param_1,undefined4 param_2)
   float fVar7;
   float fVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar7 = param_1[2] * param_1[2];
   local_18 = (double)(*param_1 * *param_1 + fVar7);
   uStack_1c = 0x4904ca;
@@ -98004,7 +98020,7 @@ void FUN_00490590(undefined4 param_1,int param_2,float *param_3)
   float *pfVar4;
   float10 fVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pfVar3 = (float *)&DAT_004d1ae0;
   pfVar4 = param_3;
   for (iVar2 = 0x10; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -98136,7 +98152,7 @@ void FUN_004907b0(int param_1,float *param_2)
   int iVar4;
   float fVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar2 = *(int **)(param_1 + 0x56);
   fVar5 = *(float *)(*piVar2 * 0x20 + -0x1c + piVar2[1]);
   FUN_0045f6b0(&stack0xfffffff0,param_1 + 6);
@@ -98178,7 +98194,7 @@ bool FUN_004908d0(int param_1,int param_2,uint *param_3,uint param_4)
   uint uVar4;
   int iVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar4 = *param_3;
   iVar5 = 0;
   while (uVar4 < param_4) {
@@ -98186,7 +98202,7 @@ bool FUN_004908d0(int param_1,int param_2,uint *param_3,uint param_4)
       uVar4 = (byte)PTR_DAT_004d3d40[*(char *)(param_1 + *param_3) * 2] & 8;
     }
     else {
-      uVar4 = FUN_004b0b10((int)*(char *)(param_1 + *param_3),8);
+      uVar4 = GetCharacterType((int)*(char *)(param_1 + *param_3),8);
     }
     if (((uVar4 == 0) && (*(char *)(param_1 + *param_3) != ',')) &&
        (*(char *)(param_1 + *param_3) != ';')) break;
@@ -98201,7 +98217,7 @@ bool FUN_004908d0(int param_1,int param_2,uint *param_3,uint param_4)
       uVar4 = (byte)PTR_DAT_004d3d40[*(char *)(param_1 + *param_3) * 2] & 8;
     }
     else {
-      uVar4 = FUN_004b0b10((int)*(char *)(param_1 + *param_3),8);
+      uVar4 = GetCharacterType((int)*(char *)(param_1 + *param_3),8);
     }
     if (((uVar4 != 0) && (!bVar2)) ||
        ((cVar1 = *(char *)(param_1 + *param_3), cVar1 == ',' || (cVar1 == ';')))) break;
@@ -98228,7 +98244,7 @@ bool FUN_004909f0(int param_1,int param_2,uint *param_3,uint param_4)
   uint uVar3;
   int iVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar3 = *param_3;
   iVar4 = 0;
   while (uVar3 < param_4) {
@@ -98236,7 +98252,7 @@ bool FUN_004909f0(int param_1,int param_2,uint *param_3,uint param_4)
       uVar3 = (byte)PTR_DAT_004d3d40[*(char *)(param_1 + *param_3) * 2] & 8;
     }
     else {
-      uVar3 = FUN_004b0b10((int)*(char *)(param_1 + *param_3),8);
+      uVar3 = GetCharacterType((int)*(char *)(param_1 + *param_3),8);
     }
     if ((((uVar3 == 0) && (cVar1 = *(char *)(param_1 + *param_3), cVar1 != '\"')) && (cVar1 != ','))
        && (cVar1 != ';')) break;
@@ -98250,7 +98266,7 @@ bool FUN_004909f0(int param_1,int param_2,uint *param_3,uint param_4)
       uVar3 = (byte)PTR_DAT_004d3d40[*(char *)(param_1 + *param_3) * 2] & 8;
     }
     else {
-      uVar3 = FUN_004b0b10((int)*(char *)(param_1 + *param_3),8);
+      uVar3 = GetCharacterType((int)*(char *)(param_1 + *param_3),8);
     }
     if (((uVar3 != 0) || (cVar1 = *(char *)(param_1 + *param_3), cVar1 == '\"')) ||
        ((cVar1 == ',' || (cVar1 == ';')))) break;
@@ -98315,7 +98331,7 @@ float10 FUN_00490b60(float *param_1,float *param_2)
 void FUN_00490b90(float *param_1)
 
 {
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_004ad534((double)(*param_1 * *param_1 + param_1[2] * param_1[2] + param_1[1] * param_1[1]));
   return;
 }
@@ -98381,7 +98397,7 @@ void FUN_00490d60(void)
   char local_40 [12];
   undefined4 local_34;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_34 = 0x490da0;
   LVar1 = RegCreateKeyExA((HKEY)0x80000002,s_Config_0001_Display_Settings_004d28b8,0,(LPSTR)0x0,0,
                           0xf003f,(LPSECURITY_ATTRIBUTES)0x0,(PHKEY)&stack0xfffffff4,(LPDWORD)0x1);
@@ -98425,7 +98441,7 @@ void LoadIntroMovieFunc(void)
   undefined4 uStackY_10;
   char *_Source;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005df310 == '\x02') {
     uStackY_10 = 0x490eb7;
     FID_conflict___mbscpy(local_104,&DAT_005d56e0);
@@ -98488,7 +98504,7 @@ HWND FUN_00490fa0(void)
   undefined4 local_58 [5];
   undefined4 uStackY_44;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar4 = (undefined4 *)s_HEDZ____c_VIS_Interactive_PLC_004d29d8;
   puVar5 = local_58;
   for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -98569,7 +98585,7 @@ void FUN_004911c0(void)
   HWND local_24;
   LPMSG lpMsg;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar2 = (undefined4 *)s__positionC_C__stretch__userexit___004d2a94;
   puVar3 = local_54;
   for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -98618,7 +98634,7 @@ void FUN_004912b0(void)
   HWND local_24;
   LPMSG lpMsg;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar2 = (undefined4 *)s__positionC_C__stretch__userexit___004d2b20;
   puVar3 = local_54;
   for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -98671,7 +98687,7 @@ void FUN_004913a0(void)
   undefined4 uStackY_38;
   UINT UVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar2 = (undefined4 *)s__positionC_C__stretch__userexit___004d2ba8;
   puVar3 = local_60;
   for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -98789,7 +98805,7 @@ void FUN_00491670(void)
   size_t sVar14;
   int iVar15;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005df310 == '\0') {
     _Source = &gRootFileDirectory;
   }
@@ -98896,7 +98912,7 @@ void FUN_00491910(void)
   int iVar3;
   int iVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = 0;
   iVar4 = 0;
   if ((char)DAT_00599064 != '\0') {
@@ -98944,7 +98960,7 @@ FUN_004919a0(uint param_1,uint param_2,int param_3,uint param_4,uint param_5,int
   bool bVar11;
   int iVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pbVar8 = (byte *)(DAT_005b9254 + (param_2 & 0xff) * 0x401);
   if (param_3 == 0) {
     param_3 = -1;
@@ -99040,7 +99056,7 @@ short * FUN_00491bb0(uint param_1,byte *param_2,uint param_3,uint param_4)
   int iVar11;
   size_t sVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar8 = DAT_005b9254 + (param_1 & 0xff) * 0x401;
   sVar12 = 0xe;
   iVar11 = 0;
@@ -99158,7 +99174,7 @@ void FUN_00491d80(HDC param_1)
   LPRECT lprc;
   UINT format;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar1 = *(byte *)((int)&param_1->unused + 3);
   *(undefined4 *)((int)&param_1[0xd].unused + 1) = *(undefined4 *)((int)&param_1[4].unused + 2);
   if (bVar1 < 2) {
@@ -99256,7 +99272,7 @@ uint FUN_00492070(undefined4 param_1,undefined4 param_2)
   int *piVar2;
   undefined *puVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_14 = 0x49208a;
   _memset(&local_7c,0,0x6c);
   local_70 = param_1;
@@ -99291,7 +99307,7 @@ void FUN_00492100(short param_1,LPCSTR param_2,undefined param_3,undefined4 para
   short *psVar6;
   int _Val;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar2 = false;
   WaitForSingleObject(*DAT_00599020,0xffffffff);
   if (param_1 != 0) {
@@ -99468,7 +99484,7 @@ void FUN_004923e0(void)
   char cVar1;
   int iVar2;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   WaitForSingleObject(*DAT_00599020,0xffffffff);
   iVar2 = *(int *)((int)DAT_00599020 + 6);
   while (iVar2 != 0) {
@@ -99685,7 +99701,7 @@ void FUN_00492780(void)
 {
   int iVar1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_00599020 != (HANDLE *)0x0) {
     WaitForSingleObject(*DAT_00599020,0xffffffff);
     iVar1 = *(int *)((int)DAT_00599020 + 6);
@@ -99706,7 +99722,7 @@ void FUN_004927e0(void)
 {
   int iVar1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_00599020 != (HANDLE *)0x0) {
     WaitForSingleObject(*DAT_00599020,0xffffffff);
     iVar1 = *(int *)((int)DAT_00599020 + 6);
@@ -99745,7 +99761,7 @@ undefined4 FUN_00492840(int param_1)
   int *piVar6;
   undefined4 *puVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar6 = *(int **)(param_1 + 0x39);
   local_20 = (int *)0x492866;
   local_28 = piVar6;
@@ -99876,7 +99892,7 @@ void FUN_00492ba0(int param_1)
   int local_14;
   uint uVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar1 = *(ushort *)(param_1 + 0x1b);
   pbVar2 = (byte *)(DAT_005b9254 + (uint)*(byte *)(param_1 + 0x17) * 0x401);
   if (uVar1 < 1000) {
@@ -99944,7 +99960,7 @@ void FUN_00492d70(void)
   int **_Val;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   do {
     FUN_004ae5f0();
     _Val = (int **)&stack0xfffffff0;
@@ -100008,7 +100024,7 @@ void FUN_00492ec0(undefined2 param_1,undefined2 param_2,undefined param_3,undefi
   undefined2 local_25;
   undefined4 uStackY_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStackY_14 = 0x492eda;
   _memset(local_44,0,0x3d);
   local_44[0] = param_1;
@@ -100040,7 +100056,7 @@ void FUN_00492f30(uint param_1)
   int local_54;
   undefined4 uStackY_44;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar7 = param_1 & 0xff;
   sVar1 = _strlen(&DAT_005d7854 + uVar7 * 0x48);
   if (6 < sVar1) {
@@ -100138,7 +100154,7 @@ void FUN_004931d0(byte param_1)
   undefined2 local_1f;
   undefined local_1d;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_00492f30();
   uStackY_20 = 0xf9;
   local_1f = 0x4931;
@@ -100208,7 +100224,7 @@ int * FUN_004932c0(LPCSTR param_1,undefined4 param_2,HDC param_3,uint param_4,CO
   undefined4 uStackY_54;
   LPRECT lprc;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar4 = 0;
   piVar1 = (int *)FUN_00492070();
   _memset(&local_84,0,0x6c);
@@ -100333,7 +100349,7 @@ void FUN_00493530(void)
   uint unaff_ESI;
   undefined4 *puVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar4 = *(int *)(DAT_00599070 + 1);
   if (*DAT_00599070 != 0) {
     do {
@@ -100466,7 +100482,7 @@ void FUN_00493800(void)
   float *local_18;
   float *local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar12 = *(int **)(DAT_005df318 + 4);
   DAT_005b7866 = 0;
   DAT_005b8e00 = 0;
@@ -100493,7 +100509,7 @@ void FUN_00493800(void)
           local_14 = (float *)(*piVar12 + 6);
           local_18 = (float *)(*piVar12 + 0x46);
           local_20 = 0x4938aa;
-          FUN_0045ef80();
+          MultiplyMatrices();
           fVar1 = local_44 - 0.1;
           local_2c = local_44 - -0.1;
           fVar2 = local_28 * local_68;
@@ -100711,7 +100727,7 @@ void FUN_00493e40(void)
   int *local_1c;
   undefined *_Dst;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar1 = FUN_0045b1f0();
   local_1c = (int *)0x493e70;
   DAT_005b33d4 = uVar1;
@@ -100774,7 +100790,7 @@ void FUN_00493f90(void)
   int *local_1c;
   undefined *_Dst;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_1c = (int *)0x493fad;
   _memset(&local_20,0,0x14);
   local_1c = *(int **)(DAT_005e5010 + 8);
@@ -100827,7 +100843,7 @@ void FUN_00494090(void)
   int *local_18;
   undefined4 *_Dst;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_00493e40();
   FUN_00493f90();
   local_18 = (int *)0x4940ba;
@@ -100946,7 +100962,7 @@ void FUN_004942a0(float param_1)
   float *local_14;
   undefined4 *local_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar2 = param_1;
   iVar3 = DAT_004d2e10;
   iVar1 = *(int *)((int)param_1 + 4);
@@ -100969,7 +100985,7 @@ void FUN_004942a0(float param_1)
   local_14 = (float *)(iVar1 + 0x46);
   local_18 = (float **)&local_68;
   local_1c = 6.728081e-39;
-  FUN_0045ef80();
+  MultiplyMatrices();
   DAT_004d2e10 = DAT_004d2e10 + 1;
   if (DAT_004d2e10 == 10) {
     DAT_004d2e10 = 0;
@@ -101078,7 +101094,7 @@ void FUN_00494670(char *param_1,char *param_2,float *param_3,int param_4,int par
   int iVar15;
   float fVar16;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar5 = -1;
   iVar8 = 0;
   iVar4 = 0;
@@ -101335,7 +101351,7 @@ void FUN_00494da0(void)
   int *piVar4;
   undefined4 uVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar4 = &DAT_005b631c;
   do {
     iVar1 = *piVar4;
@@ -101444,7 +101460,7 @@ void FUN_00494fc0(void)
   int **local_14;
   undefined4 uVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar12 = 0;
   ppiVar8 = (int **)&DAT_004d1ae0;
   ppiVar10 = local_54;
@@ -101639,7 +101655,7 @@ void FUN_00495390(int param_1)
   undefined4 uStack_18;
   int **local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(*(int *)(param_1 + 4) + 0x100);
   *DAT_005b33d8 = 0xbf000000;
   DAT_005b33d8[1] = 0xbf000000;
@@ -101749,7 +101765,7 @@ undefined4 FUN_004956e0(void)
   uint uVar2;
   undefined4 uVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = FUN_0045cb80(DAT_00598ff0,-*(float *)(DAT_005e45e4 + 0x228),
                        -*(float *)(DAT_005e45e4 + 0x230));
   FUN_00424490(DAT_00598f28,&DAT_004d2e3c,10,200);
@@ -101778,7 +101794,7 @@ int FUN_004957e0(char *param_1,char param_2)
   int *piVar4;
   uint uVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar5 = 0;
   if (*(uint *)(DAT_00598d90 + 0x239) != 0) {
     piVar4 = *(int **)(DAT_00598d90 + 0x230);
@@ -101839,7 +101855,7 @@ undefined4 FUN_00495860(uint param_1)
   int iVar15;
   int *piVar16;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar15 = 0;
   FUN_00492720();
   FUN_00492720();
@@ -102092,7 +102108,7 @@ undefined4 FUN_00495d60(undefined4 param_1,int param_2)
   int *piVar17;
   int iVar18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar16 = (undefined *)0x0;
   iVar18 = 0;
   local_20 = 6.737578e-39;
@@ -102432,7 +102448,7 @@ undefined4 FUN_00496500(void)
   uint uVar2;
   int iVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = FUN_0045cb80();
   if (iVar1 != 0) {
     FUN_004b0ec0();
@@ -102478,7 +102494,7 @@ undefined4 FUN_00496680(void)
   uint uVar2;
   int iVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = FUN_0045cb80();
   if (iVar1 != 0) {
     FUN_004b0ec0();
@@ -102529,7 +102545,7 @@ undefined4 FUN_00496a40(void)
   float local_10;
   undefined *local_c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_c = (undefined *)((float)*(int *)(DAT_005e5010 + 0x2538) * 0.0015625);
   local_10 = -*(float *)(DAT_005e45e4 + 0xc0);
   uStack_14 = DAT_00598ff0;
@@ -102589,7 +102605,7 @@ undefined4 FUN_00496b80(void)
   undefined4 *puVar5;
   float10 fVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = DAT_005e45e4;
   fVar1 = *(float *)(DAT_00598d90 + 0x108);
   if (DAT_0059908c == 0) {
@@ -102684,7 +102700,7 @@ undefined4 FUN_00496d90(void)
   float local_10;
   undefined *local_c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_c = (undefined *)((float)*(int *)(DAT_005e5010 + 0x2538) * 0.0015625);
   local_10 = -*(float *)(DAT_005e45e4 + 0xc0);
   uStack_14 = DAT_00598ff0;
@@ -102753,7 +102769,7 @@ undefined4 FUN_00496ed0(void)
   undefined *local_20;
   float fVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = DAT_005e45e4;
   if (DAT_0059908c == 0) {
     puVar3 = (undefined4 *)(DAT_005e45e4 + 0x4c);
@@ -102907,7 +102923,7 @@ int FUN_00497420(void)
   float local_18;
   float local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_14 = -*(float *)(DAT_005e45e4 + 200);
   local_18 = -*(float *)(DAT_005e45e4 + 0xc0);
   iVar1 = FUN_0045cb80(DAT_00598ff0);
@@ -102976,7 +102992,7 @@ FUN_00497630(float *param_1,float *param_2,float *param_3,float *param_4,float *
   float fVar12;
   float fVar13;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_34 = *param_5 - *param_3;
   local_28 = *param_4 - *param_3;
   local_30 = param_5[1] - param_3[1];
@@ -103058,7 +103074,7 @@ float10 FUN_004979d0(int param_1,undefined4 param_2,undefined4 param_3)
   undefined ***local_14;
   int iVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar5 = 0;
   iVar3 = *(int *)(param_1 + 0x56);
   uVar4 = 0;
@@ -103111,7 +103127,7 @@ float10 FUN_00497ac0(float param_1,undefined4 param_2,undefined4 param_3)
   int iVar6;
   float fVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = (int)param_1;
   param_1 = 99999.0;
   iVar1 = *(int *)(iVar2 + 0x12);
@@ -103160,7 +103176,7 @@ undefined4 FUN_00497bf0(void)
   char *pcStack_14;
   uint uVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pcStack_14 = s_warehouse_vis_004d3168;
   iVar3 = 0;
   puStack_18 = (undefined *)0x497c10;
@@ -103238,7 +103254,7 @@ undefined4 FUN_00497cc0(int param_1)
   undefined8 local_18;
   float fVar19;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_0059907c = 1;
   local_34 = 0;
   local_1c = DAT_00598ff0;
@@ -103646,7 +103662,7 @@ uint FUN_00498680(void)
   int iVar5;
   undefined4 uVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(DAT_005df318 + 4);
   iVar5 = 0;
   iVar2 = *(int *)(iVar1 + 4);
@@ -103748,7 +103764,7 @@ undefined4 FUN_004988b0(void)
   float local_18;
   byte *local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar7 = *(int *)(DAT_005df318 + 4);
   if (DAT_00598d6c == 0) {
     local_14 = (byte *)0x4988d6;
@@ -104003,7 +104019,7 @@ undefined4 FUN_00498e20(void)
   undefined4 local_40;
   undefined *local_3c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   FUN_0048f340();
   _memset(&stack0xffffffe4,0,0x14);
   iVar1 = (**(code **)(**(int **)(DAT_005e5010 + 8) + 0x18))();
@@ -104059,7 +104075,7 @@ undefined4 FUN_00498f60(void)
   undefined4 local_40;
   undefined *local_3c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(&stack0xffffffe4,0,0x14);
   iVar1 = (**(code **)(**(int **)(DAT_005e5010 + 8) + 0x18))();
   if (iVar1 != 0) {
@@ -104256,7 +104272,7 @@ undefined4 FUN_00499310(void)
   undefined4 uStackY_3c;
   int *local_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = FUN_0048f340();
   if (iVar1 == 0) {
     return 0;
@@ -104366,7 +104382,7 @@ undefined4 FUN_00499540(void)
   undefined4 uStackY_3c;
   int *local_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_20 = (int *)0x49955e;
   _memset(&local_20,0,0x14);
   local_20 = *(int **)(DAT_005e5010 + 8);
@@ -104488,7 +104504,7 @@ undefined4 FUN_00499760(void)
   undefined4 uStackY_3c;
   int *local_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = FUN_0048f340();
   if (iVar1 == 0) {
     return 0;
@@ -104606,7 +104622,7 @@ undefined4 FUN_004999d0(void)
   undefined4 uStackY_3c;
   int *local_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar2 = FUN_0048f340();
   FUN_0046bc90();
   local_20 = (int *)0x499a04;
@@ -104715,7 +104731,7 @@ undefined4 FUN_00499c10(void)
   undefined4 uStackY_3c;
   int *local_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar1 = FUN_0048f340();
   FUN_0046b800();
   local_20 = (int *)0x499c44;
@@ -104864,7 +104880,7 @@ undefined4 FUN_00499f50(void)
   undefined4 uStackY_3c;
   int *local_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar1 = FUN_0048f340();
   FUN_0046b840();
   local_20 = (int *)0x499f84;
@@ -104999,7 +105015,7 @@ undefined4 FUN_0049a200(void)
   undefined4 unaff_EDI;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = (**(code **)(**(int **)(DAT_005e5010 + 4) + 0x18))
                     (*(int **)(DAT_005e5010 + 4),&stack0xfffffff8,0);
   if (iVar1 != 0) {
@@ -105107,7 +105123,7 @@ undefined4 FUN_0049a420(void)
   undefined4 uStackY_3c;
   int *local_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = FUN_0048f340();
   if (iVar1 == 0) {
     return 0;
@@ -105262,7 +105278,7 @@ undefined4 FUN_0049a6e0(void)
   undefined2 uStack_1e;
   int iVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = FUN_0048f340();
   if (iVar1 == 0) {
     return 0;
@@ -105370,7 +105386,7 @@ undefined4 FUN_0049a930(void)
   undefined2 uStack_1e;
   int iVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = FUN_0048f340();
   if (iVar1 == 0) {
     return 0;
@@ -105481,7 +105497,7 @@ undefined4 FUN_0049ab80(void)
   uint uVar12;
   uint uVar13;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = FUN_0048f340();
   if (iVar3 == 0) {
     return 0;
@@ -105621,7 +105637,7 @@ undefined4 FUN_0049ae80(void)
   undefined4 uStackY_3c;
   int *local_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _DAT_005a8950 = 0x40800000;
   _DAT_005a8954 = 0x40800000;
   _DAT_005a8958 = 0x40800000;
@@ -105765,7 +105781,7 @@ undefined4 FUN_0049b1a0(void)
   undefined2 uStack_1e;
   int iVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar2 = FUN_0048f340();
   if (iVar2 == 0) {
     return 0;
@@ -105871,7 +105887,7 @@ undefined4 FUN_0049b3d0(void)
   undefined4 uStackY_3c;
   int *local_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _DAT_005a4c98 = 0x41200000;
   uVar1 = FUN_0048f340();
   FUN_0046baa0();
@@ -106004,7 +106020,7 @@ undefined4 FUN_0049b660(void)
   undefined4 uStackY_3c;
   int *local_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar1 = FUN_0048f340();
   FUN_0046bb20();
   local_20 = (int *)0x49b694;
@@ -106179,7 +106195,7 @@ undefined4 FUN_0049b990(void)
   undefined4 uStackY_3c;
   int *local_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = FUN_0048f340();
   if (iVar1 == 0) {
     return 0;
@@ -106425,7 +106441,7 @@ undefined4 FUN_0049bd70(int param_1,uint param_2)
   int *piStackY_24;
   undefined4 uStackY_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = param_1 * 0x30;
   uStackY_20 = 0x49bd9c;
   _memset(&stack0xffffffec,0,0x10);
@@ -106475,7 +106491,7 @@ undefined4 FUN_0049be70(int param_1)
   size_t _Size;
   ushort uVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar4 = (uint *)0x0;
   _Size = 0x200;
   iVar5 = 0;
@@ -106671,7 +106687,7 @@ undefined4 FUN_0049c220(short param_1,short param_2,short param_3)
   undefined4 uVar6;
   uint uVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar5 = 0;
   iVar4 = DAT_00598d90;
   if (*(int *)(DAT_00598d90 + 0x239) != 0) {
@@ -106722,7 +106738,7 @@ undefined4 FUN_0049c2d0(void)
   ushort uVar8;
   ushort uVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar7 = 0;
   uVar6 = 9999;
   uVar8 = 9999;
@@ -106860,7 +106876,7 @@ undefined4 FUN_0049c630(float param_1)
   undefined2 *puVar12;
   int iVar13;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar9 = 0x20;
   iVar6 = (int)param_1 * 0x30;
   puVar3 = (undefined2 *)(&DAT_005b2168)[(int)param_1 * 0xc];
@@ -106976,7 +106992,7 @@ undefined4 FUN_0049c920(int param_1)
   int iVar9;
   byte *pbVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pbVar10 = (byte *)(&DAT_005b2168)[param_1 * 0xc];
   local_1c = (int *)(&DAT_005b2178)[param_1 * 0xc];
   local_14 = local_24;
@@ -107109,7 +107125,7 @@ undefined4 FUN_0049caf0(int param_1)
   uint uVar10;
   int iVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar11 = (&DAT_005b2168)[param_1 * 0xc];
   iVar3 = *(int *)(&DAT_005b216c + param_1 * 0x30);
   iVar4 = (&DAT_005b218c)[param_1 * 0xc];
@@ -107252,7 +107268,7 @@ undefined4 FUN_0049cd10(void)
   uint *puVar5;
   int iVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar5 = &DAT_005b1ec0;
   iVar6 = 0;
   uVar1 = DAT_005e5010;
@@ -107342,7 +107358,7 @@ undefined4 FUN_0049cf00(void)
   int *piStack_1c;
   undefined8 local_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar5 = &DAT_005b1d04;
   do {
     iVar4 = piVar5[1];
@@ -107557,7 +107573,7 @@ undefined4 FUN_0049d3c0(void)
   undefined4 ***local_8;
   
   local_8 = (undefined4 ***)0x49d3cd;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (0 < DAT_005b1ca0) {
     _DAT_005b1ca8 = *(undefined4 *)(DAT_005e45e4 + 0x238);
     _DAT_005b1cac = *(undefined4 *)(DAT_005e45e4 + 0x248);
@@ -107659,7 +107675,7 @@ undefined4 FUN_0049d5d0(undefined4 *param_1)
   float fVar12;
   float fVar13;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(DAT_005e5010 + 0x2538);
   if ((DAT_005d66a4 != 0) || (DAT_005aaaac != 0)) {
     return 1;
@@ -107775,7 +107791,7 @@ undefined4 FUN_0049d8d0(float *param_1)
   float fVar13;
   float fVar14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar11 = *(int *)(DAT_005e5010 + 0x2538);
   iVar10 = *(int *)(DAT_005e5010 + 0x253c);
   if (DAT_005d66a4 != 0) {
@@ -107865,7 +107881,7 @@ void FUN_0049dbd0(int param_1)
   int iVar7;
   uint uVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar6 = *(int *)(param_1 + 0xe);
   fVar1 = 0.0;
   if (0.0 < *(float *)(&DAT_004d34c0 + iVar6 * 4) * 16.0) {
@@ -107917,7 +107933,7 @@ void FUN_0049dd40(int param_1)
   int iVar7;
   uint uVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar6 = *(int *)(param_1 + 0xe);
   fVar1 = 0.0;
   if (0.0 < *(float *)(&DAT_004d34c0 + iVar6 * 4) * 16.0) {
@@ -107971,7 +107987,7 @@ undefined4 FUN_0049deb0(void)
   undefined4 *puVar6;
   int iVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar5 = &DAT_005b0ec0;
   iVar7 = 0;
   puVar6 = &DAT_005b0f04;
@@ -108040,7 +108056,7 @@ undefined4 FUN_0049e020(void)
   float *pfVar3;
   float10 fVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _DAT_005b0cb8 = _DAT_005b0cb8 - -0.7;
   pfVar3 = (float *)&DAT_005b0cfc;
   do {
@@ -108117,7 +108133,7 @@ undefined4 FUN_0049e1e0(void)
   undefined4 *puVar2;
   int *piVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar3 = &DAT_005af1be;
   puVar2 = &DAT_005ae1bc;
   do {
@@ -108200,7 +108216,7 @@ undefined4 FUN_0049e3f0(int param_1,float *param_2)
   float10 fVar7;
   float fVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = DAT_005af734;
   fVar8 = 0.5;
   if (0x3f < DAT_005af734) {
@@ -108427,7 +108443,7 @@ undefined4 FUN_0049ea00(void)
   undefined8 local_14;
   float fVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005a10a8 == 0) {
     return 0;
   }
@@ -108524,7 +108540,7 @@ undefined4 FUN_0049ec60(void)
   float *pfVar8;
   undefined4 unaff_EDI;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar7 = &DAT_005debc8;
   pfVar8 = (float *)&DAT_005de7c3;
   do {
@@ -108583,7 +108599,7 @@ float10 FUN_0049ee00(float param_1,int param_2)
   float local_10;
   undefined4 ****local_c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005a10ac < 10) {
     local_c = (undefined4 ****)0x0;
     local_10 = 0.0;
@@ -108644,7 +108660,7 @@ undefined4 FUN_0049ef50(void)
   float *pfVar6;
   bool bVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005dca0c != 0) {
     pfVar6 = (float *)&DAT_005aac0c;
     do {
@@ -108779,7 +108795,7 @@ undefined4 FUN_0049f2d0(void)
   bool bVar5;
   int iVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar4 = &DAT_005aa794;
   iVar6 = 8;
   do {
@@ -108859,7 +108875,7 @@ void FUN_0049f4a0(int param_1)
   uint uVar1;
   float fVar2;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (*(uint *)(param_1 + 0xe) < 0x51) {
     fVar2 = NAN;
   }
@@ -108967,7 +108983,7 @@ bool FUN_0049f6a0(void)
   undefined4 *puStack_8;
   
   puStack_8 = (undefined4 *)0x49f6ad;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puStack_8 = local_68;
   local_68[0] = 100;
   uStack_c = 0x1000400;
@@ -109038,7 +109054,7 @@ undefined4 FUN_0049f7f0(void)
   int local_8;
   
   local_8 = 0x49f7fd;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_005aa0e6 != (undefined4 *)0x0) {
     local_c = *DAT_005aa0e6;
     local_8 = 0x49f834;
@@ -109156,7 +109172,7 @@ void FUN_0049fa20(int param_1)
   undefined4 uVar7;
   uint uVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   bVar3 = true;
   FUN_00492720();
   uStackY_20 = 0x49fa4d;
@@ -109276,7 +109292,7 @@ undefined4 FUN_0049fc10(void)
   int *piVar2;
   int iVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = 0;
   piVar2 = &DAT_005a9f44;
   do {
@@ -109320,7 +109336,7 @@ void FUN_0049fce0(float **param_1)
   float *pfVar6;
   float10 fVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pfVar6 = DAT_005b0cc0;
   pfVar2 = *param_1;
   iVar5 = *(int *)((int)param_1 + 0xe);
@@ -109413,7 +109429,7 @@ undefined4 FUN_004a00f0(int param_1,int param_2,byte param_3,int param_4)
   undefined2 uVar6;
   int iVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar5 = param_2;
   fVar1 = (float)param_2 * 0.25;
   if (((param_3 & 4) != 0) && (DAT_005a89ac < 0x40)) {
@@ -109522,7 +109538,7 @@ undefined4 FUN_004a03d0(void)
   float *pfVar3;
   int iVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar4 = 0;
   pfVar3 = (float *)&DAT_005a543e;
   do {
@@ -109589,7 +109605,7 @@ undefined4 FUN_004a0560(void)
   int *piVar3;
   undefined2 *puVar4;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar3 = &DAT_005a52a0;
   puVar4 = &DAT_005a52d0;
   puVar2 = &DAT_005a5020;
@@ -109704,7 +109720,7 @@ undefined4 FUN_004a0760(void)
   uint uVar4;
   int *piVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar5 = &DAT_005a4caa;
   do {
     iVar2 = piVar5[-2];
@@ -109818,7 +109834,7 @@ void FUN_004a0a50(int param_1)
   undefined4 *puVar2;
   int iVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   puVar2 = DAT_005a4be8;
   if ((DAT_005a1104 & 4) == 0) {
     fVar1 = 2.0 - (float)(DAT_005a1104 & 3) * 0.1;
@@ -109908,7 +109924,7 @@ undefined4 FUN_004a0bd0(int param_1)
   int iVar5;
   undefined4 unaff_EDI;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = DAT_004d86ac;
   iVar5 = (_DAT_005a1124 + param_1 & 0xfU) * 4;
   fVar3 = *(float *)(&DAT_004d3578 + iVar5) * 0.42;
@@ -110001,7 +110017,7 @@ undefined4 FUN_004a0ef0(void)
   undefined2 *puVar14;
   float ***pppfVar15;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_14 = (float ****)0x4a0f05;
   FUN_0049ec60();
   if ((char)DAT_00598944 != '\0') {
@@ -110381,7 +110397,7 @@ undefined4 FUN_004a1890(void)
   float10 fVar8;
   undefined *puVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pfVar7 = (float *)&DAT_005a292c;
   do {
     if (pfVar7[-10] == 0.0) {
@@ -110847,7 +110863,7 @@ undefined4 FUN_004a24d0(int param_1,int param_2)
   undefined4 local_14;
   undefined4 local_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if ((param_1 != 0) && (iVar1 = *(int *)(param_1 + 0x13), iVar1 != 0)) {
     iVar3 = *(int *)(*(int *)(param_2 + 0xa3) + 4);
     if ((*(byte *)(iVar3 + 0x8f) & 0x10) != 0) {
@@ -110945,7 +110961,7 @@ undefined4 FUN_004a2710(undefined4 param_1,undefined4 *param_2,float *param_3)
   undefined4 *puVar8;
   float10 extraout_ST1;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(DAT_005e5010 + 0x2538);
   iVar2 = *(int *)(DAT_005e5010 + 0x253c);
   puVar8 = &DAT_005a4c00;
@@ -111023,7 +111039,7 @@ undefined4 FUN_004a29c0(void)
   undefined *_Dst;
   undefined *puVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(&stack0xffffffd4,0,0x14);
   _Dst = &stack0xffffffd4;
   iVar1 = (**(code **)(**(int **)(DAT_005e5010 + 8) + 0x18))();
@@ -111180,7 +111196,7 @@ undefined4 FUN_004a2e60(void)
   undefined *_Dst;
   undefined *puVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _memset(&stack0xffffffd4,0,0x14);
   _Dst = &stack0xffffffd4;
   iVar1 = (**(code **)(**(int **)(DAT_005e5010 + 8) + 0x18))();
@@ -111353,7 +111369,7 @@ undefined4 FUN_004a32f0(void)
   float *local_14;
   int *piVar12;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   _DAT_005b2778 = *(undefined4 *)(*DAT_005e45e8 + 0x36);
   _DAT_005b2780 = *(undefined4 *)(*DAT_005e45e8 + 0x3e);
   if (DAT_0059907c != 0) {
@@ -111514,7 +111530,7 @@ undefined4 FUN_004a3750(void)
   int *piVar8;
   int iVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_18 = &local_34;
   puStack_14 = (undefined4 *)0xbb03126f;
   puStack_1c = (undefined4 *)local_74;
@@ -111530,7 +111546,7 @@ undefined4 FUN_004a3750(void)
   puStack_14 = &DAT_005b2748;
   puStack_1c = &DAT_005b2748;
   local_20 = 0x4a37c1;
-  FUN_0045ef80();
+  MultiplyMatrices();
   iVar9 = 0;
   piVar8 = &DAT_005b2340;
   do {
@@ -111631,7 +111647,7 @@ undefined4 FUN_004a39d0(void)
   uint uStack_18;
   int local_14;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   DAT_005a4b74 = DAT_005a4b74 - 10 & 0xff;
   local_14 = 0x4a39f7;
   FUN_004988b0();
@@ -112218,7 +112234,7 @@ void FUN_004a4a00(void)
   float *local_14;
   float local_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (DAT_00598944 != 0) {
     pfVar3 = (float *)&DAT_005e21cf;
     do {
@@ -112321,7 +112337,7 @@ undefined4 FUN_004a4bc0(float param_1,int param_2,int param_3,byte param_4)
   undefined4 uVar5;
   int iVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar6 = 0;
   uVar5 = 0;
   if (*(int *)((int)param_1 + 0x97) == 4) {
@@ -112603,7 +112619,7 @@ FUN_004a5340(int param_1,float param_2,float param_3,float **param_4,undefined4 
   float10 fVar9;
   int iVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   sVar4 = param_1 << 8;
   iVar10 = 0;
   pvVar5 = (void *)AllocateMemoryWithCallback(sVar4);
@@ -112718,7 +112734,7 @@ FUN_004a5540(float param_1,int param_2,undefined4 *param_3,float param_4,float p
   float fVar18;
   
   iVar6 = (int)param_3;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if ((((0.0 < param_1) && (0 < param_2)) && (2 < (int)param_3)) &&
      (((0.0 < param_4 && (0.0 < param_5)) && (0.0 < param_6)))) {
     iVar11 = (int)param_3 * (param_2 + 1);
@@ -112940,7 +112956,7 @@ undefined4 FUN_004a5a20(void)
   int iVar25;
   int iVar26;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_28 = (float *)&DAT_005a2012;
   local_3c = (float *)0x0;
   do {
@@ -113382,7 +113398,7 @@ undefined4 FUN_004a6400(void)
   int iVar10;
   int iVar11;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piStack_1c = *(int **)(DAT_005e5010 + 8);
   puStack_14 = &DAT_004d1ae0;
   uStack_18 = DAT_005b9ce0;
@@ -113524,7 +113540,7 @@ void FUN_004a6760(int param_1)
   int *piStackY_18;
   int *piVar7;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piStackY_18 = (int *)0x4a677a;
   GlobalMemoryStatus((LPMEMORYSTATUS)&stack0xffffffd0);
   iVar1 = (DAT_005df2e8 != 0) + 2;
@@ -113671,7 +113687,7 @@ void FUN_004a6a00(int param_1,byte param_2,int param_3)
   int unaff_EDI;
   int iVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar3 = param_1 + -1;
   if (1 < iVar3) {
     do {
@@ -114025,7 +114041,7 @@ void FUN_004a6d40(void)
   double local_14;
   float fVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (_DAT_005a1128 != 0) {
     local_224 = *(int **)(DAT_005df318 + 4);
     while (local_224 != (int *)0x0) {
@@ -114101,12 +114117,12 @@ void FUN_004a6d40(void)
                 local_18 = local_1bc;
                 local_1c = 0x7165;
                 uStack_1a = 0x4a;
-                FUN_0045ef80();
+                MultiplyMatrices();
                 local_14 = (double)CONCAT44(local_c4,local_1bc);
                 local_18 = local_1bc;
                 local_1c = 0x7182;
                 uStack_1a = 0x4a;
-                FUN_0045ef80();
+                MultiplyMatrices();
               }
               else {
                 local_14 = (double)*(float *)(local_348 + 0x9c);
@@ -114117,7 +114133,7 @@ void FUN_004a6d40(void)
                   local_18 = local_1bc;
                   local_1c = 0x7283;
                   uStack_1a = 0x4a;
-                  FUN_0045ef80();
+                  MultiplyMatrices();
                 }
                 else {
                   pfVar4 = (float *)&DAT_004d1ae0;
@@ -114143,12 +114159,12 @@ void FUN_004a6d40(void)
                   local_1c = 0x7244;
                   uStack_1a = 0x4a;
                   local_68 = local_134;
-                  FUN_0045ef80();
+                  MultiplyMatrices();
                   local_14 = (double)CONCAT44(local_104,&local_220);
                   local_18 = local_1bc;
                   local_1c = 0x7261;
                   uStack_1a = 0x4a;
-                  FUN_0045ef80();
+                  MultiplyMatrices();
                 }
               }
               local_84 = *(int **)(local_70 + 0x155);
@@ -114681,7 +114697,7 @@ int * FUN_004a8885(int param_1,int param_2,float param_3)
   int *local_20;
   float fVar10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   if (param_2 == 0) {
     fVar10 = *(float *)(*(int *)(param_1 + 0x155) + 0x112);
   }
@@ -114938,7 +114954,7 @@ undefined4 FUN_004a8d85(int param_1)
   float fVar7;
   float fVar8;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   fVar7 = *(float *)(param_1 + 0x65);
   local_b4 = *(undefined4 *)(param_1 + 0x79);
   fVar3 = *(float *)(param_1 + 0x7d);
@@ -115498,7 +115514,7 @@ undefined4 FUN_004a9bb0(uint param_1,undefined4 *param_2,undefined4 param_3,uint
   int iVar21;
   int iVar22;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_38 = (byte *)0x0;
   local_3c = (byte *)0x0;
   local_54 = (uint *)0x0;
@@ -116201,7 +116217,7 @@ void FUN_004aab50(int param_1,int param_2)
   int iVar9;
   size_t _Size;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   piVar5 = (int *)(param_2 + 0x5b);
   bVar8 = DAT_005df2e8 != 0;
   ppvVar7 = (void **)(param_1 + 0x5b);
@@ -116364,7 +116380,7 @@ FUN_004aae70(float *param_1,float *param_2,float *param_3,float *param_4,float *
   float *local_1c;
   double local_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pfVar3 = local_44;
   for (iVar2 = 0x10; iVar2 != 0; iVar2 = iVar2 + -1) {
     *pfVar3 = *param_1;
@@ -116461,7 +116477,7 @@ FUN_004ab080(float *param_1,float *param_2,float *param_3,float *param_4,float *
   float *local_1c;
   double local_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pfVar3 = local_44;
   for (iVar2 = 0x10; iVar2 != 0; iVar2 = iVar2 + -1) {
     *pfVar3 = *param_1;
@@ -116564,7 +116580,7 @@ undefined4 FUN_004ab290(float *param_1,float *param_2,float *param_3)
   float fVar8;
   
   pfVar3 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_8c[2] = -param_1[2];
   fVar1 = 1.0 - local_8c[2] * local_8c[2];
   if (fVar1 <= 0.0) {
@@ -116761,7 +116777,7 @@ undefined4 FUN_004ab620(float *param_1,float *param_2,float *param_3)
   double local_18;
   
   pfVar3 = param_1;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_88[2] = -param_1[2];
   local_18 = (double)(1.0 - local_88[2] * local_88[2]);
   pfStack_1c = (float *)0x4ab64f;
@@ -116939,7 +116955,7 @@ undefined4 FUN_004ab9a0(undefined4 param_1,float param_2,float param_3)
   undefined4 uStack_14;
   float *pfStack_10;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pfVar2 = (float *)&DAT_004d1ae0;
   pfVar3 = local_44;
   for (iVar1 = 0x10; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -116955,7 +116971,7 @@ undefined4 FUN_004ab9a0(undefined4 param_1,float param_2,float param_3)
   local_44[1] = param_3;
   local_30 = param_2;
   uStack_1c = 0x4ab9e5;
-  FUN_0045ef80();
+  MultiplyMatrices();
   return 1;
 }
 
@@ -117185,7 +117201,7 @@ undefined4 FUN_004abfc0(int **param_1,undefined4 param_2)
   int *piStackY_1c;
   undefined4 uStackY_18;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStackY_18 = 0x4abfdb;
   _memset(&local_70,0,0x6c);
   local_68 = param_2;
@@ -117254,7 +117270,7 @@ undefined4 FUN_004ac0c0(int param_1,int param_2)
   int *piStackY_40;
   undefined4 uStackY_3c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar1 = *(int *)(param_1 + 0x1e);
   iVar4 = iVar1 * 0x16;
   if (*(int *)(iVar4 + *(int *)(param_1 + 0x22)) == 0) {
@@ -117331,7 +117347,7 @@ undefined4 FUN_004ac330(int *param_1,int param_2,int param_3)
   undefined4 uStackY_24;
   undefined4 uStackY_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStackY_20 = 0x4ac351;
   _memset(local_68,0,100);
   local_68[0] = 100;
@@ -117452,7 +117468,7 @@ undefined4 FUN_004ac5b0(uint param_1,undefined4 *param_2,void **param_3,void **p
   undefined2 uVar8;
   undefined2 uVar9;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar2 = FUN_00441a80();
   uStackY_24 = local_64;
   uStackY_20 = 0x4a;
@@ -117538,7 +117554,7 @@ undefined4 FUN_004ac6e0(uint param_1,void **param_2)
   undefined2 uStack_c;
   undefined2 uStack_a;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStack_c = (undefined2)unaff_ESI;
   uStack_a = (undefined2)((uint)unaff_ESI >> 0x10);
   local_10 = (ushort)unaff_EDI;
@@ -117608,7 +117624,7 @@ undefined4 FUN_004ac7c0(undefined4 param_1,void **param_2)
   undefined2 uStack_c;
   undefined2 uStack_a;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uStack_c = (undefined2)unaff_ESI;
   uStack_a = (undefined2)((uint)unaff_ESI >> 0x10);
   local_10 = (ushort)unaff_EDI;
@@ -117676,7 +117692,7 @@ undefined4 FUN_004ac8b0(undefined4 param_1,size_t *param_2,void **param_3,void *
   char cVar6;
   undefined4 uVar5;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   uVar5 = 0;
   iVar1 = FUN_004adf60();
   if (iVar1 == 0) {
@@ -117733,7 +117749,7 @@ MMRESULT FUN_004ac990(LPSTR param_1,HMMIO *param_2,HGLOBAL *param_3,LPMMCKINFO p
   uint local_24;
   short sVar6;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   *param_3 = (HGLOBAL)0x0;
   hmmio = mmioOpenA(param_1,(LPMMIOINFO)0x0,0x10000);
   pmmckiParent = param_4;
@@ -117829,7 +117845,7 @@ uint FUN_004acb70(HMMIO param_1,uint param_2,int param_3,int param_4,uint *param
   HPSTR local_2c;
   LONG LStackY_20;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   LStackY_20 = 0x4acb90;
   MVar2 = mmioGetInfo(param_1,(LPMMIOINFO)&stack0xffffffb4,0);
   uVar3 = (uint)(MVar2 != 0);
@@ -117955,7 +117971,7 @@ undefined4 FUN_004acdb0(HMMIO param_1,HMMIO param_2,int param_3)
   MMRESULT MVar2;
   LONG LVar3;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pvVar1 = GlobalAlloc(0x42,*(SIZE_T *)(param_3 + 4));
   pch = (HPSTR)GlobalLock(pvVar1);
   if (pch == (HPSTR)0x0) {
@@ -118001,7 +118017,7 @@ int FUN_004ace90(HGLOBAL param_1,undefined4 *param_2,HGLOBAL *param_3,HMMIO para
   undefined4 *puStackY_1c;
   undefined4 *dwBytes;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   pHVar1 = param_4;
   param_4->unused = 0;
   *param_3 = (HGLOBAL)0x0;
@@ -118086,7 +118102,7 @@ undefined4 FUN_004acfc0(code **param_1)
   puStack_10 = &LAB_004b10b8;
   local_14 = ExceptionList;
   ExceptionList = &local_14;
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   local_74 = param_1;
   local_7c = local_6c;
   local_78 = local_180;
@@ -118302,8 +118318,17 @@ void FUN_004ad2d0(void)
 
 
 // WARNING: Unable to track spacebase fully for stack
+// /* Function: AdjustStackForLargeAllocations (originally FUN_004ad310)
+//  * Description:
+//  *   This function adjusts the stack pointer to handle a large allocation, effectively creating
+// space on the stack for usage. If the size of the allocation (`in_EAX`) exceeds 4096 bytes
+// (0xFFF), the function iteratively adjusts the stack pointer by subtracting 0x1000 bytes until the
+// remaining allocation is less than or equal to 4096 bytes. Finally, it sets a return address to
+// ensure the function can return properly.
+//  */
+// 
 
-void FUN_004ad310(void)
+void AdjustStackForLargeAllocations(void)
 
 {
   uint in_EAX;
@@ -118367,18 +118392,18 @@ float10 FUN_004ad3c0(undefined4 param_1,undefined4 param_2)
   int iVar2;
   float10 fVar3;
   
-  uVar1 = FUN_004b31c0();
+  uVar1 = GetFpuControlWord();
   if ((param_2._2_2_ & 0x7ff0) != 0x7ff0) {
-    FUN_004b31c0();
+    GetFpuControlWord();
     return (float10)(double)(CONCAT44(param_2,param_1) & 0x7fffffffffffffff);
   }
   iVar2 = FUN_004b3020();
   if (iVar2 == 1) {
-    FUN_004b31c0();
+    GetFpuControlWord();
     return (float10)(double)CONCAT26(param_2._2_2_,CONCAT24((undefined2)param_2,param_1));
   }
   if (iVar2 == 2) {
-    FUN_004b31c0();
+    GetFpuControlWord();
     return -(float10)(double)CONCAT26(param_2._2_2_,CONCAT24((undefined2)param_2,param_1));
   }
   if (iVar2 != 3) {
@@ -118387,7 +118412,7 @@ float10 FUN_004ad3c0(undefined4 param_1,undefined4 param_2)
                                                    CONCAT24((undefined2)param_2,param_1)) - -1.0);
     return fVar3;
   }
-  fVar3 = (float10)FUN_004b2710(0x15,param_1,param_2,uVar1);
+  fVar3 = (float10)PerformCustomFloatCalculation(0x15,param_1,param_2,uVar1);
   return fVar3;
 }
 
@@ -119050,7 +119075,7 @@ int FUN_004adae0(byte *param_1)
       uVar2 = (byte)PTR_DAT_004d3d40[(uint)*param_1 * 2] & 8;
     }
     else {
-      uVar2 = FUN_004b0b10(*param_1,8);
+      uVar2 = GetCharacterType(*param_1,8);
     }
     if (uVar2 == 0) break;
     param_1 = param_1 + 1;
@@ -119067,7 +119092,7 @@ int FUN_004adae0(byte *param_1)
       uVar3 = (byte)PTR_DAT_004d3d40[uVar4 * 2] & 4;
     }
     else {
-      uVar3 = FUN_004b0b10(uVar4,4);
+      uVar3 = GetCharacterType(uVar4,4);
     }
     if (uVar3 == 0) break;
     bVar1 = *pbVar6;
@@ -119106,7 +119131,7 @@ float10 FUN_004adb90(byte *param_1)
       uVar2 = (byte)PTR_DAT_004d3d40[(uint)*param_1 * 2] & 8;
     }
     else {
-      uVar2 = FUN_004b0b10(*param_1,8);
+      uVar2 = GetCharacterType(*param_1,8);
     }
     if (uVar2 == 0) break;
     param_1 = param_1 + 1;
@@ -120079,7 +120104,7 @@ int FUN_004ae6e0(int param_1,int param_2,int param_3)
     iVar2 = FUN_004b5ac0(*(undefined4 *)(param_1 + 0x10),param_2,param_3);
     return (iVar2 != -1) - 1;
   }
-  puVar3 = (undefined4 *)FUN_004b5aa0();
+  puVar3 = (undefined4 *)GetSpecificTlsOffset();
   *puVar3 = 0x16;
   return -1;
 }
@@ -120097,7 +120122,7 @@ uint FUN_004ae780(byte *param_1,byte *param_2)
   undefined4 *puVar6;
   undefined4 local_20 [8];
   
-  iVar3 = FUN_004b5df0();
+  iVar3 = GetOrAllocateTlsData();
   puVar6 = local_20;
   for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
     *puVar6 = 0;
@@ -120241,7 +120266,7 @@ undefined4 FUN_004ae940(LPCSTR param_1,int *param_2)
       }
     }
 LAB_004aea4c:
-    puVar5 = (undefined4 *)FUN_004b5aa0();
+    puVar5 = (undefined4 *)GetSpecificTlsOffset();
     *puVar5 = 2;
     puVar5 = (undefined4 *)FUN_004b5ab0();
     *puVar5 = 2;
@@ -120366,7 +120391,7 @@ undefined4 FUN_004aed10(uint param_1)
     FUN_004b6840(param_1);
     return uVar1;
   }
-  puVar2 = (undefined4 *)FUN_004b5aa0();
+  puVar2 = (undefined4 *)GetSpecificTlsOffset();
   *puVar2 = 9;
   puVar2 = (undefined4 *)FUN_004b5ab0();
   *puVar2 = 0;
@@ -120425,7 +120450,7 @@ undefined4 FUN_004aee10(uint param_1,undefined4 param_2,undefined4 param_3)
     FUN_004b6840(param_1);
     return uVar1;
   }
-  puVar2 = (undefined4 *)FUN_004b5aa0();
+  puVar2 = (undefined4 *)GetSpecificTlsOffset();
   *puVar2 = 9;
   puVar2 = (undefined4 *)FUN_004b5ab0();
   *puVar2 = 0;
@@ -120551,7 +120576,7 @@ LAB_004af068:
       }
       DVar5 = GetLastError();
       if (DVar5 == 5) {
-        puVar6 = (undefined4 *)FUN_004b5aa0();
+        puVar6 = (undefined4 *)GetSpecificTlsOffset();
         *puVar6 = 9;
         puVar6 = (undefined4 *)FUN_004b5ab0();
         *puVar6 = 5;
@@ -120586,7 +120611,7 @@ undefined4 FUN_004af0c0(uint param_1,int param_2,DWORD param_3)
   uVar1 = param_1;
   if ((DAT_005f8ea0 <= param_1) ||
      ((*(byte *)((&DAT_005f8da0)[(int)param_1 >> 5] + 4 + (param_1 & 0x1f) * 0x24) & 1) == 0)) {
-    puVar5 = (undefined4 *)FUN_004b5aa0();
+    puVar5 = (undefined4 *)GetSpecificTlsOffset();
     *puVar5 = 9;
     puVar5 = (undefined4 *)FUN_004b5ab0();
     *puVar5 = 0;
@@ -120630,7 +120655,7 @@ undefined4 FUN_004af0c0(uint param_1,int param_2,DWORD param_3)
       FUN_004b5a20(DVar7);
       return 0xffffffff;
     }
-    puVar5 = (undefined4 *)FUN_004b5aa0();
+    puVar5 = (undefined4 *)GetSpecificTlsOffset();
     *puVar5 = 0x24;
     pDVar6 = (DWORD *)FUN_004b5ab0();
     *pDVar6 = DVar7;
@@ -120726,7 +120751,7 @@ LAB_004af336:
       if (uVar1 != 0x500) {
         if (uVar1 != 0x400) {
 switchD_004af2a8_caseD_11:
-          puVar5 = (undefined4 *)FUN_004b5aa0();
+          puVar5 = (undefined4 *)GetSpecificTlsOffset();
           *puVar5 = 0x16;
           puVar5 = (undefined4 *)FUN_004b5ab0();
           *puVar5 = 0;
@@ -120762,7 +120787,7 @@ switchD_004af2a8_caseD_11:
   }
   uVar1 = FUN_004b64c0();
   if (uVar1 == 0xffffffff) {
-    puVar5 = (undefined4 *)FUN_004b5aa0();
+    puVar5 = (undefined4 *)GetSpecificTlsOffset();
     *puVar5 = 0x18;
     puVar5 = (undefined4 *)FUN_004b5ab0();
     *puVar5 = 0;
@@ -120850,7 +120875,7 @@ void FUN_004af630(undefined4 param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_004b5df0();
+  iVar1 = GetOrAllocateTlsData();
   *(undefined4 *)(iVar1 + 0x14) = param_1;
   return;
 }
@@ -120863,7 +120888,7 @@ uint FUN_004af640(void)
   uint uVar1;
   int iVar2;
   
-  iVar2 = FUN_004b5df0();
+  iVar2 = GetOrAllocateTlsData();
   uVar1 = *(int *)(iVar2 + 0x14) * 0x343fd + 0x269ec3;
   *(uint *)(iVar2 + 0x14) = uVar1;
   return uVar1 >> 0x10 & 0x7fff;
@@ -121099,8 +121124,8 @@ float10 FUN_004af9f0(undefined4 param_1,undefined4 param_2,double *param_3)
   float10 fVar4;
   float10 fVar5;
   
-  uVar2 = FUN_004b31c0(0,0);
-  FUN_004b31c0(DAT_004d3d08,0xffff);
+  uVar2 = GetFpuControlWord(0,0);
+  GetFpuControlWord(DAT_004d3d08,0xffff);
   if ((param_2._2_2_ & 0x7ff0) == 0x7ff0) {
     *(undefined4 *)param_3 = DAT_004d4138;
     *(undefined4 *)((int)param_3 + 4) = DAT_004d413c;
@@ -121116,7 +121141,7 @@ LAB_004afa94:
       if (iVar3 == 3) {
         *(undefined4 *)param_3 = param_1;
         *(undefined4 *)((int)param_3 + 4) = param_2;
-        fVar4 = (float10)FUN_004b2710(0x1c,param_1,param_2,uVar2);
+        fVar4 = (float10)PerformCustomFloatCalculation(0x1c,param_1,param_2,uVar2);
         return fVar4;
       }
       goto LAB_004afa94;
@@ -121141,7 +121166,7 @@ LAB_004afa94:
   param_2._0_2_ = (undefined2)((ulonglong)dVar1 >> 0x20);
   param_2._2_2_ = (ushort)((ulonglong)dVar1 >> 0x30);
 LAB_004afb27:
-  FUN_004b31c0(uVar2,0xffff);
+  GetFpuControlWord(uVar2,0xffff);
   return (float10)(double)CONCAT26(param_2._2_2_,CONCAT24((undefined2)param_2,param_1));
 }
 
@@ -121265,7 +121290,7 @@ HANDLE FUN_004afd20(undefined4 param_1,SIZE_T param_2,undefined4 param_3)
   DVar1 = 0;
   lpThreadId = (LPVOID)AllocateAndInitializeMemory(1,0x74);
   if (lpThreadId != (LPVOID)0x0) {
-    FUN_004b5dd0(lpThreadId);
+    InitializeTlsData(lpThreadId);
     *(undefined4 *)((int)lpThreadId + 0x48) = param_1;
     *(undefined4 *)((int)lpThreadId + 0x4c) = param_3;
     hThread = CreateThread((LPSECURITY_ATTRIBUTES)0x0,param_2,FUN_004afda0,lpThreadId,4,
@@ -121329,7 +121354,7 @@ void FUN_004afe50(void)
   if (PTR_FUN_004d3c70 != (undefined *)0x0) {
     (*(code *)PTR_FUN_004d3c70)();
   }
-  iVar1 = FUN_004b5df0();
+  iVar1 = GetOrAllocateTlsData();
   if (iVar1 == 0) {
     __amsg_exit(0x10);
   }
@@ -122152,7 +122177,7 @@ uint FUN_004b0a10(uint param_1)
         uVar2 = (byte)PTR_DAT_004d3d40[param_1 * 2] & 2;
       }
       else {
-        uVar2 = FUN_004b0b10(param_1,2);
+        uVar2 = GetCharacterType(param_1,2);
       }
       if (uVar2 == 0) {
         return uVar1;
@@ -122182,7 +122207,24 @@ uint FUN_004b0a10(uint param_1)
 
 
 
-uint FUN_004b0b10(int param_1,uint param_2)
+// /*
+//  * Function: GetCharacterType (originally FUN_004b0b10)
+//  * Description:
+//  *   This function determines the character type of a given parameter. If the character is within
+// the
+//  *   ASCII range, it uses a lookup table to find the type. If the character is non-ASCII, it uses
+// the
+//  *   `GetStringTypeWrapper` function to determine its type. The resulting type is bitwise-ANDed
+// with
+//  *   the provided `param_2`.
+//  * Parameters:
+//  *   param_1 - The character or value to evaluate.
+//  *   param_2 - The mask to apply to the character type.
+//  * Returns:
+//  *   The result of bitwise-ANDing the character type with `param_2`.
+//  */
+
+uint GetCharacterType(int param_1,uint param_2)
 
 {
   undefined4 uVar1;
@@ -122211,20 +122253,54 @@ uint FUN_004b0b10(int param_1,uint param_2)
 
 
 
-undefined4 FUN_004b0bb0(undefined4 param_1,undefined4 param_2)
+// /*
+//  * Function: GetAbsolutePathThreadSafe (originally FUN_004b0bb0)
+//  * Description:
+//  *   This function obtains the absolute path for a given input, ensuring thread safety
+//  *   by using a critical section lock. It calls `GetAbsolutePath` to perform the actual
+//  *   path resolution and protects this operation by acquiring and releasing a critical
+//  *   section lock with ID `0xc`.
+//  * Parameters:
+//  *   param_1 - The input parameter, typically representing a relative path or drive letter.
+//  *   param_2 - The output buffer where the absolute path will be stored.
+//  * Returns:
+//  *   The result from `GetAbsolutePath`, which is typically a success or failure indicator.
+//  */
+
+undefined4 GetAbsolutePathThreadSafe(undefined4 param_1,undefined4 param_2)
 
 {
   undefined4 uVar1;
   
   EnterOrInitCriticalSection(0xc);
-  uVar1 = FUN_004b0be0(0,param_1,param_2);
+  uVar1 = GetAbsolutePath(0,param_1,param_2);
   LeaveCriticalSectionFunc(0xc);
   return uVar1;
 }
 
 
 
-undefined4 * FUN_004b0be0(int param_1,undefined4 *param_2,uint param_3)
+// /* Function: GetAbsolutePath (originally FUN_004b0be0)
+//  * Description:
+//  *   This function retrieves the absolute path based on a given parameter. If the parameter is 0,
+// it retrieves
+//  *   the current directory path. If a valid drive is specified, it converts the relative path to
+// an absolute one.
+//  *   If the provided buffer is NULL, the function allocates memory to store the resulting path.
+// If the buffer
+//  *   size is insufficient, it sets an error in the thread-local storage. Otherwise, it copies the
+// retrieved path
+//  *   to the provided buffer.
+//  * Parameters:
+//  *   param_1 - Drive identifier or 0 for current directory.
+//  *   param_2 - Pointer to a buffer for storing the resulting path.
+//  *   param_3 - Size of the provided buffer.
+//  * Returns:
+//  *   Pointer to the buffer containing the absolute path, or NULL if an error occurs.
+//  */
+// 
+
+undefined4 * GetAbsolutePath(int param_1,undefined4 *param_2,uint param_3)
 
 {
   char cVar1;
@@ -122247,11 +122323,11 @@ undefined4 * FUN_004b0be0(int param_1,undefined4 *param_2,uint param_3)
     DVar4 = GetCurrentDirectoryA(0x104,local_104);
   }
   else {
-    iVar2 = FUN_004b0d10(param_1);
+    iVar2 = IsValidDrive(param_1);
     if (iVar2 == 0) {
       puVar3 = (undefined4 *)FUN_004b5ab0();
       *puVar3 = 0xf;
-      puVar3 = (undefined4 *)FUN_004b5aa0();
+      puVar3 = (undefined4 *)GetSpecificTlsOffset();
       *puVar3 = 0xd;
       return (undefined4 *)0x0;
     }
@@ -122270,13 +122346,13 @@ undefined4 * FUN_004b0be0(int param_1,undefined4 *param_2,uint param_3)
     }
     param_2 = (undefined4 *)AllocateMemoryWithCallback(uVar5);
     if (param_2 == (undefined4 *)0x0) {
-      puVar3 = (undefined4 *)FUN_004b5aa0();
+      puVar3 = (undefined4 *)GetSpecificTlsOffset();
       *puVar3 = 0xc;
       return (undefined4 *)0x0;
     }
   }
   else if ((int)param_3 < (int)uVar5) {
-    puVar3 = (undefined4 *)FUN_004b5aa0();
+    puVar3 = (undefined4 *)GetSpecificTlsOffset();
     *puVar3 = 0x22;
     return (undefined4 *)0x0;
   }
@@ -122308,7 +122384,17 @@ undefined4 * FUN_004b0be0(int param_1,undefined4 *param_2,uint param_3)
 
 
 
-undefined4 FUN_004b0d10(uint param_1)
+// /*
+//  * Function: IsValidDrive (originally FUN_004b0d10)
+//  * Description:
+//  *   This function checks if a given value corresponds to a valid drive letter. It constructs a
+// path
+//  *   using the provided parameter, then checks if the drive type is valid using the GetDriveTypeA
+// function.
+//  *   It returns 1 if the drive is valid and accessible, otherwise returns 0.
+//  */
+
+undefined4 IsValidDrive(uint param_1)
 
 {
   char cVar1;
@@ -122748,7 +122834,7 @@ void FUN_004b1440(char *param_1)
         uVar4 = (byte)PTR_DAT_004d3d40[*param_1 * 2] & 4;
       }
       else {
-        uVar4 = FUN_004b0b10((int)*param_1,4);
+        uVar4 = GetCharacterType((int)*param_1,4);
       }
     } while (uVar4 != 0);
   }
@@ -123658,19 +123744,38 @@ undefined4 FUN_004b26f0(undefined4 *param_1)
 
 
 
-float10 FUN_004b2710(undefined4 param_1,undefined4 param_2,undefined4 param_3_00,undefined4 param_3)
+// /*
+//  * Function: PerformCustomFloatCalculation
+//  * Description:
+//  *   This function performs a complex calculation based on the global state. If the state value
+// (`DAT_004d6c50`)
+//  *   is `0`, it invokes `PerformComplexCalculation` to compute a floating-point value. If the
+// state is non-zero,
+//  *   it uses thread-local storage and floating-point unit control to return a calculated result.
+//  * Parameters:
+//  *   param_1 - The first parameter to the calculation function.
+//  *   param_2 - The second parameter to the calculation function.
+//  *   param_3_00 - An additional parameter used during the calculation.
+//  *   param_3 - The final parameter to be used.
+//  * Returns:
+//  *   A 10-byte floating-point result of the computation.
+//  */
+
+float10 PerformCustomFloatCalculation
+                  (undefined4 param_1,undefined4 param_2,undefined4 param_3_00,undefined4 param_3)
 
 {
   undefined4 *puVar1;
   float10 fVar2;
   
   if (DAT_004d6c50 == 0) {
-    fVar2 = (float10)FUN_004b2e90(1,param_1,param_2,param_3_00,0,0,param_2,param_3_00,param_3);
+    fVar2 = (float10)PerformComplexCalculation
+                               (1,param_1,param_2,param_3_00,0,0,param_2,param_3_00,param_3);
     return fVar2;
   }
-  puVar1 = (undefined4 *)FUN_004b5aa0();
+  puVar1 = (undefined4 *)GetSpecificTlsOffset();
   *puVar1 = 0x21;
-  FUN_004b31c0(param_3,0xffff);
+  GetFpuControlWord(param_3,0xffff);
   return (float10)(double)CONCAT44(param_3_00,param_2);
 }
 
@@ -123692,11 +123797,12 @@ float10 FUN_004b2760(undefined4 param_1,undefined4 param_2,undefined4 param_3,un
   }
   iVar1 = FUN_004b2fa0(param_1);
   if ((DAT_004d6c50 == 0) && (iVar1 != 0)) {
-    fVar2 = (float10)FUN_004b2e90(iVar1,param_2,param_3,param_4,0,0,param_5,param_6_00,param_6);
+    fVar2 = (float10)PerformComplexCalculation
+                               (iVar1,param_2,param_3,param_4,0,0,param_5,param_6_00,param_6);
     return fVar2;
   }
-  FUN_004b2f40(iVar1);
-  FUN_004b31c0(param_6,0xffff);
+  UpdateTlsValueBasedOnParam(iVar1);
+  GetFpuControlWord(param_6,0xffff);
   return (float10)(double)CONCAT44(param_6_00,param_5);
 }
 
@@ -123994,9 +124100,22 @@ LAB_004b2e6b:
 
 
 
-float10 FUN_004b2e90(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-                    undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8_00,
-                    undefined4 param_8)
+// /*
+//  * Function: PerformComplexCalculation
+//  * Description:
+//  *   This function takes several parameters and performs a complex calculation involving
+// floating-point
+//  *   unit operations, control word management, and TLS (Thread Local Storage) updates.
+//  * Parameters:
+//  *   param_1 to param_8 - Parameters used for the computation, including control values and data.
+//  * Returns:
+//  *   A 10-byte floating-point result of the computation.
+//  */
+
+float10 PerformComplexCalculation
+                  (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+                  undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8_00,
+                  undefined4 param_8)
 
 {
   int iVar1;
@@ -124009,7 +124128,7 @@ float10 FUN_004b2e90(undefined4 param_1,undefined4 param_2,undefined4 param_3,un
   undefined4 local_8;
   undefined4 uStack_4;
   
-  local_1c = FUN_004b2f70(param_2);
+  local_1c = FindDataBasedOnParam(param_2);
   if (local_1c != 0) {
     local_18 = param_3;
     local_c = param_6;
@@ -124018,31 +124137,43 @@ float10 FUN_004b2e90(undefined4 param_1,undefined4 param_2,undefined4 param_3,un
     local_20 = param_1;
     local_8 = param_7;
     uStack_4 = param_8_00;
-    FUN_004b31c0(param_8,0xffff);
-    iVar1 = FUN_004ba910(&local_20);
+    GetFpuControlWord(param_8,0xffff);
+    iVar1 = ReturnZero(&local_20);
     if (iVar1 == 0) {
-      FUN_004b2f40(param_1);
+      UpdateTlsValueBasedOnParam(param_1);
     }
     return (float10)(double)CONCAT44(uStack_4,local_8);
   }
-  FUN_004b31c0(param_8,0xffff);
-  FUN_004b2f40(param_1);
+  GetFpuControlWord(param_8,0xffff);
+  UpdateTlsValueBasedOnParam(param_1);
   return (float10)(double)CONCAT44(param_8_00,param_7);
 }
 
 
 
-void FUN_004b2f40(int param_1)
+// /*
+//  * Function: UpdateTlsValueBasedOnParam (originally FUN_004b2f40)
+//  * Description:
+//  *   This function updates a specific value in the TLS (Thread Local Storage) for the current
+// thread,
+//  *   depending on the value of the input parameter.
+//  * Parameters:
+//  *   param_1 - Determines which value to store at the specific TLS offset.
+//  *              If param_1 is 1, it stores 0x21.
+//  *              If param_1 is 2 or 3, it stores 0x22.
+//  */
+
+void UpdateTlsValueBasedOnParam(int param_1)
 
 {
   undefined4 *puVar1;
   
   if (param_1 == 1) {
-    puVar1 = (undefined4 *)FUN_004b5aa0();
+    puVar1 = (undefined4 *)GetSpecificTlsOffset();
     *puVar1 = 0x21;
   }
   else if ((1 < param_1) && (param_1 < 4)) {
-    puVar1 = (undefined4 *)FUN_004b5aa0();
+    puVar1 = (undefined4 *)GetSpecificTlsOffset();
     *puVar1 = 0x22;
     return;
   }
@@ -124051,7 +124182,19 @@ void FUN_004b2f40(int param_1)
 
 
 
-undefined * FUN_004b2f70(int param_1)
+// /*
+//  * Function: FindDataBasedOnParam
+//  * Description:
+//  *   Searches for a specific integer (`param_1`) in a global array of integers and returns a
+// pointer
+//  *   to a corresponding data entry.
+//  * Parameters:
+//  *   param_1 - The integer to search for in the global data.
+//  * Returns:
+//  *   A pointer to the associated data if found, otherwise a null pointer (`undefined *`).
+//  */
+
+undefined * FindDataBasedOnParam(int param_1)
 
 {
   int *piVar1;
@@ -124191,7 +124334,15 @@ int FUN_004b31a0(void)
 
 
 
-int FUN_004b31c0(void)
+// /*
+//  * Function: GetFpuControlWord
+//  * Description:
+//  *   Returns the current value of the FPU (Floating Point Unit) control word.
+//  * Returns:
+//  *   The value of the FPU control word.
+//  */
+
+int GetFpuControlWord(void)
 
 {
   short in_FPUControlWord;
@@ -125768,7 +125919,7 @@ undefined4 FUN_004b55d0(uint param_1,undefined4 param_2,undefined4 param_3)
     FUN_004b6840(param_1);
     return uVar1;
   }
-  puVar2 = (undefined4 *)FUN_004b5aa0();
+  puVar2 = (undefined4 *)GetSpecificTlsOffset();
   *puVar2 = 9;
   puVar2 = (undefined4 *)FUN_004b5ab0();
   *puVar2 = 0;
@@ -125852,7 +126003,7 @@ int FUN_004b5650(uint param_1,char *param_2,uint param_3)
     if (((*(byte *)(iVar6 + 4 + *local_408) & 0x40) != 0) && (*param_2 == '\x1a')) {
       return 0;
     }
-    puVar5 = (undefined4 *)FUN_004b5aa0();
+    puVar5 = (undefined4 *)GetSpecificTlsOffset();
     *puVar5 = 0x1c;
     puVar5 = (undefined4 *)FUN_004b5ab0();
     *puVar5 = 0;
@@ -125862,7 +126013,7 @@ int FUN_004b5650(uint param_1,char *param_2,uint param_3)
     FUN_004b5a20(local_414);
     return -1;
   }
-  puVar5 = (undefined4 *)FUN_004b5aa0();
+  puVar5 = (undefined4 *)GetSpecificTlsOffset();
   *puVar5 = 9;
   puVar5 = (undefined4 *)FUN_004b5ab0();
   *puVar5 = 5;
@@ -126139,7 +126290,7 @@ void FUN_004b5a20(uint param_1)
   puVar1 = &DAT_004d6330;
   do {
     if (param_1 == *puVar1) {
-      puVar2 = (undefined4 *)FUN_004b5aa0();
+      puVar2 = (undefined4 *)GetSpecificTlsOffset();
       *puVar2 = (&DAT_004d6334)[iVar3 * 2];
       return;
     }
@@ -126147,28 +126298,39 @@ void FUN_004b5a20(uint param_1)
     iVar3 = iVar3 + 1;
   } while (puVar1 < &DAT_004d6498);
   if ((0x12 < param_1) && (param_1 < 0x25)) {
-    puVar2 = (undefined4 *)FUN_004b5aa0();
+    puVar2 = (undefined4 *)GetSpecificTlsOffset();
     *puVar2 = 0xd;
     return;
   }
   if ((0xbb < param_1) && (param_1 < 0xcb)) {
-    puVar2 = (undefined4 *)FUN_004b5aa0();
+    puVar2 = (undefined4 *)GetSpecificTlsOffset();
     *puVar2 = 8;
     return;
   }
-  puVar2 = (undefined4 *)FUN_004b5aa0();
+  puVar2 = (undefined4 *)GetSpecificTlsOffset();
   *puVar2 = 0x16;
   return;
 }
 
 
 
-int FUN_004b5aa0(void)
+// /*
+//  * Function: GetSpecificTlsOffset
+//  * Description:
+//  *   This function retrieves the TLS (Thread Local Storage) data for the current thread and
+// returns
+//  *   an address with an 8-byte offset from the start of the TLS data. This is used to access
+//  *   a specific element within the thread-local storage structure.
+//  * Returns:
+//  *   The address of a specific offset within the TLS data.
+//  */
+
+int GetSpecificTlsOffset(void)
 
 {
   int iVar1;
   
-  iVar1 = FUN_004b5df0();
+  iVar1 = GetOrAllocateTlsData();
   return iVar1 + 8;
 }
 
@@ -126179,7 +126341,7 @@ int FUN_004b5ab0(void)
 {
   int iVar1;
   
-  iVar1 = FUN_004b5df0();
+  iVar1 = GetOrAllocateTlsData();
   return iVar1 + 0xc;
 }
 
@@ -126198,7 +126360,7 @@ undefined4 FUN_004b5ac0(uint param_1,undefined4 param_2,undefined4 param_3)
     FUN_004b6840(param_1);
     return uVar1;
   }
-  puVar2 = (undefined4 *)FUN_004b5aa0();
+  puVar2 = (undefined4 *)GetSpecificTlsOffset();
   *puVar2 = 9;
   puVar2 = (undefined4 *)FUN_004b5ab0();
   *puVar2 = 0;
@@ -126217,7 +126379,7 @@ DWORD FUN_004b5b40(uint param_1,LONG param_2,DWORD param_3)
   
   hFile = (HANDLE)FUN_004b6780(param_1);
   if (hFile == (HANDLE)0xffffffff) {
-    puVar1 = (undefined4 *)FUN_004b5aa0();
+    puVar1 = (undefined4 *)GetSpecificTlsOffset();
     *puVar1 = 9;
     return 0xffffffff;
   }
@@ -126269,7 +126431,7 @@ int FUN_004b5bc0(char **param_1)
   local_8 = (int)pcVar4 - (int)pcVar2;
   if (((uint)pcVar6 & 3) == 0) {
     if (((uint)pcVar6 & 0x80) == 0) {
-      puVar5 = (undefined4 *)FUN_004b5aa0();
+      puVar5 = (undefined4 *)GetSpecificTlsOffset();
       *puVar5 = 0x16;
       return -1;
     }
@@ -126357,7 +126519,7 @@ undefined4 InitializeThreadLocalStorage(void)
     if (lpTlsValue != (DWORD *)0x0) {
       BVar1 = TlsSetValue(DAT_004d6498,lpTlsValue);
       if (BVar1 != 0) {
-        FUN_004b5dd0(lpTlsValue);
+        InitializeTlsData(lpTlsValue);
         DVar2 = GetCurrentThreadId();
         *lpTlsValue = DVar2;
         lpTlsValue[1] = 0xffffffff;
@@ -126370,7 +126532,16 @@ undefined4 InitializeThreadLocalStorage(void)
 
 
 
-void FUN_004b5dd0(int param_1)
+// /*
+//  * Function: InitializeTlsData
+//  * Description:
+//  *   This function initializes a specific part of the TLS (Thread Local Storage) data structure.
+//  *   It sets a pointer to a global variable and marks a flag as active.
+//  * Parameters:
+//  *   - param_1: Pointer to the TLS data structure.
+//  */
+
+void InitializeTlsData(int param_1)
 
 {
   *(undefined **)(param_1 + 0x50) = &DAT_004d6630;
@@ -126380,7 +126551,18 @@ void FUN_004b5dd0(int param_1)
 
 
 
-DWORD * FUN_004b5df0(void)
+// /*
+//  * Function: GetOrAllocateTlsData
+//  * Description:
+//  *   This function retrieves the current thread's TLS (Thread Local Storage) data. If no TLS data
+// exists for the current thread,
+//  *   it allocates and initializes a new block of memory for it. It also handles setting and
+// restoring the last error code.
+//  * Returns:
+//  *   A pointer to the thread's TLS data.
+//  */
+
+DWORD * GetOrAllocateTlsData(void)
 
 {
   DWORD dwErrCode;
@@ -126395,7 +126577,7 @@ DWORD * FUN_004b5df0(void)
     if (lpTlsValue != (DWORD *)0x0) {
       BVar1 = TlsSetValue(DAT_004d6498,lpTlsValue);
       if (BVar1 != 0) {
-        FUN_004b5dd0(lpTlsValue);
+        InitializeTlsData(lpTlsValue);
         DVar2 = GetCurrentThreadId();
         *lpTlsValue = DVar2;
         lpTlsValue[1] = 0xffffffff;
@@ -126646,7 +126828,7 @@ LPSTR FUN_004b6250(LPSTR param_1,LPCSTR param_2,LPSTR param_3)
   LPSTR nBufferLength;
   
   if ((param_2 == (LPCSTR)0x0) || (*param_2 == '\0')) {
-    pCVar1 = (LPSTR)FUN_004b0bb0(param_1,param_3);
+    pCVar1 = (LPSTR)GetAbsolutePathThreadSafe(param_1,param_3);
     return pCVar1;
   }
   pCVar1 = param_1;
@@ -126654,7 +126836,7 @@ LPSTR FUN_004b6250(LPSTR param_1,LPCSTR param_2,LPSTR param_3)
   if (param_1 == (LPSTR)0x0) {
     pCVar1 = (LPSTR)AllocateMemoryWithCallback(0x104);
     if (pCVar1 == (LPSTR)0x0) {
-      puVar2 = (undefined4 *)FUN_004b5aa0();
+      puVar2 = (undefined4 *)GetSpecificTlsOffset();
       *puVar2 = 0xc;
       return (LPSTR)0x0;
     }
@@ -126675,7 +126857,7 @@ LPSTR FUN_004b6250(LPSTR param_1,LPCSTR param_2,LPSTR param_3)
   if (param_1 == (LPSTR)0x0) {
     FreeMemory(pCVar1);
   }
-  puVar2 = (undefined4 *)FUN_004b5aa0();
+  puVar2 = (undefined4 *)GetSpecificTlsOffset();
   *puVar2 = 0x22;
   return (LPSTR)0x0;
 }
@@ -126875,7 +127057,7 @@ undefined4 FUN_004b6630(uint param_1,HANDLE param_2)
       return 0;
     }
   }
-  puVar2 = (undefined4 *)FUN_004b5aa0();
+  puVar2 = (undefined4 *)GetSpecificTlsOffset();
   *puVar2 = 9;
   puVar2 = (undefined4 *)FUN_004b5ab0();
   *puVar2 = 0;
@@ -126914,7 +127096,7 @@ LAB_004b6747:
       return 0;
     }
   }
-  puVar2 = (undefined4 *)FUN_004b5aa0();
+  puVar2 = (undefined4 *)GetSpecificTlsOffset();
   *puVar2 = 9;
   puVar2 = (undefined4 *)FUN_004b5ab0();
   *puVar2 = 0;
@@ -126932,7 +127114,7 @@ undefined4 FUN_004b6780(uint param_1)
      ((*(byte *)((&DAT_005f8da0)[(int)param_1 >> 5] + 4 + (param_1 & 0x1f) * 0x24) & 1) != 0)) {
     return *(undefined4 *)((&DAT_005f8da0)[(int)param_1 >> 5] + (param_1 & 0x1f) * 0x24);
   }
-  puVar1 = (undefined4 *)FUN_004b5aa0();
+  puVar1 = (undefined4 *)GetSpecificTlsOffset();
   *puVar1 = 9;
   puVar1 = (undefined4 *)FUN_004b5ab0();
   *puVar1 = 0;
@@ -127123,7 +127305,7 @@ int FUN_004b6a80(void)
   undefined4 in_stack_00001008;
   int in_stack_0000100c;
   
-  FUN_004ad310();
+  AdjustStackForLargeAllocations();
   iVar10 = 0;
   iVar1 = FUN_004b5b40(in_stack_00001008,0,1);
   if ((iVar1 == -1) || (iVar2 = FUN_004b5b40(in_stack_00001008,0,2), iVar2 == -1)) {
@@ -127137,7 +127319,7 @@ int FUN_004b6a80(void)
       BVar6 = SetEndOfFile(hFile);
       iVar10 = (BVar6 != 0) - 1;
       if (iVar10 == -1) {
-        puVar5 = (undefined4 *)FUN_004b5aa0();
+        puVar5 = (undefined4 *)GetSpecificTlsOffset();
         *puVar5 = 0xd;
         DVar7 = GetLastError();
         pDVar8 = (DWORD *)FUN_004b5ab0();
@@ -127170,7 +127352,7 @@ LAB_004b6b3a:
   }
   piVar4 = (int *)FUN_004b5ab0();
   if (*piVar4 == 5) {
-    puVar5 = (undefined4 *)FUN_004b5aa0();
+    puVar5 = (undefined4 *)GetSpecificTlsOffset();
     *puVar5 = 0xd;
   }
   iVar10 = -1;
@@ -127410,7 +127592,7 @@ LAB_004b7b66:
       uVar6 = (byte)PTR_DAT_004d3d40[(uint)bVar12 * 2] & 8;
     }
     else {
-      uVar6 = FUN_004b0b10(bVar12,8);
+      uVar6 = GetCharacterType(bVar12,8);
     }
     if (uVar6 != 0) {
       local_1cc = local_1cc - 1;
@@ -127461,7 +127643,7 @@ LAB_004b7b66:
         uVar9 = (byte)PTR_DAT_004d3d40[uVar6 * 2] & 4;
       }
       else {
-        uVar9 = FUN_004b0b10(uVar6,4);
+        uVar9 = GetCharacterType(uVar6,4);
       }
       if (uVar9 == 0) {
         switch(uVar6) {
@@ -127573,7 +127755,7 @@ LAB_004b7853:
         }
         else {
           local_19c = lVar21;
-          uVar6 = FUN_004b0b10(pplVar10,4);
+          uVar6 = GetCharacterType(pplVar10,4);
           lVar21 = local_19c;
         }
         local_19c = lVar21;
@@ -127598,7 +127780,7 @@ LAB_004b7853:
             lVar21 = local_19c;
           }
           else {
-            uVar6 = FUN_004b0b10(pplVar10,4);
+            uVar6 = GetCharacterType(pplVar10,4);
             lVar21 = local_19c;
           }
           if ((uVar6 == 0) ||
@@ -127634,7 +127816,7 @@ LAB_004b79ae:
             lVar21 = local_19c;
           }
           else {
-            uVar6 = FUN_004b0b10(pplVar10,4);
+            uVar6 = GetCharacterType(pplVar10,4);
             lVar21 = local_19c;
           }
           if ((uVar6 == 0) ||
@@ -127745,7 +127927,7 @@ LAB_004b7544:
               uVar11 = (byte)PTR_DAT_004d3d40[(int)pplVar10 * 2] & 0x80;
             }
             else {
-              uVar11 = FUN_004b0b10(pplVar10,0x80);
+              uVar11 = GetCharacterType(pplVar10,0x80);
               lVar21 = local_19c;
             }
             if (uVar11 != 0) {
@@ -127763,7 +127945,7 @@ LAB_004b7736:
               uVar11 = (byte)PTR_DAT_004d3d40[(int)pplVar10 * 2] & 4;
             }
             else {
-              uVar11 = FUN_004b0b10(pplVar10,4);
+              uVar11 = GetCharacterType(pplVar10,4);
               lVar21 = local_19c;
             }
             if (uVar11 == 0) goto LAB_004b7736;
@@ -127808,7 +127990,7 @@ LAB_004b773a:
               uVar6 = (byte)PTR_DAT_004d3d40[(int)pplVar10 * 2] & 0x80;
             }
             else {
-              uVar6 = FUN_004b0b10(pplVar10,0x80);
+              uVar6 = GetCharacterType(pplVar10,0x80);
             }
             if (uVar6 != 0) {
               lVar21 = __allshl();
@@ -127823,7 +128005,7 @@ LAB_004b760d:
               uVar6 = (byte)PTR_DAT_004d3d40[(int)pplVar10 * 2] & 4;
             }
             else {
-              uVar6 = FUN_004b0b10(pplVar10,4);
+              uVar6 = GetCharacterType(pplVar10,4);
             }
             if (uVar6 == 0) goto LAB_004b760d;
             if (local_1bc == 0x6f) {
@@ -128035,7 +128217,7 @@ uint FUN_004b7c50(uint param_1)
     uVar1 = (byte)PTR_DAT_004d3d40[param_1 * 2] & 4;
   }
   else {
-    uVar1 = FUN_004b0b10(param_1,4);
+    uVar1 = GetCharacterType(param_1,4);
   }
   if (uVar1 == 0) {
     param_1 = (param_1 & 0xffffffdf) - 7;
@@ -128215,7 +128397,7 @@ char * FUN_004b80d0(undefined4 *param_1)
   int iVar8;
   int iVar9;
   
-  iVar2 = FUN_004b5df0();
+  iVar2 = GetOrAllocateTlsData();
   if (*(int *)(iVar2 + 0x38) == 0) {
     iVar3 = AllocateMemoryWithCallback(0x1a);
     *(int *)(iVar2 + 0x38) = iVar3;
@@ -128463,7 +128645,7 @@ uint FUN_004b8470(LPSTR param_1,LPCWSTR param_2,uint param_3)
     }
   }
 LAB_004b8646:
-  puVar6 = (undefined4 *)FUN_004b5aa0();
+  puVar6 = (undefined4 *)GetSpecificTlsOffset();
   *puVar6 = 0x2a;
   return 0xffffffff;
 }
@@ -128738,7 +128920,7 @@ undefined4 FUN_004b8ab0(int param_1)
   case 4:
   case 8:
   case 0xb:
-    iVar3 = FUN_004b5df0();
+    iVar3 = GetOrAllocateTlsData();
     iVar4 = FUN_004b8cc0(param_1,*(undefined4 *)(iVar3 + 0x50));
     ppcVar7 = (code **)(iVar4 + 8);
     pcVar6 = *ppcVar7;
@@ -130097,7 +130279,7 @@ uint FUN_004b9bb0(uint param_1)
         uVar2 = (byte)PTR_DAT_004d3d40[param_1 * 2] & 1;
       }
       else {
-        uVar2 = FUN_004b0b10(param_1,1);
+        uVar2 = GetCharacterType(param_1,1);
       }
       if (uVar2 == 0) {
         return uVar1;
@@ -130996,14 +131178,22 @@ LPSTR FUN_004ba890(LPSTR param_1,WCHAR param_2)
       return pCVar1;
     }
   }
-  puVar2 = (undefined4 *)FUN_004b5aa0();
+  puVar2 = (undefined4 *)GetSpecificTlsOffset();
   *puVar2 = 0x2a;
   return (LPSTR)0xffffffff;
 }
 
 
 
-undefined4 FUN_004ba910(void)
+// /*
+//  * Function: ReturnZero
+//  * Description:
+//  *   This function simply returns 0, which is often used to indicate a successful or default
+// state.
+//  *   Unsure if this is a pragma check for debug
+//  */
+
+undefined4 ReturnZero(void)
 
 {
   return 0;
@@ -131057,13 +131247,13 @@ void FUN_004ba920(int param_1,int *param_2,ushort *param_3)
     FUN_004b2820(local_58,&param_3,uVar2,param_1,param_2 + 2,param_2 + 6);
   }
 switchD_004ba93f_caseD_6:
-  FUN_004b31c0(param_3,0xffff);
+  GetFpuControlWord(param_3,0xffff);
   iVar1 = 0;
   if ((*param_2 != 8) && (DAT_004d6c50 == 0)) {
-    iVar1 = FUN_004ba910(param_2);
+    iVar1 = ReturnZero(param_2);
   }
   if (iVar1 == 0) {
-    FUN_004b2f40(*param_2);
+    UpdateTlsValueBasedOnParam(*param_2);
   }
   return;
 }
@@ -131198,7 +131388,7 @@ switchD_004bab76_caseD_30:
           uVar9 = (byte)PTR_DAT_004d3d40[((uint)param_3 & 0xff) * 2] & 4;
         }
         else {
-          uVar9 = FUN_004b0b10((uint)param_3 & 0xff,4);
+          uVar9 = GetCharacterType((uint)param_3 & 0xff,4);
         }
         if (uVar9 == 0) break;
         if (uVar13 < 0x19) {
@@ -131251,7 +131441,7 @@ switchD_004bad02_caseD_2c:
           uVar9 = (byte)PTR_DAT_004d3d40[((uint)param_3 & 0xff) * 2] & 4;
         }
         else {
-          uVar9 = FUN_004b0b10((uint)param_3 & 0xff,4);
+          uVar9 = GetCharacterType((uint)param_3 & 0xff,4);
         }
         if (uVar9 == 0) break;
         if (uVar13 < 0x19) {
@@ -131290,7 +131480,7 @@ switchD_004bad02_caseD_44:
         uVar9 = (byte)PTR_DAT_004d3d40[(uint)bVar10 * 2] & 4;
       }
       else {
-        uVar9 = FUN_004b0b10(bVar10,4);
+        uVar9 = GetCharacterType(bVar10,4);
       }
       if (uVar9 == 0) {
         iVar8 = 10;
@@ -131357,7 +131547,7 @@ LAB_004baf12:
           uVar13 = (byte)PTR_DAT_004d3d40[((uint)param_3 & 0xff) * 2] & 4;
         }
         else {
-          uVar13 = FUN_004b0b10((uint)param_3 & 0xff,4);
+          uVar13 = GetCharacterType((uint)param_3 & 0xff,4);
         }
         if (uVar13 == 0) goto LAB_004bae7a;
         local_48 = (char)bVar10 + -0x30 + local_48 * 10;
@@ -131373,7 +131563,7 @@ LAB_004bae7a:
           uVar13 = (byte)PTR_DAT_004d3d40[((uint)param_3 & 0xff) * 2] & 4;
         }
         else {
-          uVar13 = FUN_004b0b10((uint)param_3 & 0xff,4);
+          uVar13 = GetCharacterType((uint)param_3 & 0xff,4);
         }
         if (uVar13 == 0) break;
         bVar10 = *pbVar12;
@@ -131677,7 +131867,7 @@ int FUN_004bb410(uint param_1,int param_2)
   }
   else {
     if (param_2 != 0x4000) {
-      puVar2 = (undefined4 *)FUN_004b5aa0();
+      puVar2 = (undefined4 *)GetSpecificTlsOffset();
       *puVar2 = 0x16;
       return -1;
     }
@@ -132345,12 +132535,12 @@ uint FUN_004bc6f0(LPWSTR param_1,byte *param_2,uint param_3)
           if (param_2[1] != 0) {
             return DAT_004d3f4c;
           }
-          puVar3 = (undefined4 *)FUN_004b5aa0();
+          puVar3 = (undefined4 *)GetSpecificTlsOffset();
           *puVar3 = 0x2a;
           return 0xffffffff;
         }
       }
-      puVar3 = (undefined4 *)FUN_004b5aa0();
+      puVar3 = (undefined4 *)GetSpecificTlsOffset();
       *puVar3 = 0x2a;
       return 0xffffffff;
     }
@@ -132370,7 +132560,7 @@ uint FUN_004bc7f0(int param_1)
   uint uVar1;
   
   if (1 < DAT_004d3f4c) {
-    uVar1 = FUN_004b0b10(param_1,8);
+    uVar1 = GetCharacterType(param_1,8);
     return uVar1;
   }
   return (byte)PTR_DAT_004d3d40[param_1 * 2] & 8;
@@ -132433,7 +132623,7 @@ int * FUN_004bc8b0(int *param_1)
   
   bVar1 = false;
   iVar8 = *param_1;
-  iVar2 = FUN_004b5df0();
+  iVar2 = GetOrAllocateTlsData();
   if (iVar8 < 0) {
     return (int *)0x0;
   }
@@ -133119,7 +133309,7 @@ undefined4 FUN_004bd510(int param_1,undefined4 param_2,undefined4 param_3,char *
           uVar5 = (byte)PTR_DAT_004d3d40[(uint)bVar1 * 2] & 4;
         }
         else {
-          uVar5 = FUN_004b0b10(bVar1,4);
+          uVar5 = GetCharacterType(bVar1,4);
         }
         if (uVar5 == 0) break;
         pbVar6 = pbVar6 + 2;
