@@ -10914,22 +10914,22 @@ undefined4 FUN_00411790(byte param_1)
   piVar1 = (int *)0x0;
   if ((param_1 & 4) == 0) {
     piVar1 = (int *)&stack0xfffffff8;
-    DAT_005e5128 = DirectDrawEnumerateA();
-    if (DAT_005e5128 != 0) {
+    g_DirectDrawFuncSuccessful = DirectDrawEnumerateA();
+    if (g_DirectDrawFuncSuccessful != 0) {
       GetErrorStringFunc();
-      FUN_00413d80();
+      LogError();
       return 0;
     }
-    DAT_005e5128 = 0;
+    g_DirectDrawFuncSuccessful = 0;
   }
   if (piVar1 == (int *)0x0) {
     DAT_005e58e8 = 1;
     uStackY_14 = 0x4117fb;
-    DAT_005e5128 = DirectDrawCreate();
+    g_DirectDrawFuncSuccessful = DirectDrawCreate();
     piVar1 = DAT_005e58e4;
-    if (DAT_005e5128 != 0) {
+    if (g_DirectDrawFuncSuccessful != 0) {
       GetErrorStringFunc();
-      FUN_00413d80();
+      LogError();
       return 0;
     }
   }
@@ -10941,8 +10941,8 @@ undefined4 FUN_00411790(byte param_1)
   _memset(local_2e0,0,0x16c);
   local_2e0[0] = 0x16c;
   uStackY_14 = 0x41187f;
-  DAT_005e5128 = (**(code **)(*DAT_005e58e4 + 0x2c))();
-  if (DAT_005e5128 == 0) {
+  g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x2c))();
+  if (g_DirectDrawFuncSuccessful == 0) {
     _DAT_004c570c = local_f0 & 0x20000;
     _DAT_004c5708 = local_f0 & 0x1000;
     DAT_005e72f0 = ~local_16c >> 1 & 1;
@@ -11010,8 +11010,8 @@ undefined4 FUN_004119c0(void)
   DAT_004d784c = 0;
   DAT_005e7308 = 0;
   iVar4 = -1;
-  DAT_005e5128 = (**(code **)(*DAT_005e58e4 + 0x20))(DAT_005e58e4,0,0,0,FUN_00411dd0);
-  if (DAT_005e5128 == 0) {
+  g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x20))(DAT_005e58e4,0,0,0,FUN_00411dd0);
+  if (g_DirectDrawFuncSuccessful == 0) {
     FUN_004ae1a0(&DAT_005e7334,DAT_005e7308,0x10,FUN_004118e0);
     DAT_005e730c = -1;
     _memset(&DAT_005e7314,-1,0x20);
@@ -11129,8 +11129,8 @@ undefined4 FUN_004119c0(void)
     }
     return 1;
   }
-  uVar2 = GetErrorStringFunc(DAT_005e5128);
-  FUN_00413d80(s_EnumDisplayModes_failed___s_004c5760,uVar2);
+  uVar2 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+  LogError(s_EnumDisplayModes_failed___s_004c5760,uVar2);
   DAT_005e7308 = 0;
   return 0;
 }
@@ -11195,8 +11195,8 @@ FUN_00411e70(undefined4 param_1,int param_2,int param_3,undefined4 param_4,int p
     local_70 = 0x6c;
     iVar1 = 0;
     local_6c = 1;
-    DAT_005e5128 = (**(code **)(*DAT_005e58e4 + 0x18))();
-    if (DAT_005e5128 == 0) {
+    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x18))();
+    if (g_DirectDrawFuncSuccessful == 0) {
       _memset(local_1dc,0,0x16c);
       local_1dc[0] = 0x16c;
       _memset(local_348,0,0x16c);
@@ -11207,7 +11207,7 @@ FUN_00411e70(undefined4 param_1,int param_2,int param_3,undefined4 param_4,int p
       local_6c = 7;
       local_68 = param_3;
       local_64 = param_2;
-      DAT_005e5128 = (**(code **)(*DAT_005e58e4 + 0x18))();
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x18))();
       uStackY_4c = 0x41218a;
       _memset(local_1dc,0,0x16c);
       local_1dc[0] = 0x16c;
@@ -11217,9 +11217,9 @@ FUN_00411e70(undefined4 param_1,int param_2,int param_3,undefined4 param_4,int p
       uStackY_4c = 0x4121c4;
       (**(code **)(*DAT_005e58e4 + 0x2c))();
       _DAT_004d7844 = local_19c;
-      if (DAT_005e5128 == 0) {
-        DAT_005e5128 = FUN_00411e40();
-        if (DAT_005e5128 == 0) {
+      if (g_DirectDrawFuncSuccessful == 0) {
+        g_DirectDrawFuncSuccessful = FUN_00411e40();
+        if (g_DirectDrawFuncSuccessful == 0) {
           DAT_005e72d4 = (uint)(iVar1 == 0x3e0);
           if (DAT_005e72d4 == 0) {
             DAT_005e72f4 = 0xf81f;
@@ -11230,12 +11230,12 @@ FUN_00411e70(undefined4 param_1,int param_2,int param_3,undefined4 param_4,int p
             DAT_005e72f8 = 0x3def;
           }
           _DAT_005e58f8 = (-(uint)(param_6 != 0) & 0x3800) + 0x2840 >> 0xe;
-          DAT_005e5128 = (**(code **)(*DAT_005e58e4 + 0x10))();
-          if (DAT_005e5128 == 0) {
-            DAT_005e5128 = (**(code **)(*DAT_004d7860 + 0x20))();
-            if (DAT_005e5128 == 0) {
-              DAT_005e5128 = (**(code **)(*DAT_005e58ec + 0x70))();
-              if (DAT_005e5128 == 0) {
+          g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x10))();
+          if (g_DirectDrawFuncSuccessful == 0) {
+            g_DirectDrawFuncSuccessful = (**(code **)(*DAT_004d7860 + 0x20))();
+            if (g_DirectDrawFuncSuccessful == 0) {
+              g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x70))();
+              if (g_DirectDrawFuncSuccessful == 0) {
                 FUN_00412840();
                 return 1;
               }
@@ -11254,16 +11254,18 @@ FUN_00411e70(undefined4 param_1,int param_2,int param_3,undefined4 param_4,int p
         }
       }
       else {
-        if ((DAT_005e5128 == -0x7ff8fff2) || (DAT_005e5128 == -0x7789fe84)) {
-          FUN_00413d80();
+        if ((g_DirectDrawFuncSuccessful == -0x7ff8fff2) ||
+           (g_DirectDrawFuncSuccessful == -0x7789fe84)) {
+          LogError();
           goto LAB_00412316;
         }
         GetErrorStringFunc();
       }
     }
     else {
-      if ((DAT_005e5128 == -0x7ff8fff2) || (DAT_005e5128 == -0x7789fe84)) {
-        FUN_00413d80();
+      if ((g_DirectDrawFuncSuccessful == -0x7ff8fff2) || (g_DirectDrawFuncSuccessful == -0x7789fe84)
+         ) {
+        LogError();
         goto LAB_00412316;
       }
       GetErrorStringFunc();
@@ -11279,8 +11281,8 @@ FUN_00411e70(undefined4 param_1,int param_2,int param_3,undefined4 param_4,int p
       uVar2 = 0x6218;
     }
     iVar1 = 0;
-    DAT_005e5128 = (**(code **)(*DAT_005e58e4 + 0x18))();
-    if (DAT_005e5128 == 0) {
+    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x18))();
+    if (g_DirectDrawFuncSuccessful == 0) {
       _memset(local_1dc,0,0x16c);
       local_1dc[0] = 0x16c;
       _memset(local_348,0,0x16c);
@@ -11288,25 +11290,26 @@ FUN_00411e70(undefined4 param_1,int param_2,int param_3,undefined4 param_4,int p
       (**(code **)(*DAT_005e58e4 + 0x2c))();
       _DAT_004d7840 = local_19c;
       _DAT_004d783c = local_1a0;
-      DAT_005e5128 = (**(code **)(*DAT_005e58ec + 0x30))();
-      if (DAT_005e5128 == 0) goto LAB_00411fb2;
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x30))();
+      if (g_DirectDrawFuncSuccessful == 0) goto LAB_00411fb2;
       GetErrorStringFunc();
     }
-    else if ((DAT_005e5128 == -0x7ff8fff2) || (DAT_005e5128 == -0x7789fe84)) {
+    else if ((g_DirectDrawFuncSuccessful == -0x7ff8fff2) ||
+            (g_DirectDrawFuncSuccessful == -0x7789fe84)) {
       local_6c = 1;
-      DAT_005e5128 = (**(code **)(*DAT_005e58e4 + 0x18))();
-      if (DAT_005e5128 != 0) goto LAB_00412316;
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x18))();
+      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00412316;
       local_6c = 7;
       uVar2 = 0;
       local_68 = param_3;
       local_64 = param_2;
-      DAT_005e5128 = (**(code **)(*DAT_005e58e4 + 0x18))();
-      if (DAT_005e5128 != 0) goto LAB_00412316;
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x18))();
+      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00412316;
       DAT_004d7850 = 1;
-      DAT_005e5128 = 0;
+      g_DirectDrawFuncSuccessful = 0;
 LAB_00411fb2:
-      DAT_005e5128 = FUN_00411e40();
-      if (DAT_005e5128 == 0) {
+      g_DirectDrawFuncSuccessful = FUN_00411e40();
+      if (g_DirectDrawFuncSuccessful == 0) {
         DAT_005e72d4 = (uint)(iVar1 == 0x3e0);
         if (DAT_005e72d4 != 0) {
           DAT_005e72f4 = 0x7c1f;
@@ -11327,7 +11330,7 @@ LAB_00411fb2:
       GetErrorStringFunc();
     }
   }
-  FUN_00413d80();
+  LogError();
 LAB_00412316:
   (**(code **)(*DAT_005e58ec + 8))();
   (**(code **)(*DAT_005e58f0 + 8))();
@@ -11372,7 +11375,7 @@ undefined4 FUN_00412400(undefined4 param_1,undefined4 param_2,int param_3)
     if ((uVar2 & 0x800) == 0) {
       if ((uVar2 & 0x100) == 0) {
         if ((uVar2 & 0x200) == 0) {
-          FUN_00413d80();
+          LogError();
           return 0;
         }
         local_58 = 0x18;
@@ -11388,12 +11391,12 @@ undefined4 FUN_00412400(undefined4 param_1,undefined4 param_2,int param_3)
   else {
     local_58 = 0x10;
   }
-  DAT_005e5128 = (**(code **)(*DAT_005e58e4 + 0x18))();
-  if (DAT_005e5128 == 0) {
-    DAT_005e5128 = (**(code **)(*DAT_005e58f0 + 0xc))();
-    if (DAT_005e5128 == 0) {
-      DAT_005e5128 = FUN_00411e40();
-      if (DAT_005e5128 == 0) {
+  g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x18))();
+  if (g_DirectDrawFuncSuccessful == 0) {
+    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f0 + 0xc))();
+    if (g_DirectDrawFuncSuccessful == 0) {
+      g_DirectDrawFuncSuccessful = FUN_00411e40();
+      if (g_DirectDrawFuncSuccessful == 0) {
         _DAT_005e58fc = (-(uint)(iVar1 != 0) & 0x3800) + 0x20800 >> 0xe & 1;
         if (((&DAT_005e5290)[param_3 * 0x50] == 0) || (_DAT_005e58fc != 0)) {
           uStackY_28 = 0x4125d9;
@@ -11410,25 +11413,26 @@ undefined4 FUN_00412400(undefined4 param_1,undefined4 param_2,int param_3)
       }
       else {
         GetErrorStringFunc();
-        FUN_00413d80();
+        LogError();
       }
     }
     else {
       GetErrorStringFunc();
-      FUN_00413d80();
+      LogError();
     }
   }
-  else if ((DAT_005e5128 == -0x7ff8fff2) || (DAT_005e5128 == -0x7789fe84)) {
+  else if ((g_DirectDrawFuncSuccessful == -0x7ff8fff2) ||
+          (g_DirectDrawFuncSuccessful == -0x7789fe84)) {
     if (DAT_005e7664 == 0) {
-      FUN_00413d80();
+      LogError();
     }
     else {
-      FUN_00413d80();
+      LogError();
     }
   }
   else {
     GetErrorStringFunc();
-    FUN_00413d80();
+    LogError();
   }
   if (DAT_004d785c == 0) {
     return 0;
@@ -11440,29 +11444,59 @@ undefined4 FUN_00412400(undefined4 param_1,undefined4 param_2,int param_3)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
+//     // Function: SetCooperativeLevel (FUN_00412640)
+//     // Description:
+//     //    This function sets the cooperative level of the application, determining how it
+// interacts
+//     //    with other applications, particularly in full-screen or normal mode. It uses a system
+//     //    resource (likely a DirectX or windowing system) to set the cooperative level. The
+// function
+//     //    handles two modes:
+//     //      - Normal mode (param_2 == 0): Sets the cooperative level to normal.
+//     //      - Fullscreen mode (param_2 != 0): Sets the cooperative level to fullscreen.
+//     //    The function also logs errors if setting the level fails.
+//     //
+//     // Arguments:
+//     //    param_1 - Likely a handle or resource to set the cooperative level on.
+//     //    param_2 - Controls the mode. If zero, sets to normal mode; otherwise, sets to
+// fullscreen.
+//     //
+//     // Returns:
+//     //    undefined4 - Returns 1 on success, 0 on failure.
+//     //
+//     // Globals:
+//     //    _DAT_005e76a4 - Flag indicating if the operation is active.
+//     //    DAT_005e5128 - Stores the result of setting the cooperative level.
+//     //    DAT_005e58e4 - Likely a handle or pointer to the system/resource managing the
+// cooperative level.
+//     //    DAT_005e7664 - Flag indicating whether fullscreen mode is active.
+//     //
+//     // Key Functions Called:
+//     //    GetErrorStringFunc - Retrieves a string description of an error code.
+//     //    FUN_00413d80 - Logs errors related to setting the cooperative level.
 
-undefined4 FUN_00412640(undefined4 param_1,int param_2)
+undefined4 SetCooperativeLevel(undefined4 param_1,int param_2)
 
 {
   undefined4 uVar1;
   
   _DAT_005e76a4 = 1;
   if (param_2 == 0) {
-    DAT_005e5128 = (**(code **)(*DAT_005e58e4 + 0x50))(DAT_005e58e4,param_1,8);
+    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x50))(DAT_005e58e4,param_1,8);
     _DAT_005e76a4 = 0;
-    if (DAT_005e5128 != 0) {
-      uVar1 = GetErrorStringFunc(DAT_005e5128);
-      FUN_00413d80(s_SetCooperativeLevel_to_normal_fa_004c5f18,uVar1);
+    if (g_DirectDrawFuncSuccessful != 0) {
+      uVar1 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+      LogError(s_SetCooperativeLevel_to_normal_fa_004c5f18,uVar1);
       return 0;
     }
     DAT_005e7664 = 0;
     return 1;
   }
-  DAT_005e5128 = (**(code **)(*DAT_005e58e4 + 0x50))(DAT_005e58e4,param_1,0x11);
+  g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x50))(DAT_005e58e4,param_1,0x11);
   _DAT_005e76a4 = 0;
-  if (DAT_005e5128 != 0) {
-    uVar1 = GetErrorStringFunc(DAT_005e5128);
-    FUN_00413d80(s_SetCooperativeLevel_to_fullscree_004c5ee8,uVar1);
+  if (g_DirectDrawFuncSuccessful != 0) {
+    uVar1 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+    LogError(s_SetCooperativeLevel_to_fullscree_004c5ee8,uVar1);
     return 0;
   }
   DAT_005e7664 = 1;
@@ -11482,11 +11516,12 @@ undefined4 FUN_004126f0(undefined4 param_1,undefined4 param_2,undefined4 param_3
   DAT_005e7658 = param_2;
   _DAT_005e765c = param_3;
   _DAT_005e76a4 = 1;
-  DAT_005e5128 = (**(code **)(*DAT_005e58e4 + 0x54))(DAT_005e58e4,param_1,param_2,param_3);
+  g_DirectDrawFuncSuccessful =
+       (**(code **)(*DAT_005e58e4 + 0x54))(DAT_005e58e4,param_1,param_2,param_3);
   _DAT_005e76a4 = 0;
-  if (DAT_005e5128 != 0) {
-    uVar1 = GetErrorStringFunc(DAT_005e5128);
-    FUN_00413d80(s_SetDisplayMode_to__dx_dx_d_faile_004c5f68,param_1,param_2,param_3,uVar1);
+  if (g_DirectDrawFuncSuccessful != 0) {
+    uVar1 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+    LogError(s_SetDisplayMode_to__dx_dx_d_faile_004c5f68,param_1,param_2,param_3,uVar1);
     return 0;
   }
   return 1;
@@ -11500,10 +11535,10 @@ bool FUN_00412770(void)
 
 {
   _DAT_005e76a4 = 1;
-  DAT_005e5128 = (**(code **)(*DAT_005e58e4 + 0x54))
-                           (DAT_005e58e4,DAT_005e7668,DAT_005e766c,DAT_005e7670);
+  g_DirectDrawFuncSuccessful =
+       (**(code **)(*DAT_005e58e4 + 0x54))(DAT_005e58e4,DAT_005e7668,DAT_005e766c,DAT_005e7670);
   _DAT_005e76a4 = 0;
-  return DAT_005e5128 == 0;
+  return g_DirectDrawFuncSuccessful == 0;
 }
 
 
@@ -11522,13 +11557,13 @@ undefined4 FUN_004127c0(void)
   pcStackY_14 = (char *)0x4127da;
   _memset(local_70,0,0x6c);
   local_70[0] = 0x6c;
-  DAT_005e5128 = (**(code **)(*DAT_005e58e4 + 0x30))();
-  if (DAT_005e5128 != 0) {
+  g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x30))();
+  if (g_DirectDrawFuncSuccessful != 0) {
     pcStackY_14 = (char *)0x412802;
     GetErrorStringFunc();
     pcStackY_14 = s_Getting_the_current_display_mode_004c5fb8;
     uStackY_18 = 0x412810;
-    FUN_00413d80();
+    LogError();
     return 0;
   }
   DAT_005e7668 = local_64;
@@ -11552,10 +11587,10 @@ undefined4 FUN_00412840(void)
   
   AdjustStackForLargeAllocations();
   if (DAT_005e58ec != (int *)0x0) {
-    DAT_005e5128 = FUN_00411e40();
-    if (DAT_005e5128 != 0) {
+    g_DirectDrawFuncSuccessful = FUN_00411e40();
+    if (g_DirectDrawFuncSuccessful != 0) {
       GetErrorStringFunc();
-      FUN_00413d80();
+      LogError();
       return 0;
     }
     _memset(local_78,0,100);
@@ -11564,18 +11599,18 @@ undefined4 FUN_00412840(void)
     SetRect((LPRECT)&stack0xffffffec,0,0,local_d8,local_dc);
     piStackY_20 = DAT_005e58ec;
     iStackY_24 = 0x4128e1;
-    DAT_005e5128 = (**(code **)(*DAT_005e58ec + 0x14))();
-    if (DAT_005e5128 != 0) {
+    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x14))();
+    if (g_DirectDrawFuncSuccessful != 0) {
       GetErrorStringFunc();
-      FUN_00413d80();
+      LogError();
       return 0;
     }
   }
   if (DAT_005e58f0 != (int *)0x0) {
-    DAT_005e5128 = FUN_00411e40();
-    if (DAT_005e5128 != 0) {
+    g_DirectDrawFuncSuccessful = FUN_00411e40();
+    if (g_DirectDrawFuncSuccessful != 0) {
       GetErrorStringFunc();
-      FUN_00413d80();
+      LogError();
       return 0;
     }
     _memset(local_78,0,100);
@@ -11584,14 +11619,14 @@ undefined4 FUN_00412840(void)
     SetRect((LPRECT)&stack0xffffffec,0,0,local_d8,local_dc);
     piStackY_20 = DAT_005e58f0;
     iStackY_24 = 0x412997;
-    DAT_005e5128 = (**(code **)(*DAT_005e58f0 + 0x14))();
-    if (DAT_005e5128 != 0) {
+    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f0 + 0x14))();
+    if (g_DirectDrawFuncSuccessful != 0) {
       pcStackY_28 = (char *)0x4129a6;
-      iStackY_24 = DAT_005e5128;
+      iStackY_24 = g_DirectDrawFuncSuccessful;
       iStackY_24 = GetErrorStringFunc();
       pcStackY_28 = s_Clearing_the_front_buffer_failed_004c60b4;
       uStackY_2c = 0x4129b4;
-      FUN_00413d80();
+      LogError();
       return 0;
     }
   }
@@ -11630,16 +11665,16 @@ undefined4 FUN_00412a70(void)
 {
   undefined4 uVar1;
   
-  DAT_005e5128 = (**(code **)*DAT_005e58e4)(DAT_005e58e4,&DAT_004c0ec0,&DAT_005e5144);
-  if (DAT_005e5128 != 0) {
-    uVar1 = GetErrorStringFunc(DAT_005e5128);
-    FUN_00413d80(s_Creation_of_IDirect3D_failed___s_004c60dc,uVar1);
+  g_DirectDrawFuncSuccessful = (**(code **)*DAT_005e58e4)(DAT_005e58e4,&DAT_004c0ec0,&DAT_005e5144);
+  if (g_DirectDrawFuncSuccessful != 0) {
+    uVar1 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+    LogError(s_Creation_of_IDirect3D_failed___s_004c60dc,uVar1);
     return 0;
   }
-  DAT_005e5128 = (**(code **)*DAT_005e58e4)(DAT_005e58e4,&DAT_004c0ed0,&DAT_005e5150);
-  if (DAT_005e5128 != 0) {
-    uVar1 = GetErrorStringFunc(DAT_005e5128);
-    FUN_00413d80(s_Creation_of_IDirect3D2_failed____004c6100,uVar1);
+  g_DirectDrawFuncSuccessful = (**(code **)*DAT_005e58e4)(DAT_005e58e4,&DAT_004c0ed0,&DAT_005e5150);
+  if (g_DirectDrawFuncSuccessful != 0) {
+    uVar1 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+    LogError(s_Creation_of_IDirect3D2_failed____004c6100,uVar1);
     return 0;
   }
   return 1;
@@ -11698,10 +11733,10 @@ undefined4 FUN_00412ca0(void)
   undefined4 uVar1;
   
   DAT_005e515c = 0;
-  DAT_005e5128 = (**(code **)(*DAT_005e5144 + 0x10))(DAT_005e5144,FUN_00412af0,0);
-  if (DAT_005e5128 != 0) {
-    uVar1 = GetErrorStringFunc(DAT_005e5128);
-    FUN_00413d80(s_Enumeration_of_drivers_failed____004c6124,uVar1);
+  g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e5144 + 0x10))(DAT_005e5144,FUN_00412af0,0);
+  if (g_DirectDrawFuncSuccessful != 0) {
+    uVar1 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+    LogError(s_Enumeration_of_drivers_failed____004c6124,uVar1);
     return 0;
   }
   DAT_005e5160 = 0;
@@ -11725,7 +11760,7 @@ undefined4 FUN_00412cf0(int param_1)
   bVar2 = false;
   bVar1 = false;
   if (((&DAT_005e5290)[param_1 * 0x50] != 0) && (_DAT_005e58f8 == 0)) {
-    FUN_00413d80(s_Could_not_fit_the_rendering_surf_004c6148);
+    LogError(s_Could_not_fit_the_rendering_surf_004c6148);
     goto LAB_00412e67;
   }
   DAT_005e5160 = param_1;
@@ -11734,28 +11769,30 @@ undefined4 FUN_00412cf0(int param_1)
   ;
   if (iVar3 != 0) {
     if (DAT_005df2e4 == 0) {
-      DAT_005e5128 = (**(code **)(*DAT_005e5150 + 0x20))
-                               (DAT_005e5150,&DAT_004c0ee0,DAT_005e58f0,&DAT_005e5154);
-      if ((DAT_005e5128 != 0) &&
-         (DAT_005e5128 = (**(code **)(*DAT_005e5150 + 0x20))
-                                   (DAT_005e5150,&DAT_004c0ef0,DAT_005e58f0,&DAT_005e5154),
-         DAT_005e5128 != 0)) {
-        uVar4 = GetErrorStringFunc(DAT_005e5128);
-        FUN_00413d80(s_Create_D3D2_device_failed___s_004c61c8,uVar4);
+      g_DirectDrawFuncSuccessful =
+           (**(code **)(*DAT_005e5150 + 0x20))
+                     (DAT_005e5150,&DAT_004c0ee0,DAT_005e58f0,&DAT_005e5154);
+      if ((g_DirectDrawFuncSuccessful != 0) &&
+         (g_DirectDrawFuncSuccessful =
+               (**(code **)(*DAT_005e5150 + 0x20))
+                         (DAT_005e5150,&DAT_004c0ef0,DAT_005e58f0,&DAT_005e5154),
+         g_DirectDrawFuncSuccessful != 0)) {
+        uVar4 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+        LogError(s_Create_D3D2_device_failed___s_004c61c8,uVar4);
         goto LAB_00412e67;
       }
     }
     else {
-      DAT_005e5128 = (**(code **)(*DAT_005e5150 + 0x20))(DAT_005e5150,&DAT_004c0ef0);
-      if (DAT_005e5128 != 0) {
-        uVar4 = GetErrorStringFunc(DAT_005e5128);
-        FUN_00413d80(s_Create_D3D2_device_failed___s_004c6198,uVar4);
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e5150 + 0x20))(DAT_005e5150,&DAT_004c0ef0);
+      if (g_DirectDrawFuncSuccessful != 0) {
+        uVar4 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+        LogError(s_Create_D3D2_device_failed___s_004c6198,uVar4);
         goto LAB_00412e67;
       }
     }
   }
-  DAT_005e5128 = (**(code **)*DAT_005e5154)(DAT_005e5154,&DAT_004c0f20,&DAT_005e5148);
-  if (DAT_005e5128 == 0) {
+  g_DirectDrawFuncSuccessful = (**(code **)*DAT_005e5154)(DAT_005e5154,&DAT_004c0f20,&DAT_005e5148);
+  if (g_DirectDrawFuncSuccessful == 0) {
     DAT_005e5160 = param_1;
     DAT_005e5900 = 0;
     if ((*(int *)(&DAT_005e5294 + param_1 * 0x140) == 0) || (iVar3 = FUN_004133b0(), iVar3 != 0)) {
@@ -11799,8 +11836,8 @@ undefined4 FUN_00412cf0(int param_1)
     }
   }
   else {
-    uVar4 = GetErrorStringFunc(DAT_005e5128);
-    FUN_00413d80(s_Create_D3D_device_failed___s_004c6218,uVar4);
+    uVar4 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+    LogError(s_Create_D3D_device_failed___s_004c6218,uVar4);
   }
 LAB_00412e67:
   (**(code **)(*DAT_005e5148 + 8))(DAT_005e5148);
@@ -11843,10 +11880,10 @@ LAB_00413008:
   local_20 = (int *)0x413019;
   _memset(&local_20,0,0x14);
   local_20 = DAT_005e5148;
-  DAT_005e5128 = (**(code **)(*DAT_005e5148 + 0x18))();
-  if (DAT_005e5128 == 0) {
-    DAT_005e5128 = (**(code **)(iRam00000000 + 0x10))();
-    if (DAT_005e5128 == 0) {
+  g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e5148 + 0x18))();
+  if (g_DirectDrawFuncSuccessful == 0) {
+    g_DirectDrawFuncSuccessful = (**(code **)(iRam00000000 + 0x10))();
+    if (g_DirectDrawFuncSuccessful == 0) {
       piStackY_30 = (int *)0x413097;
       _memset(unaff_EDI,0,0x12e);
       *unaff_EDI = 0xe;
@@ -11955,8 +11992,8 @@ LAB_00413008:
       unaff_EDI[0xe4] = 0xb;
       unaff_EDI[0xe5] = 0;
       *(undefined2 *)(unaff_EDI + 0xe6) = 0;
-      DAT_005e5128 = (**(code **)(iRam00000000 + 0x14))();
-      if (DAT_005e5128 == 0) {
+      g_DirectDrawFuncSuccessful = (**(code **)(iRam00000000 + 0x14))();
+      if (g_DirectDrawFuncSuccessful == 0) {
         piStackY_30 = (int *)0x4132b2;
         _memset(local_50,0,0x30);
         local_50[0] = 0x30;
@@ -11964,14 +12001,14 @@ LAB_00413008:
         local_40 = 0xe8;
         (**(code **)(iRam00000000 + 0x18))();
         piStackY_30 = (int *)0x4132df;
-        DAT_005e5128 = (**(code **)(*DAT_005e5148 + 0x4c))();
-        if (DAT_005e5128 == 0) {
+        g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e5148 + 0x4c))();
+        if (g_DirectDrawFuncSuccessful == 0) {
           piStackY_30 = DAT_005e5148;
           uStackY_34 = 0x413311;
-          DAT_005e5128 = (**(code **)(*DAT_005e5148 + 0x20))();
-          if (DAT_005e5128 == 0) {
-            DAT_005e5128 = (**(code **)(*DAT_005e5148 + 0x50))();
-            if (DAT_005e5128 == 0) {
+          g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e5148 + 0x20))();
+          if (g_DirectDrawFuncSuccessful == 0) {
+            g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e5148 + 0x50))();
+            if (g_DirectDrawFuncSuccessful == 0) {
               DAT_005d669c = 0x43480000;
               if (DAT_005df2e0 == 0) {
                 DAT_005d669c = 0x43c80000;
@@ -11999,7 +12036,7 @@ LAB_00413008:
   else {
     GetErrorStringFunc();
   }
-  FUN_00413d80();
+  LogError();
   return 0;
 }
 
@@ -12015,10 +12052,10 @@ undefined4 FUN_004133b0(void)
   AdjustStackForLargeAllocations();
   local_8 = &local_8;
   DAT_005e5900 = 0;
-  DAT_005e5128 = (**(code **)(*DAT_005e5148 + 0x38))(DAT_005e5148,FUN_00413420);
-  if (DAT_005e5128 != 0) {
-    uVar1 = GetErrorStringFunc(DAT_005e5128);
-    FUN_00413d80(s_Enumeration_of_texture_formats_f_004c6398,uVar1);
+  g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e5148 + 0x38))(DAT_005e5148,FUN_00413420);
+  if (g_DirectDrawFuncSuccessful != 0) {
+    uVar1 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+    LogError(s_Enumeration_of_texture_formats_f_004c6398,uVar1);
     return 0;
   }
   return 1;
@@ -12123,7 +12160,7 @@ void FUN_00413680(void)
   DAT_005e768c = 1;
   DAT_004d7860 = 0;
   _DAT_005e76a4 = 0;
-  DAT_005e5128 = 0;
+  g_DirectDrawFuncSuccessful = 0;
   _memset(&DAT_005e5020,0,0x100);
   DAT_005e5120 = 0;
   DAT_005e5124 = 0;
@@ -12309,7 +12346,7 @@ undefined4 FUN_00413960(int *param_1,int *param_2)
   iVar1 = *param_1;
   iVar7 = *param_2;
   if ((iVar7 == -0x18) && (DAT_005e58e8 == 0)) {
-    FUN_00413d80(s_Cannot_render_to_a_window_when_t_004c63c4);
+    LogError(s_Cannot_render_to_a_window_when_t_004c63c4);
     return 0;
   }
   if (iVar1 == -0x19) {
@@ -12457,7 +12494,26 @@ void FUN_00413d00(HWND param_1)
 
 
 
-void FUN_00413d80(LPCSTR param_1)
+//     // Function: LogError (FUN_00413d80)
+//     // Description:
+//     //    This function formats and logs error messages to a global log variable
+// (`DAT_005e5020`).
+//     //    It uses the `wvsprintfA` function to format the error message, appending a predefined
+//     //    error suffix (`DAT_004c65b0`) to the message.
+//     //
+//     // Arguments:
+//     //    param_1 - A format string containing the error message.
+//     //
+//     // Globals:
+//     //    DAT_004c65b0 - A predefined error suffix appended to all error messages.
+//     //    DAT_005e5020 - Global variable where the formatted error message is stored.
+//     //
+//     // Key Functions Called:
+//     //    wvsprintfA - Formats the error message.
+//     //    lstrcatA - Appends the error suffix to the formatted message.
+//     //    lstrcpyA - Copies the final message to the global variable `DAT_005e5020`.
+
+void LogError(LPCSTR param_1)
 
 {
   CHAR local_104 [240];
@@ -12697,7 +12753,7 @@ FUN_00414160(undefined4 param_1,int *****param_2,undefined4 param_3,undefined4 p
   local_14 = (int *****)DAT_00598d50;
   local_18 = param_2;
   local_1c = (int *****)0x4141a2;
-  iVar3 = FUN_00412640();
+  iVar3 = SetCooperativeLevel();
   if (iVar3 == 0) goto LAB_00414595;
   local_14 = (int *****)0x4141b2;
   iVar3 = FUN_004127c0();
@@ -12706,10 +12762,11 @@ FUN_00414160(undefined4 param_1,int *****param_2,undefined4 param_3,undefined4 p
   local_18 = (int *****)&DAT_004c0ff0;
   local_1c = DAT_005e58e4;
   local_20 = (int *****)0x4141cd;
-  DAT_005e5128 = (*(code *)**DAT_005e58e4)();
+  g_DirectDrawFuncSuccessful = (*(code *)**DAT_005e58e4)();
   local_20 = (int *****)&local_1c;
-  DAT_005e5128 = (*(code *)(*local_14)[0x17])(local_14,&stack0xfffffff0,&local_20);
-  DAT_005e5128 = (*(code *)(*local_14)[0x17])(local_14,&stack0xfffffff0,&local_18,&local_1c);
+  g_DirectDrawFuncSuccessful = (*(code *)(*local_14)[0x17])(local_14,&stack0xfffffff0,&local_20);
+  g_DirectDrawFuncSuccessful =
+       (*(code *)(*local_14)[0x17])(local_14,&stack0xfffffff0,&local_18,&local_1c);
   (*(code *)(*local_14)[2])(local_14);
   if (DAT_00598d50 == (int ****)0x0) {
     pppppiVar5 = local_1c;
@@ -12919,7 +12976,7 @@ LAB_00414595:
     local_14 = (int *****)0x0;
     local_18 = param_2;
     local_1c = (int *****)0x414641;
-    FUN_00412640();
+    SetCooperativeLevel();
   }
   if (DAT_005e5144 != (int ****)0x0) {
     local_14 = (int *****)DAT_005e5144;
@@ -13024,7 +13081,7 @@ undefined4 FUN_00414850(void)
   
   AdjustStackForLargeAllocations();
   if (DAT_005e769c == 0) {
-    FUN_00413d80();
+    LogError();
     return 0;
   }
   if (DAT_005e7688 == 0) {
@@ -13036,28 +13093,28 @@ undefined4 FUN_00414850(void)
               DAT_005e767c + DAT_005e7684);
       local_28 = DAT_005e58ec;
       piStackY_2c = (int *)0x414b1a;
-      DAT_005e5128 = (**(code **)(*DAT_005e58ec + 0x14))();
-      if (DAT_005e5128 == -0x7789fe3e) goto LAB_00414b26;
-      if (DAT_005e5128 != 0) {
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x14))();
+      if (g_DirectDrawFuncSuccessful == -0x7789fe3e) goto LAB_00414b26;
+      if (g_DirectDrawFuncSuccessful != 0) {
         pcStackY_30 = (char *)0x414b57;
-        piStackY_2c = (int *)DAT_005e5128;
+        piStackY_2c = (int *)g_DirectDrawFuncSuccessful;
         piStackY_2c = (int *)GetErrorStringFunc();
         pcStackY_30 = s_Blt_of_back_buffer_to_front_buff_004c6874;
         uStackY_34 = 0x414b65;
-        FUN_00413d80();
+        LogError();
         return 0;
       }
     }
     else if ((DAT_004d784c == 0) && (DAT_004d7850 == 0)) {
-      DAT_005e5128 = (**(code **)(*DAT_005e58ec + 0x2c))();
-      if (DAT_005e5128 == -0x7789fe3e) {
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x2c))();
+      if (g_DirectDrawFuncSuccessful == -0x7789fe3e) {
         FUN_00414e20();
         return 1;
       }
-      if (DAT_005e5128 != 0) {
+      if (g_DirectDrawFuncSuccessful != 0) {
         GetErrorStringFunc();
         local_28 = (int *)0x4148f5;
-        FUN_00413d80();
+        LogError();
         return 1;
       }
     }
@@ -13068,15 +13125,15 @@ undefined4 FUN_00414850(void)
         local_3c = 0;
         local_28 = DAT_005e58ec;
         piStackY_2c = (int *)0x414945;
-        DAT_005e5128 = (**(code **)(*DAT_005e58ec + 0x14))();
-        if (DAT_005e5128 == -0x7789fe3e) {
+        g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x14))();
+        if (g_DirectDrawFuncSuccessful == -0x7789fe3e) {
           (**(code **)(*DAT_005e58ec + 0x6c))();
           (**(code **)(*DAT_005e58f0 + 0x6c))();
           FUN_00412840();
         }
-        else if (DAT_005e5128 != 0) {
+        else if (g_DirectDrawFuncSuccessful != 0) {
           GetErrorStringFunc();
-          FUN_00413d80();
+          LogError();
           return 0;
         }
         _DAT_004d7858 = 0;
@@ -13093,8 +13150,8 @@ undefined4 FUN_00414850(void)
         SetRect((LPRECT)&local_28,xLeft,yTop,iVar1,yBottom);
         local_28 = DAT_005e58ec;
         piStackY_2c = (int *)0x4149fa;
-        DAT_005e5128 = (**(code **)(*DAT_005e58ec + 0x14))();
-        if (DAT_005e5128 == -0x7789fe3e) {
+        g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x14))();
+        if (g_DirectDrawFuncSuccessful == -0x7789fe3e) {
 LAB_00414b26:
           piStackY_2c = DAT_005e58ec;
           pcStackY_30 = (char *)0x414b31;
@@ -13106,13 +13163,13 @@ LAB_00414b26:
           FUN_00412840();
           return 1;
         }
-        if (DAT_005e5128 != 0) {
+        if (g_DirectDrawFuncSuccessful != 0) {
           pcStackY_30 = (char *)0x414a18;
-          piStackY_2c = (int *)DAT_005e5128;
+          piStackY_2c = (int *)g_DirectDrawFuncSuccessful;
           piStackY_2c = (int *)GetErrorStringFunc();
           pcStackY_30 = s_Blt_of_back_buffer_to_front_buff_004c67e8;
           uStackY_34 = 0x414a26;
-          FUN_00413d80();
+          LogError();
           return 0;
         }
       }
@@ -13123,15 +13180,15 @@ LAB_00414b26:
         SetRect((LPRECT)&local_28,0,0,DAT_005e7654,DAT_005e7658);
         local_28 = DAT_005e58ec;
         piStackY_2c = (int *)0x414a82;
-        DAT_005e5128 = (**(code **)(*DAT_005e58ec + 0x14))();
-        if (DAT_005e5128 == -0x7789fe3e) goto LAB_00414b26;
-        if (DAT_005e5128 != 0) {
+        g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x14))();
+        if (g_DirectDrawFuncSuccessful == -0x7789fe3e) goto LAB_00414b26;
+        if (g_DirectDrawFuncSuccessful != 0) {
           pcStackY_30 = (char *)0x414aa0;
-          piStackY_2c = (int *)DAT_005e5128;
+          piStackY_2c = (int *)g_DirectDrawFuncSuccessful;
           piStackY_2c = (int *)GetErrorStringFunc();
           pcStackY_30 = s_Blt_of_back_buffer_to_front_buff_004c6818;
           uStackY_34 = 0x414aae;
-          FUN_00413d80();
+          LogError();
           return 0;
         }
       }
@@ -13153,7 +13210,7 @@ undefined4 FUN_00414bb0(void)
   
   AdjustStackForLargeAllocations();
   if (DAT_005e769c == 0) {
-    FUN_00413d80();
+    LogError();
     return 0;
   }
   iVar1 = FUN_004858c0();
@@ -13163,11 +13220,11 @@ undefined4 FUN_00414bb0(void)
     pcVar2 = WaitForSingleObject_exref;
     local_7c[0] = 100;
     WaitForSingleObject(DAT_005e4484,0xffffffff);
-    DAT_005e5128 = (**(code **)(*DAT_005e58f0 + 0x14))();
+    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f0 + 0x14))();
   }
   else {
     WaitForSingleObject((HANDLE)0x0,DAT_005e7678);
-    DAT_005e5128 = (**(code **)(*DAT_005e514c + 0x30))();
+    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e514c + 0x30))();
   }
   ReleaseMutex(DAT_005e4484);
   if (((DAT_00598d54 == 0) && (DAT_004d785c != 0)) && ((DAT_005e58d0 == 0 || (iVar1 == 4)))) {
@@ -13177,15 +13234,15 @@ undefined4 FUN_00414bb0(void)
       __ftol();
     }
     (*pcVar2)();
-    DAT_005e5128 = (**(code **)(*DAT_005e58f4 + 0x14))();
+    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f4 + 0x14))();
     pcStackY_44 = (char *)0x414d49;
     ReleaseMutex(DAT_005e4484);
-    if (DAT_005e5128 != 0) {
+    if (g_DirectDrawFuncSuccessful != 0) {
       pcStackY_44 = (char *)0x414d58;
       GetErrorStringFunc();
       pcStackY_44 = s_Viewport_clear_failed___s_004c68e8;
       uStackY_48 = 0x414d66;
-      FUN_00413d80();
+      LogError();
       return 0;
     }
   }
@@ -13208,7 +13265,7 @@ undefined4 FUN_00414d80(void)
   if (DAT_005e769c == 0) {
     local_8 = s_Cannot_call_APP_MAN_ClearZBuffer_004c6904;
     local_c = (int **)0x414da0;
-    FUN_00413d80();
+    LogError();
     return 0;
   }
   if ((DAT_004d785c != 0) && (DAT_005e58d0 != 0)) {
@@ -13216,10 +13273,10 @@ undefined4 FUN_00414d80(void)
     local_8 = (char *)0x2;
     local_10 = 1;
     local_14 = DAT_005e514c;
-    DAT_005e5128 = (**(code **)(*DAT_005e514c + 0x30))();
-    if (DAT_005e5128 != 0) {
-      uVar1 = GetErrorStringFunc(DAT_005e5128);
-      FUN_00413d80(s_Viewport_clear_failed_in_APP_MAN_004c6948,uVar1);
+    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e514c + 0x30))();
+    if (g_DirectDrawFuncSuccessful != 0) {
+      uVar1 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+      LogError(s_Viewport_clear_failed_in_APP_MAN_004c6948,uVar1);
       return 0;
     }
   }
@@ -13259,20 +13316,20 @@ undefined4 FUN_00414e20(void)
     if ((DAT_005e58ec != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58ec + 0x60))(DAT_005e58ec), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      DAT_005e5128 = (**(code **)(*DAT_005e58ec + 0x6c))(DAT_005e58ec);
-      if (DAT_005e5128 != 0) goto LAB_00415169;
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x6c))(DAT_005e58ec);
+      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
     }
     if ((DAT_005e58f0 != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58f0 + 0x60))(DAT_005e58f0), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      DAT_005e5128 = (**(code **)(*DAT_005e58f0 + 0x6c))(DAT_005e58f0);
-      if (DAT_005e5128 != 0) goto LAB_00415169;
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f0 + 0x6c))(DAT_005e58f0);
+      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
     }
     if ((DAT_005e58f4 != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58f4 + 0x60))(DAT_005e58f4), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      DAT_005e5128 = (**(code **)(*DAT_005e58f4 + 0x6c))(DAT_005e58f4);
-      if (DAT_005e5128 != 0) goto LAB_00415169;
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f4 + 0x6c))(DAT_005e58f4);
+      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
     }
     if (!bVar1) goto switchD_00414e5f_caseD_0;
     (**(code **)(**(int **)(DAT_005e5010 + 8) + 0x50))(*(int **)(DAT_005e5010 + 8));
@@ -13288,20 +13345,20 @@ undefined4 FUN_00414e20(void)
     if ((DAT_005e58ec != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58ec + 0x60))(DAT_005e58ec), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      DAT_005e5128 = (**(code **)(*DAT_005e58ec + 0x6c))(DAT_005e58ec);
-      if (DAT_005e5128 != 0) goto LAB_00415169;
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x6c))(DAT_005e58ec);
+      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
     }
     if ((DAT_005e58f0 != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58f0 + 0x60))(DAT_005e58f0), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      DAT_005e5128 = (**(code **)(*DAT_005e58f0 + 0x6c))(DAT_005e58f0);
-      if (DAT_005e5128 != 0) goto LAB_00415169;
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f0 + 0x6c))(DAT_005e58f0);
+      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
     }
     if ((DAT_005e58f4 != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58f4 + 0x60))(DAT_005e58f4), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      DAT_005e5128 = (**(code **)(*DAT_005e58f4 + 0x6c))(DAT_005e58f4);
-      if (DAT_005e5128 != 0) goto LAB_00415169;
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f4 + 0x6c))(DAT_005e58f4);
+      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
     }
     if (!bVar1) goto switchD_00414e5f_caseD_0;
     (**(code **)(**(int **)(DAT_005e5010 + 8) + 0x50))(*(int **)(DAT_005e5010 + 8));
@@ -13313,24 +13370,24 @@ undefined4 FUN_00414e20(void)
     if ((DAT_005e58ec != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58ec + 0x60))(DAT_005e58ec), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      DAT_005e5128 = (**(code **)(*DAT_005e58ec + 0x6c))(DAT_005e58ec);
-      if (DAT_005e5128 != 0) goto LAB_00415169;
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x6c))(DAT_005e58ec);
+      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
     }
     if ((DAT_005e58f0 != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58f0 + 0x60))(DAT_005e58f0), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      DAT_005e5128 = (**(code **)(*DAT_005e58f0 + 0x6c))(DAT_005e58f0);
-      if (DAT_005e5128 != 0) goto LAB_00415169;
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f0 + 0x6c))(DAT_005e58f0);
+      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
     }
     if ((DAT_005e58f4 != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58f4 + 0x60))(DAT_005e58f4), iVar4 == -0x7789fe3e)) {
-      DAT_005e5128 = (**(code **)(*DAT_005e58f4 + 0x6c))(DAT_005e58f4);
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f4 + 0x6c))(DAT_005e58f4);
 joined_r0x00415167:
       bVar1 = true;
-      if (DAT_005e5128 != 0) {
+      if (g_DirectDrawFuncSuccessful != 0) {
 LAB_00415169:
-        uVar2 = GetErrorStringFunc(DAT_005e5128);
-        FUN_00413d80(s_Restoring_of_a_lost_surface_fail_004c69fc,uVar2);
+        uVar2 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+        LogError(s_Restoring_of_a_lost_surface_fail_004c69fc,uVar2);
         return 0;
       }
     }
@@ -13339,18 +13396,18 @@ LAB_00415169:
     if ((DAT_005e58ec != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58ec + 0x60))(DAT_005e58ec), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      DAT_005e5128 = (**(code **)(*DAT_005e58ec + 0x6c))(DAT_005e58ec);
-      if (DAT_005e5128 != 0) goto LAB_00415169;
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x6c))(DAT_005e58ec);
+      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
     }
     if ((DAT_005e58f0 != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58f0 + 0x60))(DAT_005e58f0), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      DAT_005e5128 = (**(code **)(*DAT_005e58f0 + 0x6c))(DAT_005e58f0);
-      if (DAT_005e5128 != 0) goto LAB_00415169;
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f0 + 0x6c))(DAT_005e58f0);
+      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
     }
     if ((DAT_005e58f4 != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58f4 + 0x60))(DAT_005e58f4), iVar4 == -0x7789fe3e)) {
-      DAT_005e5128 = (**(code **)(*DAT_005e58f4 + 0x6c))(DAT_005e58f4);
+      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f4 + 0x6c))(DAT_005e58f4);
       goto joined_r0x00415167;
     }
 joined_r0x00415188:
@@ -13396,7 +13453,7 @@ undefined4 FUN_00415270(void)
   (**(code **)(*(int *)DAT_005e5010[0x1eb] + 8))((int *)DAT_005e5010[0x1eb]);
   if (DAT_005e5010[0x949] != 0) {
     FUN_00412770();
-    FUN_00412640(*DAT_005e5010,0);
+    SetCooperativeLevel(*DAT_005e5010,0);
   }
   (**(code **)(*(int *)DAT_005e5010[1] + 8))((int *)DAT_005e5010[1]);
   (**(code **)(*(int *)DAT_005e5010[4] + 8))((int *)DAT_005e5010[4]);
@@ -26451,7 +26508,7 @@ undefined4 FUN_00429350(void)
     pcVar8 = &gRootFileDirectory;
   }
   else {
-    pcVar8 = &DAT_005d54e0;
+    pcVar8 = &s_rootDir;
   }
   FID_conflict___mbscpy(local_134,pcVar8);
   FID_conflict__strcat(local_134,s_hdzcred_dat_004c9e10);
@@ -29132,7 +29189,7 @@ void * FUN_0042cfc0(size_t *param_1)
   _Val = 0;
   iVar6 = 0;
   sVar5 = 0;
-  FID_conflict___mbscpy(local_374,&DAT_005d54e0);
+  FID_conflict___mbscpy(local_374,&s_rootDir);
   FID_conflict__strcat(local_374,&DAT_004ca0bc);
   hFindFile = FindFirstFileA(local_374,&local_274);
   do {
@@ -29160,7 +29217,7 @@ void * FUN_0042cfc0(size_t *param_1)
   iVar2 = 0;
   if (0 < iVar6) {
     do {
-      FID_conflict___mbscpy(local_134,&DAT_005d54e0);
+      FID_conflict___mbscpy(local_134,&s_rootDir);
       _strlen(local_134);
       if (iVar2 == 0) {
         pcVar1 = s_FluxData_dat_004ca0f8;
@@ -29652,7 +29709,7 @@ undefined4 FUN_0042dcd0(void)
       _Source = &gRootFileDirectory;
     }
     else {
-      _Source = &DAT_005d54e0;
+      _Source = &s_rootDir;
     }
     FID_conflict___mbscpy(local_104,_Source);
     FID_conflict__strcat(local_104,s_fedata_dat_004ca1d0);
@@ -33328,7 +33385,7 @@ undefined4 FUN_004335d0(void)
   AdjustStackForLargeAllocations();
   DAT_005df320 = 0;
   local_18 = 0x4335f8;
-  FID_conflict___mbscpy(local_118,&DAT_005d54e0);
+  FID_conflict___mbscpy(local_118,&s_rootDir);
   local_18 = 0x43360c;
   FID_conflict__strcat(local_118,s_HedzScore_dat_004cadb0);
   local_18 = 0x433620;
@@ -39656,7 +39713,7 @@ undefined4 FUN_0043d590(void)
   undefined4 uStackY_18;
   
   AdjustStackForLargeAllocations();
-  FID_conflict___mbscpy(local_108,&DAT_005d54e0);
+  FID_conflict___mbscpy(local_108,&s_rootDir);
   FID_conflict__strcat(local_108,s_LastLoadedHeds_txt_004cb130);
   iVar1 = OpenFileWithFixedFlags0x40();
   if (iVar1 != 0) {
@@ -41516,7 +41573,7 @@ undefined4 LoadLocalizationData(void)
     _Source = &gRootFileDirectory;
   }
   else {
-    _Source = &DAT_005d54e0;
+    _Source = &s_rootDir;
   }
   FID_conflict___mbscpy(local_154,_Source);
   FID_conflict__strcat(local_154,s_HdzLoc_dat_004cb2dc);
@@ -43435,12 +43492,12 @@ void LoadHDZFiles(void)
       uStackY_1c = 0x442549;
       AllocateAndInsertResource();
     }
-    FID_conflict___mbscpy(local_20c,&DAT_005d54e0);
+    FID_conflict___mbscpy(local_20c,&s_rootDir);
     FID_conflict__strcat(local_20c,s___hdz_004cb8c8);
     hFindFile = FindFirstFileA(local_20c,&local_34c);
     do {
       if (hFindFile != (HANDLE)0xffffffff) {
-        FID_conflict___mbscpy(local_10c,&DAT_005d54e0);
+        FID_conflict___mbscpy(local_10c,&s_rootDir);
         FID_conflict__strcat(local_10c,local_34c.cFileName);
         OpenFileWithFixedFlags0x40();
         uStackY_1c = 0x4425e1;
@@ -59494,7 +59551,7 @@ LAB_004590c6:
     _Source = &gRootFileDirectory;
   }
   else {
-    _Source = &DAT_005d54e0;
+    _Source = &s_rootDir;
   }
   FID_conflict___mbscpy(local_70,_Source);
   FID_conflict__strcat(local_70,s_fxdata_dat_004ce08c);
@@ -59643,7 +59700,7 @@ undefined4 FUN_004593d0(void)
     _Source = &gRootFileDirectory;
   }
   else {
-    _Source = &DAT_005d54e0;
+    _Source = &s_rootDir;
   }
   FID_conflict___mbscpy(local_78,_Source);
   FID_conflict__strcat(local_78,s_fxdata_dat_004ce09c);
@@ -67100,7 +67157,7 @@ undefined4 FUN_00463550(void)
   _DAT_00598974 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)0x0);
   DAT_005d86c4 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)0x0);
   DAT_0059896c = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)0x0);
-  FUN_004afd20(FUN_00463840,0,&DAT_005d86c0);
+  CreateThreadAndInitialize(FUN_00463840,0,&DAT_005d86c0);
   iVar2 = FUN_004637a0(0,&DAT_005d86a0);
   if (iVar2 == 1) {
     FUN_00463670();
@@ -70744,7 +70801,7 @@ LAB_00468704:
         UVar10 = 0x189;
         pHVar3 = GetDlgItem(pHVar3,0x421);
         SendMessageA(pHVar3,UVar10,WVar12,(LPARAM)pcVar5);
-        FID_conflict___mbscpy(local_428,&DAT_005d54e0);
+        FID_conflict___mbscpy(local_428,&s_rootDir);
         FID_conflict__strcat(local_428,local_15c);
         DAT_005d67cc = FUN_0046a720();
         FUN_00469770();
@@ -70833,7 +70890,7 @@ switchD_004684b9_caseD_4f:
         iVar2 = FindNextFileA(pvVar4,&local_29c);
       }
     } while (iVar2 != 0);
-    FID_conflict___mbscpy(local_15c,&DAT_005d54e0);
+    FID_conflict___mbscpy(local_15c,&s_rootDir);
     FID_conflict__strcat(local_15c,&DAT_004cfba0);
     pvVar4 = FindFirstFileA(local_15c,&local_29c);
     do {
@@ -71048,7 +71105,7 @@ LAB_00469255:
     UVar10 = 0x184;
     pHVar3 = GetDlgItem(param_1,0x421);
     SendMessageA(pHVar3,UVar10,WVar12,LVar14);
-    FID_conflict___mbscpy(local_15c,&DAT_005d54e0);
+    FID_conflict___mbscpy(local_15c,&s_rootDir);
     FID_conflict__strcat(local_15c,&DAT_004cfbb4);
     pvVar4 = FindFirstFileA(local_15c,&local_29c);
     do {
@@ -71679,7 +71736,7 @@ LAB_00469c45:
         _DAT_005d6784 = param_1;
         _DAT_005d678c = s___set_004cfbc0;
         _DAT_005d67a0 = 0x100;
-        _DAT_005d67ac = &DAT_005d54e0;
+        _DAT_005d67ac = &s_rootDir;
         _DAT_005d67b4 = 0x200000;
         _DAT_005d67b0 = s_Save_settings_as____004cfbd0;
         BVar6 = GetSaveFileNameA((LPOPENFILENAMEA)&DAT_005d6780);
@@ -71704,7 +71761,7 @@ LAB_00469c45:
         _DAT_005d6784 = param_1;
         _DAT_005d678c = s___set_004cfbfc;
         _DAT_005d67a0 = 0x100;
-        _DAT_005d67ac = &DAT_005d54e0;
+        _DAT_005d67ac = &s_rootDir;
         _DAT_005d67b4 = 0x200000;
         BVar6 = GetOpenFileNameA((LPOPENFILENAMEA)&DAT_005d6780);
         if (BVar6 != 0) {
@@ -72152,7 +72209,7 @@ undefined4 FUN_0046ac80(char *param_1,int param_2,int param_3,int param_4)
       } while (iVar11 < *(int *)(*(int *)(iVar6 + 4) + 8));
     }
     if (((DAT_00598944 == 0) && (param_4 == 0)) && (DAT_00598d7c == 0)) {
-      FID_conflict___mbscpy(local_24c,&DAT_005d54e0);
+      FID_conflict___mbscpy(local_24c,&s_rootDir);
       FID_conflict__strcat(local_24c,s_LastLoadedHeds_txt_004d00dc);
       iVar11 = OpenFileWithFixedFlags0x40();
       if (iVar11 != 0) {
@@ -72192,7 +72249,7 @@ undefined4 FUN_0046ac80(char *param_1,int param_2,int param_3,int param_4)
   }
   FUN_00413de0();
   if ((DAT_00598d50 != 0) && (param_2 == 0)) {
-    FUN_00471510();
+    SetGraphicsMode();
   }
   if (DAT_00598944 == 0) {
     FUN_00427b50();
@@ -74571,11 +74628,11 @@ undefined4 InitializeResourcesAndMainWindow(HINSTANCE param_1)
       _Source = &gRootFileDirectory;
     }
     else {
-      _Source = &DAT_005d54e0;
+      _Source = &s_rootDir;
     }
-    FID_conflict___mbscpy(&DAT_00598ba0,_Source);
-    FID_conflict__strcat(&DAT_00598ba0,s_hdzfont_004d04c0);
-    AddFontResourceA(&DAT_00598ba0);
+    FID_conflict___mbscpy(&s_hdzFontResourcePath,_Source);
+    FID_conflict__strcat(&s_hdzFontResourcePath,s_hdzfont_004d04c0);
+    AddFontResourceA(&s_hdzFontResourcePath);
     DAT_00598d58 = 1;
     DAT_00598d50 = 1;
     iVar3 = CreateMainWindowFunc();
@@ -74936,7 +74993,7 @@ undefined4 FUN_0046e450(void)
   SetCursor((HCURSOR)0x0);
   ShowCursor(0);
   FUN_00440030();
-  iVar1 = FUN_0046e850();
+  iVar1 = InitializeCaptureMode();
   if (iVar1 == 0) {
     return 0;
   }
@@ -74993,17 +75050,17 @@ undefined4 FUN_0046e450(void)
     if (DAT_00598db8 == (HANDLE)0x0) {
       TerminateWithCode(0);
     }
-    FUN_004afd20(FUN_0046ddf0,0,0);
+    CreateThreadAndInitialize(FUN_0046ddf0,0,0);
     DAT_00598dc4 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)0x0);
     if (DAT_00598dc4 == (HANDLE)0x0) {
       TerminateWithCode(0);
     }
-    FUN_004afd20(FUN_0046dd30,0,0);
+    CreateThreadAndInitialize(FUN_0046dd30,0,0);
     DAT_00598dd0 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)0x0);
     if (DAT_00598dd0 == (HANDLE)0x0) {
       TerminateWithCode(0);
     }
-    FUN_004afd20(FUN_0046dd90,0,0);
+    CreateThreadAndInitialize(FUN_0046dd90,0,0);
     FUN_0047f450();
     FUN_00415650();
     if (DAT_00598d7c != 0) {
@@ -75037,17 +75094,17 @@ undefined4 FUN_0046e450(void)
     if (DAT_00598db8 == (HANDLE)0x0) {
       TerminateWithCode(0);
     }
-    FUN_004afd20(FUN_0046ddf0,0,0);
+    CreateThreadAndInitialize(FUN_0046ddf0,0,0);
     DAT_00598dc4 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)0x0);
     if (DAT_00598dc4 == (HANDLE)0x0) {
       TerminateWithCode(0);
     }
-    FUN_004afd20(FUN_0046dd30,0,0);
+    CreateThreadAndInitialize(FUN_0046dd30,0,0);
     DAT_00598dd0 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)0x0);
     if (DAT_00598dd0 == (HANDLE)0x0) {
       TerminateWithCode(0);
     }
-    FUN_004afd20(FUN_0046dd90,0,0);
+    CreateThreadAndInitialize(FUN_0046dd90,0,0);
     FUN_0043e140();
     FUN_00415650();
     FUN_004636d0();
@@ -75061,7 +75118,34 @@ LAB_0046e80f:
 
 
 
-undefined4 FUN_0046e850(void)
+//     // Function: InitializeCaptureMode (FUN_0046e850)
+//     // Description:
+//     //    This function appears to set up a capture mode for the application, possibly related
+//     //    to mouse input or graphics rendering. It involves capturing input from the main window,
+//     //    hiding the cursor, and initializing various settings for the input or display modes.
+//     //    The function also manages state variables related to rendering performance.
+//     //
+//     // Returns:
+//     //    undefined4 - Returns 1 on success, 0 on failure.
+//     //
+//     // Globals:
+//     //    gMainWindowHandle - Handle to the main window, used for setting input capture.
+//     //    DAT_005d6648 - Stores a performance or timing-related value, initialized to a default
+// if not set.
+//     //    DAT_005d66a4 - Indicates whether a specific mode (possibly rendering or input) is
+// active.
+//     //    DAT_00598d54 - Controls a specific state, which may be tied to an input or rendering
+// mode.
+//     //    DAT_005d6644 - Tracks or resets a related state for the mode being set.
+//     //
+//     // Key Functions Called:
+//     //    SetCapture - Captures input from the main window.
+//     //    ShowCursor - Hides the cursor when called with a zero argument.
+//     //    FUN_00414160 - Likely initializes resources or systems needed for this mode.
+//     //    FUN_00470960 - Cleans up resources if initialization fails.
+//     //    _memset - Clears memory for initialization purposes.
+
+undefined4 InitializeCaptureMode(void)
 
 {
   int iVar1;
@@ -75600,7 +75684,7 @@ undefined4 FUN_0046f660(HWND param_1,int param_2,short param_3)
     }
     return 0;
   }
-  FID_conflict___mbscpy(local_344,&DAT_005d54e0);
+  FID_conflict___mbscpy(local_344,&s_rootDir);
   FID_conflict__strcat(local_344,&DAT_004d0c18);
   hFindFile = FindFirstFileA(local_344,(LPWIN32_FIND_DATAA)local_244);
   do {
@@ -75685,7 +75769,7 @@ undefined4 FUN_0046f820(void)
   local_3c = 1;
   local_34 = 0x100;
   local_2c = 0x100;
-  local_28 = &DAT_005d54e0;
+  local_28 = &s_rootDir;
   local_20 = 0x1810;
   local_24 = s_LOAD_GAME_004d0c5c;
   BVar2 = GetOpenFileNameA((LPOPENFILENAMEA)&local_54);
@@ -76236,7 +76320,7 @@ void FUN_00470820(int param_1)
     SafeCloseResource(DAT_004d7aa4);
     DAT_004d7aa4 = 0;
   }
-  RemoveFontResourceA(&DAT_00598ba0);
+  RemoveFontResourceA(&s_hdzFontResourcePath);
   if ((char)DAT_00598944 != '\0') {
     FUN_00463670();
   }
@@ -76610,7 +76694,7 @@ LAB_00470e21:
     }
     else {
       puVar6 = &gRootFileDirectory;
-      FID_conflict___mbscpy(&gRootFileDirectory,&DAT_005d54e0);
+      FID_conflict___mbscpy(&gRootFileDirectory,&s_rootDir);
     }
     if (puVar6 == (undefined1 *)0x0) {
       QueryRegistryValue();
@@ -76693,7 +76777,7 @@ undefined4 FUN_004713d0(void)
   }
   (**(code **)(*(int *)DAT_005e5010[0x1eb] + 8))((int *)DAT_005e5010[0x1eb]);
   if (DAT_005e5010[0x949] != 0) {
-    FUN_00412640(*DAT_005e5010,0);
+    SetCooperativeLevel(*DAT_005e5010,0);
   }
   (**(code **)(*(int *)DAT_005e5010[1] + 8))((int *)DAT_005e5010[1]);
   DAT_005e5010[1] = 0;
@@ -76706,7 +76790,43 @@ undefined4 FUN_004713d0(void)
 
 
 
-undefined4 FUN_00471510(int param_1)
+//     // Function: SetGraphicsMode (FUN_00471510)
+//     // Description:
+//     //    This function appears to configure and set a new graphics mode or resolution for the 
+//     //    window. It adjusts internal state variables, updates window positioning and size, 
+//     //    and handles any necessary memory or resource management. The function performs 
+//     //    several checks and resource updates, ensuring the graphics configuration is properly 
+//     //    applied, and returns success or failure.
+//     //
+//     // Arguments:
+//     //    param_1 - The index or identifier of the graphics mode being set.
+//     //
+//     // Returns:
+//     //    undefined4 - Returns 1 on success, 0 on failure.
+//     //
+//     // Globals:
+//     //    DAT_005e5010 - A base pointer to various configuration data, such as window size,
+// position, etc.
+//     //    DAT_005df2f8 - Tracks whether the current graphics configuration needs to be updated.
+//     //    DAT_004c66b8 - Stores the current graphics mode identifier.
+//     //    DAT_004c5718 - The width of the window or screen.
+//     //    DAT_004c571c - The height of the window or screen.
+//     //    DAT_004d785c - A flag to indicate that the graphics mode was updated.
+//     //    DAT_004d8104 - A memory resource related to the graphics configuration that is freed.
+//     //    gMainWindowHandle - Handle to the main window.
+//     //
+//     // Key Functions Called:
+//     //    FUN_004713d0 - Prepares the system for a graphics mode change.
+//     //    SetWindowPos - Adjusts the window's position and size.
+//     //    FUN_00414160 - Performs system or resource initialization related to the window and
+// graphics.
+//     //    FUN_00482470 - Finalizes the graphics mode setup.
+//     //    FUN_0043e140 - Performs additional resource or system updates related to the window or
+// graphics.
+//     //    FreeMemory - Frees allocated memory, in this case related to the previous graphics
+// configuration.
+
+undefined4 SetGraphicsMode(int param_1)
 
 {
   int iVar1;
@@ -77897,10 +78017,11 @@ void SetupAssetPaths(void)
   FID_conflict___mbscpy(&s_voxelFilesDir_DAT_005d5ee0,acStackY_105 + 1);
   uStackY_18 = 0x473378;
   FID_conflict__strcat(&s_voxelFilesDir_DAT_005d5ee0,s__voxelfiles__004d13f8);
+                    // DAT_005d54e0: I think this is the root file dir
   uStackY_18 = 0x47338c;
-  FID_conflict___mbscpy(&DAT_005d54e0,acStackY_105 + 1);
+  FID_conflict___mbscpy(&s_rootDir,acStackY_105 + 1);
   uStackY_18 = 0x47339e;
-  FID_conflict__strcat(&DAT_005d54e0,&DAT_004d1408);
+  FID_conflict__strcat(&s_rootDir,&DAT_004d1408);
   uStackY_18 = 0x4733b2;
   FID_conflict___mbscpy(&s_bodyPartsDir_DAT_005d4fe0,acStackY_105 + 1);
   uStackY_18 = 0x4733c4;
@@ -93577,7 +93698,7 @@ void FUN_00489960(char *param_1)
   
   AdjustStackForLargeAllocations();
   do {
-    FID_conflict___mbscpy(param_1,&DAT_005d54e0);
+    FID_conflict___mbscpy(param_1,&s_rootDir);
     FUN_004ae5f0(DAT_00598f48,&stack0xfffffff4,10);
     FID_conflict__strcat(param_1,&DAT_004d1f68);
     FID_conflict__strcat(param_1,&stack0xfffffff4);
@@ -93597,7 +93718,7 @@ undefined4 FUN_00489a00(char *param_1)
   int iVar1;
   
   AdjustStackForLargeAllocations();
-  FID_conflict___mbscpy(param_1,&DAT_005d54e0);
+  FID_conflict___mbscpy(param_1,&s_rootDir);
   FUN_004ae5f0(DAT_00598f48,&stack0xfffffff4);
   FID_conflict__strcat(param_1,&DAT_004d1f78);
   FID_conflict__strcat(param_1,&stack0xfffffff4);
@@ -95092,7 +95213,7 @@ undefined4 FUN_0048b860(char *param_1)
     _Source = &gRootFileDirectory;
   }
   else {
-    _Source = &DAT_005d54e0;
+    _Source = &s_rootDir;
   }
   FID_conflict___mbscpy(local_104,_Source);
   FID_conflict__strcat(local_104,param_1);
@@ -99314,7 +99435,7 @@ void FUN_00491670(void)
     _Source = &gRootFileDirectory;
   }
   else {
-    _Source = &DAT_005d54e0;
+    _Source = &s_rootDir;
   }
   FID_conflict___mbscpy(local_11c,_Source);
   FID_conflict__strcat(local_11c,s_yfont_dat_004d2d0f + 1);
@@ -122109,9 +122230,29 @@ LAB_004afcef:
 
 
 
-// FUN_004afd20: Looks like some thread creation for initializing structures
+//     // Function: CreateThreadAndInitialize (FUN_004afd20)
+//     // Description:
+//     //    This function creates a new thread after initializing the necessary structures. It
+// allocates
+//     //    and initializes memory for thread-local storage, assigns parameters to the thread, and
+// creates
+//     //    the thread with the provided function. If the thread is created successfully, it
+// resumes the thread;
+//     //    otherwise, it cleans up memory and handles errors.
+//     //
+//     // Globals Used:
+//     //    None directly, but thread-local storage (TLS) is initialized for the new thread.
+//     //
+//     // Arguments:
+//     //    param_1 - The function argument to pass to the new thread.
+//     //    param_2 - The initial stack size for the thread (can be zero for default).
+//     //    param_3 - Additional parameter passed to the thread function.
+//     //
+//     // Returns:
+//     //    HANDLE - Returns a handle to the newly created thread, or (HANDLE)0xffffffff if an
+// error occurs.
 
-HANDLE FUN_004afd20(undefined4 param_1,SIZE_T param_2,undefined4 param_3)
+HANDLE CreateThreadAndInitialize(undefined4 param_1,SIZE_T param_2,undefined4 param_3)
 
 {
   LPVOID lpThreadId;
@@ -123526,16 +123667,16 @@ void entry(void)
   local_8 = 0;
   InitializeFileHandles();
   SetDefaultCodePage();
-  PTR_005f8ea8 = (byte *)GetCommandLineA();
+  s_rawCommandLine = (byte *)GetCommandLineA();
   DAT_005a1290 = GetEnvironmentVariables();
-  if ((DAT_005a1290 == 0) || (PTR_005f8ea8 == (byte *)0x0)) {
+  if ((DAT_005a1290 == 0) || (s_rawCommandLine == (byte *)0x0)) {
     TerminateWithCode(0xffffffff);
   }
   InitializeCommandLine();
   ParseAndStoreValidEntries();
   PerformCleanupOrInitialization();
-  pbVar5 = PTR_005f8ea8;
-  if (*PTR_005f8ea8 == '\"') {
+  pbVar5 = s_rawCommandLine;
+  if (*s_rawCommandLine == '\"') {
     while( true ) {
       pbVar6 = pbVar5;
       pbVar5 = pbVar6 + 1;
@@ -130578,8 +130719,8 @@ void InitializeCommandLine(void)
   
   GetModuleFileNameA((HMODULE)0x0,&DAT_005a1390,0x104);
   _DAT_005a127c = &DAT_005a1390;
-  pbVar2 = PTR_005f8ea8;
-  if (*PTR_005f8ea8 == '\0') {
+  pbVar2 = s_rawCommandLine;
+  if (*s_rawCommandLine == '\0') {
     pbVar2 = &DAT_005a1390;
   }
   ParseCommandLine(pbVar2,0,0,&iStack_8,&iStack_4);
