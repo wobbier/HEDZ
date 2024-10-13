@@ -186,7 +186,7 @@ void FUN_00401230(void)
       *(undefined4 *)(iVar9 + 0xc9) = 0;
       if ((*(uint *)(*(int *)(iVar2 + 4) + 0x8a) & 0x400000) == 0) {
         if (*(char *)(piVar3 + 0xc) != '\0') {
-          FUN_00404e50(iVar2);
+          ClearAnimationSlot(iVar2);
         }
       }
       else {
@@ -2606,7 +2606,26 @@ float10 FUN_00404df0(int param_1)
 
 
 
-void FUN_00404e50(uint param_1)
+//     // Function: ClearAnimationSlot (FUN_00404e50)
+//     // Description:
+//     //    This function checks and clears an animation slot associated with an entity. It
+// compares the current 
+//     //    animation slot with a list of available animation slots and resets the slot if it is
+// currently in use. 
+//     //    If a match is found, it marks the slot as free and updates the entity's animation
+// state.
+//     //
+//     // Globals Used:
+//     //    DAT_005f7720 - Base pointer to the animation slot list.
+//     //    DAT_005f76d0 - Array of flags indicating which animation slots are in use.
+//     //
+//     // Arguments:
+//     //    param_1 - The entity whose animation slot is being checked and potentially cleared.
+//     //
+//     // Returns:
+//     //    void - No return value.
+
+void ClearAnimationSlot(uint param_1)
 
 {
   int iVar1;
@@ -5045,7 +5064,50 @@ switchD_00408abb_caseD_8:
 
 
 
-void FUN_00409320(void)
+//     // Function: ProcessFrame (FUN_00409320)
+//     // Description:
+//     //    This function processes a single frame within the game, updating objects, calculating
+// physics,
+//     //    and applying transformations to ensure the game state progresses. It involves matrix
+// multiplication
+//     //    for transformations, applying AI logic, handling collisions, and updating object
+// attributes such as
+//     //    velocity and position.
+//     //
+//     // Globals Used:
+//     //    DAT_005df318 - Pointer to the main game object or scene.
+//     //    DAT_004d77ac - File pointer for logging/debugging purposes.
+//     //    DAT_005e45ec, DAT_00598944, DAT_00598d6c, DAT_00598d68 - Various flags controlling the
+// behavior
+//     //    of object updates, animations, and physics calculations.
+//     //
+//     // Arguments:
+//     //    None - This function processes all objects within the scene and updates their states.
+//     //
+//     // Returns:
+//     //    None - This function updates the global game state and object states for the current
+// frame.
+//     //
+//     // Behavior:
+//     //    - Updates object matrices (rotation, translation, scaling).
+//     //    - Applies physics and collision detection.
+//     //    - Handles AI and behavior updates.
+//     //    - Adjusts object positions and velocities based on interaction with other objects or
+// environment.
+//     //    - Writes frame and debug information to a log file if enabled.
+//     //
+//     // Side Effects:
+//     //    - May trigger memory allocations for temporary object data.
+//     //    - Uses and updates global object states and flags that control animation, physics, and
+// object updates.
+//     //    - Calls other functions for detailed physics, AI, or transformation calculations.
+//     //
+//     // Logging:
+//     //    If debugging is enabled, logs information such as frame numbers, key press events,
+// object positions,
+//     //    and AI actions to the log file pointed to by `DAT_004d77ac`.
+
+void ProcessFrame(void)
 
 {
   byte *pbVar1;
@@ -10914,20 +10976,20 @@ undefined4 FUN_00411790(byte param_1)
   piVar1 = (int *)0x0;
   if ((param_1 & 4) == 0) {
     piVar1 = (int *)&stack0xfffffff8;
-    g_DirectDrawFuncSuccessful = DirectDrawEnumerateA();
-    if (g_DirectDrawFuncSuccessful != 0) {
+    g_GenericDirectDrawFuncReturnCode = DirectDrawEnumerateA();
+    if (g_GenericDirectDrawFuncReturnCode != 0) {
       GetErrorStringFunc();
       LogError();
       return 0;
     }
-    g_DirectDrawFuncSuccessful = 0;
+    g_GenericDirectDrawFuncReturnCode = 0;
   }
   if (piVar1 == (int *)0x0) {
     DAT_005e58e8 = 1;
     uStackY_14 = 0x4117fb;
-    g_DirectDrawFuncSuccessful = DirectDrawCreate();
+    g_GenericDirectDrawFuncReturnCode = DirectDrawCreate();
     piVar1 = DAT_005e58e4;
-    if (g_DirectDrawFuncSuccessful != 0) {
+    if (g_GenericDirectDrawFuncReturnCode != 0) {
       GetErrorStringFunc();
       LogError();
       return 0;
@@ -10941,8 +11003,8 @@ undefined4 FUN_00411790(byte param_1)
   _memset(local_2e0,0,0x16c);
   local_2e0[0] = 0x16c;
   uStackY_14 = 0x41187f;
-  g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x2c))();
-  if (g_DirectDrawFuncSuccessful == 0) {
+  g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58e4 + 0x2c))();
+  if (g_GenericDirectDrawFuncReturnCode == 0) {
     _DAT_004c570c = local_f0 & 0x20000;
     _DAT_004c5708 = local_f0 & 0x1000;
     DAT_005e72f0 = ~local_16c >> 1 & 1;
@@ -10977,7 +11039,28 @@ uint FUN_004118e0(int *param_1,int *param_2)
 
 
 
-undefined4 FUN_00411940(int param_1,int param_2,int param_3,int param_4,int param_5)
+//  * ValidateAndSetDisplayMode - Previously FUN_00411940
+//  *
+//  * Summary:
+//  * This function checks if the specified display mode (`param_1`, `param_2`, `param_3`,
+// `param_4`) 
+//  * matches a record in the `DAT_005e7334` array. If the mode is valid and fits within certain 
+//  * memory constraints (`DAT_005e7304`), it sets the corresponding index in the `DAT_005e7314`
+// array.
+//  *
+//  * If the resolution height stored in `DAT_005e7338` is 240 (`0xf0`), it adjusts it to 200. 
+//  * 
+//  * Returns:
+//  *   1 if the display mode is successfully validated and set, 0 otherwise.
+//  *
+//  * Parameters:
+//  *   param_1 - Index into the display mode array.
+//  *   param_2 - Desired width for the display mode.
+//  *   param_3 - Desired height for the display mode.
+//  *   param_4 - Some additional parameter, likely related to bit depth or refresh rate.
+//  *   param_5 - Index to update in the `DAT_005e7314` array if the mode is valid.
+
+undefined4 ValidateAndSetDisplayMode(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
   if ((&DAT_005e7334)[param_1 * 4] == param_2) {
@@ -10995,7 +11078,14 @@ undefined4 FUN_00411940(int param_1,int param_2,int param_3,int param_4,int para
 
 
 
-undefined4 FUN_004119c0(void)
+// InitializeDisplayMode (formerly FUN_004119c0)
+//    Initializes display modes and selects the most appropriate mode
+//    based on specific conditions, including user preferences or defaults.
+//    The function enumerates through display modes, selects a suitable one based on the
+// configuration,
+//    and updates global state variables accordingly.
+
+undefined4 InitializeDisplayMode(void)
 
 {
   int iVar1;
@@ -11010,8 +11100,9 @@ undefined4 FUN_004119c0(void)
   DAT_004d784c = 0;
   DAT_005e7308 = 0;
   iVar4 = -1;
-  g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x20))(DAT_005e58e4,0,0,0,FUN_00411dd0);
-  if (g_DirectDrawFuncSuccessful == 0) {
+  g_GenericDirectDrawFuncReturnCode =
+       (**(code **)(*DAT_005e58e4 + 0x20))(DAT_005e58e4,0,0,0,FUN_00411dd0);
+  if (g_GenericDirectDrawFuncReturnCode == 0) {
     FUN_004ae1a0(&DAT_005e7334,DAT_005e7308,0x10,FUN_004118e0);
     DAT_005e730c = -1;
     _memset(&DAT_005e7314,-1,0x20);
@@ -11019,22 +11110,23 @@ undefined4 FUN_004119c0(void)
       piVar6 = &DAT_005e7338;
       iVar4 = -1;
       do {
-        iVar3 = FUN_00411940(iVar5,0x280,0x1e0,DAT_004c5720,0);
+        iVar3 = ValidateAndSetDisplayMode(iVar5,0x280,0x1e0,DAT_004c5720,0);
         iVar1 = iVar5;
         if ((((((iVar3 == 0) &&
-               (iVar3 = FUN_00411940(iVar5,0x200,0x180,DAT_004c5720,1), iVar1 = DAT_005e730c,
-               iVar3 == 0)) &&
-              (iVar3 = FUN_00411940(iVar5,0x140,0xf0,DAT_004c5720,2), iVar1 = DAT_005e730c,
-              iVar3 == 0)) &&
-             ((iVar3 = FUN_00411940(iVar5,0x140,200,DAT_004c5720,3), iVar1 = DAT_005e730c,
-              iVar3 == 0 &&
-              (iVar3 = FUN_00411940(iVar5,800,600,DAT_004c5720,4), iVar1 = DAT_005e730c, iVar3 == 0)
-              ))) && ((iVar3 = FUN_00411940(iVar5,0x400,0x300,DAT_004c5720,5), iVar1 = DAT_005e730c,
-                      iVar3 == 0 &&
-                      ((iVar3 = FUN_00411940(iVar5,0x480,0x360,DAT_004c5720,6), iVar1 = DAT_005e730c
-                       , iVar3 == 0 &&
-                       (iVar3 = FUN_00411940(iVar5,0x500,0x400,DAT_004c5720,7), iVar1 = DAT_005e730c
-                       , iVar3 == 0)))))) &&
+               (iVar3 = ValidateAndSetDisplayMode(iVar5,0x200,0x180,DAT_004c5720,1),
+               iVar1 = DAT_005e730c, iVar3 == 0)) &&
+              (iVar3 = ValidateAndSetDisplayMode(iVar5,0x140,0xf0,DAT_004c5720,2),
+              iVar1 = DAT_005e730c, iVar3 == 0)) &&
+             ((iVar3 = ValidateAndSetDisplayMode(iVar5,0x140,200,DAT_004c5720,3),
+              iVar1 = DAT_005e730c, iVar3 == 0 &&
+              (iVar3 = ValidateAndSetDisplayMode(iVar5,800,600,DAT_004c5720,4), iVar1 = DAT_005e730c
+              , iVar3 == 0)))) &&
+            ((iVar3 = ValidateAndSetDisplayMode(iVar5,0x400,0x300,DAT_004c5720,5),
+             iVar1 = DAT_005e730c, iVar3 == 0 &&
+             ((iVar3 = ValidateAndSetDisplayMode(iVar5,0x480,0x360,DAT_004c5720,6),
+              iVar1 = DAT_005e730c, iVar3 == 0 &&
+              (iVar3 = ValidateAndSetDisplayMode(iVar5,0x500,0x400,DAT_004c5720,7),
+              iVar1 = DAT_005e730c, iVar3 == 0)))))) &&
            ((piVar6[-1] == 0x280 && ((*piVar6 == 400 && (piVar6[1] == DAT_004c5720)))))) {
           iVar4 = iVar5;
         }
@@ -11129,7 +11221,7 @@ undefined4 FUN_004119c0(void)
     }
     return 1;
   }
-  uVar2 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+  uVar2 = GetErrorStringFunc(g_GenericDirectDrawFuncReturnCode);
   LogError(s_EnumDisplayModes_failed___s_004c5760,uVar2);
   DAT_005e7308 = 0;
   return 0;
@@ -11195,8 +11287,8 @@ FUN_00411e70(undefined4 param_1,int param_2,int param_3,undefined4 param_4,int p
     local_70 = 0x6c;
     iVar1 = 0;
     local_6c = 1;
-    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x18))();
-    if (g_DirectDrawFuncSuccessful == 0) {
+    g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58e4 + 0x18))();
+    if (g_GenericDirectDrawFuncReturnCode == 0) {
       _memset(local_1dc,0,0x16c);
       local_1dc[0] = 0x16c;
       _memset(local_348,0,0x16c);
@@ -11207,7 +11299,7 @@ FUN_00411e70(undefined4 param_1,int param_2,int param_3,undefined4 param_4,int p
       local_6c = 7;
       local_68 = param_3;
       local_64 = param_2;
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x18))();
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58e4 + 0x18))();
       uStackY_4c = 0x41218a;
       _memset(local_1dc,0,0x16c);
       local_1dc[0] = 0x16c;
@@ -11217,9 +11309,9 @@ FUN_00411e70(undefined4 param_1,int param_2,int param_3,undefined4 param_4,int p
       uStackY_4c = 0x4121c4;
       (**(code **)(*DAT_005e58e4 + 0x2c))();
       _DAT_004d7844 = local_19c;
-      if (g_DirectDrawFuncSuccessful == 0) {
-        g_DirectDrawFuncSuccessful = FUN_00411e40();
-        if (g_DirectDrawFuncSuccessful == 0) {
+      if (g_GenericDirectDrawFuncReturnCode == 0) {
+        g_GenericDirectDrawFuncReturnCode = FUN_00411e40();
+        if (g_GenericDirectDrawFuncReturnCode == 0) {
           DAT_005e72d4 = (uint)(iVar1 == 0x3e0);
           if (DAT_005e72d4 == 0) {
             DAT_005e72f4 = 0xf81f;
@@ -11230,12 +11322,12 @@ FUN_00411e70(undefined4 param_1,int param_2,int param_3,undefined4 param_4,int p
             DAT_005e72f8 = 0x3def;
           }
           _DAT_005e58f8 = (-(uint)(param_6 != 0) & 0x3800) + 0x2840 >> 0xe;
-          g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x10))();
-          if (g_DirectDrawFuncSuccessful == 0) {
-            g_DirectDrawFuncSuccessful = (**(code **)(*DAT_004d7860 + 0x20))();
-            if (g_DirectDrawFuncSuccessful == 0) {
-              g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x70))();
-              if (g_DirectDrawFuncSuccessful == 0) {
+          g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58e4 + 0x10))();
+          if (g_GenericDirectDrawFuncReturnCode == 0) {
+            g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_004d7860 + 0x20))();
+            if (g_GenericDirectDrawFuncReturnCode == 0) {
+              g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58ec + 0x70))();
+              if (g_GenericDirectDrawFuncReturnCode == 0) {
                 FUN_00412840();
                 return 1;
               }
@@ -11254,8 +11346,8 @@ FUN_00411e70(undefined4 param_1,int param_2,int param_3,undefined4 param_4,int p
         }
       }
       else {
-        if ((g_DirectDrawFuncSuccessful == -0x7ff8fff2) ||
-           (g_DirectDrawFuncSuccessful == -0x7789fe84)) {
+        if ((g_GenericDirectDrawFuncReturnCode == -0x7ff8fff2) ||
+           (g_GenericDirectDrawFuncReturnCode == -0x7789fe84)) {
           LogError();
           goto LAB_00412316;
         }
@@ -11263,8 +11355,8 @@ FUN_00411e70(undefined4 param_1,int param_2,int param_3,undefined4 param_4,int p
       }
     }
     else {
-      if ((g_DirectDrawFuncSuccessful == -0x7ff8fff2) || (g_DirectDrawFuncSuccessful == -0x7789fe84)
-         ) {
+      if ((g_GenericDirectDrawFuncReturnCode == -0x7ff8fff2) ||
+         (g_GenericDirectDrawFuncReturnCode == -0x7789fe84)) {
         LogError();
         goto LAB_00412316;
       }
@@ -11281,8 +11373,8 @@ FUN_00411e70(undefined4 param_1,int param_2,int param_3,undefined4 param_4,int p
       uVar2 = 0x6218;
     }
     iVar1 = 0;
-    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x18))();
-    if (g_DirectDrawFuncSuccessful == 0) {
+    g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58e4 + 0x18))();
+    if (g_GenericDirectDrawFuncReturnCode == 0) {
       _memset(local_1dc,0,0x16c);
       local_1dc[0] = 0x16c;
       _memset(local_348,0,0x16c);
@@ -11290,26 +11382,26 @@ FUN_00411e70(undefined4 param_1,int param_2,int param_3,undefined4 param_4,int p
       (**(code **)(*DAT_005e58e4 + 0x2c))();
       _DAT_004d7840 = local_19c;
       _DAT_004d783c = local_1a0;
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x30))();
-      if (g_DirectDrawFuncSuccessful == 0) goto LAB_00411fb2;
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58ec + 0x30))();
+      if (g_GenericDirectDrawFuncReturnCode == 0) goto LAB_00411fb2;
       GetErrorStringFunc();
     }
-    else if ((g_DirectDrawFuncSuccessful == -0x7ff8fff2) ||
-            (g_DirectDrawFuncSuccessful == -0x7789fe84)) {
+    else if ((g_GenericDirectDrawFuncReturnCode == -0x7ff8fff2) ||
+            (g_GenericDirectDrawFuncReturnCode == -0x7789fe84)) {
       local_6c = 1;
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x18))();
-      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00412316;
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58e4 + 0x18))();
+      if (g_GenericDirectDrawFuncReturnCode != 0) goto LAB_00412316;
       local_6c = 7;
       uVar2 = 0;
       local_68 = param_3;
       local_64 = param_2;
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x18))();
-      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00412316;
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58e4 + 0x18))();
+      if (g_GenericDirectDrawFuncReturnCode != 0) goto LAB_00412316;
       DAT_004d7850 = 1;
-      g_DirectDrawFuncSuccessful = 0;
+      g_GenericDirectDrawFuncReturnCode = 0;
 LAB_00411fb2:
-      g_DirectDrawFuncSuccessful = FUN_00411e40();
-      if (g_DirectDrawFuncSuccessful == 0) {
+      g_GenericDirectDrawFuncReturnCode = FUN_00411e40();
+      if (g_GenericDirectDrawFuncReturnCode == 0) {
         DAT_005e72d4 = (uint)(iVar1 == 0x3e0);
         if (DAT_005e72d4 != 0) {
           DAT_005e72f4 = 0x7c1f;
@@ -11391,12 +11483,12 @@ undefined4 FUN_00412400(undefined4 param_1,undefined4 param_2,int param_3)
   else {
     local_58 = 0x10;
   }
-  g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x18))();
-  if (g_DirectDrawFuncSuccessful == 0) {
-    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f0 + 0xc))();
-    if (g_DirectDrawFuncSuccessful == 0) {
-      g_DirectDrawFuncSuccessful = FUN_00411e40();
-      if (g_DirectDrawFuncSuccessful == 0) {
+  g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58e4 + 0x18))();
+  if (g_GenericDirectDrawFuncReturnCode == 0) {
+    g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58f0 + 0xc))();
+    if (g_GenericDirectDrawFuncReturnCode == 0) {
+      g_GenericDirectDrawFuncReturnCode = FUN_00411e40();
+      if (g_GenericDirectDrawFuncReturnCode == 0) {
         _DAT_005e58fc = (-(uint)(iVar1 != 0) & 0x3800) + 0x20800 >> 0xe & 1;
         if (((&DAT_005e5290)[param_3 * 0x50] == 0) || (_DAT_005e58fc != 0)) {
           uStackY_28 = 0x4125d9;
@@ -11421,8 +11513,8 @@ undefined4 FUN_00412400(undefined4 param_1,undefined4 param_2,int param_3)
       LogError();
     }
   }
-  else if ((g_DirectDrawFuncSuccessful == -0x7ff8fff2) ||
-          (g_DirectDrawFuncSuccessful == -0x7789fe84)) {
+  else if ((g_GenericDirectDrawFuncReturnCode == -0x7ff8fff2) ||
+          (g_GenericDirectDrawFuncReturnCode == -0x7789fe84)) {
     if (DAT_005e7664 == 0) {
       LogError();
     }
@@ -11482,20 +11574,21 @@ undefined4 SetCooperativeLevel(undefined4 param_1,int param_2)
   
   _DAT_005e76a4 = 1;
   if (param_2 == 0) {
-    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x50))(DAT_005e58e4,param_1,8);
+    g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58e4 + 0x50))(DAT_005e58e4,param_1,8);
     _DAT_005e76a4 = 0;
-    if (g_DirectDrawFuncSuccessful != 0) {
-      uVar1 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+    if (g_GenericDirectDrawFuncReturnCode != 0) {
+      uVar1 = GetErrorStringFunc(g_GenericDirectDrawFuncReturnCode);
       LogError(s_SetCooperativeLevel_to_normal_fa_004c5f18,uVar1);
       return 0;
     }
     DAT_005e7664 = 0;
     return 1;
   }
-  g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x50))(DAT_005e58e4,param_1,0x11);
+  g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58e4 + 0x50))(DAT_005e58e4,param_1,0x11)
+  ;
   _DAT_005e76a4 = 0;
-  if (g_DirectDrawFuncSuccessful != 0) {
-    uVar1 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+  if (g_GenericDirectDrawFuncReturnCode != 0) {
+    uVar1 = GetErrorStringFunc(g_GenericDirectDrawFuncReturnCode);
     LogError(s_SetCooperativeLevel_to_fullscree_004c5ee8,uVar1);
     return 0;
   }
@@ -11506,8 +11599,29 @@ undefined4 SetCooperativeLevel(undefined4 param_1,int param_2)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// // Function: SetDisplayMode
+// // Description: Attempts to set the display mode by calling a DirectDraw function with the
+// provided
+// //              width, height, and color depth parameters. If the function fails, an error is
+// logged.
+// // Globals Used:
+// //    g_DisplayWidth (was DAT_005e7654) - Stores the width of the display.
+// //    g_DisplayHeight (was DAT_005e7658) - Stores the height of the display.
+// //    g_DisplayColorDepth (was _DAT_005e765c) - Stores the color depth (bits per pixel) of the
+// display.
+// //    g_DisplayModeChangeInProgress (was _DAT_005e76a4) - A flag to indicate if the display mode
+// change is in progress.
+// //    g_DirectDrawFuncSuccessful (was g_DirectDrawFuncSuccessful) - Result of the DirectDraw
+// function.
+// //    DAT_005e58e4 - Pointer to a DirectDraw-related structure.
+// // Arguments:
+// //    param_1 - The width of the display.
+// //    param_2 - The height of the display.
+// //    param_3 - The color depth (bits per pixel) of the display.
+// // Returns:
+// //    1 on success, 0 on failure.
 
-undefined4 FUN_004126f0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+undefined4 SetDisplayMode(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   undefined4 uVar1;
@@ -11516,11 +11630,11 @@ undefined4 FUN_004126f0(undefined4 param_1,undefined4 param_2,undefined4 param_3
   DAT_005e7658 = param_2;
   _DAT_005e765c = param_3;
   _DAT_005e76a4 = 1;
-  g_DirectDrawFuncSuccessful =
+  g_GenericDirectDrawFuncReturnCode =
        (**(code **)(*DAT_005e58e4 + 0x54))(DAT_005e58e4,param_1,param_2,param_3);
   _DAT_005e76a4 = 0;
-  if (g_DirectDrawFuncSuccessful != 0) {
-    uVar1 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+  if (g_GenericDirectDrawFuncReturnCode != 0) {
+    uVar1 = GetErrorStringFunc(g_GenericDirectDrawFuncReturnCode);
     LogError(s_SetDisplayMode_to__dx_dx_d_faile_004c5f68,param_1,param_2,param_3,uVar1);
     return 0;
   }
@@ -11535,15 +11649,27 @@ bool FUN_00412770(void)
 
 {
   _DAT_005e76a4 = 1;
-  g_DirectDrawFuncSuccessful =
+  g_GenericDirectDrawFuncReturnCode =
        (**(code **)(*DAT_005e58e4 + 0x54))(DAT_005e58e4,DAT_005e7668,DAT_005e766c,DAT_005e7670);
   _DAT_005e76a4 = 0;
-  return g_DirectDrawFuncSuccessful == 0;
+  return g_GenericDirectDrawFuncReturnCode == 0;
 }
 
 
 
-undefined4 FUN_004127c0(void)
+//  * Function: RetrieveCurrentDisplayMode (FUN_004127c0)
+//  * ---------------------------------------------------
+//  * This function attempts to retrieve the current display mode using DirectDraw.
+//  * 
+//  * If the DirectDraw function fails, an error message is logged, and the function 
+//  * returns 0 to indicate failure. On success, the function updates global variables 
+//  * with the current display mode's parameters.
+//  * 
+//  * Returns:
+//  * - 1 if the display mode is successfully retrieved and set.
+//  * - 0 if an error occurs during the process.
+
+undefined4 RetrieveCurrentDisplayMode(void)
 
 {
   undefined4 local_70 [2];
@@ -11557,8 +11683,8 @@ undefined4 FUN_004127c0(void)
   pcStackY_14 = (char *)0x4127da;
   _memset(local_70,0,0x6c);
   local_70[0] = 0x6c;
-  g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58e4 + 0x30))();
-  if (g_DirectDrawFuncSuccessful != 0) {
+  g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58e4 + 0x30))();
+  if (g_GenericDirectDrawFuncReturnCode != 0) {
     pcStackY_14 = (char *)0x412802;
     GetErrorStringFunc();
     pcStackY_14 = s_Getting_the_current_display_mode_004c5fb8;
@@ -11587,8 +11713,8 @@ undefined4 FUN_00412840(void)
   
   AdjustStackForLargeAllocations();
   if (DAT_005e58ec != (int *)0x0) {
-    g_DirectDrawFuncSuccessful = FUN_00411e40();
-    if (g_DirectDrawFuncSuccessful != 0) {
+    g_GenericDirectDrawFuncReturnCode = FUN_00411e40();
+    if (g_GenericDirectDrawFuncReturnCode != 0) {
       GetErrorStringFunc();
       LogError();
       return 0;
@@ -11599,16 +11725,16 @@ undefined4 FUN_00412840(void)
     SetRect((LPRECT)&stack0xffffffec,0,0,local_d8,local_dc);
     piStackY_20 = DAT_005e58ec;
     iStackY_24 = 0x4128e1;
-    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x14))();
-    if (g_DirectDrawFuncSuccessful != 0) {
+    g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58ec + 0x14))();
+    if (g_GenericDirectDrawFuncReturnCode != 0) {
       GetErrorStringFunc();
       LogError();
       return 0;
     }
   }
   if (DAT_005e58f0 != (int *)0x0) {
-    g_DirectDrawFuncSuccessful = FUN_00411e40();
-    if (g_DirectDrawFuncSuccessful != 0) {
+    g_GenericDirectDrawFuncReturnCode = FUN_00411e40();
+    if (g_GenericDirectDrawFuncReturnCode != 0) {
       GetErrorStringFunc();
       LogError();
       return 0;
@@ -11619,10 +11745,10 @@ undefined4 FUN_00412840(void)
     SetRect((LPRECT)&stack0xffffffec,0,0,local_d8,local_dc);
     piStackY_20 = DAT_005e58f0;
     iStackY_24 = 0x412997;
-    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f0 + 0x14))();
-    if (g_DirectDrawFuncSuccessful != 0) {
+    g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58f0 + 0x14))();
+    if (g_GenericDirectDrawFuncReturnCode != 0) {
       pcStackY_28 = (char *)0x4129a6;
-      iStackY_24 = g_DirectDrawFuncSuccessful;
+      iStackY_24 = g_GenericDirectDrawFuncReturnCode;
       iStackY_24 = GetErrorStringFunc();
       pcStackY_28 = s_Clearing_the_front_buffer_failed_004c60b4;
       uStackY_2c = 0x4129b4;
@@ -11660,20 +11786,33 @@ undefined4 FUN_004129d0(undefined4 param_1)
 
 
 
-undefined4 FUN_00412a70(void)
+//  * Function: InitializeDirect3D (FUN_00412a70)
+//  * -------------------------------------------
+//  * This function attempts to initialize two Direct3D interfaces using DirectDraw.
+//  * It first tries to create the `IDirect3D` interface, and if successful, proceeds to 
+//  * create the `IDirect3D2` interface. If any of the creation calls fail, an error 
+//  * message is logged, and the function returns 0, indicating failure.
+//  * 
+//  * Returns:
+//  * - 1 if both interfaces are successfully created.
+//  * - 0 if an error occurs during either interface creation.
+
+undefined4 InitializeDirect3D(void)
 
 {
   undefined4 uVar1;
   
-  g_DirectDrawFuncSuccessful = (**(code **)*DAT_005e58e4)(DAT_005e58e4,&DAT_004c0ec0,&DAT_005e5144);
-  if (g_DirectDrawFuncSuccessful != 0) {
-    uVar1 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+  g_GenericDirectDrawFuncReturnCode =
+       (**(code **)*DAT_005e58e4)(DAT_005e58e4,&DAT_004c0ec0,&DAT_005e5144);
+  if (g_GenericDirectDrawFuncReturnCode != 0) {
+    uVar1 = GetErrorStringFunc(g_GenericDirectDrawFuncReturnCode);
     LogError(s_Creation_of_IDirect3D_failed___s_004c60dc,uVar1);
     return 0;
   }
-  g_DirectDrawFuncSuccessful = (**(code **)*DAT_005e58e4)(DAT_005e58e4,&DAT_004c0ed0,&DAT_005e5150);
-  if (g_DirectDrawFuncSuccessful != 0) {
-    uVar1 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+  g_GenericDirectDrawFuncReturnCode =
+       (**(code **)*DAT_005e58e4)(DAT_005e58e4,&DAT_004c0ed0,&DAT_005e5150);
+  if (g_GenericDirectDrawFuncReturnCode != 0) {
+    uVar1 = GetErrorStringFunc(g_GenericDirectDrawFuncReturnCode);
     LogError(s_Creation_of_IDirect3D2_failed____004c6100,uVar1);
     return 0;
   }
@@ -11727,15 +11866,28 @@ bool FUN_00412af0(undefined4 param_1,LPCSTR param_2,LPCSTR param_3,int param_4,i
 
 
 
-undefined4 FUN_00412ca0(void)
+//  * Function: EnumerateDirect3DDrivers (FUN_00412ca0)
+//  * -------------------------------------------------
+//  * This function attempts to enumerate the available Direct3D drivers using 
+//  * the previously created `IDirect3D` interface. It resets the global driver 
+//  * data and makes a call to `IDirect3D_EnumDevices`, passing a callback function.
+//  * If the enumeration fails, an error message is logged, and the function returns 0, 
+//  * indicating failure.
+//  * 
+//  * Returns:
+//  * - 1 if driver enumeration is successful.
+//  * - 0 if an error occurs during enumeration.
+
+undefined4 EnumerateDirect3DDrivers(void)
 
 {
   undefined4 uVar1;
   
   DAT_005e515c = 0;
-  g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e5144 + 0x10))(DAT_005e5144,FUN_00412af0,0);
-  if (g_DirectDrawFuncSuccessful != 0) {
-    uVar1 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+  g_GenericDirectDrawFuncReturnCode =
+       (**(code **)(*DAT_005e5144 + 0x10))(DAT_005e5144,FUN_00412af0,0);
+  if (g_GenericDirectDrawFuncReturnCode != 0) {
+    uVar1 = GetErrorStringFunc(g_GenericDirectDrawFuncReturnCode);
     LogError(s_Enumeration_of_drivers_failed____004c6124,uVar1);
     return 0;
   }
@@ -11746,8 +11898,27 @@ undefined4 FUN_00412ca0(void)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
+//  * Function: CreateDirect3DDevice (FUN_00412cf0)
+//  * ---------------------------------------------
+//  * This function attempts to create a Direct3D device. It first checks whether a rendering
+// surface 
+//  * can fit, then attempts to create the device using the DirectDraw interface. If the primary 
+//  * creation fails, it tries alternative paths. If device creation fails, it logs an error with 
+//  * the associated failure message.
+//  * 
+//  * The function also performs checks on the created device and configures several global
+// variables 
+//  * related to the Direct3D environment. Depending on the success of the operation, it returns 1 
+//  * (success) or 0 (failure).
+//  * 
+//  * Parameters:
+//  * - param_1: Index or mode to be used for the device configuration.
+//  * 
+//  * Returns:
+//  * - 1 if the device is successfully created.
+//  * - 0 if an error occurs during the creation process.
 
-undefined4 FUN_00412cf0(int param_1)
+undefined4 CreateDirect3DDevice(int param_1)
 
 {
   bool bVar1;
@@ -11769,33 +11940,36 @@ undefined4 FUN_00412cf0(int param_1)
   ;
   if (iVar3 != 0) {
     if (DAT_005df2e4 == 0) {
-      g_DirectDrawFuncSuccessful =
+      g_GenericDirectDrawFuncReturnCode =
            (**(code **)(*DAT_005e5150 + 0x20))
                      (DAT_005e5150,&DAT_004c0ee0,DAT_005e58f0,&DAT_005e5154);
-      if ((g_DirectDrawFuncSuccessful != 0) &&
-         (g_DirectDrawFuncSuccessful =
+      if ((g_GenericDirectDrawFuncReturnCode != 0) &&
+         (g_GenericDirectDrawFuncReturnCode =
                (**(code **)(*DAT_005e5150 + 0x20))
                          (DAT_005e5150,&DAT_004c0ef0,DAT_005e58f0,&DAT_005e5154),
-         g_DirectDrawFuncSuccessful != 0)) {
-        uVar4 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+         g_GenericDirectDrawFuncReturnCode != 0)) {
+        uVar4 = GetErrorStringFunc(g_GenericDirectDrawFuncReturnCode);
         LogError(s_Create_D3D2_device_failed___s_004c61c8,uVar4);
         goto LAB_00412e67;
       }
     }
     else {
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e5150 + 0x20))(DAT_005e5150,&DAT_004c0ef0);
-      if (g_DirectDrawFuncSuccessful != 0) {
-        uVar4 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+      g_GenericDirectDrawFuncReturnCode =
+           (**(code **)(*DAT_005e5150 + 0x20))(DAT_005e5150,&DAT_004c0ef0);
+      if (g_GenericDirectDrawFuncReturnCode != 0) {
+        uVar4 = GetErrorStringFunc(g_GenericDirectDrawFuncReturnCode);
         LogError(s_Create_D3D2_device_failed___s_004c6198,uVar4);
         goto LAB_00412e67;
       }
     }
   }
-  g_DirectDrawFuncSuccessful = (**(code **)*DAT_005e5154)(DAT_005e5154,&DAT_004c0f20,&DAT_005e5148);
-  if (g_DirectDrawFuncSuccessful == 0) {
+  g_GenericDirectDrawFuncReturnCode =
+       (**(code **)*DAT_005e5154)(DAT_005e5154,&DAT_004c0f20,&DAT_005e5148);
+  if (g_GenericDirectDrawFuncReturnCode == 0) {
     DAT_005e5160 = param_1;
     DAT_005e5900 = 0;
-    if ((*(int *)(&DAT_005e5294 + param_1 * 0x140) == 0) || (iVar3 = FUN_004133b0(), iVar3 != 0)) {
+    if ((*(int *)(&DAT_005e5294 + param_1 * 0x140) == 0) ||
+       (iVar3 = EnumerateTextureFormats(), iVar3 != 0)) {
       if (0 < DAT_005e5900) {
         piVar5 = &DAT_005e5978;
         iVar3 = DAT_005e5900;
@@ -11836,7 +12010,7 @@ undefined4 FUN_00412cf0(int param_1)
     }
   }
   else {
-    uVar4 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+    uVar4 = GetErrorStringFunc(g_GenericDirectDrawFuncReturnCode);
     LogError(s_Create_D3D_device_failed___s_004c6218,uVar4);
   }
 LAB_00412e67:
@@ -11880,10 +12054,10 @@ LAB_00413008:
   local_20 = (int *)0x413019;
   _memset(&local_20,0,0x14);
   local_20 = DAT_005e5148;
-  g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e5148 + 0x18))();
-  if (g_DirectDrawFuncSuccessful == 0) {
-    g_DirectDrawFuncSuccessful = (**(code **)(iRam00000000 + 0x10))();
-    if (g_DirectDrawFuncSuccessful == 0) {
+  g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e5148 + 0x18))();
+  if (g_GenericDirectDrawFuncReturnCode == 0) {
+    g_GenericDirectDrawFuncReturnCode = (**(code **)(iRam00000000 + 0x10))();
+    if (g_GenericDirectDrawFuncReturnCode == 0) {
       piStackY_30 = (int *)0x413097;
       _memset(unaff_EDI,0,0x12e);
       *unaff_EDI = 0xe;
@@ -11992,8 +12166,8 @@ LAB_00413008:
       unaff_EDI[0xe4] = 0xb;
       unaff_EDI[0xe5] = 0;
       *(undefined2 *)(unaff_EDI + 0xe6) = 0;
-      g_DirectDrawFuncSuccessful = (**(code **)(iRam00000000 + 0x14))();
-      if (g_DirectDrawFuncSuccessful == 0) {
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(iRam00000000 + 0x14))();
+      if (g_GenericDirectDrawFuncReturnCode == 0) {
         piStackY_30 = (int *)0x4132b2;
         _memset(local_50,0,0x30);
         local_50[0] = 0x30;
@@ -12001,14 +12175,14 @@ LAB_00413008:
         local_40 = 0xe8;
         (**(code **)(iRam00000000 + 0x18))();
         piStackY_30 = (int *)0x4132df;
-        g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e5148 + 0x4c))();
-        if (g_DirectDrawFuncSuccessful == 0) {
+        g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e5148 + 0x4c))();
+        if (g_GenericDirectDrawFuncReturnCode == 0) {
           piStackY_30 = DAT_005e5148;
           uStackY_34 = 0x413311;
-          g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e5148 + 0x20))();
-          if (g_DirectDrawFuncSuccessful == 0) {
-            g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e5148 + 0x50))();
-            if (g_DirectDrawFuncSuccessful == 0) {
+          g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e5148 + 0x20))();
+          if (g_GenericDirectDrawFuncReturnCode == 0) {
+            g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e5148 + 0x50))();
+            if (g_GenericDirectDrawFuncReturnCode == 0) {
               DAT_005d669c = 0x43480000;
               if (DAT_005df2e0 == 0) {
                 DAT_005d669c = 0x43c80000;
@@ -12042,7 +12216,20 @@ LAB_00413008:
 
 
 
-undefined4 FUN_004133b0(void)
+//  * EnumerateTextureFormats - Previously FUN_004133b0
+//  *
+//  * Summary:
+//  * Enumerates available texture formats for the DirectDraw device referenced by `DAT_005e5148`. 
+//  * Uses `FUN_00413420` as the callback function to process each enumerated texture format.
+//  * 
+//  * If enumeration fails, logs an error using `LogError` and returns 0.
+//  * Otherwise, returns 1 on success, and the global `DAT_005e5900` tracks the number of formats
+// enumerated.
+//  * 
+//  * Returns:
+//  *   1 on success, 0 on failure.
+
+undefined4 EnumerateTextureFormats(void)
 
 {
   undefined4 uVar1;
@@ -12052,9 +12239,10 @@ undefined4 FUN_004133b0(void)
   AdjustStackForLargeAllocations();
   local_8 = &local_8;
   DAT_005e5900 = 0;
-  g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e5148 + 0x38))(DAT_005e5148,FUN_00413420);
-  if (g_DirectDrawFuncSuccessful != 0) {
-    uVar1 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+  g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e5148 + 0x38))(DAT_005e5148,FUN_00413420)
+  ;
+  if (g_GenericDirectDrawFuncReturnCode != 0) {
+    uVar1 = GetErrorStringFunc(g_GenericDirectDrawFuncReturnCode);
     LogError(s_Enumeration_of_texture_formats_f_004c6398,uVar1);
     return 0;
   }
@@ -12160,7 +12348,7 @@ void FUN_00413680(void)
   DAT_005e768c = 1;
   DAT_004d7860 = 0;
   _DAT_005e76a4 = 0;
-  g_DirectDrawFuncSuccessful = 0;
+  g_GenericDirectDrawFuncReturnCode = 0;
   _memset(&DAT_005e5020,0,0x100);
   DAT_005e5120 = 0;
   DAT_005e5124 = 0;
@@ -12683,8 +12871,8 @@ undefined4 FUN_00414090(void)
   
   FUN_00413680();
   FUN_00411790(-(DAT_005e7694 != 0) & 4);
-  FUN_00412a70();
-  FUN_00412ca0();
+  InitializeDirect3D();
+  EnumerateDirect3DDrivers();
   iVar1 = 0;
   if (0 < DAT_005e515c) {
     piVar2 = &DAT_005e5290;
@@ -12756,16 +12944,17 @@ FUN_00414160(undefined4 param_1,int *****param_2,undefined4 param_3,undefined4 p
   iVar3 = SetCooperativeLevel();
   if (iVar3 == 0) goto LAB_00414595;
   local_14 = (int *****)0x4141b2;
-  iVar3 = FUN_004127c0();
+  iVar3 = RetrieveCurrentDisplayMode();
   if (iVar3 == 0) goto LAB_00414595;
   local_14 = (int *****)&local_14;
   local_18 = (int *****)&DAT_004c0ff0;
   local_1c = DAT_005e58e4;
   local_20 = (int *****)0x4141cd;
-  g_DirectDrawFuncSuccessful = (*(code *)**DAT_005e58e4)();
+  g_GenericDirectDrawFuncReturnCode = (*(code *)**DAT_005e58e4)();
   local_20 = (int *****)&local_1c;
-  g_DirectDrawFuncSuccessful = (*(code *)(*local_14)[0x17])(local_14,&stack0xfffffff0,&local_20);
-  g_DirectDrawFuncSuccessful =
+  g_GenericDirectDrawFuncReturnCode =
+       (*(code *)(*local_14)[0x17])(local_14,&stack0xfffffff0,&local_20);
+  g_GenericDirectDrawFuncReturnCode =
        (*(code *)(*local_14)[0x17])(local_14,&stack0xfffffff0,&local_18,&local_1c);
   (*(code *)(*local_14)[2])(local_14);
   if (DAT_00598d50 == (int ****)0x0) {
@@ -12802,13 +12991,13 @@ FUN_00414160(undefined4 param_1,int *****param_2,undefined4 param_3,undefined4 p
   }
   DAT_005e7304 = (int)pppppiVar5 + iVar3;
   local_14 = (int *****)0x4142bd;
-  iVar3 = FUN_004119c0();
+  iVar3 = InitializeDisplayMode();
   if (iVar3 == 0) goto LAB_00414595;
   local_14 = (int *****)0x4142ca;
-  iVar3 = FUN_00412a70();
+  iVar3 = InitializeDirect3D();
   if (iVar3 == 0) goto LAB_00414595;
   local_14 = (int *****)0x4142d7;
-  iVar3 = FUN_00412ca0();
+  iVar3 = EnumerateDirect3DDrivers();
   if (iVar3 == 0) goto LAB_00414595;
   DAT_005e5120 = param_5;
   DAT_005e5124 = param_6;
@@ -12886,7 +13075,7 @@ joined_r0x00414541:
     }
     local_14 = (int *****)0x10;
     local_20 = (int *****)0x4144b8;
-    iVar3 = FUN_004126f0();
+    iVar3 = SetDisplayMode();
     if (iVar3 == 0) goto LAB_00414595;
     local_14 = (int *****)DAT_005e3350;
     local_1c = (int *****)(&DAT_005e733c)[(int)pppiVar6 * 4];
@@ -12910,7 +13099,7 @@ joined_r0x00414541:
   }
   local_14 = (int *****)0xffffffe7;
   local_18 = (int *****)0x414554;
-  iVar3 = FUN_00412cf0();
+  iVar3 = CreateDirect3DDevice();
   if (iVar3 != 0) {
     local_14 = (int *****)0xffffffe7;
     local_18 = (int *****)0x414564;
@@ -12925,7 +13114,7 @@ joined_r0x00414541:
         iVar3 = FUN_00412fa0();
         if (iVar3 != 0) {
           DAT_005e500c = 1;
-          DAT_005e769c = 1;
+          bRenderingIsOK = 1;
           return 1;
         }
       }
@@ -13064,8 +13253,29 @@ FUN_004146b0(undefined4 *param_1,undefined4 *param_2,HWND param_3,uint param_4,u
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
+//  * PerformBackBufferBlit - Previously FUN_00414850
+//  *
+//  * Summary:
+//  * This function manages the process of blitting the back buffer to the front buffer, handling 
+//  * different cases based on the state of the application and whether fullscreen or windowed mode 
+//  * is active. It also handles potential errors and resizes the display rects accordingly.
+//  *
+//  * If the blit operation fails with a specific error (`-0x7789fe3e`), it invokes clean-up 
+//  * functions and resets the display.
+//  *
+//  * Returns:
+//  *   1 on success, 0 on failure.
+//  *
+//  * Globals:
+//  *   - `DAT_005e769c`, `DAT_005e7688`, `DAT_00598d50`: Used for application state tracking.
+//  *   - `DAT_005e58ec`, `DAT_005e58f0`: Pointers to DirectDraw/Direct3D interfaces.
+//  *   - `DAT_005e7654`, `DAT_005e7658`, `DAT_005e7678`, `DAT_005e767c`: Dimensions for blitting.
+//  *   - `_DAT_004d7858`: Tracks whether the back buffer needs to be reallocated or resized.
+//  *
+//  * Parameters:
+//  *   None
 
-undefined4 FUN_00414850(void)
+undefined4 PerformBackBufferBlit(void)
 
 {
   int yBottom;
@@ -13080,7 +13290,7 @@ undefined4 FUN_00414850(void)
   int *local_28;
   
   AdjustStackForLargeAllocations();
-  if (DAT_005e769c == 0) {
+  if (bRenderingIsOK == 0) {
     LogError();
     return 0;
   }
@@ -13093,11 +13303,11 @@ undefined4 FUN_00414850(void)
               DAT_005e767c + DAT_005e7684);
       local_28 = DAT_005e58ec;
       piStackY_2c = (int *)0x414b1a;
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x14))();
-      if (g_DirectDrawFuncSuccessful == -0x7789fe3e) goto LAB_00414b26;
-      if (g_DirectDrawFuncSuccessful != 0) {
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58ec + 0x14))();
+      if (g_GenericDirectDrawFuncReturnCode == -0x7789fe3e) goto LAB_00414b26;
+      if (g_GenericDirectDrawFuncReturnCode != 0) {
         pcStackY_30 = (char *)0x414b57;
-        piStackY_2c = (int *)g_DirectDrawFuncSuccessful;
+        piStackY_2c = (int *)g_GenericDirectDrawFuncReturnCode;
         piStackY_2c = (int *)GetErrorStringFunc();
         pcStackY_30 = s_Blt_of_back_buffer_to_front_buff_004c6874;
         uStackY_34 = 0x414b65;
@@ -13106,12 +13316,12 @@ undefined4 FUN_00414850(void)
       }
     }
     else if ((DAT_004d784c == 0) && (DAT_004d7850 == 0)) {
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x2c))();
-      if (g_DirectDrawFuncSuccessful == -0x7789fe3e) {
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58ec + 0x2c))();
+      if (g_GenericDirectDrawFuncReturnCode == -0x7789fe3e) {
         FUN_00414e20();
         return 1;
       }
-      if (g_DirectDrawFuncSuccessful != 0) {
+      if (g_GenericDirectDrawFuncReturnCode != 0) {
         GetErrorStringFunc();
         local_28 = (int *)0x4148f5;
         LogError();
@@ -13125,13 +13335,13 @@ undefined4 FUN_00414850(void)
         local_3c = 0;
         local_28 = DAT_005e58ec;
         piStackY_2c = (int *)0x414945;
-        g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x14))();
-        if (g_DirectDrawFuncSuccessful == -0x7789fe3e) {
+        g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58ec + 0x14))();
+        if (g_GenericDirectDrawFuncReturnCode == -0x7789fe3e) {
           (**(code **)(*DAT_005e58ec + 0x6c))();
           (**(code **)(*DAT_005e58f0 + 0x6c))();
           FUN_00412840();
         }
-        else if (g_DirectDrawFuncSuccessful != 0) {
+        else if (g_GenericDirectDrawFuncReturnCode != 0) {
           GetErrorStringFunc();
           LogError();
           return 0;
@@ -13150,8 +13360,8 @@ undefined4 FUN_00414850(void)
         SetRect((LPRECT)&local_28,xLeft,yTop,iVar1,yBottom);
         local_28 = DAT_005e58ec;
         piStackY_2c = (int *)0x4149fa;
-        g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x14))();
-        if (g_DirectDrawFuncSuccessful == -0x7789fe3e) {
+        g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58ec + 0x14))();
+        if (g_GenericDirectDrawFuncReturnCode == -0x7789fe3e) {
 LAB_00414b26:
           piStackY_2c = DAT_005e58ec;
           pcStackY_30 = (char *)0x414b31;
@@ -13163,11 +13373,11 @@ LAB_00414b26:
           FUN_00412840();
           return 1;
         }
-        if (g_DirectDrawFuncSuccessful != 0) {
+        if (g_GenericDirectDrawFuncReturnCode != 0) {
           pcStackY_30 = (char *)0x414a18;
-          piStackY_2c = (int *)g_DirectDrawFuncSuccessful;
+          piStackY_2c = (int *)g_GenericDirectDrawFuncReturnCode;
           piStackY_2c = (int *)GetErrorStringFunc();
-          pcStackY_30 = s_Blt_of_back_buffer_to_front_buff_004c67e8;
+          pcStackY_30 = s_Blt_of_back_buffer_to_front_buffer_failed_004c67e8;
           uStackY_34 = 0x414a26;
           LogError();
           return 0;
@@ -13180,11 +13390,11 @@ LAB_00414b26:
         SetRect((LPRECT)&local_28,0,0,DAT_005e7654,DAT_005e7658);
         local_28 = DAT_005e58ec;
         piStackY_2c = (int *)0x414a82;
-        g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x14))();
-        if (g_DirectDrawFuncSuccessful == -0x7789fe3e) goto LAB_00414b26;
-        if (g_DirectDrawFuncSuccessful != 0) {
+        g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58ec + 0x14))();
+        if (g_GenericDirectDrawFuncReturnCode == -0x7789fe3e) goto LAB_00414b26;
+        if (g_GenericDirectDrawFuncReturnCode != 0) {
           pcStackY_30 = (char *)0x414aa0;
-          piStackY_2c = (int *)g_DirectDrawFuncSuccessful;
+          piStackY_2c = (int *)g_GenericDirectDrawFuncReturnCode;
           piStackY_2c = (int *)GetErrorStringFunc();
           pcStackY_30 = s_Blt_of_back_buffer_to_front_buff_004c6818;
           uStackY_34 = 0x414aae;
@@ -13199,7 +13409,28 @@ LAB_00414b26:
 
 
 
-undefined4 FUN_00414bb0(void)
+//  * PerformBackBufferOperations - Previously FUN_00414bb0
+//  *
+//  * Summary:
+//  * This function handles the process of waiting on a mutex and performing operations on the 
+//  * back buffer or viewport based on certain conditions, such as if the current display mode is 
+//  * in fullscreen or windowed mode. It waits for a signal, performs the operation, and clears the 
+//  * viewport if necessary, then logs errors if the operation fails.
+//  *
+//  * Returns:
+//  *   1 on success, 0 on failure.
+//  *
+//  * Globals:
+//  *   - `DAT_005e769c`: Tracks if the application is initialized.
+//  *   - `DAT_005e4484`: Mutex handle for synchronizing rendering operations.
+//  *   - `DAT_00598d54`, `DAT_004d785c`, `DAT_005e58d0`: Track the application's state.
+//  *   - `DAT_005e514c`, `DAT_005e58f0`, `DAT_005e58f4`: DirectDraw or Direct3D interface pointers.
+//  *   - `DAT_004cb05c`: Stores some configuration/state information.
+//  *
+//  * Parameters:
+//  *   None
+
+undefined4 PerformBackBufferOperations(void)
 
 {
   int iVar1;
@@ -13209,7 +13440,7 @@ undefined4 FUN_00414bb0(void)
   char *pcStackY_44;
   
   AdjustStackForLargeAllocations();
-  if (DAT_005e769c == 0) {
+  if (bRenderingIsOK == 0) {
     LogError();
     return 0;
   }
@@ -13220,11 +13451,11 @@ undefined4 FUN_00414bb0(void)
     pcVar2 = WaitForSingleObject_exref;
     local_7c[0] = 100;
     WaitForSingleObject(DAT_005e4484,0xffffffff);
-    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f0 + 0x14))();
+    g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58f0 + 0x14))();
   }
   else {
     WaitForSingleObject((HANDLE)0x0,DAT_005e7678);
-    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e514c + 0x30))();
+    g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e514c + 0x30))();
   }
   ReleaseMutex(DAT_005e4484);
   if (((DAT_00598d54 == 0) && (DAT_004d785c != 0)) && ((DAT_005e58d0 == 0 || (iVar1 == 4)))) {
@@ -13234,10 +13465,10 @@ undefined4 FUN_00414bb0(void)
       __ftol();
     }
     (*pcVar2)();
-    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f4 + 0x14))();
+    g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58f4 + 0x14))();
     pcStackY_44 = (char *)0x414d49;
     ReleaseMutex(DAT_005e4484);
-    if (g_DirectDrawFuncSuccessful != 0) {
+    if (g_GenericDirectDrawFuncReturnCode != 0) {
       pcStackY_44 = (char *)0x414d58;
       GetErrorStringFunc();
       pcStackY_44 = s_Viewport_clear_failed___s_004c68e8;
@@ -13251,7 +13482,25 @@ undefined4 FUN_00414bb0(void)
 
 
 
-undefined4 FUN_00414d80(void)
+//  * ClearZBuffer - Previously FUN_00414d80
+//  *
+//  * Summary:
+//  * This function clears the Z-buffer (depth buffer) for rendering, ensuring depth testing works
+//  * correctly in 3D scenes. It checks if rendering is allowed (`bRenderingIsOK`), then performs
+//  * the buffer clearing operation. Errors during the process are logged.
+//  *
+//  * Returns:
+//  *   1 on success, 0 on failure.
+//  *
+//  * Globals:
+//  *   - `bRenderingIsOK`: Indicates if rendering operations are allowed.
+//  *   - `DAT_004d785c`: Some state that determines if clearing is needed.
+//  *   - `DAT_005e58d0`, `DAT_005e514c`: DirectDraw or Direct3D interface pointers.
+//  *
+//  * Parameters:
+//  *   None
+
+undefined4 ClearZBuffer(void)
 
 {
   undefined4 uVar1;
@@ -13262,7 +13511,7 @@ undefined4 FUN_00414d80(void)
   
   local_8 = (char *)0x414d8d;
   AdjustStackForLargeAllocations();
-  if (DAT_005e769c == 0) {
+  if (bRenderingIsOK == 0) {
     local_8 = s_Cannot_call_APP_MAN_ClearZBuffer_004c6904;
     local_c = (int **)0x414da0;
     LogError();
@@ -13273,9 +13522,9 @@ undefined4 FUN_00414d80(void)
     local_8 = (char *)0x2;
     local_10 = 1;
     local_14 = DAT_005e514c;
-    g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e514c + 0x30))();
-    if (g_DirectDrawFuncSuccessful != 0) {
-      uVar1 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+    g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e514c + 0x30))();
+    if (g_GenericDirectDrawFuncReturnCode != 0) {
+      uVar1 = GetErrorStringFunc(g_GenericDirectDrawFuncReturnCode);
       LogError(s_Viewport_clear_failed_in_APP_MAN_004c6948,uVar1);
       return 0;
     }
@@ -13316,25 +13565,25 @@ undefined4 FUN_00414e20(void)
     if ((DAT_005e58ec != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58ec + 0x60))(DAT_005e58ec), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x6c))(DAT_005e58ec);
-      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58ec + 0x6c))(DAT_005e58ec);
+      if (g_GenericDirectDrawFuncReturnCode != 0) goto LAB_00415169;
     }
     if ((DAT_005e58f0 != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58f0 + 0x60))(DAT_005e58f0), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f0 + 0x6c))(DAT_005e58f0);
-      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58f0 + 0x6c))(DAT_005e58f0);
+      if (g_GenericDirectDrawFuncReturnCode != 0) goto LAB_00415169;
     }
     if ((DAT_005e58f4 != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58f4 + 0x60))(DAT_005e58f4), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f4 + 0x6c))(DAT_005e58f4);
-      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58f4 + 0x6c))(DAT_005e58f4);
+      if (g_GenericDirectDrawFuncReturnCode != 0) goto LAB_00415169;
     }
     if (!bVar1) goto switchD_00414e5f_caseD_0;
     (**(code **)(**(int **)(DAT_005e5010 + 8) + 0x50))(*(int **)(DAT_005e5010 + 8));
-    FUN_004126f0((&DAT_005e7334)[DAT_005e730c * 4],(&DAT_005e7338)[DAT_005e730c * 4],
-                 (&DAT_005e733c)[DAT_005e730c * 4]);
+    SetDisplayMode((&DAT_005e7334)[DAT_005e730c * 4],(&DAT_005e7338)[DAT_005e730c * 4],
+                   (&DAT_005e733c)[DAT_005e730c * 4]);
     FUN_004a29a0();
     FUN_004a9a15();
     FUN_0045ab40();
@@ -13345,48 +13594,48 @@ undefined4 FUN_00414e20(void)
     if ((DAT_005e58ec != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58ec + 0x60))(DAT_005e58ec), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x6c))(DAT_005e58ec);
-      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58ec + 0x6c))(DAT_005e58ec);
+      if (g_GenericDirectDrawFuncReturnCode != 0) goto LAB_00415169;
     }
     if ((DAT_005e58f0 != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58f0 + 0x60))(DAT_005e58f0), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f0 + 0x6c))(DAT_005e58f0);
-      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58f0 + 0x6c))(DAT_005e58f0);
+      if (g_GenericDirectDrawFuncReturnCode != 0) goto LAB_00415169;
     }
     if ((DAT_005e58f4 != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58f4 + 0x60))(DAT_005e58f4), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f4 + 0x6c))(DAT_005e58f4);
-      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58f4 + 0x6c))(DAT_005e58f4);
+      if (g_GenericDirectDrawFuncReturnCode != 0) goto LAB_00415169;
     }
     if (!bVar1) goto switchD_00414e5f_caseD_0;
     (**(code **)(**(int **)(DAT_005e5010 + 8) + 0x50))(*(int **)(DAT_005e5010 + 8));
-    FUN_004126f0((&DAT_005e7334)[DAT_005e730c * 4],(&DAT_005e7338)[DAT_005e730c * 4],
-                 (&DAT_005e733c)[DAT_005e730c * 4]);
+    SetDisplayMode((&DAT_005e7334)[DAT_005e730c * 4],(&DAT_005e7338)[DAT_005e730c * 4],
+                   (&DAT_005e733c)[DAT_005e730c * 4]);
     FUN_00431cf0();
     break;
   case 5:
     if ((DAT_005e58ec != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58ec + 0x60))(DAT_005e58ec), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x6c))(DAT_005e58ec);
-      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58ec + 0x6c))(DAT_005e58ec);
+      if (g_GenericDirectDrawFuncReturnCode != 0) goto LAB_00415169;
     }
     if ((DAT_005e58f0 != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58f0 + 0x60))(DAT_005e58f0), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f0 + 0x6c))(DAT_005e58f0);
-      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58f0 + 0x6c))(DAT_005e58f0);
+      if (g_GenericDirectDrawFuncReturnCode != 0) goto LAB_00415169;
     }
     if ((DAT_005e58f4 != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58f4 + 0x60))(DAT_005e58f4), iVar4 == -0x7789fe3e)) {
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f4 + 0x6c))(DAT_005e58f4);
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58f4 + 0x6c))(DAT_005e58f4);
 joined_r0x00415167:
       bVar1 = true;
-      if (g_DirectDrawFuncSuccessful != 0) {
+      if (g_GenericDirectDrawFuncReturnCode != 0) {
 LAB_00415169:
-        uVar2 = GetErrorStringFunc(g_DirectDrawFuncSuccessful);
+        uVar2 = GetErrorStringFunc(g_GenericDirectDrawFuncReturnCode);
         LogError(s_Restoring_of_a_lost_surface_fail_004c69fc,uVar2);
         return 0;
       }
@@ -13396,31 +13645,31 @@ LAB_00415169:
     if ((DAT_005e58ec != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58ec + 0x60))(DAT_005e58ec), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58ec + 0x6c))(DAT_005e58ec);
-      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58ec + 0x6c))(DAT_005e58ec);
+      if (g_GenericDirectDrawFuncReturnCode != 0) goto LAB_00415169;
     }
     if ((DAT_005e58f0 != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58f0 + 0x60))(DAT_005e58f0), iVar4 == -0x7789fe3e)) {
       bVar1 = true;
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f0 + 0x6c))(DAT_005e58f0);
-      if (g_DirectDrawFuncSuccessful != 0) goto LAB_00415169;
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58f0 + 0x6c))(DAT_005e58f0);
+      if (g_GenericDirectDrawFuncReturnCode != 0) goto LAB_00415169;
     }
     if ((DAT_005e58f4 != (int *)0x0) &&
        (iVar4 = (**(code **)(*DAT_005e58f4 + 0x60))(DAT_005e58f4), iVar4 == -0x7789fe3e)) {
-      g_DirectDrawFuncSuccessful = (**(code **)(*DAT_005e58f4 + 0x6c))(DAT_005e58f4);
+      g_GenericDirectDrawFuncReturnCode = (**(code **)(*DAT_005e58f4 + 0x6c))(DAT_005e58f4);
       goto joined_r0x00415167;
     }
 joined_r0x00415188:
     if (!bVar1) goto switchD_00414e5f_caseD_0;
     (**(code **)(**(int **)(DAT_005e5010 + 8) + 0x50))(*(int **)(DAT_005e5010 + 8));
-    FUN_004126f0((&DAT_005e7334)[DAT_005e730c * 4],(&DAT_005e7338)[DAT_005e730c * 4],
-                 (&DAT_005e733c)[DAT_005e730c * 4]);
+    SetDisplayMode((&DAT_005e7334)[DAT_005e730c * 4],(&DAT_005e7338)[DAT_005e730c * 4],
+                   (&DAT_005e733c)[DAT_005e730c * 4]);
   }
   FUN_00413e60();
 switchD_00414e5f_caseD_0:
   FUN_00412840();
-  FUN_00414850(0);
-  FUN_00414850(0);
+  PerformBackBufferBlit(0);
+  PerformBackBufferBlit(0);
   SetGlobalParamWithEventSignal(uVar3);
   SetAnotherGlobalParamWithEventSignal(uVar2);
   return 1;
@@ -13589,7 +13838,7 @@ undefined4 FUN_00415650(void)
   puVar1 = &DAT_005e4600;
   do {
     *(int *)(puVar1 + 0x10) = iVar2;
-    FUN_00415e50(puVar1,0xffffffff,0,0x1ad);
+    ProcessSoundData(puVar1,0xffffffff,0,0x1ad);
     puVar1 = puVar1 + 0x27;
     iVar2 = iVar2 + 1;
   } while (puVar1 < &DAT_005e49a8);
@@ -13608,7 +13857,7 @@ undefined4 FUN_00415690(void)
   puVar1 = &DAT_005e4b80;
   do {
     *(int *)(puVar1 + 0x10) = iVar2;
-    FUN_00415e50(puVar1,0xffffffff,0,0x161);
+    ProcessSoundData(puVar1,0xffffffff,0,0x161);
     puVar1 = puVar1 + 0x27;
     iVar2 = iVar2 + 1;
   } while (puVar1 < &DAT_005e4da2);
@@ -13779,7 +14028,7 @@ undefined4 FUN_00415910(void)
   do {
     if (*piVar5 != 0) {
       *(int *)((int)DAT_005e4a64 + iVar8 + 0x10) = iVar6;
-      FUN_00415e50((int)DAT_005e4a64 + iVar8,0xffffffff,0,0x16f);
+      ProcessSoundData((int)DAT_005e4a64 + iVar8,0xffffffff,0,0x16f);
     }
     iVar6 = iVar6 + 1;
     piVar5 = piVar5 + 1;
@@ -13876,7 +14125,7 @@ undefined4 FUN_00415b30(void)
   do {
     if (*piVar10 != 0) {
       *(int *)((int)DAT_005e4a64 + iVar6 + 0x10) = iVar5;
-      FUN_00415e50((int)DAT_005e4a64 + iVar6,0xffffffff,0,0x16f);
+      ProcessSoundData((int)DAT_005e4a64 + iVar6,0xffffffff,0,0x16f);
     }
     iVar5 = iVar5 + 1;
     piVar10 = piVar10 + 1;
@@ -13947,7 +14196,31 @@ uint FUN_00415dd0(int param_1,ushort param_2,uint param_3)
 
 
 
-undefined4 FUN_00415e50(undefined4 *param_1,int param_2,int param_3,uint param_4)
+//  * ProcessSoundData - Previously FUN_00415e50
+//  *
+//  * Summary:
+//  * This function processes sound data from a WAV file or another sound resource. It calculates 
+//  * memory allocation and moves the audio data accordingly. The function also handles sound
+// effects 
+//  * by interacting with the global sound state.
+//  *
+//  * It attempts to load and process sound data into memory, checks for valid parameters, and
+// manages
+//  * memory for sound storage, including overlapping memory handling.
+//  *
+//  * Returns:
+//  *   1 on success, 0 on failure.
+//  *
+//  * Globals:
+//  *   - `DAT_004d7880`: A global tracking sound buffer or memory usage.
+//  *
+//  * Parameters:
+//  *   - `param_1`: A pointer to the sound data structure.
+//  *   - `param_2`: Possibly an index for identifying the sound.
+//  *   - `param_3`: Another parameter possibly related to the sound length or duration.
+//  *   - `param_4`: Offset or additional data related to sound.
+
+undefined4 ProcessSoundData(undefined4 *param_1,int param_2,int param_3,uint param_4)
 
 {
   int iVar1;
@@ -14045,7 +14318,7 @@ LAB_00415ed2:
 void FUN_00415fa0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  FUN_00415e50(param_1,param_2,param_3,0);
+  ProcessSoundData(param_1,param_2,param_3,0);
   return;
 }
 
@@ -14178,7 +14451,23 @@ void FUN_00415fc0(void)
 
 
 
-void FUN_00416240(void)
+//  * StopAudioPlayback - Previously FUN_00416240
+//  *
+//  * Summary:
+//  * This function stops the current audio playback by closing streams, ending audio samples, 
+//  * and resetting relevant data structures. It iterates over audio streams and samples, making 
+//  * sure that they are properly terminated.
+//  *
+//  * Returns:
+//  *   Void. No return value.
+//  *
+//  * Globals:
+//  *   - `DAT_005e4a5e`: Flag indicating if audio playback is active.
+//  *   - `DAT_005e4a48`: Audio stream handle that is closed during cleanup.
+//  *   - `DAT_005d0e50`: Pointer used for traversing and resetting audio data structures.
+//  *   - `DAT_005e49c8`: Audio sample handles for individual audio samples.
+
+void StopAudioPlayback(void)
 
 {
   int iVar1;
@@ -26485,8 +26774,22 @@ void FUN_00429330(void)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
+//  * ProcessCreditsFile - Previously FUN_00429350
+//  *
+//  * Summary:
+//  * This function processes a file's attributes and resources. It builds the file path,
+//  * opens the file, and processes the contents through several steps, including
+//  * memory allocation, copying data, and invoking resource decoding functions.
+//  *
+//  * Returns:
+//  *   1 if successful, 0 if an error occurs during file or memory operations.
+//  *
+//  * Globals:
+//  *   - DAT_005df310: Flag for a specific condition that alters file path processing.
+//  *   - DAT_004d7bac, DAT_004d7bb4, DAT_004d7b94, DAT_004d7ba8, DAT_004d7b98: Various 
+//  *     memory locations manipulated throughout the process.
 
-undefined4 FUN_00429350(void)
+undefined4 ProcessCreditsFile(void)
 
 {
   byte bVar1;
@@ -26549,7 +26852,7 @@ undefined4 FUN_00429350(void)
         iVar3 = CallStringToInteger();
         DAT_004d7b94 = DAT_004d7b94 + bVar1;
         iVar5 = DetermineLanguageCode();
-        pcVar8 = (char *)FUN_00429560();
+        pcVar8 = (char *)ProcessNextCreditsEntry();
         while( true ) {
           if (pcVar8 == (char *)0x0) {
             DAT_005dfe34 = (int)(DAT_004d7bac * 0x19 + (DAT_004d7bac * 0x19 >> 0x1f & 3U)) >> 2;
@@ -26562,7 +26865,7 @@ undefined4 FUN_00429350(void)
             iVar7 = 1;
             if (1 < iVar3) {
               do {
-                pcVar8 = (char *)FUN_00429560();
+                pcVar8 = (char *)ProcessNextCreditsEntry();
                 if (iVar7 == iVar5) {
                   *ppcVar2 = pcVar8;
                 }
@@ -26582,7 +26885,7 @@ undefined4 FUN_00429350(void)
           ppcVar2[1] = (char *)ppcVar6;
           if (ppcVar6 == (char **)0x0) break;
           DAT_004d7bac = DAT_004d7bac + 1;
-          pcVar8 = (char *)FUN_00429560();
+          pcVar8 = (char *)ProcessNextCreditsEntry();
           ppcVar2 = ppcVar6;
         }
       }
@@ -26593,7 +26896,16 @@ undefined4 FUN_00429350(void)
 
 
 
-uint FUN_00429560(void)
+//  * ProcessNextCreditsEntry (FUN_00429560):
+//  * This function processes the next credit entry in the "hdzcred.dat" file.
+//  *
+//  * It performs the following steps:
+//  * - Reads data byte by byte from a global pointer to the credits file data.
+//  * - Allocates memory for the credit entry and copies the data with overlap handling.
+//  * - Searches for the "END_CREDITS" marker, indicating the end of the credits.
+//  * - Returns accordingly if the end marker is found or not.
+
+uint ProcessNextCreditsEntry(void)
 
 {
   void *_Dst;
@@ -27071,7 +27383,7 @@ void FUN_00429cf0(void)
   case 0:
     FUN_00475da0(4);
     FUN_0042a770();
-    FUN_00429350();
+    ProcessCreditsFile();
     FUN_0042a450(0x13);
     DAT_004d8100 = 1;
     FUN_00492720(1);
@@ -27106,7 +27418,7 @@ void FUN_00429cf0(void)
       uVar3 = 1;
     }
     else {
-      FUN_00416240();
+      StopAudioPlayback();
       FUN_0042a450(7);
       SetAnotherGlobalParamWithEventSignal(0x13);
       SetGlobalParamWithEventSignal(0);
@@ -27164,7 +27476,7 @@ void FUN_00429cf0(void)
         iVar1 = iVar1 + 1;
       } while (iVar1 < *(int *)(DAT_005df2cc + 800));
     }
-    FUN_00416240();
+    StopAudioPlayback();
     SetGlobalParamWithEventSignal(0xe);
     *(undefined *)(DAT_004ca030 * 0x37 + DAT_005b9440) = 1;
     FUN_0042a450(0xc);
@@ -29087,7 +29399,7 @@ undefined4 FUN_0042cc60(void)
         if (pcVar5 == (char *)0x0) {
           pcStackY_20 = (char *)0x42cdb0;
           _memset(local_768,0,0x515);
-          iVar6 = FUN_0045d1d0();
+          iVar6 = LoadMapIntoMemory();
           if (iVar6 != 0) {
             _Dest = pcVar8 + 0x222;
             iVar7 = iVar7 + 1;
@@ -29155,7 +29467,20 @@ undefined4 FUN_0042cc60(void)
 
 
 
-uint FUN_0042cf90(int param_1,int param_2)
+//  * CompareEntityHeights (FUN_0042cf90):
+//  * This function compares the height values of two entities based on the value 
+//  * stored at offset 0x21e of each entity's structure.
+//  *
+//  * Parameters:
+//  * - param_1: Pointer to the first entity.
+//  * - param_2: Pointer to the second entity.
+//  *
+//  * Returns:
+//  * - 0xffffffff if the first entity is shorter than the second.
+//  * - 1 if the first entity is taller than the second.
+//  * - 0 if both entities have the same height.
+
+uint FUN_0042cf90_UNSURE_CompareEntityHeights(int param_1,int param_2)
 
 {
   if (*(int *)(param_1 + 0x21e) < *(int *)(param_2 + 0x21e)) {
@@ -31361,7 +31686,7 @@ LAB_0042fe10:
         FUN_00430c20();
         return;
       }
-      FUN_00416240();
+      StopAudioPlayback();
       FUN_0042a450();
       SetGlobalParamWithEventSignal();
       DAT_004d8100 = 1;
@@ -33554,7 +33879,7 @@ LAB_004338f5:
     switch(DAT_005df320) {
     case 1:
       if ((DAT_004ca030 == 0x14) && (DAT_004d24f0 != '\0')) {
-        FUN_00429350();
+        ProcessCreditsFile();
         FUN_0042a450(0x13);
       }
       else {
@@ -39702,7 +40027,24 @@ undefined4 FUN_0043d2c0(void)
 
 
 
-undefined4 FUN_0043d590(void)
+//  * ProcessLastLoadedHedsFile (FUN_0043d590):
+//  * This function processes the "LastLoadedHeds.txt" file by reading its data, copying it into
+//  * a designated memory structure, and setting relevant global parameters. It utilizes the 
+//  * CopyDataWithLock function to ensure safe operations with shared resources.
+//  *
+//  * Key operations:
+//  * - Opens the "LastLoadedHeds.txt" file from the root directory or an alternative directory.
+//  * - Reads the data into a buffer and processes up to 0x28 bytes.
+//  * - Copies the processed data to a global memory area.
+//  * - Closes the file and sets a global signal after processing.
+//  *
+//  * Parameters: None
+//  *
+//  * Returns:
+//  * - 1 if successful.
+//  * - 0 if file cannot be opened or an error occurs during processing.
+
+undefined4 ProcessLastLoadedHedsFile(void)
 
 {
   int iVar1;
@@ -40303,7 +40645,7 @@ LAB_0043e216:
 LAB_0043e239:
   (**(code **)(**(int **)(DAT_005e5010 + 0x7b0) + 0x14))
             (*(int **)(DAT_005e5010 + 0x7b0),0,DAT_004d811c,0,0x1000000,0);
-  FUN_00414850(DAT_005d6518 != 0);
+  PerformBackBufferBlit(DAT_005d6518 != 0);
   return;
 }
 
@@ -40632,7 +40974,7 @@ void FUN_0043e920(void)
       DAT_004d80f0 = 0;
     }
   }
-  FUN_00416240();
+  StopAudioPlayback();
   return;
 }
 
@@ -41414,7 +41756,26 @@ void FUN_0043f980(void)
 
 
 
-undefined4 FUN_0043f9d0(void)
+//  * LoadHdzTextData (FUN_0043f9d0):
+//  * This function loads and processes the "Hdztext.dat" file, reading its contents and performing
+//  * memory allocations and data manipulation. It handles file opening, reading, and processing
+//  * operations such as copying and decoding resource data. The function is designed to handle
+//  * specific resource attributes and close resources when done.
+//  *
+//  * Key operations:
+//  * - Determines the language code to handle language-specific files.
+//  * - Opens the "Hdztext.dat" file from the root or alternative directory.
+//  * - Allocates memory to store the file content.
+//  * - Processes the content by copying it into a resource structure and decoding it.
+//  * - Safely closes the file and releases memory after use.
+//  *
+//  * Parameters: None
+//  *
+//  * Returns:
+//  * - 1 if the file was successfully processed and resources were loaded.
+//  * - 0 if an error occurred during file loading or processing.
+
+undefined4 LoadHdzTextData(void)
 
 {
   byte bVar1;
@@ -47245,7 +47606,8 @@ undefined4 InitializeInputDevices(undefined4 param_1,undefined4 param_2)
     DAT_005ddf20 = 1;
     FUN_00446d40();
   }
-  iVar1 = (**(code **)(*DAT_005ddf40 + 0x10))(DAT_005ddf40,4,FUN_00447c70,DAT_005ddf40,0x101);
+  iVar1 = (**(code **)(*DAT_005ddf40 + 0x10))
+                    (DAT_005ddf40,4,InitializeInputDevice,DAT_005ddf40,0x101);
   if ((iVar1 == 0) && (DAT_004d8374 != 0)) {
     DAT_004d837c = 1;
     _DAT_004d8380 = 1;
@@ -47253,7 +47615,7 @@ undefined4 InitializeInputDevices(undefined4 param_1,undefined4 param_2)
     return 1;
   }
   _DAT_004d8380 = 0;
-  iVar1 = (**(code **)(*DAT_005ddf40 + 0x10))(DAT_005ddf40,4,FUN_00447c70,DAT_005ddf40,1);
+  iVar1 = (**(code **)(*DAT_005ddf40 + 0x10))(DAT_005ddf40,4,InitializeInputDevice,DAT_005ddf40,1);
   if ((iVar1 != 0) || (DAT_004d837c = 1, DAT_004d8374 == 0)) {
     DAT_004d837c = 0;
   }
@@ -47329,7 +47691,27 @@ void ParseKeyBindings(void)
 
 
 
-undefined4 FUN_00447c70(int *param_1)
+//  * InitializeInputDevice (FUN_00447c70):
+//  * This function initializes input devices, particularly for joystick support, by configuring
+//  * the DirectInput devices. It sets up the properties and formats for the input devices and
+// handles
+//  * failure cases by logging errors through `OutputDebugStringA`.
+//  * 
+//  * Key operations:
+//  * - Allocates a stack frame for handling input initialization.
+//  * - Configures a joystick if detected, setting the necessary parameters.
+//  * - Sets data formats, cooperative levels, and device properties using DirectInput device calls.
+//  * - Handles errors by printing to the debug log and safely releasing resources when an error
+// occurs.
+//  *
+//  * Parameters:
+//  * - param_1: Pointer to the DirectInput device being initialized.
+//  *
+//  * Returns:
+//  * - 1 if the input device is successfully initialized.
+//  * - 0 if an error occurs during initialization.
+
+undefined4 InitializeInputDevice(int *param_1)
 
 {
   int iVar1;
@@ -49963,7 +50345,7 @@ undefined4 FUN_0044b6b0(int param_1)
   *puVar3 = DAT_005e7300;
   puVar3[1] = DAT_005e7300;
   ppiStackY_34 = (int **)0x44b717;
-  iVar4 = FUN_0045a100();
+  iVar4 = LoadBitmapFile();
   if (iVar4 == 0) {
     return 0;
   }
@@ -50088,7 +50470,7 @@ undefined4 FUN_0044b8d0(undefined4 param_1,char *param_2,char *param_3)
     return 0;
   }
   local_28 = 0x44b9c5;
-  FUN_0044bae0();
+  HandleBitmapOperations();
   (**(code **)(iRam00000000 + 0x74))();
   DeleteObject(h);
   FreeMemory();
@@ -50131,7 +50513,7 @@ int * FUN_0044ba00(undefined4 param_1,int *param_2)
   }
   local_20 = param_2;
   local_24 = param_2;
-  FUN_0044bae0();
+  HandleBitmapOperations();
   (**(code **)(*param_2 + 0x74))();
   local_20 = (int *)0x44bac9;
   DeleteObject(param_2);
@@ -50140,7 +50522,23 @@ int * FUN_0044ba00(undefined4 param_1,int *param_2)
 
 
 
-int FUN_0044bae0(int *param_1,HDC param_2,int param_3,int param_4,int param_5,undefined *param_6)
+//  * Function: HandleBitmapOperations (FUN_0044bae0)
+//  * Description: Handles bitmap operations including setting up device contexts (DC), 
+//  *              performing stretch and blit operations, and managing GDI resources 
+//  *              like DCs and bitmaps. Validates input parameters and processes 
+//  *              them accordingly.
+//  * Arguments:
+//  *    param_1 - Pointer to structure/object for bitmap operations.
+//  *    param_2 - Pointer to a bitmap or related object.
+//  *    param_3 - Additional parameter for StretchBlt.
+//  *    param_4 - Additional parameter for StretchBlt.
+//  *    param_5 - Possibly width or height for bitmap.
+//  *    param_6 - Possibly width or height for bitmap.
+//  * Returns:
+//  *    undefined - Likely returns an HRESULT-style code, 0x80004005 indicates failure.
+
+int HandleBitmapOperations
+              (int *param_1,HDC param_2,int param_3,int param_4,int param_5,undefined *param_6)
 
 {
   HDC hdc;
@@ -51816,7 +52214,15 @@ undefined4 LoadUserSettings(void)
 
 
 
-undefined4 FUN_0044ddb0(void)
+//  * Function: LoadInputSettings (FUN_0044ddb0)
+//  * Description: Loads input settings from the registry, including key definitions, 
+//  *              mouse movement sensitivity, and joystick rotation sensitivity. 
+//  *              Allocates memory for input configurations and ensures valid registry
+//  *              access before performing operations.
+//  * Returns:
+//  *    undefined - Likely returns 1 on success.
+
+undefined4 LoadInputSettings(void)
 
 {
   char cVar1;
@@ -52187,7 +52593,7 @@ switchD_0044e0b6_caseD_42a:
         LVar3 = SendMessageA(pHVar2,UVar7,WVar8,LVar9);
         _DAT_004cd11c = (float)LVar3 * 0.1;
         _DAT_004cd120 = _DAT_004cd11c;
-        FUN_0044ddb0();
+        LoadInputSettings();
         EndDialog(param_1,1);
         return 0;
       }
@@ -57778,7 +58184,7 @@ undefined4 FUN_00456880(undefined4 param_1,short param_2,int param_3)
   iVar12 = 0;
   pvVar9 = (void *)AllocateMemoryWithCallback(0x501);
   DAT_005dcb3c = _memset(pvVar9,iVar12,sVar13);
-  FUN_00456ea0(uVar8);
+  OpenAndReadFile(uVar8);
   DAT_005dcb38 = 0xe;
   psVar10 = (short *)FUN_00456e70();
   iVar12 = param_3;
@@ -57978,7 +58384,7 @@ int FUN_00456e70(void)
 {
   int iVar1;
   
-  if (DAT_005dcb38 == DAT_005dcb34) {
+  if (DAT_005dcb38 == g_LoadedFileSize_UNSURE_Map) {
     return 0;
   }
   iVar1 = DAT_005dcb30 + DAT_005dcb38;
@@ -57988,7 +58394,19 @@ int FUN_00456e70(void)
 
 
 
-void FUN_00456ea0(LPCSTR param_1)
+//  * Function: OpenAndReadFile (FUN_00456ea0)
+//  * Description: Opens a file from the provided directory and file name, retrieves
+//  *              the file size, allocates memory for the file data, and reads the file's
+//  *              contents into memory using the `CopyDataWithLock` function. It ensures
+//  *              that resources and handles are closed safely after the operation.
+//  *              This function is called by `FUN_0045d1d0` to read map files in the
+//  *              game.
+//  * Arguments:
+//  *    param_1 - The path and file name to be opened and read.
+//  * Returns:
+//  *    undefined - Performs operations but does not return a meaningful value.
+
+void OpenAndReadFile(LPCSTR param_1)
 
 {
   HANDLE hFile;
@@ -57999,14 +58417,14 @@ void FUN_00456ea0(LPCSTR param_1)
   
   hFile = CreateFileA(param_1,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   if (hFile != (HANDLE)0xffffffff) {
-    DAT_005dcb34 = GetFileSize(hFile,(LPDWORD)0x0);
+    g_LoadedFileSize_UNSURE_Map = GetFileSize(hFile,(LPDWORD)0x0);
     CloseHandle(hFile);
     _Val = 0;
-    _Size = DAT_005dcb34;
-    _Dst = (void *)AllocateMemoryWithCallback(DAT_005dcb34);
+    _Size = g_LoadedFileSize_UNSURE_Map;
+    _Dst = (void *)AllocateMemoryWithCallback(g_LoadedFileSize_UNSURE_Map);
     DAT_005dcb30 = _memset(_Dst,_Val,_Size);
     uVar1 = OpenFileWithFixedFlags0x40(param_1,&DAT_004cd960);
-    CopyDataWithLock(DAT_005dcb30,1,DAT_005dcb34,uVar1);
+    CopyDataWithLock(DAT_005dcb30,1,g_LoadedFileSize_UNSURE_Map,uVar1);
     SafeCloseResource(uVar1);
   }
   return;
@@ -60375,9 +60793,43 @@ FUN_00459d30(byte param_1,int **param_2,int *param_3,undefined4 *param_4,undefin
 
 
 
+//     // Function: LoadBitmapFile (FUN_0045a100)
+//     // Description:
+//     //    This function processes the loading of a bitmap file, adjusts the file format based on
+// input parameters, 
+//     //    and handles various file format conversions. It appends the appropriate file extension
+// depending on the 
+//     //    detected file type (e.g., .bmp, .alh) and supports both 8-bit and 24-bit formats. It
+// also checks for special 
+//     //    bitmap headers (such as "BM") to validate the file. If the file is successfully loaded,
+// the bitmap data is 
+//     //    stored in memory and passed for further operations.
+//     //
+//     // Globals Used:
+//     //    DAT_005dcb18 - Holds the file format type (e.g., 0x40, 0x20 for visfx directories).
+//     //    DAT_005e72d0 - Used to determine specific rendering or loading modes.
+//     //    DAT_005e72fc - Stores a special bitmap color for certain conversions.
+//     //    DAT_005e58d0 - Indicates if special processing should be done based on the input type.
+//     //    DAT_005dcb20 - Keeps track of the total memory allocated for bitmap resources.
+//     //
+//     // Arguments:
+//     //    param_1 - Path to the file to load.
+//     //    param_2 - Pointer to a function table used for file loading and memory operations.
+//     //    param_3 - Output variable that holds the size of the bitmap data.
+//     //    param_4 - Output flag that indicates special bitmap processing (e.g., a specific color
+// was found).
+//     //    param_5 - Output variable that stores the loading result (0 for failure, 1 for
+// success).
+//     //    param_6 - Placeholder parameter (unused).
+//     //    param_7 - Input/output variable used to determine and return bitmap loading options and
+// modes.
+//     //
+//     // Returns:
+//     //    undefined4 - Returns 1 on success, 0 on failure.
+
 undefined4
-FUN_0045a100(char *param_1,int **param_2,int *param_3,undefined4 *param_4,undefined4 *param_5,
-            undefined4 param_6,int *param_7)
+LoadBitmapFile(char *param_1,int **param_2,int *param_3,undefined4 *param_4,undefined4 *param_5,
+              undefined4 param_6,int *param_7)
 
 {
   bool bVar1;
@@ -62679,7 +63131,20 @@ void FUN_0045d1b0(void)
 
 
 
-int FUN_0045d1d0(char *param_1,undefined4 param_2)
+//  *  Function: LoadMapIntoMemory (FUN_0045d1d0)                                                *
+//  *  Description: This function loads a specific map into memory by constructing the file path *
+//  *               from the base directory and map name, reading the file into memory, and      *
+//  *               checking each entry for a specific value (0x29). If found, it moves the      *
+//  *               relevant data into a new memory location using 'MoveMemoryWithOverlapHandling'.
+//  *               The function ensures proper memory allocation and freeing once done.         *
+//  *               It returns 1 if the data was found and loaded, otherwise 0.                  *
+//  *  Arguments:                                                                                *
+//  *     mapName - The name of the map to load from the base directory.                         *
+//  *     param_2 - An unknown parameter passed to 'MoveMemoryWithOverlapHandling'.              *
+//  *  Returns:                                                                                  *
+//  *     int - Returns 1 if the map data was successfully loaded, otherwise 0.                  *
+
+int LoadMapIntoMemory(char *param_1,undefined4 param_2)
 
 {
   short *psVar1;
@@ -62694,7 +63159,7 @@ int FUN_0045d1d0(char *param_1,undefined4 param_2)
   FID_conflict___mbscpy(local_104,&s_MapFilesDir_DAT_005d5fe0);
   uStackY_18 = 0x45d205;
   FID_conflict__strcat(local_104,param_1);
-  FUN_00456ea0();
+  OpenAndReadFile();
   DAT_005dcb38 = 0xe;
   psVar1 = (short *)FUN_00456e70();
   while ((psVar1 != (short *)0x0 && (iVar2 == 0))) {
@@ -72070,7 +72535,7 @@ undefined4 FUN_0046a900(int param_1)
   FUN_00435910();
   iVar1 = FUN_0043d2c0(DAT_004d80e8);
   if (iVar1 == 0) {
-    FUN_00470800();
+    ExitMainMessageLoop();
     return 0;
   }
   FUN_00415380();
@@ -72269,7 +72734,7 @@ undefined4 FUN_0046ac80(char *param_1,int param_2,int param_3,int param_4)
     DAT_005d3210 = FUN_004747f0();
     DAT_005d3234 = FUN_004747f0();
     if (DAT_005df318 == (undefined4 *)0x0) {
-      FUN_00470800();
+      ExitMainMessageLoop();
     }
     FUN_004627e0();
     FUN_00474a30();
@@ -72342,7 +72807,7 @@ undefined4 FUN_0046ac80(char *param_1,int param_2,int param_3,int param_4)
     FUN_00454a20();
   }
   if (DAT_00598d90 == 0) {
-    FUN_00470800();
+    ExitMainMessageLoop();
     return 0;
   }
   if (DAT_00598944 != 0) {
@@ -72425,7 +72890,7 @@ undefined4 FUN_0046ac80(char *param_1,int param_2,int param_3,int param_4)
     FUN_004055f0();
   }
   if (param_4 != 0) {
-    FUN_00416240();
+    StopAudioPlayback();
   }
   if ((DAT_00598944 == 0) && (FUN_00415440(), DAT_00598944 == 0)) {
     if (param_3 == 0) {
@@ -74647,7 +75112,7 @@ undefined4 InitializeResourcesAndMainWindow(HINSTANCE param_1)
     bVar1 = false;
     SetMapFilesDirectory();
     LoadLocalizationData();
-    FUN_0043f9d0();
+    LoadHdzTextData();
     do {
       IVar4 = DialogBoxParamA(DAT_005d6504,(LPCSTR)0x74,(HWND)0x0,FUN_0046eb50,0);
       if (IVar4 == 0) {
@@ -74662,8 +75127,8 @@ undefined4 InitializeResourcesAndMainWindow(HINSTANCE param_1)
         bVar1 = true;
       }
     } while (!bVar1);
-    FUN_00470b60();
-    if (DAT_00598d20 == 1) {
+    SaveGraphicsAndAudioSettings();
+    if (isMessageLoopTerminated == 1) {
       TerminateWithCode();
     }
     FUN_00470a20();
@@ -74672,7 +75137,7 @@ undefined4 InitializeResourcesAndMainWindow(HINSTANCE param_1)
       TerminateWithCode();
     }
     hAccTable = LoadAcceleratorsA(param_1,s_AppAccel_004d0588);
-    while (DAT_00598d20 == 0) {
+    while (isMessageLoopTerminated == 0) {
       BVar5 = PeekMessageA((LPMSG)&stack0xffffffe0,(HWND)0x0,0,0,1);
       if (BVar5 == 0) {
         WaitMessage();
@@ -74744,8 +75209,8 @@ void FUN_0046ddf0(void)
   do {
     if ((((*(int *)(iVar1 + 0x255c) != 0) && (*(int *)(iVar1 + 0x2558) == 0)) &&
         (*(int *)(iVar1 + 0x2548) == 0)) &&
-       ((DAT_00598d20 == 0 && ((*(int *)(iVar1 + 0x254c) != 0 || (*(int *)(iVar1 + 0x2524) == 0)))))
-       ) {
+       ((isMessageLoopTerminated == 0 &&
+        ((*(int *)(iVar1 + 0x254c) != 0 || (*(int *)(iVar1 + 0x2524) == 0)))))) {
       if ((iVar2 == 0) || (_DAT_005d650c != 0)) {
         FUN_0046eae0();
         iVar1 = DAT_005e5010;
@@ -75015,7 +75480,7 @@ undefined4 FUN_0046e450(void)
   }
   iVar1 = FUN_00435910();
   if (iVar1 == 0) {
-    FUN_00470800();
+    ExitMainMessageLoop();
     return 0;
   }
   if ((char)DAT_00598944 == '\0') {
@@ -75032,7 +75497,7 @@ undefined4 FUN_0046e450(void)
     DAT_005d3210 = FUN_004747f0();
     DAT_005d3234 = FUN_004747f0();
     if (DAT_005df318 == 0) {
-      FUN_00470800();
+      ExitMainMessageLoop();
     }
     FUN_00474a30(1);
     *(int *)(DAT_005e45e4 + 0x2b9) = *(int *)(*(int *)(DAT_005df318 + 4) + 4) + 6;
@@ -75043,7 +75508,7 @@ undefined4 FUN_0046e450(void)
     FUN_00449cf0();
     iVar1 = FUN_0043d2c0(DAT_004d80e8);
     if (iVar1 == 0) {
-      FUN_00470800();
+      ExitMainMessageLoop();
       return 0;
     }
     DAT_00598db8 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)0x0);
@@ -75064,7 +75529,7 @@ undefined4 FUN_0046e450(void)
     FUN_0047f450();
     FUN_00415650();
     if (DAT_00598d7c != 0) {
-      iVar1 = FUN_0043d590();
+      iVar1 = ProcessLastLoadedHedsFile();
       if ((DAT_00598d7c != 0) && (iVar1 != 0)) goto LAB_0046e80f;
     }
     FUN_00415380();
@@ -75212,12 +75677,12 @@ undefined4 FUN_0046e970(undefined4 param_1,undefined4 param_2,int **param_3)
   AdjustStackForLargeAllocations();
   iVar1 = (**(code **)(**(int **)(DAT_005e5010 + 0x10) + 0x18))();
   if (iVar1 != 0) {
-    FUN_00470800();
+    ExitMainMessageLoop();
     return 0;
   }
   iVar1 = (**(code **)(**(int **)(DAT_005e5010 + 0x14) + 0x18))();
   if (iVar1 != 0) {
-    FUN_00470800();
+    ExitMainMessageLoop();
     return 0;
   }
   local_2c = (int *)0x46e9d1;
@@ -75229,7 +75694,7 @@ undefined4 FUN_0046e970(undefined4 param_1,undefined4 param_2,int **param_3)
   local_2c = (int *)param_2;
   iVar1 = (**(code **)(*unaff_ESI + 0x14))();
   if (iVar1 != 0) {
-    FUN_00470800();
+    ExitMainMessageLoop();
     return 0;
   }
   local_2c = *(int **)(DAT_005e5010 + 0x14);
@@ -75237,7 +75702,7 @@ undefined4 FUN_0046e970(undefined4 param_1,undefined4 param_2,int **param_3)
   iVar1 = (**(code **)(*local_2c + 0x34))();
   if (iVar1 != 0) {
     local_30 = 0x46ea6c;
-    FUN_00470800();
+    ExitMainMessageLoop();
     return 0;
   }
   *param_3 = unaff_ESI;
@@ -75340,7 +75805,7 @@ undefined4 FUN_0046eb50(HWND param_1,int param_2,undefined2 param_3)
           FUN_004ae5f0();
           FID_conflict__strcat(local_130,&stack0xfffffff0);
           MessageBoxA(gMainWindowHandle,DAT_005def24,local_130,0x50010);
-          FUN_00470800();
+          ExitMainMessageLoop();
           TerminateWithCode();
           EndDialog(param_1,1);
           return 0;
@@ -75362,7 +75827,7 @@ undefined4 FUN_0046eb50(HWND param_1,int param_2,undefined2 param_3)
           FUN_004ae5f0();
           FID_conflict__strcat(local_130,&stack0xfffffff0);
           MessageBoxA(gMainWindowHandle,DAT_005def24,local_130,0x50010);
-          FUN_00470800();
+          ExitMainMessageLoop();
           TerminateWithCode();
           EndDialog(param_1,1);
           return 0;
@@ -75371,7 +75836,7 @@ undefined4 FUN_0046eb50(HWND param_1,int param_2,undefined2 param_3)
         EndDialog(param_1,1);
         return 0;
       case 0x424:
-        DAT_00598d20 = 1;
+        isMessageLoopTerminated = 1;
         EndDialog(param_1,1);
         return 0;
       case 0x42d:
@@ -75829,7 +76294,7 @@ LRESULT FUN_0046fa40(HWND param_1,uint param_2,uint param_3,LPARAM param_4)
   iVar6 = FUN_004146b0(&param_2,&stack0xfffffff8,param_1,param_2,param_3,param_4);
   if (iVar6 == 0) {
     FUN_00470960();
-    FUN_00470800();
+    ExitMainMessageLoop();
     return 0;
   }
   if (param_2 != 0) {
@@ -75952,7 +76417,7 @@ LRESULT FUN_0046fa40(HWND param_1,uint param_2,uint param_3,LPARAM param_4)
       LoadLocalizationData();
       cVar4 = FUN_0046f980();
       if (cVar4 == '\0') {
-        FUN_00470800();
+        ExitMainMessageLoop();
         TerminateWithCode(0);
       }
     }
@@ -76274,7 +76739,7 @@ LAB_00470598:
       DAT_00598d70 = (uint)(DAT_00598d70 == 0);
     }
     else if (uVar12 == 2) {
-      FUN_00470800();
+      ExitMainMessageLoop();
     }
   }
 switchD_0046ffc2_caseD_9c53:
@@ -76301,10 +76766,23 @@ void FUN_004707c0(void)
 
 
 
-void FUN_00470800(void)
+// // Function: ExitMainMessageLoop
+// // Description: Signals the end of the main message loop by setting a flag
+// (`isMessageLoopTerminated`)
+// //              and posting a `WM_QUIT` message to the main window handle, effectively
+// terminating 
+// //              the application's message handling loop.
+// // Globals Used:
+// //    isMessageLoopTerminated (was DAT_00598d20) - A flag indicating that the main message loop
+// should terminate.
+// //    gMainWindowHandle - Handle to the main application window.
+// // Arguments: None
+// // Returns: None
+
+void ExitMainMessageLoop(void)
 
 {
-  DAT_00598d20 = 1;
+  isMessageLoopTerminated = 1;
   PostMessageA(gMainWindowHandle,2,0,0);
   return;
 }
@@ -76327,7 +76805,7 @@ void FUN_00470820(int param_1)
   if (param_1 == 0) {
     if ((char)DAT_00598944 == '\0') {
       FUN_0043e920();
-      FUN_00416240();
+      StopAudioPlayback();
       _AIL_shutdown_0();
     }
   }
@@ -76463,8 +76941,32 @@ void FUN_00470a40(void)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
+//     // Function: SaveGraphicsAndAudioSettings (FUN_00470b60)
+//     // Description:
+//     //    This function saves graphics and audio-related settings to the Windows registry under 
+//     //    the specified key. It converts various parameters to strings and stores them under 
+//     //    appropriate subkeys such as ClipPlane, Models, Lighting, Resolution Mode, Music Level, 
+//     //    Sound Level, and Difficulty. The function uses a registry key specific to the 
+//     //    application "Vis Interactive\Hedz".
+//     //
+//     // Globals Used:
+//     //    DAT_005df2e0 - Value for ClipPlane.
+//     //    DAT_005df2e8 - Value for Models.
+//     //    DAT_005df2e4 - Value for Lighting.
+//     //    DAT_005df2f8 - Value for Resolution Mode.
+//     //    _DAT_005df2f0 - Value for Music Level.
+//     //    DAT_005df2f4 - Value for Sound Level.
+//     //    DAT_005df300 - Value for Difficulty.
+//     //    s_Software\Vis_Interactive\Hedz_004d0fac - The registry key path for the settings.
+//     //    HKEY_00598b70 - Handle to the opened registry key.
+//     //
+//     // Arguments:
+//     //    None
+//     //
+//     // Returns:
+//     //    None
 
-void FUN_00470b60(void)
+void SaveGraphicsAndAudioSettings(void)
 
 {
   void *_Dst;
@@ -76860,9 +77362,9 @@ undefined4 SetGraphicsMode(int param_1)
     DAT_004d8104 = 0;
   }
   FUN_0043e140();
-  FUN_00414850(0);
+  PerformBackBufferBlit(0);
   FUN_0043e140();
-  FUN_00414850(0);
+  PerformBackBufferBlit(0);
   return 1;
 }
 
@@ -76903,9 +77405,9 @@ undefined4 FUN_00471660(void)
     DAT_004d8104 = 0;
   }
   FUN_0043e140();
-  FUN_00414850(0);
+  PerformBackBufferBlit(0);
   FUN_0043e140();
-  FUN_00414850(0);
+  PerformBackBufferBlit(0);
   return 1;
 }
 
@@ -79502,7 +80004,7 @@ void FUN_00475460(int param_1)
 {
   FUN_0046bff0(param_1,0);
   if ((*(byte *)(*(int *)(param_1 + 4) + 0x8a) & 2) != 0) {
-    FUN_00404e50(param_1);
+    ClearAnimationSlot(param_1);
   }
   return;
 }
@@ -88240,9 +88742,9 @@ undefined4 FUN_004811e0(void)
         FUN_00412840();
         DAT_00598fcc = '\0';
       }
-      FUN_00414bb0();
+      PerformBackBufferOperations();
       FUN_00428d60();
-      FUN_00414850();
+      PerformBackBufferBlit();
       return 1;
     }
     break;
@@ -88375,11 +88877,11 @@ undefined4 FUN_004811e0(void)
       _DAT_004d8258 = 0;
     }
     FUN_004923e0();
-    FUN_00414850();
+    PerformBackBufferBlit();
     DAT_005b94c4 = 0;
     DAT_005b94c0 = 0;
     DAT_005b946c = 0;
-    iVar5 = FUN_00414bb0();
+    iVar5 = PerformBackBufferOperations();
     if (iVar5 == 0) {
       FUN_00470960();
       return 0;
@@ -88539,8 +89041,8 @@ LAB_00481dd6:
   case 4:
     WaitForSingleObject(HANDLE_005d664c,0xffffffff);
     MoveMemoryWithOverlapHandling();
-    FUN_00414850();
-    iVar5 = FUN_00414bb0();
+    PerformBackBufferBlit();
+    iVar5 = PerformBackBufferOperations();
     if (iVar5 == 0) {
       FUN_00470960();
       return 0;
@@ -88643,7 +89145,7 @@ LAB_00481dd6:
       return 0;
     }
     SetEvent(HANDLE_005d664c);
-    iVar5 = FUN_00414d80();
+    iVar5 = ClearZBuffer();
     if (iVar5 == 0) {
       FUN_00470960();
       return 0;
@@ -88666,14 +89168,14 @@ LAB_00481dd6:
       FUN_00485920();
       (**(code **)(**(int **)(DAT_005e5010 + 8) + 0x50))();
       FUN_004923e0();
-      FUN_00414850();
+      PerformBackBufferBlit();
       return 1;
     }
     return 0;
   case 6:
     SetAnotherGlobalParamWithEventSignal();
     FUN_00470820();
-    FUN_00470800();
+    ExitMainMessageLoop();
     return 1;
   case 7:
     FUN_0043e8e0();
@@ -88692,7 +89194,7 @@ LAB_00481dd6:
     goto LAB_0048134e;
   case 9:
     FUN_0043e140();
-    FUN_00414850();
+    PerformBackBufferBlit();
     FUN_0043e140();
     FUN_0046ac80();
     DAT_005d7846 = 1;
@@ -88708,7 +89210,7 @@ LAB_00481dd6:
       if (DAT_004d8260 != 0) {
         FUN_0043dcb0();
       }
-      FUN_00414850();
+      PerformBackBufferBlit();
       if ((DAT_004d785c != 0) && (DAT_005e58d0 != 0)) {
         (**(code **)(*DAT_005e514c + 0x30))();
         return 1;
@@ -88733,11 +89235,11 @@ LAB_00481dd6:
   case 0xe:
     SetAnotherGlobalParamWithEventSignal();
     FUN_00470820();
-    FUN_00470800();
+    ExitMainMessageLoop();
     return 1;
   case 0x10:
     FUN_0043e140();
-    FUN_00414850();
+    PerformBackBufferBlit();
     FUN_0046a900();
     FUN_0046ac80();
     goto LAB_004817fb;
@@ -88757,7 +89259,7 @@ LAB_00481dd6:
     goto LAB_0048134e;
   case 0x13:
     FUN_0043e140();
-    FUN_00414850();
+    PerformBackBufferBlit();
     FUN_0043e140();
     FUN_0043e8e0();
     FUN_00492780();
@@ -88810,7 +89312,7 @@ LAB_004817fb:
       return 0;
     }
     SetEvent(HANDLE_005d664c);
-    iVar5 = FUN_00414bb0();
+    iVar5 = PerformBackBufferOperations();
     if (iVar5 == 0) {
       FUN_00470960();
       return 0;
@@ -88832,7 +89334,7 @@ LAB_004817fb:
       FUN_00485920();
       (**(code **)(**(int **)(DAT_005e5010 + 8) + 0x50))();
       FUN_004923e0();
-      FUN_00414850();
+      PerformBackBufferBlit();
       SetAnotherGlobalParamWithEventSignal();
       return 1;
     }
@@ -96429,7 +96931,7 @@ LAB_0048d616:
       }
     }
   }
-  FUN_00409320();
+  ProcessFrame();
   if (DAT_004d7ab0 != '\0') {
     FUN_00425410();
   }
